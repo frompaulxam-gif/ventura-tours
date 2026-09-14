@@ -6,6 +6,8 @@ A standalone refinement of the first Ventura Solutions animation concept. The pr
 
 `assets.js` builds six original, reusable Three.js groups: a folded envelope with an enquiry letter, layered project documents with a metal paper clip, a task list, an interwoven metal AI sculpture, a human approval card with a raised seal, and a folded paper plane with a sent receipt. Paper faces, lettering, document marks and task details are drawn locally into canvas textures. There are no stock images or externally loaded model assets.
 
+The opening also has eighteen smaller fragments: reminders, message bubbles, receipts, attachments, calendar slips and paper clips. Six source meshes share geometry and textures across the cluster. Three staggered, reversible collection waves gather them behind the enquiry before the clean four-step workflow appears.
+
 The meshes are built once. `motion.js` moves them along reversible, scroll-driven curved paths using quaternion interpolation and time-based smoothing. It renders only while progress is changing, on resize, or after a visibility change. Geometry is not recreated for each frame. Pixel count is capped at 1.2 million, DPR at 1.7. Reduced-motion preferences, compact screens and rendering failures use a static layout with the full explanatory content available below.
 
 ## Preview

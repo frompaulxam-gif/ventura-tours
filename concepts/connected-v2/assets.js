@@ -140,3 +140,33 @@ export function environment(renderer){
  for(const[x,y,z,w,h,d,power]of panels){const light=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshBasicMaterial({color:new THREE.Color(power,power*.96,power*.86)}));light.position.set(x,y,z);env.add(light);}
  const pmrem=new THREE.PMREMGenerator(renderer);const target=pmrem.fromScene(env,.025,.1,50);env.traverse(o=>{o.geometry?.dispose();if(o.material)o.material.dispose();});pmrem.dispose();return target;
 }
+
+// Small everyday fragments share geometry and textures across the opening cluster.
+export function makeClutterLibrary(){
+ const note=new THREE.Group();note.name='Loose reminder';
+ const noteMat=new THREE.MeshStandardMaterial({color:0xc8b889,roughness:.88,side:THREE.DoubleSide});
+ polygon(note,[[-.43,-.43],[.26,-.43],[.43,-.25],[.43,.43],[-.43,.43]],noteMat);
+ polygon(note,[[.26,-.43],[.26,-.25],[.43,-.25]],fold,.012);
+ lettering(note,.80,.80,(c,w,h)=>{label(c,'DON’T FORGET',64,127,40,'#5b593a',500);bar(c,64,200,540,13,'#8e8762');bar(c,64,267,458,13,'#8e8762');bar(c,64,334,507,13,'#8e8762');label(c,'Follow up.',64,510,68,'#454e35',500);},.022);
+
+ const message=new THREE.Group();message.name='Another conversation';
+ slab(message,1.23,.62,.035,.12,cream);
+ polygon(message,[[-.39,-.27],[-.43,-.45],[-.15,-.27]],cream);
+ lettering(message,1.17,.55,(c,w,h)=>{dot(c,74,93,31,'#9eac8e');label(c,'Just checking in…',135,107,35,'#42513d',500);bar(c,135,151,474,9,'#a6af99');bar(c,135,189,321,9,'#bdc3b0');},.035);
+
+ const receipt=new THREE.Group();receipt.name='Loose receipt';
+ const points=[[-.30,.63],[.30,.63],[.30,-.63]];for(let i=0;i<9;i++)points.push([.30-i*.075,-.63+(i%2)*.06]);
+ polygon(receipt,points,cream);
+ lettering(receipt,.55,1.17,(c,w,h)=>{label(c,'NOTES',70,145,69,'#506044',500);bar(c,70,210,620,4,'#bcc2aa');for(let i=0;i<7;i++){bar(c,70,298+i*108,340+(i%3)*77,14,'#a5b194');bar(c,570,298+i*108,112,14,'#899779');}bar(c,70,1114,618,4,'#bcc2aa');label(c,'TO FILE',70,1245,47,'#8b7b52',500);},.025);
+
+ const attachment=new THREE.Group();attachment.name='An attachment to organise';
+ slab(attachment,1.14,.47,.035,.065,ink);
+ lettering(attachment,1.08,.41,(c,w,h)=>{roundRect(c,30,40,136,190,15,'#62735b');label(c,'PDF',45,154,51,'#ece9d8',500);label(c,'Project brief',201,106,37,'#d8dfcc',500);label(c,'Attachment · v2',201,170,29,'#9fae90');},.035);
+
+ const calendar=new THREE.Group();calendar.name='A date to remember';
+ slab(calendar,.70,.82,.032,.065,paper);
+ lettering(calendar,.65,.76,(c,w,h)=>{roundRect(c,0,0,w,186,0,'#748269');label(c,'NEXT WEEK',107,121,58,'#e4e8d7',500);label(c,'12',162,632,400,'#3b4e38',500);bar(c,165,715,442,11,'#a3ae92');},.033);
+ const clip=new THREE.Group();clip.name='Loose metal paper clip';
+ stroke(clip,[[-.1,-.42,.02],[-.2,-.34,.02],[-.2,.33,.02],[-.1,.43,.02],[.1,.43,.02],[.2,.33,.02],[.2,-.26,.02],[.1,-.36,.02],[0,-.36,.02],[-.06,-.25,.02],[-.06,.24,.02],[.04,.28,.02],[.07,.17,.02],[.07,-.14,.02]],gold,.023);
+ return [note,message,receipt,attachment,calendar,clip];
+}

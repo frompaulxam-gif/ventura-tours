@@ -33,7 +33,7 @@ function fallback(error){console.warn('Connected preview: using the accessible s
 setMode();
 
 async function build(){
- const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=1'),document.fonts.ready]);
+ const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=2'),document.fonts.ready]);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
  renderer.setClearColor(0x080a09,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(36,1,.1,50);camera.position.set(0,0,12.9);
@@ -52,6 +52,24 @@ async function build(){
  const finalRot=[[.08,-.21,-.07],[.25,.22,.0],[.04,.16,-.035],[.25,-.20,.15],[.08,-.21,-.07],[.08,-.21,-.07]];
  const initialScale=[.92,1.04,.91,.74,.87,.80],finalScale=[.91,.97,.95,.91,.04,.04];
  const poses=models.map((m,i)=>({from:v(scatter[i]),to:v(destination[i]),start:q(scatterRot[i]),end:q(finalRot[i])}));
+ // An art-directed opening cluster: smaller fragments frame the six hero objects.
+ const clutterTemplates=assets.makeClutterLibrary();
+ const clutterLayout=[
+  [0,-.63,2.52,-.7,.76,-.25],[1,-2.90,.14,.1,.79,.26],
+  [2,2.93,.54,-.55,.77,-.22],[3,.46,3.09,-.8,.90,.13],
+  [4,-2.99,2.99,-1.2,.75,.21],[5,.55,1.43,.22,.73,-.53],
+  [0,2.86,-2.69,-.65,.70,.29],[1,-1.09,-3.03,-.8,.77,-.24],
+  [2,-3.02,-2.53,-1,.68,.30],[3,1.06,-.82,-.7,.77,-.19],
+  [4,3.08,2.66,-1.3,.66,-.28],[5,-1.44,.34,-.45,.84,.50],
+  [0,-.39,-1.26,-1.0,.61,.24],[1,2.64,1.04,-1.4,.62,-.23],
+  [2,-1.31,3.13,-1.55,.55,-.12],[3,1.74,-3.14,-1.1,.67,.14],
+  [4,-3.20,-.79,-1.2,.60,-.23],[5,1.73,3.12,-1.1,.62,.65]
+ ];
+ const clutter=clutterLayout.map(([type,x,y,z,size,angle],i)=>{
+  const model=clutterTemplates[type].clone(true);world.add(model);
+  return {model,from:v([x,y,z]),start:q([.11*Math.sin(i),.25*Math.cos(i*2),angle]),size,wave:i%3,index:i};
+ });
+ const cleanDestination=new THREE.Vector3();
  const arches=[[[-.58,2.02,-.27],[.65,2.26,-.55],[1.44,1.84,-.48],[1.48,1.48,-.16]],[[.89,.23,-.17],[.02,.28,-.39],[-1.48,.42,-.48],[-1.57,.03,-.23]],[[-.48,-1.02,-.27],[.73,-.96,-.5],[1.10,-1.68,-.4],[1.15,-2.00,-.10]]];
  const connections=arches.map(a=>{const line=assets.makeConnection(a);world.add(line.tube);const signal=assets.makeSignal();world.add(signal);return {...line,signal};});
  // Minimal pinpoints give depth without creating a second, distracting particle system.
@@ -66,6 +84,22 @@ async function build(){
    model.position.x+=Math.sin(t*Math.PI)*[.18,-.20,.28,.12,-.75,-.70][i];model.position.y+=Math.sin(t*Math.PI)*[.22,.3,-.05,.18,.60,-.16][i];model.position.z+=Math.sin(t*Math.PI)*[.4,.25,.5,.2,.6,.85][i];
    model.quaternion.slerpQuaternions(pose.start,pose.end,t);model.scale.setScalar(lerp(initialScale[i],finalScale[i],t));model.visible=i<4||t<.999;
   });
+  // Three staggered waves collect the fragments behind the enquiry. The final
+  // part of each path folds them away; every pose also works in reverse.
+  cleanDestination.copy(envelope.position);cleanDestination.z-=.32;
+  for(const item of clutter){
+   const {model,from,start,size,wave,index}=item;
+   const t=between(p,.10+wave*.045+(index%2)*.012,.38+wave*.052);
+   model.visible=t<.999;
+   if(!model.visible)continue;
+   model.position.lerpVectors(from,cleanDestination,t);
+   const arc=Math.sin(t*Math.PI);
+   model.position.x+=arc*(from.x>0?.48:-.32);
+   model.position.y+=arc*(.35+(index%3)*.16);
+   model.position.z+=arc*(.32+(index%2)*.20);
+   model.quaternion.slerpQuaternions(start,envelope.quaternion,t);
+   model.scale.setScalar(size*(1-between(t,.42,1)));
+  }
   // Subtle, scrubbed movement adds life without an endless render loop.
   envelope.userData.letter.position.y=.46+between(p,.12,.4)*.12;
   engine.rotation.y+=p*.55;engine.rotation.z+=Math.sin(p*Math.PI)*.12;
