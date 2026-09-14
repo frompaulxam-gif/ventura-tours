@@ -33,7 +33,7 @@ function fallback(error){console.warn('Connected preview: using the accessible s
 setMode();
 
 async function build(){
- const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=2'),document.fonts.ready]);
+ const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=3'),document.fonts.ready]);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
  renderer.setClearColor(0x080a09,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(36,1,.1,50);camera.position.set(0,0,12.9);
@@ -43,8 +43,8 @@ async function build(){
  const fill=new THREE.DirectionalLight(0xdce9d9,1.5);fill.position.set(5,-1,4);scene.add(fill);
  const rim=new THREE.DirectionalLight(0xe9c994,2);rim.position.set(2,4,-4);scene.add(rim);
  const world=new THREE.Group();scene.add(world);
- const envelope=assets.makeEnvelope(),engine=assets.makeIntelligence(),approval=assets.makeApproval(),plane=assets.makePlane(),documents=assets.makeDocuments(),tasks=assets.makeTasks();
- const models=[envelope,engine,approval,plane,documents,tasks];models.forEach(m=>world.add(m));
+ const envelope=assets.makeEnvelope(),engine=assets.makeIntelligence(),approval=assets.makeApproval(),plane=assets.makePlane(),documents=assets.makeDocuments(),analytics=assets.makeAnalytics();
+ const models=[envelope,engine,approval,plane,documents,analytics];models.forEach(m=>world.add(m));
  const v=a=>new THREE.Vector3(...a),q=a=>new THREE.Quaternion().setFromEuler(new THREE.Euler(...a));
  const scatter=[[-2.25,1.7,.75],[.25,.03,.9],[2,-1.25,-.25],[.2,-2.6,.8],[1.85,2,-.5],[-2.0,-1.50,.15]];
  const destination=[[-1.68,2.15,0],[1.48,.73,.08],[-1.6,-.76,.12],[1.53,-2.23,.14],[-1.68,2.15,-.3],[-1.68,2.15,-.32]];
@@ -55,15 +55,15 @@ async function build(){
  // An art-directed opening cluster: smaller fragments frame the six hero objects.
  const clutterTemplates=assets.makeClutterLibrary();
  const clutterLayout=[
-  [0,-.63,2.52,-.7,.76,-.25],[1,-2.90,.14,.1,.79,.26],
-  [2,2.93,.54,-.55,.77,-.22],[3,.46,3.09,-.8,.90,.13],
-  [4,-2.99,2.99,-1.2,.75,.21],[5,.55,1.43,.22,.73,-.53],
-  [0,2.86,-2.69,-.65,.70,.29],[1,-1.09,-3.03,-.8,.77,-.24],
-  [2,-3.02,-2.53,-1,.68,.30],[3,1.06,-.82,-.7,.77,-.19],
-  [4,3.08,2.66,-1.3,.66,-.28],[5,-1.44,.34,-.45,.84,.50],
-  [0,-.39,-1.26,-1.0,.61,.24],[1,2.64,1.04,-1.4,.62,-.23],
-  [2,-1.31,3.13,-1.55,.55,-.12],[3,1.74,-3.14,-1.1,.67,.14],
-  [4,-3.20,-.79,-1.2,.60,-.23],[5,1.73,3.12,-1.1,.62,.65]
+  [6,-.63,2.52,-.7,.86,-.25],[1,-2.90,.14,.1,.79,.26],
+  [7,2.93,.54,-.55,.87,-.22],[11,.46,3.09,-.8,.90,.13],
+  [9,-2.99,2.99,-1.2,.78,.21],[8,.55,1.43,.22,.86,-.30],
+  [10,2.86,-2.69,-.65,.82,.29],[1,-1.09,-3.03,-.8,.77,-.24],
+  [7,-3.02,-2.53,-1,.78,.30],[11,1.06,-.82,-.7,.77,-.19],
+  [9,3.08,2.66,-1.3,.76,-.28],[5,-1.44,.34,-.45,.84,.50],
+  [6,-.39,-1.26,-1.0,.71,.24],[1,2.64,1.04,-1.4,.62,-.23],
+  [10,-1.31,3.13,-1.55,.65,-.12],[11,1.74,-3.14,-1.1,.67,.14],
+  [8,-3.20,-.79,-1.2,.78,-.23],[5,1.73,3.12,-1.1,.62,.65]
  ];
  const clutter=clutterLayout.map(([type,x,y,z,size,angle],i)=>{
   const model=clutterTemplates[type].clone(true);world.add(model);

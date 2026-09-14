@@ -58,7 +58,7 @@ export function makeDocuments(){
   const geo=new THREE.ExtrudeGeometry(s,{depth:.012,bevelEnabled:false,curveSegments:4});mesh(sheet,geo,i===0?cream:paper);
   polygon(sheet,[[.55,1.10],[.55,.83],[.83,.83]],fold,.022);
   if(i===0){lettering(sheet,1.55,2.12,(c,w,h)=>{
-   label(c,'PROJECT NOTES',55,79,21,'#758268',500);label(c,'The bigger',55,173,47,'#283728',500);label(c,'picture.',55,229,47,'#283728',500);
+   label(c,'DATA REPORT',55,79,21,'#758268',500);label(c,'Patterns in',55,173,47,'#283728',500);label(c,'the detail.',55,229,47,'#283728',500);
    bar(c,55,276,w-120,3,'#b0b89c');
    for(let j=0;j<4;j++){dot(c,67,332+j*48,5,'#9c865a');bar(c,87,328+j*48,w-155-(j%2)*65,6);}
    roundRect(c,55,558,w-110,174,12,'#dde2cf');
@@ -71,15 +71,18 @@ export function makeDocuments(){
  return group;
 }
 
-export function makeTasks(){
- const group=new THREE.Group();group.name='Everyday task list';
- slab(group,1.83,1.76,.07,.105,sage);
- lettering(group,1.78,1.71,(c,w,h)=>{
-  label(c,'TODAY',50,78,21,'#d8dfca',500);label(c,'Room to focus.',50,158,37,'#f0efdf',500);
-  bar(c,50,197,w-100,2,'#98ab8966');
-  ['Read the enquiry','Gather the details','Find the next step'].forEach((s,i)=>{const y=260+i*100;roundRect(c,51,y-27,32,32,8,i===0?'#d9cfac':'#697b60');if(i===0){c.strokeStyle='#3a4f3c';c.lineWidth=4;c.beginPath();c.moveTo(59,y-11);c.lineTo(66,y-4);c.lineTo(77,y-20);c.stroke();}label(c,s,108,y,26,'#e4e7d5');bar(c,108,y+24,390-i*52,4,'#91a082');});
- },.065);
- const pin=mesh(group,new THREE.SphereGeometry(.06,16,10),gold,.67,.67,.055);pin.scale.set(1,1,.5);
+export function makeAnalytics(){
+ const group=new THREE.Group();group.name='Analytics dashboard with raised chart columns';
+ slab(group,1.98,1.84,.07,.105,ink);
+ lettering(group,1.92,1.78,(c,w,h)=>{
+  label(c,'DATA / OVERVIEW',47,74,22,'#b8c6a6',500);label(c,'Find the signal.',47,148,40,'#e8eadb',500);
+  bar(c,47,184,w-94,2,'#647658');
+  label(c,'WEEKLY ACTIVITY',47,245,20,'#9bae8b',500);
+  for(let i=0;i<3;i++)bar(c,47,321+i*90,w-94,2,'#53664c66');
+  label(c,'MON',54,646,15,'#90a580');label(c,'FRI',563,646,15,'#90a580');
+ },.066);
+ for(let i=0;i<6;i++){const height=[.25,.44,.34,.59,.49,.75][i];slab(group,.15,height,.095,.018,i===5?gold:sage,-.71+i*.275,-.60+height/2,.115);}
+ stroke(group,[[-.77,.0,.19],[-.46,.19,.19],[-.15,.1,.19],[.15,.32,.19],[.43,.25,.19],[.77,.52,.19]],gold,.013);
  return group;
 }
 
@@ -168,5 +171,40 @@ export function makeClutterLibrary(){
  lettering(calendar,.65,.76,(c,w,h)=>{roundRect(c,0,0,w,186,0,'#748269');label(c,'NEXT WEEK',107,121,58,'#e4e8d7',500);label(c,'12',162,632,400,'#3b4e38',500);bar(c,165,715,442,11,'#a3ae92');},.033);
  const clip=new THREE.Group();clip.name='Loose metal paper clip';
  stroke(clip,[[-.1,-.42,.02],[-.2,-.34,.02],[-.2,.33,.02],[-.1,.43,.02],[.1,.43,.02],[.2,.33,.02],[.2,-.26,.02],[.1,-.36,.02],[0,-.36,.02],[-.06,-.25,.02],[-.06,.24,.02],[.04,.28,.02],[.07,.17,.02],[.07,-.14,.02]],gold,.023);
- return [note,message,receipt,attachment,calendar,clip];
+ const trend=new THREE.Group();trend.name='Trend analysis';
+ slab(trend,1.12,.79,.033,.06,ink);
+ lettering(trend,1.06,.73,(c,w,h)=>{
+  label(c,'ACTIVITY / TREND',42,69,27,'#b6c4a1',500);
+  for(let y=130;y<440;y+=84)bar(c,42,y,w-84,2,'#67785e66');
+  const pts=[[44,376],[148,310],[245,335],[345,221],[452,252],[555,166],[719,126]];
+  c.beginPath();c.moveTo(44,450);for(const [x,y] of pts)c.lineTo(x,y);c.lineTo(719,450);c.closePath();c.fillStyle='#aebe8526';c.fill();
+  c.beginPath();pts.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle='#d3bc83';c.lineWidth=9;c.lineJoin='round';c.stroke();dot(c,719,126,12,'#efe3bd');
+ },.035);
+
+ const table=new THREE.Group();table.name='Spreadsheet data';
+ slab(table,.97,.87,.028,.035,cream);
+ lettering(table,.92,.82,(c,w,h)=>{
+  label(c,'SOURCE DATA',43,68,30,'#506247',500);
+  roundRect(c,36,101,w-72,77,7,'#829575');
+  ['A','B','C','D'].forEach((t,i)=>label(c,t,81+i*176,152,26,'#f2f0e4',500));
+  for(let r=0;r<5;r++)for(let col=0;col<4;col++){const x=36+col*176,y=192+r*83;roundRect(c,x,y,166,73,3,(r+col)%3===0?'#d4ddc9':'#e6eadc');label(c,String(12+r*17+col*9),x+27,y+48,28,'#52694a');}
+ },.033);
+
+ const distribution=new THREE.Group();distribution.name='Dimensional data distribution';
+ const values=[.40,.27,.20,.13],materials=[gold,sage,silver,ink];let angle=.10;
+ values.forEach((value,i)=>{const arc=value*Math.PI*2-.10;const segment=mesh(distribution,new THREE.TorusGeometry(.37,.092,10,36,arc),materials[i]);segment.rotation.z=angle;angle+=arc+.10;});
+
+ const bars=new THREE.Group();bars.name='Comparative analysis';
+ slab(bars,1.0,.81,.032,.055,paper);
+ lettering(bars,.95,.76,(c,w,h)=>{label(c,'CHANNELS',43,71,33,'#4d6245',500);for(let i=0;i<4;i++)bar(c,43,153+i*113,680,2,'#a8b79a88');},.035);
+ for(let i=0;i<5;i++){const height=[.19,.36,.27,.51,.43][i];slab(bars,.10,height,.065,.014,i===3?gold:sage,-.35+i*.174,-.30+height/2,.075);}
+
+ const heatmap=new THREE.Group();heatmap.name='Pattern analysis';
+ slab(heatmap,.87,.85,.035,.06,ink);
+ lettering(heatmap,.81,.79,(c,w,h)=>{label(c,'PATTERNS',44,78,34,'#bbc9a7',500);const colors=['#384d39','#617b4f','#91a675','#bfb884'];for(let r=0;r<5;r++)for(let col=0;col<6;col++)roundRect(c,42+col*115,138+r*114,93,93,9,colors[(r*3+col*2+(r%2))%4]);},.037);
+
+ const dataset=new THREE.Group();dataset.name='Structured data extract';
+ slab(dataset,1.17,.48,.035,.045,ink);
+ lettering(dataset,1.10,.42,(c,w,h)=>{label(c,'{ }',29,152,75,'#c9b47d',500);label(c,'DATASET',189,86,31,'#c7d4b6',500);label(c,'rows → fields → insights',189,157,26,'#9aad89');},.036);
+ return [note,message,receipt,attachment,calendar,clip,trend,table,distribution,bars,heatmap,dataset];
 }
