@@ -1,0 +1,21 @@
+/* Strong, straight type meets a softer italic. Shared by the current previews. */
+:root{--display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif}
+h1,h2{font-family:var(--display);font-weight:700;font-style:normal;text-transform:uppercase;letter-spacing:-.02em;line-height:.93}
+h1 em,h2 em{display:inline-block;font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;font-size:1.06;letter-spacing:-.045em;line-height:.94;color:var(--ivory);margin-top:.04em}
+h1{font-size:clamp(62px,min(7.3vw,9.4svh),106px)}
+.about h2{font-size:clamp(56px,5.9vw,88px)}
+.eyebrow{color:#b6ae9a;letter-spacing:.12em}
+.topline{letter-spacing:.09em;text-transform:none;font-size:9px}
+.copy{color:#b7b3a9}
+.loading span{display:none}
+body[data-variant=dashboard] h1{font-size:clamp(48px,min(5.9vw,8.7svh),91px)}
+body[data-variant=dashboard] .reveal{width:44%;top:36%}
+@media(min-width:761px) and (max-height:850px){
+ body[data-variant=bottleneck] h1{font-size:60px}
+}
+@media(max-width:760px){
+ h1,body[data-variant=dashboard] h1{font-size:clamp(44px,12.8vw,66px)}
+ body[data-variant=dashboard] .reveal{width:auto;top:59%}
+ .about h2{font-size:clamp(47px,12.3vw,68px)}
+ .topline{font-size:7px;letter-spacing:0}
+}
