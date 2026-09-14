@@ -15,3 +15,6 @@ body[data-variation=connected] .reveal{top:36%;left:var(--gutter);right:auto;wid
 body[data-variation=exhale] .visual{inset:0}
 
 body[data-variation=exhale] .stage-bottom>a{background:#000;padding:6px 8px}
+
+/* Signal reaches its workflow within one viewport of scrolling. */
+body[data-variation=signal]:not(.static) .journey{height:240svh}

@@ -6,7 +6,7 @@ const smooth=n=>{n=clamp(n);return n*n*n*(n*(n*6-15)+10);};
 const range=(p,a,b)=>smooth((p-a)/(b-a));
 const directions={
  mind:{number:'01',name:'Clear the mind',kicker:'A little less noise.',title:'Make room<br><em>for better thinking.</em>',copy:'We connect the information, tools and tasks around you. So your team can focus on the work that matters.',opening:'A lot coming at you.<br><span>A clearer way ahead.</span>',hint:'Scroll to clear your space ↓',description:'Scattered data and tasks gather into one calm focal point. The sculpture rises and a centred headline appears in the space below.',reveal:[.58,.76]},
- signal:{number:'02',name:'Find the signal',kicker:'The useful things, made clear.',title:'From information<br><em>to clear direction.</em>',copy:'Bring your data into focus. Turn what you know into decisions that move your business forward.',opening:'So much information.<br><span>Let’s find what matters.</span>',hint:'Scroll to find the signal ↓',description:'Scattered charts sort into neat rows, then gather into three steps: insight, intelligence and judgement. A headline appears below.',reveal:[.62,.79]},
+ signal:{number:'02',name:'Find the signal',kicker:'The useful things, made clear.',title:'From information<br><em>to clear direction.</em>',copy:'Bring your data into focus. Turn what you know into decisions that move your business forward.',opening:'So much information.<br><span>Let’s find what matters.</span>',hint:'Scroll to find the signal ↓',description:'Scattered charts sort into neat rows, then gather into three steps: insight, intelligence and judgement. A headline appears below.',reveal:[.48,.66]},
  connected:{number:'03',name:'Everything clicks',kicker:'Less friction. More flow.',title:'Good work.<br><em>All connected.</em>',copy:'From the first enquiry to the next action. Practical AI connects the pieces, with your team in control.',opening:'All the right pieces.<br><span>One better way to work.</span>',hint:'Scroll to connect the pieces ↓',description:'Scattered work gathers into four connected steps. The workflow moves to one side, making room for the headline.',reveal:[.69,.86]},
  untangle:{number:'04',name:'Untangle',kicker:'Let the tension fall away.',title:'A clearer mind.<br><em>A lighter day.</em>',copy:'Less pulling you in every direction. More space for the ideas, people and decisions that matter.',opening:'Pulled in every direction.<br><span>Let it slowly unravel.</span>',hint:'Scroll to untangle ↓',description:'An intricate knot of silver and champagne threads loosens into three gently flowing lines. The tension clears and the message appears beneath.',reveal:[.70,.88]},
  exhale:{number:'05',name:'Exhale',kicker:'You don’t have to hold it all.',title:'And then,<br><em>room to breathe.</em>',copy:'Less to hold in your head. More room for your next idea.',opening:'Everything, all at once.<br><span>Let a little of it go.</span>',hint:'Scroll to let go ↓',description:'A tightly packed cloud of soft pearlescent forms opens outwards in a slow release. The middle clears completely and reveals a centred message.',reveal:[.42,.67]}
@@ -28,7 +28,21 @@ function paint(progress){
 function tick(now){raf=0;if(!visible||document.hidden)return;const dt=last?Math.min(now-last,50):16;last=now;p+=(target-p)*(1-Math.exp(-dt/105));if(Math.abs(p-target)<.00008)p=target;paint(p);render?.(p,variation);if(p!==target)raf=requestAnimationFrame(tick);}
 function request(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(tick);}
 function mode(){const h=journey.offsetHeight,y=scrollY,below=y>=start+h;document.body.classList.toggle('static',isStatic());if(isStatic()&&y>start)scrollTo({top:below?y+journey.offsetHeight-h:start,behavior:'instant'});measure();p=target;paint(p);request();}
-function select(next){if(!directions[next])return;variation=next;const d=directions[next];document.body.dataset.variation=next;document.querySelectorAll('button[data-variation]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.variation===next)));$('#direction-name').textContent=`${d.number} — ${d.name}`;$('#reveal-kicker').textContent=d.kicker;$('#hero-title').innerHTML=d.title;$('#reveal-copy').textContent=d.copy;$('#opening-caption').innerHTML=d.opening;visual.setAttribute('aria-label',d.description);const url=new URL(location.href);url.searchParams.set('variation',next);history.replaceState(null,'',url);paint(p);request();}
+function select(next){
+ if(!directions[next])return;
+ const oldStart=journey.getBoundingClientRect().top+scrollY,oldHeight=journey.offsetHeight,oldY=scrollY;
+ const fraction=clamp((oldY-oldStart)/Math.max(1,oldHeight-stage.offsetHeight));
+ variation=next;const d=directions[next];document.body.dataset.variation=next;
+ document.querySelectorAll('button[data-variation]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.variation===next)));
+ $('#direction-name').textContent=`${d.number} — ${d.name}`;$('#reveal-kicker').textContent=d.kicker;$('#hero-title').innerHTML=d.title;$('#reveal-copy').textContent=d.copy;$('#opening-caption').innerHTML=d.opening;visual.setAttribute('aria-label',d.description);
+ // Keep the same point in the study when switching to or from Signal's shorter track.
+ if(journey.offsetHeight!==oldHeight){
+  const nextY=oldY>=oldStart+oldHeight?oldY+journey.offsetHeight-oldHeight:oldStart+fraction*Math.max(1,journey.offsetHeight-stage.offsetHeight);
+  scrollTo({top:nextY,behavior:'instant'});
+ }
+ measure();p=target;
+ const url=new URL(location.href);url.searchParams.set('variation',next);history.replaceState(null,'',url);paint(p);request();
+}
 for(const b of document.querySelectorAll('button[data-variation]'))b.addEventListener('click',()=>select(b.dataset.variation));
 for(const b of document.querySelectorAll('[data-replay]'))b.addEventListener('click',()=>{select(b.dataset.replay);journey.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});});
 $('#motion-toggle').addEventListener('click',()=>{paused=!paused;$('#motion-toggle').textContent=paused?'Enable motion ▷':'Reduce motion Ⅱ';$('#motion-toggle').setAttribute('aria-pressed',String(paused));mode();});
@@ -76,11 +90,11 @@ async function build(){
  const signalDest=[[-2.55,1.35,0],[0,1.35,0],[2.55,1.35,0]].map(v),signalIndices=[5,1,2];
  function findSignal(progress){
   world.scale.setScalar(fit*(mobile.matches?.86:1));
-  const order=range(progress,.17,.38),resolve=range(progress,.13,.35);sink.set(0,1.35,-.25);
-  models.forEach((m,i)=>{const slot=signalIndices.indexOf(i),t=slot>=0?resolve:range(progress,.12,.30);const from=sources[i].clone();from.x*=1.14;from.y*=.76;const to=slot>=0?signalDest[slot]:sink;move(m,from,to,angles[i],identity,t,slot>=0?mix(sizes[i],i===1?.98:.92,t):sizes[i]*(1-range(t,.2,1)));m.position.y+=Math.sin(t*Math.PI)*.18;});
-  fragments.forEach(({model,from,rotation,size},i)=>{const row=v([-3.05+(i%6)*1.22,-.28-Math.floor(i/6)*.72,-.4]);const initial=from.clone();initial.x*=1.14;initial.y*=.76;const collect=range(progress,.36+(i%3)*.018,.55+(i%3)*.025);move(model,initial,row,rotation,identity,order,size*mix(1,.60,order));model.position.lerp(sink,collect);model.scale.multiplyScalar(1-collect);model.visible=collect<.998;});
-  const reveal=range(progress,.48,.60);rail.tube.visible=reveal>0;rail.tube.material.opacity=reveal*.75;rail.tube.geometry.setDrawRange(0,Math.floor(rail.tube.geometry.index.count*reveal/3)*3);railSignal.visible=progress>.60&&progress<.91;railSignal.position.copy(rail.curve.getPoint(clamp((progress-.60)/.31)));
-  world.updateMatrixWorld(true);signalDest.forEach((pos,i)=>positionLabel(i,v([pos.x,pos.y-1.50,0]),['01 / Insight','02 / Intelligence','03 / Judgement'][i],range(progress,.58,.66)));
+  const order=range(progress,.04,.21),resolve=range(progress,.05,.28);sink.set(0,1.35,-.25);
+  models.forEach((m,i)=>{const slot=signalIndices.indexOf(i),t=slot>=0?resolve:range(progress,.04,.23);const from=sources[i].clone();from.x*=1.14;from.y*=.76;const to=slot>=0?signalDest[slot]:sink;move(m,from,to,angles[i],identity,t,slot>=0?mix(sizes[i],i===1?.98:.92,t):sizes[i]*(1-range(t,.2,1)));m.position.y+=Math.sin(t*Math.PI)*.18;});
+  fragments.forEach(({model,from,rotation,size},i)=>{const row=v([-3.05+(i%6)*1.22,-.28-Math.floor(i/6)*.72,-.4]);const initial=from.clone();initial.x*=1.14;initial.y*=.76;const collect=range(progress,.20+(i%3)*.012,.37+(i%3)*.015);move(model,initial,row,rotation,identity,order,size*mix(1,.60,order));model.position.lerp(sink,collect);model.scale.multiplyScalar(1-collect);model.visible=collect<.998;});
+  const reveal=range(progress,.28,.43);rail.tube.visible=reveal>0;rail.tube.material.opacity=reveal*.75;rail.tube.geometry.setDrawRange(0,Math.floor(rail.tube.geometry.index.count*reveal/3)*3);railSignal.visible=progress>.43&&progress<.72;railSignal.position.copy(rail.curve.getPoint(clamp((progress-.43)/.29)));
+  world.updateMatrixWorld(true);signalDest.forEach((pos,i)=>positionLabel(i,v([pos.x,pos.y-1.50,0]),['01 / Insight','02 / Intelligence','03 / Judgement'][i],range(progress,.38,.46)));
  }
  function everythingClicks(progress){
   const assemble=range(progress,.16,.54),shift=range(progress,.57,.82);sink.set(0,0,-.3);

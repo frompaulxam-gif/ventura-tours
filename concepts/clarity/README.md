@@ -8,7 +8,7 @@ Five isolated scroll studies using custom objects from `../connected-v2/assets.j
 - `?variation=untangle` — an intricate metallic knot releases into three flowing lines. This is the default for a link without a variation parameter.
 - `?variation=exhale` — a dense cloud of soft pearlescent forms drifts beyond the viewport, leaving a completely clear centre for the message.
 
-The selector preserves scroll progress for direct comparison. Each replay button returns to the start of the chosen direction. Query strings provide direct links; no votes are submitted or recorded.
+Signal uses a shorter 240svh track, with its workflow and labels complete within about two-thirds of a viewport of scrolling. The selector preserves relative scroll progress when switching between track lengths. Each replay button returns to the start of the chosen direction. Query strings provide direct links; no votes are submitted or recorded.
 
 All scene states are computed from scroll progress, including reversed scroll and early input. Models and textures are built once. Rendering stops when settled or off-screen. Reduced motion, short viewports and WebGL failures use the final static composition and ordinary page scrolling. The page background is always pure black.
 
