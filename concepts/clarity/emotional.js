@@ -55,6 +55,7 @@ export function createEmotionalScenes(THREE){
   }
  }
  function updateExhale(progress,fit,viewWidth,viewHeight){
+  fit*=.88;
   exhale.scale.setScalar(fit);
   for(const p of petals){
    const release=range(progress,.10+p.delay,.88+p.delay),out=Math.pow(release,1.35);

@@ -42,7 +42,7 @@ function fallback(error){console.warn('Clarity preview: showing the still layout
 select(variation);mode();
 
 async function build(){
- const [THREE,assets,emotionalModule]=await Promise.all([import('../connected-v2/vendor/three.module.min.js'),import('../connected-v2/assets.js?v=4'),import('./emotional.js?v=1'),document.fonts.ready]);
+ const [THREE,assets,emotionalModule]=await Promise.all([import('../connected-v2/vendor/three.module.min.js'),import('../connected-v2/assets.js?v=4'),import('./emotional.js?v=2'),document.fonts.ready]);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:false,antialias:true,powerPreference:'low-power'});renderer.setClearColor(0x000000,1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(36,1,.1,50);camera.position.set(0,0,12.9);
  const env=assets.environment(renderer);scene.environment=env.texture;scene.environmentIntensity=.68;
