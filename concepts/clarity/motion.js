@@ -7,9 +7,11 @@ const range=(p,a,b)=>smooth((p-a)/(b-a));
 const directions={
  mind:{number:'01',name:'Clear the mind',kicker:'A little less noise.',title:'Make room<br><em>for better thinking.</em>',copy:'We connect the information, tools and tasks around you. So your team can focus on the work that matters.',opening:'A lot coming at you.<br><span>A clearer way ahead.</span>',hint:'Scroll to clear your space ↓',description:'Scattered data and tasks gather into one calm focal point. The sculpture rises and a centred headline appears in the space below.',reveal:[.58,.76]},
  signal:{number:'02',name:'Find the signal',kicker:'The useful things, made clear.',title:'From information<br><em>to clear direction.</em>',copy:'Bring your data into focus. Turn what you know into decisions that move your business forward.',opening:'So much information.<br><span>Let’s find what matters.</span>',hint:'Scroll to find the signal ↓',description:'Scattered charts sort into neat rows, then gather into three steps: insight, intelligence and judgement. A headline appears below.',reveal:[.62,.79]},
- connected:{number:'03',name:'Everything clicks',kicker:'Less friction. More flow.',title:'Good work.<br><em>All connected.</em>',copy:'From the first enquiry to the next action. Practical AI connects the pieces, with your team in control.',opening:'All the right pieces.<br><span>One better way to work.</span>',hint:'Scroll to connect the pieces ↓',description:'Scattered work gathers into four connected steps. The workflow moves to one side, making room for the headline.',reveal:[.69,.86]}
+ connected:{number:'03',name:'Everything clicks',kicker:'Less friction. More flow.',title:'Good work.<br><em>All connected.</em>',copy:'From the first enquiry to the next action. Practical AI connects the pieces, with your team in control.',opening:'All the right pieces.<br><span>One better way to work.</span>',hint:'Scroll to connect the pieces ↓',description:'Scattered work gathers into four connected steps. The workflow moves to one side, making room for the headline.',reveal:[.69,.86]},
+ untangle:{number:'04',name:'Untangle',kicker:'Let the tension fall away.',title:'A clearer mind.<br><em>A lighter day.</em>',copy:'Less pulling you in every direction. More space for the ideas, people and decisions that matter.',opening:'Pulled in every direction.<br><span>Let it slowly unravel.</span>',hint:'Scroll to untangle ↓',description:'An intricate knot of silver and champagne threads loosens into three gently flowing lines. The tension clears and the message appears beneath.',reveal:[.70,.88]},
+ exhale:{number:'05',name:'Exhale',kicker:'You don’t have to hold it all.',title:'And then,<br><em>room to breathe.</em>',copy:'Less to hold in your head. More room for your next idea.',opening:'Everything, all at once.<br><span>Let a little of it go.</span>',hint:'Scroll to let go ↓',description:'A tightly packed cloud of soft pearlescent forms opens outwards in a slow release. The middle clears completely and reveals a centred message.',reveal:[.42,.67]}
 };
-let variation=new URLSearchParams(location.search).get('variation');if(!directions[variation])variation='mind';
+let variation=new URLSearchParams(location.search).get('variation');if(!directions[variation])variation='untangle';
 let p=0,target=0,start=0,distance=1,raf=0,last=0,visible=true,paused=false,failed=false,render=null,resizeScene=null;
 function isStatic(){return reduced.matches||compact.matches||paused||failed;}
 function measure(){start=journey.getBoundingClientRect().top+scrollY;distance=Math.max(1,journey.offsetHeight-stage.offsetHeight);target=isStatic()?1:clamp((scrollY-start)/distance);}
@@ -19,7 +21,9 @@ function paint(progress){
  $('#reveal').style.opacity=reveal;$('#reveal').style.visibility=reveal>.001?'visible':'hidden';$('#reveal').inert=reveal<.1;
  $('#reveal').style.transform=`translateY(${(1-reveal)*24}px)`;
  $('#progress').style.transform=`scaleX(${progress})`;
- $('#scroll-hint').textContent=progress>.93?'A little more room to think.':d.hint;
+ $('.stage-label').style.opacity=variation==='exhale'?1-range(progress,.20,.40):1;
+ $('#scroll-hint').style.opacity=variation==='exhale'?1-range(progress,.24,.42):1;
+ $('#scroll-hint').textContent=progress>.93?(variation==='exhale'?'Room to breathe.':'A little more room to think.'):d.hint;
 }
 function tick(now){raf=0;if(!visible||document.hidden)return;const dt=last?Math.min(now-last,50):16;last=now;p+=(target-p)*(1-Math.exp(-dt/105));if(Math.abs(p-target)<.00008)p=target;paint(p);render?.(p,variation);if(p!==target)raf=requestAnimationFrame(tick);}
 function request(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(tick);}
@@ -38,12 +42,13 @@ function fallback(error){console.warn('Clarity preview: showing the still layout
 select(variation);mode();
 
 async function build(){
- const [THREE,assets]=await Promise.all([import('../connected-v2/vendor/three.module.min.js'),import('../connected-v2/assets.js?v=4'),document.fonts.ready]);
+ const [THREE,assets,emotionalModule]=await Promise.all([import('../connected-v2/vendor/three.module.min.js'),import('../connected-v2/assets.js?v=4'),import('./emotional.js?v=1'),document.fonts.ready]);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:false,antialias:true,powerPreference:'low-power'});renderer.setClearColor(0x000000,1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(36,1,.1,50);camera.position.set(0,0,12.9);
  const env=assets.environment(renderer);scene.environment=env.texture;scene.environmentIntensity=.68;
  scene.add(new THREE.HemisphereLight(0xfff8ef,0x303036,1.4));for(const[color,intensity,position]of[[0xffefce,3,[-3,5,7]],[0xf0f2f5,1.5,[5,-1,4]],[0xe9c994,2,[2,4,-4]]]){const light=new THREE.DirectionalLight(color,intensity);light.position.set(...position);scene.add(light);}
  const world=new THREE.Group();scene.add(world);
+ const emotional=emotionalModule.createEmotionalScenes(THREE);scene.add(emotional.untangle,emotional.exhale);
  const v=a=>new THREE.Vector3(...a),quat=a=>new THREE.Quaternion().setFromEuler(new THREE.Euler(...a));
  const models=[assets.makeEnvelope(),assets.makeIntelligence(),assets.makeApproval(),assets.makePlane(),assets.makeDocuments(),assets.makeAnalytics()];models.forEach(m=>world.add(m));
  const sources=[[-2.25,1.70,.55],[0,0,.65],[2,-1.25,-.25],[.2,-2.6,.55],[1.85,2,-.5],[-2,-1.5,.15]].map(v);
@@ -58,7 +63,7 @@ async function build(){
  const wires=curves.map(points=>{const line=assets.makeConnection(points);links.add(line.tube);const pulse=assets.makeSignal();links.add(pulse);return {...line,pulse};});
  const rail=assets.makeConnection([[-3.55,.22,-.25],[0,.22,-.25],[3.55,.22,-.25]]);world.add(rail.tube);const railSignal=assets.makeSignal();world.add(railSignal);
  const labels=[...document.querySelectorAll('.node-labels span')],point=new THREE.Vector3(),sink=new THREE.Vector3(),identity=new THREE.Quaternion();
- let fit=1,viewWidth=10;
+ let fit=1,viewWidth=10;const viewHeight=2*Math.tan(36*Math.PI/360)*12.9;
  const ringBase=models[1].userData.rings.map(r=>r.rotation.clone());
  function positionLabel(index,anchor,text,opacity){point.copy(anchor).applyMatrix4(world.matrixWorld).project(camera);const e=labels[index];e.textContent=text;e.style.left=`${(point.x*.5+.5)*visual.clientWidth}px`;e.style.top=`${(-point.y*.5+.5)*visual.clientHeight}px`;e.style.opacity=opacity;}
  function move(m,from,to,a,b,t,scale){m.visible=scale>.003;m.position.lerpVectors(from,to,t);m.quaternion.slerpQuaternions(a,b,t);m.scale.setScalar(Math.max(.001,scale));}
@@ -87,6 +92,10 @@ async function build(){
  }
  resizeScene=()=>{const w=visual.clientWidth,h=visual.clientHeight;if(!w||!h)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.65,Math.sqrt(1200000/(w*h))));renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();fit=Math.min(1,camera.aspect*1.17);viewWidth=2*Math.tan(36*Math.PI/360)*12.9*camera.aspect;};
  render=(progress,type)=>{
+  const isEmotional=type==='untangle'||type==='exhale';world.visible=!isEmotional;
+  emotional.update(progress,type,fit,viewWidth,viewHeight);
+  labels.forEach(e=>e.style.opacity=0);
+  if(isEmotional){renderer.render(scene,camera);return;}
   world.position.set(0,0,0);world.rotation.set(0,0,0);world.scale.setScalar(fit);links.visible=false;rail.tube.visible=false;railSignal.visible=false;labels.forEach(e=>e.style.opacity=0);models.forEach(m=>m.visible=true);models[1].userData.rings.forEach((r,i)=>r.rotation.copy(ringBase[i]));
   if(type==='mind')clearMind(progress);else if(type==='signal')findSignal(progress);else everythingClicks(progress);
   const orbit=progress*Math.PI*2;models[1].userData.orb.position.set(Math.cos(orbit)*.76,Math.sin(orbit)*.65,.13);
