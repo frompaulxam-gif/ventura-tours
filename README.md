@@ -7,7 +7,7 @@ Static website, compatible with the existing GitHub Pages deployment. No build o
 - `index.html`: four client-logo placeholders and two upcoming-project placeholders. Only add approved brands and work that may be shown publicly.
 - Featured Skyline Terrace is labelled as a render-based, draggable image concept. It is not a complete 360° tour or a completed client project. Replace the figure with a real tour/embed when supplied.
 - Enquiries currently use the existing `hello@venturatours.uk` address with a prefilled subject. Mailbox ownership/delivery is not verified. No form backend is implied.
-- Canonical URL currently uses the existing GitHub Pages address. Change it if a custom domain is connected.
+- Canonical URL and CNAME use tours.venturasolutions.co.uk, with a link to the parent brand at venturasolutions.co.uk.
 - The 48-hour turnaround and fourteen-stop/60-second sample claims were removed because they were unconfirmed. Current copy reflects the requested free photo-based demo offer.
 
 ## Stock image
