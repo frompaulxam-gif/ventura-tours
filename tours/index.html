@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Archivo:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=42" />
+  <link rel="stylesheet" href="css/style.css?v=43" />
   <script>
     document.documentElement.classList.replace('no-js', 'js');
     // If the local application script cannot start, restore the readable
@@ -131,37 +131,30 @@
 
 
     <!-- ========== FEATURED TOUR ========== -->
-    <!-- PLACEHOLDER PROJECT: sample concept built from CGI renders — replace with a real shoot before launch -->
-    <section class="tour" id="tour" tabindex="-1">
+    <section class="tour" id="tour" tabindex="-1" aria-labelledby="tourHeading">
       <div class="tour-head">
-        <span class="eyebrow" data-reveal>Explore a concept</span>
-        <h2 data-reveal>A different <em>perspective.</em></h2>
+        <span class="eyebrow" data-reveal>Selected work · Student accommodation</span>
+        <h2 id="tourHeading" data-reveal>Step inside. <em>Feel at home.</em></h2>
       </div>
       <figure class="tour-frame" data-reveal>
-        <div class="tour-pan" id="tourPan">
-          <picture>
-            <source type="image/webp"
-                    srcset="assets/terrace-800.webp 800w, assets/terrace.webp 1672w"
-                    sizes="(max-width: 760px) 92vw, 86vw" />
-            <img src="assets/terrace.jpg"
-                 srcset="assets/terrace-800.jpg 800w, assets/terrace.jpg 1672w"
-                 sizes="(max-width: 760px) 92vw, 86vw"
-                 width="1672" height="941"
-                 loading="lazy" fetchpriority="low" decoding="async"
-                 alt="Rooftop terrace with infinity pool overlooking a city skyline at golden hour" draggable="false" />
-          </picture>
-        </div>
-        <figcaption class="tour-cue" id="tourInstructions">Drag or use arrow keys</figcaption>
-        <p class="tour-unavailable" id="tourUnavailable" role="status" hidden>Panoramic preview unavailable. Please try again later.</p>
+        <iframe class="tour-embed"
+                src="https://kuula.co/share/collection/7THTt?fs=1&amp;vr=0&amp;initload=1"
+                title="The Summit &amp; Eastern Boulevard — interactive 360° virtual tour by Ventura Tours"
+                loading="lazy" allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer"
+                allowfullscreen aria-describedby="tourInstructions"></iframe>
       </figure>
       <div class="tour-copy">
-        <p data-reveal>Skyline Terrace is a visual concept made from architectural renders. Drag to explore the image — a preview of the look and feel, ready to be replaced with your first complete 360° project.</p>
+        <p id="tourInstructions" class="tour-instructions">Drag to look around. Select a room to explore more.</p>
+        <p data-reveal>Explore The Summit &amp; Eastern Boulevard through our 360° virtual tour. From individual studios to shared spaces, we captured the details that help future residents get a feel for their next home — before they visit.</p>
         <dl class="tour-meta" data-reveal>
-          <div><dt>Project</dt><dd>Skyline Terrace</dd></div>
-          <div><dt>Format</dt><dd>Image preview</dd></div>
-          <div><dt>Status</dt><dd>Concept</dd></div>
+          <div><dt>Project</dt><dd>The Summit &amp;<br />Eastern Boulevard</dd></div>
+          <div><dt>Sector</dt><dd>Student living</dd></div>
+          <div><dt>Format</dt><dd>360° virtual tour</dd></div>
         </dl>
-        <a class="text-link" href="#contact" data-reveal>Create a demo of your space</a>
+        <div class="tour-actions" data-reveal>
+          <a class="text-link" href="https://kuula.co/share/collection/7THTt" target="_blank" rel="noopener">Open full tour ↗</a>
+          <a class="text-link" href="#contact">Create a tour of your space</a>
+        </div>
       </div>
     </section>
 
@@ -221,6 +214,6 @@
 
   <script src="js/vendor/gsap.min.js"></script>
   <script src="js/vendor/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=42"></script>
+  <script src="js/main.js?v=43"></script>
 </body>
 </html>
