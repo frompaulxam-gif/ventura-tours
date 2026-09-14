@@ -1,33 +1,22 @@
-# Ventura Tours
+# Ventura Solutions and Ventura Tours
 
-Static website, compatible with the existing GitHub Pages deployment. No build or package installation required. Serve this directory with `python3 -m http.server 4173` and open http://localhost:4173.
+Static sites hosted together in the existing Ventura GitHub Pages repository.
 
-## Content to replace
+- Main consultancy: https://venturasolutions.co.uk/
+- Virtual tours: https://venturasolutions.co.uk/tours/
 
-- `index.html`: four client-logo placeholders and two upcoming-project placeholders. Only add approved brands and work that may be shown publicly.
-- Featured Skyline Terrace is labelled as a render-based, draggable image concept. It is not a complete 360° tour or a completed client project. Replace the figure with a real tour/embed when supplied.
-- Enquiries currently use the existing `hello@venturatours.uk` address with a prefilled subject. Mailbox ownership/delivery is not verified. No form backend is implied.
-- Canonical URL and CNAME use tours.venturasolutions.co.uk, with a link to the parent brand at venturasolutions.co.uk.
-- The 48-hour turnaround and fourteen-stop/60-second sample claims were removed because they were unconfirmed. Current copy reflects the requested free photo-based demo offer.
+The root index.html, css/main stylesheet and js/main.js are the AI consultancy. The independent Tours site and all its assets are under tours/. Relative assets ensure both routes work on the same domain. CNAME belongs at root only.
 
-## Stock image
+No package install or build is needed. Run python3 -m http.server 4173 from this directory to preview both routes.
 
-Hero: Clay Banks, “Modern living room with stylish furniture and large windows.”
-Source: https://unsplash.com/photos/modern-living-room-with-stylish-furniture-and-large-windows-FL-ZcDK8tMo
-Original download: https://images.unsplash.com/photo-1773754532196-014342510e64?auto=format&fit=crop&w=2400&q=85
-License: https://unsplash.com/license — free commercial use and modification; attribution appreciated, not required. Selected 11 September 2026.
-Stored locally as JPEG and responsive WebP files. Stock photography illustrates the service; it is not presented as client work.
+## Email
 
-Existing logo and rooftop imagery are preserved from the supplied folder.
+The proposed hello@venturasolutions.co.uk and tours@venturasolutions.co.uk mailboxes have not been purchased or provisioned. Tours retains its earlier enquiry address until the new mailbox is ready.
 
-## Animation
+## Stock photography
 
-The arch reveal and circle wipe remain. Wheel, touch-scroll, scrolling keys, a skip button, resize, or a direct section link can complete the intro. Final visual state and the scroll pin are established once, synchronously; there is no delayed reset of the visitor's scroll position. Fonts and hero readiness are capped. Reduced motion, missing animation libraries and disabled JavaScript have a readable static layout.
+Interior photo by Clay Banks: https://unsplash.com/photos/modern-living-room-with-stylish-furniture-and-large-windows-FL-ZcDK8tMo under https://unsplash.com/license. Existing rooftop render concepts are labelled as concepts, not completed client work.
 
-GSAP 3.13.0 and ScrollTrigger 3.13.0 are vendored under `js/vendor/`, preserving their original license headers. The separate Flip animation was replaced with a tween owned by the intro timeline, so skipping cannot leave a second animation moving the logo.
+## Restore points
 
-## Validation
-
-Checked in Chrome: normal opening, early wheel input at three intro stages, mobile skip/navigation, direct section links, panorama keyboard control, stalled hero loading, reduced motion and disabled JavaScript. Browser checks assert a single scroll pin and no lingering page lock or inert content.
-
-Temporary GitHub Pages update requested on 14 September 2026. The previous live version is preserved on `codex/ventura-before-preview-2026-09-14` (commit `c796b8f`). Restore it with a new revert commit rather than rewriting main history.
+The original site is on codex/ventura-before-preview-2026-09-14. The Tours-only custom-subdomain version is commit c38248f. Use a new revert commit to restore rather than rewriting main history.

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ventura Tours — 360° Virtual Tours &amp; Cinematic Property Film, Leicester UK</title>
+  <meta name="description" content="360° virtual tours and cinematic films for properties, hotels, restaurants and gyms. Based in Leicester, working across the Midlands and UK. Start with a free photo-based demo." />
+  <meta property="og:title" content="Ventura Tours — See every angle" />
+  <meta property="og:description" content="360° virtual tours and cinematic property film. Leicester, UK." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://venturasolutions.co.uk/tours/" />
+  <meta property="og:image" content="https://venturasolutions.co.uk/tours/assets/hero-skyline.jpg" />
+  <meta property="og:image:width" content="1672" />
+  <meta property="og:image:height" content="941" />
+  <meta property="og:image:alt" content="A rooftop infinity pool overlooking a modern city skyline" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#242620" />
+  <link rel="canonical" href="https://venturasolutions.co.uk/tours/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23242620'/%3E%3Cpath d='M8 26V16a8 8 0 0 1 16 0v10h-4v-10a4 4 0 0 0-8 0v10z' fill='%23F2ECE3'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Archivo:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
+  <script>
+    document.documentElement.classList.replace('no-js', 'js');
+    // If the local application script cannot start, restore the readable
+    // no-JavaScript layout rather than leaving most of the page hidden.
+    window.__venturaFallbackTimer = window.setTimeout(function () {
+      if (document.documentElement.dataset.venturaBoot !== 'ready') {
+        document.documentElement.classList.remove('js', 'lock');
+        document.documentElement.classList.add('no-js');
+        if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+      }
+    }, 3000);
+    // claim scroll restoration before the browser's own restore can fire —
+    // a late restore mid-choreography teleports the page to a stale offset
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#tour">Skip to featured work</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <span class="corner-label">Virtual&nbsp;360°</span>
+    <a class="header-brand" id="headerBrand" href="#top">
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp" />
+        <img src="assets/logo.png" alt="Ventura Tours 360 — home" width="876" height="339" decoding="async" />
+      </picture>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu">
+      <span>Menu</span><i aria-hidden="true"></i>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav-link" href="#tour">Work</a>
+      <a class="nav-link" href="#process">Process</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top" tabindex="-1">
+
+    <!-- ========== HERO (letters → arch → Flip dock → tilt → circle wipe) ========== -->
+    <section class="hero" id="hero">
+      <button class="intro-skip" id="skipIntro" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+      <div class="hero-media" id="heroMedia">
+        <!-- the img box is 142% tall; scrolling tilts it down to the skypool -->
+        <div class="hero-pan" id="heroPan">
+          <picture>
+            <source type="image/webp" srcset="assets/hero-interior-900.webp 900w, assets/hero-interior.webp 2400w" sizes="(max-aspect-ratio: 3/2) 215vh, 100vw" />
+            <img class="hero-img" id="heroImg" src="assets/hero-interior.jpg"
+                 width="2400" height="1600" fetchpriority="high" decoding="async"
+                 alt="A warm, light-filled interior with sculptural furniture, natural wood and tall bay windows" />
+          </picture>
+        </div>
+      </div>
+
+      <h1 class="title" id="title">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp" />
+          <img src="assets/logo.png" alt="Ventura Tours 360" width="876" height="339" decoding="async" />
+        </picture>
+      </h1>
+
+      <div class="wipe-circle" id="wipeCircle" aria-hidden="true"></div>
+      <svg class="arc" id="arcSvg" aria-hidden="true" focusable="false">
+        <path id="arcPath" fill="none" d="M 0 300 A 400 400 0 0 1 800 300"></path>
+        <text class="arc-text"><textPath href="#arcPath" startOffset="50%" text-anchor="middle">Three reasons to choose Ventura</textPath></text>
+      </svg>
+
+      <!-- content rides UP into the stone while the circle is still rising -->
+      <div class="wipe-rise" id="wipeRise" aria-hidden="true">
+        <div class="rise-centre">
+          <span class="rise-label">Leicester</span>
+          <span class="rise-mark">360°</span>
+          <span class="rise-label">United&nbsp;Kingdom</span>
+        </div>
+        <i class="rise-rule"></i>
+        <p class="rise-tag">A space to explore.<br />Before they arrive.</p>
+        <div class="rise-headline">See every angle</div>
+      </div>
+
+      <!-- once the stone covers, the three reasons play as scrubbed beats -->
+      <div class="wipe-copy" id="wipeCopy">
+        <h2 class="sr-only">Three reasons to choose Ventura</h2>
+        <div class="wipe-beat">
+          <span class="eyebrow">Reason 01</span>
+          <h3 class="beat-line">Let them step inside</h3>
+          <p>Give guests, members and buyers a feel for your space before they visit.</p>
+        </div>
+        <div class="wipe-beat">
+          <span class="eyebrow">Reason 02</span>
+          <h3 class="beat-line">Made to be explored</h3>
+          <p>360° tours and cinematic films that show the details a single photo can’t.</p>
+        </div>
+        <div class="wipe-beat">
+          <span class="eyebrow">Reason 03</span>
+          <h3 class="beat-line">Start with a free demo</h3>
+          <p>See a photo-based concept of your space before booking an on-site shoot.</p>
+        </div>
+      </div>
+
+      <span class="arch-label arch-label--l" aria-hidden="true">Leicester</span>
+      <span class="arch-label arch-label--r" aria-hidden="true">United&nbsp;Kingdom</span>
+      <p class="hero-line" id="heroLine">Spaces worth stepping into.<br /><span>360° virtual tours &amp; cinematic property films.</span></p>
+      <a class="hero-cta" href="#contact">Request your free demo <span aria-hidden="true">↗</span></a>
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+
+    <!-- ========== FEATURED TOUR ========== -->
+    <!-- PLACEHOLDER PROJECT: sample concept built from CGI renders — replace with a real shoot before launch -->
+    <section class="tour" id="tour" tabindex="-1">
+      <div class="tour-head">
+        <span class="eyebrow" data-reveal>Explore a concept</span>
+        <h2 data-reveal>A different <em>perspective.</em></h2>
+      </div>
+      <figure class="tour-frame" data-reveal>
+        <div class="tour-pan" id="tourPan">
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/terrace-800.webp 800w, assets/terrace.webp 1672w"
+                    sizes="(max-width: 760px) 92vw, 86vw" />
+            <img src="assets/terrace.jpg"
+                 srcset="assets/terrace-800.jpg 800w, assets/terrace.jpg 1672w"
+                 sizes="(max-width: 760px) 92vw, 86vw"
+                 width="1672" height="941"
+                 loading="lazy" fetchpriority="low" decoding="async"
+                 alt="Rooftop terrace with infinity pool overlooking a city skyline at golden hour" draggable="false" />
+          </picture>
+        </div>
+        <figcaption class="tour-cue" id="tourInstructions">Drag or use arrow keys</figcaption>
+        <p class="tour-unavailable" id="tourUnavailable" role="status" hidden>Panoramic preview unavailable. Please try again later.</p>
+      </figure>
+      <div class="tour-copy">
+        <p data-reveal>Skyline Terrace is a visual concept made from architectural renders. Drag to explore the image — a preview of the look and feel, ready to be replaced with your first complete 360° project.</p>
+        <dl class="tour-meta" data-reveal>
+          <div><dt>Project</dt><dd>Skyline Terrace</dd></div>
+          <div><dt>Format</dt><dd>Image preview</dd></div>
+          <div><dt>Status</dt><dd>Concept</dd></div>
+        </dl>
+        <a class="text-link" href="#contact" data-reveal>Create a demo of your space</a>
+      </div>
+    </section>
+
+    <!-- Replace these clearly marked slots with approved brands and real projects. -->
+    <section class="client-section" aria-labelledby="clientHeading">
+      <div class="section-intro" data-reveal>
+        <h2 id="clientHeading">In good <em>company.</em></h2>
+        <p>Selected client brands will appear here.</p>
+      </div>
+      <div class="client-logos" aria-label="Client logo placeholders" data-reveal>
+        <span>Client logo <small>01</small></span><span>Client logo <small>02</small></span><span>Client logo <small>03</small></span><span>Client logo <small>04</small></span>
+      </div>
+    </section>
+
+    <section class="project-slots" aria-label="Upcoming project examples">
+      <article data-reveal><span class="eyebrow">Project placeholder · 02</span><h3>Stay a little <em>longer.</em></h3><p>Hotel &amp; holiday accommodation</p><span class="coming-soon">Example coming soon</span></article>
+      <article data-reveal><span class="eyebrow">Project placeholder · 03</span><h3>Get a feel for <em>the space.</em></h3><p>Gyms, restaurants &amp; venues</p><span class="coming-soon">Example coming soon</span></article>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="process" id="process" tabindex="-1">
+      <h2 class="eyebrow" data-reveal>How it works</h2>
+      <ol class="process-list">
+        <li class="process-step" data-reveal>
+          <span class="process-num" aria-hidden="true">01</span>
+          <h3>See the potential</h3>
+          <p>Send us your website or existing interior photos. We’ll create a free photo-based demo to help you picture the result.</p>
+        </li>
+        <li class="process-step" data-reveal>
+          <span class="process-num" aria-hidden="true">02</span>
+          <h3>Capture your space</h3>
+          <p>When you’re ready, we plan an on-site shoot around your space. Tour, film or both — with timing and scope agreed together.</p>
+        </li>
+        <li class="process-step" data-reveal>
+          <span class="process-num" aria-hidden="true">03</span>
+          <h3>Open the doors</h3>
+          <p>Share your finished tour with a direct link or add it to your website, alongside your booking or enquiry page.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ========== CONTACT / FOOTER ========== -->
+    <footer class="footer" id="contact" tabindex="-1">
+      <span class="footer-watermark" aria-hidden="true">Ventura</span>
+      <p class="footer-kicker" data-reveal>Leicester · Nottingham · Derby · Across the UK</p>
+      <h2 class="footer-title" data-reveal>Let’s walk<br /><em>your space.</em></h2>
+      <p class="footer-description" data-reveal>Start with a free demo. Send your website and a few photos —<br />we’ll show you what’s possible.</p>
+      <a class="footer-mail" href="mailto:hello@venturatours.uk?subject=Free%20demo%20enquiry%20%E2%80%94%20Ventura%20Tours" data-reveal>hello@venturatours.uk</a>
+      <div class="footer-base">
+        <span>© MMXXVI Ventura Tours</span>
+        <a href="https://venturasolutions.co.uk/">Part of Ventura Solutions ↗</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/main.js?v=42"></script>
+</body>
+</html>
