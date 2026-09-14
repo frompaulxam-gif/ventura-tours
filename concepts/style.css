@@ -11,3 +11,5 @@
 #clear-vote{border:0;background:transparent;color:var(--muted);font-size:12px;padding:12px 20px}#clear-vote:hover{color:var(--text)}
 
 @media(max-width:760px){.header .study-label{display:none}.back{white-space:nowrap}.visual{bottom:45%}.object-note{display:none}}
+
+.refined-link{display:block;width:fit-content;margin-top:20px;padding-bottom:4px;border-bottom:1px solid #baa78166;color:var(--gold);font-size:12px}
