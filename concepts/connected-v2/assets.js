@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three.module.min.js';
 
 // Bespoke, reusable meshes. Geometry is built once; scrolling only moves groups.
-const palette={paper:0xe4ddc9,cream:0xf1ead9,fold:0xc2bba6,ink:0x17221b,gold:0xc8ab72,silver:0xc8cec7,sage:0x586c58};
+const palette={paper:0xf1ede3,cream:0xfffbf2,fold:0xd5cbbc,ink:0x3a3d42,gold:0xe0bf7b,silver:0xe6e9ed,sage:0xa29d91};
 const paper=new THREE.MeshStandardMaterial({color:palette.paper,roughness:.82,side:THREE.DoubleSide});
 const cream=new THREE.MeshStandardMaterial({color:palette.cream,roughness:.76,side:THREE.DoubleSide});
 const fold=new THREE.MeshStandardMaterial({color:palette.fold,roughness:.88,side:THREE.DoubleSide});
@@ -9,9 +9,9 @@ const ink=new THREE.MeshPhysicalMaterial({color:palette.ink,metalness:.25,roughn
 const gold=new THREE.MeshPhysicalMaterial({color:palette.gold,metalness:.95,roughness:.23,clearcoat:.5,clearcoatRoughness:.18});
 const silver=new THREE.MeshPhysicalMaterial({color:palette.silver,metalness:.94,roughness:.2,clearcoat:.4});
 const sage=new THREE.MeshStandardMaterial({color:palette.sage,roughness:.67});
-const fineGold=new THREE.MeshStandardMaterial({color:0xa48d60,metalness:.75,roughness:.44});
+const fineGold=new THREE.MeshStandardMaterial({color:0xd5b879,metalness:.75,roughness:.44});
 const white=new THREE.MeshStandardMaterial({color:0xf8f1df,roughness:.65});
-const emerald=new THREE.MeshPhysicalMaterial({color:0x426b4a,metalness:.38,roughness:.28,clearcoat:1});
+const emerald=new THREE.MeshPhysicalMaterial({color:0x987337,metalness:.38,roughness:.28,clearcoat:1});
 const luminous=new THREE.MeshStandardMaterial({color:0xffe2a0,emissive:0xe4bb69,emissiveIntensity:1.1,metalness:.3,roughness:.3});
 const sphere=new THREE.SphereGeometry(.035,12,8);
 
@@ -75,11 +75,11 @@ export function makeAnalytics(){
  const group=new THREE.Group();group.name='Analytics dashboard with raised chart columns';
  slab(group,1.98,1.84,.07,.105,ink);
  lettering(group,1.92,1.78,(c,w,h)=>{
-  label(c,'DATA / OVERVIEW',47,74,22,'#b8c6a6',500);label(c,'Find the signal.',47,148,40,'#e8eadb',500);
-  bar(c,47,184,w-94,2,'#647658');
-  label(c,'WEEKLY ACTIVITY',47,245,20,'#9bae8b',500);
-  for(let i=0;i<3;i++)bar(c,47,321+i*90,w-94,2,'#53664c66');
-  label(c,'MON',54,646,15,'#90a580');label(c,'FRI',563,646,15,'#90a580');
+  label(c,'DATA / OVERVIEW',47,74,22,'#dedbd2',500);label(c,'Find the signal.',47,148,40,'#fffaf0',500);
+  bar(c,47,184,w-94,2,'#b9ad97');
+  label(c,'WEEKLY ACTIVITY',47,245,20,'#ccc8bc',500);
+  for(let i=0;i<3;i++)bar(c,47,321+i*90,w-94,2,'#9d9c9566');
+  label(c,'MON',54,646,15,'#bdb9ae');label(c,'FRI',563,646,15,'#bdb9ae');
  },.066);
  for(let i=0;i<6;i++){const height=[.25,.44,.34,.59,.49,.75][i];slab(group,.15,height,.095,.018,i===5?gold:sage,-.71+i*.275,-.60+height/2,.115);}
  stroke(group,[[-.77,.0,.19],[-.46,.19,.19],[-.15,.1,.19],[.15,.32,.19],[.43,.25,.19],[.77,.52,.19]],gold,.013);
@@ -106,10 +106,10 @@ export function makeApproval(){
  const rim=rounded(2.12,1.65,.12).getPoints(56).map(p=>new THREE.Vector3(p.x,p.y,.035));rim.push(rim[0]);
  mesh(group,new THREE.TubeGeometry(new THREE.CatmullRomCurve3(rim),120,.009,5,false),fineGold);
  lettering(group,2.05,1.58,(c,w,h)=>{
-  dot(c,58,65,9,'#b4c59b');label(c,'YOUR REVIEW',83,73,20,'#b6c3a9',500);label(c,'Ready when you are.',47,156,37,'#e4e5d4',500);
-  label(c,'AI prepared. Human approved.',47,202,22,'#a0af96');bar(c,47,244,w-94,2,'#5a6a4d');
-  roundRect(c,47,276,424,118,13,'#27372b');label(c,'The next step is yours.',72,323,24,'#d2dac5');label(c,'Review · refine · approve',72,361,17,'#90a181');
-  label(c,'V E N T U R A',47,487,17,'#b8a77b',500);
+  dot(c,58,65,9,'#b4c59b');label(c,'YOUR REVIEW',83,73,20,'#e0d9cb',500);label(c,'Ready when you are.',47,156,37,'#e4e5d4',500);
+  label(c,'AI prepared. Human approved.',47,202,22,'#c9c7bf');bar(c,47,244,w-94,2,'#918778');
+  roundRect(c,47,276,424,118,13,'#33363a');label(c,'The next step is yours.',72,323,24,'#f0eadf');label(c,'Review · refine · approve',72,361,17,'#c6bcaa');
+  label(c,'V E N T U R A',47,487,17,'#ebd19d',500);
  },.082);
  const badge=new THREE.Group();badge.name='Approval seal';badge.position.set(.70,-.60,.18);group.add(badge);
  const disk=mesh(badge,new THREE.CylinderGeometry(.31,.31,.075,64),emerald);disk.rotation.x=Math.PI/2;
@@ -134,7 +134,7 @@ export function makePlane(){
 
 export function makeSignal(){const group=new THREE.Group();const core=mesh(group,new THREE.SphereGeometry(.047,16,10),luminous);const halo=mesh(group,new THREE.SphereGeometry(.12,16,10),new THREE.MeshBasicMaterial({color:0xe6c782,transparent:true,opacity:.13,depthWrite:false,blending:THREE.AdditiveBlending}));return group;}
 
-export function makeConnection(points){const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p)),false,'catmullrom',.4);const geo=new THREE.TubeGeometry(curve,90,.009,5,false);const material=new THREE.MeshStandardMaterial({color:0x9b865b,metalness:.7,roughness:.47,transparent:true,opacity:0});const tube=new THREE.Mesh(geo,material);tube.name='Champagne workflow connection';return {curve,tube};}
+export function makeConnection(points){const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p)),false,'catmullrom',.4);const geo=new THREE.TubeGeometry(curve,90,.009,5,false);const material=new THREE.MeshStandardMaterial({color:0xd1b984,metalness:.7,roughness:.47,transparent:true,opacity:0});const tube=new THREE.Mesh(geo,material);tube.name='Champagne workflow connection';return {curve,tube};}
 
 export function environment(renderer){
  const env=new THREE.Scene();const room=new THREE.Mesh(new THREE.BoxGeometry(22,18,18),new THREE.MeshStandardMaterial({color:0x88857b,side:THREE.BackSide}));env.add(room);
@@ -164,7 +164,7 @@ export function makeClutterLibrary(){
 
  const attachment=new THREE.Group();attachment.name='An attachment to organise';
  slab(attachment,1.14,.47,.035,.065,ink);
- lettering(attachment,1.08,.41,(c,w,h)=>{roundRect(c,30,40,136,190,15,'#62735b');label(c,'PDF',45,154,51,'#ece9d8',500);label(c,'Project brief',201,106,37,'#d8dfcc',500);label(c,'Attachment · v2',201,170,29,'#9fae90');},.035);
+ lettering(attachment,1.08,.41,(c,w,h)=>{roundRect(c,30,40,136,190,15,'#93846c');label(c,'PDF',45,154,51,'#ece9d8',500);label(c,'Project brief',201,106,37,'#d8dfcc',500);label(c,'Attachment · v2',201,170,29,'#d1c8b8');},.035);
 
  const calendar=new THREE.Group();calendar.name='A date to remember';
  slab(calendar,.70,.82,.032,.065,paper);
@@ -174,11 +174,11 @@ export function makeClutterLibrary(){
  const trend=new THREE.Group();trend.name='Trend analysis';
  slab(trend,1.12,.79,.033,.06,ink);
  lettering(trend,1.06,.73,(c,w,h)=>{
-  label(c,'ACTIVITY / TREND',42,69,27,'#b6c4a1',500);
-  for(let y=130;y<440;y+=84)bar(c,42,y,w-84,2,'#67785e66');
+  label(c,'ACTIVITY / TREND',42,69,27,'#dad6ca',500);
+  for(let y=130;y<440;y+=84)bar(c,42,y,w-84,2,'#bab6a566');
   const pts=[[44,376],[148,310],[245,335],[345,221],[452,252],[555,166],[719,126]];
-  c.beginPath();c.moveTo(44,450);for(const [x,y] of pts)c.lineTo(x,y);c.lineTo(719,450);c.closePath();c.fillStyle='#aebe8526';c.fill();
-  c.beginPath();pts.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle='#d3bc83';c.lineWidth=9;c.lineJoin='round';c.stroke();dot(c,719,126,12,'#efe3bd');
+  c.beginPath();c.moveTo(44,450);for(const [x,y] of pts)c.lineTo(x,y);c.lineTo(719,450);c.closePath();c.fillStyle='#dfc89138';c.fill();
+  c.beginPath();pts.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle='#f0d39a';c.lineWidth=9;c.lineJoin='round';c.stroke();dot(c,719,126,12,'#efe3bd');
  },.035);
 
  const table=new THREE.Group();table.name='Spreadsheet data';
@@ -201,10 +201,10 @@ export function makeClutterLibrary(){
 
  const heatmap=new THREE.Group();heatmap.name='Pattern analysis';
  slab(heatmap,.87,.85,.035,.06,ink);
- lettering(heatmap,.81,.79,(c,w,h)=>{label(c,'PATTERNS',44,78,34,'#bbc9a7',500);const colors=['#384d39','#617b4f','#91a675','#bfb884'];for(let r=0;r<5;r++)for(let col=0;col<6;col++)roundRect(c,42+col*115,138+r*114,93,93,9,colors[(r*3+col*2+(r%2))%4]);},.037);
+ lettering(heatmap,.81,.79,(c,w,h)=>{label(c,'PATTERNS',44,78,34,'#e0ddd3',500);const colors=['#454950','#85898e','#bec2c5','#ddc48c'];for(let r=0;r<5;r++)for(let col=0;col<6;col++)roundRect(c,42+col*115,138+r*114,93,93,9,colors[(r*3+col*2+(r%2))%4]);},.037);
 
  const dataset=new THREE.Group();dataset.name='Structured data extract';
  slab(dataset,1.17,.48,.035,.045,ink);
- lettering(dataset,1.10,.42,(c,w,h)=>{label(c,'{ }',29,152,75,'#c9b47d',500);label(c,'DATASET',189,86,31,'#c7d4b6',500);label(c,'rows → fields → insights',189,157,26,'#9aad89');},.036);
+ lettering(dataset,1.10,.42,(c,w,h)=>{label(c,'{ }',29,152,75,'#c9b47d',500);label(c,'DATASET',189,86,31,'#eeece5',500);label(c,'rows → fields → insights',189,157,26,'#ccc5b7');},.036);
  return [note,message,receipt,attachment,calendar,clip,trend,table,distribution,bars,heatmap,dataset];
 }

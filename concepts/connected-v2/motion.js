@@ -33,14 +33,14 @@ function fallback(error){console.warn('Connected preview: using the accessible s
 setMode();
 
 async function build(){
- const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=3'),document.fonts.ready]);
+ const [THREE,assets]=await Promise.all([import('./vendor/three.module.min.js'),import('./assets.js?v=4'),document.fonts.ready]);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
- renderer.setClearColor(0x080a09,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+ renderer.setClearColor(0x000000,1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(36,1,.1,50);camera.position.set(0,0,12.9);
  const env=assets.environment(renderer);scene.environment=env.texture;scene.environmentIntensity=.68;
- scene.add(new THREE.HemisphereLight(0xfff8e8,0x243629,1.4));
+ scene.add(new THREE.HemisphereLight(0xfff8ef,0x303036,1.4));
  const key=new THREE.DirectionalLight(0xffefce,3);key.position.set(-3,5,7);scene.add(key);
- const fill=new THREE.DirectionalLight(0xdce9d9,1.5);fill.position.set(5,-1,4);scene.add(fill);
+ const fill=new THREE.DirectionalLight(0xf0f2f5,1.5);fill.position.set(5,-1,4);scene.add(fill);
  const rim=new THREE.DirectionalLight(0xe9c994,2);rim.position.set(2,4,-4);scene.add(rim);
  const world=new THREE.Group();scene.add(world);
  const envelope=assets.makeEnvelope(),engine=assets.makeIntelligence(),approval=assets.makeApproval(),plane=assets.makePlane(),documents=assets.makeDocuments(),analytics=assets.makeAnalytics();
@@ -72,8 +72,6 @@ async function build(){
  const cleanDestination=new THREE.Vector3();
  const arches=[[[-.58,2.02,-.27],[.65,2.26,-.55],[1.44,1.84,-.48],[1.48,1.48,-.16]],[[.89,.23,-.17],[.02,.28,-.39],[-1.48,.42,-.48],[-1.57,.03,-.23]],[[-.48,-1.02,-.27],[.73,-.96,-.5],[1.10,-1.68,-.4],[1.15,-2.00,-.10]]];
  const connections=arches.map(a=>{const line=assets.makeConnection(a);world.add(line.tube);const signal=assets.makeSignal();world.add(signal);return {...line,signal};});
- // Minimal pinpoints give depth without creating a second, distracting particle system.
- const motes=new THREE.Group();world.add(motes);for(let i=0;i<13;i++){const dot=new THREE.Mesh(new THREE.SphereGeometry(.012+(i%3)*.004,8,6),new THREE.MeshBasicMaterial({color:0xbca67c,transparent:true,opacity:.28}));dot.position.set(Math.sin(i*2.8)*3.4,Math.cos(i*1.9)*3.3,-1.5-(i%4)*.4);motes.add(dot);}
  const tmp=new THREE.Vector3();
  function placeLabel(index){const p=destination[index],offset=index===1?-.96:index===0?-1.00:index===2?-1.07:-1.05;tmp.set(p[0],p[1]+offset,p[2]).applyMatrix4(world.matrixWorld).project(camera);labels[index].style.left=`${(tmp.x*.5+.5)*visual.clientWidth}px`;labels[index].style.top=`${(-tmp.y*.5+.5)*visual.clientHeight}px`;}
  resizeScene=()=>{const w=visual.clientWidth,h=visual.clientHeight;if(!w||!h)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.7,Math.sqrt(1200000/(w*h))));renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();world.scale.setScalar(Math.min(1,camera.aspect*1.12));};
@@ -110,7 +108,6 @@ async function build(){
   for(let i=0;i<3;i++){const line=connections[i],show=between(p,.41+i*.025,.55+i*.025);line.tube.material.opacity=show*.67;line.tube.visible=show>.001;
    const a=[.52,.65,.84][i],b=[.64,.74,.96][i],signal=clamp((p-a)/(b-a));line.signal.visible=p>a&&p<b;line.signal.position.copy(line.curve.getPoint(signal));
   }
-  motes.visible=p<.65;motes.children.forEach(m=>m.material.opacity=.24*(1-between(p,.3,.65)));
   world.rotation.y=lerp(-.045,.03,alignment);world.updateMatrixWorld(true);
   labels.forEach((label,i)=>{placeLabel(i);label.style.opacity=staticMode?0:between(p,.49,.56);});
   renderer.render(scene,camera);

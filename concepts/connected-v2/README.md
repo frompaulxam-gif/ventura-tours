@@ -15,3 +15,5 @@ The meshes are built once. `motion.js` moves them along reversible, scroll-drive
 Serve the repository root with a static HTTP server and visit `/concepts/connected-v2/`. No build step is needed. Three.js 0.180.0 is pinned and served locally in `vendor/`; its MIT licence is included. Only the shared Google Fonts are fetched externally.
 
 Blender was not used or installed. Models remain procedural source meshes in `assets.js`; this is not a `.blend` or exported `.glb` asset pack.
+
+The page and canvas backgrounds are pure `#000000`, with no gradients or background particles. The model palette uses bright ivory, silver, champagne and contrasting graphite panels.
