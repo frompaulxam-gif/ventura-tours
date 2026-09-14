@@ -1,10 +1,10 @@
 /* ============================================================
    VENTURA TOURS — v2 choreography
-   Act 1 (load): letters rise on burgundy → archway opens on the
+   Act 1 (load): letters rise on charcoal → archway opens on the
      city → title Flip-docks top-centre → header arrives
    Act 2 (scroll): pinned camera tilt down to the skypool → dwell
-     → light-blue circle wipe with curved rim text → releases into
-     the sky-blue reasons section
+     → stone circle wipe with curved rim text → releases into
+     the stone reasons section
    ============================================================ */
 
 (function () {
@@ -15,6 +15,87 @@
 
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+  function markBootReady() {
+    html.dataset.venturaBoot = 'ready';
+    window.clearTimeout(window.__venturaFallbackTimer);
+  }
+
+  function focusTarget(hash) {
+    const target = hash === '#top' ? $('#top') : $(hash);
+    if (target) target.focus({ preventScroll: true });
+  }
+
+  function moveToTarget(hash, historyMode) {
+    const target = hash === '#top' ? $('#top') : $(hash);
+    if (!target) return false;
+    target.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' });
+    focusTarget(hash);
+    const nextUrl = location.pathname + location.search + hash;
+    if (historyMode === 'push' && location.hash !== hash) history.pushState(null, '', nextUrl);
+    else if (historyMode === 'replace') history.replaceState(null, '', nextUrl);
+    return true;
+  }
+
+  /* ---------- shared navigation ---------- */
+
+  function initNavigation() {
+    const header = $('#header');
+    const nav = $('#nav');
+    const toggle = $('#navToggle');
+    if (!header || !nav || !toggle) return;
+
+    function setOpen(open, returnFocus) {
+      nav.classList.toggle('is-open', open);
+      header.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      if (!open && returnFocus) toggle.focus();
+    }
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (toggle.getAttribute('aria-expanded') === 'true' && !header.contains(event.target)) {
+        setOpen(false);
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        event.preventDefault();
+        setOpen(false, true);
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) setOpen(false);
+    });
+    window.addEventListener('popstate', () => {
+      const hash = /^#(top|tour|process|contact)$/.test(location.hash) ? location.hash : '#top';
+      if (html.classList.contains('lock')) {
+        window.__venturaPendingTarget = hash;
+        window.__venturaPendingHistory = 'none';
+        return;
+      }
+      window.setTimeout(() => moveToTarget(hash, 'none'), 0);
+    });
+
+    $$('a[href^="#"]').forEach((link) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      link.addEventListener('click', (event) => {
+        setOpen(false);
+        event.preventDefault();
+        if (html.classList.contains('lock')) {
+          window.__venturaPendingTarget = hash;
+          window.__venturaPendingHistory = 'push';
+          finishIntroEarly();
+        } else {
+          moveToTarget(hash, 'push');
+        }
+      });
+    });
+  }
 
   /* ---------- split helpers ---------- */
 
@@ -49,6 +130,10 @@
   function staticInit() {
     body.classList.add('is-static');
     $('#header').classList.add('blend', 'ready');
+    if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+    const updateHeader = () => $('#header').classList.toggle('on-content', window.scrollY > 100);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
     initTourPan(true);
   }
 
@@ -59,18 +144,41 @@
     if (!pan) return;
     const img = pan.querySelector('img');
     const cue = pan.parentElement.querySelector('.tour-cue');
+    const unavailable = $('#tourUnavailable');
     let overflow = 0;
-    let x = 0;
+    let x = null;
     let auto = null;
     let idleTimer = null;
 
+    pan.tabIndex = 0;
+    pan.setAttribute('role', 'slider');
+    pan.setAttribute('aria-label', 'Panoramic view position');
+    pan.setAttribute('aria-describedby', 'tourInstructions');
+    pan.setAttribute('aria-orientation', 'horizontal');
+    pan.setAttribute('aria-valuemin', '0');
+    pan.setAttribute('aria-valuemax', '100');
+
     function measure() {
       overflow = Math.max(0, img.offsetWidth - pan.offsetWidth);
-      x = clamp(x || -overflow / 2);
+      x = clamp(x === null ? -overflow / 2 : x);
       apply();
     }
     function clamp(v) { return Math.min(0, Math.max(-overflow, v)); }
-    function apply() { img.style.transform = 'translateX(' + x + 'px)'; }
+    function apply() {
+      img.style.transform = 'translateX(' + x + 'px)';
+      const value = overflow ? Math.round((-x / overflow) * 100) : 50;
+      pan.setAttribute('aria-valuenow', String(value));
+      pan.setAttribute('aria-valuetext', value + '% across the panorama');
+    }
+
+    function markUnavailable() {
+      stopAuto();
+      pan.classList.add('is-unavailable');
+      pan.removeAttribute('tabindex');
+      pan.setAttribute('aria-disabled', 'true');
+      if (cue) cue.hidden = true;
+      if (unavailable) unavailable.hidden = false;
+    }
 
     function startAuto() {
       if (isStatic || reduced || !hasGsap || overflow === 0) return;
@@ -89,6 +197,7 @@
     let dragging = false;
     let lastX = 0;
     pan.addEventListener('pointerdown', (e) => {
+      if (!e.isPrimary || e.button !== 0 || overflow === 0) return;
       dragging = true;
       lastX = e.clientX;
       stopAuto();
@@ -97,11 +206,21 @@
       if (cue) cue.style.opacity = '0';
     });
     pan.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      const moves = {
+        ArrowLeft: 48,
+        ArrowDown: 48,
+        ArrowRight: -48,
+        ArrowUp: -48,
+        PageDown: overflow * 0.1,
+        PageUp: -overflow * 0.1
+      };
+      if (!(e.key in moves) && e.key !== 'Home' && e.key !== 'End') return;
       e.preventDefault();
       stopAuto();
       window.clearTimeout(idleTimer);
-      x = clamp(x + (e.key === 'ArrowLeft' ? 48 : -48));
+      if (e.key === 'Home') x = 0;
+      else if (e.key === 'End') x = -overflow;
+      else x = clamp(x + moves[e.key]);
       apply();
       if (cue) cue.style.opacity = '0';
     });
@@ -118,6 +237,11 @@
     };
     pan.addEventListener('pointerup', release);
     pan.addEventListener('pointercancel', release);
+    pan.addEventListener('lostpointercapture', release);
+    pan.addEventListener('focusin', stopAuto);
+    pan.addEventListener('focusout', () => {
+      idleTimer = window.setTimeout(() => maybeAuto(), 5000);
+    });
 
     // only auto-pan while the tour section is actually on screen
     let tourVisible = false;
@@ -135,24 +259,47 @@
       });
     }
 
-    if (img.complete) { measure(); maybeAuto(); }
-    else img.addEventListener('load', () => { measure(); maybeAuto(); });
+    if (img.complete) {
+      if (img.naturalWidth) { measure(); maybeAuto(); }
+      else markUnavailable();
+    } else {
+      img.addEventListener('load', () => { measure(); maybeAuto(); }, { once: true });
+      img.addEventListener('error', markUnavailable, { once: true });
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopAuto();
+      else maybeAuto();
+    });
     window.addEventListener('resize', measure);
   }
 
   /* ---------- boot ---------- */
 
-  if (!hasGsap || reduced) {
+  const header = $('#header');
+  const title = $('#title');
+  const heroMedia = $('#heroMedia');
+  const heroImg = $('#heroImg');
+
+  const markHeroUnavailable = () => {
+    heroMedia.classList.add('is-unavailable');
+    heroImg.hidden = true;
+  };
+  if (heroImg.complete && !heroImg.naturalWidth) markHeroUnavailable();
+  else heroImg.addEventListener('error', markHeroUnavailable, { once: true });
+
+  initNavigation();
+
+  if (html.classList.contains('no-js') || !hasGsap || reduced) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', staticInit);
     } else {
       staticInit();
     }
+    markBootReady();
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
-  if (window.Flip) gsap.registerPlugin(Flip);
   ScrollTrigger.config({ ignoreMobileResize: true });
 
   html.classList.add('lock');
@@ -161,22 +308,15 @@
   inertSections.forEach((s) => { s.inert = true; });
 
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  // a bfcache restore resurrects stale animation state — take a clean load
-  window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
-  // with restoration permanently manual, honour back/forward ourselves
-  window.addEventListener('popstate', () => {
-    const t = location.hash ? document.querySelector(location.hash) : null;
-    window.scrollTo({ top: t ? t.getBoundingClientRect().top + window.scrollY : 0, behavior: 'instant' });
+  // Preserve bfcache navigation and the visitor's position; only refresh
+  // ScrollTrigger's measurements after a restored page becomes visible.
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) window.setTimeout(() => ScrollTrigger.refresh(), 0);
   });
   // a section deep-link would fight the choreography — park it, honour it after
-  const deepLink = /^#(top|tour|process|contact|reasons)$/.test(location.hash) ? location.hash : null;
+  const deepLink = /^#(top|tour|process|contact)$/.test(location.hash) ? location.hash : null;
   if (deepLink) history.replaceState(null, '', location.pathname + location.search);
-  window.scrollTo(0, 0);
-
-  const header = $('#header');
-  const title = $('#title');
-  const heroMedia = $('#heroMedia');
-  const heroImg = $('#heroImg');
+  window.scrollTo({ top: 0, behavior: 'instant' });
 
   $$('.beat-line').forEach((h) => splitChars(h));
 
@@ -199,11 +339,14 @@
   /* ----- readiness gate: fonts + hero image (decode capped) ----- */
 
   let heroReady = false;
-  const readiness = [document.fonts ? document.fonts.ready : Promise.resolve()];
+  const timeout = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+  const readiness = [document.fonts
+    ? Promise.race([document.fonts.ready, timeout(1800)])
+    : Promise.resolve()];
   readiness.push(new Promise((res) => {
     const settle = () => Promise.race([
       heroImg.decode ? heroImg.decode().catch(() => {}) : Promise.resolve(),
-      new Promise((r) => window.setTimeout(r, 1500))
+      timeout(1500)
     ]).then(res);
     if (heroImg.complete) settle();
     else {
@@ -211,53 +354,67 @@
       heroImg.addEventListener('error', res, { once: true });
     }
   }));
-  Promise.all(readiness).then(() => {
+  Promise.race([Promise.all(readiness), timeout(2200)]).then(() => {
     heroReady = true;
-    if (intro.paused()) intro.play();
+    if (!introFinished && intro.paused()) intro.play();
   });
 
   /* ----- Act 1: letters rise, arch opens, title Flip-docks ----- */
 
-  function dockTitle() {
-    if (window.Flip) {
-      const state = Flip.getState(title);
-      title.classList.add('docked');
-      Flip.from(state, { duration: 1.2, ease: 'power3.inOut', scale: true });
-    } else {
-      title.classList.add('docked');
+  let introFinished = false;
+  const introInputs = new AbortController();
+
+  // One synchronous handover owns final styles, pin creation and unlock.
+  // No delayed callback can reset scroll or create a second pin later.
+  function completeIntro() {
+    if (introFinished) return;
+    introFinished = true;
+    introInputs.abort();
+    title.classList.add('docked');
+    gsap.set(title, { clearProps: 'top,width', autoAlpha: 1, x: 0, y: 0, xPercent: -50, yPercent: -50, scale: 1 });
+    gsap.set(heroMedia, { opacity: 1, clipPath: 'inset(0% 0% 0% 0% round 0vw 0vw 0vw 0vw)', clearProps: 'willChange' });
+    gsap.set(heroImg, { scale: 1 });
+    gsap.set('.arch-label', { autoAlpha: 0 });
+    gsap.set('#heroLine, #scrollCue, .hero-cta', { autoAlpha: 1 });
+    $('#hero').classList.add('is-revealed');
+    header.classList.add('blend');
+    $('#skipIntro').hidden = true;
+
+    // scrollbar-gutter reserves width; unlock and measure in this same task.
+    html.classList.remove('lock');
+    body.classList.add('intro-complete');
+    inertSections.forEach((section) => { section.inert = false; });
+    initWipe();
+    initReveals();
+    ScrollTrigger.refresh();
+    header.classList.add('ready');
+    if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+    const requestedTarget = window.__venturaPendingTarget || deepLink;
+    if (requestedTarget) {
+      const target = $(requestedTarget);
+      if (target) {
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        focusTarget(requestedTarget);
+        const mode = window.__venturaPendingHistory;
+        if (mode === 'push') history.pushState(null, '', requestedTarget);
+        else if (mode !== 'none') history.replaceState(null, '', requestedTarget);
+      }
+      window.__venturaPendingTarget = null;
+      window.__venturaPendingHistory = null;
     }
+    driftHero();
+  }
+
+  function finishIntroEarly() {
+    if (introFinished) return;
+    // Suppress timeline callbacks, including the asset pause, then settle once.
+    intro.totalProgress(1, true).pause();
+    completeIntro();
   }
 
   const intro = window.__introTl = window.__revealTl = gsap.timeline({
     defaults: { ease: 'power3.out' },
-    onComplete: () => {
-      window.scrollTo(0, 0); // guard against anything nudging scroll mid-intro
-      html.classList.remove('lock');
-      void document.body.offsetWidth; // flush layout so the returning
-      // scrollbar is accounted for before the pin measures widths
-      inertSections.forEach((s) => { s.inert = false; });
-      $('#hero').classList.add('is-revealed');
-      // the final clip stays INLINE — clearing it here caused a one-frame
-      // flash of a partially-clipped state; only the layer hint is released
-      gsap.set(heroMedia, { clearProps: 'willChange' });
-      // create the pin a few frames later, once the unlock/scrollbar layout
-      // has fully settled — pinning mid-settle snapshots stale dimensions
-      // and paints the hero at the wrong size for a frame (setTimeout, not
-      // rAF: rAF never fires in background tabs)
-      window.setTimeout(() => {
-        initWipe();
-        initReveals();
-        ScrollTrigger.refresh();
-        // pins exist before the nav becomes interactive
-        header.classList.add('ready');
-        if (deepLink) {
-          const t = $(deepLink === '#top' ? 'main' : deepLink);
-          if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY, behavior: 'instant' });
-          history.replaceState(null, '', location.pathname + location.search + deepLink);
-        }
-        driftHero();
-      }, 70);
-    }
+    onComplete: completeIntro
   });
 
   intro
@@ -287,10 +444,41 @@
       ]
     }, 'reveal+=2.2')
     .to(heroImg, { scale: 1, duration: 3.2, ease: 'power2.out' }, 'reveal+=0.6')
-    .add(dockTitle, 'reveal+=2.4')
+    .to(title, { top: narrowScreen ? '24svh' : '16.5vh', width: narrowScreen ? 'min(78vw, 360px)' : 'clamp(460px, 46vw, 860px)', duration: 1.2, ease: 'power3.inOut' }, 'reveal+=2.4')
     .add(() => header.classList.add('blend'), 'reveal+=2.55')
     .to('#heroLine', { autoAlpha: 1, duration: 0.9, ease: 'power1.out' }, 'reveal+=3.55')
     .to('#scrollCue', { autoAlpha: 1, duration: 0.8, ease: 'power1.out' }, 'reveal+=3.75');
+
+  // Keep the full choreography on small screens without delaying the main
+  // visual for several seconds on mobile connections.
+  intro.timeScale(narrowScreen ? 1.9 : 1.3);
+  const inputOptions = { signal: introInputs.signal };
+  window.addEventListener('wheel', (event) => {
+    if (event.ctrlKey || Math.abs(event.deltaY) < 2) return;
+    event.preventDefault();
+    finishIntroEarly();
+  }, { ...inputOptions, passive: false });
+  let touchY = null;
+  window.addEventListener('touchstart', (event) => {
+    touchY = event.touches[0]?.clientY;
+  }, { ...inputOptions, passive: true });
+  window.addEventListener('touchmove', (event) => {
+    if (touchY === null || Math.abs(event.touches[0].clientY - touchY) < 8) return;
+    event.preventDefault();
+    finishIntroEarly();
+  }, { ...inputOptions, passive: false });
+  window.addEventListener('keydown', (event) => {
+    if (['ArrowDown', 'PageDown', 'End', ' ', 'Escape'].includes(event.key)) {
+      event.preventDefault();
+      finishIntroEarly();
+    }
+  }, inputOptions);
+  window.addEventListener('resize', finishIntroEarly, inputOptions);
+  $('#skipIntro').addEventListener('click', () => {
+    finishIntroEarly();
+    $('#nav a').focus({ preventScroll: true });
+  }, inputOptions);
+
 
   function driftHero() {
     const drift = gsap.to(heroImg, {
@@ -358,12 +546,13 @@
       scrollTrigger: {
         trigger: '#hero',
         start: 'top top',
-        end: '+=600%', // a long, deliberate scroll — the beats should feel earned
-        scrub: 1,
+        end: () => '+=' + stageHeight() * (window.innerWidth < 760 ? 3.8 : 4.6),
+        scrub: 0.55,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        onToggle: (t) => { circle.style.willChange = t.isActive ? 'clip-path' : 'auto'; }
+        onToggle: (t) => { circle.style.willChange = t.isActive ? 'clip-path' : 'auto'; },
+        onUpdate: (t) => { header.classList.toggle('on-content', t.progress > 0.38); }
       }
     });
 
@@ -374,10 +563,10 @@
       // exact 42/142 of the box height: anything less leaves a rounding
       // gap of background at the bottom edge when the tilt completes
       .to('#heroPan', { yPercent: -(4200 / 142), ease: 'none', duration: 6 }, 0)
-      .to('#heroLine', { autoAlpha: 0, duration: 0.5 }, 0.15)
+      .to('#heroLine, .hero-cta', { autoAlpha: 0, duration: 0.5 }, 0.15)
       // dwell on the pool — the firmest stop, heavier than the tilt
       .to({}, { duration: 3.2 })
-      // blue circle floods up, curved text riding its rim
+      // stone circle floods up, curved text riding its rim
       .to(proxy, {
         p: 150,
         duration: 4.5,
@@ -387,14 +576,14 @@
           drawArc(proxy.p);
         }
       }, 9.2)
-      // the big logo drifts up and fades as the blue floods over,
+      // the big logo drifts up and fades as the stone floods over,
       // and the small header brand takes over
       .to(title, { autoAlpha: 0, y: -50, duration: 0.8, ease: 'power1.in' }, 9.3)
       .to('#headerBrand', { autoAlpha: 1, duration: 0.5 }, 9.9)
       .to({}, { duration: 0.8 }); // settle before unpin
 
     // "See every angle" rolls in as the reasons header enters the viewport
-    // ---- slide one climbs up INTO the blue as the circle rises, then the
+    // ---- slide one climbs up INTO the stone as the circle rises, then the
     // whole composition HOLDS so it reads without scrolling ----
     tl.fromTo('.rise-centre', { y: 120, autoAlpha: 0 },
         { y: 0, autoAlpha: 1, duration: 1.5, ease: 'none' }, 10.5)
@@ -466,4 +655,6 @@
   }
 
   initTourPan(false);
+  markBootReady();
+  if (deepLink) finishIntroEarly();
 })();
