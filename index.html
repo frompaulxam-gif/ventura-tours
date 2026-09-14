@@ -15,8 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1">
-  <script src="js/main.js?v=1" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <script src="js/main.js?v=3" defer></script>
+  <script type="module" src="js/journey.js?v=3"></script>
 </head>
 <body>
   <a class="skip-link" href="#services">Skip to services</a>
@@ -29,34 +30,32 @@
     </nav>
   </header>
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-topline"><span>Independent AI consultancy</span><span>Leicester · Working across the UK</span></div>
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Clarity. Capability. Progress.</p>
-          <h1 id="hero-title">Less busywork.<br>More <em>possibility.</em></h1>
-          <p class="hero-description">We help businesses turn AI into useful, everyday work. From understanding the opportunity to building the workflows that make it happen.</p>
-          <div class="hero-actions"><a class="button" href="#contact">Find your starting point <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#services">Explore what we do</a></div>
+    <section class="journey" id="journey" aria-labelledby="hero-title">
+      <div class="journey-stage">
+        <div class="journey-scene" aria-hidden="true">
+          <img class="journey-poster" src="assets/passage.svg" alt="" width="1600" height="1000" fetchpriority="high">
+          <canvas id="journey-canvas"></canvas>
         </div>
-        <div class="signal" aria-label="An animated diagram of information flowing through a connected system into action" role="img">
-          <div class="signal-caption"><span>Connected thinking</span><span>01 / ∞</span></div>
-          <svg class="signal-svg" viewBox="0 0 600 650" aria-hidden="true">
-            <defs><linearGradient id="signal-stroke" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e5dfd2" stop-opacity=".85"/><stop offset="1" stop-color="#b49d75" stop-opacity=".05"/></linearGradient><linearGradient id="pulse-stroke"><stop stop-color="#e5dfd2" stop-opacity="0"/><stop offset=".6" stop-color="#e5dfd2"/><stop offset="1" stop-color="#b49d75"/></linearGradient></defs>
-            <g class="arch-lines" fill="none" stroke="url(#signal-stroke)">
-              <path d="M70 600V290a230 230 0 0 1 460 0v310"/><path d="M86 600V290a214 214 0 0 1 428 0v310"/><path d="M102 600V290a198 198 0 0 1 396 0v310"/><path d="M118 600V290a182 182 0 0 1 364 0v310"/><path d="M134 600V290a166 166 0 0 1 332 0v310"/><path d="M150 600V290a150 150 0 0 1 300 0v310"/><path d="M166 600V290a134 134 0 0 1 268 0v310"/><path d="M182 600V290a118 118 0 0 1 236 0v310"/>
-            </g>
-            <g fill="none" stroke="#5d6158" stroke-width="1"><path d="M0 420H224Q250 420 250 390V330Q250 304 275 304H300"/><path d="M0 490H203Q230 490 230 465V365Q230 340 255 340H300"/><path d="M300 322H360Q386 322 386 348V380Q386 406 412 406H600"/><path d="M300 358H330Q358 358 358 387V458Q358 485 387 485H600"/></g>
-            <g class="signal-pulses" fill="none" stroke="url(#pulse-stroke)" stroke-width="2"><path d="M0 420H224Q250 420 250 390V330Q250 304 275 304H300"/><path d="M0 490H203Q230 490 230 465V365Q230 340 255 340H300"/><path d="M300 322H360Q386 322 386 348V380Q386 406 412 406H600"/><path d="M300 358H330Q358 358 358 387V458Q358 485 387 485H600"/></g>
-            <circle cx="300" cy="331" r="56" fill="#10120f" stroke="#8e8e7e"/>
-            <circle class="core-ring" cx="300" cy="331" r="66" fill="none" stroke="#b49d75" stroke-dasharray="2 10"/>
-            <path d="M278 314l22 39 22-39M289 314l11 20 11-20" fill="none" stroke="#eee9de" stroke-width="2"/>
-            <g fill="#ddd8ca"><circle cx="70" cy="420" r="3"/><circle cx="118" cy="490" r="3"/><circle cx="482" cy="406" r="3"/><circle cx="530" cy="485" r="3"/></g>
-          </svg>
-          <div class="signal-label label-input">Information</div><div class="signal-label label-output">Action</div>
-          <div class="signal-base"><span>Human direction.</span><span>Intelligent systems.</span></div>
+        <div class="journey-shade" aria-hidden="true"></div>
+        <div class="journey-topline"><span>AI consultancy &amp; automation</span><span>Leicester · Across the UK</span></div>
+        <div class="journey-intro" id="journey-intro">
+          <p class="eyebrow">A clearer way forward.</p>
+          <h1 id="hero-title">Make room<br>for <em>better work.</em></h1>
+          <p class="hero-description">Practical AI for the way your business works. We find the opportunities, connect your tools and help your team move forward.</p>
+          <div class="hero-actions"><a class="button" href="#contact">Let’s find your starting point <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#services">What we do</a></div>
         </div>
+        <div class="journey-chapter" id="journey-chapter" aria-hidden="true">
+          <p class="eyebrow" id="journey-number">01 / Understand</p>
+          <h2 id="journey-title">See what’s<br><em>possible.</em></h2>
+          <p id="journey-description">Find the work worth changing.</p>
+        </div>
+        <div class="journey-bottom">
+          <a class="journey-skip" href="#services">Explore our services <span aria-hidden="true">↘</span></a>
+          <span class="journey-cue">Scroll to move forward <span aria-hidden="true">↓</span></span>
+          <button class="motion-toggle" type="button" aria-pressed="false">Reduce motion <span aria-hidden="true">Ⅱ</span></button>
+        </div>
+        <div class="journey-progress" aria-hidden="true"><span></span></div>
       </div>
-      <div class="hero-bottom"><a href="#services">Scroll to explore <span aria-hidden="true">↓</span></a><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button><span>Built around your business.</span></div>
     </section>
     <section class="services section" id="services" aria-labelledby="services-title">
       <div class="section-heading" data-reveal><p class="eyebrow">01 / What we do</p><h2 id="services-title">Good technology.<br><em>Less friction.</em></h2><p>There’s a gap between trying an AI tool and making it useful to a business. We work with you to close it.</p></div>

@@ -10,7 +10,7 @@
   document.addEventListener('click', event => {if(!event.target.closest('.header')) setMenu(false);});
   window.addEventListener('resize', () => {if(innerWidth>760) setMenu(false);});
   const motion = document.querySelector('.motion-toggle');
-  motion.addEventListener('click', () => {const paused=body.classList.toggle('motion-paused');motion.setAttribute('aria-pressed',String(paused));motion.innerHTML=paused?'Resume motion <span aria-hidden="true">▷</span>':'Pause motion <span aria-hidden="true">Ⅱ</span>';});
+  motion.addEventListener('click', () => {const paused=body.classList.toggle('motion-paused');motion.setAttribute('aria-pressed',String(paused));motion.innerHTML=paused?'Enable motion <span aria-hidden="true">▷</span>':'Reduce motion <span aria-hidden="true">Ⅱ</span>';document.dispatchEvent(new CustomEvent('ventura:motion', {detail:{paused}}));});
   document.addEventListener('visibilitychange',()=>body.classList.toggle('page-hidden',document.hidden));
   const cases = {
     enquiries: {title:'From an incoming enquiry to a considered reply.', description:'Organise the details, prepare a helpful response and give your team a clear next step.', nodes:[['Enquiry arrives','Email or website form'],['AI organises','Extract and summarise'],['Your team reviews','Check, edit and approve'],['Next step is ready','Reply and record the task']]},
