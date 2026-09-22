@@ -1,0 +1,1 @@
+const STORE="https://textdb.dev/api/data/qc-59d74b071058d17f91be118a";
