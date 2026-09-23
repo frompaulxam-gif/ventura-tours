@@ -1,0 +1,22 @@
+To: hello@housematehunter.co.uk
+Subject: A website demo for Housemate Hunter
+
+Hi Jack,
+
+I've built a short demo showing how a few useful features could sit within Housemate Hunter's website.
+
+Try changing a group's budget, area and move date. The sample homes change, and the viewing enquiry carries those details through. You can also try a landlord enquiry, a repair report and suggested answers to common questions.
+
+After a form, open “View sample team brief” to see the details and follow ups your team would receive.
+
+Try it here:
+https://venturasolutions.co.uk/property-demos/housemate-hunter/
+
+I saw that you already have digital tenancy tools. These ideas would support the enquiry work around them. The demo uses fictional properties and sample rules, with no connection to your systems.
+
+I'd be happy to offer a free audit of one workflow, then choose a small pilot based on enquiry quality and the time your team spends following up. Would a quick walkthrough be useful?
+
+Thanks,
+Paul
+Ventura Solutions
+https://venturasolutions.co.uk/
