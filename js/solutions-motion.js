@@ -7,8 +7,8 @@ const clamp=n=>Math.max(0,Math.min(1,n)),ease=n=>{n=clamp(n);return n*n*n*(n*(n*
 let progress=0,target=0,distance=1,start=0,paused=false,failed=false,visible=true,raf=0,last=0,render=null,resizeScene=null;
 const isStatic=()=>paused||reduced.matches||short.matches||failed;
 function measure(){start=journey.getBoundingClientRect().top+scrollY;distance=Math.max(1,journey.offsetHeight-stage.offsetHeight);target=isStatic()?1:clamp((scrollY-start)/distance)}
-const heroWords=[...document.querySelectorAll('#title .word')];
-function paint(p){heroWords.forEach((word,i)=>{const t=range(p,.43+i*.017,.60+i*.017);word.style.transform=`translateY(${125*(1-t)}%)`;word.style.opacity=t;});const intro=1-range(p,.04,.19),reveal=range(p,.46,.64);$('.opening').style.opacity=intro;$('.opening').style.visibility=intro>.001?'visible':'hidden';$('#reveal').style.opacity=reveal;$('#reveal').style.visibility=reveal>.001?'visible':'hidden';$('#reveal').inert=reveal<.1;$('#reveal').style.transform=`translateY(${22*(1-reveal)}px)`;$('#progress').style.transform=`scaleX(${p})`;$('.scroll-note').textContent=p>.72?'Information → AI → Approval → Action':'Scroll to connect your work ↓'}
+// Service copy remains visible from the first frame; scroll only connects the artwork.
+function paint(p){$('#progress').style.transform=`scaleX(${p})`;$('.scroll-note').textContent=p>.72?'Connected. Ready for the next step.':'Scroll to connect the work ↓'}
 function request(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(tick)}
 function tick(now){raf=0;if(!visible||document.hidden)return;const dt=last?Math.min(50,now-last):16;last=now;progress+=(target-progress)*(1-Math.exp(-dt/95));if(Math.abs(target-progress)<.00008)progress=target;paint(progress);render?.(progress);if(progress!==target)request()}
 function mode(){const oldHeight=journey.offsetHeight,oldY=scrollY;document.body.classList.toggle('static',isStatic());if(isStatic()&&oldY>start)scrollTo({top:oldY>=start+oldHeight?oldY+journey.offsetHeight-oldHeight:start,behavior:'instant'});measure();progress=target;paint(progress);resizeScene?.();request()}
@@ -20,7 +20,7 @@ document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(raf);raf=
 new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible){measure();progress=target;last=0;request()}else{cancelAnimationFrame(raf);raf=0}}).observe(journey);
 function fallback(error){console.warn('Signal Studio: showing the still layout.',error);failed=true;render=null;document.body.classList.add('no-canvas');mode()}
 async function build(){
- const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setClearColor(0x211c2b,1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+ const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setClearColor(0x000000,1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,60);camera.position.set(0,0,12);
  const env=environment(renderer);scene.environment=env.texture;scene.environmentIntensity=.8;
  scene.add(new THREE.HemisphereLight(0xfff7e4,0x333744,1.2));
@@ -40,8 +40,8 @@ async function build(){
  const fragmentTypes=['Message','Task','ChartTile'];
  const fragmentLayout=[[-3.4,-.05,.1,.57,.2],[3.2,.05,-.6,.67,-.18],[-.75,2.85,-.4,.6,.15],[1.2,3.15,-.6,.56,-.21],[-3.45,2.8,-1,.54,.16],[3.65,2.8,-.9,.57,.22],[-3.4,-2.95,-1,.59,-.22],[3.2,-3.05,-.8,.63,.18],[-.65,-3.15,-1,.54,.22],[.25,1.85,.2,.5,-.2],[1.0,-1.1,-.6,.45,.3],[3.5,-.85,-1,.42,-.1]];
  const fragments=fragmentLayout.map(([x,y,z,size,angle],i)=>{const template=gltf.scene.getObjectByName(fragmentTypes[i%3]);if(!template)throw Error('Missing detail asset');const model=template.clone(true);model.traverse(patchInk);world.add(model);return{model,from:V([x,y,z]),rotation:Q([.08,.16*Math.sin(i),angle]),size}});
- const wireMaterial=new THREE.MeshStandardMaterial({color:0xd8eca3,metalness:.5,roughness:.42,transparent:true});
- const pulseMaterial=new THREE.MeshBasicMaterial({color:0xe7f5c7});
+ const wireMaterial=new THREE.MeshStandardMaterial({color:0xd1be8a,metalness:.5,roughness:.42,transparent:true});
+ const pulseMaterial=new THREE.MeshBasicMaterial({color:0xf3e6be});
  const wires=[];
  const pulseGeo=new THREE.SphereGeometry(.052,16,10);
  let fit=1;const viewHeight=2*Math.tan(35*Math.PI/360)*12;
