@@ -1,0 +1,33 @@
+/* Targeted refinements on the original page, following the screenshot feedback. */
+:root{--control-font:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.button,.case-tabs button,.demo-button,.copy-button,.contact-layout label{font-family:var(--control-font);font-weight:700}
+body .button,body .header .button.small,body .hero .actions>.button.secondary,body .offer-footer .button{border-radius:5px;padding:15px 22px;min-height:54px;gap:26px;box-shadow:none;letter-spacing:.02em;font-size:12px;text-transform:uppercase}
+body .button>span:last-child,body .header .button.small>span,body .hero .button>span:last-child,body .hero .actions>.button.secondary>span,body .contact-layout .button>span{background:none;color:inherit;border-radius:0;width:21px;height:21px;font-size:23px;box-shadow:none;animation:none;line-height:1;transition:transform .3s ease}
+body .hero .actions>.button.secondary>span:after{display:none}
+body .hero .actions>.button.secondary{background:#0c302159;border:1px solid #c5d2b77a}
+body .button:hover{transform:translateY(-1px);box-shadow:none}
+body .button:hover>span:last-child,body .hero .actions>.button.secondary:hover>span{transform:translate(2px,-2px);background:none}
+body .header .button.small{min-height:43px;padding:10px 15px;font-size:11px;gap:20px}
+body .case-tabs button{font-family:var(--control-font);font-weight:700;border-radius:5px;font-size:13px;padding:13px 22px;letter-spacing:0}
+body .demo-button,body .copy-button{border-radius:4px}
+body .contact-layout label{font-size:12px;letter-spacing:.055em;text-transform:uppercase}
+body .contact-layout .button{justify-content:space-between;padding-inline:21px;min-height:54px}
+body .contact-layout input,body .contact-layout textarea{border-radius:4px;font-family:var(--control-font)}
+.node-icon svg{width:18px;height:18px}.request .avatar svg{width:21px;height:21px}
+.review-visual{padding:35px 35px 22px!important;min-height:270px!important}
+.approval-sheet{background:#fff;border:1px solid #d6e1d1;border-radius:8px;width:100%;max-width:340px;padding:19px 21px;color:#294b35;font-size:12px}
+.approval-top{display:flex;align-items:center;gap:7px;font-size:10px;border-bottom:1px solid #e1e8dc;padding-bottom:14px;margin-bottom:17px}.approval-top>span:last-child{margin-left:auto;font-size:9px;color:#5b7059}.approval-sheet>strong{font-size:14px;font-weight:600}.approval-sheet>p{font-size:12px;line-height:1.8;color:#5d715c;margin:10px 0 17px}.approval-detail{display:flex;justify-content:space-between;gap:10px;background:#f0f4e9;padding:10px 11px;font-size:10px}.approval-detail b{font-weight:500}.approval-handoff{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e1e8dc;margin-top:16px;padding-top:13px;font-size:10px}.approval-handoff>span:last-child{font-size:18px}
+body:not([data-background=silk]) .hero-wash:before{background-image:linear-gradient(#00140e10,#00150c26),url('../assets/ventura-green-pattern-fine.png');animation:fine-texture-drift 28s ease-in-out infinite alternate}
+body:not([data-background=silk]) .offer-atmosphere,body:not([data-background=silk]) .contact-section{background-image:linear-gradient(#00170e24,#00170e24),url('../assets/ventura-green-pattern-fine.png')!important}
+body:not([data-background=silk]) .inline-brand{background-image:url('../assets/ventura-green-pattern-fine.png')}
+@keyframes fine-texture-drift{from{transform:translate3d(-.6%,-.3%,0) scale(1.01)}to{transform:translate3d(.7%,.5%,0) scale(1.035)}}
+@media(max-width:760px){body .hero .actions{gap:12px}body .hero .actions>.button{font-size:11px;padding:14px 17px;gap:19px}body .case-tabs button{font-size:12px;padding:12px 16px;min-height:43px}.review-visual{padding:25px 22px 20px!important}.approval-sheet{padding:17px}.contact-layout label{font-size:11px!important}}
+@media(prefers-reduced-motion:reduce){body:not([data-background=silk]) .hero-wash:before{animation:none!important}}
+body[data-reduced=true] .hero-wash:before{animation:none!important}
+body .case-tabs button[aria-selected]{font-weight:700}
+body .hero .actions>.button.secondary>span{overflow:visible;line-height:1;height:26px}
+
+.full-width-flow{position:relative;width:100%;height:clamp(420px,46vw,680px);overflow:hidden;background:#f4f5f1;margin:25px 0 35px;isolation:isolate}
+.full-width-flow img,.full-width-flow .flow-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block}
+.full-width-flow .flow-canvas{opacity:0;transition:opacity .5s}
+.full-width-flow .flow-canvas[data-ready=true]{opacity:1}
