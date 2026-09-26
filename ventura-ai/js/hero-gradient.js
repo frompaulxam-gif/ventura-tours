@@ -32,9 +32,12 @@
     }
   };
 
+  PALETTES.blue={base:'#010724',fields:[['#094de5',.08,.10,.50,.95,1],['#08296f',.50,.30,.52,.90,1],['#00071f',.86,.55,.50,.95,1],['#006bca',.52,1.08,.36,.85,.5],['#5b61ce',.01,1.02,.30,.8,.4],['#08b4df',.98,.10,.28,.65,1]]};
+  PALETTES.warm={base:'#111a2c',fields:[['#264c82',.08,.1,.5,.7,1],['#132c50',.5,.3,.52,.9,1],['#111824',.86,.55,.5,.95,1],['#426589',.52,1.08,.36,.7,.5],['#d88b51',.01,1.02,.3,.8,.4],['#2e5478',.98,.1,.28,.45,1]]};
   const body = document.body;
-  const wash = document.querySelector('.hero-wash');
-  const palette = PALETTES[body.dataset.gradient];
+  // Share the exact hero texture and movement with the lower sweep.
+  document.querySelectorAll('.hero-wash').forEach(wash => {
+  let palette = PALETTES[body.dataset.gradient];
   if (!wash || !palette) return;
 
   const canvas = document.createElement('canvas');
@@ -232,6 +235,8 @@ void main(){
   document.addEventListener('visibilitychange', update);
   reduceQuery.addEventListener('change', update);
   new ResizeObserver(() => { if (!running) draw(); }).observe(canvas);
+  window.addEventListener('ventura-theme-change',()=>{palette=PALETTES[body.dataset.gradient]||PALETTES.green;gl.uniform3fv(u('uBase'),toLinear(palette.base));gl.uniform3fv(u('uCol'),palette.fields.flatMap(f=>toLinear(f[0])));gl.uniform4fv(u('uField'),palette.fields.flatMap(f=>[f[1],f[2],f[3],f[4]]));gl.uniform1fv(u('uDrift'),palette.fields.map(f=>f[5]===undefined?1:f[5]));draw();});
   draw();
   update();
+  });
 })();

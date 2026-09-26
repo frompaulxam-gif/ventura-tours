@@ -1,0 +1,9 @@
+/* Figures replace the old corner labels; card dimensions and artwork stay intact. */
+.art-section .card-stat{position:absolute;top:8cqw;left:7.6cqw;right:7.6cqw;z-index:2;color:#fff;pointer-events:none}
+.art-section .card-stat-value{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(40px,22cqw,74px);line-height:1;letter-spacing:-.055em;font-variant-numeric:tabular-nums;text-shadow:0 2px 16px #0004}
+.art-section .card-stat-caption{display:block;margin-top:9px;max-width:23ch;font:700 clamp(11px,4cqw,13px)/1.35 'Helvetica Neue',Helvetica,Arial,sans-serif;text-shadow:0 1px 8px #0008}
+
+.art-section .figure-assumptions{margin:22px 0 0;border:0;color:#5d6878;font:400 12px/1.6 'Helvetica Neue',Helvetica,Arial,sans-serif}
+.art-section .figure-assumptions summary{display:list-item;width:fit-content;cursor:pointer;font-weight:500;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+.art-section .figure-assumptions summary:focus-visible{outline:2px solid #376a95;outline-offset:4px}
+.art-section .figure-assumptions p{max-width:85ch;margin:12px 0 0}

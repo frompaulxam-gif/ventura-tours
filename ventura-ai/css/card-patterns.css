@@ -1,0 +1,14 @@
+/* Four original patterns, one shared palette. */
+.benefit-card{--pattern-bright:#bce8c8;--pattern-mid:#44946f;background:#10291e}
+.benefit-art{overflow:hidden}.pattern-move{position:absolute;inset:0;transform-origin:50% 32%;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;animation-direction:alternate;animation-play-state:paused}
+.pattern-move svg{width:100%;height:100%;display:block}.benefit-card[data-visible="true"] .pattern-move,.benefit-card[data-visible="true"] .stack-sheet{animation-play-state:running}
+.pattern-arc{animation-name:card-arc-drift}.pattern-wave{animation-name:card-wave-drift}.pattern-stack{animation-name:card-stack-drift}.pattern-dots{animation-name:card-dots-drift}
+.stack-sheet{animation:card-sheet-drift 6s ease-in-out infinite alternate;animation-delay:calc(var(--sheet)*-.8s);animation-play-state:paused}
+.benefit-card:after{background:linear-gradient(180deg,#10291ef5 0%,#10291e66 12%,transparent 25%,#10291e44 43%,#10291ef5 69%)}
+@keyframes card-arc-drift{from{transform:translate(-2%,1%) rotate(-7deg)}to{transform:translate(3%,-2%) rotate(7deg)}}
+@keyframes card-wave-drift{from{transform:translate(-4%,2%) scale(1.04)}to{transform:translate(4%,-3%) scale(1.08)}}
+@keyframes card-stack-drift{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-8px) rotate(3deg)}}
+@keyframes card-sheet-drift{to{transform:translateY(-10px)}}
+@keyframes card-dots-drift{from{transform:rotate(-4deg) scale(.99)}to{transform:rotate(6deg) scale(1.07)}}
+body[data-offscreen=true] .pattern-move,body[data-offscreen=true] .stack-sheet{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.pattern-move,.stack-sheet{animation:none!important}}

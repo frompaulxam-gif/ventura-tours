@@ -73,10 +73,14 @@
     e.preventDefault();
     const business = form.elements.business.value.trim(), task = form.elements.task.value.trim();
     if (!business || !task) { (!business ? form.elements.business : form.elements.task).focus(); return; }
-    draft = `Hi Ventura,\n\nI'd like to talk about making a task simpler.\n\nOur business: ${business}\n\nThe task: ${task}\n\nCould we arrange a conversation?`;
+    const name = form.elements.contactName.value.trim();
+    const email = form.elements.email.value.trim();
+    const phone = form.elements.phone.value.trim();
+    if (!name) { form.elements.contactName.focus(); return; }
+    draft = `Hi Ventura,\n\nI'd like a free conversation about ${task.toLowerCase()}.\n\nName: ${name}\nBusiness: ${business}\nEmail: ${email}\nUK phone: ${phone || 'Email preferred'}\n\nCould we discuss where AI could help?`;
     document.getElementById('email-fallback').hidden = false;
     text('copy-status', '');
-    window.location.href = `mailto:hello@venturasolutions.co.uk?subject=${encodeURIComponent('A simpler way to handle our admin')}&body=${encodeURIComponent(draft)}`;
+    window.location.href = `mailto:hello@venturasolutions.co.uk?subject=${encodeURIComponent('Ventura enquiry — ' + task)}&body=${encodeURIComponent(draft)}`;
   });
   document.getElementById('copy-enquiry').addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(draft); text('copy-status', 'Copied. Paste it into your email when you’re ready.'); }

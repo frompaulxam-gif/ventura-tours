@@ -1,0 +1,72 @@
+/* Preserve the original website composition; the original blue hero with the approved orange artwork. */
+:root{--paper:#fbfcfd;--ink:#20283a;--muted:#5d6878;--line:#dce4ec;--accent:#376a95;--green:#376a95;--display:'Cormorant Garamond',Georgia,serif}
+html body{background:var(--paper);color:var(--ink)}
+html body[data-gradient=blue] .hero-wash{background:radial-gradient(ellipse at 8% 95%,#b1764e,transparent 48%),radial-gradient(ellipse at 85% 5%,#31577c,transparent 55%),#111a2c!important}
+html body .hero-grain{opacity:.06;mix-blend-mode:soft-light}
+html body .sweep-edge path{fill:var(--paper)}
+html body .task-marquee{background:var(--paper);color:#5d6878;border-color:var(--line)}
+html body .task-marquee b{color:#5089ba}
+html body .processing-bridge{color:#5d6878}
+html body .processing-ring i{background:#5089ba}
+html body .orb-demo{background:var(--paper)}
+html body .orb-mist{background:radial-gradient(ellipse at 20% 20%,#ffe1bd,transparent 50%),radial-gradient(ellipse at 80% 80%,#325f97,transparent 60%),conic-gradient(#c98958,#f3dbc0,#234c7d,#8aabc6,#c98958)!important}
+html body .orb-status,html body .demo-intro>p{color:#5d6878}
+html body .demo-intro h2{color:var(--ink)}
+html body .case-tabs button{background:#eaf0f6;color:var(--ink)}
+html body .case-tabs button[aria-selected=true]{background:#20283a;color:#fff}
+html body .example-audit .button,html body .offer-card .button,html body .contact-section .button{background:#20283a!important;color:#fff!important;border-color:#20283a!important}
+html body .art-section{padding:90px 0 105px;background:var(--paper);width:min(1328px,calc(100% - 64px));margin:auto}
+.art-section .heading{text-align:center;margin:0 0 48px}
+.art-section .heading h2{font-family:var(--display);font-size:68px;font-weight:500;line-height:1.02;letter-spacing:-.025em;color:var(--ink);margin:0 0 24px}
+.art-section .heading>p{font:400 17px/1.6 Archivo,Arial,sans-serif;color:#5d6878}
+.art-section .art-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.art-section .card-copy h2{font-family:'Helvetica Neue',Archivo,Arial,sans-serif;color:#fff;font-size:clamp(30px,3.4vw,49px);line-height:1.04;font-weight:500}
+.art-section .card-copy p{color:#e2e8f1}
+.art-section .card-label{color:#fff;line-height:1.3}
+.art-section .card-copy a{color:#f5c28d}
+html body .offer-section{background:#edf2f7;color:var(--ink);border-color:var(--line)}
+html body .offer-atmosphere{display:none}
+html body .offer-heading h2,html body .offer-heading h2 span,html body .offer-section h3{color:var(--ink)}
+html body .offer-heading>p{color:#5d6878;font-size:17px;max-width:620px;margin-inline:auto}
+html body .offer-card{background:#fff;color:var(--ink);border-color:#dce4ec;box-shadow:none}
+html body .offer-card p,html body .offer-card li{color:#596574}
+html body .offer-card .pill{background:#e4edf6;color:#315c85}
+html body .offer-card strong{color:var(--ink)}
+html body .process,html body .faq-section,html body .footer{color:var(--ink)}
+html body .process h2,html body .faq-section h2{color:var(--ink)}
+html body .process p,html body .faq-section p{color:#5d6878}
+html body .step-number{background:#e5edf5;color:#315c85}
+html body .faqs details{border-color:var(--line)}
+html body .faqs summary{color:var(--ink)}
+html body .contact-section{background:#ecf2f7;color:var(--ink)}
+html body .contact-section::before,html body .contact-section::after{display:none}
+html body .contact-section h2,html body .contact-section label{color:var(--ink)}
+html body .contact-section p,html body .contact-section .eyebrow{color:#5d6878}
+html body .contact-section input,html body .contact-section textarea{background:#fbfcfd;color:var(--ink);border-color:#bccbd9}
+html body .contact-section input::placeholder,html body .contact-section textarea::placeholder{color:#5d6878}
+html body .footer .brand{color:var(--ink)}
+html body .demo-main{background:#fff}
+html body .demo-top,html body .system-result{background:#eaf0f6}
+html body .progress .active{color:#315c85}
+html body .floating-demo{background:#fbfcfd;border-color:#dce4ec;color:var(--ink)}
+html body .header{height:90px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html body[data-surface=immersive] .offer-heading p,html body[data-surface=immersive] .support-offer p,html body[data-surface=immersive] .offer-summary,html body[data-surface=immersive] .offer-footer p{color:#5d6878!important}
+html body[data-surface=immersive] .offer-heading h2,html body[data-surface=immersive] .offer-heading h2 span{color:#20283a!important}
+html body[data-surface=immersive] .support-offer .checklist li::before,html body .checklist li::before{color:#376a95!important}
+html body[data-surface=immersive] .support-offer{padding:32px!important;border:1px solid #dce4ec!important}
+html body .hero .eyebrow .dot{background:#a5d8f5}
+html body .hero .button:not(.secondary),html body .header .button{color:#20283a}
+html body .marquee-track span{color:#5d6878}
+html body[data-surface=immersive][data-gradient=blue] .contact-section{background:#ecf2f7!important;background-image:none!important;color:#20283a!important}
+html body[data-surface=immersive][data-gradient=blue] .contact-section::before,html body[data-surface=immersive][data-gradient=blue] .contact-section::after{display:none!important}
+html body[data-surface=immersive][data-gradient=blue] .contact-section h2,html body[data-surface=immersive][data-gradient=blue] .contact-section label{color:#20283a!important}
+html body[data-surface=immersive][data-gradient=blue] .contact-section p{color:#5d6878!important}
+
+/* Restored verbatim from the requested round05 blue colourway. */
+html body[data-gradient=blue] .hero-wash{background:radial-gradient(ellipse at 5% 100%,#2362be,transparent 55%),#030c26!important}
+html body[data-theme=blue] .hero-grain{opacity:.48;mix-blend-mode:screen;background:radial-gradient(circle,#29bfff90 1.7px,transparent 2.5px);background-size:12px 12px;mask-image:radial-gradient(ellipse at 97% 3%,#000,transparent 43%),radial-gradient(ellipse at 0% 100%,#000,transparent 35%)}
+html body[data-theme=blue] .orb-mist{background:radial-gradient(ellipse at 20% 20%,#b0e9f9,transparent 50%),radial-gradient(ellipse at 80% 80%,#256bd2,transparent 60%),conic-gradient(#0445a4,#36becf,#092675,#8d9adb,#0445a4)!important}
+
+/* Match the navigation to the approved bold control typography. */
+html body .header nav a{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700}
