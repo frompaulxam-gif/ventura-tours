@@ -1,2 +1,6 @@
 /* Keep example information out of the layout until a task is activated. */
 #example-detail[hidden] { display: none !important; }
+
+.orb-demo .case-tabs { margin-bottom: 24px; }
+.example-audit { display: flex; justify-content: center; margin-bottom: 35px; }
+html body .example-audit .button { min-height: 44px; height: auto; padding: 14px 22px; font-size: 14px; }
