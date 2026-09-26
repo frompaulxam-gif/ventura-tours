@@ -5,28 +5,29 @@
 (() => {
   'use strict';
 
-  // Each field: [colour, x, y, radius, strength]. x and y run 0 to 1 across the hero, y from the top.
+  // Each field: [colour, x, y, radius, strength, drift]. x and y run 0 to 1 across the hero, y from the top.
+  // drift scales how far a field wanders; the bright accents stay low so they never sit behind the text.
   const PALETTES = {
     green: {
       base: '#020d08',
       fields: [
-        ['#0c9460', 0.08, 0.10, 0.50, 0.95],
-        ['#06573a', 0.50, 0.30, 0.52, 0.90],
-        ['#010b06', 0.86, 0.55, 0.50, 0.95],
-        ['#14a070', 0.52, 0.94, 0.42, 0.85],
-        ['#c4d17e', 0.03, 0.96, 0.36, 0.88],
-        ['#3fae7c', 0.98, 0.10, 0.28, 0.45]
+        ['#0c9460', 0.08, 0.10, 0.50, 0.95, 1],
+        ['#06573a', 0.50, 0.30, 0.52, 0.90, 1],
+        ['#010b06', 0.86, 0.55, 0.50, 0.95, 1],
+        ['#14a070', 0.52, 1.08, 0.36, 0.85, 0.5],
+        ['#c4d17e', 0.01, 1.02, 0.30, 0.80, 0.4],
+        ['#3fae7c', 0.98, 0.10, 0.28, 0.45, 1]
       ]
     },
     retell: {
       base: '#010833',
       fields: [
-        ['#1a7fe6', 0.07, 0.12, 0.50, 0.95],
-        ['#0a3fc0', 0.50, 0.30, 0.54, 0.92],
-        ['#010a3d', 0.86, 0.56, 0.50, 0.95],
-        ['#177f76', 0.52, 0.95, 0.42, 0.85],
-        ['#c47ab2', 0.04, 1.04, 0.36, 0.90],
-        ['#5a45a8', 0.26, 0.88, 0.30, 0.55]
+        ['#1a7fe6', 0.07, 0.12, 0.50, 0.95, 1],
+        ['#0a3fc0', 0.50, 0.30, 0.54, 0.92, 1],
+        ['#010a3d', 0.86, 0.56, 0.50, 0.95, 1],
+        ['#177f76', 0.52, 1.08, 0.36, 0.85, 0.5],
+        ['#c47ab2', 0.02, 1.06, 0.32, 0.90, 0.4],
+        ['#5a45a8', 0.22, 0.95, 0.28, 0.55, 0.6]
       ]
     }
   };
@@ -59,6 +60,7 @@ uniform float uHover;
 uniform vec3 uBase;
 uniform vec3 uCol[6];
 uniform vec4 uField[6];
+uniform float uDrift[6];
 vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}
 vec4 mod289(vec4 x){return x-floor(x*(1./289.))*289.;}
 vec4 permute(vec4 x){return mod289(((x*34.)+1.)*x);}
@@ -98,7 +100,7 @@ void main(){
   for(int i=0;i<6;i++){
     float fi=float(i);
     vec4 f=uField[i];
-    vec2 c=vec2(f.x*aspect,f.y)+vec2(.16*sin(t*(.11+.017*fi)+fi*1.7),.12*cos(t*(.09+.013*fi)+fi*2.3));
+    vec2 c=vec2(f.x*aspect,f.y)+uDrift[i]*vec2(.16*sin(t*(.11+.017*fi)+fi*1.7),.12*cos(t*(.09+.013*fi)+fi*2.3));
     vec2 d=pw-c;
     float k=exp(-dot(d,d)/(f.z*f.z));
     col=mix(col,uCol[i],clamp(k*f.w,0.,1.));
@@ -138,6 +140,7 @@ void main(){
   gl.uniform3fv(u('uBase'), toLinear(palette.base));
   gl.uniform3fv(u('uCol'), palette.fields.flatMap(f => toLinear(f[0])));
   gl.uniform4fv(u('uField'), palette.fields.flatMap(f => [f[1], f[2], f[3], f[4]]));
+  gl.uniform1fv(u('uDrift'), palette.fields.map(f => f[5] === undefined ? 1 : f[5]));
   const uRes = u('uRes');
   const uTime = u('uTime');
   const uPointer = u('uPointer');
