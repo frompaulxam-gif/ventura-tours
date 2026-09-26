@@ -1,0 +1,31 @@
+/* Large, single-message cards: the text stays readable throughout the reveal. */
+.benefits-section { padding: 76px 0 110px; background: #fff; scroll-margin-top: 40px; }
+.benefits-wrap { width: min(1328px, calc(100% - 64px)); margin-inline: auto; }
+.benefits-heading { text-align: center; margin-bottom: 48px; }
+.benefits-heading h2 { font-family: var(--display); font-size: clamp(44px, 5vw, 68px); font-weight: 500; line-height: 1.04; letter-spacing: -.025em; color: #102c20; text-wrap: balance; }
+.benefits-heading > p { margin: 20px auto 0; font-size: 17px; line-height: 1.6; color: #4c6255; }
+.benefits-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.benefit-card { --arc-light: #c8f6a1; --arc-colour: #41ac60; --arc-shade: #183e28; position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: space-between; min-height: 410px; padding: 26px 24px 28px; border-radius: 12px; overflow: hidden; background: #10251b; color: #fff; }
+.benefit-replies { --arc-light: #c7f8e3; --arc-colour: #39b88f; --arc-shade: #184737; }
+.benefit-approval { --arc-light: #f2f4be; --arc-colour: #b4cc59; --arc-shade: #4d5930; }
+.benefit-handover { --arc-light: #e9f4e3; --arc-colour: #a4c8ae; --arc-shade: #35513c; }
+.benefit-art { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+.benefit-orbit { position: absolute; inset: 0 -20% -10%; transform-origin: 50% 65%; animation: benefit-drift 12s ease-in-out infinite alternate; animation-play-state: paused; }
+.benefit-card:nth-child(2) .benefit-orbit { animation-delay: -4s; }
+.benefit-card:nth-child(3) .benefit-orbit { animation-delay: -7s; }
+.benefit-card:nth-child(4) .benefit-orbit { animation-delay: -2s; }
+.benefit-card[data-visible="true"] .benefit-orbit { animation-play-state: running; }
+.benefit-orbit svg { width: 100%; height: 100%; display: block; }
+.arc-light { stop-color: var(--arc-light); }
+.arc-colour { stop-color: var(--arc-colour); }
+.arc-shade { stop-color: var(--arc-shade); }
+.benefit-card::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #10251b 0%, #10251be6 8%, transparent 22%, #10251b66 53%, #10251bf5 76%); pointer-events: none; }
+.benefit-label { font-size: 13px; line-height: 1.4; font-weight: 500; color: #f0f7ef; margin: 0; }
+.benefit-copy { padding-top: 110px; }
+.benefit-copy h3 { font-family: 'Helvetica Neue', 'Archivo', sans-serif; font-size: clamp(34px, 3.4vw, 49px); line-height: 1.04; letter-spacing: -.035em; font-weight: 500; color: #fff; margin: 0; }
+.benefit-copy > p { font-size: 15px; line-height: 1.6; margin: 18px 0 0; max-width: 25ch; color: #e6eee8; }
+@keyframes benefit-drift { from { transform: translate3d(-1.5%, 3%, 0) scale(.98) rotate(-3deg); } to { transform: translate3d(1.5%, -3%, 0) scale(1.05) rotate(3deg); } }
+body[data-offscreen="true"] .benefit-orbit { animation-play-state: paused; }
+@media (max-width: 1100px) { .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .benefit-card { min-height: 350px; padding: 28px; } .benefit-copy h3 { font-size: 44px; } }
+@media (max-width: 620px) { .benefits-section { padding: 46px 0 64px; } .benefits-wrap { width: calc(100% - 32px); } .benefits-heading { margin-bottom: 30px; } .benefits-heading > p { font-size: 15px; max-width: 28ch; } .benefits-grid { grid-template-columns: 1fr; gap: 16px; } .benefit-card { min-height: 330px; padding: 24px; } .benefit-copy { padding-top: 92px; } .benefit-copy h3 { font-size: 43px; } .benefit-copy > p { max-width: 29ch; } }
+@media (prefers-reduced-motion: reduce) { .benefit-orbit { animation: none !important; } }
