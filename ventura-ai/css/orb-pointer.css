@@ -1,0 +1,6 @@
+.orb-stage .orb-pointer-drift {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: transform;
+}
