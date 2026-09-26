@@ -1,0 +1,2 @@
+/* Keep example information out of the layout until a task is activated. */
+#example-detail[hidden] { display: none !important; }

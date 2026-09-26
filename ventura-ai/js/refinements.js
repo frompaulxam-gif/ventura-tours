@@ -4,9 +4,8 @@
   const descriptions = {sweep:'Sweep: a curved green return around the offer', cove:'Cove: a green island with illustrated paper notes', ribbon:'Ribbon: a tall green arc through the examples'};
   const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const params = new URLSearchParams(location.search);
-  let reduce = params.get('motion') === 'off';
+  const reduce = false;
   const replay = document.getElementById('replay-intro');
-  const reduceButton = document.getElementById('reduce-motion');
   const heading = document.querySelector('.hero h1');
   const fullTitle = heading.textContent.replace(/\s+/g,' ').replace('admin.More','admin. More').trim();
   heading.setAttribute('aria-label',fullTitle);
@@ -51,10 +50,9 @@
     if(write)storeOptions();
     if(scrollY<350)intro();
   }
-  function updateMotion(){body.dataset.reduced=String(reduce||systemMotion.matches);reduceButton.setAttribute('aria-pressed',String(reduce||systemMotion.matches));reduceButton.textContent=systemMotion.matches?'System: reduced motion':reduce?'Motion off':'Reduce motion';replay.disabled=!motionAllowed();if(!motionAllowed()){liveAnimations.forEach(a=>a.cancel());liveAnimations.clear();}}
+  function updateMotion(){body.dataset.reduced=String(reduce||systemMotion.matches);replay.disabled=!motionAllowed();if(!motionAllowed()){liveAnimations.forEach(a=>a.cancel());liveAnimations.clear();}}
   document.querySelectorAll('[data-option]').forEach(button=>button.addEventListener('click',()=>choose(button.dataset.option)));
   replay.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'instant'});intro();});
-  reduceButton.addEventListener('click',()=>{if(systemMotion.matches)return;reduce=!reduce;updateMotion();storeOptions();});
   systemMotion.addEventListener('change',updateMotion);
   updateMotion(); choose(params.get('design')||'sweep',false);
   // Reveal only the related illustration fragments and offer siblings, never whole sections.
@@ -71,9 +69,6 @@
     }),{threshold:.22});
     document.querySelectorAll('.story-art,.offer-grid').forEach(el=>observer.observe(el));
   }
-  const result=document.querySelector('.system-result');
-  document.querySelector('.case-tabs').addEventListener('click',()=>animate(result,[{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:260}));
-  document.querySelector('.case-tabs').addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp','ArrowLeft','ArrowRight','Home','End'].includes(e.key))animate(result,[{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:260});});
   document.getElementById('demo-next').addEventListener('click',()=>{animate(document.querySelector('.check-note'),[{backgroundColor:'#dde9c8'},{backgroundColor:'#f0f3e5'}],{duration:480});animate(document.querySelector('.progress .active'),[{transform:'translateY(4px)',opacity:.4},{transform:'translateY(0)',opacity:1}],{duration:240});});
   const form=document.getElementById('enquiry-form'),error=document.getElementById('form-error');
   form.addEventListener('submit',e=>{

@@ -1,19 +1,19 @@
 (() => {
   const init=()=>{
-    const body=document.body, pause=document.getElementById('immersive-pause'), reduce=document.getElementById('reduce-motion');
+    const body=document.body;
     const system=matchMedia('(prefers-reduced-motion: reduce)');
     const active=new Set();
     const allowed=()=>body.dataset.reduced!=='true';
-    function sync(){pause.setAttribute('aria-pressed',String(!allowed()));pause.disabled=system.matches;pause.textContent=system.matches?'Motion reduced':allowed()?'Pause motion':'Resume motion';if(!allowed()){active.forEach(a=>a.cancel());active.clear();}}
-    pause.addEventListener('click',()=>reduce.click());reduce.addEventListener('click',sync);system.addEventListener('change',sync);sync();
+    function sync(){if(!allowed()){active.forEach(a=>a.cancel());active.clear();}}
+    system.addEventListener('change',sync);sync();
     const animate=(el,frames,options)=>{if(!allowed()||!el)return;const a=el.animate(frames,{duration:750,easing:'cubic-bezier(.16,1,.3,1)',...options});active.add(a);a.finished.catch(()=>{}).finally(()=>active.delete(a));};
     const tabs=document.querySelector('.case-tabs');
     function orientation(){tabs.setAttribute('aria-orientation','horizontal');}
     orientation();matchMedia('(max-width:760px)').addEventListener('change',orientation);
     const statuses={admin:'Turning requests into clear tasks',enquiries:'Preparing a reply for your review',approvals:'Giving the next step an owner'};
     const orb=document.querySelector('.orb-stage .liquid-orb');
-    function respond(){const selected=tabs.querySelector('[aria-selected=true]');document.getElementById('orb-status').textContent=statuses[selected.dataset.case];animate(orb,[{transform:'scale(.94)'},{transform:'scale(1)'}],{duration:900});}
-    tabs.addEventListener('click',respond);tabs.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(e.key))respond();});
+    function respond(event){const selected=tabs.querySelector('[aria-selected=true]');if(!selected)return;document.getElementById('orb-status').textContent=statuses[selected.dataset.case];if(event.detail.withMotion)animate(orb,[{transform:'scale(.97)'},{transform:'scale(1)'}],{duration:500});}
+    tabs.addEventListener('examplechange',respond);
     // One accessible heading label, with masked word entrances for sighted readers.
     const headings=[...document.querySelectorAll('.demo-intro h2,.features-intro h2,.offer-heading h2')];
     headings.forEach(h=>{

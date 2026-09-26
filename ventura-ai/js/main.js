@@ -26,21 +26,43 @@
       if (i === stage) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
     });
   }
-  function select(tab) {
+  const detail = document.getElementById('example-detail');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let disclosureAnimation;
+  function select(tab, withMotion = false) {
+    const opening = detail.hidden;
+    const fromHeight = opening ? 0 : detail.getBoundingClientRect().height;
+    disclosureAnimation?.cancel();
     current = tab.dataset.case; stage = 1;
     tabs.forEach(t => { const selected = t === tab; t.setAttribute('aria-selected', String(selected)); t.tabIndex = selected ? 0 : -1; });
     document.getElementById('example-panel').setAttribute('aria-labelledby', tab.id); render();
+    detail.hidden = false;
+    if (withMotion && !reducedMotion.matches) {
+      const animation = detail.animate([
+        { height: `${fromHeight}px`, opacity: opening ? 0 : .65, transform: 'translateY(8px)' },
+        { height: `${detail.scrollHeight}px`, opacity: 1, transform: 'translateY(0)' }
+      ], { duration: opening ? 420 : 240, easing: 'cubic-bezier(.22,1,.36,1)' });
+      disclosureAnimation = animation;
+      detail.style.overflow = 'hidden';
+      animation.finished.catch(() => {}).finally(() => {
+        if (disclosureAnimation === animation) { detail.style.overflow = ''; disclosureAnimation = null; }
+      });
+    } else {
+      detail.style.overflow = '';
+    }
+    document.querySelector('.case-tabs').dispatchEvent(new CustomEvent('examplechange', { detail: { withMotion } }));
   }
   tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('click', event => select(tab, event.detail > 0));
     tab.addEventListener('keydown', e => {
       let n;
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % tabs.length;
       if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = (i + tabs.length - 1) % tabs.length;
       if (e.key === 'Home') n = 0; if (e.key === 'End') n = tabs.length - 1;
-      if (n !== undefined) { e.preventDefault(); select(tabs[n]); tabs[n].focus(); }
+      if (n !== undefined) { e.preventDefault(); tabs.forEach((tab, index) => tab.tabIndex = index === n ? 0 : -1); tabs[n].focus(); }
     });
   });
+  reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) disclosureAnimation?.cancel(); });
   next.addEventListener('click', () => { stage = stage === 3 ? 1 : stage + 1; render(); });
   const media = matchMedia('(max-width:760px)');
   const orient = () => document.querySelector('[role=tablist]').setAttribute('aria-orientation', media.matches ? 'horizontal' : 'vertical');
