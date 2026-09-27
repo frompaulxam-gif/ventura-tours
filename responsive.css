@@ -118,3 +118,6 @@ html body .art-section .card-shade{background:linear-gradient(#0002,transparent 
  html body .hero .actions{flex-direction:column;align-items:stretch;width:min(100%,340px);margin-inline:auto}
  html body .hero .button{justify-content:center}
 }
+
+/* Square header contact button on every screen size. */
+html body .header .button{border-radius:0}
