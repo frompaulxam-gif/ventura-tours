@@ -27,3 +27,5 @@ html[data-style="selected"] .top-tiles .tile{min-height:108px;aspect-ratio:auto}
 
 /* Service dates keep the late-night shift together. */
 .history-day{margin:26px 0}.history-day h2{font-size:16px;line-height:1.4;font-weight:750;color:var(--brand);margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}.history-service-date{display:grid;gap:5px;margin:18px 0 10px;color:var(--brand)}.history-service-date span{font-size:12px;color:var(--muted)}.history-service-date strong{font-size:16px;line-height:1.4}
+
+.history-day-total{padding:16px;margin:0 0 12px;background:var(--brand-soft);border:1px solid var(--line);border-radius:var(--round);color:var(--ink)}.history-day-amount{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 14px}.history-day-amount>span{font-size:14px;font-weight:650}.history-day-amount small{font-size:12px;font-weight:400;color:var(--muted)}.history-day-amount strong{font-size:26px;font-weight:800;line-height:1.2;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.history-day-total p{margin:8px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}

@@ -20,6 +20,18 @@
   }
   return [...groups].sort(([a],[b])=>b.localeCompare(a)).map(([date,entries])=>({date,entries}));
  }
+ function summariseDay(entries){
+  const summary={paidTotal:0,paidCount:0,voidCount:0,clearedCount:0};
+  for(const entry of entries){
+   if(entry.status==='paid'){
+    const amount=entry.totals.total;
+    if(!Number.isSafeInteger(amount)||amount<0||!Number.isSafeInteger(summary.paidTotal+amount))throw Error('Invalid daily total.');
+    summary.paidTotal+=amount;summary.paidCount++;
+   }else if(entry.status==='void')summary.voidCount++;
+   else summary.clearedCount++;
+  }
+  return summary;
+ }
  function validateBill(bill,calculate){
   if(!bill||!Array.isArray(bill.lines)||bill.lines.some(l=>typeof l.sku!=='string'||typeof l.name!=='string'||typeof l.option!=='string'||l.quantity<1))throw Error('Invalid bill data.');
   calculate(bill,'afterDiscount');return bill;
@@ -77,5 +89,5 @@
   }
   return {historyKey,read,archiveAndClear,restore,move};
  }
- if(typeof module!=='undefined'&&module.exports)module.exports={create,serviceDate,groupByServiceDate};else root.BillHistory={create,serviceDate,groupByServiceDate};
+ if(typeof module!=='undefined'&&module.exports)module.exports={create,serviceDate,groupByServiceDate,summariseDay};else root.BillHistory={create,serviceDate,groupByServiceDate,summariseDay};
 })(typeof window!=='undefined'?window:globalThis);
