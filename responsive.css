@@ -5,7 +5,7 @@ html body .art-section .card-stat-value{font-size:clamp(46px,24cqw,76px)}
 html body .art-section .card-stat-caption{font-size:11px;line-height:1.4;letter-spacing:.035em;max-width:none;margin-top:12px}
 html body .art-section .card-copy h2{font-size:clamp(30px,16cqw,46px);line-height:1.06}
 html body .art-section .card-copy p{font-size:14px;line-height:1.55;margin:18px 0 0;min-height:4.65em}
-html body .art-section .card-shade{background:linear-gradient(#0007,transparent 38%,#000b 65%,#000 98%)}
+html body .art-section .card-shade{background:linear-gradient(#0002,transparent 38%,#000a 65%,#000 98%)}
 @media(max-width:1100px){
  html body .art-section .art-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
  html body .art-section .art-card{aspect-ratio:auto;min-height:460px}
