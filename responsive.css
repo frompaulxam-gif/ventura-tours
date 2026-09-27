@@ -120,4 +120,4 @@ html body .art-section .card-shade{background:linear-gradient(#0002,transparent 
 }
 
 /* Square header contact button on every screen size. */
-html body .header .button{border-radius:0}
+html body .header a.button.small{border-radius:0!important}
