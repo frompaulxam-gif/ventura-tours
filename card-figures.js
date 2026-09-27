@@ -1,4 +1,4 @@
-/* Illustrative scenario; the assumptions are disclosed beneath the cards. */
+/* Scenario estimates, not measured client outcomes. */
 (() => {
   const enquiriesPerDay = 20;
   const workingDays = 22;
@@ -6,9 +6,9 @@
   const bookingRequestRate = 0.05;
   const monthlyEnquiries = enquiriesPerDay * workingDays;
   const figures = [
-    { value: monthlyEnquiries * minutesSavedPerEnquiry / 60, suffix: 'h', label: 'TIME SAVED' },
-    { value: 100, suffix: '%', label: 'ENQUIRIES HANDLED' },
-    { value: bookingRequestRate * 100, suffix: '%', label: 'BOOKING REQUEST RATE' },
+    { value: monthlyEnquiries * minutesSavedPerEnquiry / 60, suffix: 'h', label: 'ESTIMATED TIME SAVED / MONTH' },
+    { value: 100, suffix: '%', label: 'ENQUIRIES ROUTED — MODEL ASSUMPTION' },
+    { value: bookingRequestRate * 100, suffix: '%', label: 'ASSUMED BOOKING REQUEST RATE' },
     { value: 1, label: 'WORKFLOW TO START' }
   ];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
