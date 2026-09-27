@@ -69,7 +69,6 @@
     }),{threshold:.22});
     document.querySelectorAll('.story-art,.offer-grid').forEach(el=>observer.observe(el));
   }
-  document.getElementById('demo-next').addEventListener('click',()=>{animate(document.querySelector('.check-note'),[{backgroundColor:'#dde9c8'},{backgroundColor:'#f0f3e5'}],{duration:480});animate(document.querySelector('.progress .active'),[{transform:'translateY(4px)',opacity:.4},{transform:'translateY(0)',opacity:1}],{duration:240});});
   const form=document.getElementById('enquiry-form'),error=document.getElementById('form-error');
   form.addEventListener('submit',e=>{
     const missing=[form.elements.business,form.elements.task].filter(input=>!input.value.trim());

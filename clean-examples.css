@@ -1,0 +1,36 @@
+/* A single, quiet canvas for the three interactive examples. */
+html body #example-detail{max-width:1136px;margin-top:24px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+html body #example-detail .demo{display:block;border:1px solid #d6e0e9;border-radius:10px;box-shadow:none;background:#f0f5fa;color:#21344b}
+html body #example-detail .demo-top{padding:30px 36px 0;background:none;border:0;gap:18px}
+html body #demo-title{font-size:clamp(23px,2.4vw,32px);line-height:1.15;letter-spacing:-.025em;font-weight:700}
+html body #example-detail .example-label{background:none;border:0;color:#52677d;font-size:12px;padding:0;white-space:nowrap}
+html body #example-detail .demo-body{display:grid;grid-template-columns:1fr 1.3fr;gap:32px 48px;padding:36px}
+html body #example-detail .request{display:block;max-width:none;padding:8px 0;font-size:20px;line-height:1.5}
+html body #example-detail .avatar,html body #example-detail .ventura-icon{display:none}
+html body #example-detail .message-label{color:#506980;font-size:12px;font-weight:700;margin-bottom:18px;text-transform:uppercase;letter-spacing:.04em}
+html body #example-detail .request p{font-size:20px;line-height:1.5;color:#21344b}
+html body #example-detail .system-result{margin:0;padding:0 0 0 32px;border:0;border-left:1px solid #cad8e5;border-radius:0;background:none;overflow:visible}
+html body #example-detail .result-title{background:none;padding:0 0 20px;gap:12px;flex-wrap:wrap;font-size:16px;color:#21344b}
+html body #example-detail .status{padding:0;background:none;color:#42698e;font-size:12px;border:0;border-radius:0;margin-left:auto}
+html body #example-detail .detail-grid{padding:0;margin:0}
+html body #example-detail .detail-grid>div{display:grid;grid-template-columns:92px 1fr;padding:14px 0;gap:16px;border-color:#d5e1eb;font-size:15px;line-height:1.45}
+html body #example-detail .detail-grid dt{color:#52677d;font-weight:700;font-size:12px;padding-top:2px}
+html body #example-detail .detail-grid dd{color:#21344b}
+html body #example-detail .check-note{margin:14px 0 0;padding:0;background:none;color:#42607b;border-radius:0;font-size:13px;line-height:1.5;min-height:39px}
+html body #example-detail .demo-bottom{grid-column:1/-1;margin:0;padding-top:4px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+html body #example-detail .demo-bottom p{font-size:13px;color:#52677d;max-width:none}
+html body #example-detail .demo-button{background:#213b57;color:white;border:0;border-radius:5px;font:700 14px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;padding:14px 22px;margin:0;min-height:48px;width:auto;transition:background .2s,transform .2s}
+html body #example-detail .demo-button:hover{background:#31597e;transform:translateY(-1px)}
+html body #example-detail .progress{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:24px 36px 28px;background:none;border-top:1px solid #d6e0e9;color:#52677d;font-size:12px}
+html body #example-detail .progress li{position:relative;display:block;padding-top:14px;font-weight:500}
+html body #example-detail .progress li:before{position:absolute;top:0;left:0;width:100%;height:2px;background:#cedbe7;border:0;border-radius:0;box-shadow:none}
+html body #example-detail .progress li:after{content:"";position:absolute;top:0;left:0;height:2px;width:100%;background:#426e98;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+html body #example-detail .progress .done:after{transform:scaleX(1)}
+html body #example-detail .progress .active{color:#213b57;font-weight:700}
+html body #example-detail .progress .active:after{animation:example-trace 2.4s ease-in-out infinite}
+html body #example-detail .demo-disclaimer{font:400 12px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#52677d;margin:16px 0 0}
+@keyframes example-trace{0%{transform:scaleX(.08);opacity:.55}70%,100%{transform:scaleX(1);opacity:1}}
+@media(max-width:760px){html body #example-detail .demo-top{padding:24px 22px 0;align-items:flex-start}html body #example-detail .demo-body{grid-template-columns:1fr;gap:24px;padding:24px 22px}html body #example-detail .request p{font-size:18px}html body #example-detail .system-result{border-left:0;border-top:1px solid #cad8e5;padding:24px 0 0}html body #example-detail .demo-bottom{flex-wrap:wrap;gap:16px}html body #example-detail .demo-button{width:100%}html body #example-detail .progress{gap:12px;padding:20px 22px;font-size:11px}html body #example-detail .detail-grid>div{grid-template-columns:82px 1fr;gap:12px}html body #example-detail .example-label{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html body #example-detail .progress .active:after{animation:none;transform:scaleX(1)}html body #example-detail .progress li:after,html body #example-detail .demo-button{transition:none}}
+
+html body #example-detail .demo-main{background:transparent}

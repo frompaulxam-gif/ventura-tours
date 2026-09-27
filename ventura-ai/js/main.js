@@ -1,10 +1,6 @@
 (() => {
   'use strict';
-  const cases = {
-    admin: { title: 'From inbox to a clear next step', label: 'Incoming request', request: '“Could you update our opening hours on the website? We’ll close at 4pm this Friday.”', fields: ['Task', 'Change', 'Needs checking'], values: ['Update website opening hours', 'Close at 4pm this Friday', 'Which date does “this Friday” mean?'], note: 'You confirm the date before anything is changed.', outcome: 'No digging through the email. The task and the missing detail are in one place.', review: 'Your team confirms the date and assigns the task to the person who manages the website.', confirmed: 'Date confirmed by your team in this example', ready: 'The checked request is ready for your website manager. The website itself has not been changed.' },
-    enquiries: { title: 'From customer question to a draft reply', label: 'Incoming enquiry', request: '“We’re interested in a virtual tour of our venue. What do you need to give us a quote?”', fields: ['Customer needs', 'Draft reply', 'Needs checking'], values: ['A quote for a venue tour', 'Thanks for getting in touch. Could you share the venue address and approximate size?', 'Check the wording and information requested'], note: 'Your team reviews the draft before sending it.', outcome: 'A useful first draft, ready to check. No price or availability has been invented.', review: 'Your team checks the wording and confirms the details needed to prepare a quote.', confirmed: 'Wording checked by your team in this example', ready: 'The approved reply is ready to send. This demo has not emailed anyone.' },
-    approvals: { title: 'From a draft to a clear approval task', label: 'Incoming update', request: '“The next social post is ready. Can you get the owner to approve the caption before we schedule it?”', fields: ['Task', 'Approval needed', 'Needs checking'], values: ['Review the next social post', 'Owner to approve the caption', 'Where is the draft, and when is it needed?'], note: 'Your team adds the draft and confirms the review date.', outcome: 'Everyone can see what needs approval and what information is missing.', review: 'Your team adds the draft link, agrees a deadline and assigns the approval to the owner.', confirmed: 'Draft and deadline added in this example', ready: 'The review task is ready for the owner. The post stays unpublished until it is approved.' }
-  };
+  const cases = {"admin": {"title": "A request. A clear task.", "label": "The request", "request": "“We’re closing at 4pm this Friday. Could you update the website?”", "fields": ["Task", "Update", "Check first"], "values": ["Website opening hours", "Friday · close at 4pm", "Confirm the date"], "note": "Your team confirms the date.", "outcome": "Request organised", "review": "Check the date, then pass it to your website manager.", "confirmed": "Date confirmed in this demo", "ready": "Ready for your website manager. Nothing has been changed."}, "enquiries": {"title": "A question. A useful reply.", "label": "The enquiry", "request": "“Could you give us a quote for a virtual tour of our venue?”", "fields": ["Request", "Draft reply", "Check first"], "values": ["Virtual tour quote", "Please share your venue address and approximate size.", "Review the reply"], "note": "Your team checks the wording.", "outcome": "Reply prepared", "review": "Review the draft before sending it to the customer.", "confirmed": "Reply reviewed in this demo", "ready": "Ready to send. No email has been sent."}, "approvals": {"title": "A draft. A clear decision.", "label": "The update", "request": "“The next social post is ready. Can the owner check the caption?”", "fields": ["Task", "Reviewer", "Check first"], "values": ["Approve the next social post", "Business owner", "Add the draft and deadline"], "note": "Your team adds the missing details.", "outcome": "Approval organised", "review": "Attach the draft and agree when the owner should review it.", "confirmed": "Draft and deadline added in this demo", "ready": "Ready for the owner. The post remains unpublished."}};
   const tabs = [...document.querySelectorAll('[data-case]')];
   let current = 'admin';
   let stage = 1;
@@ -12,15 +8,16 @@
   const next = document.getElementById('demo-next');
   function render() {
     const item = cases[current];
+    document.getElementById('example-panel').dataset.stage = stage;
     text('demo-title', item.title); text('request-label', item.label); text('request-text', item.request);
     item.fields.forEach((label, i) => { text(`field-label-${i}`, label); text(`field-value-${i}`, item.values[i]); });
     if (stage === 3) { text('field-label-2', 'Checked by your team'); text('field-value-2', item.confirmed); }
-    text('result-heading', stage === 1 ? 'The details, organised for you' : stage === 2 ? 'Your team checks the details' : 'A clear task, ready to go');
+    text('result-heading', stage === 1 ? 'Prepared for you' : stage === 2 ? 'Your team reviews' : 'Ready for the next step');
     text('result-status', ['','Ready to check','Human review','Ready'][stage]);
     document.getElementById('result-status').classList.toggle('complete', stage === 3);
     text('check-note', stage === 1 ? item.note : stage === 2 ? item.review : item.ready);
-    text('demo-outcome', stage === 1 ? item.outcome : stage === 2 ? 'This is where a person checks the details, makes changes and decides what happens next.' : 'One clear next step, with the checks built in. Your setup would be agreed around your own tools.');
-    next.textContent = stage === 3 ? 'Replay example ↻' : 'See the next step →';
+    text('demo-outcome', stage === 1 ? item.outcome : stage === 2 ? 'You stay in control' : 'Checked and ready');
+    next.textContent = stage === 3 ? 'Replay example' : stage === 1 ? 'Review the details' : 'Confirm in demo';
     document.querySelectorAll('.progress li').forEach((li, i) => {
       li.classList.toggle('done', i < stage); li.classList.toggle('active', i === stage);
       if (i === stage) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
@@ -63,7 +60,7 @@
     });
   });
   reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) disclosureAnimation?.cancel(); });
-  next.addEventListener('click', () => { stage = stage === 3 ? 1 : stage + 1; render(); });
+  next.addEventListener('click', () => { stage = stage === 3 ? 1 : stage + 1; render(); if (!reducedMotion.matches) document.querySelector('.system-result').animate([{opacity:.45,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.22,1,.36,1)'}); });
   const media = matchMedia('(max-width:760px)');
   const orient = () => document.querySelector('[role=tablist]').setAttribute('aria-orientation', media.matches ? 'horizontal' : 'vertical');
   orient(); media.addEventListener('change', orient);
