@@ -24,3 +24,6 @@ html[data-style="selected"] .wordmark{font-family:Georgia,serif;letter-spacing:.
 html[data-style="selected"] .wordmark span{font-family:-apple-system,BlinkMacSystemFont,sans-serif}
 html[data-style="selected"] .top-tiles .tile,html[data-style="selected"] .categories .tile{border-radius:4px;border-width:2px}
 html[data-style="selected"] .top-tiles .tile{min-height:108px;aspect-ratio:auto}
+
+/* Service dates keep the late-night shift together. */
+.history-day{margin:26px 0}.history-day h2{font-size:16px;line-height:1.4;font-weight:750;color:var(--brand);margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}.history-service-date{display:grid;gap:5px;margin:18px 0 10px;color:var(--brand)}.history-service-date span{font-size:12px;color:var(--muted)}.history-service-date strong{font-size:16px;line-height:1.4}
