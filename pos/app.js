@@ -1,7 +1,7 @@
 'use strict';
 const $=s=>document.querySelector(s),money=p=>'£'+(p/100).toFixed(2),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const params=new URLSearchParams(location.search),variant='a';
-document.documentElement.dataset.style=['walnut','jade','clay','impeccable','functional','functional-large'].includes(params.get('style'))?params.get('style'):'walnut';
+document.documentElement.dataset.style=['selected','walnut','jade','clay','impeccable','functional','functional-large'].includes(params.get('style'))?params.get('style'):'selected';
 const names={a:'A · Guided',b:'B · Quick picker',c:'C · Table desk'};
 let screen='tables',group='Food',category='',wineCategory='',table='1',selected=null,choice=null,menuQuery='',categoryOpen=false,lastAddedId=null,feedbackTimer=null,toastTimer=null,pendingRemoval=null,historyLimit=50,pendingRestore=null,editorQuery='',editingProduct=null,pendingMove=null,tableView='map',mapZoom=1;
 const key='thaiboran-billing-v1'+(params.has('test')?'-test':''),tableIds=[...Array.from({length:13},(_,i)=>String(i+1)).filter(id=>id!=='11'),...Array.from({length:5},(_,i)=>'F'+(i+1))],blank=()=>({lines:[],discount:{type:'none',value:0},serviceRate:10});
