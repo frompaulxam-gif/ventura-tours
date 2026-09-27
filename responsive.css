@@ -121,3 +121,7 @@ html body .art-section .card-shade{background:linear-gradient(#0002,transparent 
 
 /* Square header contact button on every screen size. */
 html body .header a.button.small{border-radius:0!important}
+
+/* Keep the booking confirmation next to the completed graph. */
+html body .workflow-sweep .flow-booking .flow-status{top:64px;bottom:auto;right:6.5%;padding:10px 16px;border:1px solid #dce7f0;background:#f9fcff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.3;box-shadow:none}
+@media(max-width:760px){html body .workflow-sweep .flow-booking .flow-status{top:54px;right:4%;padding:8px 12px;font-size:12px}}
