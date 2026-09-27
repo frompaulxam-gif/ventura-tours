@@ -1,7 +1,7 @@
 'use strict';
-const CACHE='thai-boran-pos-20260927-4';
+const CACHE='thai-boran-pos-20260927-5';
 const ROOT=new URL('./',self.location.href).href;
-const FILES=['./','index.html','styles.css?v=20260927-pos-4','variants.css?v=20260927-pos-4','polish.css?v=20260927-pos-4','menu.js?v=20260927-pos-4','engine.js?v=20260927-pos-4','history.js?v=20260927-pos-4','catalog.js?v=20260927-pos-4','app.js?v=20260927-pos-4','pwa.js?v=20260927-pos-4','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'];
+const FILES=['./','index.html','styles.css?v=20260927-pos-5','variants.css?v=20260927-pos-5','polish.css?v=20260927-pos-5','menu.js?v=20260927-pos-5','engine.js?v=20260927-pos-5','history.js?v=20260927-pos-5','catalog.js?v=20260927-pos-5','search.js?v=20260927-pos-5','app.js?v=20260927-pos-5','pwa.js?v=20260927-pos-5','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(file=>new URL(file,ROOT).href)))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('thai-boran-pos-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

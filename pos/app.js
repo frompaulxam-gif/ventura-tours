@@ -42,11 +42,12 @@ function zoomMap(value){
  scroller.scrollLeft=mapZoom===1?0:centreX*plan.offsetWidth-scroller.clientWidth/2;scroller.scrollTop=mapZoom===1?0:centreY*plan.offsetHeight-scroller.clientHeight/2;
  $('[data-value="out"]').disabled=mapZoom===1;$('[data-value="in"]').disabled=mapZoom===2;
 }
-const normaliseSearch=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-const makeSearchIndex=()=>MENU.map(p=>({product:p,text:normaliseSearch([p.name,p.group,p.section,p.menu_number??'',...p.variants.map(v=>v.option)].join(' '))}));
-let menuSearchIndex=makeSearchIndex();
+const normaliseSearch=MenuSearch.normalise;
+const makeSearchIndex=()=>MenuSearch.createIndex(MENU);
+let menuSearchIndex=makeSearchIndex(),searchMatches=[],searchSuggestionsOpen=false,searchSuggestionIndex=-1;
 function renderMenu(){
- $('#main').innerHTML=`<div class="heading-row"><div><div class="eyebrow">TABLE ${table}</div><h1 id="menu-title">${category||'Add to the order'}</h1><p class="intro">Search the menu or browse the categories.</p></div></div><div class="menu-tools"><button class="text-btn install-link" data-action="install-app">Add to Home Screen</button><button class="small-btn" data-action="edit-menu">Edit menu & prices</button></div><div class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input class="search" id="menu-search" type="search" aria-label="Search food and drinks" placeholder="Search dishes, drinks or menu no." value="${esc(menuQuery)}" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="search"><button class="search-clear" data-action="clear-search" aria-label="Clear search" ${menuQuery?'':'hidden'}>×</button></div><div id="menu-browse">${category?`<button class="small-btn" data-action="back">‹ ${wineCategory?'Back to Wine':'Back to categories'}</button>`:`<div class="tile-grid top-tiles">${tile('Food','food'+(group==='Food'?' chosen':''),'group','Starters, mains & more')}${tile('Drinks','drinks'+(group==='Drinks'?' chosen':''),'group','Soft drinks, wine & more')}</div>`}</div><div id="search-status" class="section-caption" role="status" aria-live="polite" aria-atomic="true"></div><div id="menu-content"></div>`;
+ searchSuggestionsOpen=false;searchSuggestionIndex=-1;
+ $('#main').innerHTML=`<div class="heading-row"><div><div class="eyebrow">TABLE ${table}</div><h1 id="menu-title">${category||'Add to the order'}</h1><p class="intro">Search the menu or browse the categories.</p></div></div><div class="menu-tools"><button class="text-btn install-link" data-action="install-app">Add to Home Screen</button><button class="small-btn" data-action="edit-menu">Edit menu & prices</button></div><div class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input class="search" id="menu-search" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-controls="menu-suggestions" aria-expanded="false" aria-label="Search food and drinks" placeholder="Search dishes, drinks or menu no." value="${esc(menuQuery)}" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="100" enterkeyhint="search"><button class="search-clear" data-action="clear-search" aria-label="Clear search" ${menuQuery?'':'hidden'}>×</button><div class="search-suggestions" id="search-suggestions" hidden><div id="menu-suggestions" role="listbox" aria-label="Menu suggestions"></div><button type="button" class="search-all" data-action="show-search-results"></button></div></div><div id="menu-browse">${category?`<button class="small-btn" data-action="back">‹ ${wineCategory?'Back to Wine':'Back to categories'}</button>`:`<div class="tile-grid top-tiles">${tile('Food','food'+(group==='Food'?' chosen':''),'group','Starters, mains & more')}${tile('Drinks','drinks'+(group==='Drinks'?' chosen':''),'group','Soft drinks, wine & more')}</div>`}</div><div id="search-status" class="section-caption" role="status" aria-live="polite" aria-atomic="true"></div><div id="menu-content"></div>`;
  renderMenuContent();dock();
 }
 function itemGrid(products){return `<div class="tile-grid products">${products.map(p=>{
@@ -56,7 +57,7 @@ function itemGrid(products){return `<div class="tile-grid products">${products.m
 function renderMenuContent(){
  const query=normaliseSearch(menuQuery),searching=menuQuery.trim().length>0;
  $('#menu-browse').hidden=searching;$('#menu-title').textContent=searching?'Search menu':wineCategory?(wineCategory==='Special'||wineCategory==='Other'?wineCategory+' wines':wineCategory+' wine'):category||'Add to the order';$('.search-clear').hidden=!menuQuery;
- if(searching){const tokens=query.split(' ').filter(Boolean),matches=tokens.length?menuSearchIndex.filter(entry=>tokens.every(token=>entry.text.includes(token))).map(entry=>entry.product):[];$('#search-status').textContent=`${matches.length} ${matches.length===1?'match':'matches'} across food & drinks`;$('#menu-content').innerHTML=matches.length?itemGrid(matches):'<div class="empty"><h2>No matches</h2><p>Try a dish name, drink, ingredient option or menu number.</p><button class="small-btn" data-action="clear-search">Clear search</button></div>';}
+ if(searching){searchMatches=MenuSearch.find(menuSearchIndex,query);const approximate=searchMatches.some(match=>match.approximate);$('#search-status').textContent=`${searchMatches.length} ${searchMatches.length===1?'match':'matches'} across food & drinks${approximate?' · Includes similar spellings':''}`;$('#menu-content').innerHTML=searchMatches.length?itemGrid(searchMatches.map(match=>match.product)):'<div class="empty"><h2>No matches</h2><p>Try a dish name, drink, ingredient option or menu number.</p><button class="small-btn" data-action="clear-search">Clear search</button></div>';}
  else if(category==='Wine'){
   if(wineCategory){const products=wineProducts(wineCategory);$('#search-status').textContent=wineCategory==='Special'?'Sparkling wines · Tap to choose a serving.':'Tap to add. Wines with choices will ask for a serving.';$('#menu-content').innerHTML=products.length?itemGrid(products):'<div class="empty"><h2>No other wines yet</h2><p>All current wines are in White, Rosé, Red or Special.</p><button class="small-btn" data-action="back">Browse wine categories</button></div>';}
   else{$('#search-status').textContent='Choose a wine category';$('#menu-content').innerHTML=`<div class="tile-grid categories wine-categories">${wineCats.map(([name,colour])=>{const count=wineProducts(name).length;return tile(name,'wine-'+colour,'wine-category',name==='Special'?'Sparkling · '+count:count+' '+(count===1?'wine':'wines'))}).join('')}</div>`;}
@@ -64,6 +65,8 @@ function renderMenuContent(){
  else if(category){$('#search-status').textContent='Tap to add. Dishes with choices will ask for an option.';$('#menu-content').innerHTML=itemGrid(MENU.filter(p=>(sections[category]||[]).includes(p.section)));}
  else if(categoryOpen){$('#search-status').textContent=group+' categories';$('#menu-content').innerHTML=`<div class="tile-grid categories">${(group==='Food'?foodCats:drinkCats).map(([name,colour])=>tile(name,'tile-'+colour,'category')).join('')}</div>`;}
  else{$('#search-status').textContent='';$('#menu-content').innerHTML='';}
+ if(!searching)searchMatches=[];
+ renderSearchSuggestions();
 }
 function addedFeedback(){
  const button=Array.from(document.querySelectorAll('[data-action="product"]')).find(el=>el.dataset.value===lastAddedId);
@@ -71,8 +74,40 @@ function addedFeedback(){
  $('.bill-dock')?.classList.add('bill-updated');
  clearTimeout(feedbackTimer);feedbackTimer=setTimeout(()=>{lastAddedId=null;document.querySelectorAll('.just-added,.bill-updated').forEach(el=>el.classList.remove('just-added','bill-updated'))},1400);
 }
-document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}});
-document.addEventListener('keydown',event=>{if(event.target.id==='menu-search'&&event.key==='Escape'){menuQuery='';event.target.value='';renderMenuContent()}});
+function renderSearchSuggestions(){
+ const input=$('#menu-search'),popup=$('#search-suggestions'),list=$('#menu-suggestions');if(!input||!popup)return;
+ const matches=searchMatches.slice(0,8),open=searchSuggestionsOpen&&matches.length>0;
+ popup.hidden=!open;input.setAttribute('aria-expanded',String(open));input.removeAttribute('aria-activedescendant');$('#menu-content').hidden=open;
+ if(!open){list.innerHTML='';searchSuggestionIndex=-1;return}
+ list.innerHTML=matches.map(({product:p,approximate},index)=>{const prices=p.variants.map(v=>v.price_pence),min=Math.min(...prices),max=Math.max(...prices),single=p.variants.length===1,serving=single&&p.variants[0].option!=='Standard'?' · '+p.variants[0].option:'';
+ return `<button type="button" role="option" aria-selected="false" tabindex="-1" class="search-suggestion" id="menu-suggestion-${index}" data-action="search-product" data-value="${esc(p.id)}"><span><strong>${esc(p.name)}</strong><small>${approximate?'Similar spelling · ':''}${esc(p.section+serving)}</small></span><span class="suggestion-price">${min!==max?'From ':''}${money(min)}<small>${single?'Tap to add':'Choose option'}</small></span></button>`}).join('');
+ $('.search-all').textContent=`View ${searchMatches.length===1?'1 match':'all '+searchMatches.length+' matches'}`;
+ selectSearchSuggestion(searchSuggestionIndex);
+}
+function selectSearchSuggestion(index){
+ const options=[...document.querySelectorAll('.search-suggestion')];searchSuggestionIndex=index>=0&&index<options.length?index:-1;
+ options.forEach((option,i)=>option.setAttribute('aria-selected',String(i===searchSuggestionIndex)));
+ const input=$('#menu-search');if(searchSuggestionIndex<0){input?.removeAttribute('aria-activedescendant');return}
+ input.setAttribute('aria-activedescendant',options[searchSuggestionIndex].id);options[searchSuggestionIndex].scrollIntoView({block:'nearest'});
+}
+function closeSearchSuggestions(){searchSuggestionsOpen=false;searchSuggestionIndex=-1;renderSearchSuggestions()}
+function chooseSearchProduct(id){closeSearchSuggestions();$('#menu-search')?.blur();product(id)}
+document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}});
+document.addEventListener('focusin',event=>{if(event.target.id==='menu-search'){searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}});
+document.addEventListener('focusout',event=>{if(event.target.closest('.search-wrap')&&!event.relatedTarget?.closest('.search-wrap'))closeSearchSuggestions()});
+document.addEventListener('pointerdown',event=>{if(event.target.closest('.search-suggestion'))event.preventDefault();else if(!event.target.closest('.search-wrap'))closeSearchSuggestions()});
+document.addEventListener('keydown',event=>{
+ if(event.target.id!=='menu-search'||event.isComposing)return;
+ if(event.key==='ArrowDown'||event.key==='ArrowUp'){
+  if(!searchMatches.length)return;event.preventDefault();
+  const count=Math.min(searchMatches.length,8);if(!searchSuggestionsOpen){searchSuggestionsOpen=true;renderSearchSuggestions()}
+  selectSearchSuggestion(event.key==='ArrowDown'?(searchSuggestionIndex+1)%count:(searchSuggestionIndex<0?count-1:(searchSuggestionIndex-1+count)%count));
+ }else if(event.key==='Enter'){
+  event.preventDefault();if(searchSuggestionsOpen&&searchSuggestionIndex>=0){const match=searchMatches[searchSuggestionIndex];if(match)chooseSearchProduct(match.product.id)}else{closeSearchSuggestions();event.target.blur()}
+ }else if(event.key==='Escape'){
+  event.preventDefault();if(event.target.getAttribute('aria-expanded')==='true')closeSearchSuggestions();else{menuQuery='';event.target.value='';renderMenuContent()}
+ }
+});
 function dock(){let t=total();$('#dock').innerHTML=`<button class="bill-dock" data-action="bill"><span class="dock-label"><strong>${t.quantity} ${t.quantity===1?'item':'items'} · View bill</strong><small>${bills[table].discount.type==='cash'?(t.serviceRate===0?'10% cash discount · No service':'10% service, then 10% cash discount'):t.serviceRate===0?'No service charge':bills[table].discount.type==='none'?'Includes 10% service':'After discount + 10% service'}</small></span><span class="dock-total">${money(t.total)} →</span></button>`}
 function totalsMarkup(b,t,showNote=false){
  const d=b.discount,cash=d.type==='cash';
@@ -216,6 +251,8 @@ document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');
  if(a==='category'){category=v;wineCategory='';menuQuery='';renderMenu();window.scrollTo(0,0);return}
  if(a==='wine-category'){if(!wineCats.some(([name])=>name===v))return;wineCategory=v;menuQuery='';renderMenu();window.scrollTo(0,0);return}
  if(a==='back'){if(wineCategory)wineCategory='';else category='';categoryOpen=true;renderMenu();window.scrollTo(0,0);return}
+ if(a==='search-product'){chooseSearchProduct(v);return}
+ if(a==='show-search-results'){closeSearchSuggestions();$('#menu-search').blur();return}
  if(a==='product'){product(v);return}
  if(a==='choose'){choice=+v;$('#sheet').querySelectorAll('.choice').forEach((el,i)=>el.classList.toggle('selected',i===choice));$('#add-choice').disabled=false;$('#add-choice').textContent='Add to Table '+table+' · '+money(selected.variants[choice].price_pence);return}
  if(a==='add'){if(selected&&choice!==null)addItem(selected,selected.variants[choice]);return}
