@@ -3,4 +3,25 @@
 @media(min-width:700px){main{padding-inline:34px}.app-header{padding-inline:34px}.tile-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.top-tiles{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.top-tiles .tile{aspect-ratio:1.5}.bill-layout{max-width:640px;margin:auto}.table-list{grid-template-columns:repeat(3,minmax(0,1fr))}dialog{margin:auto;border-radius:22px}.bottom-nav{padding-inline:180px}.receipt-preview{padding-inline:30px}}
 @media(max-width:350px){.tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.top-tiles .tile{min-height:140px}.app-header{padding-inline:15px}main{padding-inline:14px}.wordmark{font-size:13px}.table-picker{font-size:12px;padding:10px}.heading-row h1{font-size:25px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-@media print{body>*{display:none!important}#print-receipt{display:block!important;max-width:80mm;margin:auto;font-size:11pt;color:#000}#print-receipt .receipt-preview{padding:5mm 0}#print-receipt *{color:#000!important}.receipt-table tr{break-inside:avoid}.sum-row{break-inside:avoid}@page{margin:10mm}}
+#print-receipt{display:none}.print-hint{text-align:center;color:var(--muted);font-size:12px;line-height:1.5;margin:8px 0 0}
+@media print{
+ @page{margin:2mm}
+ body>*{display:none!important}
+ #print-receipt{display:block!important;width:100%;max-width:72mm;margin:0 auto;color:#000;font:10pt/1.25 -apple-system,BlinkMacSystemFont,Arial,sans-serif}
+ #print-receipt .receipt-preview{padding:1mm 0;background:#fff}
+ #print-receipt *{color:#000!important}
+ #print-receipt .receipt-preview h2{font-size:15pt}
+ #print-receipt .receipt-meta{margin:2mm 0 3mm;font-size:9pt}
+ #print-receipt .receipt-table{font-size:9pt;table-layout:fixed}
+ #print-receipt .receipt-table th,#print-receipt .receipt-table td{padding:1.5mm 0}
+ #print-receipt .receipt-table th:first-child,#print-receipt .receipt-table td:first-child{width:56%;overflow-wrap:anywhere}
+ #print-receipt .receipt-table th:nth-child(2){width:12%}
+ #print-receipt .receipt-table th:nth-child(3){width:32%}
+ #print-receipt .receipt-table .right{padding-left:1mm}
+ #print-receipt .receipt-table .bill-item-option{font-size:8pt}
+ #print-receipt .totals{padding:1mm 0}
+ #print-receipt .sum-row{font-size:9pt;margin:1.5mm 0}
+ #print-receipt .sum-row.grand{font-size:13pt;padding-top:2mm;margin-top:2mm}
+ #print-receipt .receipt-thanks{font-size:9pt;margin:4mm 0 2mm}
+ #print-receipt .receipt-table tr,#print-receipt .sum-row{break-inside:avoid}
+}

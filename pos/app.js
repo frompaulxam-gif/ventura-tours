@@ -142,8 +142,18 @@ function confirmRemoval(){
  if(!line||line.quantity!==1){$('#sheet').close();toast('The order changed. Please check the quantity.');return}
  bills[table].lines.splice(index,1);save();$('#sheet').close();lastAddedId=null;refreshOrder();toast(line.name+' removed');
 }
-function receiptBody(b,t,tableLabel){return `<div class="receipt-preview"><h2>THAI BORAN</h2><div class="receipt-meta">Dine-in bill · Table ${esc(tableLabel)}<br></div><table class="receipt-table"><thead><tr><th>Item</th><th class="right">Qty</th><th class="right">Amount</th></tr></thead><tbody>${b.lines.map(l=>`<tr><td>${esc(l.name)}<div class="bill-item-option">${esc(l.option)} · ${money(l.unitPrice)} each</div></td><td class="right">${l.quantity}</td><td class="right">${money(l.unitPrice*l.quantity)}</td></tr>`).join('')}</tbody></table>${totalsMarkup(b,t)}<p class="receipt-thanks">Thank you for dining with us.</p></div>`}
-function customer(){openSheet(header('Table '+table)+receiptBody(bills[table],total(),table))}
+function receiptBody(b,t,tableLabel,kind='Dine-in bill',detail=''){return `<div class="receipt-preview"><h2>THAI BORAN</h2><div class="receipt-meta">${esc(kind)} · Table ${esc(tableLabel)}${detail?'<br>'+esc(detail):''}</div><table class="receipt-table"><thead><tr><th>Item</th><th class="right">Qty</th><th class="right">Amount</th></tr></thead><tbody>${b.lines.map(l=>`<tr><td>${esc(l.name)}<div class="bill-item-option">${esc(l.option)} · ${money(l.unitPrice)} each</div></td><td class="right">${l.quantity}</td><td class="right">${money(l.unitPrice*l.quantity)}</td></tr>`).join('')}</tbody></table>${totalsMarkup(b,t)}<p class="receipt-thanks">Thank you for dining with us.</p></div>`}
+function customer(){openSheet(header('Table '+table)+receiptBody(bills[table],total(),table)+`<button class="wide-btn primary" data-action="print-current" ${bills[table].lines.length?'':'disabled'}>Print bill</button><p class="print-hint">Choose your AirPrint receipt printer in the iPhone or iPad print screen.</p>`)}
+function printBill(b,t,tableLabel,kind='Dine-in bill',detail=''){
+ if(!b.lines.length){toast('Add an item before printing.');return}
+ const target=$('#print-receipt');
+ target.innerHTML=receiptBody(b,t,tableLabel,kind,detail);
+ window.print();
+}
+function printCurrent(){printBill(bills[table],total(),table)}
+function printHistory(id){
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');printBill(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill',historyDate(entry.savedAt))}catch(e){toast(e.message)}
+}
 function historyDate(value){return new Date(value).toLocaleString('en-GB',{timeZone:'Europe/London',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZoneName:'short'})}
 function serviceDateLabel(value){return new Date(value+'T12:00:00.000Z').toLocaleDateString('en-GB',{timeZone:'UTC',weekday:'long',day:'numeric',month:'short',year:'numeric'})}
 const historyStatus=entry=>entry.status==='paid'?'Paid':entry.status==='void'?'Voided':'Cleared';
@@ -161,7 +171,7 @@ function renderHistory(){
  $('#main').innerHTML=`<div class="bill-layout"><div class="heading-row"><div><div class="eyebrow">SAVED BILLS</div><h1>History</h1><p class="intro">${entries.length} saved ${entries.length===1?'bill':'bills'}</p></div></div><p class="history-note">Grouped by service date. Bills saved before 4am count towards the previous day, using UK time. Day totals include paid bills only, after discounts and service.</p>${error?`<p class="notice error" role="alert">${error}</p>`:entries.length?`${days}${entries.length>historyLimit?'<button class="wide-btn" data-action="history-more">Show older bills</button>':''}`:'<div class="empty"><h2>No saved bills yet</h2><p>Paid, voided and cleared bills are saved here automatically.</p></div>'}<p class="quiet">History stays in this browser on this device. Clearing browser data also removes history.</p></div>`;
 }
 function historyEntry(id){
- try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId)+`<button class="wide-btn primary" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId)+`<button class="wide-btn primary" data-action="print-history" data-value="${esc(entry.id)}">Print saved bill</button><button class="wide-btn" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
 }
 function prepareRestore(id){
  try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');pendingRestore=id;
@@ -263,6 +273,8 @@ document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');
  if(a==='custom'){openSheet(header('Custom discount')+'<label class="form-field">Discount type<select id="discount-type"><option value="amount">Amount (£)</option><option value="percent">Percentage (%)</option></select></label><label class="form-field">Discount value<input id="discount-value" type="text" inputmode="decimal" placeholder="0.00"></label><p class="service-note">Discount applies before any service charge. A £ discount is capped at the subtotal.</p><p class="form-error" id="discount-error" role="alert"></p><button class="wide-btn primary" data-action="apply-custom">Apply discount</button>');return}
  if(a==='apply-custom'){try{let type=$('#discount-type').value,value=BillingEngine[type==='amount'?'parseMoney':'parsePercent']($('#discount-value').value);bills[table].discount={type,value};save();$('#sheet').close();renderBill()}catch(e){$('#discount-error').textContent=e.message}return}
  if(a==='customer'){customer();return}
+ if(a==='print-current'){printCurrent();return}
+ if(a==='print-history'){printHistory(v);return}
  if(a==='paid'){preparePaid();return}
  if(a==='void'){prepareVoid();return}
  if(a==='confirm-void'){confirmVoid();return}
