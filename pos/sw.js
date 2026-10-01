@@ -1,7 +1,7 @@
 'use strict';
-const CACHE='thai-boran-pos-20261001-7';
+const CACHE='thai-boran-pos-20261001-8';
 const ROOT=new URL('./',self.location.href).href;
-const FILES=['./','index.html','styles.css?v=20261001-pos-7','variants.css?v=20261001-pos-7','polish.css?v=20261001-pos-7','menu.js?v=20261001-pos-7','set-menu.js?v=20261001-pos-7','engine.js?v=20261001-pos-7','history.js?v=20261001-pos-7','catalog.js?v=20261001-pos-7','search.js?v=20261001-pos-7','app.js?v=20261001-pos-7','pwa.js?v=20261001-pos-7','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'];
+const FILES=['./','index.html','styles.css?v=20261001-pos-8','variants.css?v=20261001-pos-8','polish.css?v=20261001-pos-8','menu.js?v=20261001-pos-8','set-menu.js?v=20261001-pos-8','engine.js?v=20261001-pos-8','history.js?v=20261001-pos-8','catalog.js?v=20261001-pos-8','search.js?v=20261001-pos-8','app.js?v=20261001-pos-8','pwa.js?v=20261001-pos-8','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(file=>new URL(file,ROOT).href)))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('thai-boran-pos-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
