@@ -14,8 +14,8 @@
     const bp=parseMoney(s);if(bp>10000)throw new Error('The discount cannot be more than 100%.');return bp;
   }
   function calculate(bill,basis){
-    let subtotal=0,quantity=0;
-    for(const l of bill.lines){integer(l.unitPrice,'price');integer(l.quantity,'quantity',999);subtotal+=l.unitPrice*l.quantity;quantity+=l.quantity;}
+    let subtotal=0,quantity=0,exemptSubtotal=0;
+    for(const l of bill.lines){integer(l.unitPrice,'price');integer(l.quantity,'quantity',999);const lineTotal=l.unitPrice*l.quantity;subtotal+=lineTotal;quantity+=l.quantity;if(l.serviceExempt)exemptSubtotal+=lineTotal;}
     integer(subtotal,'subtotal');
     const d=bill.discount||{type:'none',value:0};
     let discount=0;
@@ -25,13 +25,14 @@
     else if(d.type!=='none')throw new Error('Unknown discount type');
     const net=subtotal-discount;
     if(!['afterDiscount','beforeDiscount'].includes(basis))return {subtotal,quantity,discount,net,service:null,total:null};
-    const serviceBase=basis==='afterDiscount'?net:subtotal;
+    const exemptNet=subtotal?Math.round(exemptSubtotal*net/subtotal):0;
+    const serviceBase=basis==='afterDiscount'?Math.max(0,net-exemptNet):Math.max(0,subtotal-exemptSubtotal);
     const serviceRate=bill.serviceRate??10;
     if(![0,10].includes(serviceRate))throw new Error('Invalid service-charge rate');
     const service=Math.round(serviceBase*serviceRate/100);
     const beforeCash=net+service;
     const cashDiscount=d.type==='cash'?Math.round(beforeCash*1000/10000):0;
-    return {subtotal,quantity,discount,net,serviceBase,serviceRate,service,beforeCash,cashDiscount,total:beforeCash-cashDiscount};
+    return {subtotal,quantity,discount,net,exemptSubtotal,serviceBase,serviceRate,service,beforeCash,cashDiscount,total:beforeCash-cashDiscount};
   }
   function validateState(state){
     if(!state||state.version!==1||!Array.isArray(state.bills)||state.bills.length>500)throw new Error('This is not a valid Thai Boran backup.');
