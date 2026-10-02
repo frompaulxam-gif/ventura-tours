@@ -1,0 +1,151 @@
+/* Shared mobile layout: real tap targets, readable copy and viewport-sized scenes. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.icon-button,.menu-toggle,.dialog-close,.step-button{min-width:44px;min-height:44px}
+.world-switch a{min-height:44px;display:flex;align-items:center;justify-content:center}
+.service-list summary{min-height:44px;align-items:center}
+.menu-source,.contact-email,.phone-link,.site-footer>div>a{display:inline-flex;align-items:center;min-height:44px}
+.menu-tabs button{min-height:48px}
+.text-link{min-height:44px;display:inline-flex;align-items:center}
+dialog{overscroll-behavior:contain;max-height:calc(100dvh - 32px);max-width:calc(100vw - 32px)}
+.menu-list li>span{min-width:0}
+.menu-tabs{gap:16px}.menu-tabs button{flex:1;line-height:1.5}
+.site-header{padding-left:max(4.3%,env(safe-area-inset-left));padding-right:max(4.3%,env(safe-area-inset-right))}
+
+@media(max-width:900px){
+ .section-pad p,.jewel-statement>div p,.service-list details p,.collection-heading p{font-size:16px}
+ .collection-links a small{font-size:12px}
+ .site-footer p,.site-footer>div{font-size:13px}
+ .service-list summary{font-size:16px}
+ body[data-site=cafe] .dish-feature h3{text-wrap:balance;min-width:0}
+ body[data-site=cafe] .dish-feature-line>span{flex-shrink:0}
+ body[data-site=cafe] .welcome .welcome-description,
+ body[data-site=cafe] .section-heading>p:last-child,
+ body[data-site=cafe] .dish-feature p,
+ body[data-site=cafe] .buffet-type>p:not(.section-kicker),
+ body[data-site=cafe] .visit address,
+ body[data-site=cafe] .visit dl,
+ .visit-heading>p:last-child,.visit-column>p{font-size:16px}
+ body[data-site=cafe] .visit-information{grid-template-columns:1fr;max-width:480px;gap:32px}
+ body[data-site=cafe] .button,body[data-site=cafe] .visit .button,
+ body[data-site=cafe] .dish-feature .button,.button{font-size:12px;min-height:48px}
+ .cafe-details-strip{font-size:12px;flex-wrap:wrap;justify-content:center;text-align:center}
+ body[data-site=cafe] .food-tag,body[data-site=cafe] .section-kicker{font-size:11px!important}
+ .cafe-dock{bottom:calc(14px + env(safe-area-inset-bottom));height:50px}
+ .cafe-dock>button,.cafe-dock>a{height:50px;font-size:12px}
+ .cafe-dock>.menu-toggle{height:50px}
+ body[data-site=cafe] .menu-tabs button{font-size:12px}
+ body[data-site=cafe] .menu-list li{font-size:15px}
+ .menu-list small,.menu-list b,.menu-footnote,.menu-source{font-size:13px}
+ .food-menu-dialog [role=tabpanel]>p:not(.menu-footnote){font-size:16px}
+}
+
+@media(max-width:700px){
+ .site-header,body[data-site=cafe] .site-header,.jewellery-hero .site-header{height:74px;padding-inline:max(6%,env(safe-area-inset-left))}
+ .header-actions{gap:8px}.wordmark{font-size:31px}
+ .world-switch,.jewellery-hero .world-switch,body[data-site=cafe] .world-switch{top:76px}
+ .world-switch a,body[data-site=cafe] .world-switch a{font-size:12px}
+ body[data-site=cafe] .world-switch{gap:28px}
+ .hero-intro,.hero-food-label,.piece-copy{min-width:0}
+ body[data-site=cafe] .hero-scroll{height:160svh;min-height:0}
+ body[data-site=cafe] .food-hero{
+   height:100svh;min-height:660px;max-height:none;display:grid;
+   grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;gap:10px;
+   padding:140px 6% calc(88px + env(safe-area-inset-bottom));
+ }
+ body[data-site=cafe] .food-hero .hero-intro{position:relative;top:auto;padding:0;grid-row:1}
+ body[data-site=cafe] .food-hero .hero-intro p{font-size:10px;letter-spacing:.08em;margin-bottom:8px}
+ body[data-site=cafe] .food-hero .hero-intro h1{font-size:clamp(2.2rem,10.7vw,3.8rem)}
+ body[data-site=cafe] .food-hero .hero-object{
+   position:relative;top:auto;left:auto;transform:none;grid-row:2;align-self:center;justify-self:center;
+   width:min(88vw,calc(max(660px,100svh) - 445px));height:auto;aspect-ratio:1;max-width:440px;max-height:none;
+ }
+ body[data-site=cafe] .food-hero .dish-satellite{display:none}
+ body[data-site=cafe] .food-hero .hero-food-label{position:relative;inset:auto;grid-row:3}
+ body[data-site=cafe] .food-hero .hero-food-label h2{font-size:29px}
+ body[data-site=cafe] .food-hero .hero-food-label p{font-size:13px;line-height:1.6}
+ body[data-site=cafe] .food-origin{font-size:12px}
+ body[data-site=cafe] .food-hero .hero-bottom{position:relative;inset:auto;grid-row:4;justify-content:center}
+ .scene-pager{gap:8px}.step-button{width:44px;height:44px}.scene-progress{left:52px;bottom:-2px}
+ .jewellery-scroll{height:350svh}
+ .jewellery-scroll .jewellery-hero{
+   display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;gap:12px;
+   padding:140px 6% calc(18px + env(safe-area-inset-bottom));height:100svh;min-height:550px;
+ }
+ .jewellery-hero .hero-intro{position:relative;inset:auto;padding:0;grid-row:1}
+ .jewellery-hero .hero-intro h1{font-size:clamp(2.1rem,10.5vw,3.5rem)}
+ .jewellery-hero .hero-intro p{font-size:11px;letter-spacing:.12em;margin-bottom:8px}
+ .jewel-stage{
+   position:relative;inset:auto;transform:none;align-self:center;justify-self:center;grid-row:2;
+   width:min(86vw,calc(max(550px,100svh) - 430px));height:auto;aspect-ratio:1;max-width:370px;
+ }
+ .piece-copy{position:relative;inset:auto;grid-row:3}
+ .piece-copy h2{font-size:28px}.piece-copy p{font-size:13px;line-height:1.6;max-width:32ch;margin:5px auto 0}
+ .jewellery-hero .hero-bottom{position:relative;inset:auto;grid-row:4;display:grid;grid-template-columns:1fr auto;gap:18px 12px;min-height:0}
+ .jewellery-hero .hero-bottom>.button{position:static;transform:none;grid-column:1/-1;grid-row:1;justify-self:center;font-size:13px;min-width:200px;min-height:48px}
+ .jewellery-hero .hero-bottom>.button:hover{transform:none}
+ .jewel-scroll-cue{font-size:11px;max-width:115px;line-height:1.4}
+ .jewel-chapters{font-size:11px;gap:10px;padding-bottom:8px}
+ .contact-email{font-size:15px;overflow-wrap:anywhere}
+ .collection-links a{gap:12px}.collection-links a>span:first-child{font-size:31px}
+ .collection-links a small{font-size:12px}
+ .navigation-dialog,body[data-site=cafe] .navigation-dialog{padding:60px 24px 32px}
+ .navigation-dialog>a,body[data-site=cafe] .navigation-dialog>a{font-size:clamp(1.5rem,7vw,2rem);line-height:1.4;padding:10px 0;min-height:44px}
+ .food-menu-dialog{padding:48px 22px 28px}
+ .dialog-close{top:8px;right:8px}
+ body[data-site=cafe] .dish-feature h3{font-size:clamp(1.5rem,7.7vw,2rem)}
+ body[data-site=cafe] .visit dl>div{flex-wrap:wrap}
+}
+
+/* Short portrait screens get a naturally scrolling café scene, with dish controls. */
+@media(max-width:700px) and (max-height:680px){
+ body[data-site=cafe] .hero-scroll{height:auto}
+ body[data-site=cafe] .food-hero{position:relative;min-height:550px;padding-top:130px;padding-bottom:80px;gap:6px}
+ body[data-site=cafe] .food-hero .hero-object{width:min(86vw,calc(max(550px,100svh) - 420px))}
+ body[data-site=cafe] .food-hero .hero-food-label p{font-size:12px}
+ .jewellery-scroll .jewellery-hero{padding-top:144px;gap:8px}
+ .jewel-stage{width:min(86vw,calc(max(550px,100svh) - 390px))}
+ .piece-copy h2{font-size:25px}.jewel-chapters{font-size:10px;gap:8px}
+ .jewel-scroll-cue{font-size:10px}
+ .jewellery-hero .hero-bottom{gap:12px}
+}
+
+/* A landscape phone uses the room beside the product instead of clipping it. */
+@media(max-width:1000px) and (max-height:500px) and (orientation:landscape){
+ .site-header,body[data-site=cafe] .site-header,.jewellery-hero .site-header{height:70px;padding-inline:max(5%,env(safe-area-inset-left))}
+ .world-switch,.jewellery-hero .world-switch,body[data-site=cafe] .world-switch{position:static;transform:none;gap:10px}
+ .wordmark{font-size:27px}.wordmark span{font-size:8px}.header-location{display:none}
+ .world-switch a,body[data-site=cafe] .world-switch a{font-size:11px}
+ .header-actions{gap:6px}.menu-toggle{font-size:0}.menu-toggle span{font-size:19px}
+ body[data-site=cafe] .hero-scroll{height:auto;min-height:0}
+ body[data-site=cafe] .food-hero,.jewellery-scroll .jewellery-hero{
+   display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:auto auto 1fr;gap:8px 20px;
+   padding:90px max(6%,env(safe-area-inset-left)) 20px;height:100svh;min-height:360px;
+ }
+ body[data-site=cafe] .food-hero{position:relative;padding-bottom:74px}
+ body[data-site=cafe] .food-hero .hero-intro,.jewellery-hero .hero-intro{position:relative;inset:auto;padding:0;grid-column:1;grid-row:1;text-align:left}
+ body[data-site=cafe] .food-hero .hero-intro h1,.jewellery-hero .hero-intro h1{font-size:clamp(1.8rem,4vw,2.6rem)}
+ body[data-site=cafe] .food-hero .hero-intro p,.jewellery-hero .hero-intro p{font-size:10px;margin-bottom:7px;letter-spacing:.06em}
+ body[data-site=cafe] .food-hero .hero-object,.jewel-stage{
+   position:relative;inset:auto;transform:none;grid-column:2;grid-row:1/4;
+   width:min(38vw,60svh);height:auto;aspect-ratio:1;align-self:center;justify-self:center;max-width:none;
+ }
+ body[data-site=cafe] .food-hero .hero-food-label,.piece-copy{position:relative;inset:auto;grid-column:1;grid-row:2;text-align:left}
+ body[data-site=cafe] .food-hero .hero-food-label h2,.piece-copy h2{font-size:25px}
+ body[data-site=cafe] .food-hero .hero-food-label p,.piece-copy p{font-size:12px;margin-inline:0}
+ .jewel-side-note,.jewel-detail-note,.dish-satellite,.side-note,.scroll-note{display:none}
+ body[data-site=cafe] .food-hero .hero-bottom,.jewellery-hero .hero-bottom{position:relative;inset:auto;grid-column:1;grid-row:3;align-self:end;justify-content:start}
+ .jewellery-hero .hero-bottom{display:grid;grid-template-columns:auto 1fr;gap:10px;min-height:0}
+ .jewellery-hero .hero-bottom>.button{position:static;transform:none;justify-self:start;grid-column:1/-1;grid-row:1;min-width:180px;min-height:44px;font-size:12px}
+ .jewel-scroll-cue{font-size:10px;max-width:92px}.jewel-chapters{font-size:10px;gap:9px}
+ .cafe-dock{bottom:calc(10px + env(safe-area-inset-bottom))}
+ .jewel-orbit{top:22%;left:47%;width:47%;height:60%}
+}
+
+@media(hover:none){
+ .button:hover,.dish-feature:hover img{transform:none!important}
+ .collection-links a:hover{padding-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+ body[data-site=cafe] .hero-scroll{height:auto}
+ body[data-site=cafe] .food-hero{position:relative}
+}

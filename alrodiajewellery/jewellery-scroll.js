@@ -4,9 +4,9 @@
   const hero = document.querySelector('.jewellery-hero');
   const media = matchMedia('(prefers-reduced-motion: reduce)');
   const pieces = [
-    {category:'The ring collection', heading:'A little forever.', title:'The solitaire.', description:'A brilliant centre. A simple promise.', note:['A moment.','A promise.','A piece of you.'], detail:['A single stone.','A lasting moment.'], storyLabel:'For a moment that lasts.', storyTitle:['A small circle.','A whole world of meaning.'], storyText:'A promise to someone else, or a milestone of your own. Explore Alródia’s rings and find a piece to mark your moment.', image:'assets/ring.png', alt:'Close detail of the solitaire’s diamond and gold setting', link:'ring', plural:'rings', light:'golden'},
-    {category:'The necklace collection', heading:'Keep it close.', title:'The pendant.', description:'A delicate chain. A little light, close to you.', note:['A little detail.','An everyday ritual.','Always close.'], detail:['A fine chain.','A point of light.'], storyLabel:'Something to keep close.', storyTitle:['An everyday piece.','A personal kind of precious.'], storyText:'A simple pendant can carry a whole story. Explore Alródia’s necklaces for a thoughtful gift or a piece that becomes part of your every day.', image:'assets/necklace.png', alt:'Close detail of the diamond pendant and delicate gold chain', link:'necklace', plural:'necklaces', light:'daylight'},
-    {category:'The earring collection', heading:'Catch the light.', title:'The diamond drops.', description:'A little movement. A beautiful finishing touch.', note:['A turn of the head.','A little sparkle.','All you.'], detail:['A matching pair.','Light in motion.'], storyLabel:'The detail that makes the day.', storyTitle:['A finishing touch.','A feeling all of your own.'], storyText:'From everyday dressing to a special evening, find earrings that feel like you. Discover the Alródia collection and choose your finishing touch.', image:'assets/earrings.png', alt:'Close detail of gold earrings and round diamond drops', link:'earrings', plural:'earrings', light:'evening'}
+    {category:'The ring collection', heading:'A little forever.', title:'The solitaire.', description:'A brilliant centre. A simple promise.', note:['A moment.','A promise.','A piece of you.'], detail:['A single stone.','A lasting moment.'], storyLabel:'For a moment that lasts.', storyTitle:['A small circle.','A whole world of meaning.'], storyText:'A promise to someone else, or a milestone of your own. Explore Alródia’s rings and find a piece to mark your moment.', image:'assets/ring-960.webp', alt:'Close detail of the solitaire’s diamond and gold setting', link:'ring', plural:'rings', light:'golden'},
+    {category:'The necklace collection', heading:'Keep it close.', title:'The pendant.', description:'A delicate chain. A little light, close to you.', note:['A little detail.','An everyday ritual.','Always close.'], detail:['A fine chain.','A point of light.'], storyLabel:'Something to keep close.', storyTitle:['An everyday piece.','A personal kind of precious.'], storyText:'A simple pendant can carry a whole story. Explore Alródia’s necklaces for a thoughtful gift or a piece that becomes part of your every day.', image:'assets/necklace-960.webp', alt:'Close detail of the diamond pendant and delicate gold chain', link:'necklace', plural:'necklaces', light:'daylight'},
+    {category:'The earring collection', heading:'Catch the light.', title:'The diamond drops.', description:'A little movement. A beautiful finishing touch.', note:['A turn of the head.','A little sparkle.','All you.'], detail:['A matching pair.','Light in motion.'], storyLabel:'The detail that makes the day.', storyTitle:['A finishing touch.','A feeling all of your own.'], storyText:'From everyday dressing to a special evening, find earrings that feel like you. Discover the Alródia collection and choose your finishing touch.', image:'assets/earrings-960.webp', alt:'Close detail of gold earrings and round diamond drops', link:'earrings', plural:'earrings', light:'evening'}
   ];
   const wrapper = document.querySelector('.jewellery-scroll');
   const objects = [...hero.querySelectorAll('.jewel-piece')];
@@ -16,7 +16,7 @@
   const base = 'https://philippinesgreatbritain.com/alrodia-diamonds/ols/categories/';
   const backgrounds = ['oklch(19% .016 20)','oklch(26% .024 255)','oklch(17% .031 322)'];
   let active = -1, frame = 0;
-  let travel = 1, start = 0;
+  let travel = 1, start = 0, lastProgress = -1, lastStill;
   const clamp = value => Math.min(1, Math.max(0, value));
   const ease = value => { const t = clamp(value); return t*t*(3-2*t); };
   const reduced = () => media.matches || body.classList.contains('motion-paused');
@@ -45,7 +45,9 @@
     enquiry.textContent = 'Enquire about '+piece.plural;
     enquiry.href = 'mailto:alrodia.jewellers@gmail.com?subject='+encodeURIComponent('Alrodia '+piece.plural+' enquiry');
     const closeup = document.getElementById('piece-closeup');
-    closeup.src = piece.image; closeup.alt = piece.alt;
+    closeup.src = piece.image;
+    closeup.srcset = piece.image.replace('-960.webp','-480.webp')+' 480w, '+piece.image+' 960w';
+    closeup.alt = piece.alt;
     chapters.forEach((chapter,i) => {
       chapter.classList.toggle('current-chapter', i===index);
       if(i===index) chapter.setAttribute('aria-current','step'); else chapter.removeAttribute('aria-current');
@@ -56,11 +58,13 @@
     frame = 0;
     const p = clamp((scrollY-start)/travel);
     // Reading holds alternate with two scroll-scrubbed transitions.
+    const still = reduced();
+    if (p === lastProgress && still === lastStill) return;
+    lastProgress = p; lastStill = still;
     const first = ease((p-.16)/.22);
     const second = ease((p-.57)/.22);
     const position = first+second;
     const index = Math.round(position);
-    const still = reduced();
     setPiece(index);
     const from = Math.min(1,Math.floor(position));
     const mix = (position-from)*100;
@@ -89,6 +93,7 @@
   }
   function requestRender() { if(!frame) frame=requestAnimationFrame(render); }
   function measure() {
+    lastProgress = -1;
     start = wrapper.getBoundingClientRect().top+scrollY;
     travel = Math.max(1,wrapper.offsetHeight-hero.offsetHeight);
     requestRender();
