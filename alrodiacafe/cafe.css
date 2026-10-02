@@ -1,0 +1,173 @@
+/* Alródia café: forest green, warm ivory and brass; a quieter dining-room rhythm. */
+body[data-site=cafe]{--pine:oklch(22% .029 157);--deep:oklch(15% .018 157);--ink:oklch(24% .028 157);--white:oklch(96% .014 93);--gold:oklch(81% .072 85);--muted:oklch(80% .023 126);--line:oklch(87% .03 95 / .23);--display:'Bodoni Moda',Georgia,serif;--cut:polygon(6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px),0 6px);background:var(--pine)}
+body[data-site=cafe] .section-kicker{font-family:var(--body);font-size:10px!important;line-height:1.5;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 26px}
+body[data-site=cafe] .button{border-radius:0;clip-path:var(--cut);font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;min-height:48px;padding:15px 28px;gap:22px;transition:background .25s,color .25s,transform .3s var(--ease)}
+body[data-site=cafe] .button.primary{background:var(--gold);color:var(--deep)}
+body[data-site=cafe] .button.light{background:var(--white);color:var(--deep)}
+body[data-site=cafe] .button.outline{background:var(--white);color:var(--deep)}
+body[data-site=cafe] .button:hover{background:var(--gold);color:var(--deep);transform:translateY(-2px)}
+body[data-site=cafe] .button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--gold);background:var(--white);color:var(--deep)}
+body[data-site=cafe] .header-location{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+body[data-site=cafe] .world-switch{border:0;border-radius:0;padding:0;gap:24px}
+body[data-site=cafe] .world-switch a{border-radius:0;padding:5px 0;background:none;color:var(--white);font-size:10px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid transparent}
+body[data-site=cafe] .world-switch a[aria-current]{border-color:var(--gold);color:var(--gold)}
+body[data-site=cafe] .world-switch a:hover{background:none;color:var(--gold)}
+body[data-site=cafe] .food-hero .hero-intro h1{font-size:clamp(3.5rem,7vw,6rem)}
+body[data-site=cafe] .food-hero .hero-intro p{font-size:10px;letter-spacing:.16em}
+body[data-site=cafe] .food-hero .hero-object{width:min(54vw,52svh);height:min(54vw,52svh);top:27%}
+body[data-site=cafe] .food-hero .hero-food-label{bottom:19%}
+body[data-site=cafe] .food-hero .hero-food-label h2{font-size:31px;margin:2px 0 5px}
+body[data-site=cafe] .food-hero .hero-bottom{bottom:99px}
+body[data-site=cafe] .food-hero .side-note{font-size:12px;left:5.5%;top:39%}
+body[data-site=cafe] .food-hero .satellite-left{left:18%;width:110px}
+body[data-site=cafe] .food-hero .satellite-right{right:13%;width:110px}
+.cafe-details-strip{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:25px 7%;background:var(--deep);color:var(--muted);font-size:10px;letter-spacing:.05em;border-block:1px solid var(--line)}
+.cafe-details-strip a{color:var(--gold);white-space:nowrap}
+body[data-site=cafe] .welcome{display:block;background:var(--pine);color:var(--white);text-align:center;padding:110px 7% 120px}
+body[data-site=cafe] .welcome h2{font-size:clamp(2.8rem,4.7vw,4.4rem);line-height:1.13;max-width:24ch;margin:0 auto 35px}
+body[data-site=cafe] .welcome .welcome-lead{font-family:var(--brand);font-size:25px;font-style:italic;color:var(--gold);margin:0 auto 16px}
+body[data-site=cafe] .welcome .welcome-description{max-width:48ch;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.95}
+body[data-site=cafe] .welcome .button{margin-top:34px}
+body[data-site=cafe] .menu-section{background:oklch(18% .022 157);color:var(--white);padding:88px 7% 86px}
+body[data-site=cafe] .section-heading{display:block;text-align:center;margin:0 auto 48px;max-width:660px}
+body[data-site=cafe] .section-heading h2{font-size:clamp(2.8rem,4.8vw,4.5rem);margin:0 0 22px;line-height:1.1}
+body[data-site=cafe] .section-heading>p:last-child{font-size:13px;line-height:1.8;max-width:none;color:var(--muted);margin:0}
+body[data-site=cafe] .food-features{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6%;max-width:1120px;margin:0 auto}
+body[data-site=cafe] .dish-feature{min-width:0;padding:0;display:flex;flex-direction:column}
+body[data-site=cafe] .dish-image-panel{aspect-ratio:1.55;border-radius:0;background:radial-gradient(ellipse at 50% 58%,oklch(38% .044 150),oklch(27% .031 153));overflow:hidden;isolation:isolate}
+body[data-site=cafe] .dish-feature:nth-child(2) .dish-image-panel{background:radial-gradient(ellipse at 50% 58%,oklch(42% .051 94),oklch(27% .027 125))}
+body[data-site=cafe] .dish-image-panel:after{content:'';position:absolute;inset:12px;border:1px solid oklch(84% .04 97 / .13);pointer-events:none}
+body[data-site=cafe] .dish-image-panel img{height:104%;width:82%;object-fit:contain;filter:drop-shadow(0 17px 18px oklch(9% .019 150 / .4))}
+body[data-site=cafe] .dish-feature:hover img{transform:translateY(-4px) scale(1.02)}
+.dish-feature-copy{padding:24px 0 0;display:flex;flex-direction:column;flex:1}
+body[data-site=cafe] .food-tag{position:static;color:var(--gold);font-size:9px;letter-spacing:.13em;text-transform:uppercase;line-height:1.6;margin-bottom:11px}
+body[data-site=cafe] .dish-feature-line{margin:0 0 15px;align-items:baseline;gap:15px;min-height:43px}
+body[data-site=cafe] .dish-feature h3{font-family:var(--display);font-size:clamp(1.7rem,2.9vw,2.5rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;text-wrap:nowrap}
+body[data-site=cafe] .dish-feature-line>span{font-size:15px;color:var(--gold);white-space:nowrap}
+body[data-site=cafe] .dish-feature p{color:var(--muted);font-size:12px;line-height:1.85;margin-bottom:24px}
+body[data-site=cafe] .dish-feature .button{margin-top:auto;align-self:flex-start;min-width:183px}
+.menu-availability{font-size:10px!important;text-align:center;margin:46px auto 0;max-width:62ch;color:var(--muted);line-height:1.9}
+.menu-availability a{text-decoration:underline;text-underline-offset:3px;color:var(--white)}
+body[data-site=cafe] .buffet{padding:100px 9%;background:var(--pine);grid-template-columns:1.1fr 1fr;gap:10%;border-bottom:1px solid var(--line)}
+body[data-site=cafe] .buffet h2{font-size:clamp(3rem,5.8vw,5.2rem);font-weight:400;line-height:1.05;margin-bottom:26px}
+body[data-site=cafe] .buffet-type>p:not(.section-kicker){font-size:13px;line-height:1.9}
+body[data-site=cafe] .buffet-price{aspect-ratio:auto;border:0;border-radius:0;border-left:1px solid var(--line);min-height:260px;max-width:none;padding:20px 0 20px 10%}
+body[data-site=cafe] .buffet-price strong{font-size:clamp(5rem,8vw,8rem);line-height:1.25;margin:9px 0 14px}
+body[data-site=cafe] .buffet-price>span{font-size:11px;color:var(--muted);padding:0;line-height:1.9}
+body[data-site=cafe] .buffet-price .buffet-footnote{font-size:9px;margin-top:22px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold)}
+body[data-site=cafe] .visit{display:block;background:var(--deep);color:var(--white);padding:100px 7% 110px;text-align:center}
+body[data-site=cafe] .visit h2{font-size:clamp(2.8rem,4.8vw,4.5rem);line-height:1.13;margin-bottom:25px}
+.visit-heading>p:last-child{font-size:13px;color:var(--muted);margin:0 0 58px}
+.visit-information{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:5%;max-width:1150px;margin:auto;text-align:center}
+.visit-column{border-top:1px solid var(--line);padding-top:26px;min-width:0}
+body[data-site=cafe] .visit h3{font-family:var(--body);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:400;line-height:1.5;margin-bottom:21px}
+body[data-site=cafe] .visit address{font-size:13px;line-height:1.9;margin:0 0 24px;color:var(--muted)}
+body[data-site=cafe] .visit dl{font-size:12px;margin:0}
+body[data-site=cafe] .visit dl>div{border-bottom:1px solid var(--line);padding:11px 0;gap:10px;align-items:baseline}
+body[data-site=cafe] .visit dl>div:first-child{padding-top:0}
+body[data-site=cafe] .visit dd{white-space:nowrap;color:var(--muted)}
+body[data-site=cafe] .visit dt{text-align:left}
+body[data-site=cafe] .phone-link{font-family:var(--body);font-size:16px;letter-spacing:.04em;line-height:1.8}
+.visit-column>p{font-size:11px;line-height:1.8;color:var(--muted);max-width:28ch;margin:12px auto 23px}
+body[data-site=cafe] .visit .button{font-size:9px;min-height:45px;padding:14px 21px}
+body[data-site=cafe] .site-footer{background:var(--deep);border-top:1px solid var(--line);padding-bottom:140px;gap:25px}
+.cafe-dock{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;width:330px;height:48px;background:var(--white);color:var(--deep);clip-path:var(--cut);z-index:30;box-shadow:0 4px 25px oklch(0% 0 0 / .2)}
+.cafe-dock>button,.cafe-dock>a{display:flex;align-items:center;justify-content:center;height:48px;min-height:44px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;line-height:1;padding:0 10px;transition:background .2s}
+.cafe-dock>button:hover,.cafe-dock>a:hover{background:var(--gold)}
+.cafe-dock>.menu-toggle{border-inline:1px solid oklch(27% .028 157 / .15);height:23px;min-height:23px;padding:0;position:relative}
+.cafe-dock>.menu-toggle:before{content:'';position:absolute;inset:-12px 0}
+.cafe-dock>.menu-toggle>span{font-size:19px;font-weight:400;transform:scaleX(1.2)}
+.cafe-dock>button:focus-visible,.cafe-dock>a:focus-visible{outline:2px solid var(--deep);outline-offset:-5px;background:var(--gold)}
+body[data-site=cafe].modal-open .cafe-dock{visibility:hidden}
+body[data-site=cafe] dialog{border-radius:0;border-color:var(--line)}
+body[data-site=cafe] .food-menu-dialog{background:var(--white);color:var(--ink);max-width:620px}
+body[data-site=cafe] .food-menu-dialog h2{font-family:var(--display);font-size:42px;line-height:1.08}
+body[data-site=cafe] .food-menu-dialog .button.primary{background:var(--pine);color:var(--white)}
+body[data-site=cafe] .food-menu-dialog .button.primary:focus-visible{box-shadow:inset 0 0 0 3px var(--gold)}
+body[data-site=cafe] .menu-tabs button{font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:14px 0}
+body[data-site=cafe] .menu-list li{font-size:13px}
+body[data-site=cafe] .navigation-dialog{background:var(--deep);color:var(--white);padding:75px 50px;max-width:560px}
+body[data-site=cafe] .navigation-dialog>a{font-size:38px;line-height:1.7;font-family:var(--display)}
+@media(max-width:1000px){
+ body[data-site=cafe] .section-pad{padding-left:6%;padding-right:6%}
+ body[data-site=cafe] .food-hero .satellite-left{left:13%;width:92px}
+ body[data-site=cafe] .food-hero .satellite-right{right:9%;width:92px}
+ .cafe-details-strip{padding-inline:6%;font-size:9px;gap:15px}
+ body[data-site=cafe] .dish-feature h3{font-size:28px}
+ .visit-information{gap:4%;grid-template-columns:1fr 1.15fr 1fr}
+ body[data-site=cafe] .visit dl{font-size:10px}
+ body[data-site=cafe] .visit .button{padding-inline:15px;font-size:8px}
+}
+@media(max-width:700px){
+ body[data-site=cafe] .site-header{height:86px}
+ body[data-site=cafe] .header-location{display:none}
+ body[data-site=cafe] .world-switch{top:106px;gap:25px}
+ body[data-site=cafe] .world-switch a{font-size:9px}
+ body[data-site=cafe] .food-hero{height:100svh;min-height:800px}
+ body[data-site=cafe] .food-hero .hero-intro{top:174px}
+ body[data-site=cafe] .food-hero .hero-intro h1{font-size:clamp(2.8rem,11.2vw,4rem)}
+ body[data-site=cafe] .food-hero .hero-intro p{font-size:8px}
+ body[data-site=cafe] .food-hero .hero-object{top:265px;width:94vw;height:94vw;max-width:400px;max-height:400px}
+ body[data-site=cafe] .food-hero .hero-food-label{bottom:168px;left:7%;right:7%}
+ body[data-site=cafe] .food-hero .hero-food-label h2{font-size:29px}
+ body[data-site=cafe] .food-hero .hero-food-label p{font-size:10px}
+ body[data-site=cafe] .food-hero .hero-bottom{bottom:95px;justify-content:center}
+ body[data-site=cafe] .food-hero .satellite-left{left:0;top:430px;width:66px}
+ body[data-site=cafe] .food-hero .satellite-right{right:0;top:333px;width:66px}
+ body[data-site=cafe] .dish-satellite span{font-size:7px;padding:2px 4px}
+ .cafe-details-strip{padding:22px 6%;display:flex;flex-direction:column;gap:8px;text-align:center;font-size:9px}
+ body[data-site=cafe] .welcome{padding:74px 7% 80px}
+ body[data-site=cafe] .welcome h2{font-size:37px;line-height:1.15;margin-bottom:26px}
+ body[data-site=cafe] .welcome h2 br{display:none}
+ body[data-site=cafe] .welcome .welcome-lead{font-size:23px}
+ body[data-site=cafe] .welcome .welcome-description{font-size:12px;max-width:34ch}
+ body[data-site=cafe] .section-kicker{font-size:9px!important;margin-bottom:20px}
+ body[data-site=cafe] .menu-section{padding:68px 6%}
+ body[data-site=cafe] .section-heading{margin-bottom:36px}
+ body[data-site=cafe] .section-heading h2{font-size:39px;margin-bottom:18px}
+ body[data-site=cafe] .section-heading>p:last-child{font-size:11px}
+ body[data-site=cafe] .food-features{grid-template-columns:1fr;gap:50px}
+ body[data-site=cafe] .dish-image-panel{aspect-ratio:1.38}
+ .dish-feature-copy{padding-top:21px}
+ body[data-site=cafe] .dish-feature h3{font-size:30px}
+ body[data-site=cafe] .dish-feature-line{min-height:0;margin-bottom:15px}
+ body[data-site=cafe] .dish-feature-line>span{font-size:14px}
+ body[data-site=cafe] .dish-feature p{font-size:11px;line-height:1.9;margin-bottom:22px}
+ body[data-site=cafe] .food-tag{font-size:8px}
+ body[data-site=cafe] .dish-feature .button{font-size:9px;min-width:170px}
+ .menu-availability{margin-top:35px;font-size:9px!important;max-width:37ch}
+ body[data-site=cafe] .buffet{padding:74px 7%;gap:46px;text-align:center;align-items:center}
+ body[data-site=cafe] .buffet h2{font-size:53px}
+ body[data-site=cafe] .buffet-type>p:not(.section-kicker){font-size:11px}
+ body[data-site=cafe] .buffet-price{border-left:0;border-top:1px solid var(--line);padding:37px 0 0;min-height:0;width:100%;max-width:360px}
+ body[data-site=cafe] .buffet-price strong{font-size:89px}
+ body[data-site=cafe] .buffet-price>span{font-size:10px}
+ body[data-site=cafe] .visit{padding:74px 7% 70px}
+ body[data-site=cafe] .visit h2{font-size:37px}
+ .visit-heading>p:last-child{font-size:11px;margin-bottom:40px}
+ .visit-information{grid-template-columns:1fr;gap:34px;max-width:360px}
+ .visit-column{padding-top:26px}
+ body[data-site=cafe] .visit h3{font-size:9px;margin-bottom:20px}
+ body[data-site=cafe] .visit address{font-size:13px}
+ body[data-site=cafe] .visit dl{font-size:12px}
+ body[data-site=cafe] .visit dl>div:last-child{border:0}
+ body[data-site=cafe] .visit .button{font-size:9px;padding-inline:22px}
+ body[data-site=cafe] .site-footer{padding-bottom:135px}
+ body[data-site=cafe] .site-footer p{max-width:none}
+ .cafe-dock{width:min(310px,calc(100vw - 40px));height:47px;bottom:max(18px,env(safe-area-inset-bottom));grid-template-columns:1fr 54px 1fr}
+ .cafe-dock>button,.cafe-dock>a{height:47px;font-size:9px}
+ body[data-site=cafe] .navigation-dialog{padding:65px 30px}
+ body[data-site=cafe] .navigation-dialog>a{font-size:32px}
+ body[data-site=cafe] .food-menu-dialog h2{font-size:36px}
+}
+@media(max-width:360px){body[data-site=cafe] .dish-feature h3{font-size:26px}body[data-site=cafe] .welcome h2,body[data-site=cafe] .visit h2{font-size:33px}body[data-site=cafe] .menu-tabs{gap:16px}body[data-site=cafe] .menu-tabs button{font-size:9px}body[data-site=cafe] .food-hero .hero-intro h1{font-size:36px}}
+@media(prefers-reduced-motion:reduce){body[data-site=cafe] .dish-feature:hover img{transform:none}}
+/* Keep the compact controls readable, with full-size keyboard and touch targets. */
+body[data-site=cafe] .button{font-size:11px}
+body[data-site=cafe] .dish-feature p{font-size:13px}
+body[data-site=cafe] .food-tag{font-size:10px}
+.cafe-dock>button,.cafe-dock>a{font-size:11px}
+.cafe-dock>.menu-toggle{height:48px;min-height:44px;border:0}
+.cafe-dock>.menu-toggle:before{inset:12px 0;border-inline:1px solid oklch(27% .028 157 / .15);pointer-events:none}
+body[data-site=cafe] button,body[data-site=cafe] a{scroll-margin-block:120px}
+@media(max-width:700px){body[data-site=cafe] .dish-feature p{font-size:12px}body[data-site=cafe] .food-tag{font-size:9px}body[data-site=cafe] .dish-feature .button,body[data-site=cafe] .visit .button{font-size:10px}.cafe-dock>button,.cafe-dock>a{font-size:10px}}
