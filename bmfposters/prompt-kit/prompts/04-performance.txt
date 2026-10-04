@@ -1,0 +1,51 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND_FULL}}": "BE MORE FIT",
+  "{{BRAND}}": "BMF",
+  "{{EVENT_DAY_UPPER}}": "TUESDAY",
+  "{{EVENT_DATE_SHORT}}": "22 SEPT",
+  "{{EVENT_TIME_UPPER}}": "6PM",
+  "{{PRICE_UPPER}}": "FREE"
+}
+
+FULL PROMPT TEMPLATE:
+Generate ONE complete {{BRAND}} Performance Day gym poster, including all typography, using only the uploaded ordinary person photograph plus this written design specification. No finished poster or design reference image is required. Return just a single flat full-bleed portrait image, aspect735:1040, high native resolution, no mockup, border or watermark. All positions use x from left, y from top; scale the geometry with the output resolution.
+
+PHOTO: the uploaded photograph supplies facial identity only. Create the same recognisable person performing a believable walking dumbbell lunge. New side/three-quarter view, head turned45 degrees away from the camera looking left along the gym, rather than repeating the selfie head tilt. Charcoal sleeveless training vest and black shorts, athletic natural proportions, both bare wrists, no watch, no jewellery, no peace sign, no vehicle or casual white T-shirt. Two dumbbells are held naturally at their sides. Front knee bent, rear leg extended, stable stance. Show the person from head to trainers. Person's head lies near x60%,y16%, torso in middle, legs down to85%. Warm dark gym with black rubber floor, metal equipment and soft timber slat/mirror background. Photograph remains realistic, with high contrast and fine analogue grain.
+
+COLOUR: whole photograph is BLACK AND WHITE, slightly warm neutral charcoal/ivory, effectively desaturated skin and clothing. Main text is smooth solid ivory #F1EEE7, with no golden fill or eroded texture. Charcoal ground #191715. Champagne accent #BFA37A allowed only in a tiny secondary detail. Do not turn the poster into a golden distressed flyer.
+
+TYPE GEOMETRY: reserve top0–25% as photographic space, with only the small brand mark described below. The main headline begins at25%H, never at10%H. For a735×1040 design grid, PERFORMANCE begins at y260px, and DAY at y360px. These two title words sit OVER the athlete/photo where necessary; the athlete must not push them upwards. Use very heavy tall narrow condensed sans capitals, Anton/Druk Condensed/Impact-like with tight counters, not broad Helvetica. Use different font sizes per word so PERFORMANCE has visible cap height8%H and DAY11%H. Neither word may exceed its text box.
+
+EXACT TEXT BOXES:
+1. Small {{BRAND}} wordmark with simple barbell motif, ivory, x40–60%,y13–19%. Put tiny {{BRAND_FULL}} under {{BRAND}}. This is an approximation made from text instructions, not externally supplied logo artwork.
+2. PERFORMANCE: centred x10–91%,y25–33%. Smooth ivory tall condensed caps,8%H height. Do not make this a giant full-width15–20%H heading.
+3. DAY: centred x37–63%,y34.5–46%. Tall condensed caps,11.5%H height.
+4. Left small condensed block x9–23%,y45–52%, three lines {{PRICE_UPPER}} / AT / {{BRAND}}, cap height2.3%H, left aligned.
+5. Right small condensed block x78–92%,y45–52%, three lines {{EVENT_DAY_UPPER}} / {{EVENT_DATE_SHORT}} / {{EVENT_TIME_UPPER}}, cap height2.3%H, right aligned.
+6. One elegant Times-like serif sentence, centred x30–71%,y89–92%: Discipline builds better athletes. Cap height about2%H.
+7. Bottom heavy condensed slogan, centred x30–72%,y92–96%: COME. TRAIN. BELONG. Cap height3.5%H.
+
+Preserve generous photographic breathing room from y53–88% below the flanking blocks. The main title is in the UPPER MIDDLE, not along the top edge. All quoted copy must be spelt exactly and generated within this one image. No other headlines, boxes, strips or footer graphics. Correct equipment grip, body anatomy and recognisable identity. Return ONE finished poster.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Generate ONE complete BMF Performance Day gym poster, including all typography, using only the uploaded ordinary person photograph plus this written design specification. No finished poster or design reference image is required. Return just a single flat full-bleed portrait image, aspect735:1040, high native resolution, no mockup, border or watermark. All positions use x from left, y from top; scale the geometry with the output resolution.
+
+PHOTO: the uploaded photograph supplies facial identity only. Create the same recognisable person performing a believable walking dumbbell lunge. New side/three-quarter view, head turned45 degrees away from the camera looking left along the gym, rather than repeating the selfie head tilt. Charcoal sleeveless training vest and black shorts, athletic natural proportions, both bare wrists, no watch, no jewellery, no peace sign, no vehicle or casual white T-shirt. Two dumbbells are held naturally at their sides. Front knee bent, rear leg extended, stable stance. Show the person from head to trainers. Person's head lies near x60%,y16%, torso in middle, legs down to85%. Warm dark gym with black rubber floor, metal equipment and soft timber slat/mirror background. Photograph remains realistic, with high contrast and fine analogue grain.
+
+COLOUR: whole photograph is BLACK AND WHITE, slightly warm neutral charcoal/ivory, effectively desaturated skin and clothing. Main text is smooth solid ivory #F1EEE7, with no golden fill or eroded texture. Charcoal ground #191715. Champagne accent #BFA37A allowed only in a tiny secondary detail. Do not turn the poster into a golden distressed flyer.
+
+TYPE GEOMETRY: reserve top0–25% as photographic space, with only the small brand mark described below. The main headline begins at25%H, never at10%H. For a735×1040 design grid, PERFORMANCE begins at y260px, and DAY at y360px. These two title words sit OVER the athlete/photo where necessary; the athlete must not push them upwards. Use very heavy tall narrow condensed sans capitals, Anton/Druk Condensed/Impact-like with tight counters, not broad Helvetica. Use different font sizes per word so PERFORMANCE has visible cap height8%H and DAY11%H. Neither word may exceed its text box.
+
+EXACT TEXT BOXES:
+1. Small BMF wordmark with simple barbell motif, ivory, x40–60%,y13–19%. Put tiny BE MORE FIT under BMF. This is an approximation made from text instructions, not externally supplied logo artwork.
+2. PERFORMANCE: centred x10–91%,y25–33%. Smooth ivory tall condensed caps,8%H height. Do not make this a giant full-width15–20%H heading.
+3. DAY: centred x37–63%,y34.5–46%. Tall condensed caps,11.5%H height.
+4. Left small condensed block x9–23%,y45–52%, three lines FREE / AT / BMF, cap height2.3%H, left aligned.
+5. Right small condensed block x78–92%,y45–52%, three lines TUESDAY / 22 SEPT / 6PM, cap height2.3%H, right aligned.
+6. One elegant Times-like serif sentence, centred x30–71%,y89–92%: Discipline builds better athletes. Cap height about2%H.
+7. Bottom heavy condensed slogan, centred x30–72%,y92–96%: COME. TRAIN. BELONG. Cap height3.5%H.
+
+Preserve generous photographic breathing room from y53–88% below the flanking blocks. The main title is in the UPPER MIDDLE, not along the top edge. All quoted copy must be spelt exactly and generated within this one image. No other headlines, boxes, strips or footer graphics. Correct equipment grip, body anatomy and recognisable identity. Return ONE finished poster.

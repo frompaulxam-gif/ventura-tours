@@ -1,0 +1,163 @@
+{
+  "method": "Built-in image generation; the entire poster including text is generated. Each call received one raw person/gym photograph only. No Pinterest, finished poster, palette or logo image was supplied.",
+  "model_version": "Not exposed by the built-in tool; GPT Image 2.5 cannot be verified.",
+  "calls": 20,
+  "final_prompts_tested": 11,
+  "limitations": "These are tested format recreation prompts, not deterministic pixel/font replicas. Exact typesetting, crop, generated face angle and the text-described brand mark can vary. Inspect each new result before publishing.",
+  "items": [
+    {
+      "id": "01-performance",
+      "revision": 1,
+      "input_images": 1,
+      "input_sha256": "76bc4674cfafafff02c263df06eb740e00df261d7b2f64599a090590a7d27a6b",
+      "prompt_sha256": "b8546dc5a3aedc4786aeedd16922241755bc6988ef4adfecda8e40605d1bad5d",
+      "output_sha256": "ea1a32daee3e98b9a580372b09d14101073c74978538eade7a07e60d9e142dca",
+      "output_dimensions": [
+        1064,
+        1478
+      ],
+      "result": "Generated and inspected",
+      "notes": "Serif and italic hierarchy, gym identity and event copy reproduced. Photograph angle and the gold/black balance differ from the selected poster."
+    },
+    {
+      "id": "01-timetable",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "ac6c0a9fb44f028d0edcf7b07a9428b2163da6ce69dd7d9c788ae14670a45638",
+      "prompt_sha256": "6b1b3574c53eb901aa3a7ccf4031298ad3dce403f8759256c7d36b7afdd6f5bc",
+      "output_sha256": "aaf2ee7e8b730757b6a642b47994c0316864d7499e1eeef452fe7a8619b02188",
+      "output_dimensions": [
+        1064,
+        1478
+      ],
+      "result": "Generated and inspected",
+      "notes": "All eight rows in each of the three days and both open/Saturday notes reproduced accurately. Centred strapline and right-side notes improved after refinement; the title sits slightly lower."
+    },
+    {
+      "id": "01-lost",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "f82bafd49a7e93db81b325aabc1f526f7e271868b4dcbe96575dc34e3e3d5e75",
+      "prompt_sha256": "9b95dde4ca462fffee3d80416b749a9cb8b8379f5220880176ad872dd93c4983",
+      "output_sha256": "5e62829c07137c0535108a1fceb67c49836a9b55a06ac885996df528d8aca469",
+      "output_dimensions": [
+        1064,
+        1478
+      ],
+      "result": "Generated and inspected",
+      "notes": "Serif/italic layout and enlarged five-line paragraph reproduced. Real coach pose and clothing retained; crop and halftone density vary."
+    },
+    {
+      "id": "02-lost",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "f82bafd49a7e93db81b325aabc1f526f7e271868b4dcbe96575dc34e3e3d5e75",
+      "prompt_sha256": "b9d4614123456e1821445d54c9fdd22a9dd3df3867a8ef962f4b1d5a79efa119",
+      "output_sha256": "7ad108f18fd9e8cf94f7b0b9497ad6248b9ad5e3b598921cd1562f2117898ebe",
+      "output_dimensions": [
+        1078,
+        1460
+      ],
+      "result": "Generated and inspected",
+      "notes": "Neutral bold five-line sans stack reproduced after replacing the first condensed result. Letters are still wider/larger than the selected artwork."
+    },
+    {
+      "id": "04-performance",
+      "revision": 3,
+      "input_images": 1,
+      "input_sha256": "76bc4674cfafafff02c263df06eb740e00df261d7b2f64599a090590a7d27a6b",
+      "prompt_sha256": "95bbd75fef39f63c80bf0a99825014e7a2423b0e479c3450804fe206ae1d4055",
+      "output_sha256": "1c49899b3152a4b5ad14249b29de3d2e0691938ad062b276e3164465e77e4d42",
+      "output_dimensions": [
+        1054,
+        1492
+      ],
+      "result": "Partial layout match",
+      "notes": "Lunge, side face angle, monochrome treatment and wording reproduced. After three attempts the main title still sits higher and the text-described BMF mark differs. This is a partial layout match."
+    },
+    {
+      "id": "04-timetable",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "ac6c0a9fb44f028d0edcf7b07a9428b2163da6ce69dd7d9c788ae14670a45638",
+      "prompt_sha256": "79351b04ab7d7adf8fadde319b365c9c9f4884db2a5de869d8d01824c8b0a5c8",
+      "output_sha256": "87c4d4e2ed3cba06aebb72591e77977144e7fcb927bc426b2b12785ad65c27ab",
+      "output_dimensions": [
+        1054,
+        1492
+      ],
+      "result": "Generated and inspected",
+      "notes": "All class/time entries reproduced accurately. Condensed two-line hierarchy and monochrome source photo retained; title/table size and the approximate brand mark vary."
+    },
+    {
+      "id": "04-lost",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "ac6c0a9fb44f028d0edcf7b07a9428b2163da6ce69dd7d9c788ae14670a45638",
+      "prompt_sha256": "49bc738617aa5daa80493772ee296cb7c119265e37296f35f7a379a839b9c015",
+      "output_sha256": "7d400714ae2744ef9955154a352685739af53c75c65c7913fdf3b0ec91c4f5b1",
+      "output_dimensions": [
+        1054,
+        1492
+      ],
+      "result": "Generated and inspected",
+      "notes": "Condensed two-line hierarchy, monochrome source scene and all supporting copy reproduced. Headline scale and the approximate brand mark vary."
+    },
+    {
+      "id": "05-lost",
+      "revision": 1,
+      "input_images": 1,
+      "input_sha256": "603e9c043b9cb833d851e7bca03e5f0957a371cff8059d0c447194bcf926d658",
+      "prompt_sha256": "0872a0ed0c4709e59e5409edda1aeb2de9c719d243a4b064fde5858754070e7e",
+      "output_sha256": "00c0dcf2ec88ce9ead6226f3b65823f766b6e8e8b48fe9ef66099409d9b8fbd1",
+      "output_dimensions": [
+        1058,
+        1487
+      ],
+      "result": "Generated and inspected",
+      "notes": "Normal coaching photo, central bold statement and fine handwritten supporting line reproduced. Handwriting and crop vary."
+    },
+    {
+      "id": "06-performance",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "76bc4674cfafafff02c263df06eb740e00df261d7b2f64599a090590a7d27a6b",
+      "prompt_sha256": "fca2fef8d3b390b2b975140da4e447cc64fc1c6f5bd7bcbb185fe877eecba7b9",
+      "output_sha256": "2d6f00c5ecf46dccf4464db58def0af2e30a8344b63c51fb2895caacb1dcd08d",
+      "output_dimensions": [
+        1086,
+        1448
+      ],
+      "result": "Generated and inspected",
+      "notes": "Two separated heavy sans blocks, lowered gym recovery pose and copy reproduced after refinement. Photograph, type size and warm tonality vary."
+    },
+    {
+      "id": "07-performance",
+      "revision": 2,
+      "input_images": 1,
+      "input_sha256": "76bc4674cfafafff02c263df06eb740e00df261d7b2f64599a090590a7d27a6b",
+      "prompt_sha256": "52026890f459f4cc2ee955d0fe161b0852dc7c6f1a9efea23fc574d6ec8a2684",
+      "output_sha256": "20aa5a235e27877cab443879a1120791baddc24e31fb5aa31711514a1cafad59",
+      "output_dimensions": [
+        948,
+        1659
+      ],
+      "result": "Generated and inspected",
+      "notes": "Solid champagne-brown background, person on a flat bench, barbell and small right-hand sans information reproduced. Camera angle/crop differ, and the generated face remains close to the supplied angle."
+    },
+    {
+      "id": "09-lost",
+      "revision": 1,
+      "input_images": 1,
+      "input_sha256": "f82bafd49a7e93db81b325aabc1f526f7e271868b4dcbe96575dc34e3e3d5e75",
+      "prompt_sha256": "77a4d874a5a426b84d71424f973db73d646549eb2555c77d55e2d7d83671bb77",
+      "output_sha256": "2676e4c13862339d25aa7a2fc1a59c60891139becd18046bcca30296ab72d64f",
+      "output_dimensions": [
+        1086,
+        1448
+      ],
+      "result": "Generated and inspected",
+      "notes": "Four cream bands, bold/light headline contrast and exact support copy reproduced. Band positions and headline size vary from the selected poster."
+    }
+  ]
+}

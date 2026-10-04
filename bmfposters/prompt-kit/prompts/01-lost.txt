@@ -1,0 +1,60 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND}}": "BMF"
+}
+
+FULL PROMPT TEMPLATE:
+Create ONE finished {{BRAND}} promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+{{BRAND}} palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 736:1022 portrait. Design: Halftone serif.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: champagne-gold full-bleed ground with large charcoal photographic forms rendered through dense round black halftone dots, subtle vertical/horizontal print grid and worn-paper texture. Dots are visible but retain the person's face. Body/arms form a dominant dark diagonal behind the headline. Main type is high-contrast Times/Canela-like serif: thin hairlines, thick vertical stems, prominent bracketed serifs, long elegant terminals. First headline line upright, second italic with sweeping swashes. Ivory ink has light letterpress wear. This is a serif design, not a sans-serif flyer. Small centred serif strapline occupies x15–85%, y11.5–15%. Main two-line headline occupies x12–88%, y37–64%, centre aligned, almost no gap; first line cap height around12% of canvas height, second around13%. Do not add a logo, header bar or footer rule.
+
+EXACT COPY AND PLACEMENT:
+Top small serif: "Constant support. Clear direction." Main exactly TWO lines: "Never feel" upright / "Lost." sweeping italic. Bottom supporting paragraph x17–83%,y85–94%, ivory uppercase sans about1.35%H cap height, around5–6 generously readable lines: "AT {{BRAND}}, EVERY SESSION IS COACHED SO YOU ALWAYS KNOW WHAT TO DO, HOW TO DO IT, AND HOW TO PROGRESS. NO GUESSWORK. JUST CLEAR DIRECTION, EXPERT COACHING AND CONSTANT SUPPORT EVERY STEP OF THE WAY. THE {{BRAND}} STANDARD." This paragraph must be visibly larger than fine-print metadata; preserve headline position.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: small centred serif strapline actual box x29–71%,y12.8–15.9%. Upright "Never feel" has actual box x16–86%,y41–53%; sweeping italic "Lost." actual box x32–71%,y53–68%. Never enlarge the headline beyond these boxes: together its height is27%H, not40%H. Ivory #F1EEE7 type over a lighter champagne-gold halftone background. Bottom paragraph is significantly readable, not microtext: x9–91%,y80–93%, uppercase clean Times-like serif, about2.1%H cap height, centred in EXACTLY FIVE lines:
+"AT {{BRAND}}, EVERY SESSION IS COACHED SO YOU ALWAYS KNOW"
+"WHAT TO DO, HOW TO DO IT, AND HOW TO PROGRESS."
+"NO GUESSWORK. JUST CLEAR DIRECTION, EXPERT COACHING"
+"AND CONSTANT SUPPORT EVERY STEP OF THE WAY."
+"THE {{BRAND}} STANDARD."
+Keep original coach pose/clothing and supplied facial expression. Headline must leave photographic space between its bottom68% and paragraph80%.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Create ONE finished BMF promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+BMF palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 736:1022 portrait. Design: Halftone serif.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: champagne-gold full-bleed ground with large charcoal photographic forms rendered through dense round black halftone dots, subtle vertical/horizontal print grid and worn-paper texture. Dots are visible but retain the person's face. Body/arms form a dominant dark diagonal behind the headline. Main type is high-contrast Times/Canela-like serif: thin hairlines, thick vertical stems, prominent bracketed serifs, long elegant terminals. First headline line upright, second italic with sweeping swashes. Ivory ink has light letterpress wear. This is a serif design, not a sans-serif flyer. Small centred serif strapline occupies x15–85%, y11.5–15%. Main two-line headline occupies x12–88%, y37–64%, centre aligned, almost no gap; first line cap height around12% of canvas height, second around13%. Do not add a logo, header bar or footer rule.
+
+EXACT COPY AND PLACEMENT:
+Top small serif: "Constant support. Clear direction." Main exactly TWO lines: "Never feel" upright / "Lost." sweeping italic. Bottom supporting paragraph x17–83%,y85–94%, ivory uppercase sans about1.35%H cap height, around5–6 generously readable lines: "AT BMF, EVERY SESSION IS COACHED SO YOU ALWAYS KNOW WHAT TO DO, HOW TO DO IT, AND HOW TO PROGRESS. NO GUESSWORK. JUST CLEAR DIRECTION, EXPERT COACHING AND CONSTANT SUPPORT EVERY STEP OF THE WAY. THE BMF STANDARD." This paragraph must be visibly larger than fine-print metadata; preserve headline position.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: small centred serif strapline actual box x29–71%,y12.8–15.9%. Upright "Never feel" has actual box x16–86%,y41–53%; sweeping italic "Lost." actual box x32–71%,y53–68%. Never enlarge the headline beyond these boxes: together its height is27%H, not40%H. Ivory #F1EEE7 type over a lighter champagne-gold halftone background. Bottom paragraph is significantly readable, not microtext: x9–91%,y80–93%, uppercase clean Times-like serif, about2.1%H cap height, centred in EXACTLY FIVE lines:
+"AT BMF, EVERY SESSION IS COACHED SO YOU ALWAYS KNOW"
+"WHAT TO DO, HOW TO DO IT, AND HOW TO PROGRESS."
+"NO GUESSWORK. JUST CLEAR DIRECTION, EXPERT COACHING"
+"AND CONSTANT SUPPORT EVERY STEP OF THE WAY."
+"THE BMF STANDARD."
+Keep original coach pose/clothing and supplied facial expression. Headline must leave photographic space between its bottom68% and paragraph80%.

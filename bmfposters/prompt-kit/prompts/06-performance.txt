@@ -1,0 +1,56 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND_FULL}}": "BE MORE FIT",
+  "{{BRAND}}": "BMF",
+  "{{EVENT_DATE_SHORT}}": "22 SEPT",
+  "{{EVENT_TIME_UPPER}}": "6PM",
+  "{{PRICE_UPPER}}": "FREE"
+}
+
+FULL PROMPT TEMPLATE:
+Create ONE finished {{BRAND}} promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+{{BRAND}} palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 1080:1440 portrait. Design: Split statement.
+
+PHOTO ROLE: the uploaded person's photo supplies FACIAL IDENTITY ONLY. Preserve that person's recognisable facial features, hair and skin colour while creating the new realistic gym pose specified below. A new head angle, camera angle, athletic expression and body pose are required. Dress them in charcoal/black gym kit. Remove any selfie hand sign, white casual T-shirt, watch, bracelet, jewellery, vehicle interior, seat or dashboard. Wrists must be bare. Use natural athletic proportions, anatomically credible fingers and believable exercise form. Do not copy the selfie composition. Unless a solid studio background is specified, use a warm dim gym with black rubber flooring, mirrors, timber slat walls and understated metal equipment, softly out of focus.
+
+NEW PHOTO SCENE: Bent forward catching breath after a hard strength set, hands naturally resting on knees, head lowered in new side profile, black sleeveless vest and shorts. Head/shoulder sweep through centre/right.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: gritty warm monochrome photograph, heavy organic film grain. Subject enlarged across centre/right as a strong close foreground crop; preserve the source pose on normal photos. Main letters Helvetica Neue Black/Arial Black-like, heavy square grotesk, broad capitals, tight tracking, near-touching line spacing. Two disconnected type zones: upper-left x7–48%,y27–36%, two lines; lower-left x7–51%,y67–81%, three lines. A small edge of a secondary letter may meet the subject contour, but essential words may not disappear behind it. Three tiny metadata anchors at y4% and95%, x9% left,50% centre,91% right. Ivory text and restrained gold tint. No large top logo, boxes or bars.
+
+EXACT COPY AND PLACEMENT:
+Upper-left two bold lines "{{PRICE_UPPER}}" / "PERFORMANCE". Lower-left three lines "DAY." / "{{EVENT_DATE_SHORT}}" / "{{EVENT_TIME_UPPER}}". Top anchors "{{BRAND}} // {{BRAND_FULL}}" / "BUILD BETTER ATHLETES" / "{{PRICE_UPPER}} SESSION". Bottom "[{{BRAND}}]" / "COME. TRAIN. BELONG." / "[01]".
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: BLACK AND WHITE sports photograph with slightly warm ivory, no coloured skin. Smooth Helvetica Neue Black/Arial Black lettering, broad open neutral capitals, NOT Impact/Anton/Druk. Upper-left "{{PRICE_UPPER}}" / "PERFORMANCE" remains in x7–64%,y27–36%, two lines with visible caps4%H, not an oversized headline at11%H. Lower-left "DAY." / "{{EVENT_DATE_SHORT}}" / "{{EVENT_TIME_UPPER}}" x7–48%,y67–81%, each cap4%H. Metadata remains tiny at4% and95%. Person is bent forward, head DOWN towards the floor, camera in SIDE PROFILE, not looking at the lens, hands on knees; head/shoulder crosses middle/right only. Charcoal vest/shorts, bare wrists and ears, no jewellery. Organic photographic grain must not erode essential letters.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Create ONE finished BMF promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+BMF palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 1080:1440 portrait. Design: Split statement.
+
+PHOTO ROLE: the uploaded person's photo supplies FACIAL IDENTITY ONLY. Preserve that person's recognisable facial features, hair and skin colour while creating the new realistic gym pose specified below. A new head angle, camera angle, athletic expression and body pose are required. Dress them in charcoal/black gym kit. Remove any selfie hand sign, white casual T-shirt, watch, bracelet, jewellery, vehicle interior, seat or dashboard. Wrists must be bare. Use natural athletic proportions, anatomically credible fingers and believable exercise form. Do not copy the selfie composition. Unless a solid studio background is specified, use a warm dim gym with black rubber flooring, mirrors, timber slat walls and understated metal equipment, softly out of focus.
+
+NEW PHOTO SCENE: Bent forward catching breath after a hard strength set, hands naturally resting on knees, head lowered in new side profile, black sleeveless vest and shorts. Head/shoulder sweep through centre/right.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: gritty warm monochrome photograph, heavy organic film grain. Subject enlarged across centre/right as a strong close foreground crop; preserve the source pose on normal photos. Main letters Helvetica Neue Black/Arial Black-like, heavy square grotesk, broad capitals, tight tracking, near-touching line spacing. Two disconnected type zones: upper-left x7–48%,y27–36%, two lines; lower-left x7–51%,y67–81%, three lines. A small edge of a secondary letter may meet the subject contour, but essential words may not disappear behind it. Three tiny metadata anchors at y4% and95%, x9% left,50% centre,91% right. Ivory text and restrained gold tint. No large top logo, boxes or bars.
+
+EXACT COPY AND PLACEMENT:
+Upper-left two bold lines "FREE" / "PERFORMANCE". Lower-left three lines "DAY." / "22 SEPT" / "6PM". Top anchors "BMF // BE MORE FIT" / "BUILD BETTER ATHLETES" / "FREE SESSION". Bottom "[BMF]" / "COME. TRAIN. BELONG." / "[01]".
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: BLACK AND WHITE sports photograph with slightly warm ivory, no coloured skin. Smooth Helvetica Neue Black/Arial Black lettering, broad open neutral capitals, NOT Impact/Anton/Druk. Upper-left "FREE" / "PERFORMANCE" remains in x7–64%,y27–36%, two lines with visible caps4%H, not an oversized headline at11%H. Lower-left "DAY." / "22 SEPT" / "6PM" x7–48%,y67–81%, each cap4%H. Metadata remains tiny at4% and95%. Person is bent forward, head DOWN towards the floor, camera in SIDE PROFILE, not looking at the lens, hands on knees; head/shoulder crosses middle/right only. Charcoal vest/shorts, bare wrists and ears, no jewellery. Organic photographic grain must not erode essential letters.

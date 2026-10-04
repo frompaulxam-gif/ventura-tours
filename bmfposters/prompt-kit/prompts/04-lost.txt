@@ -1,0 +1,49 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND_FULL}}": "BE MORE FIT",
+  "{{BRAND}}": "BMF"
+}
+
+FULL PROMPT TEMPLATE:
+Create ONE finished {{BRAND}} promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+{{BRAND}} palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 735:1040 portrait. Design: Club condensed.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: warm black-and-white full-bleed close-cropped gym photograph, very fine grain, high contrast, ample dark photographic breathing room. Small centred ivory {{BRAND}} wordmark at x40–60%,y8–14%, with a simple barbell motif flanking {{BRAND}} and tiny {{BRAND_FULL}} beneath; this is a text-described brand treatment, not a claim of exact logo artwork. Main two-line headline at x18–82%,y19–42% uses extremely bold tall compressed Anton/Druk/Impact-like capitals, narrow counters, heavy verticals, tight leading, centred. Two little condensed sans information blocks flank the figure at x11–27% and x75–92%,y44–51%. Bottom one-line elegant Times-like serif sentence is centred at y85%; heavy condensed uppercase slogan centred at y89–93%. No coloured banner, rounded cards or standard grid flyer.
+
+EXACT COPY AND PLACEMENT:
+Two-line condensed headline "NEVER FEEL" / "LOST.". Left "CLEAR" / "DIRECTION" / "AT {{BRAND}}". Right "CONSTANT" / "SUPPORT" / "EVERY SESSION". Bottom serif "No guesswork. Just expert coaching." Bottom condensed "COACHED. STRUCTURED. SUPPORTED.".
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: BLACK AND WHITE source photograph; smooth slightly warm ivory #F1EEE7 lettering. No gold headline, no gold lettering texture and no coloured skin. Small {{BRAND}}/barbell wordmark x34–63%,y8–14%. Main title actual visible boxes: "NEVER FEEL" x15–85%,y16.5–28%, "LOST." x32–68%,y29–41.5%. Tall extra-heavy narrow Anton-like capitals, cap height11.5–12.5%H, centred. Never stretch title across94%W or down to46%H. Small left/right info blocks y45–52%, cap height2.2%H. Bottom serif sentence x22–78%,y85.7–88.8%. Bottom condensed slogan x20–81%,y90–94%, cap height4%H. No lines around the small flanking info blocks. Retain original leg-raise photo scene and both people.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Create ONE finished BMF promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+BMF palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 735:1040 portrait. Design: Club condensed.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: warm black-and-white full-bleed close-cropped gym photograph, very fine grain, high contrast, ample dark photographic breathing room. Small centred ivory BMF wordmark at x40–60%,y8–14%, with a simple barbell motif flanking BMF and tiny BE MORE FIT beneath; this is a text-described brand treatment, not a claim of exact logo artwork. Main two-line headline at x18–82%,y19–42% uses extremely bold tall compressed Anton/Druk/Impact-like capitals, narrow counters, heavy verticals, tight leading, centred. Two little condensed sans information blocks flank the figure at x11–27% and x75–92%,y44–51%. Bottom one-line elegant Times-like serif sentence is centred at y85%; heavy condensed uppercase slogan centred at y89–93%. No coloured banner, rounded cards or standard grid flyer.
+
+EXACT COPY AND PLACEMENT:
+Two-line condensed headline "NEVER FEEL" / "LOST.". Left "CLEAR" / "DIRECTION" / "AT BMF". Right "CONSTANT" / "SUPPORT" / "EVERY SESSION". Bottom serif "No guesswork. Just expert coaching." Bottom condensed "COACHED. STRUCTURED. SUPPORTED.".
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: BLACK AND WHITE source photograph; smooth slightly warm ivory #F1EEE7 lettering. No gold headline, no gold lettering texture and no coloured skin. Small BMF/barbell wordmark x34–63%,y8–14%. Main title actual visible boxes: "NEVER FEEL" x15–85%,y16.5–28%, "LOST." x32–68%,y29–41.5%. Tall extra-heavy narrow Anton-like capitals, cap height11.5–12.5%H, centred. Never stretch title across94%W or down to46%H. Small left/right info blocks y45–52%, cap height2.2%H. Bottom serif sentence x22–78%,y85.7–88.8%. Bottom condensed slogan x20–81%,y90–94%, cap height4%H. No lines around the small flanking info blocks. Retain original leg-raise photo scene and both people.

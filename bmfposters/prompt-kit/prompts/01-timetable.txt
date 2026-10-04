@@ -1,0 +1,74 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND}}": "BMF"
+}
+
+FULL PROMPT TEMPLATE:
+Create ONE finished {{BRAND}} promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+{{BRAND}} palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 736:1022 portrait. Design: Halftone serif.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: champagne-gold full-bleed ground with large charcoal photographic forms rendered through dense round black halftone dots, subtle vertical/horizontal print grid and worn-paper texture. Dots are visible but retain the person's face. Body/arms form a dominant dark diagonal behind the headline. Main type is high-contrast Times/Canela-like serif: thin hairlines, thick vertical stems, prominent bracketed serifs, long elegant terminals. First headline line upright, second italic with sweeping swashes. Ivory ink has light letterpress wear. This is a serif design, not a sans-serif flyer. Small centred serif strapline occupies x15–85%, y11.5–15%. Main two-line headline occupies x12–88%, y37–64%, centre aligned, almost no gap; first line cap height around12% of canvas height, second around13%. Do not add a logo, header bar or footer rule.
+
+EXACT COPY AND PLACEMENT:
+Top serif: "Structured training. Real progress." Main exactly TWO lines: "Class" upright / "Timetable." italic. Full readable unboxed four-column schedule occupies x13–88%,y69–90%, day headers in ivory bold, body small clean ivory sans around1.1%H. Open-session and Saturday notes at y91–93%; class key y95%. Do not put the schedule over the main headline.
+
+SCHEDULE DATA (typeset every row accurately in the format above):
+TIME | MON | WED | FRI
+6AM | KB COMPLX | UPPER | PERFORM
+7AM | ENDURE | LOWER | UPPER
+8AM | UPPER | PERFORM | LOWER
+9AM | LOWER | UPPER | PERFORM
+10AM | UPPER | ENDURE | LOWER
+5PM | STRIDE | ENDURE | UPPER
+6PM | UPPER | PERFORM | LOWER
+7PM | KB COMPLX | LOWER | UPPER
+
+TUE + THU: ELITE OPEN SESSION. These days have no fixed class times. SAT: 8AM HYROX, 1 HOUR. Small class key: "UPPER / LOWER = PHYSIQUE". Do not omit or duplicate a row, swap days/classes or invent opening times. Only place notes where the layout specifies them.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: strapline "Structured training. Real progress." is a SINGLE centred serif line with actual text box x29–71%,y8.6–11.2%; do not left-align or wrap it. "Class" text box x26.5–74.2%,y35.5–49.1%; italic "Timetable." box x13.3–90.3%,y49.9–63.1%. The italic is restrained, not exaggerated swashes. Four-column schedule occupies x8–71%,y72–90%, with TIME/MON/WED/FRI headings around72%, and eight aligned rows from75% to89%. Right of that table, x77–93%, put "TUE + THU" / "ELITE OPEN" / "SESSION" near75–81%, then "SAT" / "8AM HYROX," / "1 HOUR." near83–89%. The class key is centred y93%. All eight schedule rows must be accurate. Do not move the top strapline out of its centred box. All text ivory #F1EEE7, not gold ink; gold belongs to the ground.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Create ONE finished BMF promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+BMF palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 736:1022 portrait. Design: Halftone serif.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: champagne-gold full-bleed ground with large charcoal photographic forms rendered through dense round black halftone dots, subtle vertical/horizontal print grid and worn-paper texture. Dots are visible but retain the person's face. Body/arms form a dominant dark diagonal behind the headline. Main type is high-contrast Times/Canela-like serif: thin hairlines, thick vertical stems, prominent bracketed serifs, long elegant terminals. First headline line upright, second italic with sweeping swashes. Ivory ink has light letterpress wear. This is a serif design, not a sans-serif flyer. Small centred serif strapline occupies x15–85%, y11.5–15%. Main two-line headline occupies x12–88%, y37–64%, centre aligned, almost no gap; first line cap height around12% of canvas height, second around13%. Do not add a logo, header bar or footer rule.
+
+EXACT COPY AND PLACEMENT:
+Top serif: "Structured training. Real progress." Main exactly TWO lines: "Class" upright / "Timetable." italic. Full readable unboxed four-column schedule occupies x13–88%,y69–90%, day headers in ivory bold, body small clean ivory sans around1.1%H. Open-session and Saturday notes at y91–93%; class key y95%. Do not put the schedule over the main headline.
+
+SCHEDULE DATA (typeset every row accurately in the format above):
+TIME | MON | WED | FRI
+6AM | KB COMPLX | UPPER | PERFORM
+7AM | ENDURE | LOWER | UPPER
+8AM | UPPER | PERFORM | LOWER
+9AM | LOWER | UPPER | PERFORM
+10AM | UPPER | ENDURE | LOWER
+5PM | STRIDE | ENDURE | UPPER
+6PM | UPPER | PERFORM | LOWER
+7PM | KB COMPLX | LOWER | UPPER
+
+TUE + THU: ELITE OPEN SESSION. These days have no fixed class times. SAT: 8AM HYROX, 1 HOUR. Small class key: "UPPER / LOWER = PHYSIQUE". Do not omit or duplicate a row, swap days/classes or invent opening times. Only place notes where the layout specifies them.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+REFINED FINAL GEOMETRY, highest priority: strapline "Structured training. Real progress." is a SINGLE centred serif line with actual text box x29–71%,y8.6–11.2%; do not left-align or wrap it. "Class" text box x26.5–74.2%,y35.5–49.1%; italic "Timetable." box x13.3–90.3%,y49.9–63.1%. The italic is restrained, not exaggerated swashes. Four-column schedule occupies x8–71%,y72–90%, with TIME/MON/WED/FRI headings around72%, and eight aligned rows from75% to89%. Right of that table, x77–93%, put "TUE + THU" / "ELITE OPEN" / "SESSION" near75–81%, then "SAT" / "8AM HYROX," / "1 HOUR." near83–89%. The class key is centred y93%. All eight schedule rows must be accurate. Do not move the top strapline out of its centred box. All text ivory #F1EEE7, not gold ink; gold belongs to the ground.

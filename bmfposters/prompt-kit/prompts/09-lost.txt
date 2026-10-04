@@ -1,0 +1,44 @@
+Upload ONE normal photo. Replace the information in the fields, then paste the full prompt into image generation. No design reference image is required.
+
+DEFAULT FIELDS:
+{
+  "{{BRAND}}": "BMF"
+}
+
+FULL PROMPT TEMPLATE:
+Create ONE finished {{BRAND}} promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+{{BRAND}} palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 1200:1600 portrait. Design: Glass bands.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: full-bleed warm charcoal/champagne/ivory gym photograph with subtle background motion blur; preserve the original normal photo when supplied. Giant first line of Helvetica Neue Black/Arial Black-like capitals spans x2–98%,y11–18%, very bold, tightly tracked. Giant second line centred x17–83%,y21–29% is Helvetica Neue UltraLight-like, very thin strokes and generous spacing. A medium-weight centred information line sits y34%. EXACTLY FOUR sharp-corner rectangular frosted ivory glass bands occupy x7–88%,y40–49%,52–61%,63–72%,75–84%. Bands are bright #F1EEE7 at about92% opacity, subtle background diffusion, no rounded cards or shadows. Text inside is charcoal. Each band has a large bold left label in x10–34%, a small bold sublabel below, hairline vertical divider at x35%, then light neutral sans information x41–85%. Keep matching gaps and band heights. Place headings high even across a face; do not leave extra portrait space above. No added brand footer.
+
+EXACT COPY AND PLACEMENT:
+First giant headline "NEVER FEEL", second ultra-light "LOST.". Info "CONSTANT SUPPORT. CLEAR DIRECTION.". Four band label/sublabel/right copy respectively: "COACHED" / "EVERY SESSION" / "Know what to do."; "STRUCTURED" / "CLEAR DIRECTION" / "Know how to do it."; "SUPPORTED" / "EVERY STEP" / "No guesswork. Expert coaching."; "PROGRESS" / "WITH PURPOSE" / "The {{BRAND}} standard.". No footer.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
+
+EXACT PROMPT USED IN THE FINAL TEST:
+Create ONE finished BMF promotional poster, including ALL typography, photography and graphic effects in the generated image. The sole uploaded image is an ordinary person/gym photograph. This written specification supplies the entire design; no finished poster, Pinterest image, palette image or logo image is needed. Return a flat, full-bleed portrait raster image at the highest native quality available, without a mockup, margin, collage or watermark.
+
+Coordinates below use percentages of the final canvas: x is measured from the left, y from the top. Keep the prescribed boxes, alignment, line breaks and type hierarchy. Do not move a heading merely to avoid a face. Text sits above the photograph and may cross it; keep essential letters readable. Fit longer replacement wording inside its prescribed box by reducing its type size, never by relocating the box. Use the requested portrait aspect ratio. Do not print coordinate instructions, field labels or this brief on the poster.
+
+BMF palette: charcoal #191715, deep black #11100E, muted champagne gold #BFA37A, warm paper gold #BDA47F, champagne brown #7B6554, warm ivory #F1EEE7. Skin tones stay natural where colour is requested. Monochrome means warm neutral charcoal/ivory with a restrained champagne cast, never purple or electric blue. Photographic grain is organic fine film grain, not digital noise blocks. Lettering stays sharp enough to read, with texture only where specified. Use only the quoted copy and schedule below. Do not add generic slogans, fake brands or unsolicited badges.
+
+CANVAS AND FORMAT: 1200:1600 portrait. Design: Glass bands.
+
+PHOTO ROLE: preserve the supplied normal photograph as the photographic canvas. Retain every photographed person's actual face, expression, cap if present, hairstyle, clothing, anatomy, hand gesture, exercise/coaching pose and real gym setting. Crop, scale, reposition the photo, grade it and apply the prescribed print treatment. Do not turn a standing coach into a weightlifter, add weights to their hands, change outfits, invent muscles, create a different pose or substitute a new person. Preserve the source scene as much as the portrait crop permits. Existing reflections are part of the photographed scene. Typography is an overlay. When any photographic suggestion conflicts with preservation, preserve the original photo.
+
+DESIGN BLUEPRINT:
+PRINT AND TYPE: full-bleed warm charcoal/champagne/ivory gym photograph with subtle background motion blur; preserve the original normal photo when supplied. Giant first line of Helvetica Neue Black/Arial Black-like capitals spans x2–98%,y11–18%, very bold, tightly tracked. Giant second line centred x17–83%,y21–29% is Helvetica Neue UltraLight-like, very thin strokes and generous spacing. A medium-weight centred information line sits y34%. EXACTLY FOUR sharp-corner rectangular frosted ivory glass bands occupy x7–88%,y40–49%,52–61%,63–72%,75–84%. Bands are bright #F1EEE7 at about92% opacity, subtle background diffusion, no rounded cards or shadows. Text inside is charcoal. Each band has a large bold left label in x10–34%, a small bold sublabel below, hairline vertical divider at x35%, then light neutral sans information x41–85%. Keep matching gaps and band heights. Place headings high even across a face; do not leave extra portrait space above. No added brand footer.
+
+EXACT COPY AND PLACEMENT:
+First giant headline "NEVER FEEL", second ultra-light "LOST.". Info "CONSTANT SUPPORT. CLEAR DIRECTION.". Four band label/sublabel/right copy respectively: "COACHED" / "EVERY SESSION" / "Know what to do."; "STRUCTURED" / "CLEAR DIRECTION" / "Know how to do it."; "SUPPORTED" / "EVERY STEP" / "No guesswork. Expert coaching."; "PROGRESS" / "WITH PURPOSE" / "The BMF standard.". No footer.
+
+FINISH CHECK: use every exact quoted word above, correct punctuation and clean spelling. Preserve the defined margins, letter shapes, line breaks and contrast. Keep faces recognisable; avoid malformed anatomy, new photographic people or accessories. Keep the hierarchy dictated by the blueprint rather than adding a standard flyer header. All poster text must be generated as part of this image. Return just ONE finished poster.
