@@ -1,34 +1,79 @@
-(() => {
-  const form = document.querySelector('.order-planner');
-  if (!form) return;
-  const selects = [1, 2, 3].map(number => document.querySelector('#order-blend-' + number));
-  [1, 2].forEach(index => {
-    selects[index].replaceChildren(...[...selects[0].options].map(option => option.cloneNode(true)));
+import { offers, priceOrder, money } from './order-pricing.mjs?v=offers1';
+
+const form = document.querySelector('.order-planner');
+if (form) {
+  const selects = [1, 2, 3, 4].map(number => document.querySelector('#order-blend-' + number));
+  selects.slice(1).forEach(select => {
+    select.replaceChildren(...[...selects[0].options].map(option => option.cloneNode(true)));
   });
-  selects[1].value = 'king-strength';
-  selects[2].value = 'power-up';
+  ['king-strength', 'power-up', 'gut-health-booster'].forEach((blend, index) => {
+    selects[index + 1].value = blend;
+  });
   const fields = [...form.querySelectorAll('[data-bundle-field]')];
+  const quantityRadios = [...form.querySelectorAll('[name="jar-count"]')];
   const enquiry = document.querySelector('#order-enquiry-text');
   const status = form.querySelector('.order-copy-status');
+  const quantityNote = document.querySelector('#order-quantity-note');
+  const setText = (selector, value) => { document.querySelector(selector).textContent = value; };
+
   const render = () => {
     const data = new FormData(form);
-    const quantity = Number(data.get('jar-count'));
-    const large = data.get('jar-size') === '720ml';
+    const size = data.get('jar-size');
     const subscription = data.get('purchase-type') === 'subscription';
-    fields.forEach((field, index) => {
-      field.hidden = quantity !== 3;
-      selects[index + 1].disabled = quantity !== 3;
+    Object.keys(offers).forEach(jarSize => {
+      setText('[data-size-start="' + jarSize + '"]', 'From ' + money(priceOrder(jarSize, 1, subscription).jarSubtotal));
     });
-    form.querySelector('label[for="order-blend-1"]').textContent = quantity === 3 ? 'Jar one' : 'Your blend';
+    const maxQuantity = offers[size].length - 1;
+    let quantity = Number(data.get('jar-count'));
+    const adjusted = quantity > maxQuantity;
+    if (adjusted) {
+      quantity = maxQuantity;
+      quantityRadios.find(radio => Number(radio.value) === quantity).checked = true;
+    }
+    quantityRadios.forEach(radio => {
+      const count = Number(radio.value);
+      const available = count <= maxQuantity;
+      radio.disabled = !available;
+      if (available) {
+        const quote = priceOrder(size, count, subscription);
+        const saving = quote.bundleSaving + quote.subscriptionSaving;
+        setText('[data-quantity-price="' + count + '"]', money(quote.jarSubtotal));
+        setText('[data-quantity-saving="' + count + '"]', saving ? 'Save ' + money(saving) : 'One favourite');
+      } else {
+        setText('[data-quantity-price="' + count + '"]', '—');
+        setText('[data-quantity-saving="' + count + '"]', '330ml only');
+      }
+    });
+    quantityNote.textContent = adjusted ? '720ml bundles go up to 3 jars. Your selection is now 3 jars.' : size === '720ml' ? '720ml bundles are available in 1, 2 or 3 jars.' : '';
+    fields.forEach((field, index) => {
+      const visible = index + 2 <= quantity;
+      field.hidden = !visible;
+      selects[index + 1].disabled = !visible;
+    });
+    form.querySelector('label[for="order-blend-1"]').textContent = quantity > 1 ? 'Jar one' : 'Your blend';
     const blends = selects.slice(0, quantity).map(select => select.selectedOptions[0].textContent);
-    const size = large ? '720ml' : 'original';
-    document.querySelector('#order-selection').textContent = quantity + ' × ' + size + (quantity === 3 ? ' jars' : ' jar');
-    document.querySelector('#order-blend-summary').textContent = blends.join(' · ');
-    document.querySelector('#order-price-unit').textContent = subscription ? 'per delivery' : 'per order';
+    const quote = priceOrder(size, quantity, subscription);
+    setText('#order-selection', quantity + ' × ' + size + (quantity > 1 ? ' jars' : ' jar'));
+    setText('#order-blend-summary', blends.join(' · '));
+    setText('#order-product-price', money(quote.jarSubtotal));
+    setText('#order-price-unit', subscription ? 'for your jars, every delivery' : 'for your jars');
+    const regularPrice = document.querySelector('#order-regular-price');
+    regularPrice.hidden = !subscription;
+    regularPrice.textContent = money(quote.bundlePrice);
+    const bundleSaving = document.querySelector('#order-bundle-saving');
+    bundleSaving.hidden = !quote.bundleSaving;
+    bundleSaving.textContent = 'Mix & match saving: ' + money(quote.bundleSaving);
+    const subscriptionSaving = document.querySelector('#order-subscription-saving');
+    subscriptionSaving.hidden = !subscription;
+    subscriptionSaving.textContent = 'Subscription saving (10%): ' + money(quote.subscriptionSaving);
+    setText('#order-delivery-price', quote.delivery ? money(quote.delivery) : 'Free');
+    setText('#order-total-label', subscription ? 'Total per delivery' : 'Order total');
+    setText('#order-total-price', money(quote.total));
+    setText('#order-shipping-note', quote.delivery ? 'Free delivery on jar subtotals over £50, after discounts.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
-    const items = blends.map(blend => blend + (large ? ' (720ml)' : ' (original jar)')).join(', ');
-    const details = quantity === 3 ? 'available sizes, bundle options, price and delivery' : 'available sizes, price and delivery';
-    enquiry.value = 'Hi Super Seamoss, I’m interested in ' + (quantity === 3 ? 'a three-jar bundle: ' : 'one jar: ') + items + '. ' + (subscription ? 'I’m also interested in repeat deliveries. Please confirm the subscription timing, price and delivery.' : 'Please confirm the ' + details + '.');
+    const items = blends.join(', ');
+    const delivery = quote.delivery ? money(quote.delivery) : 'free';
+    enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per delivery' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per delivery. Please confirm delivery frequency, availability and dispatch.' : '. Please confirm availability and dispatch.');
     status.textContent = 'Copy your choices, then send them to the team on Instagram.';
   };
   form.addEventListener('change', render);
@@ -44,4 +89,4 @@
     }
   });
   render();
-})();
+}

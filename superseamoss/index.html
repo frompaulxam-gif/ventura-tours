@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Super Seamoss | Sea moss for daily nourishment</title>
-<meta name="description" content="Discover Super Seamoss sea moss gel. Explore six featured blends and preview your choices from the full 15-blend range, including three-jar bundles and a 720ml option.">
+<meta name="description" content="Discover Super Seamoss sea moss gel. Explore six featured blends and preview your choices from the full 15-blend range, with mix-and-match bundles, 330ml and 720ml jars, and Subscribe &amp; Save 10%.">
 <meta name="theme-color" content="#e1e3dc">
 <link rel="canonical" href="https://venturasolutions.co.uk/superseamoss/">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <link rel="icon" href="assets/favicon-fish-32.png" type="image/png" sizes="32x32">
 <link rel="preload" href="assets/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/jar-sequence/poster.webp" as="image" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=plans1">
+<link rel="stylesheet" href="styles.css?v=offers1">
 <script>
 document.documentElement.classList.add('page-loading');
 setTimeout(() => {
@@ -25,7 +25,7 @@ setTimeout(() => {
   document.dispatchEvent(new Event('seamoss:load-timeout'));
 }, 6500);
 </script>
-<script src="loading.js?v=mobile2" defer></script><script src="site.js" defer></script><script src="jar-scroll.js?v=mobile2" defer></script><script src="order-options.js?v=plans1" defer></script>
+<script src="loading.js?v=mobile2" defer></script><script src="site.js" defer></script><script src="jar-scroll.js?v=mobile2" defer></script><script type="module" src="order-options.js?v=offers1"></script>
 </head>
 <body>
 <div class="page-loader" role="status" aria-label="Loading Super Seamoss">
@@ -37,7 +37,7 @@ setTimeout(() => {
 <a class="skip-link" href="#collection">Skip to content</a>
 <header class="site-header">
 <a class="brand" href="#top" aria-label="Super Seamoss home"><img src="assets/logo-mark.webp" alt="Super Seamoss original logo" width="65" height="65"><span>super<span class="brand-word">seamoss</span><small>SEA MOSS GEL. DAILY NOURISHMENT.</small></span></a>
-<nav id="main-navigation" aria-label="Main navigation"><a href="#collection">Featured blends</a><a href="#order-options">Bundles &amp; subscriptions</a><a href="#ritual">How to order</a><a class="mobile-order" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Enquire on Instagram <span aria-hidden="true">+</span></a></nav>
+<nav id="main-navigation" aria-label="Main navigation"><a href="#collection">Featured blends</a><a href="#order-options">Mix &amp; match</a><a href="#ritual">How to order</a><a class="mobile-order" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Enquire on Instagram <span aria-hidden="true">+</span></a></nav>
 <a class="button button-dark header-order" href="#collection">Explore blends <span aria-hidden="true">+</span></a>
 <button class="menu-button" aria-controls="main-navigation" aria-label="Open navigation" aria-expanded="false">Menu <span aria-hidden="true">+</span></button>
 </header>
@@ -129,26 +129,33 @@ setTimeout(() => {
 <section class="order-options" id="order-options" aria-labelledby="order-heading">
 <div class="order-layout section-wrap">
 <div class="order-intro">
-<span class="order-preview-label">BUNDLES &amp; SUBSCRIPTIONS · PREVIEW</span>
-<h2 id="order-heading">Your jar.<br>Your three.<br><span>Your routine.</span></h2>
-<p>Start with a favourite, put together three blends, or explore a repeat delivery. Choose your jars below.</p>
-<div class="order-intro-note"><strong>A little more room for your ritual.</strong><p>A 720ml jar option is coming, alongside three-jar bundles.</p></div>
+<span class="order-preview-label">MIX &amp; MATCH · 330ml / 720ml</span>
+<h2 id="order-heading">Pick your blends.<br><span>Build your bundle.</span></h2>
+<p>A favourite for you. A few to share. Mix any blends in one jar size and save as you add more.</p>
+<div class="order-intro-note order-subscribe-offer"><h3>10% off.<br>Every subscription order.</h3><p>Make it a regular thing with Subscribe &amp; Save.</p><ul><li>Cancel anytime</li><li>Priority dispatch</li><li>Occasional subscriber-only flavour</li></ul></div>
+<div class="order-delivery-note"><strong>Fresh jars. Chilled delivery.</strong><p>UK mainland next-day delivery: £9.95.<br>Free when your jar subtotal is over £50.</p></div>
 <a class="text-link" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Prefer to ask the team? Enquire on Instagram</a>
 </div>
-<form class="order-planner" aria-label="Preview your jars" aria-describedby="order-preview-note">
-<fieldset class="order-choice"><legend>Choose your jars</legend><div class="order-choice-row"><label><input type="radio" name="jar-count" value="1" checked><span>One jar</span></label><label><input type="radio" name="jar-count" value="3"><span>Three-jar bundle</span></label></div></fieldset>
-<fieldset class="order-choice"><legend>Choose your size</legend><div class="order-choice-row"><label><input type="radio" name="jar-size" value="original" checked><span>Original jar</span></label><label><input type="radio" name="jar-size" value="720ml"><span>720ml jar</span></label></div></fieldset>
+<form class="order-planner" aria-label="Build your mix and match order" aria-describedby="order-preview-note">
+<fieldset class="order-choice"><legend>Choose your size</legend><div class="order-choice-row"><label><input type="radio" name="jar-size" value="330ml" checked><span>330ml jar<small data-size-start="330ml">From £25</small></span></label><label><input type="radio" name="jar-size" value="720ml"><span>720ml jar<small data-size-start="720ml">From £45</small></span></label></div></fieldset>
+<fieldset class="order-choice"><legend>Choose your jars</legend><div class="order-choice-row order-quantity-row">
+<label><input type="radio" name="jar-count" value="1" checked><span><span>1 jar</span><strong data-quantity-price="1">£25</strong><small data-quantity-saving="1">One favourite</small></span></label>
+<label><input type="radio" name="jar-count" value="2"><span><span>2 jars</span><strong data-quantity-price="2">£47</strong><small data-quantity-saving="2">Save £3</small></span></label>
+<label><input type="radio" name="jar-count" value="3"><span><span>3 jars</span><strong data-quantity-price="3">£68</strong><small data-quantity-saving="3">Save £7</small></span></label>
+<label><input type="radio" name="jar-count" value="4"><span><span>4 jars</span><strong data-quantity-price="4">£88</strong><small data-quantity-saving="4">Save £12</small></span></label>
+</div><p class="order-quantity-note" id="order-quantity-note" role="status"></p></fieldset>
 <div class="order-blend-fields">
 <div class="order-blend-field"><label for="order-blend-1">Your blend</label><select id="order-blend-1" name="blend-1">
 <option value="ocean-gold">Ocean Gold Seamoss</option><option value="ocean-vitality">Ocean Vitality</option><option value="cellular-reset">Cellular Reset</option><option value="manuka-glow" selected>Manuka Glow</option><option value="king-strength">King Strength</option><option value="all-night-long">All Night Long</option><option value="immunity-booster">Immunity Booster</option><option value="onyx-purity">Onyx Purity</option><option value="power-up">Power Up</option><option value="rich-clarification">Rich Clarification</option><option value="gut-health-booster">Gut Health Booster</option><option value="lychee-citrus-glow">Lychee Citrus Glow</option><option value="wonder-woman">Wonder Woman</option><option value="sublime-strawberry">Sublime Strawberry</option><option value="emerald-cleanse">Emerald Cleanse</option>
 </select></div>
 <div class="order-blend-field" data-bundle-field hidden><label for="order-blend-2">Jar two</label><select id="order-blend-2" name="blend-2" disabled></select></div>
 <div class="order-blend-field" data-bundle-field hidden><label for="order-blend-3">Jar three</label><select id="order-blend-3" name="blend-3" disabled></select></div>
+<div class="order-blend-field" data-bundle-field hidden><label for="order-blend-4">Jar four</label><select id="order-blend-4" name="blend-4" disabled></select></div>
 </div>
-<fieldset class="order-choice order-purchase"><legend>Choose your routine</legend><div class="order-choice-row"><label><input type="radio" name="purchase-type" value="one-off" checked><span>One-off order</span></label><label><input type="radio" name="purchase-type" value="subscription"><span>Subscription<small>Coming soon</small></span></label></div></fieldset>
-<div class="order-summary" aria-live="polite" aria-atomic="true"><p id="order-selection">1 × original jar</p><p id="order-blend-summary">Manuka Glow</p><div class="order-price"><strong aria-label="Price to be confirmed">£—</strong><span id="order-price-unit">per order</span></div><p class="order-price-note">Pricing to be confirmed</p><p id="order-schedule" hidden>Repeat delivery timing to be confirmed.</p></div>
-<p id="order-preview-note">Preview only. Bundle combinations, jar sizes, prices and delivery will be confirmed before checkout opens. No payment is taken here.</p>
-<div class="order-enquiry"><label for="order-enquiry-text">Your enquiry</label><textarea id="order-enquiry-text" rows="4" readonly>Hi Super Seamoss, I’m interested in a Manuka Glow jar. Please confirm the size, price and delivery.</textarea><div class="order-actions"><button class="button order-copy" type="button">Copy enquiry</button><a class="button button-dark" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Open Instagram</a></div><p class="order-copy-status" role="status">Copy your choices, then send them to the team on Instagram.</p></div>
+<fieldset class="order-choice order-purchase"><legend>Choose your routine</legend><div class="order-choice-row"><label><input type="radio" name="purchase-type" value="one-off" checked><span>One-off order</span></label><label><input type="radio" name="purchase-type" value="subscription"><span>Subscribe &amp; Save<small>10% off · cancel anytime</small></span></label></div></fieldset>
+<div class="order-summary" aria-live="polite" aria-atomic="true"><p id="order-selection">1 × 330ml jar</p><p id="order-blend-summary">Manuka Glow</p><div class="order-price"><s id="order-regular-price" hidden></s><strong id="order-product-price">£25</strong><span id="order-price-unit">for your jars</span></div><p class="order-price-note" id="order-bundle-saving" hidden></p><p class="order-price-note" id="order-subscription-saving" hidden></p><div class="order-totals"><p><span>Chilled UK mainland delivery</span><strong id="order-delivery-price">£9.95</strong></p><p class="order-total"><span id="order-total-label">Order total</span><strong id="order-total-price">£34.95</strong></p></div><p class="order-shipping-note" id="order-shipping-note">Free delivery on jar subtotals over £50.</p><p id="order-schedule" hidden>Delivery frequency will be confirmed before subscriptions open. Cancel anytime.</p></div>
+<p id="order-preview-note">Enquiry preview. Online checkout is being set up. No payment is taken and no subscription starts here.</p>
+<div class="order-enquiry"><label for="order-enquiry-text">Your enquiry</label><textarea id="order-enquiry-text" rows="5" readonly>Hi Super Seamoss, I’d like one 330ml Manuka Glow jar. Jars: £25. Chilled UK mainland delivery: £9.95. Total: £34.95. Please confirm availability and dispatch.</textarea><div class="order-actions"><button class="button order-copy" type="button">Copy enquiry</button><a class="button button-dark" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Open Instagram</a></div><p class="order-copy-status" role="status">Copy your choices, then send them to the team on Instagram.</p></div>
 </form>
 </div>
 </section>
@@ -161,9 +168,11 @@ setTimeout(() => {
 </div><a class="text-link" href="https://www.instagram.com/p/DST3aUQiD2K/" target="_blank" rel="noopener">The thinking behind every jar <span aria-hidden="true">+</span></a></div>
 <figure class="story-photo reveal"><div class="story-image"><img class="story-stage" src="assets/stage.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"><img class="story-jar" src="assets/jar-768.webp" alt="Super Seamoss jar on a wet grey stone podium surrounded by ice" width="1254" height="1254" loading="lazy" decoding="async"></div><figcaption><span>SEA MOSS AT THE FOUNDATION.</span><span>MADE FOR DAILY LIFE.</span></figcaption><div class="round-note" aria-hidden="true">Your day.<br>Your blend.<br>Your routine.</div></figure></div>
 </section>
-<section class="experience section-wrap" id="ritual" aria-labelledby="ritual-heading"><div class="experience-heading"><h2 class="display-heading reveal" id="ritual-heading">Your blend.<br>Your questions.<br><span>Let’s talk.</span></h2><div class="experience-intro reveal"><p>Found your blend? Message Super Seamoss on Instagram to confirm ingredients, availability, prices and delivery.</p><a class="button button-dark" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Enquire on Instagram <span aria-hidden="true">+</span></a></div></div><div class="experience-steps"><article class="reveal"><span class="step-number">01</span><h3>Choose your blend.</h3><p>Pick the purpose that fits your day and check what’s in the jar.</p></article><article class="reveal"><span class="step-number">02</span><h3>Confirm the details.</h3><p>Ask about allergens, suitability, prices, availability and delivery.</p></article><article class="reveal"><span class="step-number">03</span><h3>Make it your routine.</h3><p>Follow your jar’s serving and storage guidance. Consistency is the idea.</p></article></div></section>
+<section class="experience section-wrap" id="ritual" aria-labelledby="ritual-heading"><div class="experience-heading"><h2 class="display-heading reveal" id="ritual-heading">Your blend.<br>Your questions.<br><span>Let’s talk.</span></h2><div class="experience-intro reveal"><p>Choose your blends and jar size above. Send your priced enquiry to Super Seamoss on Instagram to confirm availability and dispatch.</p><a class="button button-dark" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Enquire on Instagram <span aria-hidden="true">+</span></a></div></div><div class="experience-steps"><article class="reveal"><span class="step-number">01</span><h3>Choose your blend.</h3><p>Pick the purpose that fits your day and check what’s in the jar.</p></article><article class="reveal"><span class="step-number">02</span><h3>Confirm the details.</h3><p>Ask about allergens, suitability, prices, availability and delivery.</p></article><article class="reveal"><span class="step-number">03</span><h3>Make it your routine.</h3><p>Follow your jar’s serving and storage guidance. Consistency is the idea.</p></article></div></section>
 <section class="faq-section section-wrap" id="questions" aria-labelledby="faq-heading"><div class="faq-heading reveal"><span class="tiny-label">BEFORE YOU ORDER</span><h2 id="faq-heading">Know your jar.</h2></div><div class="faq-list reveal">
-<details><summary>How do I order?<b aria-hidden="true">+</b></summary><p>Message Super Seamoss on Instagram with the blend you’re interested in. The team can confirm current prices, availability and delivery before you pre-order.</p></details>
+<details><summary>How do I order?<b aria-hidden="true">+</b></summary><p>Build your mix-and-match order above, then copy your enquiry and send it to Super Seamoss on Instagram. Online checkout is being set up; the team will confirm availability and dispatch.</p></details>
+<details><summary>How much is delivery?<b aria-hidden="true">+</b></summary><p>Chilled next-day delivery to UK mainland is £9.95. Delivery is free when your jar subtotal is over £50, after discounts and before postage. Confirm availability and dispatch timing with the team.</p></details>
+<details><summary>Can I subscribe?<b aria-hidden="true">+</b></summary><p>Subscribe &amp; Save gives you 10% off every recurring order, with cancel anytime, priority dispatch and an occasional subscriber-only flavour. Choose the subscription option in your enquiry. Delivery frequency will be confirmed before subscription checkout opens.</p></details>
 <details><summary>What’s inside each blend?<b aria-hidden="true">+</b></summary><p>Open a blend above to see the ingredients featured in its original Instagram post. Ask the team for the full current ingredient and allergen information before ordering.</p></details>
 <details><summary>Are all the blends vegan?<b aria-hidden="true">+</b></summary><p>Manuka Glow contains manuka honey. Check your chosen blend’s current ingredients with the team if you follow a vegan diet.</p></details>
 <details><summary>How do I use and store my jar?<b aria-hidden="true">+</b></summary><p>Follow the serving and storage instructions supplied with your jar. The Super Seamoss team can help with guidance for your chosen blend.</p></details>
