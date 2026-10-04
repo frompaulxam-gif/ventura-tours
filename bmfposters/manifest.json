@@ -1,0 +1,409 @@
+{
+  "items": [
+    {
+      "code": "01",
+      "variants": [
+        {
+          "id": "01-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 736,
+          "height": 1022,
+          "image": "media/01-ref.png",
+          "preview": "media/01-ref.webp"
+        },
+        {
+          "id": "01-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1064,
+          "height": 1478,
+          "image": "media/01-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/01-performance.webp"
+        },
+        {
+          "id": "01-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1064,
+          "height": 1478,
+          "image": "media/01-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/01-timetable.webp"
+        },
+        {
+          "id": "01-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1064,
+          "height": 1478,
+          "image": "media/01-lost-v2.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/01-lost-v2.webp"
+        }
+      ],
+      "brand": "Halftone serif"
+    },
+    {
+      "code": "02",
+      "variants": [
+        {
+          "id": "02-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 735,
+          "height": 995,
+          "image": "media/02-ref.png",
+          "preview": "media/02-ref.webp"
+        },
+        {
+          "id": "02-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1078,
+          "height": 1460,
+          "image": "media/02-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/02-performance.webp"
+        },
+        {
+          "id": "02-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1078,
+          "height": 1460,
+          "image": "media/02-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/02-timetable.webp"
+        },
+        {
+          "id": "02-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1078,
+          "height": 1460,
+          "image": "media/02-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/02-lost.webp"
+        }
+      ],
+      "brand": "Bold editorial"
+    },
+    {
+      "code": "03",
+      "variants": [
+        {
+          "id": "03-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 736,
+          "height": 915,
+          "image": "media/03-ref.png",
+          "preview": "media/03-ref.webp"
+        },
+        {
+          "id": "03-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1124,
+          "height": 1399,
+          "image": "media/03-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/03-performance.webp"
+        },
+        {
+          "id": "03-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1124,
+          "height": 1399,
+          "image": "media/03-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/03-timetable.webp"
+        },
+        {
+          "id": "03-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1124,
+          "height": 1399,
+          "image": "media/03-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/03-lost.webp"
+        }
+      ],
+      "brand": "Motion map"
+    },
+    {
+      "code": "04",
+      "variants": [
+        {
+          "id": "04-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 735,
+          "height": 1040,
+          "image": "media/04-ref.png",
+          "preview": "media/04-ref.webp"
+        },
+        {
+          "id": "04-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1054,
+          "height": 1492,
+          "image": "media/04-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/04-performance.webp"
+        },
+        {
+          "id": "04-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1054,
+          "height": 1492,
+          "image": "media/04-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/04-timetable.webp"
+        },
+        {
+          "id": "04-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1054,
+          "height": 1492,
+          "image": "media/04-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/04-lost.webp"
+        }
+      ],
+      "brand": "Club condensed"
+    },
+    {
+      "code": "05",
+      "variants": [
+        {
+          "id": "05-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 512,
+          "height": 720,
+          "image": "media/05-ref.png",
+          "preview": "media/05-ref.webp"
+        },
+        {
+          "id": "05-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1058,
+          "height": 1487,
+          "image": "media/05-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/05-performance.webp"
+        },
+        {
+          "id": "05-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1058,
+          "height": 1487,
+          "image": "media/05-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/05-timetable.webp"
+        },
+        {
+          "id": "05-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1058,
+          "height": 1487,
+          "image": "media/05-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/05-lost.webp"
+        }
+      ],
+      "brand": "Statement and script"
+    },
+    {
+      "code": "06",
+      "variants": [
+        {
+          "id": "06-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 1080,
+          "height": 1440,
+          "image": "media/06-ref.png",
+          "preview": "media/06-ref.webp"
+        },
+        {
+          "id": "06-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/06-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/06-performance.webp"
+        },
+        {
+          "id": "06-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/06-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/06-timetable.webp"
+        },
+        {
+          "id": "06-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/06-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/06-lost.webp"
+        }
+      ],
+      "brand": "Split statement"
+    },
+    {
+      "code": "07",
+      "variants": [
+        {
+          "id": "07-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 1179,
+          "height": 2061,
+          "image": "media/07-ref.png",
+          "preview": "media/07-ref.webp"
+        },
+        {
+          "id": "07-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 948,
+          "height": 1659,
+          "image": "media/07-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/07-performance.webp"
+        },
+        {
+          "id": "07-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 949,
+          "height": 1658,
+          "image": "media/07-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/07-timetable.webp"
+        },
+        {
+          "id": "07-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 948,
+          "height": 1659,
+          "image": "media/07-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/07-lost.webp"
+        }
+      ],
+      "brand": "Studio story"
+    },
+    {
+      "code": "08",
+      "variants": [
+        {
+          "id": "08-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 736,
+          "height": 1308,
+          "image": "media/08-ref.png",
+          "preview": "media/08-ref.webp"
+        },
+        {
+          "id": "08-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 941,
+          "height": 1672,
+          "image": "media/08-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/08-performance.webp"
+        },
+        {
+          "id": "08-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 941,
+          "height": 1672,
+          "image": "media/08-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/08-timetable.webp"
+        },
+        {
+          "id": "08-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 941,
+          "height": 1672,
+          "image": "media/08-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/08-lost.webp"
+        }
+      ],
+      "brand": "Tall columns"
+    },
+    {
+      "code": "09",
+      "variants": [
+        {
+          "id": "09-ref",
+          "label": "Reference",
+          "reference": true,
+          "width": 1200,
+          "height": 1600,
+          "image": "media/09-ref.png",
+          "preview": "media/09-ref.webp"
+        },
+        {
+          "id": "09-performance",
+          "label": "Performance",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/09-performance.png",
+          "source": "https://www.instagram.com/p/DdMvmt2MKAc/",
+          "preview": "media/09-performance.webp"
+        },
+        {
+          "id": "09-timetable",
+          "label": "Timetable",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/09-timetable.png",
+          "source": "https://www.instagram.com/p/Dd12g5oNWCY/",
+          "preview": "media/09-timetable.webp"
+        },
+        {
+          "id": "09-lost",
+          "label": "Never lost",
+          "reference": false,
+          "width": 1086,
+          "height": 1448,
+          "image": "media/09-lost.png",
+          "source": "https://www.instagram.com/p/DdGnJS8jn0G/",
+          "preview": "media/09-lost.webp"
+        }
+      ],
+      "brand": "Glass bands"
+    }
+  ]
+}
