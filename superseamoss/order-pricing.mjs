@@ -3,8 +3,8 @@ export const offers = Object.freeze({
   '720ml': Object.freeze([0, 4500, 8500, 12000])
 });
 
-export function deliveryForSubtotal(pence) {
-  return pence > 5000 ? 0 : 995;
+export function deliveryForSubtotal(pence, subscription = false) {
+  return subscription || pence >= 5000 ? 0 : 995;
 }
 
 export function priceOrder(size, quantity, subscription = false) {
@@ -15,8 +15,7 @@ export function priceOrder(size, quantity, subscription = false) {
   const bundlePrice = prices[quantity];
   const subscriptionSaving = subscription ? Math.round(bundlePrice * 0.1) : 0;
   const jarSubtotal = bundlePrice - subscriptionSaving;
-  // The delivery threshold applies to the jars after any subscription discount.
-  const delivery = deliveryForSubtotal(jarSubtotal);
+  const delivery = deliveryForSubtotal(jarSubtotal, subscription);
   return Object.freeze({
     bundlePrice,
     bundleSaving: prices[1] * quantity - bundlePrice,

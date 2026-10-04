@@ -1,4 +1,4 @@
-import { offers, priceOrder, money } from './order-pricing.mjs?v=offers1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=delivery1';
 
 const form = document.querySelector('.order-planner');
 if (form) {
@@ -69,7 +69,7 @@ if (form) {
     setText('#order-delivery-price', quote.delivery ? money(quote.delivery) : 'Free');
     setText('#order-total-label', subscription ? 'Total per delivery' : 'Order total');
     setText('#order-total-price', money(quote.total));
-    setText('#order-shipping-note', quote.delivery ? 'Free delivery on jar subtotals over £50, after discounts.' : 'Your jar subtotal qualifies for free chilled delivery.');
+    setText('#order-shipping-note', subscription ? 'Every subscription includes free chilled UK mainland delivery.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
