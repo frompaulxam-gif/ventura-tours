@@ -1,0 +1,709 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "00-numbered-editorial",
+      "name": "Numbered editorial",
+      "tiles": [
+        {
+          "id": "new-lost",
+          "src": "media/new-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/new-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "new-performance",
+          "src": "media/new-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/new-performance.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "new-timetable",
+          "src": "media/new-timetable.png",
+          "photo": false,
+          "label": "Class Timetable",
+          "preview": "media/new-timetable.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "new-performance",
+          "src": "media/new-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/new-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "new-lost",
+          "src": "media/new-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/new-lost.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "new-lost",
+          "label": "Coaching",
+          "src": "media/new-lost.png",
+          "width": 1122,
+          "height": 1402,
+          "preview": "media/new-lost.webp"
+        },
+        {
+          "id": "new-performance",
+          "label": "Performance",
+          "src": "media/new-performance.png",
+          "width": 1122,
+          "height": 1402,
+          "preview": "media/new-performance.webp"
+        },
+        {
+          "id": "new-timetable",
+          "label": "Timetable",
+          "src": "media/new-timetable.png",
+          "width": 1122,
+          "height": 1402,
+          "preview": "media/new-timetable.webp"
+        }
+      ],
+      "code": "01",
+      "gridId": "00-numbered-editorial-grid",
+      "gridImage": "media/00-numbered-editorial.png"
+    },
+    {
+      "id": "01-halftone-serif",
+      "name": "Halftone serif",
+      "tiles": [
+        {
+          "id": "01-performance",
+          "src": "media/01-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/01-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "01-timetable",
+          "src": "media/01-timetable.png",
+          "photo": false,
+          "label": "Class Timetable",
+          "preview": "media/01-timetable.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "01-lost-v2",
+          "src": "media/01-lost-v2.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/01-lost-v2.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "01-timetable",
+          "src": "media/01-timetable.png",
+          "photo": false,
+          "label": "Class Timetable",
+          "preview": "media/01-timetable.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "01-performance",
+          "src": "media/01-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/01-performance.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "01-performance",
+          "label": "Performance",
+          "src": "media/01-performance.png",
+          "width": 1064,
+          "height": 1478,
+          "preview": "media/01-performance.webp"
+        },
+        {
+          "id": "01-timetable",
+          "label": "Timetable",
+          "src": "media/01-timetable.png",
+          "width": 1064,
+          "height": 1478,
+          "preview": "media/01-timetable.webp"
+        },
+        {
+          "id": "01-lost-v2",
+          "label": "Coaching",
+          "src": "media/01-lost-v2.png",
+          "width": 1064,
+          "height": 1478,
+          "preview": "media/01-lost-v2.webp"
+        }
+      ],
+      "code": "02",
+      "gridId": "01-halftone-serif-grid",
+      "gridImage": "media/01-halftone-serif.png"
+    },
+    {
+      "id": "02-bold-editorial",
+      "name": "Bold editorial",
+      "tiles": [
+        {
+          "id": "02-lost",
+          "src": "media/02-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/02-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "02-lost",
+          "src": "media/02-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/02-lost.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "02-lost",
+          "src": "media/02-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/02-lost.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "02-lost",
+          "src": "media/02-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/02-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "02-lost",
+          "src": "media/02-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/02-lost.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "02-lost",
+          "label": "Coaching",
+          "src": "media/02-lost.png",
+          "width": 1078,
+          "height": 1460,
+          "preview": "media/02-lost.webp"
+        }
+      ],
+      "code": "03",
+      "gridId": "02-bold-editorial-grid",
+      "gridImage": "media/02-bold-editorial.png"
+    },
+    {
+      "id": "04-club-condensed",
+      "name": "Club condensed",
+      "tiles": [
+        {
+          "id": "04-performance",
+          "src": "media/04-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/04-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "04-timetable",
+          "src": "media/04-timetable.png",
+          "photo": false,
+          "label": "Class Timetable",
+          "preview": "media/04-timetable.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "04-lost",
+          "src": "media/04-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/04-lost.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "04-timetable",
+          "src": "media/04-timetable.png",
+          "photo": false,
+          "label": "Class Timetable",
+          "preview": "media/04-timetable.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "04-performance",
+          "src": "media/04-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/04-performance.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "04-performance",
+          "label": "Performance",
+          "src": "media/04-performance.png",
+          "width": 1054,
+          "height": 1492,
+          "preview": "media/04-performance.webp"
+        },
+        {
+          "id": "04-timetable",
+          "label": "Timetable",
+          "src": "media/04-timetable.png",
+          "width": 1054,
+          "height": 1492,
+          "preview": "media/04-timetable.webp"
+        },
+        {
+          "id": "04-lost",
+          "label": "Coaching",
+          "src": "media/04-lost.png",
+          "width": 1054,
+          "height": 1492,
+          "preview": "media/04-lost.webp"
+        }
+      ],
+      "code": "04",
+      "gridId": "04-club-condensed-grid",
+      "gridImage": "media/04-club-condensed.png"
+    },
+    {
+      "id": "05-statement-and-script",
+      "name": "Statement and script",
+      "tiles": [
+        {
+          "id": "05-lost",
+          "src": "media/05-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/05-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "05-lost",
+          "src": "media/05-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/05-lost.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "05-lost",
+          "src": "media/05-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/05-lost.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "05-lost",
+          "src": "media/05-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/05-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "05-lost",
+          "src": "media/05-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/05-lost.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "05-lost",
+          "label": "Coaching",
+          "src": "media/05-lost.png",
+          "width": 1058,
+          "height": 1487,
+          "preview": "media/05-lost.webp"
+        }
+      ],
+      "code": "05",
+      "gridId": "05-statement-and-script-grid",
+      "gridImage": "media/05-statement-and-script.png"
+    },
+    {
+      "id": "06-split-statement",
+      "name": "Split statement",
+      "tiles": [
+        {
+          "id": "06-performance",
+          "src": "media/06-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/06-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "06-performance",
+          "src": "media/06-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/06-performance.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "06-performance",
+          "src": "media/06-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/06-performance.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "06-performance",
+          "src": "media/06-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/06-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "06-performance",
+          "src": "media/06-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/06-performance.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "06-performance",
+          "label": "Performance",
+          "src": "media/06-performance.png",
+          "width": 1086,
+          "height": 1448,
+          "preview": "media/06-performance.webp"
+        }
+      ],
+      "code": "06",
+      "gridId": "06-split-statement-grid",
+      "gridImage": "media/06-split-statement.png"
+    },
+    {
+      "id": "07-studio-story",
+      "name": "Studio story",
+      "tiles": [
+        {
+          "id": "07-performance",
+          "src": "media/07-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/07-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "07-performance",
+          "src": "media/07-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/07-performance.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "07-performance",
+          "src": "media/07-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/07-performance.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "07-performance",
+          "src": "media/07-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/07-performance.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "07-performance",
+          "src": "media/07-performance.png",
+          "photo": false,
+          "label": "Performance Day",
+          "preview": "media/07-performance.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "07-performance",
+          "label": "Performance",
+          "src": "media/07-performance.png",
+          "width": 948,
+          "height": 1659,
+          "preview": "media/07-performance.webp"
+        }
+      ],
+      "code": "07",
+      "gridId": "07-studio-story-grid",
+      "gridImage": "media/07-studio-story.png"
+    },
+    {
+      "id": "09-glass-bands",
+      "name": "Glass bands",
+      "tiles": [
+        {
+          "id": "09-lost",
+          "src": "media/09-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/09-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "09-lost",
+          "src": "media/09-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/09-lost.webp"
+        },
+        {
+          "id": "photo-0",
+          "src": "media/photo-0.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-0.webp"
+        },
+        {
+          "id": "09-lost",
+          "src": "media/09-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/09-lost.webp"
+        },
+        {
+          "id": "photo-1",
+          "src": "media/photo-1.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-1.webp"
+        },
+        {
+          "id": "09-lost",
+          "src": "media/09-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/09-lost.webp"
+        },
+        {
+          "id": "photo-2",
+          "src": "media/photo-2.jpg",
+          "photo": true,
+          "label": "Supporting original photograph",
+          "preview": "media/photo-2.webp"
+        },
+        {
+          "id": "09-lost",
+          "src": "media/09-lost.png",
+          "photo": false,
+          "label": "Never Feel Lost",
+          "preview": "media/09-lost.webp"
+        }
+      ],
+      "kept": [
+        {
+          "id": "09-lost",
+          "label": "Coaching",
+          "src": "media/09-lost.png",
+          "width": 1086,
+          "height": 1448,
+          "preview": "media/09-lost.webp"
+        }
+      ],
+      "code": "08",
+      "gridId": "09-glass-bands-grid",
+      "gridImage": "media/09-glass-bands.png"
+    }
+  ]
+}
