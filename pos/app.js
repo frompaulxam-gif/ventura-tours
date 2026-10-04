@@ -36,9 +36,6 @@ function renderTables(){
  const open=tableIds.filter(id=>bills[id].lines.length).length;
  $('#main').innerHTML=`<div class="heading-row"><div><div class="eyebrow">YOUR TABLES</div><h1>Choose a table</h1><p class="intro">${open} in use · ${tableIds.length-open} available</p></div></div><div class="floor-controls"><div class="view-toggle" aria-label="Table view"><button data-action="table-view" data-value="map" aria-pressed="${tableView==='map'}">Map</button><button data-action="table-view" data-value="grid" aria-pressed="${tableView==='grid'}">Grid</button></div><div class="map-legend"><span><i class="legend-free"></i>Available</span><span><i class="legend-used"></i>In use</span></div></div>${tableView==='map'?floorMap():`<div class="table-list">${tableIds.map(n=>{const t=total(n);return `<button class="table-card ${t.quantity?'occupied':''} ${n===table?'active':''}" data-action="table" data-value="${n}"><span class="table-label">TABLE</span><strong>${n}</strong><small>${t.quantity?t.quantity+(t.quantity===1?' item':' items'):'Available'}</small><span class="table-amount">${t.quantity?money(t.total):'—'}</span></button>`}).join('')}</div>`}${bills['11']?.lines.length?'<div class="legacy-table-note"><p>An older Table 11 bill is still saved.</p><button class="small-btn" data-action="legacy-table">Review saved bill</button></div>':''}<p class="quiet floor-footnote">17 tables · 1–10, 12–13 and F1–F5<br>Bills stay saved until paid or cleared.</p>`;
 }
-function epsonTest(){
- openSheet(header('Epson test print')+'<p class="sheet-desc">On your iPad, this opens Epson TM Print Assistant. Select your TM-m30II Bluetooth printer if asked.</p><div class="epson-test-summary"><strong>Sample bill · £17.82</strong><p>Small Thai Boran logo, itemised dishes, 10% service, then 10% cash discount.</p></div><a class="wide-btn primary epson-test-link" href="'+esc(EpsonTestPrint.url(location.origin+location.pathname))+'">Print test receipt</a><p class="print-hint">Allow Bluetooth in the Epson app. Disconnect the printer from the Mac before testing on the iPad. This test does not add items, record payment or change any table.</p>');
-}
 function zoomMap(value){
  const scroller=$('.floor-scroll'),plan=$('.floor-plan'),oldWidth=plan.offsetWidth,centreX=(scroller.scrollLeft+scroller.clientWidth/2)/oldWidth,centreY=(scroller.scrollTop+scroller.clientHeight/2)/plan.offsetHeight;
  mapZoom=value==='fit'?1:Math.max(1,Math.min(2,mapZoom+(value==='in'?.5:-.5)));plan.style.width=mapZoom*100+'%';
@@ -195,16 +192,21 @@ function confirmRemoval(){
  bills[table].lines.splice(index,1);save();$('#sheet').close();lastAddedId=null;refreshOrder();toast(line.name+' removed');
 }
 function receiptBody(b,t,tableLabel,kind='Dine-in bill',detail=''){return `<div class="receipt-preview"><h2>THAI BORAN</h2><div class="receipt-meta">${esc(kind)} · Table ${esc(tableLabel)}${detail?'<br>'+esc(detail):''}</div><table class="receipt-table"><thead><tr><th>Item</th><th class="right">Qty</th><th class="right">Amount</th></tr></thead><tbody>${b.lines.map(l=>`<tr><td>${esc(l.name)}<div class="bill-item-option">${esc(l.option)} · ${money(l.unitPrice)} each</div></td><td class="right">${l.quantity}</td><td class="right">${money(l.unitPrice*l.quantity)}</td></tr>`).join('')}</tbody></table>${totalsMarkup(b,t)}<p class="receipt-thanks">Thank you for dining with us.</p></div>`}
-function customer(){openSheet(header('Table '+table)+receiptBody(bills[table],total(),table)+`<button class="wide-btn primary" data-action="print-current" ${bills[table].lines.length?'':'disabled'}>Print bill</button><p class="print-hint">Choose your AirPrint receipt printer in the iPhone or iPad print screen.</p>`)}
-function printBill(b,t,tableLabel,kind='Dine-in bill',detail=''){
+function printControls(action,id='',disabled=false){return `<button class="wide-btn primary" data-action="${action}" data-value="${esc(id)}" ${disabled?'disabled':''}>${action==='print-history'?'Print saved bill':'Print bill'}</button><p class="print-hint">Opens Epson TM Print Assistant on iPad or iPhone. Printing keeps this bill saved.</p><button class="text-btn print-alternative" data-action="${action}-system" data-value="${esc(id)}" ${disabled?'disabled':''}>Other printer / PDF</button>`}
+function customer(){openSheet(header('Table '+table)+receiptBody(bills[table],total(),table)+printControls('print-current','',!bills[table].lines.length))}
+function printBill(b,t,tableLabel,kind='Dine-in bill',detail='',system=false,note=''){
  if(!b.lines.length){toast('Add an item before printing.');return}
+ if(!system){
+  try{window.location.href=EpsonPrinter.billUrl(b,t,{tableId:tableLabel,kind,detail:detail||historyDate(new Date().toISOString()),note,noteLabel:kind==='Voided bill'?'Void reason / note':'Reference / note'},location.origin+location.pathname)}catch(e){toast(e.message)}
+  return;
+ }
  const target=$('#print-receipt');
  target.innerHTML=receiptBody(b,t,tableLabel,kind,detail);
  window.print();
 }
-function printCurrent(){printBill(bills[table],total(),table)}
-function printHistory(id){
- try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');printBill(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill',historyDate(entry.savedAt))}catch(e){toast(e.message)}
+function printCurrent(system=false){printBill(bills[table],total(),table,'Dine-in bill','',system)}
+function printHistory(id,system=false){
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');printBill(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill',historyDate(entry.savedAt),system,entry.note||'')}catch(e){toast(e.message)}
 }
 function historyDate(value){return new Date(value).toLocaleString('en-GB',{timeZone:'Europe/London',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZoneName:'short'})}
 function serviceDateLabel(value){return new Date(value+'T12:00:00.000Z').toLocaleDateString('en-GB',{timeZone:'UTC',weekday:'long',day:'numeric',month:'short',year:'numeric'})}
@@ -223,7 +225,7 @@ function renderHistory(){
  $('#main').innerHTML=`<div class="bill-layout"><div class="heading-row"><div><div class="eyebrow">SAVED BILLS</div><h1>History</h1><p class="intro">${entries.length} saved ${entries.length===1?'bill':'bills'}</p></div></div><p class="history-note">Grouped by service date. Bills saved before 4am count towards the previous day, using UK time. Day totals include paid bills only, after discounts and service.</p>${error?`<p class="notice error" role="alert">${error}</p>`:entries.length?`${days}${entries.length>historyLimit?'<button class="wide-btn" data-action="history-more">Show older bills</button>':''}`:'<div class="empty"><h2>No saved bills yet</h2><p>Paid, voided and cleared bills are saved here automatically.</p></div>'}<p class="quiet">History stays in this browser on this device. Clearing browser data also removes history.</p></div>`;
 }
 function historyEntry(id){
- try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId)+`<button class="wide-btn primary" data-action="print-history" data-value="${esc(entry.id)}">Print saved bill</button><button class="wide-btn" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId)+printControls('print-history',entry.id)+`<button class="wide-btn" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
 }
 function prepareRestore(id){
  try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');pendingRestore=id;
@@ -298,7 +300,6 @@ function saveCatalog(isNew){
  }catch(e){$('#catalog-error').textContent=e.name==='QuotaExceededError'?'Storage is full. Changes have not been saved.':e.message;}
 }
 document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');if(!btn)return;let a=btn.dataset.action,v=btn.dataset.value;
- if(a==='epson-test'){epsonTest();return}
  if(a==='table-view'){tableView=v==='grid'?'grid':'map';renderTables();return}
  if(a==='map-zoom'){zoomMap(v);return}
  if(a==='legacy-table'){if(bills['11']?.lines.length){table='11';screen='bill';render()}return}
@@ -329,6 +330,8 @@ document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');
  if(a==='customer'){customer();return}
  if(a==='print-current'){printCurrent();return}
  if(a==='print-history'){printHistory(v);return}
+ if(a==='print-current-system'){printCurrent(true);return}
+ if(a==='print-history-system'){printHistory(v,true);return}
  if(a==='paid'){preparePaid();return}
  if(a==='void'){prepareVoid();return}
  if(a==='confirm-void'){confirmVoid();return}
