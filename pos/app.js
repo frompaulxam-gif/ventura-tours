@@ -36,6 +36,9 @@ function renderTables(){
  const open=tableIds.filter(id=>bills[id].lines.length).length;
  $('#main').innerHTML=`<div class="heading-row"><div><div class="eyebrow">YOUR TABLES</div><h1>Choose a table</h1><p class="intro">${open} in use · ${tableIds.length-open} available</p></div></div><div class="floor-controls"><div class="view-toggle" aria-label="Table view"><button data-action="table-view" data-value="map" aria-pressed="${tableView==='map'}">Map</button><button data-action="table-view" data-value="grid" aria-pressed="${tableView==='grid'}">Grid</button></div><div class="map-legend"><span><i class="legend-free"></i>Available</span><span><i class="legend-used"></i>In use</span></div></div>${tableView==='map'?floorMap():`<div class="table-list">${tableIds.map(n=>{const t=total(n);return `<button class="table-card ${t.quantity?'occupied':''} ${n===table?'active':''}" data-action="table" data-value="${n}"><span class="table-label">TABLE</span><strong>${n}</strong><small>${t.quantity?t.quantity+(t.quantity===1?' item':' items'):'Available'}</small><span class="table-amount">${t.quantity?money(t.total):'—'}</span></button>`}).join('')}</div>`}${bills['11']?.lines.length?'<div class="legacy-table-note"><p>An older Table 11 bill is still saved.</p><button class="small-btn" data-action="legacy-table">Review saved bill</button></div>':''}<p class="quiet floor-footnote">17 tables · 1–10, 12–13 and F1–F5<br>Bills stay saved until paid or cleared.</p>`;
 }
+function epsonTest(){
+ openSheet(header('Epson test print')+'<p class="sheet-desc">On your iPad, this opens Epson TM Print Assistant. Select your TM-m30II Bluetooth printer if asked.</p><div class="epson-test-summary"><strong>Sample bill · £17.82</strong><p>Small Thai Boran logo, itemised dishes, 10% service, then 10% cash discount.</p></div><a class="wide-btn primary epson-test-link" href="'+esc(EpsonTestPrint.url(location.origin+location.pathname))+'">Print test receipt</a><p class="print-hint">Allow Bluetooth in the Epson app. Disconnect the printer from the Mac before testing on the iPad. This test does not add items, record payment or change any table.</p>');
+}
 function zoomMap(value){
  const scroller=$('.floor-scroll'),plan=$('.floor-plan'),oldWidth=plan.offsetWidth,centreX=(scroller.scrollLeft+scroller.clientWidth/2)/oldWidth,centreY=(scroller.scrollTop+scroller.clientHeight/2)/plan.offsetHeight;
  mapZoom=value==='fit'?1:Math.max(1,Math.min(2,mapZoom+(value==='in'?.5:-.5)));plan.style.width=mapZoom*100+'%';
@@ -295,6 +298,7 @@ function saveCatalog(isNew){
  }catch(e){$('#catalog-error').textContent=e.name==='QuotaExceededError'?'Storage is full. Changes have not been saved.':e.message;}
 }
 document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');if(!btn)return;let a=btn.dataset.action,v=btn.dataset.value;
+ if(a==='epson-test'){epsonTest();return}
  if(a==='table-view'){tableView=v==='grid'?'grid':'map';renderTables();return}
  if(a==='map-zoom'){zoomMap(v);return}
  if(a==='legacy-table'){if(bills['11']?.lines.length){table='11';screen='bill';render()}return}
