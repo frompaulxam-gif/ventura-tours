@@ -92,7 +92,7 @@ function selectSearchSuggestion(index){
 }
 function closeSearchSuggestions(){searchSuggestionsOpen=false;searchSuggestionIndex=-1;renderSearchSuggestions()}
 function chooseSearchProduct(id){closeSearchSuggestions();$('#menu-search')?.blur();product(id)}
-document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}if(event.target.id==='payment-tip')updatePaidTip()});
+document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}});
 document.addEventListener('change',event=>{if(event.target.matches('[data-set-field]'))updateSetMenuSheet()});
 document.addEventListener('focusin',event=>{if(event.target.id==='menu-search'){searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}});
 document.addEventListener('focusout',event=>{if(event.target.closest('.search-wrap')&&!event.relatedTarget?.closest('.search-wrap'))closeSearchSuggestions()});
@@ -238,13 +238,26 @@ function restoreBill(){
  if(storageProblem){$('#restore-error').textContent=storageProblem;return}
  try{const target=$('#restore-table').value;bills=billHistory.restore(bills,pendingRestore,target);pendingRestore=null;table=target;screen='bill';$('#sheet').close();render();toast('Saved bill restored to Table '+table)}catch(e){$('#restore-error').textContent=e.message}
 }
+let paymentTipPence=0;
 function preparePaid(){
+ paymentTipPence=0;
  if(!bills[table].lines.length){toast('Add items before marking a bill paid.');return}
- const t=total();openSheet(header('Mark Table '+table+' as paid')+`<div class="paid-amount">${money(t.total)}</div><p class="sheet-desc">Bill total, including any service charge. Add a tip if one was received, then save the payment and free this table.</p><label class="form-field">Tip amount (£) · optional<input id="payment-tip" type="text" inputmode="decimal" maxlength="12" placeholder="0.00" autocomplete="off" aria-describedby="tip-help"></label><p class="tip-help" id="tip-help">Tips are added after discounts and service charge.</p><div class="payment-total" aria-live="polite"><span>Total received</span><strong id="paid-total">${money(t.total)}</strong></div><label class="form-field">Reference / note (optional)<textarea id="payment-note" maxlength="500" rows="2" placeholder="e.g. receipt or payment reference"></textarea></label><p class="form-error" id="paid-error" role="alert"></p><button class="wide-btn primary paid-button" id="confirm-paid" data-action="confirm-paid">Confirm paid · ${money(t.total)}</button><button class="wide-btn no-tip-button" data-action="paid-no-tip">No tip · Mark paid</button>`);
+ const t=total();openSheet(header('Mark Table '+table+' as paid')+`<div class="paid-tip-bill"><span>Bill total</span><strong>${money(t.total)}</strong></div><p class="sheet-desc tip-intro">Tip is optional.</p><label class="form-field">Tip amount (£) · optional<input id="payment-tip" type="text" inputmode="none" value="0.00" readonly autocomplete="off" aria-describedby="tip-help"></label><p class="tip-help" id="tip-help">Enter pence: 2 → £0.02, 20 → £0.20, 200 → £2.00.</p><div class="tip-keypad" role="group" aria-label="Tip number keypad">${[1,2,3,4,5,6,7,8,9].map(d=>`<button type="button" data-action="tip-digit" data-value="${d}" aria-label="Tip digit ${d}">${d}</button>`).join('')}<button type="button" class="tip-keypad-tool" data-action="tip-clear">Clear</button><button type="button" data-action="tip-digit" data-value="0" aria-label="Tip digit 0">0</button><button type="button" class="tip-keypad-tool" data-action="tip-backspace" aria-label="Delete last tip digit">⌫</button></div><div class="payment-total" aria-live="polite"><span>Total received</span><strong id="paid-total">${money(t.total)}</strong></div><details class="payment-reference"><summary>Reference / note (optional)</summary><label class="form-field"><span>Reference / note</span><textarea id="payment-note" maxlength="500" rows="2" placeholder="e.g. receipt or payment reference"></textarea></label></details><p class="form-error" id="paid-error" role="alert"></p><div class="paid-confirm-actions"><button class="wide-btn primary paid-button" id="confirm-paid" data-action="confirm-paid">Confirm paid · ${money(t.total)}</button><button class="wide-btn no-tip-button" data-action="paid-no-tip">No tip · Mark paid</button></div>`);
 }
-function paymentTip(){const value=$('#payment-tip').value.trim();return value?BillingEngine.parseMoney(value):0}
+function paymentTip(){return paymentTipPence}
+function enterTipKey(key){
+ const next=key==='clear'?0:key==='backspace'?Math.floor(paymentTipPence/10):/^\d$/.test(key)?paymentTipPence*10+Number(key):paymentTipPence;
+ if(next>1000000){$('#paid-error').textContent='Maximum tip is £10,000. Delete a digit or clear the amount.';return}
+ paymentTipPence=next;updatePaidTip();
+}
+document.addEventListener('keydown',event=>{
+ if(!$('#sheet').open||!event.target.closest('#payment-tip,.tip-keypad')||event.ctrlKey||event.metaKey||event.altKey)return;
+ if(/^\d$/.test(event.key)){event.preventDefault();enterTipKey(event.key)}
+ else if(event.key==='Backspace'){event.preventDefault();enterTipKey('backspace')}
+ else if(event.key==='Delete'){event.preventDefault();enterTipKey('clear')}
+});
 function updatePaidTip(){
- try{const tip=paymentTip();if(tip>1000000)throw Error('Enter a tip from £0 to £10,000.');const amount=money(total().total+tip);$('#paid-total').textContent=amount;$('#confirm-paid').textContent='Confirm paid · '+amount;$('#confirm-paid').disabled=false;$('#paid-error').textContent=''}
+ try{const tip=paymentTip();$('#payment-tip').value=(tip/100).toFixed(2);if(tip>1000000)throw Error('Enter a tip from £0 to £10,000.');const amount=money(total().total+tip);$('#paid-total').textContent=amount;$('#confirm-paid').textContent='Confirm paid · '+amount;$('#confirm-paid').disabled=false;$('#paid-error').textContent=''}
  catch(e){$('#paid-total').textContent='—';$('#confirm-paid').disabled=true;$('#paid-error').textContent=e.message}
 }
 function confirmPaid(noTip=false){
@@ -339,6 +352,9 @@ document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');
  if(a==='print-current-system'){printCurrent(true);return}
  if(a==='print-history-system'){printHistory(v,true);return}
  if(a==='paid'){preparePaid();return}
+ if(a==='tip-digit'){enterTipKey(v);return}
+ if(a==='tip-clear'){enterTipKey('clear');return}
+ if(a==='tip-backspace'){enterTipKey('backspace');return}
  if(a==='void'){prepareVoid();return}
  if(a==='confirm-void'){confirmVoid();return}
  if(a==='move-table'){prepareMove();return}
