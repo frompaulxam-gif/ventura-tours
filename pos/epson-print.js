@@ -20,13 +20,15 @@
  function start(){return '<epos-print xmlns="http://www.epson-pos.com/schemas/2011/03/epos-print">'+
   '<text lang="en" font="font_a" align="center"/>'+
   '<image width="'+logo.width+'" height="'+logo.height+'" color="color_1" mode="mono">'+logo.raster+'</image><feed unit="40"/>';}
- function billXml(b,t,{tableId,kind='Dine-in bill',detail='',note='',noteLabel='Reference / note'}={}){
+ function billXml(b,t,{tableId,kind='Dine-in bill',detail='',note='',noteLabel='Reference / note',tipPence=0}={}){
+  if(!Number.isSafeInteger(tipPence)||tipPence<0||tipPence>1000000)throw Error('Check the tip amount before printing.');
   if(!b?.lines?.length)throw Error('Add an item before printing.');
   if(typeof tableId!=='string'||!tableId.trim())throw Error('Choose a table before printing.');
   for(const field of ['subtotal','quantity','discount','net','service','serviceRate','beforeCash','cashDiscount','total']){
    if(!Number.isSafeInteger(t?.[field])||t[field]<0)throw Error('Check the bill totals before printing.');
   }
   if(![0,10].includes(t.serviceRate))throw Error('Check the service charge before printing.');
+  if(!Number.isSafeInteger(t.total+tipPence))throw Error('Check the payment total before printing.');
   let subtotal=0,quantity=0,items='';
   for(const line of b.lines){
    if(typeof line.name!=='string'||!Number.isSafeInteger(line.quantity)||line.quantity<1||!Number.isSafeInteger(line.unitPrice)||line.unitPrice<0)throw Error('Check the bill items before printing.');
@@ -46,6 +48,7 @@
    text('Table '+clean(tableId)+' - '+t.quantity+(t.quantity===1?' item':' items')+'\n','em="false"');
   if(detail)xml+=text(wrap(detail).join('\n')+'\n');
   xml+=text('\n'+rule+items+rule+sums+rule,'align="left"')+text(amountRow('TOTAL',t.total),'em="true"')+'<text em="false"/>';
+  if(tipPence)xml+=text(amountRow('Tip',tipPence))+text(amountRow('TOTAL RECEIVED',t.total+tipPence),'em="true"')+'<text em="false"/>';
   if(exempt&&t.serviceRate!==0)xml+=text('\n'+wrap('Lunch menu items are exempt from service charge.').join('\n')+'\n');
   if(note)xml+=text('\n'+wrap(noteLabel+': '+note).join('\n')+'\n');
   xml+=text('\nThank you for dining with us.\n','align="center"')+'<cut type="feed"/></epos-print>';

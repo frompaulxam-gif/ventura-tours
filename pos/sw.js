@@ -1,7 +1,7 @@
 'use strict';
-const CACHE='thai-boran-pos-20261004-12';
+const CACHE='thai-boran-pos-20261004-13';
 const ROOT=new URL('./',self.location.href).href;
-const FILES=['./','index.html','styles.css?v=20261004-pos-12','variants.css?v=20261004-pos-12','polish.css?v=20261004-pos-12','menu.js?v=20261004-pos-12','set-menu.js?v=20261004-pos-12','engine.js?v=20261004-pos-12','history.js?v=20261004-pos-12','catalog.js?v=20261004-pos-12','search.js?v=20261004-pos-12','epson-print.js?v=20261004-pos-12','app.js?v=20261004-pos-12','pwa.js?v=20261004-pos-12','manifest.webmanifest?v=20261004-pos-12','icons/icon-192.png?v=20261004-pos-12','icons/icon-512.png?v=20261004-pos-12','icons/apple-touch-icon.png?v=20261004-pos-12'];
+const FILES=['./','index.html','styles.css?v=20261004-pos-13','variants.css?v=20261004-pos-13','polish.css?v=20261004-pos-13','menu.js?v=20261004-pos-13','set-menu.js?v=20261004-pos-13','engine.js?v=20261004-pos-13','history.js?v=20261004-pos-13','catalog.js?v=20261004-pos-13','search.js?v=20261004-pos-13','epson-print.js?v=20261004-pos-13','app.js?v=20261004-pos-13','pwa.js?v=20261004-pos-13','manifest.webmanifest?v=20261004-pos-13','icons/icon-192.png?v=20261004-pos-13','icons/icon-512.png?v=20261004-pos-13','icons/apple-touch-icon.png?v=20261004-pos-13'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(file=>new URL(file,ROOT).href)))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('thai-boran-pos-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

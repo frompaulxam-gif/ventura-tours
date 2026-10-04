@@ -92,7 +92,7 @@ function selectSearchSuggestion(index){
 }
 function closeSearchSuggestions(){searchSuggestionsOpen=false;searchSuggestionIndex=-1;renderSearchSuggestions()}
 function chooseSearchProduct(id){closeSearchSuggestions();$('#menu-search')?.blur();product(id)}
-document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}});
+document.addEventListener('input',event=>{if(event.target.id==='menu-search'){menuQuery=event.target.value;searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}if(event.target.id==='editor-search'){editorQuery=event.target.value;renderEditorList()}if(event.target.id==='payment-tip')updatePaidTip()});
 document.addEventListener('change',event=>{if(event.target.matches('[data-set-field]'))updateSetMenuSheet()});
 document.addEventListener('focusin',event=>{if(event.target.id==='menu-search'){searchSuggestionsOpen=true;searchSuggestionIndex=-1;renderMenuContent()}});
 document.addEventListener('focusout',event=>{if(event.target.closest('.search-wrap')&&!event.relatedTarget?.closest('.search-wrap'))closeSearchSuggestions()});
@@ -191,41 +191,42 @@ function confirmRemoval(){
  if(!line||line.quantity!==1){$('#sheet').close();toast('The order changed. Please check the quantity.');return}
  bills[table].lines.splice(index,1);save();$('#sheet').close();lastAddedId=null;refreshOrder();toast(line.name+' removed');
 }
-function receiptBody(b,t,tableLabel,kind='Dine-in bill',detail=''){return `<div class="receipt-preview"><h2>THAI BORAN</h2><div class="receipt-meta">${esc(kind)} · Table ${esc(tableLabel)}${detail?'<br>'+esc(detail):''}</div><table class="receipt-table"><thead><tr><th>Item</th><th class="right">Qty</th><th class="right">Amount</th></tr></thead><tbody>${b.lines.map(l=>`<tr><td>${esc(l.name)}<div class="bill-item-option">${esc(l.option)} · ${money(l.unitPrice)} each</div></td><td class="right">${l.quantity}</td><td class="right">${money(l.unitPrice*l.quantity)}</td></tr>`).join('')}</tbody></table>${totalsMarkup(b,t)}<p class="receipt-thanks">Thank you for dining with us.</p></div>`}
+function tipMarkup(tipPence,billTotal){return tipPence?`<div class="payment-breakdown"><div class="sum-row"><span>Tip</span><span>${money(tipPence)}</span></div><div class="sum-row"><strong>Total received</strong><strong>${money(billTotal+tipPence)}</strong></div></div>`:''}
+function receiptBody(b,t,tableLabel,kind='Dine-in bill',detail='',tipPence=0){return `<div class="receipt-preview"><h2>THAI BORAN</h2><div class="receipt-meta">${esc(kind)} · Table ${esc(tableLabel)}${detail?'<br>'+esc(detail):''}</div><table class="receipt-table"><thead><tr><th>Item</th><th class="right">Qty</th><th class="right">Amount</th></tr></thead><tbody>${b.lines.map(l=>`<tr><td>${esc(l.name)}<div class="bill-item-option">${esc(l.option)} · ${money(l.unitPrice)} each</div></td><td class="right">${l.quantity}</td><td class="right">${money(l.unitPrice*l.quantity)}</td></tr>`).join('')}</tbody></table>${totalsMarkup(b,t)}${tipMarkup(tipPence,t.total)}<p class="receipt-thanks">Thank you for dining with us.</p></div>`}
 function printControls(action,id='',disabled=false){return `<button class="wide-btn primary" data-action="${action}" data-value="${esc(id)}" ${disabled?'disabled':''}>${action==='print-history'?'Print saved bill':'Print bill'}</button><p class="print-hint">Opens Epson TM Print Assistant on iPad or iPhone. Printing keeps this bill saved.</p><button class="text-btn print-alternative" data-action="${action}-system" data-value="${esc(id)}" ${disabled?'disabled':''}>Other printer / PDF</button>`}
 function customer(){openSheet(header('Table '+table)+receiptBody(bills[table],total(),table)+printControls('print-current','',!bills[table].lines.length))}
-function printBill(b,t,tableLabel,kind='Dine-in bill',detail='',system=false,note=''){
+function printBill(b,t,tableLabel,kind='Dine-in bill',detail='',system=false,note='',tipPence=0){
  if(!b.lines.length){toast('Add an item before printing.');return}
  if(!system){
-  try{window.location.href=EpsonPrinter.billUrl(b,t,{tableId:tableLabel,kind,detail:detail||historyDate(new Date().toISOString()),note,noteLabel:kind==='Voided bill'?'Void reason / note':'Reference / note'},location.origin+location.pathname)}catch(e){toast(e.message)}
+  try{window.location.href=EpsonPrinter.billUrl(b,t,{tableId:tableLabel,kind,detail:detail||historyDate(new Date().toISOString()),note,tipPence,noteLabel:kind==='Voided bill'?'Void reason / note':'Reference / note'},location.origin+location.pathname)}catch(e){toast(e.message)}
   return;
  }
  const target=$('#print-receipt');
- target.innerHTML=receiptBody(b,t,tableLabel,kind,detail);
+ target.innerHTML=receiptBody(b,t,tableLabel,kind,detail,tipPence);
  window.print();
 }
 function printCurrent(system=false){printBill(bills[table],total(),table,'Dine-in bill','',system)}
 function printHistory(id,system=false){
- try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');printBill(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill',historyDate(entry.savedAt),system,entry.note||'')}catch(e){toast(e.message)}
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');printBill(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill',historyDate(entry.savedAt),system,entry.note||'',entry.tipPence??0)}catch(e){toast(e.message)}
 }
 function historyDate(value){return new Date(value).toLocaleString('en-GB',{timeZone:'Europe/London',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZoneName:'short'})}
 function serviceDateLabel(value){return new Date(value+'T12:00:00.000Z').toLocaleDateString('en-GB',{timeZone:'UTC',weekday:'long',day:'numeric',month:'short',year:'numeric'})}
 const historyStatus=entry=>entry.status==='paid'?'Paid':entry.status==='void'?'Voided':'Cleared';
-function historyRow(entry){return `<button class="history-row" data-action="history-entry" data-value="${esc(entry.id)}"><span><strong>Table ${esc(entry.tableId)} <span class="bill-status ${entry.status==='paid'?'is-paid':entry.status==='void'?'is-void':''}">${historyStatus(entry)}</span></strong><small>${esc(historyDate(entry.savedAt))}</small><small>${entry.totals.quantity} ${entry.totals.quantity===1?'item':'items'}</small>${entry.note?`<small class="history-reference">Ref / note: ${esc(entry.note)}</small>`:''}</span><span class="history-total">${money(entry.totals.total)} <span aria-hidden="true">›</span></span></button>`}
+function historyRow(entry){return `<button class="history-row" data-action="history-entry" data-value="${esc(entry.id)}"><span><strong>Table ${esc(entry.tableId)} <span class="bill-status ${entry.status==='paid'?'is-paid':entry.status==='void'?'is-void':''}">${historyStatus(entry)}</span></strong><small>${esc(historyDate(entry.savedAt))}</small><small>${entry.totals.quantity} ${entry.totals.quantity===1?'item':'items'}</small>${entry.tipPence?`<small>Tip: ${money(entry.tipPence)} · Received: ${money(entry.totals.total+entry.tipPence)}</small>`:''}${entry.note?`<small class="history-reference">Ref / note: ${esc(entry.note)}</small>`:''}</span><span class="history-total">${money(entry.totals.total)} <span aria-hidden="true">›</span></span></button>`}
 function dayTotalMarkup(summary){
  const counts=[summary.paidCount+' paid '+(summary.paidCount===1?'bill':'bills')];
  if(summary.voidCount)counts.push(summary.voidCount+' voided');
  if(summary.clearedCount)counts.push(summary.clearedCount+' cleared');
- return `<div class="history-day-total"><div class="history-day-amount"><span>Day total <small>(paid)</small></span><strong>${money(summary.paidTotal)}</strong></div><p>${counts.join(' · ')}</p></div>`;
+ return `<div class="history-day-total"><div class="history-day-amount"><span>Day total <small>(paid)</small></span><strong>${money(summary.paidTotal)}</strong></div>${summary.tipTotal?`<div class="history-day-amount tip-summary"><span>Tips</span><strong>${money(summary.tipTotal)}</strong></div><div class="history-day-amount tip-summary"><span>Total received</span><strong>${money(summary.receivedTotal)}</strong></div>`:''}<p>${counts.join(' · ')}</p></div>`;
 }
 function renderHistory(){
  let entries,groups=[],error='';try{entries=billHistory.read();groups=BillHistory.groupByServiceDate(entries).map(day=>({...day,summary:BillHistory.summariseDay(day.entries)}))}catch(e){entries=[];error='History could not be read. Your saved data has not been changed.'}
  let remaining=historyLimit;
  const days=groups.map(day=>{const visible=day.entries.slice(0,remaining);remaining-=visible.length;return visible.length?`<section class="history-day" aria-labelledby="day-${day.date}"><h2 id="day-${day.date}"><time datetime="${day.date}">${esc(serviceDateLabel(day.date))}</time></h2>${dayTotalMarkup(day.summary)}<div class="history-list">${visible.map(historyRow).join('')}</div></section>`:''}).join('');
- $('#main').innerHTML=`<div class="bill-layout"><div class="heading-row"><div><div class="eyebrow">SAVED BILLS</div><h1>History</h1><p class="intro">${entries.length} saved ${entries.length===1?'bill':'bills'}</p></div></div><p class="history-note">Grouped by service date. Bills saved before 4am count towards the previous day, using UK time. Day totals include paid bills only, after discounts and service.</p>${error?`<p class="notice error" role="alert">${error}</p>`:entries.length?`${days}${entries.length>historyLimit?'<button class="wide-btn" data-action="history-more">Show older bills</button>':''}`:'<div class="empty"><h2>No saved bills yet</h2><p>Paid, voided and cleared bills are saved here automatically.</p></div>'}<p class="quiet">History stays in this browser on this device. Clearing browser data also removes history.</p></div>`;
+ $('#main').innerHTML=`<div class="bill-layout"><div class="heading-row"><div><div class="eyebrow">SAVED BILLS</div><h1>History</h1><p class="intro">${entries.length} saved ${entries.length===1?'bill':'bills'}</p></div></div><p class="history-note">Grouped by service date. Bills saved before 4am count towards the previous day, using UK time. Day totals include paid bills after discounts and service. Tips are shown separately.</p>${error?`<p class="notice error" role="alert">${error}</p>`:entries.length?`${days}${entries.length>historyLimit?'<button class="wide-btn" data-action="history-more">Show older bills</button>':''}`:'<div class="empty"><h2>No saved bills yet</h2><p>Paid, voided and cleared bills are saved here automatically.</p></div>'}<p class="quiet">History stays in this browser on this device. Clearing browser data also removes history.</p></div>`;
 }
 function historyEntry(id){
- try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId)+printControls('print-history',entry.id)+`<button class="wide-btn" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
+ try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');openSheet(header((entry.status==='paid'?'Paid bill':entry.status==='void'?'Voided bill':'Saved bill')+' · Table '+entry.tableId)+`<div class="history-service-date"><span>Service date</span><strong>${esc(serviceDateLabel(entry.serviceDate))}</strong></div><p class="sheet-desc">${historyStatus(entry)} ${esc(historyDate(entry.savedAt))}</p>${entry.note?`<div class="saved-note"><strong>${entry.status==='void'?'Void reason / note':'Reference / note'}</strong><p>${esc(entry.note)}</p></div>`:''}`+receiptBody(entry.bill,entry.totals,entry.tableId,entry.status==='paid'?'Paid receipt':entry.status==='void'?'Voided bill':'Cleared bill','',entry.tipPence??0)+printControls('print-history',entry.id)+`<button class="wide-btn" data-action="restore-bill" data-value="${esc(entry.id)}">Restore this bill</button>`)}catch(e){toast(e.message)}
 }
 function prepareRestore(id){
  try{const entry=billHistory.read().find(e=>e.id===id);if(!entry)throw Error('Saved bill not found.');pendingRestore=id;
@@ -239,11 +240,16 @@ function restoreBill(){
 }
 function preparePaid(){
  if(!bills[table].lines.length){toast('Add items before marking a bill paid.');return}
- const t=total();openSheet(header('Mark Table '+table+' as paid')+`<div class="paid-amount">${money(t.total)}</div><p class="sheet-desc">Save this bill as paid in History and make Table ${esc(table)} available again.</p><label class="form-field">Reference / note (optional)<textarea id="payment-note" maxlength="500" rows="3" placeholder="e.g. receipt or payment reference"></textarea></label><p class="form-error" id="paid-error" role="alert"></p><button class="wide-btn primary paid-button" data-action="confirm-paid">Confirm paid · ${money(t.total)}</button>`);
+ const t=total();openSheet(header('Mark Table '+table+' as paid')+`<div class="paid-amount">${money(t.total)}</div><p class="sheet-desc">Bill total, including any service charge. Add a tip if one was received, then save the payment and free this table.</p><label class="form-field">Tip amount (£) · optional<input id="payment-tip" type="text" inputmode="decimal" maxlength="12" placeholder="0.00" autocomplete="off" aria-describedby="tip-help"></label><p class="tip-help" id="tip-help">Tips are added after discounts and service charge.</p><div class="payment-total" aria-live="polite"><span>Total received</span><strong id="paid-total">${money(t.total)}</strong></div><label class="form-field">Reference / note (optional)<textarea id="payment-note" maxlength="500" rows="2" placeholder="e.g. receipt or payment reference"></textarea></label><p class="form-error" id="paid-error" role="alert"></p><button class="wide-btn primary paid-button" id="confirm-paid" data-action="confirm-paid">Confirm paid · ${money(t.total)}</button><button class="wide-btn no-tip-button" data-action="paid-no-tip">No tip · Mark paid</button>`);
 }
-function confirmPaid(){
+function paymentTip(){const value=$('#payment-tip').value.trim();return value?BillingEngine.parseMoney(value):0}
+function updatePaidTip(){
+ try{const tip=paymentTip();if(tip>1000000)throw Error('Enter a tip from £0 to £10,000.');const amount=money(total().total+tip);$('#paid-total').textContent=amount;$('#confirm-paid').textContent='Confirm paid · '+amount;$('#confirm-paid').disabled=false;$('#paid-error').textContent=''}
+ catch(e){$('#paid-total').textContent='—';$('#confirm-paid').disabled=true;$('#paid-error').textContent=e.message}
+}
+function confirmPaid(noTip=false){
  if(storageProblem){$('#paid-error').textContent=storageProblem;return}
- try{const note=$('#payment-note').value,result=billHistory.archiveAndClear(bills,table,{status:'paid',note});bills=result.bills;$('#sheet').close();screen='tables';render();window.scrollTo(0,0);toast('Table '+table+' marked paid and saved to History')}
+ try{const note=$('#payment-note').value,tipPence=noTip?0:paymentTip(),result=billHistory.archiveAndClear(bills,table,{status:'paid',note,tipPence});bills=result.bills;$('#sheet').close();screen='tables';render();window.scrollTo(0,0);toast('Table '+table+' marked paid and saved to History')}
  catch(e){$('#paid-error').textContent='Table kept open. '+(e.name==='QuotaExceededError'?'Storage is full. Check History before retrying.':e.message+' Check History before retrying.')}
 }
 function clearToHistory(){
@@ -339,6 +345,7 @@ document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');
  if(a==='confirm-move'){confirmMove();return}
  if(a==='install-app'){installHelp();return}
  if(a==='confirm-paid'){confirmPaid();return}
+ if(a==='paid-no-tip'){confirmPaid(true);return}
  if(a==='clear'){openSheet(header('Clear Table '+table+'?')+'<p class="sheet-desc">A full copy will be saved to History first. Then this table will be emptied and service reset to 10% for its next bill.</p><p class="form-error" id="clear-error" role="alert"></p><button class="wide-btn primary" data-action="confirm-clear">Save to History & clear</button>');return}
  if(a==='confirm-clear'){clearToHistory();return}
  if(a==='history-entry'){historyEntry(v);return}
