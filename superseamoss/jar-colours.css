@@ -1,0 +1,4 @@
+/* Shared correction for Onyx gel. Neutral pixels and alpha retain their values. */
+.range-card img[src*="onyx-purity.webp"],
+.blend-picker-choice[data-blend="onyx-purity"] .blend-picker-photo,
+.blend-preview-stage[data-blend="onyx-purity"] .blend-preview-jar{filter:url(#onyx-dark-green)}

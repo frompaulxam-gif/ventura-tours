@@ -1,4 +1,4 @@
-import { blends } from './blend-preview-data.mjs?v=qc2';
+import { blends } from './blend-preview-data.mjs?v=onyx1';
 
 export function createBlendPickers(form, selects) {
   const pickers = selects.map((select, jarIndex) => {

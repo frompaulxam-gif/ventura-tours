@@ -1,4 +1,4 @@
-import { blends, ingredients } from './blend-preview-data.mjs?v=qc2';
+import { blends, ingredients } from './blend-preview-data.mjs?v=onyx1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');

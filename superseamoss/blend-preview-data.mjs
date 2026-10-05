@@ -260,7 +260,7 @@ export const blends = [
       "ashwagandha",
       "moringa"
     ],
-    "accent": "#82624f",
+    "accent": "#36513b",
     "cell": 7
   },
   {
