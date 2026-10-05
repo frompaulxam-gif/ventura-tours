@@ -1,7 +1,6 @@
 import { blends } from './blend-preview-data.mjs?v=qc2';
 
 export function createBlendPickers(form, selects) {
-  const media = matchMedia('(prefers-reduced-motion: reduce)');
   const pickers = selects.map((select, jarIndex) => {
     const field = select.closest('.order-blend-field');
     const label = field.querySelector('label');
@@ -17,18 +16,7 @@ export function createBlendPickers(form, selects) {
     prefix.textContent = 'Selected: ';
     const selectedName = document.createElement('strong');
     selected.append(prefix, selectedName);
-    const controls = document.createElement('div');
-    controls.className = 'blend-picker-controls';
-    const previous = document.createElement('button');
-    const next = document.createElement('button');
-    for (const [button, direction, symbol] of [[previous, 'Previous', '‹'], [next, 'Next', '›']]) {
-      button.type = 'button';
-      button.className = 'blend-picker-arrow';
-      button.setAttribute('aria-label', `${direction} blends for jar ${jarIndex + 1}`);
-      button.textContent = symbol;
-      controls.append(button);
-    }
-    header.append(selected, controls);
+    header.append(selected);
     const track = document.createElement('div');
     track.className = 'blend-picker-track';
     track.setAttribute('role', 'radiogroup');
@@ -61,7 +49,7 @@ export function createBlendPickers(form, selects) {
     });
     const footer = document.createElement('p');
     footer.className = 'blend-picker-hint';
-    footer.textContent = '15 blends · swipe or use the arrows';
+    footer.textContent = '15 blends · choose your favourite';
     picker.append(header, track, footer);
     select.after(picker);
     // Keep the existing form value and pricing flow; the visible control is the image picker.
@@ -73,19 +61,6 @@ export function createBlendPickers(form, selects) {
       select.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
-    const shouldAnimate = () => !media.matches && !document.body.classList.contains('paused');
-    function centre(button, smooth = false) {
-      const trackBox = track.getBoundingClientRect();
-      const buttonBox = button.getBoundingClientRect();
-      track.scrollTo({
-        left: track.scrollLeft + buttonBox.left - trackBox.left - (track.clientWidth - buttonBox.width) / 2,
-        behavior: smooth && shouldAnimate() ? 'smooth' : 'instant'
-      });
-    }
-    function updateArrows() {
-      previous.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-    }
     function sync() {
       selectedName.textContent = select.selectedOptions[0].textContent;
       choices.forEach(button => {
@@ -94,34 +69,23 @@ export function createBlendPickers(form, selects) {
         button.tabIndex = checked ? 0 : -1;
         button.disabled = select.disabled;
       });
-      if (track.clientWidth) centre(choices.find(button => button.dataset.blend === select.value));
-      updateArrows();
     }
     track.addEventListener('keydown', event => {
       const index = choices.indexOf(event.target);
       if (index === -1 || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
+      const columns = getComputedStyle(track).gridTemplateColumns.split(' ').length;
+      const step = event.key === 'ArrowUp' ? -columns : event.key === 'ArrowDown' ? columns
+        : event.key === 'ArrowLeft' ? -1 : 1;
       const targetIndex = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1
-        : (index + (['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 1) + choices.length) % choices.length;
+        : (index + step + choices.length) % choices.length;
       choose(choices[targetIndex].dataset.blend);
-      choices[targetIndex].focus({ preventScroll: true });
-      centre(choices[targetIndex]);
+      choices[targetIndex].focus();
     });
-    const browse = direction => track.scrollBy({ left: direction * track.clientWidth * .85, behavior: shouldAnimate() ? 'smooth' : 'instant' });
-    previous.addEventListener('click', () => browse(-1));
-    next.addEventListener('click', () => browse(1));
-    track.addEventListener('scroll', updateArrows, { passive: true });
     label.addEventListener('click', event => {
       event.preventDefault();
       choices.find(button => button.dataset.blend === select.value)?.focus({ preventScroll: true });
     });
-    // A hidden bundle field has no measurable width until its jar is enabled.
-    const resize = new ResizeObserver(() => {
-      if (!track.clientWidth) return;
-      centre(choices.find(button => button.dataset.blend === select.value));
-      updateArrows();
-    });
-    resize.observe(track);
     sync();
     return { sync };
   });
