@@ -4,10 +4,10 @@ export const offers = Object.freeze({
 });
 
 export function deliveryForSubtotal(pence, subscription = false, method = 'shipping') {
-  if (method !== 'shipping' && method !== 'local') {
-    throw new RangeError('Choose chilled shipping or request local delivery.');
+  if (method !== 'shipping') {
+    throw new RangeError('Local delivery must be confirmed directly with the team.');
   }
-  return subscription || pence >= 5000 ? 0 : method === 'local' ? 500 : 995;
+  return subscription || pence >= 5000 ? 0 : 995;
 }
 
 export function priceOrder(size, quantity, subscription = false, deliveryMethod = 'shipping') {

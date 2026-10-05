@@ -1,4 +1,4 @@
-import { blends } from './blend-preview-data.mjs?v=range1';
+import { blends } from './blend-preview-data.mjs?v=qc2';
 
 export function createBlendPickers(form, selects) {
   const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -46,7 +46,7 @@ export function createBlendPickers(form, selects) {
       frame.setAttribute('aria-hidden', 'true');
       const photo = document.createElement('span');
       photo.className = 'blend-picker-photo';
-      photo.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=clean1`, import.meta.url).href}")`);
+      photo.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=repack1`, import.meta.url).href}")`);
       const tick = document.createElement('span');
       tick.className = 'blend-picker-tick';
       tick.textContent = '✓';
