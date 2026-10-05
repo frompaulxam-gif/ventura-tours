@@ -70,7 +70,7 @@ export function createBlendPreview(form, selects) {
       photo.className = 'blend-ingredient-photo';
       photo.setAttribute('aria-hidden', 'true');
       // Individual contain-sized cutouts avoid cropping or neighbouring sprite fragments.
-      photo.style.setProperty('--ingredient-image', `url("${new URL(`./assets/preview/ingredients-fit/${id}.webp`, import.meta.url).href}")`);
+      photo.style.setProperty('--ingredient-image', `url("${new URL(`./assets/preview/ingredients-fit/${id}.webp?v=fit3`, import.meta.url).href}")`);
       const label = document.createElement('span');
       label.className = 'blend-ingredient-name';
       label.textContent = ingredient.name;
@@ -178,7 +178,7 @@ export function createBlendPreview(form, selects) {
 
   function loadArtwork() {
     if (loading) return loading;
-    loading = Promise.all(['jars.webp', ...ingredients.map(item => `ingredients-fit/${item.id}.webp`)].map(async asset => {
+    loading = Promise.all(['jars.webp', ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
       const image = new Image();
       image.src = new URL(`./assets/preview/${asset}`, import.meta.url).href;
       await image.decode();
