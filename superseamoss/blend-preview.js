@@ -163,7 +163,7 @@ export function createBlendPreview(form, selects) {
   selects.forEach((select, index) => select.addEventListener('focus', () => { if (!select.disabled) { active = index; refresh(); } }));
   root.querySelector('.blend-preview-replay').addEventListener('click', () => show(byId.get(selects[active].value), true));
   document.addEventListener('pointerdown', event => { keyboard = false; if (!event.target.closest('.blend-ingredient')) closeNames(); });
-  document.addEventListener('keydown', event => { keyboard = true; if (event.key === 'Escape') closeNames(); });
+  document.addEventListener('keydown', event => { keyboard = true; if (event.key === 'Escape') closeNames(); }, { capture: true });
   const finishWithoutMotion = () => {
     if (media.matches || document.body.classList.contains('paused')) {
       ++revision;
