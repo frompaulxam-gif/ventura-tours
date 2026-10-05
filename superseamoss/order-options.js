@@ -1,4 +1,4 @@
-import { offers, priceOrder, money } from './order-pricing.mjs?v=delivery1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=two-jars50';
 
 const form = document.querySelector('.order-planner');
 if (form) {
@@ -38,7 +38,7 @@ if (form) {
         const quote = priceOrder(size, count, subscription);
         const saving = quote.bundleSaving + quote.subscriptionSaving;
         setText('[data-quantity-price="' + count + '"]', money(quote.jarSubtotal));
-        setText('[data-quantity-saving="' + count + '"]', saving ? 'Save ' + money(saving) : 'One favourite');
+        setText('[data-quantity-saving="' + count + '"]', saving ? 'Save ' + money(saving) : count > 1 && !quote.delivery ? 'Free delivery' : 'One favourite');
       } else {
         setText('[data-quantity-price="' + count + '"]', '—');
         setText('[data-quantity-saving="' + count + '"]', '330ml only');

@@ -1,5 +1,5 @@
 export const offers = Object.freeze({
-  '330ml': Object.freeze([0, 2500, 4700, 6800, 8800]),
+  '330ml': Object.freeze([0, 2500, 5000, 6800, 8800]),
   '720ml': Object.freeze([0, 4500, 8500, 12000])
 });
 
