@@ -56,7 +56,7 @@ if (form) {
     setText('#order-selection', quantity + ' × ' + size + (quantity > 1 ? ' jars' : ' jar'));
     setText('#order-blend-summary', blends.join(' · '));
     setText('#order-product-price', money(quote.jarSubtotal));
-    setText('#order-price-unit', subscription ? 'for your jars, every delivery' : 'for your jars');
+    setText('#order-price-unit', subscription ? 'for your jars, each month' : 'for your jars');
     const regularPrice = document.querySelector('#order-regular-price');
     regularPrice.hidden = !subscription;
     regularPrice.textContent = money(quote.bundlePrice);
@@ -67,13 +67,13 @@ if (form) {
     subscriptionSaving.hidden = !subscription;
     subscriptionSaving.textContent = 'Subscription saving (10%): ' + money(quote.subscriptionSaving);
     setText('#order-delivery-price', quote.delivery ? money(quote.delivery) : 'Free');
-    setText('#order-total-label', subscription ? 'Total per delivery' : 'Order total');
+    setText('#order-total-label', subscription ? 'Monthly total' : 'Order total');
     setText('#order-total-price', money(quote.total));
     setText('#order-shipping-note', subscription ? 'Every subscription includes free chilled UK mainland delivery.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
-    enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per delivery' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per delivery. Please confirm delivery frequency, availability and dispatch.' : '. Please confirm availability and dispatch.');
+    enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per month. Cancel anytime. Please confirm availability and dispatch.' : '. Please confirm availability and dispatch.');
     status.textContent = 'Copy your choices, then send them to the team on Instagram.';
   };
   form.addEventListener('change', render);
