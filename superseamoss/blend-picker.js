@@ -1,4 +1,4 @@
-import { blends } from './blend-preview-data.mjs?v=ingredient-preview1';
+import { blends } from './blend-preview-data.mjs?v=dispatch1';
 
 export function createBlendPickers(form, selects) {
   const media = matchMedia('(prefers-reduced-motion: reduce)');

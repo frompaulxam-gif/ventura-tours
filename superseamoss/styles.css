@@ -221,3 +221,12 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 @media(max-width:1100px){.order-quantity-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.order-options{padding:58px 0}.order-layout{grid-template-columns:1fr;gap:36px}.order-intro{position:relative;top:auto;padding-top:0}.order-intro h2{font-size:clamp(46px,12vw,68px);margin:20px 0 25px}.order-intro>p{max-width:none;font-size:17px}.order-intro-note{margin:28px 0 12px;max-width:none;padding-top:20px}.order-planner{padding:24px}.order-enquiry textarea{font-size:16px}.order-actions{flex-direction:column}.order-actions .button{width:100%}.order-price>span{width:100%;margin-top:-6px}.order-totals .order-total{font-size:17px}}
 @media(max-width:360px){.order-planner{padding:20px}.order-choice-row label>span{font-size:14px}.order-intro h2{font-size:46px}.order-choice-row{gap:8px}}
+
+/* Fresh preparation, postcode-confirmed local delivery and original product photographs. */
+.order-preparation-note{border-left:3px solid #5b654d;background:#e7e8e1;padding:17px 20px;margin:0 0 26px;line-height:1.6}
+.order-preparation-note strong{font-size:16px;font-weight:550}
+.order-preparation-note p{font-size:14px;margin:7px 0 0}
+.order-preparation-note p:last-child{font-size:13px;color:#4d5547}
+.story-image.story-image-real{height:auto;aspect-ratio:auto;border-radius:18px;background:#e5e1d9}
+.story-authentic,.story-range-photo{display:block;width:100%;height:auto}
+.story-range-photo{margin-top:18px;border-radius:14px}

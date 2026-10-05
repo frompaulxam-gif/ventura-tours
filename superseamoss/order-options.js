@@ -1,6 +1,6 @@
-import { offers, priceOrder, money } from './order-pricing.mjs?v=two-jars50';
-import { createBlendPreview } from './blend-preview.js?v=real1';
-import { createBlendPickers } from './blend-picker.js?v=image-picker1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=dispatch1';
+import { createBlendPreview } from './blend-preview.js?v=dispatch1';
+import { createBlendPickers } from './blend-picker.js?v=dispatch1';
 
 const form = document.querySelector('.order-planner');
 if (form) {
@@ -22,6 +22,8 @@ if (form) {
     const data = new FormData(form);
     const size = data.get('jar-size');
     const subscription = data.get('purchase-type') === 'subscription';
+    const deliveryMethod = data.get('delivery-method') === 'local' ? 'local' : 'shipping';
+    const local = deliveryMethod === 'local';
     Object.keys(offers).forEach(jarSize => {
       setText('[data-size-start="' + jarSize + '"]', 'From ' + money(priceOrder(jarSize, 1, subscription).jarSubtotal));
     });
@@ -37,7 +39,7 @@ if (form) {
       const available = count <= maxQuantity;
       radio.disabled = !available;
       if (available) {
-        const quote = priceOrder(size, count, subscription);
+        const quote = priceOrder(size, count, subscription, deliveryMethod);
         const saving = quote.bundleSaving + quote.subscriptionSaving;
         setText('[data-quantity-price="' + count + '"]', money(quote.jarSubtotal));
         setText('[data-quantity-saving="' + count + '"]', saving ? 'Save ' + money(saving) : count > 1 && !quote.delivery ? 'Free delivery' : 'One favourite');
@@ -54,7 +56,7 @@ if (form) {
     });
     form.querySelector('label[for="order-blend-1"]').textContent = quantity > 1 ? 'Jar one' : 'Your blend';
     const blends = selects.slice(0, quantity).map(select => select.selectedOptions[0].textContent);
-    const quote = priceOrder(size, quantity, subscription);
+    const quote = priceOrder(size, quantity, subscription, deliveryMethod);
     setText('#order-selection', quantity + ' × ' + size + (quantity > 1 ? ' jars' : ' jar'));
     setText('#order-blend-summary', blends.join(' · '));
     setText('#order-product-price', money(quote.jarSubtotal));
@@ -69,13 +71,15 @@ if (form) {
     subscriptionSaving.hidden = !subscription;
     subscriptionSaving.textContent = 'Subscription saving (10%): ' + money(quote.subscriptionSaving);
     setText('#order-delivery-price', quote.delivery ? money(quote.delivery) : 'Free');
-    setText('#order-total-label', subscription ? 'Monthly total' : 'Order total');
+    setText('#order-delivery-label', local ? 'Local delivery estimate' : 'Chilled UK mainland delivery');
+    setText('#order-total-label', local ? subscription ? 'Estimated monthly total' : 'Estimated order total' : subscription ? 'Monthly total' : 'Order total');
     setText('#order-total-price', money(quote.total));
-    setText('#order-shipping-note', subscription ? 'Every subscription includes free chilled UK mainland delivery.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
+    const eligibility = 'Local delivery is available up to 10 miles from B6, Birmingham. The team will confirm your postcode before you pay.';
+    setText('#order-shipping-note', local ? (quote.delivery ? 'Local delivery is £5, subject to postcode confirmation. ' : 'Your order includes free delivery. ') + eligibility : subscription ? 'Every subscription includes free chilled UK mainland delivery.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
-    enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per month. Cancel anytime. Please confirm availability and dispatch.' : '. Please confirm availability and dispatch.');
+    enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + (local ? '. Local delivery estimate: ' : '. Chilled UK mainland delivery: ') + delivery + (local ? '. Estimated total: ' : '. Total: ') + money(quote.total) + (subscription ? ' per month. Cancel anytime.' : '.') + (local ? ' Please confirm whether my postcode qualifies for local delivery within 10 miles of B6, Birmingham.' : '') + ' I understand preparation and dispatch take 3–4 working days after my order is confirmed. Please confirm availability, delivery and how to provide my email for the dispatch update.';
     status.textContent = 'Copy your choices, then send them to the team on Instagram.';
   };
   form.addEventListener('change', render);

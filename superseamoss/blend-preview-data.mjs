@@ -1,7 +1,7 @@
 export const ingredients = [
   {
     "id": "sea-moss",
-    "name": "Sea moss"
+    "name": "Seamoss"
   },
   {
     "id": "bladderwrack",

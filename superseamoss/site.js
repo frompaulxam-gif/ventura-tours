@@ -4,7 +4,7 @@
     "id": "manuka-glow",
     "name": "Manuka Glow",
     "short": "Manuka honey, lemon, maca & ginseng.",
-    "description": "Created with glow & radiance in mind. A sea moss blend with the sweetness of manuka honey, fresh lemon juice, maca root and ginseng.",
+    "description": "Created with glow & radiance in mind. A seamoss blend with the sweetness of manuka honey, fresh lemon juice, maca root and ginseng.",
     "ingredients": [
       "Manuka honey",
       "Fresh lemon juice",
@@ -19,9 +19,9 @@
     "id": "king-strength",
     "name": "The King Strength",
     "short": "Mango, shilajit, reishi & tongkat ali.",
-    "description": "Created with energy & stamina in mind. Sea moss and mango meet shilajit, reishi and tongkat ali in The King Strength.",
+    "description": "Created with energy & stamina in mind. Seamoss and mango meet shilajit, reishi and tongkat ali in The King Strength.",
     "ingredients": [
-      "Sea moss",
+      "Seamoss",
       "Shilajit",
       "Reishi",
       "Tongkat ali",
@@ -35,9 +35,9 @@
     "id": "power-up",
     "name": "Power Up",
     "short": "Goji berry, beetroot, ginseng & lion’s mane.",
-    "description": "Created with energy & focus in mind. A sea moss blend bringing together goji berry, ginseng, beetroot, cinnamon and lion’s mane.",
+    "description": "Created with energy & focus in mind. A seamoss blend bringing together goji berry, ginseng, beetroot, cinnamon and lion’s mane.",
     "ingredients": [
-      "Sea moss",
+      "Seamoss",
       "Goji berry",
       "Ginseng",
       "Beetroot",
@@ -52,7 +52,7 @@
     "id": "rich-clarification",
     "name": "Rich Clarification",
     "short": "Dates, cinnamon, lion’s mane & black maca.",
-    "description": "Created with focus & clarity in mind. Dates and cinnamon sit alongside lion’s mane and black maca in this sea moss blend.",
+    "description": "Created with focus & clarity in mind. Dates and cinnamon sit alongside lion’s mane and black maca in this seamoss blend.",
     "ingredients": [
       "Dates",
       "Cinnamon",
@@ -67,7 +67,7 @@
     "id": "all-night-long",
     "name": "All Night Long",
     "short": "Mondia, damiana, ginseng & vanilla.",
-    "description": "Created with desire & balance in mind. A sea moss blend of mondia, damiana, ginseng and vanilla.",
+    "description": "Created with desire & balance in mind. A seamoss blend of mondia, damiana, ginseng and vanilla.",
     "ingredients": [
       "Mondia",
       "Damiana",
@@ -82,7 +82,7 @@
     "id": "gut-health-booster",
     "name": "Golden Ginger",
     "short": "Ginger stem, black ginger, black maca & turmeric.",
-    "description": "Golden Ginger brings together ginger stem, black maca, black ginger and turmeric in a sea moss blend.",
+    "description": "Golden Ginger brings together ginger stem, black maca, black ginger and turmeric in a seamoss blend.",
     "ingredients": [
       "Ginger stem",
       "Black maca",

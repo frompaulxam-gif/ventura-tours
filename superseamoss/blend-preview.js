@@ -1,4 +1,4 @@
-import { blends, ingredients } from './blend-preview-data.mjs?v=ingredient-preview1';
+import { blends, ingredients } from './blend-preview-data.mjs?v=dispatch1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
@@ -49,7 +49,7 @@ export function createBlendPreview(form, selects) {
     layer.replaceChildren();
     stage.dataset.blend = blend.id;
     jar.style.backgroundPosition = spritePosition(blend.cell, 5, 3);
-    jar.setAttribute('aria-label', `${blend.name} sea moss jar, illustrative product preview`);
+    jar.setAttribute('aria-label', `${blend.name} seamoss jar, illustrative product preview`);
     stage.style.setProperty('--blend-accent', blend.accent);
     name.textContent = blend.name;
     details.textContent = blend.ingredients.map(id => ingredientById.get(id).name).join(' · ');
