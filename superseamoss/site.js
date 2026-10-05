@@ -17,9 +17,9 @@
   },
   {
     "id": "king-strength",
-    "name": "The King Strength",
+    "name": "King Strength",
     "short": "Mango, shilajit, reishi & tongkat ali.",
-    "description": "Created with energy & stamina in mind. Seamoss and mango meet shilajit, reishi and tongkat ali in The King Strength.",
+    "description": "Created with energy & stamina in mind. Seamoss and mango meet shilajit, reishi and tongkat ali in King Strength.",
     "ingredients": [
       "Seamoss",
       "Shilajit",
