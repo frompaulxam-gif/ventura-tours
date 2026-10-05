@@ -1,4 +1,4 @@
-import { blends, ingredients } from './blend-preview-data.mjs?v=dispatch1';
+import { blends, ingredients } from './blend-preview-data.mjs?v=range1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
@@ -33,7 +33,6 @@ export function createBlendPreview(form, selects) {
     animations.add(animation);
     return animation.finished.catch(() => {});
   };
-  const spritePosition = (cell, columns, rows) => `${(cell % columns) * 100 / (columns - 1)}% ${Math.floor(cell / columns) * 100 / (rows - 1)}%`;
   const closeNames = () => layer.querySelectorAll('.is-named').forEach(button => button.classList.remove('is-named'));
   const positions = {
     1: [[24, 24]],
@@ -48,7 +47,7 @@ export function createBlendPreview(form, selects) {
     const focusedIngredient = layer.contains(document.activeElement);
     layer.replaceChildren();
     stage.dataset.blend = blend.id;
-    jar.style.backgroundPosition = spritePosition(blend.cell, 5, 3);
+    jar.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=clean1`, import.meta.url).href}")`);
     jar.setAttribute('aria-label', `${blend.name} seamoss jar, illustrative product preview`);
     stage.style.setProperty('--blend-accent', blend.accent);
     name.textContent = blend.name;
@@ -178,7 +177,7 @@ export function createBlendPreview(form, selects) {
 
   function loadArtwork() {
     if (loading) return loading;
-    loading = Promise.all(['jars-real.webp?v=real1', ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
+    loading = Promise.all([...blends.map(item => `jars-fit/${item.id}.webp?v=clean1`), ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
       const image = new Image();
       image.src = new URL(`./assets/preview/${asset}`, import.meta.url).href;
       await image.decode();

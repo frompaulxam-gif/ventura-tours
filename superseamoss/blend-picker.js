@@ -1,4 +1,4 @@
-import { blends } from './blend-preview-data.mjs?v=dispatch1';
+import { blends } from './blend-preview-data.mjs?v=range1';
 
 export function createBlendPickers(form, selects) {
   const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -46,7 +46,7 @@ export function createBlendPickers(form, selects) {
       frame.setAttribute('aria-hidden', 'true');
       const photo = document.createElement('span');
       photo.className = 'blend-picker-photo';
-      photo.style.backgroundPosition = `${(blend.cell % 5) * 25}% ${Math.floor(blend.cell / 5) * 50}%`;
+      photo.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=clean1`, import.meta.url).href}")`);
       const tick = document.createElement('span');
       tick.className = 'blend-picker-tick';
       tick.textContent = '✓';
@@ -94,6 +94,7 @@ export function createBlendPickers(form, selects) {
         button.tabIndex = checked ? 0 : -1;
         button.disabled = select.disabled;
       });
+      if (track.clientWidth) centre(choices.find(button => button.dataset.blend === select.value));
       updateArrows();
     }
     track.addEventListener('keydown', event => {

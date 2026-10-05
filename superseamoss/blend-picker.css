@@ -11,7 +11,7 @@
 .blend-picker-track{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:4px;padding:4px 4px 10px;scrollbar-width:thin;scrollbar-color:#7f8a713d transparent;-webkit-overflow-scrolling:touch;min-width:0}
 .blend-picker-choice{appearance:none;flex:0 0 122px;min-width:0;padding:0;border:0;background:transparent;font-family:inherit;color:var(--ink);cursor:pointer;scroll-snap-align:center;text-align:center}
 .blend-picker-frame{position:relative;display:block;aspect-ratio:1/1;border:2px solid transparent;border-radius:16px;padding:8px;background:#e9e4d957;transition:border-color 150ms ease-out,background-color 150ms ease-out}
-.blend-picker-photo{display:block;width:100%;height:100%;background-image:url('assets/preview/jars-real.webp?v=real1');background-size:500% 300%;background-repeat:no-repeat;filter:drop-shadow(0 4px 4px #3026181c);transition:transform 160ms ease-out}
+.blend-picker-photo{display:block;width:100%;height:100%;background-image:var(--jar-image);background-size:contain;background-position:center;background-repeat:no-repeat;filter:drop-shadow(0 4px 4px #3026181c);transition:transform 160ms ease-out}
 .blend-picker-tick{position:absolute;top:5px;right:5px;display:flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;background:#4e5a3e;color:#fffdf8;font-size:11px;font-weight:600;opacity:0}
 .blend-picker-choice[aria-checked=true] .blend-picker-frame{border-color:#4e5a3e;background:#e1e6d875}
 .blend-picker-choice[aria-checked=true] .blend-picker-tick{opacity:1}

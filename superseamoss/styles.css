@@ -230,3 +230,19 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .story-image.story-image-real{height:auto;aspect-ratio:auto;border-radius:18px;background:#e5e1d9}
 .story-authentic,.story-range-photo{display:block;width:100%;height:auto}
 .story-range-photo{margin-top:18px;border-radius:14px}
+
+/* The complete catalogue uses isolated jar cutouts and the same order selector. */
+.full-range{padding-top:64px;padding-bottom:72px}
+.full-range-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:32px}
+.full-range-heading h3{font-size:clamp(30px,3.4vw,48px);letter-spacing:-.035em;font-weight:550}
+.full-range-heading p{font-size:14px;color:#545b4c}
+.range-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px 24px}
+.range-card{min-width:0;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column}
+.range-card img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.range-card h3{font-size:20px;font-weight:550;line-height:1.15;letter-spacing:-.02em;margin:12px 0 9px}
+.range-card p{font-size:12px;line-height:1.6;color:#545b4c;margin:0 0 16px}
+.range-card a{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;min-height:44px;border-bottom:1px solid var(--line)}
+.range-card a:focus-visible{outline:2px solid #4e5a3e;outline-offset:4px}
+.hero h1{font-size:clamp(62px,8vw,132px)}
+@media(max-width:1000px){.range-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero h1{font-size:clamp(58px,8vw,84px)}}
+@media(max-width:700px){.full-range{padding-top:42px;padding-bottom:48px}.full-range-heading{display:block;margin-bottom:24px}.full-range-heading p{margin-top:12px}.range-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}.range-card h3{font-size:19px}.range-card p{font-size:11px}.hero h1{font-size:clamp(29px,8.2vw,55px)}}

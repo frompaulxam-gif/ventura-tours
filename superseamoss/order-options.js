@@ -1,6 +1,6 @@
-import { offers, priceOrder, money } from './order-pricing.mjs?v=dispatch1';
-import { createBlendPreview } from './blend-preview.js?v=dispatch1';
-import { createBlendPickers } from './blend-picker.js?v=dispatch1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=range1';
+import { createBlendPreview } from './blend-preview.js?v=range1';
+import { createBlendPickers } from './blend-picker.js?v=range1';
 
 const form = document.querySelector('.order-planner');
 if (form) {
@@ -97,4 +97,10 @@ if (form) {
   render();
   createBlendPreview(form, selects);
   createBlendPickers(form, selects);
+  document.querySelectorAll('[data-order-blend]').forEach(link => {
+    link.addEventListener('click', () => {
+      selects[0].value = link.dataset.orderBlend;
+      selects[0].dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
 }
