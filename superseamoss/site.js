@@ -111,7 +111,7 @@
   document.addEventListener('keydown',event=> { if(event.key==='Escape'&&navigation.classList.contains('open')){closeMenu();menuButton.focus();} });
   document.querySelectorAll('[data-product]').forEach(button=>button.addEventListener('click',()=> {
     const product=products.find(item=>item.id===button.dataset.product);
-    const image=document.querySelector('#product-dialog-image');const version=product.id==='king-strength'?'?v=smooth-lid2':'';image.src='assets/blends/'+product.id+'.webp'+version;image.srcset='assets/blends/'+product.id+'-768.webp'+version+' 768w, assets/blends/'+product.id+'.webp'+version+' 1536w';image.sizes='(max-width: 700px) calc(100vw - 24px), 46vw';image.alt='Creative ingredient still life for Super Seamoss '+product.name;
+    const image=document.querySelector('#product-dialog-image');const version='?v=real1';image.src='assets/blends/'+product.id+'.webp'+version;image.srcset='assets/blends/'+product.id+'-768.webp'+version+' 768w, assets/blends/'+product.id+'.webp'+version+' 1536w';image.sizes='(max-width: 700px) calc(100vw - 24px), 46vw';image.alt='Creative ingredient still life for Super Seamoss '+product.name;
     document.querySelector('#product-dialog-title').textContent=product.name;
     document.querySelector('#product-dialog-description').textContent=product.description;
     document.querySelector('#product-dialog-ingredients').replaceChildren(...product.ingredients.map(ingredient=> { const item=document.createElement('li');item.textContent=ingredient;return item; }));

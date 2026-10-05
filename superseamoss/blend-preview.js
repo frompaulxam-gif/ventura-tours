@@ -178,7 +178,7 @@ export function createBlendPreview(form, selects) {
 
   function loadArtwork() {
     if (loading) return loading;
-    loading = Promise.all(['jars.webp', ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
+    loading = Promise.all(['jars-real.webp?v=real1', ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
       const image = new Image();
       image.src = new URL(`./assets/preview/${asset}`, import.meta.url).href;
       await image.decode();
