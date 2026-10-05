@@ -25,7 +25,8 @@ setTimeout(() => {
   document.dispatchEvent(new Event('seamoss:load-timeout'));
 }, 6500);
 </script>
-<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=blend-names1" defer></script><script src="jar-scroll.js?v=mobile2" defer></script><script type="module" src="order-options.js?v=two-jars50"></script>
+<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=blend-names1" defer></script><script src="jar-scroll.js?v=mobile2" defer></script><script type="module" src="order-options.js?v=ingredient-preview1"></script>
+<link rel="stylesheet" href="blend-preview.css?v=ingredient-preview1">
 </head>
 <body>
 <div class="page-loader" role="status" aria-label="Loading Super Seamoss">
@@ -132,6 +133,17 @@ setTimeout(() => {
 <span class="order-preview-label">MIX &amp; MATCH · 330ml / 720ml</span>
 <h2 id="order-heading">Pick your blends.<br><span>Build your bundle.</span></h2>
 <p>A favourite for you. A few to share. Mix any blends in one jar size and save as you add more.</p>
+<figure class="blend-preview" aria-label="Selected blend product preview" hidden>
+<p class="blend-preview-kicker">YOUR BLEND, UP CLOSE</p>
+<div class="blend-preview-stage" style="--blend-accent:#cfaa4a">
+<div class="blend-preview-ingredients"></div>
+<div class="blend-preview-jar-wrap"><span class="blend-preview-jar" role="img" aria-label="Manuka Glow sea moss jar, illustrative product preview"></span></div>
+</div>
+<figcaption class="blend-preview-caption"><h3 class="blend-preview-name">Manuka Glow</h3><p class="blend-preview-details">Manuka honey · Lemon · Maca root · Panax ginseng</p></figcaption>
+<p class="blend-preview-hint" id="blend-preview-hint"><span class="hint-desktop">Hover over an ingredient to discover it.</span><span class="hint-touch">Tap an ingredient to discover it.</span></p>
+<div class="blend-preview-actions"><div class="blend-preview-tabs" role="group" aria-label="Preview a jar in your bundle"></div><button class="blend-preview-replay" type="button">Replay blend animation</button></div>
+<p class="blend-preview-disclaimer">Illustrative blend preview. Gel colour may vary.</p>
+</figure>
 <div class="order-intro-note order-subscribe-offer"><h3>10% off.<br>Every subscription order.</h3><p>Make it a regular thing with Subscribe &amp; Save.</p><ul><li>Free chilled UK mainland delivery</li><li>Cancel anytime</li><li>Priority dispatch</li><li>Occasional subscriber-only flavour</li></ul></div>
 <div class="order-delivery-note"><strong>Fresh jars. Chilled delivery.</strong><p>UK mainland next-day delivery: £9.95.<br>Free on standard orders with a jar subtotal of £50 or more.<br>Every subscription includes free delivery.</p></div>
 <a class="text-link" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Prefer to ask the team? Enquire on Instagram</a>
