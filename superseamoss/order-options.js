@@ -1,5 +1,5 @@
 import { offers, priceOrder, money } from './order-pricing.mjs?v=two-jars50';
-import { createBlendPreview } from './blend-preview.js?v=image-picker1';
+import { createBlendPreview } from './blend-preview.js?v=feedback-fit2';
 import { createBlendPickers } from './blend-picker.js?v=image-picker1';
 
 const form = document.querySelector('.order-planner');

@@ -69,7 +69,8 @@ export function createBlendPreview(form, selects) {
       const photo = document.createElement('span');
       photo.className = 'blend-ingredient-photo';
       photo.setAttribute('aria-hidden', 'true');
-      photo.style.backgroundPosition = spritePosition(ingredient.cell, 7, 6);
+      // Individual contain-sized cutouts avoid cropping or neighbouring sprite fragments.
+      photo.style.setProperty('--ingredient-image', `url("${new URL(`./assets/preview/ingredients-fit/${id}.webp`, import.meta.url).href}")`);
       const label = document.createElement('span');
       label.className = 'blend-ingredient-name';
       label.textContent = ingredient.name;
@@ -177,9 +178,9 @@ export function createBlendPreview(form, selects) {
 
   function loadArtwork() {
     if (loading) return loading;
-    loading = Promise.all(['jars', 'ingredients'].map(async asset => {
+    loading = Promise.all(['jars.webp', ...ingredients.map(item => `ingredients-fit/${item.id}.webp`)].map(async asset => {
       const image = new Image();
-      image.src = new URL(`./assets/preview/${asset}.webp`, import.meta.url).href;
+      image.src = new URL(`./assets/preview/${asset}`, import.meta.url).href;
       await image.decode();
     })).then(() => {
       artworkReady = true;
