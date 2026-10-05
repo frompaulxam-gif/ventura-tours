@@ -80,9 +80,9 @@
   },
   {
     "id": "gut-health-booster",
-    "name": "Gut Health Booster",
+    "name": "Golden Ginger",
     "short": "Ginger stem, black ginger, black maca & turmeric.",
-    "description": "Created for a gut health routine. A sea moss blend with ginger stem, black maca, black ginger and turmeric.",
+    "description": "Golden Ginger brings together ginger stem, black maca, black ginger and turmeric in a sea moss blend.",
     "ingredients": [
       "Ginger stem",
       "Black maca",
@@ -91,7 +91,7 @@
     ],
     "note": "",
     "post": "DSTfE02iL22",
-    "purpose": "Gut health routine"
+    "purpose": "Ginger & turmeric"
   }
 ];
   const body = document.body;
