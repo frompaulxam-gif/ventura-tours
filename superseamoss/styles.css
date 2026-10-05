@@ -246,3 +246,17 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .hero h1{font-size:clamp(62px,8vw,132px)}
 @media(max-width:1000px){.range-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero h1{font-size:clamp(58px,8vw,84px)}}
 @media(max-width:700px){.full-range{padding-top:42px;padding-bottom:48px}.full-range-heading{display:block;margin-bottom:24px}.full-range-heading p{margin-top:12px}.range-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}.range-card h3{font-size:19px}.range-card p{font-size:11px}.hero h1{font-size:clamp(29px,8.2vw,55px)}}
+
+/* Keep the complete featured still life visible at every viewport width. */
+.blend-scene{left:auto;right:max(0px,calc((100vw - 1600px)/2));width:min(66%,1100px);object-fit:contain;object-position:100% 50%}
+.blend-shade{background:linear-gradient(90deg,#1c201c 0%,rgba(28,32,28,.97) 27%,rgba(28,32,28,.55) 42%,transparent 62%)}
+.blend-panel-copy{width:38%;max-width:540px}
+.blend-panel-copy h3{font-size:clamp(40px,6vw,92px);max-width:100%}
+@media(max-width:600px){
+  .blend-panel{min-height:0;padding:calc(66.6667vw + 24px) 5% 34px}
+  .blend-scene{inset:0 0 auto;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:50% 50%}
+  .blend-shade{background:linear-gradient(180deg,transparent 0%,transparent calc(66.6667vw - 30px),#1c201c calc(66.6667vw + 8px))}
+  .blend-panel-copy{width:100%}
+}
+.product-dialog-art img{object-fit:contain}
+@media(max-width:700px){.product-dialog-art{height:auto;aspect-ratio:3/2}.product-dialog-art img{height:100%;transform:none;object-position:50% 50%}}
