@@ -13,6 +13,7 @@
 .artwork-ready .blend-preview-jar{background-image:url('assets/preview/jars.webp');background-size:500% 300%}
 .blend-preview-ingredients{position:absolute;inset:0;z-index:2;visibility:hidden}
 .artwork-ready .blend-preview-ingredients{visibility:visible}
+.blend-preview-stage:has(.blend-ingredient.is-named) .blend-preview-ingredients{z-index:4}
 .blend-ingredient-anchor{position:absolute;width:21%;aspect-ratio:1;margin-left:-10.5%;margin-top:-10.5%}
 .blend-ingredient{position:relative;display:block;appearance:none;width:100%;height:100%;padding:0;border:0;border-radius:50%;background:none;cursor:help;color:var(--ink);overflow:visible;touch-action:manipulation}
 .blend-ingredient-photo{display:block;width:100%;height:100%;background-repeat:no-repeat;background-size:700% 600%;clip-path:inset(5%);filter:drop-shadow(0 4px 3px #33271b15);transition:transform 160ms cubic-bezier(.16,1,.3,1)}
