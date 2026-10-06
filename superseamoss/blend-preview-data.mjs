@@ -199,7 +199,7 @@ export const blends = [
       "pear",
       "cinnamon"
     ],
-    "accent": "#bba078",
+    "accent": "#95734f",
     "cell": 2
   },
   {
@@ -211,7 +211,7 @@ export const blends = [
       "maca",
       "ginseng"
     ],
-    "accent": "#cfaa4a",
+    "accent": "#c5b58f",
     "cell": 3
   },
   {
@@ -223,7 +223,7 @@ export const blends = [
       "tongkat-ali",
       "mango"
     ],
-    "accent": "#bd8849",
+    "accent": "#d8ab35",
     "cell": 4
   },
   {
@@ -260,7 +260,7 @@ export const blends = [
       "ashwagandha",
       "moringa"
     ],
-    "accent": "#36513b",
+    "accent": "#487b35",
     "cell": 7
   },
   {
@@ -321,7 +321,7 @@ export const blends = [
       "mango",
       "peach"
     ],
-    "accent": "#d09a66",
+    "accent": "#d8ad42",
     "cell": 12
   },
   {
@@ -333,7 +333,7 @@ export const blends = [
       "ashwagandha",
       "ginseng"
     ],
-    "accent": "#cd898c",
+    "accent": "#e4c2c5",
     "cell": 13
   },
   {
@@ -347,7 +347,7 @@ export const blends = [
       "soursop",
       "black-seed-honey"
     ],
-    "accent": "#779058",
+    "accent": "#29472b",
     "cell": 14
   }
 ];

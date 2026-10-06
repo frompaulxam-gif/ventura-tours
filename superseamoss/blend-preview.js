@@ -1,4 +1,4 @@
-import { blends, ingredients } from './blend-preview-data.mjs?v=onyx1';
+import { blends, ingredients } from './blend-preview-data.mjs?v=water-colours1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
@@ -47,8 +47,8 @@ export function createBlendPreview(form, selects) {
     const focusedIngredient = layer.contains(document.activeElement);
     layer.replaceChildren();
     stage.dataset.blend = blend.id;
-    jar.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=repack1`, import.meta.url).href}")`);
-    jar.setAttribute('aria-label', `${blend.name} seamoss jar, illustrative product preview`);
+    jar.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=colours-baked1`, import.meta.url).href}")`);
+    jar.setAttribute('aria-label', `${blend.name} Seamoss jar`);
     stage.style.setProperty('--blend-accent', blend.accent);
     name.textContent = blend.name;
     details.textContent = blend.ingredients.map(id => ingredientById.get(id).name).join(' · ');
@@ -85,7 +85,7 @@ export function createBlendPreview(form, selects) {
       layer.append(anchor);
     });
     // A paused-motion change can replace a focused ingredient. Keep keyboard focus in the preview.
-    if (focusedIngredient) root.querySelector('.blend-preview-replay').focus({ preventScroll: true });
+    if (focusedIngredient) layer.querySelector('.blend-ingredient')?.focus({ preventScroll: true });
     current = blend.id;
   }
 
@@ -100,12 +100,12 @@ export function createBlendPreview(form, selects) {
       : [{ transform: outside, opacity: 1 }, { transform: centre, opacity: 1, offset: .8 }, { transform: centre, opacity: 0 }];
   };
 
-  async function show(blend, replay = false) {
-    if (!blend || (current === blend.id && !replay && !root.classList.contains('is-switching'))) return;
+  async function show(blend) {
+    if (!blend || (current === blend.id && !root.classList.contains('is-switching'))) return;
     const ticket = ++revision;
     cancel();
     root.classList.remove('is-switching');
-    if (!current || !artworkReady || motionOff() || (current === blend.id && !replay)) {
+    if (!current || !artworkReady || motionOff() || (current === blend.id)) {
       renderArtwork(blend);
       return;
     }
@@ -147,6 +147,7 @@ export function createBlendPreview(form, selects) {
       button.setAttribute('aria-label', `Preview jar ${i + 1}: ${selects[i].selectedOptions[0]?.textContent || ''}`);
     }
     tabs.classList.toggle('is-single', count === 1);
+    tabs.parentElement.hidden = count === 1;
     root.querySelector('.blend-preview-kicker').textContent = count > 1 ? `YOUR BLEND · JAR ${active + 1} OF ${count}` : 'YOUR BLEND, UP CLOSE';
   }
 
@@ -161,7 +162,6 @@ export function createBlendPreview(form, selects) {
     refresh();
   });
   selects.forEach((select, index) => select.addEventListener('focus', () => { if (!select.disabled) { active = index; refresh(); } }));
-  root.querySelector('.blend-preview-replay').addEventListener('click', () => show(byId.get(selects[active].value), true));
   document.addEventListener('pointerdown', event => { keyboard = false; if (!event.target.closest('.blend-ingredient')) closeNames(); });
   document.addEventListener('keydown', event => { keyboard = true; if (event.key === 'Escape') closeNames(); }, { capture: true });
   const finishWithoutMotion = () => {
@@ -177,7 +177,7 @@ export function createBlendPreview(form, selects) {
 
   function loadArtwork() {
     if (loading) return loading;
-    loading = Promise.all([...blends.map(item => `jars-fit/${item.id}.webp?v=repack1`), ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
+    loading = Promise.all([...blends.map(item => `jars-fit/${item.id}.webp?v=colours-baked1`), ...ingredients.map(item => `ingredients-fit/${item.id}.webp?v=fit3`)].map(async asset => {
       const image = new Image();
       image.src = new URL(`./assets/preview/${asset}`, import.meta.url).href;
       await image.decode();
