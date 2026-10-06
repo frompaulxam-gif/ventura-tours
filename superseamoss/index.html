@@ -17,9 +17,10 @@
 <link rel="apple-touch-icon" href="assets/favicon-fish-180.png" sizes="180x180">
 <link rel="icon" href="assets/favicon-fish-32.png" type="image/png" sizes="32x32">
 <link rel="preload" href="assets/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/hero-scroll/scroll-frames/000.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/hero-scroll/mobile-frames/000.webp?v=contained7" as="image" media="(max-width:768px)" fetchpriority="high">
+<link rel="preload" href="assets/hero-scroll/scroll-frames/000.webp?v=contained7" as="image" media="(width > 768px)" fetchpriority="high">
 <link rel="stylesheet" href="styles.css?v=square-live1">
-<link rel="stylesheet" href="hero-scroll.css?v=mobile-large1">
+<link rel="stylesheet" href="hero-scroll.css?v=contained7">
 <script>
 document.documentElement.classList.add('page-loading');
 setTimeout(() => {
@@ -27,7 +28,7 @@ setTimeout(() => {
   document.dispatchEvent(new Event('seamoss:load-timeout'));
 }, 6500);
 </script>
-<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=handoff2" defer></script><script type="module" src="order-options.js?v=reviewlinks1"></script>
+<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=contained7" defer></script><script type="module" src="order-options.js?v=reviewlinks1"></script>
 <link rel="stylesheet" href="blend-preview.css?v=clean-preview1">
 <link rel="stylesheet" href="blend-picker.css?v=manuka-recipes1">
 <link rel="stylesheet" href="reviews.css?v=reviewmotion2">
@@ -51,15 +52,15 @@ setTimeout(() => {
 <main>
 <div class="seamoss-hero-track" id="top">
 <section class="seamoss-hero" aria-labelledby="hero-heading">
-<picture class="hero-backdrop seamoss-hero-backdrop" aria-hidden="true"><img src="assets/hero-scroll/stone.webp" alt="" fetchpriority="high"></picture>
+<picture class="hero-backdrop seamoss-hero-backdrop" aria-hidden="true"><img src="assets/hero-scroll/stone.webp?v=contained7" alt="" fetchpriority="high"></picture>
 <div class="seamoss-hero-titles">
 <h1 class="seamoss-hero-intro" id="hero-heading"><span>Super Seamoss.</span><span class="second-line">Daily Nourishment.</span></h1>
 <div class="seamoss-hero-origin"><h2 class="seamoss-hero-source" aria-hidden="true">Sourced organically.</h2><h2 class="seamoss-hero-location" aria-hidden="true">St Lucia and Jamaica.</h2></div>
 </div>
 <div class="seamoss-hero-art" role="img" aria-label="Super Seamoss jar opening with a sliding lid, revealing sea moss gel, honey, lemon and roots.">
-<img class="jar-poster" src="assets/hero-scroll/scroll-frames/000.webp" alt="" width="960" height="540" fetchpriority="high">
+<picture class="seamoss-hero-poster"><source media="(max-width:768px)" srcset="assets/hero-scroll/mobile-frames/000.webp?v=contained7"><img class="jar-poster" src="assets/hero-scroll/scroll-frames/000.webp?v=contained7" alt="" width="960" height="540" fetchpriority="high"></picture>
 <canvas class="seamoss-hero-canvas" width="960" height="540" aria-hidden="true"></canvas>
-<video class="seamoss-hero-video" controls playsinline preload="none" poster="assets/hero-scroll/media/gel-poster.jpg" hidden aria-label="Super Seamoss jar reveal video"><source src="assets/hero-scroll/media/gel-reveal.mp4" type="video/mp4"></video>
+<video class="seamoss-hero-video" controls playsinline preload="none" poster="assets/hero-scroll/media/gel-poster.jpg?v=contained7" hidden aria-label="Super Seamoss jar reveal video"><source src="assets/hero-scroll/media/gel-reveal.mp4?v=contained7" type="video/mp4"></video>
 </div>
 </section>
 </div>
