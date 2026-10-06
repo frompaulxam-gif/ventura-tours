@@ -1,4 +1,4 @@
-import { createSquareCheckout } from './square-checkout.mjs?v=square-subs2';
+import { createSquareCheckout } from './square-checkout.mjs?v=checkout-label1';
 import { offers, priceOrder, money } from './order-pricing.mjs?v=square-subs2';
 import { createBlendPreview } from './blend-preview.js?v=manuka-recipes1';
 import { createBlendPickers } from './blend-picker.js?v=manuka-recipes1';

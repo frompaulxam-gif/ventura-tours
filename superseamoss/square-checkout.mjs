@@ -87,6 +87,6 @@ export function createSquareCheckout(form) {
       ? 'Copy your blend choices, then open your monthly Square checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
       : 'Copy your blend choices, then open Square and select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
     link.href = checkout.url;
-    link.textContent = subscription ? 'Open Square for monthly subscription' : 'Continue to Square';
+    link.textContent = 'Checkout on Square';
   };
 }
