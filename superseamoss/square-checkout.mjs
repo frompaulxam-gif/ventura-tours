@@ -61,22 +61,27 @@ export function createSquareCheckout(form) {
   panel.append(heading, note, choices, actions, status);
   panel.hidden = true;
   form.querySelector('.order-enquiry-fallback').before(panel);
-  copy.addEventListener('click', async () => {
+  async function copyChoices() {
     try {
       await navigator.clipboard.writeText(choices.value);
       status.textContent = 'Copied. Paste these into the blend-choice field in Square.';
     } catch {
       choices.focus();
       choices.select();
-      status.textContent = 'Select and copy the blend choices above, then paste them in Square.';
+      status.textContent = 'Automatic copying was blocked. Copy the selected blend choices above, then paste them in Square.';
     }
+  }
+  copy.addEventListener('click', copyChoices);
+  // Start the clipboard write during the click gesture and preserve native new-tab navigation.
+  link.addEventListener('click', () => {
+    if (link.hasAttribute('href')) copyChoices();
   });
   return (size, quantity, subscription, blends) => {
     const checkout = checkoutFor(size, quantity, subscription);
     panel.hidden = !checkout;
     status.textContent = '';
     const previewNote = form.querySelector('#order-preview-note');
-    previewNote.textContent = checkout ? 'Pay in Square. Your blend choices are not transferred automatically; copy and paste them into the checkout.' : 'Checkout is unavailable for this selection. Please contact the team below.';
+    previewNote.textContent = checkout ? 'Checkout on Square copies your blend choices. Paste them into the required blend-choice field in Square.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {
       link.removeAttribute('href');
       choices.value = '';
@@ -84,8 +89,8 @@ export function createSquareCheckout(form) {
     }
     choices.value = blendChoices(blends);
     note.textContent = subscription
-      ? 'Copy your blend choices, then open your monthly Square checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
-      : 'Copy your blend choices, then open Square and select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
+      ? 'Click Checkout on Square to copy your blend choices and open your monthly checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
+      : 'Click Checkout on Square to copy your blend choices and open Square. Select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
     link.href = checkout.url;
     link.textContent = 'Checkout on Square';
   };
