@@ -272,13 +272,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .hero-caption{grid-column:1;grid-row:1}
 
 /* Ingredient cut-outs emerge behind the jar along two upper diagonals. */
-.hero-ingredients{position:absolute;inset:0;z-index:0;pointer-events:none;visibility:hidden}
-.hero-track.sequence-active .hero-ingredients.is-ready{visibility:visible}
-.hero-ingredient-anchor{position:absolute;opacity:0}
-.hero-ingredient{display:block;width:100%;height:100%;max-width:none;object-fit:contain;filter:drop-shadow(0 4px 3px #33271b15)}
-.hero-ingredient[hidden]{display:none}
 .hero-scene .jar-float{z-index:1}
-@media(prefers-reduced-motion:reduce){.hero-ingredients{display:none}}
 
 /* Give the jar more presence in tall hero views, keeping its opening path unchanged. */
 @media(min-width:701px) and (min-height:1000px) and (max-aspect-ratio:1/1){
