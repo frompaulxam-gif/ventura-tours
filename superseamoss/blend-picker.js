@@ -34,7 +34,7 @@ export function createBlendPickers(form, selects) {
       frame.setAttribute('aria-hidden', 'true');
       const photo = document.createElement('span');
       photo.className = 'blend-picker-photo';
-      photo.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=colours-baked1`, import.meta.url).href}")`);
+      photo.style.setProperty('--jar-image', `url("${new URL(`./assets/preview/jars-fit/${blend.id}.webp?v=edges-clean1`, import.meta.url).href}")`);
       const tick = document.createElement('span');
       tick.className = 'blend-picker-tick';
       tick.textContent = '✓';

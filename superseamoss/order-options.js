@@ -1,6 +1,6 @@
 import { offers, priceOrder, money } from './order-pricing.mjs?v=qc2';
-import { createBlendPreview } from './blend-preview.js?v=clean-preview1';
-import { createBlendPickers } from './blend-picker.js?v=colours-baked1';
+import { createBlendPreview } from './blend-preview.js?v=edges-clean1';
+import { createBlendPickers } from './blend-picker.js?v=edges-clean1';
 
 const form = document.querySelector('.order-planner');
 if (form) {
