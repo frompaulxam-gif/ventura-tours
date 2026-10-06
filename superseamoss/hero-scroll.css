@@ -17,7 +17,7 @@
 .seamoss-hero-art[data-frame-ready=true] .seamoss-hero-canvas{opacity:1}
 .seamoss-hero-art[data-frame-ready=true] .jar-poster{visibility:hidden}
 .seamoss-hero [hidden]{display:none}
-@media(max-width:700px){.seamoss-hero{padding-top:max(100px,14svh)}.seamoss-hero-origin{gap:8px}}
+@media(max-width:700px){.seamoss-hero{padding-top:max(100px,14svh)}.seamoss-hero-origin{gap:8px}.seamoss-hero-art{width:130%}}
 @media(max-height:500px) and (orientation:landscape){.seamoss-hero{padding-top:100px;padding-bottom:12px}.seamoss-hero-origin{gap:6px}.seamoss-hero-source{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.seamoss-hero-track{height:100svh}.seamoss-hero-intro{display:none}.seamoss-hero-source,.seamoss-hero-location{opacity:1}}
 
