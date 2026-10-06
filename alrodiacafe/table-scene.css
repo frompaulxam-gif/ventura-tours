@@ -1,0 +1,12 @@
+/* A separate photographed table keeps the live food and type independent. */
+body[data-site=cafe] .food-hero{background:#291a10;--gold:#f1d4a1;--muted:#e2d8c5;--table-x:0px;--table-y:0px;--table-scroll:0px;--table-scale:1}
+.table-scene{position:absolute;inset:-8%;z-index:-3;pointer-events:none;transform:translate3d(var(--table-x),calc(var(--table-y) + var(--table-scroll)),0) scale(var(--table-scale));transition:transform .8s cubic-bezier(.2,.7,.3,1);will-change:transform}
+.table-scene img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 56%;transform-origin:50% 65%;animation:table-drift 16s ease-in-out infinite alternate;will-change:transform}
+.table-shade{position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,rgba(18,10,4,.48),rgba(18,10,4,.12) 44%,rgba(18,10,4,.35)),radial-gradient(ellipse at 50% 45%,transparent 20%,rgba(12,6,2,.18) 100%)}
+.food-hero .hero-intro,.food-hero .hero-food-label,.food-hero .side-note,.food-hero .hero-bottom,.food-hero .dish-satellite span{text-shadow:0 2px 14px rgba(15,8,2,.45)}
+.food-hero .object-shadow{background:rgba(23,9,1,.8)}
+@keyframes table-drift{from{transform:scale(1) translate3d(.5%,.3%,0)}to{transform:scale(1.075) translate3d(-.7%,-.5%,0)}}
+body.motion-paused .table-scene,.table-motion-still .table-scene{transform:none;transition:none}
+.table-motion-still .table-scene img{animation-play-state:paused}
+@media(max-width:700px){.table-scene{inset:-6%}.table-scene img{object-position:52% center}.table-shade{background:linear-gradient(180deg,rgba(18,10,4,.5),rgba(18,10,4,.12) 45%,rgba(18,10,4,.48))}}
+@media(prefers-reduced-motion:reduce){.table-scene{transform:none!important;transition:none!important}.table-scene img{animation:none!important}}

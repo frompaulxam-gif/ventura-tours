@@ -1,0 +1,9 @@
+Use case: precise-object-edit
+Asset type: clean photographic background layer for the Alródia Café website
+Input image 1: edit target, the approved café cover. Preserve its warm walnut table, amber window daylight, depth and perspective.
+Primary request: remove ALL food, bowls, plates, logos, lettering, numbers, navigation, buttons, controls, captions, orbit lines, decorative rules and every graphic overlay from the image. Reconstruct the concealed tabletop naturally, with continuous matching wood grain and lighting. The entire tabletop must be empty.
+Scene/backdrop: the same walnut café table dominates the foreground; retain the softly blurred dark café background and soft amber daylight from the windows at the right.
+Style/medium: photorealistic natural interior photograph with tactile walnut grain.
+Composition/framing: produce one landscape 3:2 image, extending the scene horizontally as needed while keeping the approved elevated camera angle and table perspective. The wood surface fills most of the image and remains a continuous clean surface for separate HTML food imagery. Keep the upper portion softly dark and uncluttered so an ivory headline can later be overlaid.
+Lighting/mood: retain the reference's warm amber highlights, deep brown shadows, soft daylight and inviting café atmosphere.
+Constraints: no food, tableware, drinks, utensils, objects or plants on the table; no text, logos, UI, circles, lines, watermarks, or graphic overlays anywhere. Do not add new subjects or props. Preserve the approved wood material, photographic character, light direction and mood. Opaque image. One final image only.
