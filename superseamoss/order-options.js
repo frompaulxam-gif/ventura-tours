@@ -1,8 +1,8 @@
 import { createSquareCheckout } from './square-checkout.mjs?v=checkout-label1';
 import { offers, priceOrder, money } from './order-pricing.mjs?v=square-subs2';
-import { createBlendPreview } from './blend-preview.js?v=expecting-mother1';
-import { createBlendPickers } from './blend-picker.js?v=expecting-mother1';
-import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother1';
+import { createBlendPreview } from './blend-preview.js?v=expecting-mother-edition1';
+import { createBlendPickers } from './blend-picker.js?v=expecting-mother-edition1';
+import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother-edition1';
 
 const form = document.querySelector('.order-planner');
 if (form) {

@@ -10,7 +10,7 @@ export const manukaRecipes = [
   },
   {
     id: 'honey-lemon',
-    label: 'Expecting Mother',
+    label: 'Expecting Mother Edition',
     hint: 'No maca or ginseng',
     ingredients: ['manuka-honey', 'lemon'],
     description: 'Seamoss · Manuka honey · Lemon'
@@ -24,7 +24,7 @@ export function selectedBlend(select) {
   return {
     ...blend,
     key: `${blend.id}:${recipe.id}`,
-    name: `${blend.name} (${recipe.label.toLowerCase()})`,
+    name: `${blend.name} (${recipe.id === 'original' ? recipe.label.toLowerCase() : recipe.label})`,
     ingredients: recipe.ingredients,
     description: recipe.description
   };

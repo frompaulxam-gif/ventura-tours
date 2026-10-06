@@ -1,5 +1,5 @@
 import { blends, ingredients } from './blend-preview-data.mjs?v=water-colours1';
-import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother1';
+import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother-edition1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
