@@ -6,7 +6,7 @@
   if (!group || !track) return;
   const clone = group.cloneNode(true);
   clone.setAttribute('aria-hidden', 'true');
-  clone.inert = true;
+  clone.querySelectorAll('a').forEach(link => { link.tabIndex = -1; });
   track.append(clone);
   section.dataset.reviewsReady = 'true';
   const observer = new IntersectionObserver(entries => {

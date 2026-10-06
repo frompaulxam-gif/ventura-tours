@@ -98,10 +98,12 @@ if (form) {
   render();
   createBlendPreview(form, selects);
   createBlendPickers(form, selects);
-  document.querySelectorAll('[data-order-blend]').forEach(link => {
-    link.addEventListener('click', () => {
-      selects[0].value = link.dataset.orderBlend;
-      selects[0].dispatchEvent(new Event('change', { bubbles: true }));
-    });
+  // Delegation also handles the repeated reviews created by the scrolling strip.
+  document.addEventListener('click', event => {
+    const link = event.target.closest('[data-order-blend]');
+    if (!link) return;
+    selects[0].value = link.dataset.orderBlend;
+    if (link.dataset.orderRecipe) selects[0].dataset.recipe = link.dataset.orderRecipe;
+    selects[0].dispatchEvent(new Event('change', { bubbles: true }));
   });
 }
