@@ -10,7 +10,7 @@ export const manukaRecipes = [
   },
   {
     id: 'honey-lemon',
-    label: 'Honey & lemon only',
+    label: 'Expecting Mother',
     hint: 'No maca or ginseng',
     ingredients: ['manuka-honey', 'lemon'],
     description: 'Seamoss · Manuka honey · Lemon'
