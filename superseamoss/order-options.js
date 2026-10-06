@@ -1,4 +1,4 @@
-import { createSquareCheckout } from './square-checkout.mjs?v=autocopy1';
+import { createSquareCheckout } from './square-checkout.mjs?v=copy-feedback1';
 import { offers, priceOrder, money } from './order-pricing.mjs?v=square-subs2';
 import { createBlendPreview } from './blend-preview.js?v=expecting-mother-edition1';
 import { createBlendPickers } from './blend-picker.js?v=expecting-mother-edition1';

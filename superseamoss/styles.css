@@ -286,3 +286,12 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .order-square textarea{display:block;width:100%;min-height:90px;resize:vertical;background:#e7e8e1;color:var(--ink);border:1px solid var(--line);padding:13px;font:inherit;font-size:16px;line-height:1.6}
 .order-square textarea:focus-visible{outline:3px solid #5b654d;outline-offset:3px}
 .order-enquiry-fallback summary{cursor:pointer;font-size:14px;padding:12px 0}
+
+/* Show clipboard confirmation before leaving for the hosted Square checkout. */
+.order-square .order-copy-status[data-result]{padding:12px 14px;border:1px solid #5b654d;background:#e7e8e1;color:var(--ink);font-weight:600}
+.order-square-toast{position:fixed;z-index:1000;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(440px,calc(100vw - 32px));padding:18px 22px;background:var(--ink);color:var(--paper);box-shadow:0 8px 30px #18201535;border-radius:12px;pointer-events:none}
+.order-square-toast[hidden]{display:none}
+.order-square-toast strong,.order-square-toast span{display:block}
+.order-square-toast strong{font-size:18px;margin-bottom:5px}
+.order-square-toast span{font-size:14px;line-height:1.5}
+.order-square-toast[data-result="error"]{background:#613d2c}

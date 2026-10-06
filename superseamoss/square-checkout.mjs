@@ -52,11 +52,31 @@ export function createSquareCheckout(form) {
   copy.textContent = 'Copy blend choices';
   const link = document.createElement('a');
   link.className = 'button button-dark';
-  link.target = '_blank';
   link.rel = 'noopener';
   const status = document.createElement('p');
   status.className = 'order-copy-status';
   status.setAttribute('role', 'status');
+  status.setAttribute('aria-atomic', 'true');
+  const toast = document.createElement('div');
+  toast.className = 'order-square-toast';
+  toast.hidden = true;
+  toast.setAttribute('aria-hidden', 'true');
+  const toastTitle = document.createElement('strong');
+  const toastDetail = document.createElement('span');
+  toast.append(toastTitle, toastDetail);
+  document.body.append(toast);
+  let toastTimer;
+  let leaving = false;
+  function feedback(title, detail, success) {
+    status.textContent = title + '. ' + detail;
+    status.dataset.result = success ? 'success' : 'error';
+    toastTitle.textContent = title;
+    toastDetail.textContent = detail;
+    toast.dataset.result = status.dataset.result;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.hidden = true; }, 6000);
+  }
   actions.append(copy, link);
   panel.append(heading, note, choices, actions, status);
   panel.hidden = true;
@@ -64,22 +84,56 @@ export function createSquareCheckout(form) {
   async function copyChoices() {
     try {
       await navigator.clipboard.writeText(choices.value);
-      status.textContent = 'Copied. Paste these into the blend-choice field in Square.';
+      feedback('Copied to clipboard', 'Paste into Square’s required blend-choice field.', true);
+      copy.textContent = 'Copied ✓';
+      return true;
     } catch {
       choices.focus();
       choices.select();
-      status.textContent = 'Automatic copying was blocked. Copy the selected blend choices above, then paste them in Square.';
+      feedback('Copying was blocked', 'Copy the selected blend choices above, then continue to Square and paste them.', false);
+      return false;
     }
   }
   copy.addEventListener('click', copyChoices);
-  // Start the clipboard write during the click gesture and preserve native new-tab navigation.
-  link.addEventListener('click', () => {
-    if (link.hasAttribute('href')) copyChoices();
+  // Finish the clipboard write while this page has focus. Show the result
+  // before same-tab navigation so the confirmation is visible on handsets too.
+  link.addEventListener('click', async event => {
+    if (!link.hasAttribute('href') || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (leaving) return;
+    if (link.dataset.copyBlocked === 'true') {
+      window.location.assign(link.href);
+      return;
+    }
+    leaving = true;
+    link.setAttribute('aria-busy', 'true');
+    const url = link.href;
+    const copied = await copyChoices();
+    if (!copied) {
+      leaving = false;
+      link.removeAttribute('aria-busy');
+      link.dataset.copyBlocked = 'true';
+      link.textContent = 'Continue to Square';
+      return;
+    }
+    link.textContent = 'Copied ✓ · Opening Square';
+    setTimeout(() => window.location.assign(url), 1500);
+  });
+  addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    leaving = false;
+    link.removeAttribute('aria-busy');
+    link.textContent = link.dataset.copyBlocked === 'true' ? 'Continue to Square' : 'Checkout on Square';
+    toast.hidden = true;
   });
   return (size, quantity, subscription, blends) => {
     const checkout = checkoutFor(size, quantity, subscription);
     panel.hidden = !checkout;
     status.textContent = '';
+    delete status.dataset.result;
+    delete link.dataset.copyBlocked;
+    toast.hidden = true;
+    copy.textContent = 'Copy blend choices';
     const previewNote = form.querySelector('#order-preview-note');
     previewNote.textContent = checkout ? 'Checkout on Square copies your blend choices. Paste them into the required blend-choice field in Square.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {
