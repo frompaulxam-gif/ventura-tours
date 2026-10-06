@@ -37,6 +37,47 @@
     const hidden = String(opacity < .01);
     if (el.getAttribute('aria-hidden') !== hidden) el.setAttribute('aria-hidden', hidden);
   }
+  function prepareFrame(img, i, kind) {
+    const frame = document.createElement('canvas');
+    frame.width = img.naturalWidth;
+    frame.height = img.naturalHeight;
+    const paint = frame.getContext('2d', { willReadFrequently: true });
+    paint.drawImage(img, 0, 0);
+    if (i >= 24) {
+      const pixels = paint.getImageData(0, 0, frame.width, frame.height);
+      const d = pixels.data;
+      for (let p = 0; p < d.length; p += 4) {
+        const r = d[p], g = d[p + 1], b = d[p + 2], a = d[p + 3] / 255;
+        // The supplied dissolve retains its green-screen RGB in translucent
+        // ingredients. Remove that spill without changing the supplied alpha.
+        const spill = clamp((20 - (r - g)) / 20) * clamp((r - b - 18) / 20);
+        if (a > .08 && r > 55 && spill > 0) {
+          const red = Math.min(255, Math.max(0, (r - (1 - a) * 24) / a));
+          const blue = Math.min(255, Math.max(0, (b - (1 - a) * 28) / a));
+          const green = .72 * red + .28 * blue;
+          d[p] = r + (red - r) * spill;
+          d[p + 1] = g + (green - g) * spill;
+          d[p + 2] = b + (blue - b) * spill;
+        }
+      }
+      paint.putImageData(pixels, 0, 0);
+    }
+    if (i < 18) {
+      // Seat the closed cap over the exposed thread. Ease this small correction
+      // away before the existing sliding-lid movement; later frames are intact.
+      const scale = kind === 'mobile' ? 1 : .75;
+      const x = Math.round((kind === 'mobile' ? 210 : 490) * scale);
+      const y = Math.round(210 * scale);
+      const w = Math.round(300 * scale), h = Math.round(105 * scale);
+      const down = 18 * scale * (1 - fade(i, 0, 18));
+      const cap = document.createElement('canvas');
+      cap.width = w; cap.height = h;
+      cap.getContext('2d').drawImage(frame, x, y, w, h, 0, 0, w, h);
+      paint.clearRect(x, y, w, h);
+      paint.drawImage(cap, x, y + down);
+    }
+    return frame;
+  }
   function tick(now) {
     const dt = Math.min(64, now - prev);
     prev = now;
@@ -45,7 +86,7 @@
     const opening = clamp(current / .78);
     const i = reduced.matches ? 95 : Math.round(opening * 95);
     if (!failed && i !== last && frames[i]) {
-      // Draw the supplied frame whole, without moving any element inside it.
+      // Frames are corrected once during loading, never during scroll playback.
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(frames[i], 0, 0, canvas.width, canvas.height);
       last = i;
@@ -71,7 +112,7 @@
           const folder = kind === 'mobile' ? 'mobile-frames' : 'scroll-frames';
           img.src = new URL(`assets/hero-scroll/${folder}/${String(i).padStart(3, '0')}.webp?v=contained7`, document.baseURI).href;
           await img.decode();
-          sets[kind][i] = img;
+          sets[kind][i] = prepareFrame(img, i, kind);
           if (kind === mode) loading?.progress(++prepared, 96);
           else prepared++;
         }));
