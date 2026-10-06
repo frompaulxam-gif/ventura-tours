@@ -1,6 +1,6 @@
-import { priceOrder, money } from './order-pricing.mjs?v=square-live1';
+import { priceOrder, money } from './order-pricing.mjs?v=square-subs2';
 
-// Public Square links offer both one-time purchase and recurring subscriptions.
+// Existing item links are used for one-off orders; monthly payments use dedicated links.
 export const squareOffers = Object.freeze({
   '330ml:1': Object.freeze({ url: 'https://square.link/u/oDJVR7Js', jarPrice: 2500, ready: true }),
   '330ml:2': Object.freeze({ url: 'https://square.link/u/6cntVLqw', jarPrice: 5000, ready: true }),
@@ -11,10 +11,20 @@ export const squareOffers = Object.freeze({
   '720ml:3': Object.freeze({ url: 'https://square.link/u/QTxaHfMn', jarPrice: 12000, ready: true })
 });
 
-export function checkoutFor(size, quantity, subscription = false, catalogue = squareOffers) {
+export const subscriptionOffers = Object.freeze({
+  '330ml:1': Object.freeze({ url: 'https://square.link/u/UnZbxsNz', jarPrice: 2250, ready: true }),
+  '330ml:2': Object.freeze({ url: 'https://square.link/u/gYcrouf4', jarPrice: 4500, ready: true }),
+  '330ml:3': Object.freeze({ url: 'https://square.link/u/QrE70l4D', jarPrice: 6120, ready: true }),
+  '330ml:4': Object.freeze({ url: 'https://square.link/u/z1Oo4sp7', jarPrice: 7920, ready: true }),
+  '720ml:1': Object.freeze({ url: 'https://square.link/u/RX7YHyHm', jarPrice: 4050, ready: true }),
+  '720ml:2': Object.freeze({ url: 'https://square.link/u/lLYNjALa', jarPrice: 7650, ready: true }),
+  '720ml:3': Object.freeze({ url: 'https://square.link/u/yGvfrrbp', jarPrice: 10800, ready: true })
+});
+
+export function checkoutFor(size, quantity, subscription = false, catalogue = subscription ? subscriptionOffers : squareOffers) {
   const quote = priceOrder(size, quantity, subscription);
   const offer = catalogue[size + ':' + quantity];
-  if (!offer || !offer.ready || offer.jarPrice !== quote.bundlePrice) return null;
+  if (!offer || !offer.ready || offer.jarPrice !== quote.jarSubtotal) return null;
   if (!/^https:\/\/square\.link\/u\/[A-Za-z0-9]+$/.test(offer.url)) return null;
   return Object.freeze({ url: offer.url, total: quote.total });
 }
@@ -66,14 +76,16 @@ export function createSquareCheckout(form) {
     panel.hidden = !checkout;
     status.textContent = '';
     const previewNote = form.querySelector('#order-preview-note');
-    previewNote.textContent = checkout ? 'Pay in Square. Your blend choices and purchase option are not transferred automatically; follow the steps below.' : 'Checkout is unavailable for this selection. Please contact the team below.';
+    previewNote.textContent = checkout ? 'Pay in Square. Your blend choices are not transferred automatically; copy and paste them into the checkout.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {
       link.removeAttribute('href');
       choices.value = '';
       return;
     }
     choices.value = blendChoices(blends);
-    note.textContent = '1. Copy your blend choices below. 2. Open Square and choose ' + (subscription ? 'Subscription, then Monthly (10% off)' : 'One-time purchase') + '. Keep the bundle quantity at 1. 3. Click Checkout and paste your blends into the required blend-choice field. Your expected total including chilled delivery is ' + money(checkout.total) + (subscription ? ' each month.' : '.') + ' Check your choices, delivery address and final total before paying.';
+    note.textContent = subscription
+      ? 'Copy your blend choices, then open your monthly Square checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
+      : 'Copy your blend choices, then open Square and select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
     link.href = checkout.url;
     link.textContent = subscription ? 'Open Square for monthly subscription' : 'Continue to Square';
   };

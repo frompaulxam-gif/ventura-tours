@@ -1,5 +1,5 @@
-import { createSquareCheckout } from './square-checkout.mjs?v=square-live1';
-import { offers, priceOrder, money } from './order-pricing.mjs?v=square-live1';
+import { createSquareCheckout } from './square-checkout.mjs?v=square-subs2';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=square-subs2';
 import { createBlendPreview } from './blend-preview.js?v=manuka-recipes1';
 import { createBlendPickers } from './blend-picker.js?v=manuka-recipes1';
 import { selectedBlend } from './blend-recipes.mjs?v=manuka-recipes1';
@@ -75,7 +75,7 @@ if (form) {
     setText('#order-delivery-label', 'Chilled UK mainland delivery');
     setText('#order-total-label', subscription ? 'Monthly total' : 'Order total');
     setText('#order-total-price', money(quote.total));
-    setText('#order-shipping-note', quote.delivery ? 'Chilled delivery is £9.95 below a £50 jar subtotal, including subscriptions. The threshold is after discounts.' : 'Your jar subtotal after discounts qualifies for free chilled delivery.');
+    setText('#order-shipping-note', subscription ? 'Free chilled UK mainland delivery on every monthly subscription, with no minimum spend.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
     renderCheckout(size, quantity, subscription, blends);
     const items = blends.join(', ');
