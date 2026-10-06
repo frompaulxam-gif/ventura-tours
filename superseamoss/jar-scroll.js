@@ -1,141 +1,105 @@
 (() => {
-  const model = document.querySelector('.jar-model');
-  const track = document.querySelector('.hero-track');
-  const hero = document.querySelector('.hero');
-  const canvas = model?.querySelector('canvas');
-  const context = canvas?.getContext('2d');
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const track = document.querySelector('.seamoss-hero-track');
+  const stage = track?.querySelector('.seamoss-hero');
+  const art = track?.querySelector('.seamoss-hero-art');
+  const canvas = art?.querySelector('canvas');
+  const ctx = canvas?.getContext('2d');
+  const intro = track?.querySelector('.seamoss-hero-intro');
+  const source = track?.querySelector('.seamoss-hero-source');
+  const location = track?.querySelector('.seamoss-hero-location');
   const loading = window.seamossLoading;
-  if (!model?.dataset.sequence || !track || !hero || !context) {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!art || !canvas || !stage || !intro || !source || !location) {
     loading?.ready();
     return;
   }
-  const clamp = value => Math.max(0, Math.min(1, value));
-  const smooth = value => { const p = clamp(value); return p * p * (3 - 2 * p); };
-  let stop = () => {};
-  let assets;
-  let starting = false;
+  const frames = [];
+  const clamp = n => Math.max(0, Math.min(1, n));
+  const fade = (p, start, end) => {
+    const t = clamp((p - start) / (end - start));
+    return t * t * (3 - 2 * t);
+  };
+  let target = 0;
+  let current = 0;
+  let last = -1;
+  let prev = performance.now();
+  let failed = false;
+  let prepared = 0;
 
-  async function start() {
-    if (reducedMotion.matches || starting) return;
-    starting = true;
-    try {
-      let prepared = 0;
-      assets ||= await Promise.all(['closed', 'open-body', 'lid'].map(async name => {
-        const image = new Image();
-        image.decoding = 'async';
-        image.src = `assets/real-jar/${name}-wet.webp?v=wet1`;
-        await image.decode();
-        loading?.progress(++prepared, 3);
-        return image;
-      }));
-      if (reducedMotion.matches) return;
-      const [, body, lid] = assets;
-      canvas.width = canvas.height = 768;
-      track.classList.add('sequence-active');
-      let pending = 0;
-      let previousTime = 0;
-      let startY = 0;
-      let distance = 1;
-      let measureNeeded = true;
-      let visible = true;
-      let stopped = false;
-      let current = null;
-      let lastDrawn = -1;
-      const measure = () => {
-        const bounds = track.getBoundingClientRect();
-        startY = window.scrollY + bounds.top;
-        distance = Math.max(1, bounds.height - hero.clientHeight);
-        measureNeeded = false;
-      };
-
-      function draw(progress) {
-        // Soft sideways: match the reference's side path in 768px asset space.
-        const opening = smooth((progress - .08) / .8);
-        const release = smooth(opening / .2);
-        const travel = smooth((opening - .12) / .88);
-        const lift = 12 * release + 152 * travel;
-        const slide = 88 * travel;
-        context.clearRect(0, 0, 768, 768);
-        context.save();
-        // Fixed framing leaves room for the whole lid without moving the label.
-        context.translate(384, 448);
-        context.scale(.73, .73);
-        context.translate(-384, -384);
-        context.drawImage(body, 0, 0, 768, 768);
-        // Reflections and droplets come only from the photographs.
-        context.save();
-        context.translate(384 - slide, 140 - lift);
-        context.rotate(-7 * travel * Math.PI / 180);
-        context.drawImage(lid, -384, -140, 768, 768);
-        context.restore();
-        context.restore();
-        canvas.dataset.progress = progress.toFixed(4);
-        canvas.dataset.frame = String(Math.round(progress * 95));
-        canvas.dataset.mode = 'side';
-        model.classList.add('frame-ready');
+  function scroll() {
+    target = reduced.matches || failed ? 1 : clamp(-track.getBoundingClientRect().top / (track.offsetHeight - stage.clientHeight));
+  }
+  function showCopy(el, opacity) {
+    el.style.opacity = opacity;
+    const hidden = String(opacity < .01);
+    if (el.getAttribute('aria-hidden') !== hidden) el.setAttribute('aria-hidden', hidden);
+  }
+  function tick(now) {
+    const dt = Math.min(64, now - prev);
+    prev = now;
+    current += (target - current) * (1 - Math.exp(-dt / 75));
+    if (Math.abs(target - current) < .0001) current = target;
+    const opening = clamp(current / .78);
+    const i = reduced.matches ? 95 : Math.round(opening * 95);
+    if (!failed && i !== last && frames[i]) {
+      // Draw the supplied frame whole, without moving any element inside it.
+      ctx.clearRect(0, 0, 960, 540);
+      ctx.drawImage(frames[i], 0, 0);
+      last = i;
+      art.dataset.frameReady = 'true';
+      canvas.dataset.frame = String(i);
+    }
+    showCopy(intro, reduced.matches || failed ? 0 : 1 - fade(current, .08, .32));
+    showCopy(source, reduced.matches || failed ? 1 : fade(current, .79, .85));
+    showCopy(location, reduced.matches || failed ? 1 : fade(current, .88, .95));
+    track.dataset.progress = current.toFixed(4);
+    requestAnimationFrame(tick);
+  }
+  async function loadFrame(i) {
+    if (frames[i]) return;
+    const img = new Image();
+    img.decoding = 'async';
+    img.src = new URL(`assets/hero-scroll/scroll-frames/${String(i).padStart(3, '0')}.webp`, document.baseURI).href;
+    await img.decode();
+    frames[i] = img;
+    loading?.progress(++prepared, 96);
+  }
+  async function load() {
+    if (reduced.matches) {
+      await loadFrame(95);
+    } else {
+      // Preserve the reference's numerical sequence and batches of eight.
+      for (let batch = 0; batch < 96; batch += 8) {
+        await Promise.all(Array.from({ length: Math.min(8, 96 - batch) }, (_, k) => loadFrame(batch + k)));
       }
-      function render(time) {
-        pending = 0;
-        if (stopped || !visible || document.hidden || document.body.classList.contains('paused')) {
-          previousTime = 0;
-          return;
-        }
-        if (measureNeeded) measure();
-        const target = clamp((window.scrollY - startY) / distance);
-        if (current === null) current = target;
-        // Time-based damping behaves consistently on 60 Hz and 120 Hz displays.
-        const elapsed = previousTime ? Math.min(64, time - previousTime) : 16.7;
-        previousTime = time;
-        current += (target - current) * (1 - Math.exp(-elapsed / 70));
-        if (Math.abs(target - current) < .00005) current = target;
-        if (lastDrawn !== current) { draw(current); lastDrawn = current; }
-        if (current !== target) pending = requestAnimationFrame(render);
-        else previousTime = 0;
-      }
-      function schedule() {
-        if (!stopped && !pending && visible) pending = requestAnimationFrame(render);
-      }
-      const resize = () => { measureNeeded = true; lastDrawn = -1; schedule(); };
-      addEventListener('scroll', schedule, { passive: true });
-      document.addEventListener('seamoss:motion', schedule);
-      document.addEventListener('visibilitychange', schedule);
-      document.addEventListener('seamoss:ready', resize);
-      const visibility = new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        if (visible) schedule();
-        else { cancelAnimationFrame(pending); pending = 0; previousTime = 0; }
-      });
-      visibility.observe(track);
-      const geometry = new ResizeObserver(resize);
-      geometry.observe(track);
-      geometry.observe(hero);
-      stop = () => {
-        stopped = true;
-        cancelAnimationFrame(pending);
-        removeEventListener('scroll', schedule);
-        document.removeEventListener('seamoss:motion', schedule);
-        document.removeEventListener('visibilitychange', schedule);
-        document.removeEventListener('seamoss:ready', resize);
-        visibility.disconnect();
-        geometry.disconnect();
-        track.classList.remove('sequence-active');
-        model.classList.remove('frame-ready');
-      };
-      measure();
-      current = clamp((window.scrollY - startY) / distance);
-      draw(current);
-      lastDrawn = current;
-      schedule();
-    } catch (error) {
-      stop();
-      console.warn('Jar animation unavailable; showing the product photograph.', error);
-    } finally {
-      starting = false;
-      loading?.ready();
     }
   }
-  reducedMotion.addEventListener('change', () => reducedMotion.matches ? stop() : start());
-  if (reducedMotion.matches) loading?.ready();
-  else start();
+  function fallback() {
+    failed = true;
+    track.dataset.fallback = 'true';
+    showCopy(intro, 0);
+    showCopy(source, 1);
+    showCopy(location, 1);
+    scroll();
+    art.removeAttribute('role');
+    art.removeAttribute('aria-label');
+    art.querySelector('.jar-poster').hidden = true;
+    canvas.hidden = true;
+    art.querySelector('video').hidden = false;
+  }
+  if (!ctx) {
+    fallback();
+    loading?.ready();
+    return;
+  }
+  addEventListener('scroll', scroll, { passive: true });
+  addEventListener('resize', scroll);
+  document.addEventListener('seamoss:ready', scroll);
+  reduced.addEventListener('change', () => {
+    scroll();
+    if (!reduced.matches && frames.filter(Boolean).length < 96 && !failed) load().catch(fallback);
+  });
+  scroll();
+  load().catch(fallback).finally(() => loading?.ready());
+  requestAnimationFrame(tick);
 })();

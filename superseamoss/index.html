@@ -17,8 +17,9 @@
 <link rel="apple-touch-icon" href="assets/favicon-fish-180.png" sizes="180x180">
 <link rel="icon" href="assets/favicon-fish-32.png" type="image/png" sizes="32x32">
 <link rel="preload" href="assets/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/real-jar/closed-wet.webp?v=wet1" as="image" fetchpriority="high">
+<link rel="preload" href="assets/hero-scroll/scroll-frames/000.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="styles.css?v=square-live1">
+<link rel="stylesheet" href="hero-scroll.css?v=handoff2">
 <script>
 document.documentElement.classList.add('page-loading');
 setTimeout(() => {
@@ -26,7 +27,7 @@ setTimeout(() => {
   document.dispatchEvent(new Event('seamoss:load-timeout'));
 }, 6500);
 </script>
-<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=jar-only1" defer></script><script type="module" src="order-options.js?v=reviewlinks1"></script>
+<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=handoff2" defer></script><script type="module" src="order-options.js?v=reviewlinks1"></script>
 <link rel="stylesheet" href="blend-preview.css?v=clean-preview1">
 <link rel="stylesheet" href="blend-picker.css?v=manuka-recipes1">
 <link rel="stylesheet" href="reviews.css?v=reviewmotion1">
@@ -48,13 +49,18 @@ setTimeout(() => {
 <button class="menu-button" aria-controls="main-navigation" aria-label="Open navigation" aria-expanded="false">Menu <span aria-hidden="true">+</span></button>
 </header>
 <main>
-<div class="hero-track" id="top">
-<section class="hero" aria-labelledby="hero-heading" data-mode="0">
-<h1 id="hero-heading"><span>Super Seamoss.</span><span class="second-line">Daily Nourishment.</span></h1>
-<picture class="hero-backdrop" aria-hidden="true"><source media="(max-width: 700px)" srcset="assets/hero-background-768.webp"><img src="assets/hero-background.webp" alt="" width="1536" height="1024" fetchpriority="high"></picture>
-<div class="hero-scene"><div class="jar-shadow" aria-hidden="true"></div><div class="jar-float"><div class="jar-model" data-sequence="true" role="img" aria-label="Super Seamoss jar. Scroll to gently lift and tilt its smooth black lid to the left, revealing the golden seamoss gel."><img class="jar-poster" src="assets/real-jar/closed-wet.webp?v=wet1" alt="" width="768" height="768" fetchpriority="high"><canvas class="jar-canvas" width="768" height="768" aria-hidden="true"></canvas></div></div></div>
-<div class="hero-note"><span class="tiny-label">YOUR DAILY FOUNDATION.</span><p>Seamoss gel.<br>Fruit, roots &amp; botanicals.<br>A blend for your day.</p></div>
-<div class="hero-bottom"><div class="hero-caption"><h2 id="mode-title">Seamoss, made for daily life.</h2><p id="mode-copy" class="hero-sourcing"><span class="sourcing-stamp">SOURCED ORGANICALLY</span> <span class="sourcing-stamp">FROM ST LUCIA AND JAMAICA</span></p></div></div>
+<div class="seamoss-hero-track" id="top">
+<section class="seamoss-hero" aria-labelledby="hero-heading">
+<picture class="hero-backdrop seamoss-hero-backdrop" aria-hidden="true"><img src="assets/hero-scroll/stone.webp" alt="" fetchpriority="high"></picture>
+<div class="seamoss-hero-titles">
+<h1 class="seamoss-hero-intro" id="hero-heading"><span>Super Seamoss.</span><span class="second-line">Daily Nourishment.</span></h1>
+<div class="seamoss-hero-origin"><h2 class="seamoss-hero-source" aria-hidden="true">Sourced organically.</h2><h2 class="seamoss-hero-location" aria-hidden="true">St Lucia and Jamaica.</h2></div>
+</div>
+<div class="seamoss-hero-art" role="img" aria-label="Super Seamoss jar opening with a sliding lid, revealing sea moss gel, honey, lemon and roots.">
+<img class="jar-poster" src="assets/hero-scroll/scroll-frames/000.webp" alt="" width="960" height="540" fetchpriority="high">
+<canvas class="seamoss-hero-canvas" width="960" height="540" aria-hidden="true"></canvas>
+<video class="seamoss-hero-video" controls playsinline preload="none" poster="assets/hero-scroll/media/gel-poster.jpg" hidden aria-label="Super Seamoss jar reveal video"><source src="assets/hero-scroll/media/gel-reveal.mp4" type="video/mp4"></video>
+</div>
 </section>
 </div>
 <div class="promise-strip"><span><strong>15</strong> DISTINCTIVE BLENDS</span><span aria-hidden="true">✳</span><span>SEAMOSS AT THE FOUNDATION</span><span aria-hidden="true">✳</span><span>MADE FOR DAILY LIFE</span></div>
