@@ -1,4 +1,5 @@
 import { blends, ingredients } from './blend-preview-data.mjs?v=water-colours1';
+import { selectedBlend } from './blend-recipes.mjs?v=manuka-recipes1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
@@ -24,7 +25,6 @@ export function createBlendPreview(form, selects) {
   let artworkReady = false;
   let loading = null;
   const animations = new Set();
-  const byId = new Map(blends.map(blend => [blend.id, blend]));
   const ingredientById = new Map(ingredients.map((ingredient, cell) => [ingredient.id, { ...ingredient, cell }]));
   const cancel = () => { animations.forEach(animation => animation.cancel()); animations.clear(); };
   const motionOff = () => media.matches || document.body.classList.contains('paused') || keyboard;
@@ -51,7 +51,7 @@ export function createBlendPreview(form, selects) {
     jar.setAttribute('aria-label', `${blend.name} Seamoss jar`);
     stage.style.setProperty('--blend-accent', blend.accent);
     name.textContent = blend.name;
-    details.textContent = blend.ingredients.map(id => ingredientById.get(id).name).join(' · ');
+    details.textContent = blend.description || blend.ingredients.map(id => ingredientById.get(id).name).join(' · ');
     blend.ingredients.forEach((id, index) => {
       const ingredient = ingredientById.get(id);
       const [x, y] = positions[blend.ingredients.length][index];
@@ -86,7 +86,7 @@ export function createBlendPreview(form, selects) {
     });
     // A paused-motion change can replace a focused ingredient. Keep keyboard focus in the preview.
     if (focusedIngredient) layer.querySelector('.blend-ingredient')?.focus({ preventScroll: true });
-    current = blend.id;
+    current = blend.key || blend.id;
   }
 
   const travelFrames = (node, entering) => {
@@ -101,11 +101,12 @@ export function createBlendPreview(form, selects) {
   };
 
   async function show(blend) {
-    if (!blend || (current === blend.id && !root.classList.contains('is-switching'))) return;
+    const key = blend?.key || blend?.id;
+    if (!blend || (current === key && !root.classList.contains('is-switching'))) return;
     const ticket = ++revision;
     cancel();
     root.classList.remove('is-switching');
-    if (!current || !artworkReady || motionOff() || (current === blend.id)) {
+    if (!current || !artworkReady || motionOff() || (current === key)) {
       renderArtwork(blend);
       return;
     }
@@ -144,7 +145,7 @@ export function createBlendPreview(form, selects) {
       }
       button.hidden = i >= count;
       button.setAttribute('aria-pressed', String(i === active));
-      button.setAttribute('aria-label', `Preview jar ${i + 1}: ${selects[i].selectedOptions[0]?.textContent || ''}`);
+      button.setAttribute('aria-label', `Preview jar ${i + 1}: ${selectedBlend(selects[i])?.name || ''}`);
     }
     tabs.classList.toggle('is-single', count === 1);
     tabs.parentElement.hidden = count === 1;
@@ -153,7 +154,7 @@ export function createBlendPreview(form, selects) {
 
   function refresh() {
     updateTabs();
-    show(byId.get(selects[active].value));
+    show(selectedBlend(selects[active]));
   }
   // Register after the existing pricing renderer so a 720ml quantity clamp is reflected in the preview.
   form.addEventListener('change', event => {
@@ -168,7 +169,7 @@ export function createBlendPreview(form, selects) {
     if (media.matches || document.body.classList.contains('paused')) {
       ++revision;
       cancel();
-      renderArtwork(byId.get(selects[active].value));
+      renderArtwork(selectedBlend(selects[active]));
       root.classList.remove('is-switching');
     }
   };

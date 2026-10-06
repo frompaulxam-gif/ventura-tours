@@ -1,6 +1,8 @@
-import { offers, priceOrder, money } from './order-pricing.mjs?v=qc2';
-import { createBlendPreview } from './blend-preview.js?v=edges-clean1';
-import { createBlendPickers } from './blend-picker.js?v=edges-clean1';
+import { createSquareCheckout } from './square-checkout.mjs?v=square-live1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=square-live1';
+import { createBlendPreview } from './blend-preview.js?v=manuka-recipes1';
+import { createBlendPickers } from './blend-picker.js?v=manuka-recipes1';
+import { selectedBlend } from './blend-recipes.mjs?v=manuka-recipes1';
 
 const form = document.querySelector('.order-planner');
 if (form) {
@@ -18,6 +20,7 @@ if (form) {
   const quantityNote = document.querySelector('#order-quantity-note');
   const setText = (selector, value) => { document.querySelector(selector).textContent = value; };
 
+  const renderCheckout = createSquareCheckout(form);
   const render = () => {
     const data = new FormData(form);
     const size = data.get('jar-size');
@@ -53,7 +56,7 @@ if (form) {
       selects[index + 1].disabled = !visible;
     });
     form.querySelector('label[for="order-blend-1"]').textContent = quantity > 1 ? 'Jar one' : 'Your blend';
-    const blends = selects.slice(0, quantity).map(select => select.selectedOptions[0].textContent);
+    const blends = selects.slice(0, quantity).map(select => selectedBlend(select).name);
     const quote = priceOrder(size, quantity, subscription);
     setText('#order-selection', quantity + ' × ' + size + (quantity > 1 ? ' jars' : ' jar'));
     setText('#order-blend-summary', blends.join(' · '));
@@ -72,8 +75,9 @@ if (form) {
     setText('#order-delivery-label', 'Chilled UK mainland delivery');
     setText('#order-total-label', subscription ? 'Monthly total' : 'Order total');
     setText('#order-total-price', money(quote.total));
-    setText('#order-shipping-note', subscription ? 'Every subscription includes free chilled UK mainland delivery.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
+    setText('#order-shipping-note', quote.delivery ? 'Chilled delivery is £9.95 below a £50 jar subtotal, including subscriptions. The threshold is after discounts.' : 'Your jar subtotal after discounts qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
+    renderCheckout(size, quantity, subscription, blends);
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
     enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per month. Cancel anytime.' : '.') + ' I understand preparation and dispatch take 3 to 4 working days after my order is confirmed. Please confirm availability, delivery and how to provide my email for the dispatch update.';

@@ -279,3 +279,10 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
   .hero-scene{inset:20% 0 7%}
   .hero-scene .jar-float{top:50%;width:min(76vw,53svh,1040px)}
 }
+
+/* Square checkout keeps blend choices visible for the required checkout field. */
+.order-square{border-top:1px solid var(--line);padding-top:22px;margin-bottom:28px}
+.order-square h3{font-size:23px;margin:0 0 12px}
+.order-square textarea{display:block;width:100%;min-height:90px;resize:vertical;background:#e7e8e1;color:var(--ink);border:1px solid var(--line);padding:13px;font:inherit;font-size:16px;line-height:1.6}
+.order-square textarea:focus-visible{outline:3px solid #5b654d;outline-offset:3px}
+.order-enquiry-fallback summary{cursor:pointer;font-size:14px;padding:12px 0}

@@ -23,3 +23,13 @@
 @media(prefers-reduced-motion:reduce){.blend-picker-frame,.blend-picker-photo{transition:none}}
 .paused .blend-picker-arrow,.paused .blend-picker-frame,.paused .blend-picker-photo{transition:none}
 @container blend-options (min-width:460px){.blend-picker-track{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* Per-jar Manuka recipes share the form's native, keyboard-accessible radio style. */
+.blend-recipe{padding:16px 0 18px;margin:0 0 16px;border-bottom:1px solid var(--line)}
+.blend-recipe[hidden]{display:none}
+.blend-recipe legend{font-size:13px;margin-bottom:10px}
+.blend-recipe .order-choice-row label{margin:0}
+.blend-recipe .order-choice-row label>span{font-size:13px;min-height:66px}
+.blend-recipe .order-choice-row small{font-size:11px;line-height:1.45}
+.blend-recipe-description{font-size:12px;line-height:1.6;color:var(--muted);margin:12px 0 0}
+@media(prefers-reduced-motion:reduce){.blend-recipe .order-choice-row label>span{transition:none}}

@@ -110,8 +110,10 @@
     document.querySelector('#product-dialog-ingredients').replaceChildren(...product.ingredients.map(ingredient=> { const item=document.createElement('li');item.textContent=ingredient;return item; }));
     const note=document.querySelector('#product-dialog-note');note.textContent=product.note;note.hidden=!product.note;
     document.querySelector('#product-dialog-source').href='https://www.instagram.com/super.seamoss/p/'+product.post+'/';
+    document.querySelector('#product-dialog-recipes').hidden = product.id !== 'manuka-glow';
     productDialog.showModal();body.classList.add('dialog-open');productDialog.scrollTop=0;
   }));
+  productDialog.querySelector('[data-order-blend]').addEventListener('click',()=>productDialog.close());
   productDialog.querySelector('.close-button').addEventListener('click',()=>productDialog.close());
   productDialog.addEventListener('click',event=> { if(event.target!==productDialog)return;const rect=productDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)productDialog.close(); });
   productDialog.addEventListener('close',()=>body.classList.remove('dialog-open'));

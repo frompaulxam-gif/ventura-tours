@@ -7,7 +7,7 @@ export function deliveryForSubtotal(pence, subscription = false, method = 'shipp
   if (method !== 'shipping') {
     throw new RangeError('Local delivery must be confirmed directly with the team.');
   }
-  return subscription || pence >= 5000 ? 0 : 995;
+  return pence >= 5000 ? 0 : 995;
 }
 
 export function priceOrder(size, quantity, subscription = false, deliveryMethod = 'shipping') {

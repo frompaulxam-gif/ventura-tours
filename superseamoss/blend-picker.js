@@ -1,4 +1,5 @@
 import { blends } from './blend-preview-data.mjs?v=water-colours1';
+import { manukaRecipes, selectedBlend } from './blend-recipes.mjs?v=manuka-recipes1';
 
 export function createBlendPickers(form, selects) {
   const pickers = selects.map((select, jarIndex) => {
@@ -50,7 +51,40 @@ export function createBlendPickers(form, selects) {
     const footer = document.createElement('p');
     footer.className = 'blend-picker-hint';
     footer.textContent = '15 blends · choose your favourite';
-    picker.append(header, track, footer);
+    const recipes = document.createElement('fieldset');
+    recipes.className = 'order-choice blend-recipe';
+    const legend = document.createElement('legend');
+    legend.textContent = 'Manuka Glow recipe';
+    const recipeChoices = document.createElement('div');
+    recipeChoices.className = 'order-choice-row';
+    const recipeDescription = document.createElement('p');
+    recipeDescription.className = 'blend-recipe-description';
+    recipeDescription.id = `blend-recipe-description-${jarIndex + 1}`;
+    recipes.setAttribute('aria-describedby', recipeDescription.id);
+    const recipeInputs = manukaRecipes.map(recipe => {
+      const option = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = `manuka-recipe-${jarIndex + 1}`;
+      input.value = recipe.id;
+      input.checked = recipe.id === 'original';
+      const title = document.createElement('span');
+      title.append(document.createTextNode(recipe.label));
+      const hint = document.createElement('small');
+      hint.textContent = recipe.hint;
+      title.append(hint);
+      input.addEventListener('change', event => {
+        // Emit one blend change so pricing, preview and picker share the same per-jar recipe.
+        event.stopPropagation();
+        select.dataset.recipe = input.value;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      option.append(input, title);
+      recipeChoices.append(option);
+      return input;
+    });
+    recipes.append(legend, recipeChoices, recipeDescription);
+    picker.append(header, recipes, track, footer);
     select.after(picker);
     // Keep the existing form value and pricing flow; the visible control is the image picker.
     select.hidden = true;
@@ -62,7 +96,12 @@ export function createBlendPickers(form, selects) {
     }
 
     function sync() {
-      selectedName.textContent = select.selectedOptions[0].textContent;
+      const blend = selectedBlend(select);
+      selectedName.textContent = blend.name;
+      recipes.hidden = select.value !== 'manuka-glow';
+      recipes.disabled = select.disabled || recipes.hidden;
+      recipeInputs.forEach(input => { input.checked = input.value === (select.dataset.recipe || 'original'); });
+      recipeDescription.textContent = blend.description || '';
       choices.forEach(button => {
         const checked = button.dataset.blend === select.value;
         button.setAttribute('aria-checked', String(checked));
