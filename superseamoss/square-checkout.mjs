@@ -1,3 +1,4 @@
+import { copyText, selectCopyText, manualCopyHint } from './copy-text.mjs?v=1';
 import { priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
 
 // Existing item links are used for one-off orders; monthly payments use dedicated links.
@@ -53,6 +54,15 @@ export function createSquareCheckout(form) {
   copy.type = 'button';
   copy.className = 'button';
   copy.textContent = 'Copy blend choices';
+  const select = document.createElement('button');
+  select.type = 'button';
+  select.className = 'button';
+  select.textContent = 'Select text to copy';
+  select.hidden = true;
+  select.addEventListener('click', () => {
+    selectCopyText(choices);
+    status.textContent = manualCopyHint + ' Then continue to Square and paste into the blend-choice field.';
+  });
   const link = document.createElement('a');
   link.className = 'button button-dark';
   link.rel = 'noopener';
@@ -80,22 +90,21 @@ export function createSquareCheckout(form) {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { toast.hidden = true; }, 6000);
   }
-  actions.append(copy, link);
+  actions.append(copy, select, link);
   panel.append(heading, note, choices, actions, status);
   panel.hidden = true;
   form.querySelector('.order-enquiry-fallback').before(panel);
   async function copyChoices() {
-    try {
-      await navigator.clipboard.writeText(choices.value);
+    const copied = await copyText(choices);
+    select.hidden = copied;
+    if (copied) {
       feedback('Copied to clipboard', 'Paste into Square’s required blend-choice field.', true);
       copy.textContent = 'Copied ✓';
       return true;
-    } catch {
-      choices.focus();
-      choices.select();
-      feedback('Copying was blocked', 'Copy the selected blend choices above, then continue to Square and paste them.', false);
-      return false;
     }
+    copy.textContent = 'Try copying again';
+    feedback('Automatic copying is unavailable in this browser', manualCopyHint + ' Then continue to Square and paste your choices.', false);
+    return false;
   }
   copy.addEventListener('click', copyChoices);
   // Finish the clipboard write while this page has focus. Show the result
@@ -137,6 +146,7 @@ export function createSquareCheckout(form) {
     delete link.dataset.copyBlocked;
     toast.hidden = true;
     copy.textContent = 'Copy blend choices';
+    select.hidden = true;
     const previewNote = form.querySelector('#order-preview-note');
     previewNote.textContent = checkout ? 'Checkout on Square copies your blend choices. Paste them into the required blend-choice field in Square.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {

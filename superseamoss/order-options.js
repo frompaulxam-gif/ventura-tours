@@ -1,4 +1,5 @@
-import { createSquareCheckout } from './square-checkout.mjs?v=ocean-prices1';
+import { createSquareCheckout } from './square-checkout.mjs?v=copy-fallback1';
+import { copyText, manualCopyHint } from './copy-text.mjs?v=1';
 import { offers, priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
 import { createBlendPreview } from './blend-preview.js?v=expecting-mother-edition1';
 import { createBlendPickers } from './blend-picker.js?v=expecting-mother-edition1';
@@ -87,14 +88,10 @@ if (form) {
   form.addEventListener('change', render);
   form.addEventListener('submit', event => event.preventDefault());
   form.querySelector('.order-copy').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(enquiry.value);
-      status.textContent = 'Copied. Open Instagram and paste your enquiry into a message.';
-    } catch {
-      enquiry.focus();
-      enquiry.select();
-      status.textContent = 'Select and copy the enquiry above, then send it on Instagram.';
-    }
+    const copied = await copyText(enquiry);
+    status.textContent = copied
+      ? 'Copied. Open Instagram and paste your enquiry into a message.'
+      : 'Automatic copying is unavailable in this browser. ' + manualCopyHint + ' Then paste your enquiry on Instagram.';
   });
   render();
   createBlendPreview(form, selects);
