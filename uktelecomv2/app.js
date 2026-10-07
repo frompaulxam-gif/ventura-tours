@@ -82,7 +82,8 @@ const diagnosisForm=document.querySelector('#diagnosis-form');
 function diagnosisEnquiry(name,phone,email){return `Hi UK Telecom, I'd like a free diagnosis for my phone.\n\nName: ${name.trim()}\nPhone: ${phone.trim()}\nEmail: ${email.trim()}\n\nPlease let me know when I can bring it in.`}
 let diagnosisPreviouslyShown=false;
 try{diagnosisPreviouslyShown=sessionStorage.getItem('uktelecom-diagnosis-shown')==='1'}catch{}
-if(!diagnosisPreviouslyShown)setTimeout(()=>{
+if(!diagnosisPreviouslyShown)setTimeout(function showDiagnosis(){
+ if(document.documentElement.classList.contains('intro-scroll-locked')||document.querySelector('.hero')?.dataset.scrollState==='playing'){setTimeout(showDiagnosis,750);return}
  diagnosisDialog.showModal();
  try{sessionStorage.setItem('uktelecom-diagnosis-shown','1')}catch{}
 },5000);

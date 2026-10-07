@@ -92,9 +92,9 @@ footer a{display:inline-flex;align-items:center;gap:9px}
 .screen-expand-button{display:flex;align-items:center;justify-content:space-between;gap:5px;width:100%;margin-top:5px;padding:0;background:none;border:0;color:inherit;cursor:pointer;font-size:17px;font-weight:700;letter-spacing:-.02em;min-height:32px;text-align:left;border-radius:3px}
 .screen-expand-button .arrow-icon{width:15px;height:15px;flex-shrink:0;mask-size:23px 23px;-webkit-mask-size:23px 23px}
 .screen-expand-button[aria-expanded=true] .arrow-icon{rotate:-90deg}
-.screen-expansion{grid-column:1/-1;min-width:0;overflow:hidden}
+.screen-expansion{grid-column:1/-1;min-width:0;overflow:hidden;background:#e5e5e5;border-radius:12px}
 .screen-expansion[hidden]{display:none}
-.screen-options-inner{border:0;margin:0;padding:4px 0 12px;min-width:0}
+.screen-options-inner{border:0;margin:18px;padding:4px 0 0;min-width:0}
 .screen-options-inner legend{font-size:14px;font-weight:700;padding:0 0 14px}
 .screen-options-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 .screen-choice{position:relative;display:block;min-width:0;cursor:pointer}
@@ -218,3 +218,10 @@ html:has(.diagnosis-dialog[open]){overflow:hidden}
 .hero-headlines{height:2.7em;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 2.18em,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 2.18em,transparent 100%)}
 .hero-headline{bottom:auto;height:2.18em;will-change:transform,opacity,filter}
 @media(prefers-reduced-motion:reduce){.hero-headline{filter:none!important;will-change:auto}}
+
+@media(max-width:700px){.screen-options-inner{margin:14px}}
+
+/* Hold the opening pose until the logo docks and the first frame is ready. */
+html{scrollbar-gutter:stable}
+html.intro-scroll-locked{overflow:hidden;overscroll-behavior:none;scroll-behavior:auto}
+html.intro-scroll-locked body{overflow:hidden;touch-action:none}

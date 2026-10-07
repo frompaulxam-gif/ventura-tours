@@ -4,19 +4,29 @@
  const header=document.querySelector('.site-header');
  const logo=header.querySelector('.logo-crop');
  let moving,veil,finished=false;
+ let readyObserver,bufferTimer;
+ const release=()=>{readyObserver?.disconnect();clearTimeout(bufferTimer);root._releaseIntroScroll?.()};
+ const releaseAfterBuffer=()=>{
+  bufferTimer=setTimeout(()=>{
+   const stage=document.querySelector('.duo-stage');
+   if(!stage||stage.dataset.ready==='true'&&stage.dataset.bufferReady==='true'){release();return}
+   readyObserver=new MutationObserver(()=>{if(stage.dataset.ready==='true'&&stage.dataset.bufferReady==='true')release()});
+   readyObserver.observe(stage,{attributes:true,attributeFilter:['data-ready','data-buffer-ready']});
+  },350);
+ };
  const animations=[];
  const finish=(reason='complete')=>{
   if(finished)return;finished=true;root.dataset.logoIntroState=reason;
   animations.forEach(animation=>animation.cancel());
   moving?.remove();veil?.remove();
   root.classList.remove('brand-intro-pending');
-  clearTimeout(root._brandIntroFallback);
+  if(reason==='complete'&&!reduced.matches)releaseAfterBuffer();else release();
  };
  if(!root.classList.contains('brand-intro-pending')||reduced.matches||scrollY>120){finish(reduced.matches?'reduced-motion':scrollY>120?'scrolled':'skipped');return}
  root.dataset.logoIntroState='loading';
  const image=logo.querySelector('img');
  Promise.race([image.decode().catch(()=>{}),new Promise(resolve=>setTimeout(resolve,500))]).then(()=>{
-  if(finished||reduced.matches||scrollY>120){finish();return}
+  if(finished||reduced.matches||scrollY>120){finish('skipped');return}
   const rect=logo.getBoundingClientRect();
   if(!rect.width){finish();return}
   veil=document.createElement('div');veil.className='brand-intro-veil';veil.setAttribute('aria-hidden','true');
@@ -59,9 +69,9 @@
    header.animate([{opacity:0},{opacity:1}],{duration:400,delay:2400,easing:'ease-out',fill:'both'})
   );
   travel.finished.then(()=>finish(),()=>finish('cancelled'));
- }).catch(finish);
+ }).catch(()=>finish('failed'));
  addEventListener('resize',()=>{if(moving)finish('resized')},{passive:true});
- reduced.addEventListener('change',()=>{if(reduced.matches)finish()});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)finish()});
- setTimeout(finish,4200);
+ reduced.addEventListener('change',()=>{if(reduced.matches){finish('reduced-motion');release()}});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){finish('hidden');release()}});
+ setTimeout(()=>finish('timeout'),4200);
 })();

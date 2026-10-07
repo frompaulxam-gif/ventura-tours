@@ -29,7 +29,7 @@
   const from=current,to=current+Math.sign(target-current),start=performance.now();
   hero.dataset.motion='transitioning';
   function tick(now){
-   const t=clamp((now-start)/850);
+   const t=clamp((now-start)/600);
    paint(from+(to-from)*ease(t));
    if(t<1){frame=requestAnimationFrame(tick);return}
    frame=0;current=to;paint(to);hero.dataset.scene=String(to);hero.dataset.motion='settled';
