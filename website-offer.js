@@ -25,5 +25,5 @@
     popup.showModal();
     try { sessionStorage.setItem(key, '1'); } catch { /* Storage is optional. */ }
   };
-  window.setTimeout(show, 5000);
+  window.setTimeout(show, 3000);
 })();
