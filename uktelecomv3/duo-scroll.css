@@ -29,7 +29,7 @@
 }
 
 .duo-poster{width:auto;height:100%;max-width:none;left:68%;top:58%;transform:translate(-50%,-50%)}
-@media(max-width:900px){.duo-poster{width:185%;height:auto;left:50%;top:55%}}
+@media(max-width:900px){.duo-poster{width:138.8889%;height:auto;max-height:50%;object-fit:contain;left:50%;top:55%}}
 @media(max-width:900px){
  .duo-stage canvas,.duo-poster{mask-image:linear-gradient(to bottom,#000 64%,transparent 82%)}
 }
@@ -38,3 +38,9 @@
 .duo-video video{position:absolute;max-width:none}
 .duo-stage[data-ready=true] .duo-video{opacity:1}
 @media(max-width:900px){.duo-video{mask-image:linear-gradient(to bottom,#000 64%,transparent 82%)}}
+
+/* Keep the shorter mobile clip softly blended into the hero. */
+@media(max-width:900px){
+ .duo-video{mask-image:none}
+ .duo-video video,.duo-poster{mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 73%,transparent 100%)}
+}

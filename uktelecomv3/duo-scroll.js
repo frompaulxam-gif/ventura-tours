@@ -31,7 +31,7 @@
   start=track.getBoundingClientRect().top+scrollY;
   distance=Math.max(1,track.offsetHeight-hero.offsetHeight);
   const {width:w,height:h}=stage.getBoundingClientRect(),isMobile=innerWidth<=900;
-  const scale=isMobile?Math.min(w/(3840*.54),h*.63/2160):Math.max(w/3840,h/2160);
+  const scale=isMobile?Math.min(w/(3840*.72),h*.50/2160):Math.max(w/3840,h/2160);
   const width=3840*scale,height=2160*scale;
   clips.forEach(({video})=>Object.assign(video.style,{width:width+'px',height:height+'px',left:(w*(isMobile?.5:.68)-width/2)+'px',top:(h*(isMobile?.55:.58)-height/2)+'px'}));
  }
