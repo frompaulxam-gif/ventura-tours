@@ -3,7 +3,23 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const header=document.querySelector('.site-header');
  const logo=header.querySelector('.logo-crop');
- let moving,veil,finished=false;
+ let moving,veil,finished=false,releaseTimer;
+ const preventScroll=event=>{
+  if(root.classList.contains('brand-intro-locked'))event.preventDefault();
+ };
+ const preventScrollKey=event=>{
+  if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key))preventScroll(event);
+ };
+ const unlock=()=>{
+  clearTimeout(releaseTimer);
+  root.classList.remove('brand-intro-locked');
+  removeEventListener('wheel',preventScroll);
+  removeEventListener('touchmove',preventScroll);
+  removeEventListener('keydown',preventScrollKey);
+ };
+ addEventListener('wheel',preventScroll,{passive:false});
+ addEventListener('touchmove',preventScroll,{passive:false});
+ addEventListener('keydown',preventScrollKey);
  const animations=[];
  const finish=(reason='complete')=>{
   if(finished)return;finished=true;root.dataset.logoIntroState=reason;
@@ -11,6 +27,10 @@
   moving?.remove();veil?.remove();
   root.classList.remove('brand-intro-pending');
   clearTimeout(root._brandIntroFallback);
+  if(reason==='complete'){
+   root.dataset.logoIntroState='buffering';
+   releaseTimer=setTimeout(()=>{unlock();root.dataset.logoIntroState='complete'},250);
+  }else unlock();
  };
  if(!root.classList.contains('brand-intro-pending')||reduced.matches||scrollY>120){finish(reduced.matches?'reduced-motion':scrollY>120?'scrolled':'skipped');return}
  root.dataset.logoIntroState='loading';
@@ -59,9 +79,9 @@
    header.animate([{opacity:0},{opacity:1}],{duration:400,delay:2400,easing:'ease-out',fill:'both'})
   );
   travel.finished.then(()=>finish(),()=>finish('cancelled'));
- }).catch(finish);
+ }).catch(()=>finish('error'));
  addEventListener('resize',()=>{if(moving)finish('resized')},{passive:true});
  reduced.addEventListener('change',()=>{if(reduced.matches)finish()});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)finish()});
- setTimeout(finish,4200);
+ setTimeout(()=>{if(!finished)finish('timeout');else unlock()},4200);
 })();
