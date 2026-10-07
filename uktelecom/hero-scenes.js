@@ -22,6 +22,7 @@
    phone.style.visibility=Math.abs(x)>.99?'hidden':'visible';
    titles[i].style.transform=`translate3d(0,${-x*115}%,0)`;
    titles[i].style.opacity=String(1-clamp(Math.abs(x)*1.5));
+   titles[i].style.filter=`blur(${reduced.matches?0:clamp(Math.abs(x))*7}px)`;
   });
  }
  function settle(scene){

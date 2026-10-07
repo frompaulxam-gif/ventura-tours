@@ -146,12 +146,14 @@ html:has(.diagnosis-dialog[open]){overflow:hidden}
 @media(prefers-reduced-motion:reduce){.diagnosis-dialog[open]{animation:none}}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.diagnosis-dialog{background:#29292c}}
 
-/* The complete brand enters at centre, then docks into its existing header slot. */
+/* Phone + UK appear first; TELECOM unfolds before the complete brand docks. */
 .brand-intro-pending .site-header{opacity:0}
 .brand-intro-pending .site-header .brand{visibility:hidden}
 .brand-intro-veil{position:fixed;inset:0;z-index:40;background:#0c0906;pointer-events:none}
 .brand-intro-logo{position:fixed;z-index:41;transform-origin:center;pointer-events:none;will-change:transform,opacity}
-.brand-intro-logo .logo-crop{width:100%;height:100%}
+.brand-intro-logo .logo-crop{display:block;position:absolute}
+.brand-intro-part{position:absolute;top:0;height:100%;overflow:hidden}
+.brand-intro-word .logo-crop{will-change:transform}
 @media(prefers-reduced-motion:reduce){.brand-intro-veil,.brand-intro-logo{display:none}.brand-intro-pending .site-header{opacity:1}.brand-intro-pending .site-header .brand{visibility:visible}}
 
 /* Three scroll-linked phone scenes, with space to read each headline. */
@@ -211,3 +213,8 @@ html:has(.diagnosis-dialog[open]){overflow:hidden}
 
 .assurance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;text-align:center}
 .assurance>span{text-align:center;text-wrap:balance}
+
+/* Give sliding headlines a soft exit below the readable text area. */
+.hero-headlines{height:2.7em;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 2.18em,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 2.18em,transparent 100%)}
+.hero-headline{bottom:auto;height:2.18em;will-change:transform,opacity,filter}
+@media(prefers-reduced-motion:reduce){.hero-headline{filter:none!important;will-change:auto}}
