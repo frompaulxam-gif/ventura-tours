@@ -86,3 +86,128 @@ footer a{display:inline-flex;align-items:center;gap:9px}
 .summary-total{gap:16px}.summary-total strong{text-align:right}
 @media(min-width:701px){.device-preview{top:115px}}
 @media(max-width:700px){.repair-price{overflow-wrap:normal}.summary-total strong{font-size:23px}.screen-quality label{gap:8px}.screen-quality strong{font-size:12px}}
+
+/* Screen types expand into a full row of image choices. */
+.repair-card{min-width:0;position:relative}
+.screen-expand-button{display:flex;align-items:center;justify-content:space-between;gap:5px;width:100%;margin-top:5px;padding:0;background:none;border:0;color:inherit;cursor:pointer;font-size:17px;font-weight:700;letter-spacing:-.02em;min-height:32px;text-align:left;border-radius:3px}
+.screen-expand-button .arrow-icon{width:15px;height:15px;flex-shrink:0;mask-size:23px 23px;-webkit-mask-size:23px 23px}
+.screen-expand-button[aria-expanded=true] .arrow-icon{rotate:-90deg}
+.screen-expansion{grid-column:1/-1;min-width:0;overflow:hidden}
+.screen-expansion[hidden]{display:none}
+.screen-options-inner{border:0;margin:0;padding:4px 0 12px;min-width:0}
+.screen-options-inner legend{font-size:14px;font-weight:700;padding:0 0 14px}
+.screen-options-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.screen-choice{position:relative;display:block;min-width:0;cursor:pointer}
+.screen-choice input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;z-index:2;cursor:pointer}
+.screen-choice-photo{display:block;position:relative;border:2px solid transparent;border-radius:9px;overflow:hidden}
+.screen-choice-photo img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.screen-choice-check{position:absolute;right:8px;top:8px;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;border:1px solid #777;background:#ffffffdd;color:transparent;font-size:14px}
+.screen-choice input:checked~.screen-choice-photo{border-color:var(--orange-dark)}
+.screen-choice input:checked~.screen-choice-photo .screen-choice-check{background:var(--orange);border-color:var(--orange);color:#111}
+.screen-choice input:focus-visible~.screen-choice-photo{outline:3px solid var(--ink);outline-offset:-4px}
+.screen-choice:hover .screen-choice-photo{border-color:#777}
+.screen-choice input:checked~.screen-choice-name{color:var(--orange-dark)}
+.screen-choice-name{display:block;font-size:14px;font-weight:700;margin-top:10px;line-height:1.4}
+.screen-choice strong{display:block;margin-top:5px;font-size:17px;letter-spacing:-.02em}
+@media(max-width:700px){.screen-expand-button{font-size:16px}.screen-options-grid{gap:10px}.screen-choice-name{font-size:12px}.screen-choice strong{font-size:16px}.screen-choice-check{width:20px;height:20px;top:5px;right:5px;font-size:12px}}
+
+/* Continuous customer reviews, including while hovered. */
+.review-strip{overflow:hidden;background:var(--white);color:#111;padding:35px 0 31px}
+.review-track{display:flex;width:max-content;animation:reviews-scroll 92s linear infinite;will-change:transform}
+.review-group{display:flex;flex-shrink:0;gap:64px;padding-right:64px}
+.review-item{width:380px;flex-shrink:0;margin:0}
+.review-stars{text-align:center;color:#edb500;font-size:23px;letter-spacing:3px;line-height:1;margin-bottom:13px}
+.review-item blockquote{margin:0}
+.review-item p{font-size:13px;line-height:1.5;font-weight:500;text-wrap:pretty;text-align:center}
+.review-item cite{font-style:normal;font-weight:700}
+.review-strip+.repair-section{padding-top:42px}
+@keyframes reviews-scroll{to{transform:translateX(-50%)}}
+@media(max-width:700px){.review-strip{padding:28px 0}.review-group{gap:36px;padding-right:36px}.review-item{width:320px}.review-item p{font-size:12px}.review-stars{font-size:21px;margin-bottom:11px}.review-strip+.repair-section{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){.review-track{animation:none;transform:none;will-change:auto}.review-strip{overflow-x:auto}.review-group{padding-left:20px}.review-group[aria-hidden="true"]{display:none}}
+
+.diagnosis-dialog{position:fixed;inset:0;width:calc(100% - 32px);max-width:460px;max-height:calc(100svh - 32px);margin:auto;padding:42px 36px 30px;color:#fff;border:1px solid #ffffff55;border-radius:28px;background:linear-gradient(130deg,#ffffff20,#ffffff08),rgba(25,25,29,.78);-webkit-backdrop-filter:blur(30px) saturate(150%);backdrop-filter:blur(30px) saturate(150%);box-shadow:inset 0 1px 0 #ffffff40,0 25px 90px #0005;overflow-y:auto}
+.diagnosis-dialog::backdrop{background:#08080840;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.diagnosis-dialog[open]{animation:diagnosis-in .35s var(--ease) both}
+.diagnosis-dialog h2{font-size:43px;line-height:1.04;letter-spacing:-.045em;margin:0 20px 16px 0;outline:none}
+.diagnosis-dialog h2 span{color:var(--orange)}
+.diagnosis-dialog>p{font-size:14px;color:#efefef;margin-bottom:26px;line-height:1.5}
+.diagnosis-close{position:absolute;top:13px;right:13px;width:36px;height:36px;display:grid;place-items:center;border:1px solid #ffffff30;border-radius:50%;background:#ffffff0d;color:#fff;font-size:26px;line-height:1;padding:0}
+.diagnosis-close:hover{background:#ffffff25}
+.diagnosis-dialog form{display:flex;flex-direction:column}
+.diagnosis-dialog label{font-size:13px;font-weight:700;margin-bottom:8px}
+.diagnosis-dialog input:not([type=hidden]){width:100%;height:48px;padding:12px 14px;border:1px solid #ffffff45;border-radius:10px;background:#ffffff12;color:#fff;font-size:16px;margin-bottom:18px;box-shadow:inset 0 1px 4px #0000000f}
+.diagnosis-dialog input::placeholder{color:#d0d0d0;opacity:1}
+.diagnosis-dialog input:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-color:transparent}
+.diagnosis-submit{margin-top:5px;width:100%;border-radius:10px}
+.diagnosis-privacy{font-size:11px;line-height:1.5;color:#ddd;text-align:center;margin-top:13px}
+html:has(.diagnosis-dialog[open]){overflow:hidden}
+@keyframes diagnosis-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:480px){.diagnosis-dialog{padding:36px 24px 24px;border-radius:24px}.diagnosis-dialog h2{font-size:38px}.diagnosis-dialog>p{margin-bottom:21px}}
+@media(prefers-reduced-motion:reduce){.diagnosis-dialog[open]{animation:none}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.diagnosis-dialog{background:#29292c}}
+
+/* The complete brand enters at centre, then docks into its existing header slot. */
+.brand-intro-pending .site-header{opacity:0}
+.brand-intro-pending .site-header .brand{visibility:hidden}
+.brand-intro-veil{position:fixed;inset:0;z-index:40;background:#0c0906;pointer-events:none}
+.brand-intro-logo{position:fixed;z-index:41;transform-origin:center;pointer-events:none;will-change:transform,opacity}
+.brand-intro-logo .logo-crop{width:100%;height:100%}
+@media(prefers-reduced-motion:reduce){.brand-intro-veil,.brand-intro-logo{display:none}.brand-intro-pending .site-header{opacity:1}.brand-intro-pending .site-header .brand{visibility:visible}}
+
+/* Three scroll-linked phone scenes, with space to read each headline. */
+.hero-scroll{height:300svh;min-height:2040px;position:relative;background:#0d0906}
+.hero-scroll .hero{position:sticky;top:0;height:100svh;min-height:680px;max-height:none}
+.hero-scroll .hero-title{top:122px}
+.hero-headlines{position:relative;height:2.18em;overflow:hidden;font-size:clamp(48px,5.5vw,82px);font-weight:700;letter-spacing:-.045em;line-height:1.05}
+.hero-headline{position:absolute;inset:0;will-change:transform,opacity}
+.hero-headline span{color:var(--orange)}
+.hero-headline:not(:first-child){transform:translateY(-115%);opacity:0}
+.hero-scroll .hero-title h1{animation:none}
+.hero-scroll .phone-stage{inset:34% 0 20%;transform:translate3d(var(--pointer-x,0px),var(--pointer-y,0px),0);transition:transform .65s var(--ease);z-index:0}
+.phone-scene{position:absolute;inset:0;will-change:transform}
+.phone-scene:not(:first-child){transform:translateX(125vw);visibility:hidden}
+.hero-scroll .phone-float{width:100%;height:100%}
+.hero-scroll .hero-image{animation:none;position:static;width:100%;height:100%;max-width:100%;object-fit:contain}
+.hero-scroll .hero-bottom{bottom:26px;gap:13px}
+.phone-scene:nth-child(2) .phone-float{animation-delay:-3s}
+.phone-scene:nth-child(3) .phone-float{animation-delay:-6s}
+@media(min-width:1500px){.hero-scroll .phone-stage{inset:32% 0 19%}}
+@media(max-width:700px){
+ .hero-scroll{height:290svh;min-height:1950px}
+ .hero-scroll .hero{min-height:650px}
+ .hero-scroll .hero-title{top:106px;left:4%;right:4%}
+ .hero-headlines{font-size:clamp(37px,10vw,65px)}
+ .hero-scroll .phone-stage{inset:30% -10% 21%}
+ .hero-scroll .hero-bottom{bottom:25px;gap:14px}
+ .hero-scroll .hero-title p{font-size:9px;letter-spacing:.06em}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-scroll{height:auto;min-height:0}
+ .hero-scroll .hero{position:relative}
+ .phone-scene,.hero-headline{will-change:auto}
+ .phone-scene:not(:first-child),.hero-headline:not(:first-child){display:none}
+}
+/* Inset glass fields and the familiar WhatsApp action. */
+.diagnosis-dialog{padding:42px 32px 28px;background:linear-gradient(140deg,#ffffff26,#ffffff08 65%),rgba(25,25,29,.82)}
+.diagnosis-dialog form{gap:12px}
+.diagnosis-field{padding:12px 16px 9px;border:1px solid #ffffff2a;border-radius:14px;background:linear-gradient(110deg,#ffffff0d,#ffffff04);box-shadow:inset 0 1px 0 #ffffff10;transition:border-color .2s,background .2s,box-shadow .2s}
+.diagnosis-field:focus-within{border-color:#ffffff8a;background:#ffffff15;box-shadow:0 0 0 3px #ffffff0d}
+.diagnosis-field label{display:block;margin:0 0 3px;color:#d5d5d8;font-size:11px;line-height:1.4;letter-spacing:.025em}
+.diagnosis-dialog .diagnosis-field input{height:30px;padding:0;margin:0;border:0;border-radius:0;box-shadow:none;background:transparent;font-size:16px;line-height:1.5;color:#fff}
+.diagnosis-dialog .diagnosis-field input:focus-visible{outline:none}
+.diagnosis-dialog .diagnosis-field input::placeholder{color:#a9a9ae}
+.diagnosis-submit{background:#25d366;color:#082716;border:1px solid #ffffff25;border-radius:14px;min-height:56px;margin-top:6px;gap:11px;padding:15px 13px;font-weight:700;font-size:15px;box-shadow:inset 0 1px 0 #ffffff35}
+.diagnosis-submit:hover{background:#48df80}
+.whatsapp-logo{width:22px;height:22px;flex:none}
+.diagnosis-privacy{margin-top:0;font-size:10px;color:#c9c9cc}
+@media(max-width:480px){.diagnosis-dialog{padding:36px 22px 23px}.diagnosis-dialog form{gap:10px}.diagnosis-submit{font-size:14px}}
+.hero-scroll .phone-scene:first-child .hero-image{transform:scale(1.18)}
+@media(prefers-reduced-motion:reduce){.hero-scroll .phone-scene:first-child .hero-image{transform:none}}
+.hero-scroll .phone-scene:not(:first-child) .hero-image{width:auto;max-width:100%;margin:auto}
+@media(min-width:701px){.hero-scroll .phone-stage{inset:max(35%,340px) 0 19%}}
+@media(max-width:700px){.hero-scroll .phone-stage{inset:30% -2% 21%}.hero-scroll .phone-scene:first-child .hero-image{transform:none}}
+
+.hero-headline .hero-review-star{display:inline-block;font-size:.58em;vertical-align:.12em;margin:0 .06em}
+
+.assurance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;text-align:center}
+.assurance>span{text-align:center;text-wrap:balance}
