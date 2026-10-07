@@ -6,177 +6,83 @@
   const ctx = canvas?.getContext('2d');
   const intro = track?.querySelector('.seamoss-hero-intro');
   const source = track?.querySelector('.seamoss-hero-source');
-  const location = track?.querySelector('.seamoss-hero-location');
+  const place = track?.querySelector('.seamoss-hero-location');
   const loading = window.seamossLoading;
-  const narrow = matchMedia('(max-width:768px)');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  if (!art || !canvas || !stage || !intro || !source || !location) {
-    loading?.ready();
-    return;
-  }
-  const sets = { desktop: [], mobile: [] };
-  const jobs = {};
-  const neighbours = {};
-  const frameCount = 80;
-  const lastFrame = frameCount - 1;
-  const clamp = n => Math.max(0, Math.min(1, n));
-  const fade = (p, start, end) => {
-    const t = clamp((p - start) / (end - start));
-    return t * t * (3 - 2 * t);
-  };
-  let mode = '';
-  let frames = [];
-  let target = 0;
-  let current = 0;
-  let last = -1;
-  let prev = performance.now();
-  let failed = false;
+  if (!canvas || !stage || !intro || !source || !place) { loading?.ready(); return; }
+  const reduced = matchMedia('(prefers-reduced-motion:reduce)');
+  const clamp=n=>Math.max(0,Math.min(1,n)),smooth=n=>{n=clamp(n);return n*n*(3-2*n)},ease=n=>1-(1-clamp(n))**3,range=(p,a,b)=>clamp((p-a)/(b-a)),mix=(a,b,t)=>a+(b-a)*t;
+  let assets={},ready=false,target=0,current=0,previous=performance.now(),floating=true,bob=0,visible=true,failed=false,request=0;
+  // Composition and reveal curves are retained from the approved layered prototype.
+// Read alpha bounds so each whole generated object fits its intended box, including root tips.
+function bounds(image){const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(image,0,0);const rgba=x.getImageData(0,0,c.width,c.height).data;let x0=c.width,y0=c.height,x1=0,y1=0;for(let y=0;y<c.height;y++)for(let q=0;q<c.width;q++){if(rgba[(y*c.width+q)*4+3]>10){x0=Math.min(x0,q);x1=Math.max(x1,q);y0=Math.min(y0,y);y1=Math.max(y1,y)}}return[x0,y0,x1-x0+1,y1-y0+1]}
+function image(name,x,y,w,h,rotation=0,mirror=false){const a=assets[name];ctx.save();ctx.translate(x,y);ctx.rotate(rotation*Math.PI/180);if(mirror)ctx.scale(-1,1);ctx.drawImage(a.image,...a.bounds,-w/2,-h/2,w,h);ctx.restore()}
+function fit(name,width){const b=assets[name].bounds;return width*b[3]/b[2]}
+function copy(el,opacity){el.style.opacity=opacity;el.setAttribute('aria-hidden',String(opacity<.01))}
+function draw(p,now){if(!ready)return;const reveal=ease(range(p,.23,.76)),lid=ease(range(p,.06,.43)),floatAmount=reduced.matches||!floating?0:smooth(range(p,.73,.84));bob=reduced.matches?0:bob+(floatAmount-bob)*.07;const clock=now/1000;
+ctx.clearRect(0,0,900,900);
+const jarY=560+Math.sin(clock*.85)*3*bob;
+// The ring begins inside the jar silhouette and unfolds behind it. No border masks or colour key.
+image('gel',450,mix(570,495,reveal)+Math.sin(clock*.7+.5)*3*bob,mix(85,700,reveal),mix(90,735,reveal),Math.sin(clock*.5)*.45*bob);
+const ingredients=[['honey',370,250,290,.30,.70,-2,0],['lemon',155,365,155,.34,.73,-5,1],['maca',740,365,165,.38,.75,5,2],['ginseng',165,695,170,.40,.77,-5,3],['ginseng',735,695,170,.43,.78,5,4]];
+for(const [name,x,y,w,start,end,rot,i]of ingredients){const t=ease(range(p,start,end)),width=w*mix(.52,1,t),sway=bob*Math.sin(clock*(.72+i*.05)+i*1.6);image(name,mix(450,x,t)+sway*4,mix(570,y,t)+Math.sin(clock*(.85+i*.04)+i)*7*bob,width,fit(name,width),rot*t+sway*.9,i===4)}
+// Jar sits in front of the ingredients, matching the Pick your blends reveal.
+image('jar',450,jarY,390,fit('jar',390));
+const arc=Math.sin(lid*Math.PI);image('lid',mix(450,220,lid),mix(380,145,lid)-arc*24+Math.sin(clock*.8+2)*3*bob,mix(390,285,lid),fit('lid',mix(390,285,lid)),-18*lid+2*Math.sin(range(p,.06,.20)*Math.PI));
+const index=Math.round(clamp(p/.78)*80);canvas.dataset.frame=index;canvas.dataset.progress=p.toFixed(4);canvas.dataset.float=bob.toFixed(4);
+copy(intro,reduced.matches?0:1-smooth(range(p,.10,.31)));copy(source,reduced.matches?1:smooth(range(p,.79,.85)));copy(place,reduced.matches?1:smooth(range(p,.88,.95)));track.dataset.progress=p.toFixed(4);
+}
 
-  function scroll() {
-    target = reduced.matches || failed ? 1 : clamp(-track.getBoundingClientRect().top / (track.offsetHeight - stage.clientHeight));
-  }
-  function showCopy(el, opacity) {
-    el.style.opacity = opacity;
-    const hidden = String(opacity < .01);
-    if (el.getAttribute('aria-hidden') !== hidden) el.setAttribute('aria-hidden', hidden);
-  }
-  function cleanEdges(img, kind) {
-    const frame = document.createElement('canvas');
-    frame.width = img.naturalWidth;
-    frame.height = img.naturalHeight;
-    const paint = frame.getContext('2d', { willReadFrequently: true });
-    paint.drawImage(img, 0, 0);
-    const pixels = paint.getImageData(0, 0, frame.width, frame.height);
-    const original = pixels.data.slice();
-    const d = pixels.data, w = frame.width, h = frame.height;
-    const radius = kind === 'mobile' ? 6 : 5;
-    const search = kind === 'mobile' ? 8 : 6;
-    if (!neighbours[kind]) {
-      const offsets = [];
-      for (const step of [1, 2, 3, 4, 6, 8]) {
-        if (step > search) continue;
-        offsets.push([-step, 0], [step, 0], [0, -step], [0, step],
-          [-step, -step], [step, -step], [-step, step], [step, step]);
-      }
-      offsets.sort((a, b) => a[0] * a[0] + a[1] * a[1] - b[0] * b[0] - b[1] * b[1]);
-      neighbours[kind] = offsets;
-    }
-    const boundary = [[-radius, 0], [radius, 0], [0, -radius], [0, radius],
-      [-radius, -radius], [radius, -radius], [-radius, radius], [radius, radius]];
-    // Probe only suspected spill pixels near the keyed boundary. The alpha
-    // channel is never eroded or feathered, preserving every thin root tip.
-    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-      const n = y * w + x, p = n * 4;
-      const r = original[p], g = original[p + 1], b = original[p + 2];
-      const spill = clamp((g - r + 20) / 8) * clamp((r - b - 18) / 18);
-      if (original[p + 3] < 20 || r < 25 || !spill) continue;
-      let edge = original[p + 3] < 128;
-      for (const [dx, dy] of boundary) {
-        if (edge) break;
-        const sx = x + dx, sy = y + dy;
-        edge = sx < 0 || sx >= w || sy < 0 || sy >= h || original[(sy * w + sx) * 4 + 3] < 128;
-      }
-      if (!edge) continue;
-      // Borrow warm material ratios from the nearest uncontaminated opaque
-      // neighbour, retaining this pixel's red-channel texture and all alpha.
-      let greenRatio = .84, blueRatio = .62;
-      for (const [dx, dy] of neighbours[kind]) {
-        const sx = x + dx, sy = y + dy;
-        if (sx < 0 || sx >= w || sy < 0 || sy >= h) continue;
-        const q = (sy * w + sx) * 4;
-        const sr = original[q], sg = original[q + 1], sb = original[q + 2];
-        if (original[q + 3] < 240 || sr < 45 || sr - sg < 18 || sb / sr < .3 || sb / sr > .85) continue;
-        greenRatio = Math.max(.7, Math.min(.88, sg / sr));
-        blueRatio = Math.max(.4, Math.min(.76, sb / sr));
-        break;
-      }
-      d[p + 1] = g + (r * greenRatio - g) * spill;
-      d[p + 2] = b + (r * blueRatio - b) * spill;
-    }
-    paint.putImageData(pixels, 0, 0);
-    return frame;
+  function measure() {
+    target=reduced.matches?1:clamp(-track.getBoundingClientRect().top/Math.max(1,track.offsetHeight-stage.clientHeight));
+    if (reduced.matches) { current=target; bob=0; }
+    wake();
   }
   function tick(now) {
-    const dt = Math.min(64, now - prev);
-    prev = now;
-    current += (target - current) * (1 - Math.exp(-dt / 75));
-    if (Math.abs(target - current) < .0001) current = target;
-    const opening = clamp(current / .78);
-    const i = reduced.matches ? lastFrame : Math.round(opening * lastFrame);
-    if (!failed && i !== last && frames[i]) {
-      // Edge cleanup is cached during loading; playback does no pixel work.
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(frames[i], 0, 0, canvas.width, canvas.height);
-      last = i;
-      art.dataset.frameReady = 'true';
-      canvas.dataset.frame = String(i);
-    }
-    showCopy(intro, reduced.matches || failed ? 0 : 1 - fade(current, .08, .32));
-    showCopy(source, reduced.matches || failed ? 1 : fade(current, .79, .85));
-    showCopy(location, reduced.matches || failed ? 1 : fade(current, .88, .95));
-    track.dataset.progress = current.toFixed(4);
-    requestAnimationFrame(tick);
+    request=0;
+    if (!ready || failed || !visible || document.hidden) return;
+    const dt=Math.min(64,now-previous); previous=now;
+    current+=(target-current)*(1-Math.exp(-dt/75));
+    if(Math.abs(target-current)<.0001) current=target;
+    draw(current,now);
+    const moving=Math.abs(target-current)>.0001;
+    const floatActive=!reduced.matches && floating && current>.73;
+    if(moving || floatActive || bob>.0001) request=requestAnimationFrame(tick);
   }
-  async function load(kind) {
-    if (jobs[kind]) return jobs[kind];
-    jobs[kind] = (async () => {
-      let prepared = 0;
-      // Load only the active set, in the reference's numerical batches of eight.
-      for (let batch = 0; batch < frameCount; batch += 8) {
-        await Promise.all(Array.from({ length: Math.min(8, frameCount - batch) }, async (_, k) => {
-          const i = batch + k;
-          const img = new Image();
-          img.decoding = 'async';
-          const folder = kind === 'mobile' ? 'mobile-frames' : 'scroll-frames';
-          img.src = new URL(`assets/hero-scroll/${folder}/${String(i).padStart(3, '0')}.webp?v=source-fix10`, document.baseURI).href;
-          await img.decode();
-          sets[kind][i] = cleanEdges(img, kind);
-          if (kind === mode) loading?.progress(++prepared, frameCount);
-          else prepared++;
-        }));
-      }
-    })();
-    return jobs[kind];
-  }
-  function layout() {
-    const next = narrow.matches ? 'mobile' : 'desktop';
-    if (next !== mode) {
-      mode = next;
-      frames = sets[mode];
-      canvas.width = mode === 'mobile' ? 720 : 960;
-      canvas.height = mode === 'mobile' ? 720 : 540;
-      canvas.dataset.frameSet = mode;
-      delete canvas.dataset.frame;
-      art.dataset.frameReady = 'false';
-      last = -1;
-      const kind = mode;
-      load(kind).catch(() => { if (kind === mode) fallback(); }).finally(() => { if (kind === mode) loading?.ready(); });
+  function wake() {
+    if (!request && ready && !failed && visible && !document.hidden) {
+      previous=performance.now(); request=requestAnimationFrame(tick);
     }
-    scroll();
   }
   function fallback() {
-    failed = true;
-    track.dataset.fallback = 'true';
-    showCopy(intro, 0);
-    showCopy(source, 1);
-    showCopy(location, 1);
-    scroll();
-    art.removeAttribute('role');
-    art.removeAttribute('aria-label');
-    art.querySelector('.seamoss-hero-poster').hidden = true;
-    canvas.hidden = true;
-    art.querySelector('video').hidden = false;
-  }
-  if (!ctx) {
-    fallback();
+    if (failed) return;
+    failed=true; track.dataset.fallback='true';
+    canvas.hidden=true;
+    art.querySelector('.jar-poster').src='assets/hero-layered/open.png';
+    copy(intro,0); copy(source,1); copy(place,1);
     loading?.ready();
-    return;
   }
-  addEventListener('scroll', scroll, { passive: true });
-  addEventListener('resize', layout);
-  narrow.addEventListener('change', layout);
-  document.addEventListener('seamoss:ready', scroll);
-  reduced.addEventListener('change', scroll);
-  layout();
-  requestAnimationFrame(tick);
+  if (!ctx) { fallback(); return; }
+  addEventListener('scroll',measure,{passive:true});
+  addEventListener('resize',measure);
+  document.addEventListener('seamoss:ready',measure);
+  reduced.addEventListener('change',measure);
+  document.addEventListener('visibilitychange',wake);
+  document.addEventListener('seamoss:motion',event=>{floating=!event.detail.paused;wake();});
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;wake();}).observe(track);
+  }
+  let loaded=0;
+  Promise.all(['gel','honey','lemon','maca','ginseng','jar','lid'].map(async name=>{
+    const img=new Image(); img.decoding='async';
+    img.src='assets/hero-layered/'+(name==='lid'?'lid-wet.webp':name+'.png');
+    await img.decode();
+    assets[name]={image:img,bounds:bounds(img)};
+    loading?.progress(++loaded,7);
+  })).then(()=>{
+    ready=true; current=reduced.matches?1:target;
+    draw(current,performance.now());
+    art.dataset.frameReady='true'; canvas.dataset.ready='true';
+    loading?.ready(); measure();
+  }).catch(fallback);
+  measure();
 })();
