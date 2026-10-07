@@ -307,3 +307,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .range-card .range-price{font-size:16px;font-weight:600;margin:0 0 8px}
 .range-price span{font-size:11px;font-weight:400}
 .range-grid:has(.product-care[open]){align-items:start}
+
+.order-square .order-copy-required{color:#a12622;font-size:15px;line-height:1.55;margin:16px 0 12px}
+.order-copy-required strong{font-weight:750}
+.order-square .button:disabled{opacity:.5;cursor:not-allowed;transform:none}

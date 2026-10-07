@@ -44,9 +44,16 @@ export function createSquareCheckout(form) {
   heading.textContent = 'Pay securely with Square';
   const note = document.createElement('p');
   note.className = 'order-shipping-note';
+  const reminder = document.createElement('p');
+  reminder.className = 'order-copy-required';
+  reminder.id = 'square-copy-required';
+  const reminderText = document.createElement('strong');
+  reminderText.textContent = 'You must copy the blend choices in the box below before proceeding to Square.';
+  reminder.append(reminderText);
   const choices = document.createElement('textarea');
   choices.readOnly = true;
   choices.rows = 2;
+  choices.setAttribute('aria-describedby', reminder.id);
   choices.setAttribute('aria-label', 'Blend choices for Square checkout');
   const actions = document.createElement('div');
   actions.className = 'order-actions';
@@ -63,9 +70,11 @@ export function createSquareCheckout(form) {
     selectCopyText(choices);
     status.textContent = manualCopyHint + ' Then continue to Square and paste into the blend-choice field.';
   });
-  const link = document.createElement('a');
+  const link = document.createElement('button');
+  link.type = 'button';
   link.className = 'button button-dark';
-  link.rel = 'noopener';
+  link.disabled = true;
+  link.setAttribute('aria-describedby', reminder.id);
   const status = document.createElement('p');
   status.className = 'order-copy-status';
   status.setAttribute('role', 'status');
@@ -80,6 +89,29 @@ export function createSquareCheckout(form) {
   document.body.append(toast);
   let toastTimer;
   let leaving = false;
+  let checkoutUrl = '';
+  let copiedValue = null;
+  let revision = 0;
+  let copying = false;
+  function resetCopy() {
+    revision += 1;
+    copiedValue = null;
+    leaving = false;
+    link.disabled = true;
+    link.textContent = 'Continue to Square';
+    copy.textContent = 'Copy blend choices';
+    copy.disabled = copying;
+    toast.hidden = true;
+    status.textContent = '';
+    delete status.dataset.result;
+  }
+  function confirmCopy() {
+    copiedValue = choices.value;
+    link.disabled = !checkoutUrl;
+    select.hidden = true;
+    copy.textContent = 'Copied ✓';
+    feedback('Copied to clipboard', 'Now continue to Square and paste into the required blend-choice field.', true);
+  }
   function feedback(title, detail, success) {
     status.textContent = title + '. ' + detail;
     status.dataset.result = success ? 'success' : 'error';
@@ -91,77 +123,69 @@ export function createSquareCheckout(form) {
     toastTimer = setTimeout(() => { toast.hidden = true; }, 6000);
   }
   actions.append(copy, select, link);
-  panel.append(heading, note, choices, actions, status);
+  panel.append(heading, note, reminder, choices, actions, status);
   panel.hidden = true;
   form.querySelector('.order-enquiry-fallback').before(panel);
+  choices.addEventListener('click', () => {
+    selectCopyText(choices);
+    if (copiedValue !== choices.value) status.textContent = manualCopyHint;
+  });
+  choices.addEventListener('copy', event => {
+    // A click or text selection is not proof of copying. Only handle a real
+    // browser copy event with the complete current choices selected.
+    if (copying || !event.isTrusted || event.defaultPrevented || !event.clipboardData || !checkoutUrl) return;
+    if (choices.selectionStart !== 0 || choices.selectionEnd !== choices.value.length) return;
+    event.clipboardData.setData('text/plain', choices.value);
+    event.preventDefault();
+    confirmCopy();
+  });
   async function copyChoices() {
+    if (copying) return;
+    const attempt = revision;
+    copying = true;
+    copy.disabled = true;
+    link.disabled = true;
     const copied = await copyText(choices);
+    copying = false;
+    // An earlier async write must never unlock a changed order.
+    copy.disabled = false;
+    if (attempt !== revision) return;
     select.hidden = copied;
     if (copied) {
-      feedback('Copied to clipboard', 'Paste into Square’s required blend-choice field.', true);
-      copy.textContent = 'Copied ✓';
-      return true;
+      confirmCopy();
+      return;
     }
+    copiedValue = null;
     copy.textContent = 'Try copying again';
-    feedback('Automatic copying is unavailable in this browser', manualCopyHint + ' Then continue to Square and paste your choices.', false);
-    return false;
+    feedback('Automatic copying is unavailable in this browser', manualCopyHint + ' Copy all the text to enable Continue to Square.', false);
   }
   copy.addEventListener('click', copyChoices);
-  // Finish the clipboard write while this page has focus. Show the result
-  // before same-tab navigation so the confirmation is visible on handsets too.
-  link.addEventListener('click', async event => {
-    if (!link.hasAttribute('href') || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    if (leaving) return;
-    if (link.dataset.copyBlocked === 'true') {
-      window.location.assign(link.href);
-      return;
-    }
+  link.addEventListener('click', () => {
+    if (leaving || !checkoutUrl || copiedValue !== choices.value) return;
     leaving = true;
-    link.setAttribute('aria-busy', 'true');
-    const url = link.href;
-    const copied = await copyChoices();
-    if (!copied) {
-      leaving = false;
-      link.removeAttribute('aria-busy');
-      link.dataset.copyBlocked = 'true';
-      link.textContent = 'Continue to Square';
-      return;
-    }
-    link.textContent = 'Copied ✓ · Opening Square';
-    setTimeout(() => window.location.assign(url), 1500);
+    window.location.assign(checkoutUrl);
   });
   addEventListener('pageshow', event => {
-    if (!event.persisted) return;
-    leaving = false;
-    link.removeAttribute('aria-busy');
-    link.textContent = link.dataset.copyBlocked === 'true' ? 'Continue to Square' : 'Checkout on Square';
-    toast.hidden = true;
+    if (event.persisted) resetCopy();
   });
   return (size, quantity, subscription, blends, blendIds) => {
     const checkout = checkoutFor(size, quantity, subscription, undefined, blendIds);
     panel.hidden = !checkout;
-    status.textContent = '';
-    delete status.dataset.result;
-    delete link.dataset.copyBlocked;
-    toast.hidden = true;
-    copy.textContent = 'Copy blend choices';
+    resetCopy();
     select.hidden = true;
+    checkoutUrl = checkout?.url || '';
     const previewNote = form.querySelector('#order-preview-note');
-    previewNote.textContent = checkout ? 'Checkout on Square copies your blend choices. Paste them into the required blend-choice field in Square.' : 'Checkout is unavailable for this selection. Please contact the team below.';
+    previewNote.textContent = checkout ? 'Copy your blend choices first, then continue to Square and paste them into the required blend-choice field.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {
-      link.removeAttribute('href');
       choices.value = '';
       return;
     }
     choices.value = blendChoices(blends);
     const oceanSingle = size === '330ml' && quantity === 1 && !subscription && ['ocean-gold', 'ocean-vitality'].includes(blendIds?.[0]);
     note.textContent = oceanSingle
-      ? 'Click Checkout on Square to copy your blend choice and open Square. Keep the quantity at 1. Click Checkout and paste your blend into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '.'
+      ? 'Copy your blend choice below, then click Continue to Square. Keep the quantity at 1. Click Checkout and paste your blend into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '.'
       : subscription
-      ? 'Click Checkout on Square to copy your blend choices and open your monthly checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
-      : 'Click Checkout on Square to copy your blend choices and open Square. Select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
-    link.href = checkout.url;
-    link.textContent = 'Checkout on Square';
+      ? 'Copy your blend choices below, then click Continue to Square for your monthly checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
+      : 'Copy your blend choices below, then click Continue to Square. Select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
   };
 }
