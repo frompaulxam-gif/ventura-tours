@@ -1,7 +1,7 @@
 import { createSquareCheckout } from './square-checkout.mjs?v=copy-box1';
 import { copyText, manualCopyHint } from './copy-text.mjs?v=1';
 import { offers, priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
-import { createBlendPreview } from './blend-preview.js?v=expecting-mother-edition1';
+import { createBlendPreview } from './blend-preview.js?v=ingredient-guide1';
 import { createBlendPickers } from './blend-picker.js?v=expecting-mother-edition1';
 import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother-edition1';
 
