@@ -14,6 +14,7 @@
       const button = event.target.closest('[data-review-full]');
       const content = button?.closest('.review-card')?.querySelector('.review-full-text');
       if (!content) return;
+      dialog.querySelector('#review-dialog-title').textContent = button.closest('.review-card').querySelector('.review-byline').textContent.trim();
       dialog.querySelector('.review-dialog-text').replaceChildren(content.content.cloneNode(true));
       section.dataset.reviewOpen = 'true';
       document.body.classList.add('review-open');
