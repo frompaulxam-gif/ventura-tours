@@ -1,7 +1,9 @@
-import { priceOrder, money } from './order-pricing.mjs?v=square-subs2';
+import { priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
 
 // Existing item links are used for one-off orders; monthly payments use dedicated links.
 export const squareOffers = Object.freeze({
+  '330ml:1:ocean-gold': Object.freeze({ url: 'https://square.link/u/cR0qz4Bq', jarPrice: 1500, ready: true }),
+  '330ml:1:ocean-vitality': Object.freeze({ url: 'https://square.link/u/O11nvokX', jarPrice: 2000, ready: true }),
   '330ml:1': Object.freeze({ url: 'https://square.link/u/oDJVR7Js', jarPrice: 2500, ready: true }),
   '330ml:2': Object.freeze({ url: 'https://square.link/u/6cntVLqw', jarPrice: 5000, ready: true }),
   '330ml:3': Object.freeze({ url: 'https://square.link/u/SdV64YjC', jarPrice: 6800, ready: true }),
@@ -21,9 +23,10 @@ export const subscriptionOffers = Object.freeze({
   '720ml:3': Object.freeze({ url: 'https://square.link/u/yGvfrrbp', jarPrice: 10800, ready: true })
 });
 
-export function checkoutFor(size, quantity, subscription = false, catalogue = subscription ? subscriptionOffers : squareOffers) {
-  const quote = priceOrder(size, quantity, subscription);
-  const offer = catalogue[size + ':' + quantity];
+export function checkoutFor(size, quantity, subscription = false, catalogue = subscription ? subscriptionOffers : squareOffers, blends = []) {
+  const quote = priceOrder(size, quantity, subscription, 'shipping', blends);
+  const special = size === '330ml' && quantity === 1 && !subscription && ['ocean-gold', 'ocean-vitality'].includes(blends[0]);
+  const offer = catalogue[size + ':' + quantity + (special ? ':' + blends[0] : '')];
   if (!offer || !offer.ready || offer.jarPrice !== quote.jarSubtotal) return null;
   if (!/^https:\/\/square\.link\/u\/[A-Za-z0-9]+$/.test(offer.url)) return null;
   return Object.freeze({ url: offer.url, total: quote.total });
@@ -126,8 +129,8 @@ export function createSquareCheckout(form) {
     link.textContent = link.dataset.copyBlocked === 'true' ? 'Continue to Square' : 'Checkout on Square';
     toast.hidden = true;
   });
-  return (size, quantity, subscription, blends) => {
-    const checkout = checkoutFor(size, quantity, subscription);
+  return (size, quantity, subscription, blends, blendIds) => {
+    const checkout = checkoutFor(size, quantity, subscription, undefined, blendIds);
     panel.hidden = !checkout;
     status.textContent = '';
     delete status.dataset.result;
@@ -142,7 +145,10 @@ export function createSquareCheckout(form) {
       return;
     }
     choices.value = blendChoices(blends);
-    note.textContent = subscription
+    const oceanSingle = size === '330ml' && quantity === 1 && !subscription && ['ocean-gold', 'ocean-vitality'].includes(blendIds?.[0]);
+    note.textContent = oceanSingle
+      ? 'Click Checkout on Square to copy your blend choice and open Square. Keep the quantity at 1. Click Checkout and paste your blend into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '.'
+      : subscription
       ? 'Click Checkout on Square to copy your blend choices and open your monthly checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
       : 'Click Checkout on Square to copy your blend choices and open Square. Select One-time purchase. Keep the bundle quantity at 1. Click Checkout and paste your blends into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '. For a monthly subscription with free delivery, select Subscribe & Save on this website first.';
     link.href = checkout.url;

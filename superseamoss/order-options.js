@@ -1,5 +1,5 @@
-import { createSquareCheckout } from './square-checkout.mjs?v=copy-feedback1';
-import { offers, priceOrder, money } from './order-pricing.mjs?v=square-subs2';
+import { createSquareCheckout } from './square-checkout.mjs?v=ocean-prices1';
+import { offers, priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
 import { createBlendPreview } from './blend-preview.js?v=expecting-mother-edition1';
 import { createBlendPickers } from './blend-picker.js?v=expecting-mother-edition1';
 import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother-edition1';
@@ -25,8 +25,9 @@ if (form) {
     const data = new FormData(form);
     const size = data.get('jar-size');
     const subscription = data.get('purchase-type') === 'subscription';
+    const blendIds = selects.map(select => select.value);
     Object.keys(offers).forEach(jarSize => {
-      setText('[data-size-start="' + jarSize + '"]', 'From ' + money(priceOrder(jarSize, 1, subscription).jarSubtotal));
+      setText('[data-size-start="' + jarSize + '"]', 'From ' + money(priceOrder(jarSize, 1, subscription, 'shipping', blendIds).jarSubtotal));
     });
     const maxQuantity = offers[size].length - 1;
     let quantity = Number(data.get('jar-count'));
@@ -40,7 +41,7 @@ if (form) {
       const available = count <= maxQuantity;
       radio.disabled = !available;
       if (available) {
-        const quote = priceOrder(size, count, subscription);
+        const quote = priceOrder(size, count, subscription, 'shipping', blendIds);
         const saving = quote.bundleSaving + quote.subscriptionSaving;
         setText('[data-quantity-price="' + count + '"]', money(quote.jarSubtotal));
         setText('[data-quantity-saving="' + count + '"]', saving ? 'Save ' + money(saving) : count > 1 && !quote.delivery ? 'Free delivery' : 'One favourite');
@@ -57,7 +58,7 @@ if (form) {
     });
     form.querySelector('label[for="order-blend-1"]').textContent = quantity > 1 ? 'Jar one' : 'Your blend';
     const blends = selects.slice(0, quantity).map(select => selectedBlend(select).name);
-    const quote = priceOrder(size, quantity, subscription);
+    const quote = priceOrder(size, quantity, subscription, 'shipping', blendIds);
     setText('#order-selection', quantity + ' × ' + size + (quantity > 1 ? ' jars' : ' jar'));
     setText('#order-blend-summary', blends.join(' · '));
     setText('#order-product-price', money(quote.jarSubtotal));
@@ -77,7 +78,7 @@ if (form) {
     setText('#order-total-price', money(quote.total));
     setText('#order-shipping-note', subscription ? 'Free chilled UK mainland delivery on every monthly subscription, with no minimum spend.' : quote.delivery ? 'Free chilled delivery when your jar subtotal reaches £50.' : 'Your jar subtotal qualifies for free chilled delivery.');
     document.querySelector('#order-schedule').hidden = !subscription;
-    renderCheckout(size, quantity, subscription, blends);
+    renderCheckout(size, quantity, subscription, blends, blendIds);
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
     enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per month. Cancel anytime.' : '.') + ' I understand preparation and dispatch take 3 to 4 working days after my order is confirmed. Please confirm availability, delivery and how to provide my email for the dispatch update.';

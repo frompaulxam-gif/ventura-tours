@@ -10,18 +10,21 @@ export function deliveryForSubtotal(pence, subscription = false, method = 'shipp
   return subscription || pence >= 5000 ? 0 : 995;
 }
 
-export function priceOrder(size, quantity, subscription = false, deliveryMethod = 'shipping') {
+export function priceOrder(size, quantity, subscription = false, deliveryMethod = 'shipping', blends = []) {
   const prices = offers[size];
   if (!prices || !Number.isInteger(quantity) || quantity < 1 || quantity >= prices.length) {
     throw new RangeError('Choose an available jar size and quantity.');
   }
-  const bundlePrice = prices[quantity];
+  const singleOceanPrices = { 'ocean-gold': 1500, 'ocean-vitality': 2000 };
+  const specialPrice = size === '330ml' && quantity === 1 && !subscription
+    ? singleOceanPrices[blends[0]] : undefined;
+  const bundlePrice = specialPrice ?? prices[quantity];
   const subscriptionSaving = subscription ? Math.round(bundlePrice * 0.1) : 0;
   const jarSubtotal = bundlePrice - subscriptionSaving;
   const delivery = deliveryForSubtotal(jarSubtotal, subscription, deliveryMethod);
   return Object.freeze({
     bundlePrice,
-    bundleSaving: prices[1] * quantity - bundlePrice,
+    bundleSaving: specialPrice === undefined ? prices[1] * quantity - bundlePrice : 0,
     subscriptionSaving,
     jarSubtotal,
     delivery,
