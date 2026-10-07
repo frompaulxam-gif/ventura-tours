@@ -29,7 +29,7 @@ for(const [name,x,y,w,start,end,rot,i]of ingredients){const t=ease(range(p,start
 image('jar',450,jarY,390,fit('jar',390));
 const arc=Math.sin(lid*Math.PI);image('lid',mix(450,220,lid),mix(380,145,lid)-arc*24+Math.sin(clock*.8+2)*3*bob,mix(390,285,lid),fit('lid',mix(390,285,lid)),-18*lid+2*Math.sin(range(p,.06,.20)*Math.PI));
 const index=Math.round(clamp(p/.78)*80);canvas.dataset.frame=index;canvas.dataset.progress=p.toFixed(4);canvas.dataset.float=bob.toFixed(4);
-copy(intro,reduced.matches?0:1-smooth(range(p,.10,.31)));copy(source,reduced.matches?1:smooth(range(p,.79,.85)));copy(place,reduced.matches?1:smooth(range(p,.88,.95)));track.dataset.progress=p.toFixed(4);
+copy(intro,reduced.matches?0:1-smooth(range(p,.10,.31)));copy(source,reduced.matches?1:smooth(range(p,.79,.85)));copy(place,reduced.matches?1:smooth(range(p,.85,.90)));track.dataset.progress=p.toFixed(4);
 }
 
   function measure() {

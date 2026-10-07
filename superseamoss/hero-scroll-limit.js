@@ -3,10 +3,18 @@
   const stage = track?.querySelector('.seamoss-hero');
   if (!stage) return;
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
-  // A full hero takes at least 1.2s. Ordinary input still covers its actual distance.
+  // Base pace stays responsive, with gentle extra resistance around the final text.
   const traverseMs = 1200;
-  let destination = null, frame = 0, previous = 0, writtenY = null, touch = null;
+  let destination = null, frame = 0, previous = 0, writtenY = null, touch = null, remainder = 0, settledY = null;
   const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+  function finishResistance(progress) {
+    const smooth = (a, b) => {
+      const t = clamp((progress - a) / (b - a), 0, 1);
+      return t * t * (3 - 2 * t);
+    };
+    // Ease into the final caption, then release smoothly. Never stop or require a new gesture.
+    return 1 - .45 * smooth(.82, .94) * (1 - smooth(1.01, 1.12));
+  }
   function geometry() {
     const start = scrollY + track.getBoundingClientRect().top;
     const distance = Math.max(0, track.offsetHeight - stage.clientHeight);
@@ -21,7 +29,12 @@
   }
   function stop() {
     cancelAnimationFrame(frame);
-    frame = 0; destination = null; writtenY = null;
+    frame = 0; destination = null; writtenY = null; remainder = 0; settledY = null;
+  }
+  function settle() {
+    // Keep fractional input between events instead of rounding gentle gestures away.
+    const rest = destination - scrollY;
+    stop(); remainder = rest; settledY = scrollY;
   }
   function reset() { stop(); touch = null; }
   function nativeTarget(node) {
@@ -42,15 +55,16 @@
     const dt = Math.min(40, Math.max(0, now - previous)); previous = now;
     const gap = destination - scrollY;
     const direction = Math.sign(gap);
-    const maxStep = distance * dt / traverseMs;
+    const resistance = direction > 0 ? finishResistance((scrollY - start) / distance) : 1;
+    const maxStep = distance * dt / traverseMs * resistance;
     let step = Math.min(Math.abs(gap), maxStep);
     // Only the portion through the sticky hero is capped; approach space is native speed.
     if (direction > 0 && scrollY < start) step += Math.min(start - scrollY, Math.abs(gap) - step);
     if (direction < 0 && scrollY > end) step += Math.min(scrollY - end, Math.abs(gap) - step);
-    if (Math.abs(gap) < 1) { stop(); return; }
+    if (Math.abs(gap) < .001) { stop(); return; }
     window.scrollTo({ top: scrollY + direction * step, behavior: 'instant' });
     writtenY = scrollY;
-    if (Math.abs(destination - scrollY) < 1) { stop(); return; }
+    if (Math.abs(destination - scrollY) < 1) { settle(); return; }
     frame = requestAnimationFrame(advance);
   }
   function queue(delta, event) {
@@ -63,10 +77,13 @@
     if (destination === null && !intersects) return false;
     event.preventDefault();
     // A reversal replaces outstanding momentum immediately.
-    if (destination === null || Math.sign(destination - y) !== Math.sign(delta)) destination = y;
+    if (destination === null) destination = y + (y === settledY ? remainder : 0);
+    else if (Math.sign(destination - y) !== Math.sign(delta)) destination = y;
+    remainder = 0; settledY = null;
     // Keep only a small exit distance, so one enormous flick cannot skip the next section.
     const exit = stage.clientHeight * .25;
-    destination = clamp(destination + delta, Math.max(0, start - exit), end + exit);
+    const resistance = delta > 0 ? finishResistance((y - start) / distance) : 1;
+    destination = clamp(destination + delta * resistance, Math.max(0, start - exit), end + exit);
     if (!frame) { previous = performance.now(); writtenY = y; frame = requestAnimationFrame(advance); }
     return true;
   }
