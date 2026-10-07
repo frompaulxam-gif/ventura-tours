@@ -308,6 +308,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 .range-price span{font-size:11px;font-weight:400}
 .range-grid:has(.product-care[open]){align-items:start}
 
-.order-square .order-copy-required{color:#a12622;font-size:15px;line-height:1.55;margin:16px 0 12px}
+.order-square .order-copy-required{color:#a12622;background:#fff0ed;border:1px solid #a12622;border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.55;margin:16px 0 12px}
+.order-square .order-copy-required[data-active="true"]{color:#285638;background:#edf5ea;border-color:#42724a}
 .order-copy-required strong{font-weight:750}
 .order-square .button:disabled{opacity:.5;cursor:not-allowed;transform:none}

@@ -47,8 +47,11 @@ export function createSquareCheckout(form) {
   const reminder = document.createElement('p');
   reminder.className = 'order-copy-required';
   reminder.id = 'square-copy-required';
+  reminder.setAttribute('aria-live', 'polite');
+  reminder.setAttribute('aria-atomic', 'true');
   const reminderText = document.createElement('strong');
-  reminderText.textContent = 'You must copy the blend choices in the box below before proceeding to Square.';
+  const requiredCopyText = 'You must copy the blend choices in the box below before proceeding to Square.';
+  reminderText.textContent = requiredCopyText;
   reminder.append(reminderText);
   const choices = document.createElement('textarea');
   choices.readOnly = true;
@@ -68,6 +71,7 @@ export function createSquareCheckout(form) {
   select.hidden = true;
   select.addEventListener('click', () => {
     selectCopyText(choices);
+    showSelectedReminder();
     status.textContent = manualCopyHint + ' Then continue to Square and paste into the blend-choice field.';
   });
   const link = document.createElement('button');
@@ -93,7 +97,16 @@ export function createSquareCheckout(form) {
   let copiedValue = null;
   let revision = 0;
   let copying = false;
+  function setReminder(text, active = false) {
+    reminderText.textContent = text;
+    reminder.dataset.active = String(active);
+  }
+  function showSelectedReminder() {
+    if (copiedValue === choices.value) return;
+    setReminder('Text selected. Copy all the blend choices before proceeding to Square.', true);
+  }
   function resetCopy() {
+    setReminder(requiredCopyText);
     revision += 1;
     copiedValue = null;
     leaving = false;
@@ -106,6 +119,7 @@ export function createSquareCheckout(form) {
     delete status.dataset.result;
   }
   function confirmCopy() {
+    setReminder('Copied ✓ You can now continue to Square. Paste your blend choices into the required field.', true);
     copiedValue = choices.value;
     link.disabled = !checkoutUrl;
     select.hidden = true;
@@ -128,6 +142,7 @@ export function createSquareCheckout(form) {
   form.querySelector('.order-enquiry-fallback').before(panel);
   choices.addEventListener('click', () => {
     selectCopyText(choices);
+    showSelectedReminder();
     if (copiedValue !== choices.value) status.textContent = manualCopyHint;
   });
   choices.addEventListener('copy', event => {
@@ -142,6 +157,7 @@ export function createSquareCheckout(form) {
   async function copyChoices() {
     if (copying) return;
     const attempt = revision;
+    setReminder('Copying your blend choices…', true);
     copying = true;
     copy.disabled = true;
     link.disabled = true;
@@ -156,6 +172,7 @@ export function createSquareCheckout(form) {
       return;
     }
     copiedValue = null;
+    setReminder('Copying was blocked. Copy all the text in the box below before proceeding to Square.');
     copy.textContent = 'Try copying again';
     feedback('Automatic copying is unavailable in this browser', manualCopyHint + ' Copy all the text to enable Continue to Square.', false);
   }
