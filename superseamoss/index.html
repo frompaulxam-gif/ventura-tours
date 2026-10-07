@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="assets/favicon-fish-180.png" sizes="180x180">
 <link rel="icon" href="assets/favicon-fish-32.png" type="image/png" sizes="32x32">
 <link rel="preload" href="assets/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=copy-box1">
+<link rel="stylesheet" href="styles.css?v=taster1">
 <link rel="stylesheet" href="hero-scroll.css?v=layered1">
 <script>
 document.documentElement.classList.add('page-loading');
@@ -26,7 +26,7 @@ setTimeout(() => {
   document.dispatchEvent(new Event('seamoss:load-timeout'));
 }, 6500);
 </script>
-<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=layered2" defer></script><script src="hero-scroll-limit.js?v=2" defer></script><script type="module" src="order-options.js?v=ingredient-guide1"></script>
+<script src="loading.js?v=mobile2" defer></script><script src="site.js?v=manuka-recipes1" defer></script><script src="jar-scroll.js?v=layered2" defer></script><script src="hero-scroll-limit.js?v=2" defer></script><script type="module" src="order-options.js?v=taster1"></script>
 <link rel="stylesheet" href="blend-preview.css?v=ingredient-guide1">
 <link rel="stylesheet" href="blend-picker.css?v=manuka-recipes1">
 <link rel="stylesheet" href="reviews.css?v=readmore1">
@@ -159,9 +159,10 @@ setTimeout(() => {
 <section class="order-options" id="order-options" aria-labelledby="order-heading">
 <div class="order-layout section-wrap">
 <div class="order-intro">
-<span class="order-preview-label">MIX &amp; MATCH · 330ml / 720ml</span>
+<span class="order-preview-label">MIX &amp; MATCH · 141ml / 330ml / 720ml</span>
 <h2 id="order-heading">Pick your blends.<br><span>Build your bundle.</span></h2>
 <p>A favourite for you. A few to share. Mix any blends in one jar size and save as you add more.</p>
+<aside class="taster-promo"><p class="eyebrow">THE TASTER TRIO</p><h3>Not sure which blend to choose?<br>Try our taster trio.</h3><p>Pick three different blends in smaller 141ml jars. £12 per jar, sold as a set of three.</p><p class="taster-promo-price"><strong>3 × 141ml · £36</strong><span>423ml total · £9.95 chilled delivery</span></p><a class="button button-dark" href="#order-choices" data-order-taster>Choose your taster trio <span aria-hidden="true">+</span></a></aside>
 <figure class="blend-preview" aria-label="Selected blend product preview" hidden>
 <p class="blend-preview-kicker">YOUR BLEND, UP CLOSE</p>
 <div class="blend-preview-stage" style="--blend-accent:#cfaa4a">
@@ -177,13 +178,14 @@ setTimeout(() => {
 <a class="text-link" href="https://www.instagram.com/super.seamoss/" target="_blank" rel="noopener">Prefer to ask the team? Enquire on Instagram</a>
 </div>
 <form class="order-planner" aria-label="Build your mix and match order" aria-describedby="order-preview-note">
-<fieldset class="order-choice" id="order-choices"><legend>Choose your size</legend><div class="order-choice-row"><label><input type="radio" name="jar-size" value="330ml" checked><span>330ml jar<small data-size-start="330ml">From £25</small></span></label><label><input type="radio" name="jar-size" value="720ml"><span>720ml jar<small data-size-start="720ml">From £45</small></span></label></div></fieldset>
+<fieldset class="order-choice" id="order-choices"><legend>Choose your size</legend><div class="order-choice-row"><label class="taster-size"><input type="radio" name="jar-size" value="141ml"><span>Taster trio · 141ml jars<small data-size-start="141ml">3 jars · £36</small></span></label><label><input type="radio" name="jar-size" value="330ml" checked><span>330ml jar<small data-size-start="330ml">From £25</small></span></label><label><input type="radio" name="jar-size" value="720ml"><span>720ml jar<small data-size-start="720ml">From £45</small></span></label></div></fieldset>
 <fieldset class="order-choice"><legend>Choose your jars</legend><div class="order-choice-row order-quantity-row">
 <label><input type="radio" name="jar-count" value="1" checked><span><span>1 jar</span><strong data-quantity-price="1">£25</strong><small data-quantity-saving="1">One favourite</small></span></label>
 <label><input type="radio" name="jar-count" value="2"><span><span>2 jars</span><strong data-quantity-price="2">£50</strong><small data-quantity-saving="2">Free delivery</small></span></label>
 <label><input type="radio" name="jar-count" value="3"><span><span>3 jars</span><strong data-quantity-price="3">£68</strong><small data-quantity-saving="3">Save £7</small></span></label>
 <label><input type="radio" name="jar-count" value="4"><span><span>4 jars</span><strong data-quantity-price="4">£88</strong><small data-quantity-saving="4">Save £12</small></span></label>
 </div><p class="order-quantity-note" id="order-quantity-note" role="status"></p></fieldset>
+<p id="order-taster-note" class="order-taster-note" role="status" hidden></p>
 <div class="order-blend-fields">
 <div class="order-blend-field"><label for="order-blend-1">Your blend</label><select id="order-blend-1" name="blend-1">
 <option value="ocean-gold">Ocean Gold Seamoss</option><option value="ocean-vitality">Ocean Vitality</option><option value="cellular-reset">Cellular Reset</option><option value="manuka-glow" selected>Manuka Glow</option><option value="king-strength">King Strength</option><option value="all-night-long">All Night Long</option><option value="immunity-booster">Ruby Radiance</option><option value="onyx-purity">Onyx Purity</option><option value="power-up">Power Up</option><option value="rich-clarification">Rich Clarification</option><option value="gut-health-booster">Golden Ginger</option><option value="lychee-citrus-glow">Lychee Citrus Glow</option><option value="wonder-woman">Wonder Woman</option><option value="sublime-strawberry">Sublime Strawberry</option><option value="emerald-cleanse">Emerald Cleanse</option>

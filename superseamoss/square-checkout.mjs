@@ -1,8 +1,9 @@
 import { copyText, selectCopyText, manualCopyHint } from './copy-text.mjs?v=1';
-import { priceOrder, money } from './order-pricing.mjs?v=ocean-prices1';
+import { priceOrder, money } from './order-pricing.mjs?v=taster1';
 
 // Existing item links are used for one-off orders; monthly payments use dedicated links.
 export const squareOffers = Object.freeze({
+  '141ml:3': Object.freeze({ url: 'https://square.link/u/WVVd1UhD', jarPrice: 3600, ready: true }),
   '330ml:1:ocean-gold': Object.freeze({ url: 'https://square.link/u/cR0qz4Bq', jarPrice: 1500, ready: true }),
   '330ml:1:ocean-vitality': Object.freeze({ url: 'https://square.link/u/O11nvokX', jarPrice: 2000, ready: true }),
   '330ml:1': Object.freeze({ url: 'https://square.link/u/oDJVR7Js', jarPrice: 2500, ready: true }),
@@ -25,6 +26,7 @@ export const subscriptionOffers = Object.freeze({
 });
 
 export function checkoutFor(size, quantity, subscription = false, catalogue = subscription ? subscriptionOffers : squareOffers, blends = []) {
+  if (size === '141ml' && (quantity !== 3 || subscription || blends.slice(0, 3).length !== 3 || new Set(blends.slice(0, 3)).size !== 3)) return null;
   const quote = priceOrder(size, quantity, subscription, 'shipping', blends);
   const special = size === '330ml' && quantity === 1 && !subscription && ['ocean-gold', 'ocean-vitality'].includes(blends[0]);
   const offer = catalogue[size + ':' + quantity + (special ? ':' + blends[0] : '')];
@@ -192,14 +194,16 @@ export function createSquareCheckout(form) {
     select.hidden = true;
     checkoutUrl = checkout?.url || '';
     const previewNote = form.querySelector('#order-preview-note');
-    previewNote.textContent = checkout ? 'Copy your blend choices first, then continue to Square and paste them into the required blend-choice field.' : 'Checkout is unavailable for this selection. Please contact the team below.';
+    previewNote.textContent = checkout ? 'Copy your blend choices first, then continue to Square and paste them into the required blend-choice field.' : size === '141ml' ? 'Choose three different blends above to unlock your taster checkout.' : 'Checkout is unavailable for this selection. Please contact the team below.';
     if (!checkout) {
       choices.value = '';
       return;
     }
     choices.value = blendChoices(blends);
     const oceanSingle = size === '330ml' && quantity === 1 && !subscription && ['ocean-gold', 'ocean-vitality'].includes(blendIds?.[0]);
-    note.textContent = oceanSingle
+    note.textContent = size === '141ml'
+      ? 'Copy your three blend choices below, then click Continue to Square. Keep the quantity at 1 for one taster trio: 3 × 141ml jars. Paste your choices into the required field. Your total including chilled delivery is ' + money(checkout.total) + '.'
+      : oceanSingle
       ? 'Copy your blend choice below, then click Continue to Square. Keep the quantity at 1. Click Checkout and paste your blend into the required field. Your expected total including chilled delivery is ' + money(checkout.total) + '.'
       : subscription
       ? 'Copy your blend choices below, then click Continue to Square for your monthly checkout. Paste your blends and enter your full UK mainland delivery name, address and postcode in the required fields. Your total is ' + money(checkout.total) + ' each month, including free delivery. Cancel anytime.'
