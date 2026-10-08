@@ -1,0 +1,32 @@
+:root{--orange:#19ace0;--orange-dark:color-mix(in srgb,#19ace0 55%,#111);--brand-secondary:#eb1630;}
+.hero,.hero-scroll{background:#111214!important}.hero:after{background:radial-gradient(ellipse at 50% 57%,color-mix(in srgb,var(--orange) 12%,transparent),transparent 60%)!important;pointer-events:none}
+.logo-crop{width:250px;height:66px;border-radius:7px;background:white;overflow:hidden}.logo-crop img{position:static!important;width:100%!important;height:100%!important;max-width:100%;object-fit:contain;left:auto!important;top:auto!important;filter:none!important;padding:5px}
+.brand-intro-veil{background:#111214}.hero-atlas{height:100%;aspect-ratio:1;margin:auto;background:url('assets/hero-atlas.png?v=cb5ec3c2daf6') 0 50%/300% 100% no-repeat;max-width:88vw}
+.hero-atlas[data-atlas-panel="1"]{background-position:50% 50%}.hero-atlas[data-atlas-panel="2"]{background-position:100% 50%}
+.hero-scroll .phone-stage{inset:40% 0 17%}.hero-carousel-controls{inset:40% 0 17%}
+.orange,.orange:hover{background:var(--orange);color:#111}.screen-expansion{background:color-mix(in srgb,var(--orange) 9%,white)!important;border:1px solid color-mix(in srgb,var(--orange) 28%,white)!important}
+.screen-description{display:block;font-size:11px;line-height:1.4;color:#555;margin-top:7px}.contact-email{display:block;font-size:16px;margin:-8px 0 28px;overflow-wrap:anywhere}.location-note{font-size:12px!important;opacity:.75;margin-top:14px}
+.visit{background:#111!important;color:white!important}.visit h2 span{color:var(--orange)!important}.visit-brand{overflow-wrap:anywhere}
+.review-link-only{display:flex;align-items:center;justify-content:center;gap:28px;padding:26px 6%;font-size:14px}.review-link-only a{text-decoration:underline;text-underline-offset:4px;font-weight:700}.review-source{display:inline-block;font-size:11px;text-decoration:underline;margin-top:5px}.review-item{padding:20px}.review-group{min-width:100vw;justify-content:space-around}
+.repair-wrench{filter:grayscale(1)}.section-top>p{max-width:310px}.brand-intro-logo .logo-crop{border-radius:7px}.hero-title p{max-width:90%;margin-left:auto;margin-right:auto}
+@media(max-width:700px){.logo-crop{width:165px;height:47px}.site-header .brand{min-width:0}.hero-scroll .hero{min-height:640px}.hero-scroll .phone-stage,.hero-carousel-controls{inset:32% 0 20%}.hero-scroll .hero-title{top:106px}.hero-atlas{max-width:82vw}.review-link-only{flex-direction:column;gap:8px;text-align:center}.visit h2{font-size:clamp(34px,9vw,47px);overflow-wrap:anywhere}.contact-number{font-size:25px}.screen-description{font-size:10px}}
+@media(max-width:365px){.logo-crop{width:140px}.site-header .header-cta{font-size:10px;padding:10px 8px}.hero-headlines{font-size:34px}}
+.logo-crop img{position:absolute!important;width:118.204px!important;height:88.653px!important;max-width:none!important;object-fit:fill;left:65.857px!important;top:-9.857px!important;padding:0}@media(max-width:700px){.logo-crop img{position:absolute!important;width:78.099px!important;height:58.574px!important;max-width:none!important;object-fit:fill;left:43.423px!important;top:-4.816px!important;padding:0}}@media(max-width:365px){.logo-crop img{position:absolute!important;width:78.099px!important;height:58.574px!important;max-width:none!important;object-fit:fill;left:30.923px!important;top:-4.816px!important;padding:0}}
+/* Brand-specific header: artwork is framed directly, with no universal logo card. */
+:root{--header-surface:#eaf7fc;--header-ink:#152127}
+.site-header{background:var(--header-surface)!important;color:var(--header-ink);border:1px solid color-mix(in srgb,var(--header-ink) 14%,transparent);box-shadow:0 8px 28px #0002;isolation:isolate}
+.site-header .brand{flex:0 0 auto;mix-blend-mode:normal}
+.site-header nav{color:var(--header-ink)}
+.site-header .header-cta{color:var(--header-ink);border-color:color-mix(in srgb,var(--header-ink) 28%,transparent);background:transparent;align-items:center}
+.site-header .header-cta:hover{background:color-mix(in srgb,var(--header-ink) 8%,transparent);border-color:var(--header-ink)}
+.logo-crop,.brand-intro-logo .logo-crop{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
+.logo-crop img{mix-blend-mode:multiply;filter:none!important}
+.brand-intro-veil{background:var(--header-surface)!important}
+.brand-intro-logo{background:var(--header-surface);isolation:isolate}
+.brand-intro-logo .logo-crop{position:relative;left:0;top:0}
+.brand-intro-pending.brand-intro-docked .site-header .brand{visibility:visible}
+.brand-intro-pending.brand-intro-docked .site-header{opacity:1}
+.logo-crop{width:120.312px!important;height:58.000px!important}.logo-crop img{position:absolute!important;width:122.426px!important;height:91.819px!important;max-width:none!important;left:-1.099px!important;top:-15.388px!important;object-fit:fill;padding:0!important}@media(max-width:700px){.logo-crop{width:95.420px!important;height:46.000px!important}.logo-crop img{position:absolute!important;width:97.096px!important;height:72.822px!important;max-width:none!important;left:-0.872px!important;top:-12.204px!important;object-fit:fill;padding:0!important}}@media(max-width:365px){.logo-crop{width:89.197px!important;height:43.000px!important}.logo-crop img{position:absolute!important;width:90.764px!important;height:68.073px!important;max-width:none!important;left:-0.815px!important;top:-11.408px!important;object-fit:fill;padding:0!important}}
+.repair-option:has(input:checked) .repair-name,.repair-card:has(input:checked) .repair-name,.screen-choice-name{color:#20242b!important}
+
+.hero:after{background:none!important}.hero-atlas{mix-blend-mode:lighten;mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent),linear-gradient(to bottom,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
