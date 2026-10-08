@@ -25,7 +25,7 @@
       document.querySelector('#build-note').textContent = 'Choose monthly or yearly hosting and maintenance alongside your website build.';
       document.querySelectorAll('.plan-start').forEach(item => item.textContent = 'Hosting and maintenance for your website.');
       const cta = document.querySelector('#build-cta');
-      cta.innerHTML = 'Let’s talk about your website <span aria-hidden="true">↗</span>';
+      cta.innerHTML = 'Let’s talk about your website <span class="button-chevron" aria-hidden="true"></span>';
       cta.href = 'mailto:frompaulxam@gmail.com?subject=Website%20design%20and%20build';
       document.querySelector('#package-summary').innerHTML = '<strong>Website build: £20.</strong><br>Choose £20/month or £150/year for hosting and maintenance.';
       return;
