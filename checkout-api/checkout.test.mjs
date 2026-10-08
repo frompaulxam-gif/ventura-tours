@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
 import worker, { signQuote, verifyQuote } from './worker.mjs';
 import { dispatch, normaliseCart, normalisePostcode, calculateQuote, squareOrder } from './core.mjs';
 
@@ -7,7 +9,14 @@ const cart = normaliseCart({ size: '330ml', quantity: 1, blends: [{ id: 'manuka-
 const centre = { ...dispatch, country: 'England' };
 const atMiles = miles => ({ country: 'England', latitude: dispatch.latitude + miles / 3958.7613 * 180 / Math.PI, longitude: dispatch.longitude });
 const recipient = { givenName: 'Checkout', familyName: 'Test', email: 'checkout@example.com', phone: '07700900000', addressLine1: 'Test delivery address', addressLine2: '', city: 'Birmingham', postcode: 'B36 0PF' };
-const env = { SQUARE_APPLICATION_ID: 'sandbox-example', SQUARE_LOCATION_ID: 'test-location', SQUARE_ACCESS_TOKEN: 'fake-private-token', QUOTE_SECRET: 'unit-test-only-secret', ALLOWED_ORIGINS: 'https://venturasolutions.co.uk' };
+class TestDatabase {
+  constructor() { this.database = new DatabaseSync(':memory:'); this.database.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8')); }
+  prepare(sql) {
+    const statement = this.database.prepare(sql); let values = [];
+    return { bind(...args) { values = args; return this; }, async first() { return statement.get(...values) || null; }, async run() { return statement.run(...values); } };
+  }
+}
+const env = { SQUARE_APPLICATION_ID: 'sandbox-example', SQUARE_LOCATION_ID: 'test-location', SQUARE_ACCESS_TOKEN: 'fake-private-token', QUOTE_SECRET: 'unit-test-only-secret', ALLOWED_ORIGINS: 'https://venturasolutions.co.uk', DB: new TestDatabase() };
 const request = (path, body, origin = 'https://venturasolutions.co.uk') => new Request('https://test.invalid' + path, { method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 
 test('local radius uses the full postcode and rejects just outside 10 miles', () => {
@@ -28,6 +37,7 @@ test('national rates, special jars and bundle prices remain authoritative', () =
   assert.throws(() => normaliseCart({ size: '141ml', quantity: 3, blends: [{ id: 'manuka-glow' }, { id: 'manuka-glow' }, { id: 'king-strength' }] }), /different/);
   assert.throws(() => normaliseCart({ size: '720ml', quantity: 4, blends: [] }));
   assert.throws(() => calculateQuote(cart, { ...centre, country: 'Northern Ireland' }));
+  assert.throws(() => calculateQuote(cart, { country: 'Scotland', postcode: 'HS1 2AD', latitude: 58.209, longitude: -6.389 }), /not quoted/);
 });
 test('address, blend recipe and local courier instructions survive into the Square order', () => {
   const order = squareOrder({ id: 'test', cart, recipient, quote: calculateQuote(cart, centre) }, 'test-location');
@@ -67,10 +77,37 @@ test('payment uses the signed address and amount; retries keep the same Square i
       const result = await worker.fetch(request('/payment', { quoteToken: quote.token, sourceId: 'test-card-token', total: 1, recipient: { postcode: 'E1 6AN' } }), env);
       assert.equal(result.status, 200); assert.equal((await result.json()).total, 3000);
     }
-    assert.equal(calls[0].body.idempotency_key, calls[2].body.idempotency_key);
-    assert.equal(calls[1].body.idempotency_key, calls[3].body.idempotency_key);
+    assert.equal(calls.length, 2, 'a completed retry is returned from the payment record without another Square call');
     assert.equal(calls[1].body.amount_money.amount, 3000);
     assert.equal(calls[1].body.shipping_address.postal_code, 'B36 0PF');
     assert.match(calls[1].url, /^https:\/\/connect\.squareupsandbox\.com\//);
   } finally { globalThis.fetch = originalFetch; }
+});
+test('an expired unstarted quote allows renewal without contacting Square', async () => {
+  const payload = { version: 1, id: crypto.randomUUID(), expiresAt: Date.now() - 1, cart, recipient, quote: calculateQuote(cart, centre) };
+  const result = await worker.fetch(request('/payment', { quoteToken: await signQuote(payload, env.QUOTE_SECRET), sourceId: 'test-token' }), env);
+  assert.equal(result.status, 409); assert.equal((await result.json()).code, 'QUOTE_EXPIRED');
+  assert.equal(await env.DB.prepare('SELECT * FROM payment_attempts WHERE quote_id = ?').bind(payload.id).first(), null);
+});
+test('an uncertain payment can resume after quote expiry using its original token and idempotency key', async () => {
+  const originalFetch = globalThis.fetch, originalNow = Date.now;
+  const startedAt = Date.now(); const payload = { version: 1, id: crypto.randomUUID(), expiresAt: startedAt + 10000, cart, recipient, quote: calculateQuote(cart, centre) };
+  const token = await signQuote(payload, env.QUOTE_SECRET); const payments = []; let networkFailure = true;
+  globalThis.fetch = async (url, init) => {
+    const body = JSON.parse(init.body);
+    if (url.endsWith('/orders')) return Response.json({ order: { id: 'retry-order', total_money: { amount: 3000, currency: 'GBP' } } });
+    payments.push(body);
+    if (networkFailure) { networkFailure = false; throw new Error('Simulated lost Square response'); }
+    return Response.json({ payment: { id: 'recovered-payment', status: 'COMPLETED' } });
+  };
+  try {
+    const first = await worker.fetch(request('/payment', { quoteToken: token, sourceId: 'original-card-token' }), env);
+    assert.equal(first.status, 503);
+    Date.now = () => startedAt + 16 * 60 * 1000;
+    const retry = await worker.fetch(request('/payment', { quoteToken: token, sourceId: 'different-card-token' }), env);
+    assert.equal(retry.status, 200); assert.equal((await retry.json()).paymentId, 'recovered-payment');
+    assert.deepEqual(payments[0], payments[1], 'reconciliation repeats exactly the original Square request');
+    const final = await env.DB.prepare('SELECT * FROM payment_attempts WHERE quote_id = ?').bind(payload.id).first();
+    assert.equal(final.status, 'paid'); assert.equal(final.source_id, null, 'card token is discarded once payment is confirmed');
+  } finally { globalThis.fetch = originalFetch; Date.now = originalNow; }
 });

@@ -23,7 +23,7 @@ for (const [i, item] of cart.blends.entries()) {
 async function api(path, body) {
   const response = await fetch(API + path, { method: body ? 'POST' : 'GET', headers: body ? { 'Content-Type': 'application/json' } : {}, ...(body ? { body: JSON.stringify(body) } : {}), signal: AbortSignal.timeout(45000) });
   const result = await response.json();
-  if (!response.ok) { const error = new Error(result.error || 'The test checkout is unavailable.'); error.status = response.status; throw error; }
+  if (!response.ok) { const error = new Error(result.error || 'The test checkout is unavailable.'); error.status = response.status; error.code = result.code; throw error; }
   return result;
 }
 function status(element, text, state = '') { element.textContent = text; element.dataset.state = state; }
@@ -85,7 +85,8 @@ form.addEventListener('submit', async event => {
     document.querySelector('#total-price').textContent = money(q.total);
     const distanceText = `${q.distanceMiles} miles from ${q.dispatchPostcode}, measured between postcode centres.`;
     document.querySelector('#distance-note').textContent = distanceText;
-    status(deliveryStatus, q.localEligible ? `${recipient.postcode} qualifies for £5 local delivery. ${distanceText}` : `${recipient.postcode} is outside the 10-mile local area. National delivery is available. ${distanceText}`, 'success');
+    const freeChoice = q.localEligible && !jarQuote.delivery ? ' Your jars also qualify for free national delivery. Choose National chilled delivery and check again if you prefer it.' : '';
+    status(deliveryStatus, (q.localEligible ? `${recipient.postcode} qualifies for £5 local delivery. ${distanceText}` : `${recipient.postcode} is outside the 10-mile local area. National delivery is available. ${distanceText}`) + freeChoice, 'success');
     document.querySelector('#payment-section').hidden = false;
     payButton.textContent = 'Pay ' + money(q.total) + ' test order'; payButton.disabled = false;
     checkButton.textContent = 'Check delivery again';
@@ -118,9 +119,9 @@ payButton.addEventListener('click', async () => {
     success.focus(); success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   } catch (error) {
     status(paymentStatus, error.message, 'error');
-    if (error.beforePayment || error.status === 402) {
+    if (error.beforePayment || error.status === 402 || error.code === 'QUOTE_EXPIRED') {
       lock(false); cardToken = null;
-      if (error.status === 402) { currentQuote = null; payButton.disabled = true; checkButton.focus(); }
+      if (error.status === 402 || error.code === 'QUOTE_EXPIRED') { currentQuote = null; payButton.disabled = true; status(deliveryStatus, 'Check delivery again to renew your quote.'); checkButton.focus(); }
       else payButton.disabled = false;
     } else { payButton.textContent = 'Retry the same test payment'; payButton.disabled = false; }
   } finally { paying = false; }

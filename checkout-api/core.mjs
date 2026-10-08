@@ -3,7 +3,7 @@ import { blends } from '../superseamoss/blend-preview-data.mjs';
 
 export const dispatch = Object.freeze({ postcode: 'B36 0PF', latitude: 52.495898, longitude: -1.742862, radiusMiles: 10 });
 export class CheckoutError extends Error {
-  constructor(message, status = 400) { super(message); this.status = status; }
+  constructor(message, status = 400, code = 'CHECKOUT_ERROR') { super(message); this.status = status; this.code = code; }
 }
 const text = (value, label, max = 100, optional = false) => {
   if (typeof value !== 'string' || value.length > max || /[\x00-\x1f]/.test(value) || (!optional && !value.trim())) throw new CheckoutError('Enter a valid ' + label + '.');
@@ -52,6 +52,10 @@ export function milesBetween(a, b) {
 export function calculateQuote(cart, postcodeData, requestedMethod = 'auto') {
   if (!['auto', 'local', 'shipping'].includes(requestedMethod)) throw new CheckoutError('Choose a delivery method.');
   if (!['England', 'Scotland', 'Wales'].includes(postcodeData.country) || !Number.isFinite(postcodeData.latitude) || !Number.isFinite(postcodeData.longitude)) throw new CheckoutError('This test supports UK mainland delivery addresses.');
+  const outward = (postcodeData.postcode || '').split(' ')[0];
+  const islandDistricts = ['Na h-Eileanan Siar', 'Orkney Islands', 'Shetland Islands', 'Isle of Wight', 'Isles of Scilly', 'Isle of Anglesey'];
+  // Conservatively exclude mixed mainland/island postal districts in this pilot.
+  if (islandDistricts.includes(postcodeData.admin_district) || /^(HS\d|ZE\d|KW1[5-7]$|PO(?:3\d|4[01])$|TR2[1-5]$|KA2[78]$|PA(?:20|4[1-9]|6\d|7[0-8])$|IV(?:4\d|51|55|56)$)/.test(outward)) throw new CheckoutError('National delivery to this postcode is not quoted in this test. Please use the main checkout or contact the team.');
   const distanceMiles = milesBetween(dispatch, postcodeData);
   const localEligible = distanceMiles <= dispatch.radiusMiles;
   if (requestedMethod === 'local' && !localEligible) throw new CheckoutError('This postcode is outside the 10-mile local delivery area. Choose national delivery.');

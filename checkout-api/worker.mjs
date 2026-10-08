@@ -12,7 +12,7 @@ export async function signQuote(payload, secret) {
   const sig = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   return body + '.' + sig;
 }
-export async function verifyQuote(token, secret) {
+export async function verifyQuote(token, secret, { allowExpired = false } = {}) {
   try {
     if (typeof token !== 'string' || token.length > 8000) throw new Error();
     const [body, signature, extra] = token.split('.');
@@ -20,9 +20,10 @@ export async function verifyQuote(token, secret) {
     const bytes = Uint8Array.from(atob(signature.replace(/-/g, '+').replace(/_/g, '/')), char => char.charCodeAt(0));
     if (!await crypto.subtle.verify('HMAC', await signingKey(secret), bytes, encoder.encode(body))) throw new Error();
     const payload = JSON.parse(decode(body));
-    if (payload.version !== 1 || payload.expiresAt < Date.now() || !/^[0-9a-f-]{36}$/.test(payload.id)) throw new Error();
+    if (payload.version !== 1 || !Number.isFinite(payload.expiresAt) || !/^[0-9a-f-]{36}$/.test(payload.id)) throw new Error();
+    if (!allowExpired && payload.expiresAt < Date.now()) throw new CheckoutError('Your delivery quote expired. Check delivery again.', 409, 'QUOTE_EXPIRED');
     return payload;
-  } catch { throw new CheckoutError('Your checkout quote has expired or changed. Check delivery again.', 409); }
+  } catch (error) { if (error instanceof CheckoutError) throw error; throw new CheckoutError('Your checkout quote has changed. Check delivery again.', 409, 'QUOTE_INVALID'); }
 }
 async function square(env, path, body) {
   const response = await fetch(SQUARE_API + path, { method: 'POST', headers: { Authorization: 'Bearer ' + env.SQUARE_ACCESS_TOKEN, 'Content-Type': 'application/json', 'Square-Version': VERSION }, body: JSON.stringify(body), signal: AbortSignal.timeout(20000) });
@@ -64,23 +65,40 @@ export default {
         const payload = { version: 1, id: crypto.randomUUID(), expiresAt: Date.now() + 15 * 60 * 1000, cart, recipient, quote };
         return respond({ quote, token: await signQuote(payload, env.QUOTE_SECRET), expiresAt: payload.expiresAt });
       }
-      const payload = await verifyQuote(body.quoteToken, env.QUOTE_SECRET);
+      const payload = await verifyQuote(body.quoteToken, env.QUOTE_SECRET, { allowExpired: true });
       if (typeof body.sourceId !== 'string' || body.sourceId.length < 5 || body.sourceId.length > 300) throw new CheckoutError('Square could not read the test card.');
+      if (!env.DB) throw new CheckoutError('Payment recovery is not connected yet.', 503);
+      let attempt = await env.DB.prepare('SELECT * FROM payment_attempts WHERE quote_id = ?').bind(payload.id).first();
+      if (!attempt) {
+        if (payload.expiresAt < Date.now()) throw new CheckoutError('Your delivery quote expired before payment started. Check delivery again.', 409, 'QUOTE_EXPIRED');
+        // The first card token is saved atomically before contacting Square. An expired
+        // quote can only resume that existing attempt, never start a new payment.
+        await env.DB.prepare('INSERT OR IGNORE INTO payment_attempts (quote_id, source_id, started_at) VALUES (?, ?, ?)').bind(payload.id, body.sourceId, Date.now()).run();
+        attempt = await env.DB.prepare('SELECT * FROM payment_attempts WHERE quote_id = ?').bind(payload.id).first();
+      }
+      if (attempt.status === 'paid') return respond(JSON.parse(attempt.result_json));
+      if (attempt.status === 'declined') throw new CheckoutError('Square declined this test payment. Check delivery again to start a new attempt.', 402);
       // Both keys derive from the signed quote, never from client-supplied prices or keys.
       // Retrying the same quote and card token returns the same Square payment.
       const { order } = await square(env, '/v2/orders', { idempotency_key: 'o-' + payload.id, order: squareOrder(payload, env.SQUARE_LOCATION_ID) });
       if (order.total_money?.amount !== payload.quote.total || order.total_money?.currency !== 'GBP') throw new CheckoutError('The Square total does not match your delivery quote.', 502);
       const { recipient: r, quote: q } = payload;
-      const { payment } = await square(env, '/v2/payments', {
-        source_id: body.sourceId, idempotency_key: 'p-' + payload.id, amount_money: { amount: q.total, currency: 'GBP' },
+      let payment;
+      try { ({ payment } = await square(env, '/v2/payments', {
+        source_id: attempt.source_id, idempotency_key: 'p-' + payload.id, amount_money: { amount: q.total, currency: 'GBP' },
         location_id: env.SQUARE_LOCATION_ID, order_id: order.id, autocomplete: true,
         buyer_email_address: r.email, shipping_address: { first_name: r.givenName, last_name: r.familyName, address_line_1: r.addressLine1, address_line_2: r.addressLine2, locality: r.city, postal_code: r.postcode, country: 'GB' },
         note: `SANDBOX Super Seamoss: ${q.method} delivery to ${r.postcode}`
-      });
+      })); } catch (error) {
+        if (error.status === 402) await env.DB.prepare("UPDATE payment_attempts SET status = 'declined', source_id = NULL WHERE quote_id = ? AND status = 'pending'").bind(payload.id).run();
+        throw error;
+      }
       if (payment.status !== 'COMPLETED') throw new CheckoutError('Square has not confirmed this payment yet. Retry the same payment to check its outcome.', 409);
-      return respond({ mode: 'sandbox', paymentId: payment.id, orderId: order.id, status: payment.status, receiptUrl: payment.receipt_url, total: q.total, method: q.method, postcode: r.postcode });
+      const result = { mode: 'sandbox', paymentId: payment.id, orderId: order.id, status: payment.status, receiptUrl: payment.receipt_url, total: q.total, method: q.method, postcode: r.postcode };
+      await env.DB.prepare("UPDATE payment_attempts SET status = 'paid', source_id = NULL, result_json = ? WHERE quote_id = ?").bind(JSON.stringify(result), payload.id).run();
+      return respond(result);
     } catch (error) {
-      if (error instanceof CheckoutError) return respond({ error: error.message }, error.status);
+      if (error instanceof CheckoutError) return respond({ error: error.message, code: error.code }, error.status);
       if (error instanceof RangeError) return respond({ error: 'Choose an available jar size and quantity.' }, 400);
       if (error instanceof SyntaxError) return respond({ error: 'Invalid checkout request.' }, 400);
       return respond({ error: 'The test checkout could not reach Square or the postcode service. Retry the same payment if you already submitted it.' }, 503);

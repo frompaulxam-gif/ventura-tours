@@ -16,6 +16,12 @@ for 15 minutes. Payment creation only uses those signed values. Square's browser
 SDK handles card entry and SCA. Both Square idempotency keys derive from the quote
 ID, so a retry uses the same order and payment. The card billing postcode is filled
 from delivery details after Square recognises the card, unless the buyer edited it.
+The private D1 payment record stores the original attempt before calling Square.
+An expired unused quote can be renewed; a payment already started is reconciled
+with its original token and idempotency keys, even after the quote expires. Card
+tokens are discarded when payment is completed or declined. Island postal areas
+are excluded from national quotes in this pilot, including some mixed mainland
+and island districts; those customers can use the main checkout or contact the team.
 
 Square's DELIVERY fulfilment is a restricted partner beta. We use SHIPMENT with
 an explicit local courier line item, metadata and fulfilment note, so the address
