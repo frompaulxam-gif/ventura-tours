@@ -1,0 +1,46 @@
+/* B version: native 4K footage, scrubbed by document scroll. */
+.duo-scroll{background:#f2f5f4;height:330svh;min-height:2100px}
+.duo-scroll .hero{background:#f2f5f4;color:#151515;isolation:isolate;min-height:650px}
+.duo-scroll .hero:after{display:none}
+.duo-stage{position:absolute;inset:0;overflow:hidden;z-index:-1;background:#f2f5f4}
+.duo-stage canvas,.duo-poster{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
+.duo-stage canvas{opacity:0}
+.duo-stage[data-ready=true] canvas{opacity:1}
+.duo-stage[data-ready=true] .duo-poster{opacity:0}
+.duo-scroll .hero-title{top:122px;left:5%;right:auto;text-align:left;width:42%;pointer-events:none}
+.duo-scroll .hero-title p{color:#515451;font-size:10px;letter-spacing:.08em}
+.duo-scroll .hero-headlines{font-size:clamp(44px,5.1vw,78px);font-weight:700;line-height:1.02;letter-spacing:-.04em}
+.duo-scroll .hero-headline span{color:#c84408}
+.duo-scroll .hero-bottom{left:5%;right:5%;color:#232623;align-items:flex-start;bottom:34px}
+.duo-scroll .hero-bottom p,.duo-scroll .hero-location{color:#434743}
+.duo-scroll .hero-location{position:absolute;right:0;bottom:0}
+@media(max-width:900px){
+ .duo-scroll{height:310svh;min-height:1850px}
+ .duo-scroll .hero{min-height:620px}
+ .duo-scroll .hero-title{top:110px;left:6%;right:6%;width:auto;text-align:center}
+ .duo-scroll .hero-headlines{font-size:clamp(41px,10vw,64px)}
+ .duo-scroll .hero-title p{font-size:9px}
+ .duo-scroll .hero-bottom{left:6%;right:6%;align-items:center;bottom:24px;gap:10px}
+ .duo-scroll .hero-location{position:static;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .duo-scroll{height:auto;min-height:0}
+ .duo-scroll .hero{position:relative;height:100svh}
+}
+
+.duo-poster{width:auto;height:100%;max-width:none;left:68%;top:58%;transform:translate(-50%,-50%)}
+@media(max-width:900px){.duo-poster{width:138.8889%;height:auto;max-height:50%;object-fit:contain;left:50%;top:55%}}
+@media(max-width:900px){
+ .duo-stage canvas,.duo-poster{mask-image:linear-gradient(to bottom,#000 64%,transparent 82%)}
+}
+
+.duo-video{position:absolute;inset:0;opacity:0;pointer-events:none}
+.duo-video video{position:absolute;max-width:none}
+.duo-stage[data-ready=true] .duo-video{opacity:1}
+@media(max-width:900px){.duo-video{mask-image:linear-gradient(to bottom,#000 64%,transparent 82%)}}
+
+/* Keep the shorter mobile clip softly blended into the hero. */
+@media(max-width:900px){
+ .duo-video{mask-image:none}
+ .duo-video video,.duo-poster{mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 73%,transparent 100%)}
+}

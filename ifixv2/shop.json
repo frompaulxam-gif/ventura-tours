@@ -1,0 +1,16 @@
+{
+  "name": "iFix Mobile & Watch Repair",
+  "slug": "ifix-mobile-watch",
+  "phone": "07708901000",
+  "whatsapp": "447708901000",
+  "address": "49A Gallowtree Gate, Leicester LE1 5AD",
+  "rating": "4.8",
+  "reviews": 210,
+  "maps": "https://www.google.com/maps?cid=8519808687112283734",
+  "checked": "2026-10-08",
+  "media": "ifix-mobile-watch",
+  "accent": "#ed3037",
+  "headerSurface": "#2e3134",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": null
+}

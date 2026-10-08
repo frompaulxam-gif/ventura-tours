@@ -1,0 +1,16 @@
+{
+  "name": "iBuy",
+  "slug": "ibuy",
+  "phone": "07902700204",
+  "whatsapp": "447902700204",
+  "address": "39 Church Gate, Leicester LE1 3AL",
+  "rating": "4.8",
+  "reviews": 37,
+  "maps": "https://www.google.com/maps?cid=16071342728129390017",
+  "checked": "2026-10-08",
+  "media": "ibuy",
+  "accent": "#ffe500",
+  "headerSurface": "#fef105",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": null
+}

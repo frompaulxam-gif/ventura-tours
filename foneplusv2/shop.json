@@ -1,0 +1,16 @@
+{
+  "name": "FonePlus",
+  "slug": "foneplus",
+  "phone": "07447425001",
+  "whatsapp": "447447425001",
+  "address": "18 Haymarket, Leicester LE1 3GD",
+  "rating": "3.6",
+  "reviews": 48,
+  "maps": "https://www.google.com/maps?cid=17893068033645213016",
+  "checked": "2026-10-08",
+  "media": "foneplus",
+  "accent": "#e3282b",
+  "headerSurface": "#fff1ef",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": null
+}

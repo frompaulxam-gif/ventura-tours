@@ -1,0 +1,16 @@
+{
+  "name": "Dr Mobile",
+  "slug": "dr-mobile",
+  "phone": "07784177770",
+  "whatsapp": "447784177770",
+  "address": "30a Belgrave Gate, Leicester LE1 3GP",
+  "rating": "4.8",
+  "reviews": 322,
+  "maps": "https://www.google.com/maps?cid=9964416070766792116",
+  "checked": "2026-10-08",
+  "media": "dr-mobile",
+  "accent": "#00a7d8",
+  "headerSurface": "#e3f5fb",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": null
+}

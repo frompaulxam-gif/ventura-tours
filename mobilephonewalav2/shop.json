@@ -1,0 +1,16 @@
+{
+  "name": "Mobile Phonewala",
+  "slug": "mobile-phonewala",
+  "phone": "07777748782",
+  "whatsapp": "447777748782",
+  "address": "116 Granby St, Leicester LE1 1DL",
+  "rating": "5.0",
+  "reviews": 208,
+  "maps": "https://www.google.com/maps?cid=7159199847580919588",
+  "checked": "2026-10-08",
+  "media": "mobile-phonewala",
+  "accent": "#c9aa58",
+  "headerSurface": "#404040",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": null
+}

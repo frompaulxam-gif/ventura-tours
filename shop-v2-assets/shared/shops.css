@@ -1,0 +1,26 @@
+
+.logo-crop{width:225px!important;height:57px!important;overflow:visible;display:flex;align-items:center;justify-content:flex-start}.logo-crop img{position:static!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain;filter:none!important;left:auto!important;top:auto!important;border-radius:3px}.site-header{background:rgba(255,255,255,.84);color:#191919;border-color:#0001}.site-header .header-cta{border-color:#0003;background:#fff5}.logo-window{--logo-h:57px;display:block;position:relative;overflow:hidden;aspect-ratio:var(--ratio);width:min(100%,calc(var(--logo-h)*var(--ratio)))}.logo-crop .logo-window img{position:absolute!important;height:auto!important;max-width:none!important;max-height:none!important;border-radius:0}.logo-text{font-size:20px;font-weight:750;line-height:1.05;letter-spacing:-.03em}.brand-intro-veil{background:#f2f5f4}.shop-intro{background:transparent}.duo-scroll .hero-headline span{color:var(--orange-dark)}.orange{color:var(--button-ink)}.orange:hover{background:var(--orange);filter:brightness(.94)}.screen-expansion{background:var(--tint)}.visit{background:var(--shop-ink)}.assurance{background:var(--shop-ink)}.review-strip{display:flex;justify-content:center;gap:22px;align-items:center;padding:25px 6%;flex-wrap:wrap}.shop-rating{font-size:24px;font-weight:700}.shop-rating .star{color:#d4a000}.review-source{text-decoration:underline;text-underline-offset:4px;font-size:14px}.review-date{font-size:12px;color:#666}.review-quote{max-width:450px;text-align:center;font-size:14px}.review-quote cite{display:block;font-style:normal;font-size:12px;color:#666;margin-top:6px}.visit address{line-height:1.6}.hero-headlines{max-width:100%}.hero-review-star{font-size:.55em}.diagnosis-dialog h2 span{color:var(--orange)}
+@media(max-width:700px){.logo-crop{width:158px!important;height:44px!important}.logo-window{--logo-h:44px}.logo-text{font-size:16px}.review-strip{gap:14px}.review-quote{flex-basis:100%}.shop-rating{font-size:21px}}@media(max-width:365px){.duo-scroll .hero-headlines{font-size:9.6vw}.logo-crop{width:135px!important}.site-header .header-cta{font-size:10px}.logo-text{font-size:14px}}
+
+/* Brand surfaces and browser-only logo keys preserve the supplied artwork. */
+.site-header{background:var(--brand-surface);color:var(--header-ink);border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 8px 30px #00000012}
+.site-header .header-cta{color:var(--header-ink);background:transparent;border-color:currentColor;opacity:1}
+.site-header .header-cta:hover{background:var(--header-hover);border-color:currentColor}
+.site-header .brand{mix-blend-mode:normal}
+.logo-crop{mix-blend-mode:var(--logo-blend,normal)}
+.logo-crop .logo-window img{filter:var(--logo-filter,none)!important}
+.brand-intro-veil{background:var(--brand-surface);pointer-events:none}
+.shop-intro{background:transparent;pointer-events:none;will-change:transform,opacity;mix-blend-mode:var(--logo-blend,normal)}
+.shop-intro>.logo-window{width:100%;height:100%;max-width:none}
+.brand-intro-pending .site-header .brand{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.shop-intro{display:none}.brand-intro-pending .site-header .brand{visibility:visible}}
+
+.logo-text{display:block}.shop-intro>.logo-text{width:100%;height:100%}
+
+.logo-lockup{display:flex;align-items:center;gap:11px;max-width:100%;width:max-content;color:var(--header-ink)}
+.logo-crop .logo-lockup .logo-window{flex:0 0 auto;width:min(48px,calc(55px * var(--ratio)));height:auto;max-height:none}
+.identity-name{font-size:18px;font-weight:750;line-height:1.08;letter-spacing:-.035em;max-width:160px}
+@media(max-width:700px){.logo-lockup{gap:8px}.logo-crop .logo-lockup .logo-window{width:min(36px,calc(44px * var(--ratio)));max-height:none}.identity-name{font-size:14px;max-width:110px}}
+@media(max-width:365px){.logo-lockup{gap:6px}.logo-crop .logo-lockup .logo-window{width:29px}.identity-name{font-size:13px;max-width:100px}}
+@media(min-width:901px){.duo-scroll .hero-location{max-width:39%;font-size:12px;line-height:1.45;font-weight:500;color:#303630;background:#f2f5f4ed;border:1px solid #0000000c;border-radius:7px;padding:7px 10px;text-align:right}}
+.shop-intro{color:var(--header-ink)}

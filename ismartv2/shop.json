@@ -1,0 +1,16 @@
+{
+  "name": "iSmart",
+  "slug": "ismart",
+  "phone": "07535777181",
+  "whatsapp": "447535777181",
+  "address": "16 Humberstone Gate, Leicester LE1 3PH",
+  "rating": "4.8",
+  "reviews": 172,
+  "maps": "https://www.google.com/maps?cid=4026671892896510817",
+  "checked": "2026-10-08",
+  "media": "ismart",
+  "accent": "#ec00df",
+  "headerSurface": "#fbeafa",
+  "pricing": "Proposed: UK Telecom template +15%, rounded to nearest \u00a35",
+  "diagnosticPence": 1000
+}
