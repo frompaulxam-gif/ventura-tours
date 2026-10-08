@@ -2,3 +2,6 @@
 references/
 backups/
 .claude/
+.wrangler/
+.dev.vars*
+.env*

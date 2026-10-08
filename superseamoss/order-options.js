@@ -22,6 +22,25 @@ if (form) {
   const setText = (selector, value) => { document.querySelector(selector).textContent = value; };
 
   const renderCheckout = createSquareCheckout(form);
+  const testPanel = document.createElement('div');
+  testPanel.className = 'order-square';
+  const testHeading = document.createElement('h3');
+  testHeading.textContent = 'Try the local delivery test';
+  const testNote = document.createElement('p');
+  testNote.className = 'order-shipping-note';
+  testNote.textContent = '£5 within 10 miles of B36 0PF. Enter your address once and try the new Square Sandbox checkout. No real payment or dispatch. Live discount codes stay in the normal checkout above.';
+  const testLink = document.createElement('a');
+  testLink.className = 'button';
+  testLink.href = 'checkout-test.html';
+  testLink.textContent = 'Test local delivery checkout';
+  testPanel.append(testHeading, testNote, testLink);
+  form.querySelector('.order-enquiry-fallback').before(testPanel);
+  testLink.addEventListener('click', event => {
+    const data = new FormData(form), quantity = Number(data.get('jar-count'));
+    if (data.get('purchase-type') === 'subscription') { event.preventDefault(); return; }
+    const cart = { size: data.get('jar-size'), quantity, blends: selects.slice(0, quantity).map(select => ({ id: select.value, ...(select.value === 'manuka-glow' ? { recipe: select.dataset.recipe || 'original' } : {}) })) };
+    sessionStorage.setItem('seamoss-checkout-test-cart', JSON.stringify(cart));
+  });
   const render = () => {
     const data = new FormData(form);
     const size = data.get('jar-size');
@@ -91,6 +110,7 @@ if (form) {
     tasterNote.hidden = !duplicateTaster;
     tasterNote.textContent = duplicateTaster ? 'Choose three different blends for your taster trio. Change any repeated blend below to continue.' : '';
     renderCheckout(size, quantity, subscription, blends, blendIds);
+    testPanel.hidden = subscription || duplicateTaster;
     const items = blends.join(', ');
     const delivery = quote.delivery ? money(quote.delivery) : 'free';
     enquiry.value = 'Hi Super Seamoss, ' + (subscription ? 'I’m interested in monthly Subscribe & Save 10% for ' : 'I’d like ') + quantity + ' × ' + size + (quantity > 1 ? ' jars: ' : ' jar: ') + items + '. Jars: ' + money(quote.jarSubtotal) + (subscription ? ' per month' : '') + '. Chilled UK mainland delivery: ' + delivery + '. Total: ' + money(quote.total) + (subscription ? ' per month. Cancel anytime.' : '.') + ' I understand preparation and dispatch take 3 to 4 working days after my order is confirmed. Please confirm availability, delivery and how to provide my email for the dispatch update.';

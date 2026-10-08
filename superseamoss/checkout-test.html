@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Delivery checkout test | Super Seamoss</title>
+  <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="styles.css?v=wide-scenes1">
+  <link rel="stylesheet" href="checkout-test.css?v=1">
+  <script src="https://sandbox.web.squarecdn.com/v1/square.js" defer></script>
+  <script type="module" src="checkout-test.mjs?v=1"></script>
+</head>
+<body class="checkout-page">
+  <header class="checkout-header"><a href="./" aria-label="Super Seamoss home"><img src="assets/logo-mark.webp" alt="Super Seamoss" width="60" height="60"><span>Super Seamoss</span></a><a href="./#order-choices">Back to your blends</a></header>
+  <main class="checkout-wrap">
+    <div class="sandbox-note"><strong>Square Sandbox test</strong><span>No real payment. No jars dispatched. Use invented contact details and Square test cards.</span></div>
+    <div class="checkout-heading"><p>YOUR BLENDS. DELIVERED.</p><h1>One address.<br>Your delivery sorted.</h1><p>£5 local delivery within 10 miles of B36 0PF. We check your delivery postcode before payment.</p></div>
+    <div class="checkout-layout">
+      <form id="delivery-form" class="checkout-details">
+        <h2>1. Delivery details</h2><p class="checkout-muted">Enter your address once. This is the address saved with your Square order.</p>
+        <div class="checkout-fields">
+          <label>First name<input name="givenName" autocomplete="given-name" maxlength="60" required></label>
+          <label>Last name<input name="familyName" autocomplete="family-name" maxlength="60" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" maxlength="120" required></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" maxlength="30" required></label>
+          <label class="full">Street address<input name="addressLine1" autocomplete="address-line1" maxlength="150" required></label>
+          <label class="full">Address line 2 <span>(optional)</span><input name="addressLine2" autocomplete="address-line2" maxlength="150"></label>
+          <label>Town or city<input name="city" autocomplete="address-level2" maxlength="100" required></label>
+          <label>Delivery postcode<input name="postcode" autocomplete="postal-code" maxlength="12" autocapitalize="characters" required placeholder="B36 0PF"></label>
+        </div>
+        <fieldset id="delivery-options" class="checkout-delivery" hidden><legend>Delivery method</legend>
+          <label><input type="radio" name="deliveryMethod" value="local"><span>Local courier<strong>£5</strong></span></label>
+          <label><input type="radio" name="deliveryMethod" value="shipping"><span>National chilled delivery<strong id="national-price">£9.95</strong></span></label>
+        </fieldset>
+        <button class="button button-dark" id="check-delivery" type="submit">Check delivery</button>
+        <p id="delivery-status" class="checkout-status" role="status" aria-live="polite">Distances use a straight-line radius between postcode centres. Street and house details are entered by you.</p>
+        <section id="payment-section" class="checkout-payment" hidden>
+          <h2>2. Pay securely with Square</h2>
+          <p class="checkout-muted">Your delivery postcode is filled into Square’s billing postcode field. You can change the billing postcode if needed.</p>
+          <div id="card-container"></div>
+          <details class="test-card-help"><summary>Square test card details</summary><p>UK card: 5248 4800 0021 0026<br>Expiry: 12/30 · CVV: 111<br>Test verification code: 123456<br>The delivery postcode is filled for you. Live cards won’t work here.</p></details>
+          <button class="button button-dark" id="pay-test" type="button" disabled>Pay test order</button>
+          <p class="checkout-status" id="payment-status" role="status" aria-live="polite"></p>
+        </section>
+      </form>
+      <aside class="checkout-summary" aria-label="Your order summary">
+        <p class="checkout-eyebrow">YOUR ORDER</p><h2 id="cart-title">1 × 330ml jar</h2><ul id="cart-blends"></ul>
+        <dl><div><dt>Jars</dt><dd id="jar-price">£25</dd></div><div><dt id="delivery-label">Delivery</dt><dd id="delivery-price">Check postcode</dd></div><div class="checkout-total"><dt>Test total</dt><dd id="total-price">—</dd></div></dl>
+        <p id="distance-note" class="checkout-muted">£5 for local courier delivery. National delivery is £9.95, or free when your jars total £50 or more.</p>
+        <p class="checkout-muted">This test covers one-off orders. Monthly subscriptions and your existing discount codes stay in the main checkout.</p>
+        <p class="checkout-muted">Fresh preparation takes 3–4 working days before dispatch.</p>
+      </aside>
+    </div>
+    <section id="test-success" class="checkout-success" tabindex="-1" hidden><h2>Test payment complete.</h2><p>Square processed this Sandbox payment. No money was taken and no jars will be dispatched.</p><p id="success-detail"></p><p id="success-ids" class="checkout-muted"></p><a class="button" href="checkout-test.html">Start another test</a></section>
+  </main>
+</body>
+</html>

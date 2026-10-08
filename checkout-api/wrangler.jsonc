@@ -1,0 +1,12 @@
+{
+  "name": "superseamoss-checkout-test",
+  "main": "worker.mjs",
+  "account_id": "be8daeb89d40360597623ce3dd102b4d",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": true,
+  "vars": {
+    "SQUARE_APPLICATION_ID": "sandbox-sq0idb-zb0se0h9EToAc7LEoeueFw",
+    "SQUARE_LOCATION_ID": "L3MKQVWFC2RBP",
+    "ALLOWED_ORIGINS": "https://venturasolutions.co.uk,http://localhost:8766"
+  }
+}
