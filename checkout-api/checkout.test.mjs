@@ -49,7 +49,7 @@ test('signed quotes reject changed prices, changed delivery addresses and expiry
 });
 test('checkout denies other browser origins and live voucher redemption', async () => {
   assert.equal((await worker.fetch(request('/quote', {}, 'https://unrelated.example'), env)).status, 403);
-  const result = await worker.fetch(request('/quote', { cart, recipient, discountCode: 'SHIPREKG7JX7' }), env);
+  const result = await worker.fetch(request('/quote', { cart, recipient, discountCode: 'DEMO-SHIPPING' }), env);
   assert.equal(result.status, 400);
 });
 test('payment uses the signed address and amount; retries keep the same Square idempotency keys', async () => {
