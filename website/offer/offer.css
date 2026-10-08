@@ -48,3 +48,47 @@
 
 .booking-source{margin-top:8px}
 @media(min-width:701px) and (max-width:1100px){.website-benefits{grid-template-columns:repeat(2,minmax(0,1fr))}.website-benefit{min-height:500px;aspect-ratio:4/5;padding:28px}.offer-grid-section .benefit-copy h3{font-size:42px}.benefit-stat strong{font-size:80px}.benefit-stat span{font-size:12px}.benefit-copy p{min-height:78px;font-size:16px}.offer-connectors{grid-template-columns:repeat(2,minmax(0,1fr))}.offer-connectors span:nth-child(n+3){display:none}}
+
+/* Clear, promotional pricing: white, blue, navy. */
+.package-grid{gap:18px;padding:24px;align-items:stretch}
+.package-card{--plan-muted:#60646d;--plan-rule:#e1e4e9;--plan-check:#eaf0fa;border:1px solid #d8dde5;border-radius:16px;padding:28px 24px;background:#fff;color:#111827}
+.package-card+.package-card{border-left:1px solid #d8dde5}
+.package-monthly{--plan-muted:#e1eaff;--plan-rule:#ffffff36;--plan-check:#ffffff1c;background:#1758d1;color:#fff;border-color:#1758d1}
+.package-yearly{--plan-muted:#c6d4ed;--plan-rule:#ffffff29;--plan-check:#ffffff12;background:#101f3d;color:#fff;border-color:#101f3d}
+.package-monthly+.package-yearly{border-color:#101f3d}
+.plan-topline{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:24px;min-height:24px}
+.package-number{font-size:10px;letter-spacing:.06em;color:var(--plan-muted);margin:0}
+.plan-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:6px 8px;border-radius:5px;background:#fff0f0;color:#b91c1c}
+.package-monthly .plan-badge{color:#fff;background:#ffffff24}
+.package-yearly .plan-badge{color:#112d66;background:#bcd7ff}
+.package-card h4{font-size:23px;letter-spacing:-.04em;font-weight:500;line-height:1.2;margin:0 0 10px}
+.package-description{font-size:13px;line-height:1.5;color:var(--plan-muted);margin:0 0 26px;min-height:39px}
+.package-price{margin:0 0 9px;gap:10px}
+.package-price strong{font-size:clamp(48px,4.4vw,70px);font-weight:600}
+.package-price del{color:#d92032;font-size:32px;text-decoration-thickness:2px}
+.package-price>span{font-size:14px}
+.price-caption{font-size:12px;line-height:1.5;color:var(--plan-muted);margin:0 0 22px;min-height:18px}
+.offer-deadline{margin:0 0 20px;border:1px solid #efb4b9;border-radius:10px;background:#fff0f1;padding:15px 16px;color:#b31527;min-height:118px}
+.offer-deadline #deadline-label{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600}
+.deadline-dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#d92032}
+.offer-deadline .countdown{font-size:clamp(25px,2.3vw,37px);font-weight:700;letter-spacing:-.035em;white-space:nowrap;margin:6px 0;line-height:1.25;color:#c8192c}
+.offer-deadline .deadline-date{font-size:10px;color:#9b2532}
+.plan-highlight{display:flex;gap:10px;align-items:center;min-height:118px;border:1px solid var(--plan-rule);border-radius:10px;padding:17px 15px;margin-bottom:20px;background:#ffffff0c}
+.plan-highlight>span{font-size:25px;color:#d6e6ff}
+.plan-highlight strong{font-size:21px;font-weight:500;letter-spacing:-.03em}
+.plan-highlight p{font-size:12px;line-height:1.5;margin:7px 0 0;color:var(--plan-muted)}
+.plan-cta{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:49px;border:1px solid currentColor;border-radius:8px;padding:13px 16px;font-size:14px;font-weight:600;background:#111827;color:#fff;margin-bottom:24px;transition:background .2s ease,transform .2s ease}
+.plan-cta>span{font-size:20px;font-weight:400}
+.plan-cta:hover{background:#303d53}
+.package-monthly .plan-cta{background:#fff;color:#1545a0;border-color:#fff}
+.package-yearly .plan-cta{background:#c6ddff;color:#102747;border-color:#c6ddff}
+.package-monthly .plan-cta:hover,.package-yearly .plan-cta:hover{background:#e3edff}
+.plan-features{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:0}
+.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;padding:12px 0;border-bottom:1px solid var(--plan-rule)}
+.plan-features li:last-child{border-bottom:0}
+.plan-features li>span{display:grid;place-items:center;flex:0 0 19px;width:19px;height:19px;border-radius:50%;background:var(--plan-check);font-size:11px;font-weight:600}
+.plan-features [hidden]{display:none}
+.package-note{color:var(--plan-muted);border-color:var(--plan-rule);font-size:11px;line-height:1.6;padding-top:17px}
+.package-footer>p>strong{font-weight:500;color:#111827}
+@media(min-width:701px) and (max-width:1050px){.package-grid{gap:10px;padding:16px}.package-card{padding:23px 16px}.plan-topline{flex-wrap:wrap;align-content:flex-start;min-height:50px;gap:7px}.package-card h4{font-size:20px;min-height:48px}.package-description{min-height:59px}.offer-deadline,.plan-highlight{padding:12px 10px;min-height:120px}.offer-deadline .countdown{font-size:24px}.plan-highlight{gap:7px}.plan-highlight>span{font-size:19px}.plan-highlight strong{font-size:20px}.plan-cta{padding:12px 10px;font-size:12px}.plan-features li{font-size:12px;gap:7px}.plan-features li>span{flex-basis:17px;width:17px;height:17px}}
+@media(max-width:700px){.package-grid{padding:16px;gap:16px}.package-card{padding:26px 22px}.package-card+.package-card{border:1px solid var(--plan-rule)}.package-card h4{font-size:24px}.package-description{min-height:0}.package-price strong{font-size:64px}.plan-topline{margin-bottom:24px}.offer-deadline .countdown{font-size:32px}.plan-highlight,.offer-deadline{min-height:114px}.package-footer{padding:25px}.plan-features li{font-size:14px}.price-caption{font-size:12px}.package-note{font-size:12px}}
