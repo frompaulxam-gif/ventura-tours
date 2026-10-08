@@ -1,6 +1,6 @@
 import { createIngredientGuide } from './ingredient-guide.mjs?v=1';
-import { blends, ingredients } from './blend-preview-data.mjs?v=water-colours1';
-import { selectedBlend } from './blend-recipes.mjs?v=expecting-mother-edition1';
+import { blends, ingredients } from './blend-preview-data.mjs?v=ingredient-capitals1';
+import { selectedBlend } from './blend-recipes.mjs?v=ingredient-capitals1';
 
 export function createBlendPreview(form, selects) {
   const root = document.querySelector('.blend-preview');
