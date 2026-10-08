@@ -3,16 +3,17 @@
 .offer-grid-section .offer-heading{margin-bottom:42px}
 .offer-grid-section .offer-eyebrow{color:#555;margin-bottom:22px}
 .offer-grid-section .offer-message{margin-top:22px}
-.website-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.website-benefit{position:relative;isolation:isolate;overflow:hidden;min-height:520px;aspect-ratio:3/4;border-radius:12px;background:#101421;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:30px}
+.website-benefits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.website-benefit{width:100%;min-width:0;position:relative;isolation:isolate;overflow:hidden;min-height:550px;aspect-ratio:2/3;border-radius:12px;background:#101421;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:26px}
 .website-benefit>img{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
-.website-benefit:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0002 0%,transparent 28%,#0005 48%,#000e 78%,#000 100%)}
+.website-benefit:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0009 0%,#0007 32%,#000b 54%,#000f 86%,#000 100%)}
 .website-benefit:hover>img{transform:scale(1.025)}
-.benefit-stat strong{display:block;font-size:clamp(60px,6.3vw,96px);line-height:1;letter-spacing:-.055em;font-weight:700}
+.benefit-stat strong{display:block;font-size:clamp(60px,5.8vw,86px);line-height:1;letter-spacing:-.055em;font-weight:700}
+.benefit-stat small{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em;position:absolute;top:10px}
 .benefit-stat span{display:block;margin-top:14px;font-size:12px;line-height:1.5;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
-.offer-grid-section .benefit-copy h3{font-size:clamp(30px,3.4vw,54px);line-height:1.06;letter-spacing:-.04em;font-weight:500;margin:48px 0 20px}
-.benefit-copy p{font-size:16px;line-height:1.6;color:#e2e8f1;margin:0;max-width:32ch;min-height:77px}
-.offer-connectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;height:42px}
+.offer-grid-section .benefit-copy h3{font-size:clamp(28px,2.8vw,44px);line-height:1.06;letter-spacing:-.04em;font-weight:500;margin:48px 0 20px}
+.benefit-copy p{font-size:16px;line-height:1.6;color:#e2e8f1;margin:0;max-width:32ch;min-height:104px}
+.offer-connectors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;height:42px}
 .offer-connectors span:before{content:"";display:block;height:100%;width:1px;background:#111;margin:auto}
 .website-package{border:1px solid #111;background:#fff}
 .package-heading{padding:32px;display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid #111}
@@ -44,3 +45,6 @@
 @media(max-width:1050px){.website-benefits,.offer-connectors{gap:16px}.website-benefit{padding:24px;min-height:470px;aspect-ratio:auto}.package-card{padding:26px 22px}.package-heading,.package-footer{padding:26px}.benefit-copy p{font-size:15px;min-height:96px}.benefit-stat span{font-size:11px}}
 @media(max-width:700px){.offer-grid-section .offer-heading{margin-bottom:30px}.website-benefits{grid-template-columns:1fr;gap:18px}.website-benefit{min-height:440px;aspect-ratio:4/5;padding:28px}.benefit-stat strong{font-size:76px}.benefit-stat span{font-size:12px}.offer-grid-section .benefit-copy h3{font-size:43px;margin:38px 0 18px}.benefit-copy p{font-size:16px;min-height:0;max-width:30ch}.offer-connectors{height:30px;display:block}.offer-connectors span{display:none}.offer-connectors span:nth-child(2){display:block;height:100%}.package-heading{display:block;padding:26px}.package-heading>p{margin-bottom:15px}.offer-grid-section .package-heading h3{font-size:30px;max-width:13em}.package-grid{grid-template-columns:1fr}.package-card{padding:28px 26px}.package-card+.package-card{border-left:0;border-top:1px solid #111}.package-number{margin-bottom:24px}.package-price strong{font-size:62px}.package-description{max-width:none}.package-footer{align-items:stretch;flex-direction:column;padding:26px;gap:20px}.package-footer .offer-cta{min-width:0}.offer-source{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.website-benefit>img{transition:none}.website-benefit:hover>img{transform:none}}
+
+.booking-source{margin-top:8px}
+@media(min-width:701px) and (max-width:1100px){.website-benefits{grid-template-columns:repeat(2,minmax(0,1fr))}.website-benefit{min-height:500px;aspect-ratio:4/5;padding:28px}.offer-grid-section .benefit-copy h3{font-size:42px}.benefit-stat strong{font-size:80px}.benefit-stat span{font-size:12px}.benefit-copy p{min-height:78px;font-size:16px}.offer-connectors{grid-template-columns:repeat(2,minmax(0,1fr))}.offer-connectors span:nth-child(n+3){display:none}}
