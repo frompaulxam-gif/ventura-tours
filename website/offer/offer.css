@@ -103,7 +103,7 @@
 @media(max-width:700px){.benefit-stat>span b{font-size:27px}.benefit-stat>span{font-size:14px}.benefit-stat>span em{font-size:11px}.benefit-copy h3>b{font-size:1em}}
 
 /* Reusable vector chevrons stay crisp at every button size. */
-.button-chevron{display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border:1px solid currentColor;border-radius:50%;opacity:.95}
+.button-chevron{display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border:0;border-radius:0;opacity:.95}
 .button-chevron:after{content:"";display:block;width:15px;height:15px;background:currentColor;-webkit-mask:url("./assets/chevron-right.svg") center/contain no-repeat;mask:url("./assets/chevron-right.svg") center/contain no-repeat;transition:transform .2s ease}
 a:hover>.button-chevron:after{transform:translateX(2px)}
 .offer-deadline{display:flex;flex-direction:column;justify-content:center}
