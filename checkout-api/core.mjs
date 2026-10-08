@@ -51,23 +51,19 @@ export function milesBetween(a, b) {
 }
 export function calculateQuote(cart, postcodeData, requestedMethod = 'auto') {
   if (!['auto', 'local', 'shipping'].includes(requestedMethod)) throw new CheckoutError('Choose a delivery method.');
-  if (!['England', 'Scotland', 'Wales'].includes(postcodeData.country) || !Number.isFinite(postcodeData.latitude) || !Number.isFinite(postcodeData.longitude)) throw new CheckoutError('This test supports UK mainland delivery addresses.');
-  const outward = (postcodeData.postcode || '').split(' ')[0];
-  const islandDistricts = ['Na h-Eileanan Siar', 'Orkney Islands', 'Shetland Islands', 'Isle of Wight', 'Isles of Scilly', 'Isle of Anglesey'];
-  // Conservatively exclude mixed mainland/island postal districts in this pilot.
-  if (islandDistricts.includes(postcodeData.admin_district) || /^(HS\d|ZE\d|KW1[5-7]$|PO(?:3\d|4[01])$|TR2[1-5]$|KA2[78]$|PA(?:20|4[1-9]|6\d|7[0-8])$|IV(?:4\d|51|55|56)$)/.test(outward)) throw new CheckoutError('National delivery to this postcode is not quoted in this test. Please use the main checkout or contact the team.');
+  if (!['England', 'Scotland', 'Wales'].includes(postcodeData.country) || !Number.isFinite(postcodeData.latitude) || !Number.isFinite(postcodeData.longitude)) throw new CheckoutError('This test quotes delivery in England, Scotland and Wales, including island postcodes.');
   const distanceMiles = milesBetween(dispatch, postcodeData);
   const localEligible = distanceMiles <= dispatch.radiusMiles;
   if (requestedMethod === 'local' && !localEligible) throw new CheckoutError('This postcode is outside the 10-mile local delivery area. Choose national delivery.');
   const shipping = priceOrder(cart.size, cart.quantity, false, 'shipping', cart.blends.map(item => item.id));
   // Preserve free national delivery for £50+ orders. Local courier delivery is a flat £5.
-  const method = requestedMethod === 'shipping' || !localEligible ? 'shipping' : 'local';
+  const method = requestedMethod === 'shipping' || !localEligible || (requestedMethod === 'auto' && shipping.delivery === 0) ? 'shipping' : 'local';
   const delivery = method === 'local' ? 500 : shipping.delivery;
   return { jarSubtotal: shipping.jarSubtotal, delivery, total: shipping.jarSubtotal + delivery, method, localEligible, distanceMiles: Math.round(distanceMiles * 10) / 10, radiusMiles: dispatch.radiusMiles, dispatchPostcode: dispatch.postcode };
 }
 export function squareOrder(payload, locationId) {
   const { cart, recipient: r, quote: q } = payload;
-  const deliveryLabel = q.method === 'local' ? 'Local delivery within 10 miles of B36 0PF' : 'Chilled UK mainland delivery';
+  const deliveryLabel = q.method === 'local' ? 'Local delivery within 10 miles of B36 0PF' : 'National chilled delivery';
   return {
     location_id: locationId, reference_id: payload.id,
     line_items: [{ name: `${cart.quantity} × ${cart.size} Super Seamoss`, quantity: '1', note: cart.blends.map((blend, i) => `Jar ${i + 1}: ${blend.name}`).join('; '), base_price_money: { amount: q.jarSubtotal, currency: 'GBP' } },

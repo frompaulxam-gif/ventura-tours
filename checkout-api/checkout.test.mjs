@@ -32,12 +32,14 @@ test('national rates, special jars and bundle prices remain authoritative', () =
   const pair = normaliseCart({ size: '330ml', quantity: 2, blends: [{ id: 'manuka-glow' }, { id: 'king-strength' }] });
   assert.equal(calculateQuote(pair, centre, 'shipping').total, 5000);
   assert.equal(calculateQuote(pair, centre, 'local').total, 5500);
+  assert.equal(calculateQuote(pair, centre).method, 'shipping');
+  assert.equal(calculateQuote(pair, centre).total, 5000);
   const ocean = normaliseCart({ size: '330ml', quantity: 1, blends: [{ id: 'ocean-gold' }] });
   assert.equal(calculateQuote(ocean, centre).total, 2000);
   assert.throws(() => normaliseCart({ size: '141ml', quantity: 3, blends: [{ id: 'manuka-glow' }, { id: 'manuka-glow' }, { id: 'king-strength' }] }), /different/);
   assert.throws(() => normaliseCart({ size: '720ml', quantity: 4, blends: [] }));
   assert.throws(() => calculateQuote(cart, { ...centre, country: 'Northern Ireland' }));
-  assert.throws(() => calculateQuote(cart, { country: 'Scotland', postcode: 'HS1 2AD', latitude: 58.209, longitude: -6.389 }), /not quoted/);
+  assert.equal(calculateQuote(cart, { country: 'Scotland', postcode: 'HS1 2AD', latitude: 58.209, longitude: -6.389 }).total, 3495);
 });
 test('address, blend recipe and local courier instructions survive into the Square order', () => {
   const order = squareOrder({ id: 'test', cart, recipient, quote: calculateQuote(cart, centre) }, 'test-location');

@@ -8,8 +8,8 @@ The server validates the order against the existing jar and bundle prices,
 looks up the full delivery postcode with Postcodes.io and measures the straight-line
 distance from the B36 0PF postcode centre (52.495898, -1.742862). The local courier
 fee is £5 at up to 10 miles. National chilled delivery uses the shop's existing
-£9.95 / free above £50 pricing. Customers can choose free national delivery on
-eligible larger orders rather than paying £5 for the local courier.
+£9.95 / free at £50+ pricing. Eligible larger orders automatically select free
+national delivery; customers within the local radius can still choose the £5 courier.
 
 The address is entered once. A signed quote binds the order, address and price
 for 15 minutes. Payment creation only uses those signed values. Square's browser
@@ -19,9 +19,8 @@ from delivery details after Square recognises the card, unless the buyer edited 
 The private D1 payment record stores the original attempt before calling Square.
 An expired unused quote can be renewed; a payment already started is reconciled
 with its original token and idempotency keys, even after the quote expires. Card
-tokens are discarded when payment is completed or declined. Island postal areas
-are excluded from national quotes in this pilot, including some mixed mainland
-and island districts; those customers can use the main checkout or contact the team.
+tokens are discarded when payment is completed or declined. National quotes cover
+England, Scotland and Wales, including island postcodes, as authorised for this test.
 
 Square's DELIVERY fulfilment is a restricted partner beta. We use SHIPMENT with
 an explicit local courier line item, metadata and fulfilment note, so the address

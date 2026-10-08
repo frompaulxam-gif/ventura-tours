@@ -85,7 +85,7 @@ form.addEventListener('submit', async event => {
     document.querySelector('#total-price').textContent = money(q.total);
     const distanceText = `${q.distanceMiles} miles from ${q.dispatchPostcode}, measured between postcode centres.`;
     document.querySelector('#distance-note').textContent = distanceText;
-    const freeChoice = q.localEligible && !jarQuote.delivery ? ' Your jars also qualify for free national delivery. Choose National chilled delivery and check again if you prefer it.' : '';
+    const freeChoice = q.localEligible && !jarQuote.delivery ? (q.method === 'shipping' ? ' Free national delivery is selected. The £5 local courier is still available if you prefer it.' : ' You chose the £5 local courier. Free national delivery is also available.') : '';
     status(deliveryStatus, (q.localEligible ? `${recipient.postcode} qualifies for £5 local delivery. ${distanceText}` : `${recipient.postcode} is outside the 10-mile local area. National delivery is available. ${distanceText}`) + freeChoice, 'success');
     document.querySelector('#payment-section').hidden = false;
     payButton.textContent = 'Pay ' + money(q.total) + ' test order'; payButton.disabled = false;
