@@ -92,3 +92,12 @@
 .package-footer>p>strong{font-weight:500;color:#111827}
 @media(min-width:701px) and (max-width:1050px){.package-grid{gap:10px;padding:16px}.package-card{padding:23px 16px}.plan-topline{flex-wrap:wrap;align-content:flex-start;min-height:50px;gap:7px}.package-card h4{font-size:20px;min-height:48px}.package-description{min-height:59px}.offer-deadline,.plan-highlight{padding:12px 10px;min-height:120px}.offer-deadline .countdown{font-size:24px}.plan-highlight{gap:7px}.plan-highlight>span{font-size:19px}.plan-highlight strong{font-size:20px}.plan-cta{padding:12px 10px;font-size:12px}.plan-features li{font-size:12px;gap:7px}.plan-features li>span{flex-basis:17px;width:17px;height:17px}}
 @media(max-width:700px){.package-grid{padding:16px;gap:16px}.package-card{padding:26px 22px}.package-card+.package-card{border:1px solid var(--plan-rule)}.package-card h4{font-size:24px}.package-description{min-height:0}.package-price strong{font-size:64px}.plan-topline{margin-bottom:24px}.offer-deadline .countdown{font-size:32px}.plan-highlight,.offer-deadline{min-height:114px}.package-footer{padding:25px}.plan-features li{font-size:14px}.price-caption{font-size:12px}.package-note{font-size:12px}}
+
+/* Let the claim stand out; keep context and attribution quiet. */
+.benefit-stat>span{font-size:14px;font-weight:400;line-height:1.45;letter-spacing:0;text-transform:none;color:#e0e4ed;margin-top:16px}
+.benefit-stat>span b{display:block;font-size:clamp(22px,1.9vw,30px);line-height:1.12;font-weight:700;letter-spacing:-.025em;color:#fff;margin:6px 0}
+.benefit-stat>span em{display:block;font-size:11px;line-height:1.4;font-style:normal;font-weight:400;color:#c5cdda;margin-top:12px}
+.benefit-copy h3>span{display:block;font-size:.79em;line-height:1.2;font-weight:400;letter-spacing:-.035em;color:#dce1eb;margin-bottom:3px}
+.benefit-copy h3>b{display:block;font-size:1.08em;line-height:1.06;font-weight:700;letter-spacing:-.04em;color:#fff}
+@media(min-width:701px) and (max-width:1100px){.benefit-stat>span b{font-size:29px}.benefit-stat>span{font-size:14px}}
+@media(max-width:700px){.benefit-stat>span b{font-size:27px}.benefit-stat>span{font-size:14px}.benefit-stat>span em{font-size:11px}.benefit-copy h3>b{font-size:1em}}
