@@ -1,0 +1,14 @@
+{
+  "name": "tiktokedit5-feedback",
+  "main": "worker.mjs",
+  "account_id": "be8daeb89d40360597623ce3dd102b4d",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tiktokedit5-feedback",
+      "database_id": "5c09a96b-7e22-4a66-88ee-d3b9a3a19612"
+    }
+  ]
+}
