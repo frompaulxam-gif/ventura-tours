@@ -6,6 +6,7 @@ async function load(){
   const {manifest,registry,round}=await reviewRound(),key='paulqc:'+manifest.id;
   reviewRoundOptions(registry,round,document.querySelector('#round'));document.querySelector('#back').href=`./?round=${encodeURIComponent(round.id)}`;
   const data={draft:reviewStorage.get(key,{}),submissions:reviewStorage.get(key+':submissions',{submissions:[]}).submissions};
+  try{const online=await reviewServerState(manifest,key);if(online.draft?.updated>(data.draft.updated||''))data.draft=online.draft;data.submissions=reviewMergeRows(online.submissions||[],data.submissions);reviewStorage.set(key+':submissions',{submissions:data.submissions});}catch{}
   document.querySelector('#download').addEventListener('click',()=>{const report=reviewReport(manifest,data.draft);report.savedReviews=data.submissions||[];reviewDownload(report,`navy-stripey-${round.id}-feedback.json`);});
   root.replaceChildren();
   const draft=data.draft||{},rows=[{...draft,name:'current feedback',ts:draft.updated,ids:manifest.videos.flatMap(v=>v.shots.map(s=>s.id)),answers:manifest.videos.flatMap(v=>v.shots.map(s=>draft.answers?.[s.id]||'-'))},...[...(data.submissions||[])].sort((a,b)=>b.ts.localeCompare(a.ts))];

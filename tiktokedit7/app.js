@@ -29,9 +29,10 @@ function persist(){
   summary();$('#autosave').textContent=ok?'saving…':'saving… browser storage unavailable';clearTimeout(timer);timer=setTimeout(writeDraft,300);
 }
 async function writeDraft(){
-  const saved=reviewStorage.set(key,state);
-  $('#autosave').textContent=saved?'saved in this browser':'browser storage unavailable · download your feedback';
-  return saved;
+  state.updated ||= new Date().toISOString();reviewStorage.set(key,state);
+  const snapshot=structuredClone(state),payload={boardId:manifest.id,roundId:round.id,reviewerId:reviewReviewer(key),draft:snapshot};
+  const work=(pending||Promise.resolve()).catch(()=>{}).then(()=>reviewPost('draft',round.id,payload)).then(response=>{if(!response.ok)throw Error('save');if(snapshot.updated===state.updated)$('#autosave').textContent='saved online';return true;}).catch(()=>{if(snapshot.updated===state.updated)$('#autosave').textContent='saved in browser · online save unavailable';return false;});
+  pending=work;const saved=await work;if(pending===work)pending=null;return saved;
 }
 function previewTick(player){const b=previewBounds.get(player);if(!b)return;if(player.currentTime>=b.end-1/manifest.videos.find(v=>v.id===player.dataset.id).fps){player.pause();player.currentTime=Math.max(b.start,b.end-1/60);previewBounds.delete(player);return;}if(!player.paused)requestAnimationFrame(()=>previewTick(player));}
 function renderClip(video,shot,player){
@@ -66,18 +67,18 @@ function plain(){
 }
 async function save(){
   const button=$('#save');button.disabled=true;clearTimeout(timer);await writeDraft();
-  const submission={name:state.name.trim()||'Anonymous',ts:new Date().toISOString(),roundId:round.id,ids:shots.map(s=>s.id),answers:shots.map(s=>state.answers[s.id]||'-'),clicked:{...state.answers},videoAnswers:{...state.videoAnswers},videoNotes:{...state.videoNotes},notes:{...state.notes},overall:state.overall};
+  const submission={name:state.name.trim()||'Anonymous',ts:new Date().toISOString(),updated:state.updated,roundId:round.id,ids:shots.map(s=>s.id),answers:shots.map(s=>state.answers[s.id]||'-'),clicked:{...state.answers},videoAnswers:{...state.videoAnswers},videoNotes:{...state.videoNotes},notes:{...state.notes},overall:state.overall};
   submissions=submissions.filter(s=>s.name.toLowerCase()!==submission.name.toLowerCase());submissions.unshift(submission);
   const saved=reviewStorage.set(key+':submissions',{submissions});
-  $('#status').textContent=saved?'feedback saved in this browser. download it to share your notes.':'saving failed. use copy or download feedback.';
-  button.disabled=false;
+  try{const response=await reviewPost('submission',round.id,{boardId:manifest.id,roundId:round.id,reviewerId:reviewReviewer(key),submission});if(!response.ok)throw Error('save');$('#status').textContent='feedback saved online. you can edit and save again.';}catch{$('#status').textContent=saved?'saved in this browser. download feedback as a backup.':'saving failed. use copy or download feedback.';}finally{button.disabled=false;}
 }
 async function copy(){const text=plain();try{await navigator.clipboard.writeText(text);$('#status').textContent='feedback copied.';}catch{$('#copy-fallback').hidden=false;$('#copy-text').value=text;$('#copy-text').focus();$('#copy-text').select();let copied=false;try{copied=document.execCommand('copy')}catch{}$('#status').textContent=copied?'feedback copied.':'select and copy the feedback below.';}}
 async function start(){
   try{
     ({manifest,registry,round}=await reviewRound());key='paulqc:'+manifest.id;shots=manifest.videos.flatMap(v=>v.shots);
-    const local=reviewStorage.get(key,empty());submissions=reviewStorage.get(key+':submissions',{submissions:[]}).submissions;
-    state={...empty(),...local};
+    const local=reviewStorage.get(key,empty());submissions=reviewStorage.get(key+':submissions',{submissions:[]}).submissions;let disk;
+    try{const online=await reviewServerState(manifest,key);disk=online.draft;submissions=reviewMergeRows(online.submissions||[],submissions);reviewStorage.set(key+':submissions',{submissions});}catch{}
+    state={...empty(),...(disk?.updated>(local.updated||'')?disk:local)};
     const shotIds=new Set(shots.map(s=>s.id)),videoIds=new Set(manifest.videos.map(v=>v.id));
     state.answers=Object.fromEntries(Object.entries(state.answers||{}).filter(([id])=>shotIds.has(id)).map(([id,v])=>[id,['K','X','-'].includes(v)?v:'-']));
     for(const [field,ids] of [['videoAnswers',videoIds],['notes',shotIds],['videoNotes',videoIds]])state[field]=Object.fromEntries(Object.entries(state[field]||{}).filter(([id])=>ids.has(id)));
@@ -87,8 +88,8 @@ async function start(){
     for(const video of manifest.videos)$('#videos').append(renderVideo(video));
     $('#overall').value=state.overall;$('#name').value=state.name;for(const field of ['overall','name'])$('#'+field).addEventListener('input',e=>{state[field]=e.target.value;persist();});
     $('#save').addEventListener('click',save);$('#copy').addEventListener('click',copy);$('#download').addEventListener('click',()=>{const report=reviewReport(manifest,state);report.savedReviews=submissions;reviewDownload(report,`navy-stripey-${round.id}-feedback.json`);$('#status').textContent='feedback downloaded.';});summary();reviewStorage.set(key,state);
-    $('#autosave').textContent=state.updated?'saved in this browser':'';
-    window.addEventListener('pagehide',()=>{clearTimeout(timer);reviewStorage.set(key,state);});
+    $('#autosave').textContent=state.updated?'saved in browser':'';if(state.updated)writeDraft();
+    window.addEventListener('pagehide',()=>{clearTimeout(timer);reviewStorage.set(key,state);if(state.updated)navigator.sendBeacon(reviewApi('draft',round.id),new Blob([JSON.stringify({boardId:manifest.id,roundId:round.id,reviewerId:reviewReviewer(key),draft:state})],{type:'application/json'}));});
   }catch{$('#count').textContent='couldn’t load the videos. refresh the page and try again.';}
 }
 start();
