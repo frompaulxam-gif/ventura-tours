@@ -1,0 +1,14 @@
+{
+  "name": "ventura-tiktokedit6-feedback",
+  "main": "worker.mjs",
+  "account_id": "be8daeb89d40360597623ce3dd102b4d",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tiktokedit6-feedback",
+      "database_id": "897ebf80-6685-4e5b-aba6-b2bf3ec82461"
+    }
+  ]
+}

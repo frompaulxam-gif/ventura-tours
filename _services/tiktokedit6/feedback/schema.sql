@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS feedback (round_id TEXT NOT NULL, reviewer_id TEXT NOT NULL, draft TEXT NOT NULL, report TEXT NOT NULL, updated_at TEXT NOT NULL, submission TEXT, PRIMARY KEY(round_id,reviewer_id));

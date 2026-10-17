@@ -1,0 +1,10 @@
+{
+  "current": "round-01",
+  "rounds": [
+    {
+      "id": "round-01",
+      "name": "round 1",
+      "boardId": "aston-martin-shot-review-v1"
+    }
+  ]
+}
