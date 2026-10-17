@@ -1,0 +1,115 @@
+{
+  "board": "navy stripey",
+  "id": "tiktokedit2-20261017",
+  "version": "new sounds and Apple SDR colours",
+  "items": [
+    {
+      "id": "nice-shirt-bro",
+      "group": "storyboard",
+      "name": "nice shirt bro",
+      "duration": 15.9,
+      "width": 1080,
+      "height": 1920,
+      "colour": "SDR Rec709",
+      "sound_reference": "https://www.tiktok.com/@tayeawukuchan/video/7676536680643333398",
+      "poster": "posters/nice-shirt-bro.jpg",
+      "files": [
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/01-nice-shirt-bro.mp4",
+          "bytes": 36843294,
+          "sha256": "aa0c0550f80f40fa6198aaa10c59c5dca8fcfacfcfc0caa81ffcb8392aedab22",
+          "captions": true,
+          "filename": "01-nice-shirt-bro.mp4"
+        },
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/01-nice-shirt-bro-clean.mp4",
+          "bytes": 36884620,
+          "sha256": "f3448bfe14b8335a18d2689a97c4af58224ff7f1303fe5c438dde71b46b51d88",
+          "captions": false,
+          "filename": "01-nice-shirt-bro-clean.mp4"
+        }
+      ]
+    },
+    {
+      "id": "lets-match",
+      "group": "storyboard",
+      "name": "lets match",
+      "duration": 11.5,
+      "width": 1080,
+      "height": 1920,
+      "colour": "SDR Rec709",
+      "sound_reference": "https://www.tiktok.com/@estherbarbarosh/video/7693372479296883999",
+      "poster": "posters/lets-match.jpg",
+      "files": [
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/02-lets-match.mp4",
+          "bytes": 21050780,
+          "sha256": "ff46b1607a50546e7070d05d7828f8b4130a87391f710541f0943c4d9113c565",
+          "captions": true,
+          "filename": "02-lets-match.mp4"
+        },
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/02-lets-match-clean.mp4",
+          "bytes": 21117994,
+          "sha256": "2ac2ac520b1f3815791e055ddb472a2f90a14980e5e62fe33c3b60c964cca67e",
+          "captions": false,
+          "filename": "02-lets-match-clean.mp4"
+        }
+      ]
+    },
+    {
+      "id": "flowers-or-the-bag",
+      "group": "own-interpretations",
+      "name": "flowers or the bag",
+      "duration": 11.4,
+      "width": 1080,
+      "height": 1920,
+      "colour": "SDR Rec709",
+      "sound_reference": "https://www.tiktok.com/@mickjaggedd/video/7663661926165040397",
+      "poster": "posters/flowers-or-the-bag.jpg",
+      "files": [
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/01-flowers-or-the-bag.mp4",
+          "bytes": 28662913,
+          "sha256": "e96f7ef4d6c7722350c791c237e298f61ade5005426c524e10c0bafea127ba24",
+          "captions": true,
+          "filename": "01-flowers-or-the-bag.mp4"
+        },
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/01-flowers-or-the-bag-clean.mp4",
+          "bytes": 28633314,
+          "sha256": "1cabaebd3735ca681169d53ac0768bc09bd43a0458c3e00263f36cfbb56a8710",
+          "captions": false,
+          "filename": "01-flowers-or-the-bag-clean.mp4"
+        }
+      ]
+    },
+    {
+      "id": "the-shirt-detective",
+      "group": "own-interpretations",
+      "name": "the shirt detective",
+      "duration": 9.8,
+      "width": 1080,
+      "height": 1920,
+      "colour": "SDR Rec709",
+      "sound_reference": "https://www.tiktok.com/@rralkanu/video/7695644982136278285",
+      "poster": "posters/the-shirt-detective.jpg",
+      "files": [
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/02-the-shirt-detective.mp4",
+          "bytes": 13732690,
+          "sha256": "fb02e62721e96b583df1123b3760458d3a8989ffe6f51ac27894a27c5dae92d3",
+          "captions": true,
+          "filename": "02-the-shirt-detective.mp4"
+        },
+        {
+          "url": "https://github.com/frompaulxam-gif/ventura-tours/releases/download/tiktokedit2-media-2026-10-17/02-the-shirt-detective-clean.mp4",
+          "bytes": 13686197,
+          "sha256": "344651d6dc1f9aba88d4ff746af7946af8b333f96a4a83c861f7795022e6610e",
+          "captions": false,
+          "filename": "02-the-shirt-detective-clean.mp4"
+        }
+      ]
+    }
+  ]
+}
