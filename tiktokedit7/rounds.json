@@ -1,0 +1,16 @@
+{
+  "current": "round-02",
+  "legacy": "round-02",
+  "rounds": [
+    {
+      "id": "round-01",
+      "label": "round 1 \u00b7 original",
+      "manifest": "rounds/round-01/manifest.json"
+    },
+    {
+      "id": "round-02",
+      "label": "round 2 \u00b7 revised",
+      "manifest": "rounds/round-02/manifest.json"
+    }
+  ]
+}
