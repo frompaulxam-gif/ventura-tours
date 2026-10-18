@@ -1,0 +1,8 @@
+{
+  "name": "tiktokedit9-review",
+  "main": "worker.mjs",
+  "account_id": "be8daeb89d40360597623ce3dd102b4d",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true,
+  "d1_databases": [{"binding":"DB","database_name":"tiktokedit9-feedback","database_id":"9ecd23c2-ad40-4a56-8198-02b9048ee773"}]
+}
