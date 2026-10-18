@@ -1,0 +1,10 @@
+{
+  "rounds": [
+    {
+      "id": "round-01",
+      "label": "round 1",
+      "title": "red car review",
+      "url": "rounds/round-01/"
+    }
+  ]
+}
