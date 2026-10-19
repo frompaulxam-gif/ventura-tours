@@ -1,0 +1,2291 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-19T21:05:17+01:00",
+  "sourceNote": "Shared snapshot of venue advertising reports, refreshed 19 October 2026. Not a live connection.",
+  "venues": [
+    {
+      "id": "merchants",
+      "name": "Merchants Yard",
+      "initials": "MY",
+      "accountId": "1096366602762326",
+      "currentReport": "merchants-saturday-2026-10-19",
+      "colour": "sand"
+    },
+    {
+      "id": "moonshine",
+      "name": "Moonshine",
+      "initials": "M",
+      "accountId": "646221822751725",
+      "currentReport": "moonshine-current",
+      "colour": "lilac"
+    },
+    {
+      "id": "venture",
+      "name": "Venture",
+      "initials": "V",
+      "accountId": null,
+      "currentReport": null,
+      "colour": "sage",
+      "lastCheckedAt": "2026-10-19T21:05:17+01:00",
+      "coverage": "Account 509394378493644 checked for 12–19 Oct; CSV returned No data available. No numbers inferred."
+    },
+    {
+      "id": "doppler",
+      "name": "Doppler",
+      "initials": "D",
+      "accountId": "1525849488173198",
+      "currentReport": "jungle-current",
+      "colour": "blue"
+    }
+  ],
+  "accounts": [],
+  "profiles": {},
+  "tracking": {},
+  "links": [
+    {
+      "brand": "Merchants Yard",
+      "event": "Oktoberfest at the Winter Tipi",
+      "eventId": "fd556pc1",
+      "arm": "broad",
+      "adId": "120248531503320534",
+      "campaignId": "120248516068060534",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/kekn",
+      "status": "Superseded after sellout on 16 October by Fatsoma brand-page destination. Retained for historical link sales.",
+      "measures": "Fatsoma link visits, linked sales and revenue; reconcile paid ticket types and known QA activity",
+      "source": "Shared report notes",
+      "creationBaselineClicks": 0,
+      "preDeliveryClicks": 4,
+      "additionalDocumentedQAClicks": 1
+    },
+    {
+      "brand": "Merchants Yard",
+      "event": "Oktoberfest at the Winter Tipi",
+      "eventId": "fd556pc1",
+      "arm": "warm",
+      "adId": "120248516068070534",
+      "campaignId": "120248516068060534",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/kb84",
+      "status": "Current published destination; both ads Active at saved 14:33 UTC link test",
+      "measures": "Fatsoma link visits, linked sales and revenue; reconcile paid ticket types and known QA activity",
+      "source": "Shared report notes",
+      "creationBaselineClicks": 0,
+      "preDeliveryClicks": 4,
+      "additionalDocumentedQAClicks": 1
+    },
+    {
+      "brand": "Merchants Yard",
+      "eventId": "fd556pc1",
+      "arm": "Broad",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/u7qh",
+      "status": "Superseded setup link; not the current published ticket ad destination",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Merchants Yard",
+      "eventId": "fd556pc1",
+      "arm": "Warm",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/p9ih",
+      "status": "Superseded setup link; not the current published ticket ad destination",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Merchants Yard",
+      "eventId": "fd556pc1",
+      "arm": "EmailOctopus | Winter Tipi launch | Email A",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/x6wn",
+      "status": "Separate email or organic story channel; exclude from paid-ad totals",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Merchants Yard",
+      "eventId": "fd556pc1",
+      "arm": "Instagram Story | Winter Tipi launch | CTA | 13 Oct 2026",
+      "url": "https://www.fatsoma.com/e/fd556pc1/la/66e6",
+      "status": "Separate email or organic story channel; exclude from paid-ad totals",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "ig_early_nico",
+      "adId": "120248351446310289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/w68q",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 6,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "ig_early_jungle",
+      "adId": "120248351664710289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/rokt",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 2,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "fb_early_nico",
+      "adId": "120248351720330289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/quud",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 4,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "ig_warm_nico",
+      "adId": "120248351720340289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/hk40",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 3,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "ig_weekend_nico",
+      "adId": "120248351720380289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/x3am",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 2,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "JUNGLE 4EVA",
+      "eventId": "u2uodckm",
+      "arm": "ig_weekend_jungle",
+      "adId": "120248351720400289",
+      "campaignId": "120248351446300289",
+      "url": "https://www.fatsoma.com/e/u2uodckm/la/m72s",
+      "status": "Event ended 17 October; final results checked 19 October.",
+      "prelaunchClicks": 0,
+      "prelaunchSales": 0,
+      "measures": "Fatsoma link visits, linked sales and revenue for this ad route; non-paid visits possible",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Moonshine",
+      "arm": "Tables A",
+      "adId": "120259207030060746",
+      "campaignId": "120259207030070746",
+      "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_broad",
+      "metaDynamicUrlParameters": "utm_term={{site_source_name}}_{{placement}}&meta_ad_id={{ad.id}}",
+      "status": "Current published destination",
+      "measures": "GA4 campaign/creative sessions and website clicks; Meta pixel website activity; completed booking attribution unverified",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Moonshine",
+      "arm": "Tables B",
+      "adId": "120259302905770746",
+      "campaignId": "120259207030070746",
+      "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_jazz",
+      "metaDynamicUrlParameters": "utm_term={{site_source_name}}_{{placement}}&meta_ad_id={{ad.id}}",
+      "status": "Current published destination",
+      "measures": "GA4 campaign/creative sessions and website clicks; Meta pixel website activity; completed booking attribution unverified",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Moonshine",
+      "arm": "Brunch",
+      "adId": "120259302967480746",
+      "campaignId": "120259302967330746",
+      "url": "https://moonshineleicester.co.uk/bottomless-brunch-leicester?date=2026-10-31&utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_brunch01&utm_content=m02_halloween#reserve-brunch-widget",
+      "metaDynamicUrlParameters": "utm_term={{site_source_name}}_{{placement}}&meta_ad_id={{ad.id}}",
+      "status": "Current published destination",
+      "measures": "GA4 campaign/creative sessions and website clicks; Meta pixel website activity; completed booking attribution unverified",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248258681840289",
+      "arm": "Mother Earth | Saturday sequence 2 | IG Warm Traffic",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/ke1h",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248258864680289",
+      "arm": "Mother Earth | Saturday sequence 1 | IG Cold Traffic",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/l15n",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248258830290289",
+      "arm": "Mother Earth | Saturday sequence 2 | IG Cold Traffic",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/37lf",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248271140160289",
+      "arm": "Mother Earth | Video 2 | Cold Audience Test | 7-8 Oct",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/e4uc",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248251224920289",
+      "arm": "Saturday sequence2 selected by Paul",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/e00p",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248251261790289",
+      "arm": "Nico invitation",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/43t4",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248255512930289",
+      "arm": "Mother Earth | Saturday sequence 1 | IG Broad | Added",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/z8g9",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248251399750289",
+      "arm": "Saturday sequence2 selected by Paul",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/kl8a",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248251399740289",
+      "arm": "Nico invitation",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/b2b0",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Mother Earth",
+      "eventId": "afi4cljh",
+      "adId": "120248255588690289",
+      "arm": "Mother Earth | Saturday sequence 1 | FB Broad | Added",
+      "url": "https://www.fatsoma.com/e/afi4cljh/la/z37j",
+      "status": "Historical; all Mother Earth parent campaigns paused 8 October. This overrides nested older Active/Scheduled labels.",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Doppler performer shares - Back in the Rave - 23-26 Sep",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/osj2",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Doppler venue organic - Back in the Rave - 23-26 Sep",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/d1av",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "EmailOctopus - September campaign",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/uxd5",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta A - Leicester broad - Event promo",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/15cl",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta B - Leicester music interest - Event promo",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/8iiq",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta C - Leicester broad - Speaker video",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/d5vp",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 6,
+      "reportedRevenueGBP": 5.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta Final - Friday 25 Sep - Broad - 85 Saturday sequence",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/7p4y",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta Final Release - Friday 25 Sep - Broad - 90 video",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/fn35",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 1,
+      "reportedRevenueGBP": 5.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta Final Release - Saturday 26 Sep - Broad - 90 video",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/1azb",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 3,
+      "reportedRevenueGBP": 18.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta Final - Saturday 26 Sep - Broad - 85 Saturday sequence",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/lu13",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta paid test - Speaker - Broad - 19 Sep 2026",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/40qe",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta S1 - Leicester broad - Crowd lasers",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/sld7",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 1,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta S1 - Leicester broad - Venue walkthrough",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/o1rj",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta S2 - Leicester broad - Selected video",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/rigj",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta S3 - Broad - Saturday sequence - paid price - 23 Sep",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/3ixm",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 2,
+      "reportedRevenueGBP": 10.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "Meta S3 - Saturday sequence - Music - 23-26 Sep",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/vm53",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "PureSMS - September campaign",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/lm12",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 0,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Back in the Rave",
+      "eventId": "virk0gkt",
+      "arm": "TEST - Pixel verification - exclude from ad results",
+      "url": "https://www.fatsoma.com/e/virk0gkt/la/dicp",
+      "status": "Historical September snapshot; includes paid, organic, email, SMS and test links; do not treat every row as a paid ad",
+      "snapshotDate": "2026-09-27T02:02:00+01:00",
+      "reportedSales": 1,
+      "reportedRevenueGBP": 0.0,
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Doppler",
+      "event": "Techley Intimate Sessions 002",
+      "eventId": "di8syq4m",
+      "url": "https://www.fatsoma.com/e/di8syq4m/la/109k",
+      "status": "Historical SMS route",
+      "measures": "Visits to Doppler listing only; sales happen on separate Techley organiser listing, so paid attribution is not established",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Merchants Yard",
+      "adId": "120248531503320534",
+      "url": "https://www.fatsoma.com/p/merchants-yard",
+      "arm": "Broad post-sellout route",
+      "status": "Used after sellout 16 October; campaign now completed",
+      "source": "Shared report notes"
+    },
+    {
+      "brand": "Merchants Yard",
+      "adId": "120248598511020534",
+      "campaignId": "120248598510890534",
+      "url": "https://www.fatsoma.com/e/t4ro39et/la/gf3n",
+      "arm": "Saturday Sessions 24 Oct · broad recap",
+      "status": "Scheduled 20–22 October; verified 19 October",
+      "preDeliveryClicks": 6,
+      "source": "Shared report notes"
+    }
+  ],
+  "reports": [
+    {
+      "id": "merchants-current",
+      "venue": "merchants",
+      "title": "Oktoberfest · final results · 12–18 Oct",
+      "period": "12–18 Oct 2026",
+      "capturedAt": "2026-10-19T20:59:24+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120248531503320534",
+          "title": "Winter Tipi · New local people",
+          "group": "audience",
+          "media": "merchants-v3",
+          "audience": "Adults · Leicester +17 km · broad, excluding warm audience",
+          "platform": "Facebook & Instagram · feed, stories, reels",
+          "budgetNote": "£120 lifetime",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 119.99,
+            "impressions": 34797.0,
+            "clicks": 1837.0,
+            "pageViews": 1685.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/p/merchants-yard",
+          "adSetId": "120248531503330534",
+          "campaignId": "120248516068060534",
+          "goal": "Bring people to the ticket page for Oktoberfest on 17 October.",
+          "tracking": "Fatsoma link visits, sales and revenue. Each link had 4 pre-delivery visits and 1 further QA visit. These are not verified customers. Destination changed from /la/kekn to the Merchants Yard brand page after sellout on 16 October; report spans both destinations.",
+          "schedule": "Ends 2026-10-17",
+          "sourceAdName": "MY | Tipi launch | Broad | Vibes Allright v3",
+          "attribution": "7-day click or 1-day view"
+        },
+        {
+          "id": "120248516068070534",
+          "title": "Winter Tipi · Recent video viewers",
+          "group": "audience",
+          "media": "merchants-v3",
+          "audience": "Adults · Leicester +17 km · 30-day viewers of five selected Tipi videos",
+          "platform": "Facebook & Instagram · feed, stories, reels",
+          "budgetNote": "£30 lifetime",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 29.98,
+            "impressions": 7881.0,
+            "clicks": 278.0,
+            "pageViews": 246.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/fd556pc1/la/kb84",
+          "adSetId": "120248516068050534",
+          "campaignId": "120248516068060534",
+          "goal": "Bring people to the ticket page for Oktoberfest on 17 October.",
+          "tracking": "Fatsoma link visits, sales and revenue. Each link had 4 pre-delivery visits and 1 further QA visit. These are not verified customers.",
+          "schedule": "Ends 2026-10-16",
+          "sourceAdName": "MY | Tipi launch | Warm | Vibes Allright v3",
+          "attribution": "7-day click or 1-day view"
+        }
+      ],
+      "groups": [
+        {
+          "id": "audience",
+          "title": "Audience comparison",
+          "note": "Same film, different audiences. Final budgets: broad £120, warm £30.",
+          "tone": "lilac"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 149.97,
+        "impressions": 42678.0,
+        "clicks": 2115.0,
+        "pageViews": 1931.0,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": null
+      },
+      "budget": 150,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "Final ticket-campaign export. Reporting days use the Meta account timezone UTC (Etc/Universal), not London midnight; capture time is London. The separate £2.91 personal boost has its own report. Video-view metrics were not included in this export. Unique reach is not summed across days. Broad destination changed after sellout on 16 October, so its figures span both routes.",
+      "headline": "Broad delivered cheaper visits; ticket attribution remains incomplete.",
+      "insights": [
+        {
+          "label": "Traffic result",
+          "text": "Broad: 1,837 clicks at 6.5p and 1,685 page visits at 7.1p. Warm: 278 clicks at 10.8p and 246 page visits at 12.2p. Spend and delivery differed."
+        },
+        {
+          "label": "Ticket result",
+          "text": "The event sold 70 paid tickets for £485. Fatsoma credited zero sales to the paid-ad links. That does not establish zero ad influence."
+        },
+        {
+          "label": "Next action",
+          "text": "Keep the new Saturday Sessions campaign separate. Its £10 run is scheduled for 20–22 October."
+        }
+      ],
+      "business": {
+        "value": "0 linked",
+        "label": "Paid ad-link ticket sales",
+        "note": "Checked 19 Oct: 70 paid event tickets / £485 overall; zero tickets credited to the paid-ad links. Broad changed to the Fatsoma brand page after sellout on 16 Oct, so later clicks cannot be reconciled to the original event link. Raw link visits include setup/QA."
+      },
+      "periodStart": "2026-10-12",
+      "periodEnd": "2026-10-18",
+      "seriesId": "merchants-current",
+      "accountTimezone": "Etc/Universal",
+      "objective": "Traffic / landing-page views"
+    },
+    {
+      "id": "moonshine-current",
+      "venue": "moonshine",
+      "title": "Tables & brunch · total to 19 Oct",
+      "period": "12–19 Oct 2026 · today partial",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120259207030060746",
+          "title": "Date night · broad",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 19.99,
+            "impressions": 5031.0,
+            "clicks": 75.0,
+            "pageViews": 73.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_broad",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Broad | 13 Oct"
+        },
+        {
+          "id": "120259302905770746",
+          "title": "Date night · jazz suggestion",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · Jazz Advantage+ suggestion; may expand",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 20.01,
+            "impressions": 4981.0,
+            "clicks": 88.0,
+            "pageViews": 82.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_jazz",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Jazz seed | 13 Oct"
+        },
+        {
+          "id": "120259302967480746",
+          "title": "Halloween brunch",
+          "group": "brunch",
+          "media": "brunch",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£26.19 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 24.23,
+            "impressions": 5953.0,
+            "clicks": 199.0,
+            "pageViews": 177.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/bottomless-brunch-leicester?date=2026-10-31&utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_brunch01&utm_content=m02_halloween#reserve-brunch-widget",
+          "goal": "Bring people to the 31 October brunch booking page.",
+          "campaignId": "120259302967330746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M02 | Halloween brunch | Broad | 13 Oct"
+        }
+      ],
+      "groups": [
+        {
+          "id": "tables",
+          "title": "Audience comparison",
+          "note": "Same M13 graphic · broad versus jazz-seeded delivery · £43.66 combined",
+          "tone": "lilac"
+        },
+        {
+          "id": "brunch",
+          "title": "Halloween brunch",
+          "note": "Different offer and creative · compare traffic costs, not an audience-test winner",
+          "tone": "sand"
+        }
+      ],
+      "current": true,
+      "totals": {
+        "spend": 64.23,
+        "impressions": 15965.0,
+        "clicks": 362.0,
+        "pageViews": 332.0,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": null
+      },
+      "budget": 69.85,
+      "reserve": 17.46,
+      "source": "report-notes.json",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "headline": "Brunch brings the cheapest page visits; no customer booking attributed yet.",
+      "insights": [
+        {
+          "label": "Best for traffic",
+          "text": "Brunch: 199 link clicks and 177 page visits at 13.7p per visit. It promotes a different offer from tables."
+        },
+        {
+          "label": "Tables audience test",
+          "text": "Broad: 73 visits; jazz: 82. Compare costs within this period; uneven delivery and small samples limit conclusions."
+        },
+        {
+          "label": "Bookings",
+          "text": "Latest GA4 check was 19 October, covering through 18 October. It showed zero paid-social booking completions; its one completion was consistent with the cancelled test. Earlier bookings cannot be attributed retrospectively."
+        }
+      ],
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep–18 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      },
+      "periodStart": "2026-10-12",
+      "periodEnd": "2026-10-19",
+      "seriesId": "moonshine-current",
+      "accountTimezone": "Europe/London",
+      "objective": "Traffic / landing-page views"
+    },
+    {
+      "id": "jungle-current",
+      "venue": "doppler",
+      "title": "JUNGLE 4EVA · final results · 12–18 Oct",
+      "period": "12–18 Oct 2026",
+      "capturedAt": "2026-10-19T21:01:44+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120248351446310289",
+          "title": "Nico · Instagram cold",
+          "group": "early",
+          "media": "nico-jungle",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Instagram",
+          "budgetNote": "£30 lifetime shared within ad set",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 23.52,
+            "impressions": 5970.0,
+            "clicks": 227.0,
+            "pageViews": 192.0,
+            "plays3s": 2813.0,
+            "thruplays": 826.0,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/w68q",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-15",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Nico invitation | IG early cold | w68q"
+        },
+        {
+          "id": "120248351664710289",
+          "title": "Jungle POV · Instagram cold",
+          "group": "early",
+          "media": "jungle-pov",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Instagram",
+          "budgetNote": "£30 lifetime shared within ad set",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 1.27,
+            "impressions": 373.0,
+            "clicks": 19.0,
+            "pageViews": 15.0,
+            "plays3s": 109.0,
+            "thruplays": 11.0,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/rokt",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-15",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Jungle POV | IG early cold | rokt"
+        },
+        {
+          "id": "120248351720330289",
+          "title": "Nico · Facebook cold",
+          "group": "platform",
+          "media": "nico-jungle",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Facebook",
+          "budgetNote": "£10 lifetime",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 8.38,
+            "impressions": 2789.0,
+            "clicks": 144.0,
+            "pageViews": 130.0,
+            "plays3s": 1215.0,
+            "thruplays": 538.0,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/quud",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-15",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Nico invitation | FB early cold | quud"
+        },
+        {
+          "id": "120248351720340289",
+          "title": "Nico · Instagram warm",
+          "group": "warm",
+          "media": "nico-jungle",
+          "audience": "18–44 · Leicester +17 km · recent engagers",
+          "platform": "Instagram",
+          "budgetNote": "£10 lifetime",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 4.75,
+            "impressions": 1183.0,
+            "clicks": 72.0,
+            "pageViews": 65.0,
+            "plays3s": 474.0,
+            "thruplays": 157.0,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/hk40",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-17",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Nico invitation | IG warm | hk40"
+        },
+        {
+          "id": "reserve-reserve4",
+          "title": "Jungle POV · Instagram warm reserve",
+          "group": "reserve",
+          "media": "jungle-pov",
+          "audience": "18–44 · Leicester +17 km · warm audience (off reserve)",
+          "platform": "Instagram",
+          "budgetNote": "£10 lifetime",
+          "status": "Off at 19 Oct check",
+          "metrics": {
+            "spend": 0.0,
+            "impressions": 0.0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": null,
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-17",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "OFF reserve | Jungle POV | IG warm"
+        },
+        {
+          "id": "120248351720380289",
+          "title": "Nico · Instagram weekend",
+          "group": "weekend",
+          "media": "nico-jungle",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Instagram",
+          "budgetNote": "£50 lifetime shared within ad set",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 0.0,
+            "impressions": 0.0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/x3am",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-17",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Nico invitation | IG weekend cold | x3am"
+        },
+        {
+          "id": "reserve-reserve6",
+          "title": "Jungle POV · Facebook reserve",
+          "group": "reserve",
+          "media": "jungle-pov",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Facebook",
+          "budgetNote": "£10 lifetime",
+          "status": "Off at 19 Oct check",
+          "metrics": {
+            "spend": 0.0,
+            "impressions": 0.0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": null,
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-15",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "OFF reserve | Jungle POV | FB"
+        },
+        {
+          "id": "120248351720400289",
+          "title": "Jungle POV · Instagram weekend",
+          "group": "weekend",
+          "media": "jungle-pov",
+          "audience": "18–44 · Leicester +17 km · local broad",
+          "platform": "Instagram",
+          "budgetNote": "£50 lifetime shared within ad set",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 0.0,
+            "impressions": 0.0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://www.fatsoma.com/e/u2uodckm/la/m72s",
+          "goal": "Sell tickets for JUNGLE 4EVA on 17 October. Optimised for page visits.",
+          "campaignId": "120248351446300289",
+          "tracking": "Unique Fatsoma route per enabled ad. Pre-launch visits are recorded separately; link sales must be checked for paid ticket types.",
+          "schedule": "Ends 2026-10-17",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Jungle POV | IG weekend cold | m72s"
+        },
+        {
+          "id": "120248355966000289",
+          "title": "Doorway · original post",
+          "group": "views",
+          "media": null,
+          "audience": "18–44 · Leicester +17 km",
+          "platform": "Instagram · feed & reels",
+          "budgetNote": "£10 lifetime",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 3.69,
+            "impressions": 1298.0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": 849.0,
+            "thruplays": 268.0,
+            "reach": null
+          },
+          "url": "https://www.instagram.com/reel/DeaJPiYNjWj/",
+          "goal": "Get local people watching the original doorway reel. Optimised for ThruPlay.",
+          "campaignId": "120248355965980289",
+          "tracking": "Video views, ThruPlays, reach and spend. Separate from ticket sales. Matching local video not verified; open the original post.",
+          "schedule": "Ends 2026-10-17",
+          "sourceAdName": "Doorway original | 12 Oct reel | £10 views",
+          "attribution": "7-day click or 1-day view"
+        }
+      ],
+      "groups": [
+        {
+          "id": "early",
+          "title": "Creative comparison",
+          "note": "Same Instagram audience · £30 shared budget",
+          "tone": "lilac"
+        },
+        {
+          "id": "platform",
+          "title": "Platform comparison",
+          "note": "Nico on Facebook · compare with Instagram, allowing for delivery differences",
+          "tone": "blue"
+        },
+        {
+          "id": "warm",
+          "title": "Warm audience",
+          "note": "Nico to recent engagers · £10 budget",
+          "tone": "sage"
+        },
+        {
+          "id": "weekend",
+          "title": "Weekend flight",
+          "note": "Original 16–17 Oct flight; no spend in final daily export.",
+          "tone": "lilac"
+        },
+        {
+          "id": "views",
+          "title": "Awareness campaign",
+          "note": "Separate awareness campaign · £3.69 actual spend.",
+          "tone": "sand"
+        },
+        {
+          "id": "reserve",
+          "title": "Off / reserve",
+          "note": "No delivery at the saved check",
+          "tone": "neutral"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 41.61,
+        "impressions": 11613.0,
+        "clicks": 462.0,
+        "pageViews": 402.0,
+        "plays3s": 5460.0,
+        "thruplays": 1800.0,
+        "reach": null
+      },
+      "budget": 110,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "London reporting days. Includes £37.92 ticket-ad spend plus £3.69 doorway-awareness spend. Ticket traffic: 462 link clicks and 402 page visits. Weekend ads show no spend. Daily reach is not additive and is left unknown. Video results are refreshed from the same daily export.",
+      "headline": "Facebook Nico had the cheapest clicks; no ticket sales were linked to ads.",
+      "insights": [
+        {
+          "label": "Ticket traffic",
+          "text": "£37.92 delivered 462 link clicks and 402 page visits. Facebook Nico: 144 clicks at 5.8p; warm Instagram Nico: 72 at 6.6p. Results do not prove a causal audience winner."
+        },
+        {
+          "label": "Video awareness",
+          "text": "The separate doorway campaign spent £3.69 for 849 three-second plays and 268 ThruPlays. It is not a ticket-sales campaign."
+        },
+        {
+          "label": "Ticket result",
+          "text": "Fatsoma shows 25 paid tickets and £132 event revenue, but zero sales on all six ad links. The event total includes other channels and prelaunch sales."
+        }
+      ],
+      "business": {
+        "value": "0 linked",
+        "label": "Paid ad-link ticket sales",
+        "note": "Checked 19 Oct: 25 paid tickets / £132 event-wide (18 × £5, 7 × £6). Six campaign links show 870 raw visits and zero sales. Link visits include prelaunch/QA and are not unique Meta clicks."
+      },
+      "periodStart": "2026-10-12",
+      "periodEnd": "2026-10-18",
+      "seriesId": "jungle-current",
+      "accountTimezone": "Europe/London",
+      "objective": "Ticket traffic plus separately grouped ThruPlay awareness"
+    },
+    {
+      "id": "mother-earth",
+      "venue": "doppler",
+      "title": "Mother Earth · audience test",
+      "period": "1–8 Oct 2026",
+      "capturedAt": "2026-10-08T23:25:00+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120248258681840289",
+          "title": "Mother Earth | Saturday sequence 2 | IG Warm Traffic",
+          "group": "historic",
+          "media": "mother-earth-sequence-2",
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Paused · historical",
+          "metrics": {
+            "spend": 19.66,
+            "impressions": 3791,
+            "clicks": 100,
+            "pageViews": 83,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/ke1h",
+          "goal": "Landing-page views",
+          "tracking": "Exact recorded sequence2 source asset. Ad IDs identify the warm/cold audience tests; this same video was used by both.",
+          "schedule": "2026-10-01 to 2026-10-08",
+          "campaignId": "120248258681850289"
+        },
+        {
+          "id": "120248271140160289",
+          "title": "Mother Earth | Video 2 | Cold Audience Test | 7-8 Oct",
+          "group": "historic",
+          "media": "mother-earth-sequence-2",
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Paused · historical",
+          "metrics": {
+            "spend": 19.53,
+            "impressions": 4267,
+            "clicks": 156,
+            "pageViews": 141,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/e4uc",
+          "goal": "Landing-page views",
+          "tracking": "Exact recorded sequence2 source asset. Ad IDs identify the warm/cold audience tests; this same video was used by both.",
+          "schedule": "2026-10-01 to 2026-10-08",
+          "campaignId": "120248258681850289"
+        }
+      ],
+      "groups": [
+        {
+          "id": "historic",
+          "title": "Audience comparison",
+          "note": "Historical snapshot · kept separate from current campaigns",
+          "tone": "neutral"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 39.19,
+        "impressions": 8058,
+        "clicks": 256,
+        "pageViews": 224,
+        "reach": null,
+        "plays3s": null,
+        "thruplays": null
+      },
+      "budget": null,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "Two audience-test ads only, not the full campaign. Both used the same video. Figures cover 1–8 October and were captured at 23:25 on 8 October. All Mother Earth parent campaigns were verified OFF five minutes later after your pause request. Current delivery and final settled spend have not been rechecked. Event-wide ticket sales are separate.",
+      "headline": "Cold traffic brought cheaper visits; no linked sales were recorded.",
+      "insights": [
+        {
+          "label": "What the report says",
+          "text": "Cold: 141 page visits at 13.9p. Warm: 83 at 23.7p. The two rows total £39.19. Full Mother Earth spend was £116.61 at the last pre-pause check; final settled spend is unknown."
+        },
+        {
+          "label": "Context",
+          "text": "All parent campaigns were verified off at 23:30 on 8 October. Other ads and their revision history remain in the saved campaign ledger."
+        }
+      ],
+      "business": {
+        "value": "0 linked",
+        "label": "Verified linked tickets",
+        "note": "At last saved ticket check. Event-wide sales remain separate."
+      },
+      "archivedLedger": [
+        {
+          "id": "120248258681840289",
+          "title": "Mother Earth | Saturday sequence 2 | IG Warm Traffic",
+          "campaignId": "120248258681850289",
+          "adSetId": "120248258681860289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/ke1h",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        },
+        {
+          "id": "120248258864680289",
+          "title": "Mother Earth | Saturday sequence 1 | IG Cold Traffic",
+          "campaignId": "120248258681850289",
+          "adSetId": "120248258830300289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/l15n",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        },
+        {
+          "id": "120248258830290289",
+          "title": "Mother Earth | Saturday sequence 2 | IG Cold Traffic",
+          "campaignId": "120248258681850289",
+          "adSetId": "120248258830300289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/37lf",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        },
+        {
+          "id": "120248271140160289",
+          "title": "Mother Earth | Video 2 | Cold Audience Test | 7-8 Oct",
+          "campaignId": "120248258681850289",
+          "adSetId": "120248271140140289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/e4uc",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        },
+        {
+          "id": "120248251224920289",
+          "title": "Saturday sequence2 selected by Paul",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251224930289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/e00p",
+          "revisionNote": "Same ad IDs and Fatsoma links retained. Lifetime metrics combine sequence1 and sequence2. Revision boundary is 6 October before 16:19 BST; within-day separation uncertain. Do not attribute historic reach or cumulative Fatsoma sales solely to sequence2. UTMs now say saturday_sequence_2."
+        },
+        {
+          "id": "120248251261790289",
+          "title": "Nico invitation",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251224930289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/43t4",
+          "revisionNote": "Same ad ID retained. Split reporting at 6 Oct 2026 approximately 13:15 BST; old sequence and new Nico are different revisions. Do not mix revision-level creative metrics."
+        },
+        {
+          "id": "120248255512930289",
+          "title": "Mother Earth | Saturday sequence 1 | IG Broad | Added",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251224930289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/z8g9",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        },
+        {
+          "id": "120248251399750289",
+          "title": "Saturday sequence2 selected by Paul",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251399730289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/kl8a",
+          "revisionNote": "Same ad IDs and Fatsoma links retained. Lifetime metrics combine sequence1 and sequence2. Revision boundary is 6 October before 16:19 BST; within-day separation uncertain. Do not attribute historic reach or cumulative Fatsoma sales solely to sequence2. UTMs now say saturday_sequence_2."
+        },
+        {
+          "id": "120248251399740289",
+          "title": "Nico invitation",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251399730289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/b2b0",
+          "revisionNote": "Same ad ID retained. Split reporting at 6 Oct 2026 approximately 13:15 BST; old sequence and new Nico are different revisions. Do not mix revision-level creative metrics."
+        },
+        {
+          "id": "120248255588690289",
+          "title": "Mother Earth | Saturday sequence 1 | FB Broad | Added",
+          "campaignId": "120248251224810289",
+          "adSetId": "120248251399730289",
+          "status": "Parent campaign OFF at 8 Oct 23:30",
+          "url": "https://www.fatsoma.com/e/afi4cljh/la/z37j",
+          "revisionNote": "No creative-revision boundary recorded in this row."
+        }
+      ],
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-08",
+      "seriesId": "mother-earth"
+    },
+    {
+      "id": "back-in-rave",
+      "venue": "doppler",
+      "title": "Back in the Rave · September",
+      "period": "1–26 Sep 2026",
+      "capturedAt": "2026-09-27T02:02:00+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120247952049980289",
+          "title": "Event promo | Leicester broad | Ticket bookings",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 3.08,
+            "impressions": 463.0,
+            "clicks": 8.0,
+            "pageViews": 7.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120247952912060289",
+          "title": "Speaker | Music suggestion | Leicester 17km | 21 Sep",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 9.39,
+            "impressions": 1800.0,
+            "clicks": 43.0,
+            "pageViews": 38.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120247954206220289",
+          "title": "Speaker | Leicester broad | Ticket bookings",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 24.52,
+            "impressions": 5012.0,
+            "clicks": 216.0,
+            "pageViews": 194.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120247954206230289",
+          "title": "Venue walkthrough | Leicester broad | Ticket bookings",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 6.71,
+            "impressions": 1377.0,
+            "clicks": 24.0,
+            "pageViews": 20.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120247954206240289",
+          "title": "Crowd lasers | Leicester broad | Ticket bookings",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 5.57,
+            "impressions": 945.0,
+            "clicks": 17.0,
+            "pageViews": 12.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120247991302240289",
+          "title": "Speaker | Paid tickets £5 + fees | Broad | 19 Sep",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 8.94,
+            "impressions": 1991.0,
+            "clicks": 30.0,
+            "pageViews": 25.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248014194740289",
+          "title": "Speaker | Broad | Leicester 17km | Matched comparison",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 6.82,
+            "impressions": 1321.0,
+            "clicks": 28.0,
+            "pageViews": 21.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248014594210289",
+          "title": "Crowd lasers | Music suggestion | Leicester 17km | Approved poster",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 0.33,
+            "impressions": 62.0,
+            "clicks": null,
+            "pageViews": null,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248015456040289",
+          "title": "Crowd lasers | Broad | Leicester 17km | Approved poster",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 4.61,
+            "impressions": 804.0,
+            "clicks": 4.0,
+            "pageViews": 3.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248021992970289",
+          "title": "0921 edit | Broad | Leicester 17km | Three creative test",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 0.32,
+            "impressions": 46.0,
+            "clicks": null,
+            "pageViews": null,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248021992980289",
+          "title": "Saturday sequence | Broad | Leicester 17km | Three creative test",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 8.23,
+            "impressions": 1752.0,
+            "clicks": 66.0,
+            "pageViews": 58.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248022975040289",
+          "title": "0921 edit | Music | Leicester 17km | Three creative test",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 0.7,
+            "impressions": 114.0,
+            "clicks": null,
+            "pageViews": null,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248023397550289",
+          "title": "Saturday sequence | Music | Leicester 17km | Three creative test",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 9.56,
+            "impressions": 1810.0,
+            "clicks": 62.0,
+            "pageViews": 48.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248061639890289",
+          "title": "Stage 3 | Saturday sequence | Broad | £6.24 all-in | 23-24 Sep",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 15.22,
+            "impressions": 2966.0,
+            "clicks": 65.0,
+            "pageViews": 51.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248087613760289",
+          "title": "Final Friday | 90% final release | Broad | £7.24",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 32.54,
+            "impressions": 6323.0,
+            "clicks": 64.0,
+            "pageViews": 53.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248087613790289",
+          "title": "Final Saturday | Original Speaker | Tonight | Broad | £7.24",
+          "group": "historic",
+          "media": "doppler-speaker",
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 44.47,
+            "impressions": 7814.0,
+            "clicks": 207.0,
+            "pageViews": 169.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Known local original Speaker source. Meta preview was visually matched on 25 September; Meta did not expose a filename or duration for a byte-level match.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        },
+        {
+          "id": "120248087613800289",
+          "title": "Final Saturday | 90% final release | Tonight | Broad | £7.24",
+          "group": "historic",
+          "media": null,
+          "audience": "See saved historical setup",
+          "platform": "Saved Meta report",
+          "budgetNote": "Historical budget",
+          "status": "Historical",
+          "metrics": {
+            "spend": 10.47,
+            "impressions": 1630.0,
+            "clicks": 32.0,
+            "pageViews": 28.0,
+            "reach": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": null,
+          "goal": "Meta purchase actions",
+          "tracking": "Ad-specific creative file was not recovered. No replacement media has been guessed.",
+          "schedule": "2026-09-01 to 2026-09-26",
+          "campaignId": "120247952049970289"
+        }
+      ],
+      "groups": [
+        {
+          "id": "historic",
+          "title": "17 ads with recorded spend",
+          "note": "Historical snapshot · kept separate from current campaigns",
+          "tone": "neutral"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 191.48,
+        "impressions": 36230.0,
+        "clicks": 866.0,
+        "pageViews": 727.0,
+        "reach": null,
+        "plays3s": null,
+        "thruplays": null
+      },
+      "budget": null,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "Historical report. Includes the 17 exported ads with spend; zero-spend rows and drafts are omitted. Meta purchase actions are pixel events, not confirmed paid-ticket sales. The two Saturday ads shared a Fatsoma link, so its sales cannot be split by creative. Missing cells stay unreported.",
+      "headline": "7 paid tickets were verified against tracking links.",
+      "insights": [
+        {
+          "label": "What the report says",
+          "text": "£191.48 spent, 866 link clicks and 727 page visits. 7 verified linked paid tickets produced £38 in ticket face value. Meta’s 9 purchase actions are a different measure."
+        },
+        {
+          "label": "Context",
+          "text": "At 02:02 on 27 September, the event had 40 paid tickets (£220) and 60 free tickets. The event was still underway. Shared tracking links prevent exact sales attribution to each creative."
+        }
+      ],
+      "business": {
+        "value": "7 paid",
+        "label": "Verified linked tickets",
+        "note": "At last saved ticket check. Event-wide sales remain separate."
+      },
+      "archivedLedger": null,
+      "periodStart": "2026-09-01",
+      "periodEnd": "2026-09-26",
+      "seriesId": "back-in-rave"
+    },
+    {
+      "id": "merchants-personal-boost",
+      "venue": "merchants",
+      "title": "Original reel boost · 12–18 Oct",
+      "period": "12–18 Oct 2026",
+      "capturedAt": "2026-10-19T21:02:45+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120252979864250257",
+          "title": "Original reel boost",
+          "group": "boost",
+          "media": null,
+          "audience": "Audience not recovered",
+          "platform": "Personal Meta account",
+          "budgetNote": "£3 limit",
+          "status": "Completed / not delivering at 19 Oct check",
+          "metrics": {
+            "spend": 2.91,
+            "impressions": 927.0,
+            "clicks": 95,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": 855.0
+          },
+          "url": null,
+          "goal": "Separate original-reel boost. Current spend and destination need checking.",
+          "tracking": "Personal account 1914550805732033; excluded from ticket campaign.",
+          "schedule": "Ended 14 Oct",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "Instagram post: It’s here. Leicester’s first..."
+        }
+      ],
+      "groups": [
+        {
+          "id": "boost",
+          "title": "Separate personal-account boost",
+          "note": "Account 1914550805732033 · keep separate from ticket campaign",
+          "tone": "sand"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 2.91,
+        "impressions": 927.0,
+        "clicks": 95,
+        "pageViews": null,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": 855
+      },
+      "budget": 3,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "London reporting dates 12–18 Oct. Meta export Results indicator is actions:link_click, establishing 95 link clicks. Landing-page and video metrics not included.",
+      "headline": "£2.91 brought 95 link clicks on the original reel.",
+      "insights": [
+        {
+          "label": "Traffic",
+          "text": "95 link clicks at 3.1p each, 927 impressions and 855 people reached."
+        },
+        {
+          "label": "Measurement",
+          "text": "No separate verified paid-ticket attribution or landing-page count in this export."
+        }
+      ],
+      "business": {
+        "value": "Unverified",
+        "label": "Paid tickets from boost",
+        "note": "No matched sales evidence for this separate personal-account boost."
+      },
+      "periodStart": "2026-10-12",
+      "periodEnd": "2026-10-18",
+      "seriesId": "merchants-personal-boost",
+      "accountTimezone": "Europe/London",
+      "objective": "Traffic / landing-page views"
+    },
+    {
+      "id": "moonshine-week-2026-10-12",
+      "venue": "moonshine",
+      "title": "Tables & brunch · 12–18 Oct",
+      "period": "12–18 Oct 2026",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120259207030060746",
+          "title": "Date night · broad",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 17.88,
+            "impressions": 4514.0,
+            "clicks": 67.0,
+            "pageViews": 65.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_broad",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Broad | 13 Oct"
+        },
+        {
+          "id": "120259302905770746",
+          "title": "Date night · jazz suggestion",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · Jazz Advantage+ suggestion; may expand",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 17.81,
+            "impressions": 4403.0,
+            "clicks": 83.0,
+            "pageViews": 78.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_jazz",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Jazz seed | 13 Oct"
+        },
+        {
+          "id": "120259302967480746",
+          "title": "Halloween brunch",
+          "group": "brunch",
+          "media": "brunch",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£26.19 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 21.72,
+            "impressions": 5331.0,
+            "clicks": 174.0,
+            "pageViews": 155.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": null
+          },
+          "url": "https://moonshineleicester.co.uk/bottomless-brunch-leicester?date=2026-10-31&utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_brunch01&utm_content=m02_halloween#reserve-brunch-widget",
+          "goal": "Bring people to the 31 October brunch booking page.",
+          "campaignId": "120259302967330746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M02 | Halloween brunch | Broad | 13 Oct"
+        }
+      ],
+      "groups": [
+        {
+          "id": "tables",
+          "title": "Audience comparison",
+          "note": "Same M13 graphic · broad versus jazz-seeded delivery · £43.66 combined",
+          "tone": "lilac"
+        },
+        {
+          "id": "brunch",
+          "title": "Halloween brunch",
+          "note": "Different offer and creative · compare traffic costs, not an audience-test winner",
+          "tone": "sand"
+        }
+      ],
+      "current": false,
+      "totals": {
+        "spend": 57.41,
+        "impressions": 14248.0,
+        "clicks": 324.0,
+        "pageViews": 298.0,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": null
+      },
+      "budget": 69.85,
+      "reserve": 17.46,
+      "source": "report-notes.json",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "headline": "Brunch brings the cheapest page visits; no customer booking attributed yet.",
+      "insights": [
+        {
+          "label": "Best for traffic",
+          "text": "Brunch: 174 link clicks and 155 page visits at 14.0p per visit. It promotes a different offer from tables."
+        },
+        {
+          "label": "Tables audience test",
+          "text": "Broad: 65 visits; jazz: 78. Compare costs within this period; uneven delivery and small samples limit conclusions."
+        },
+        {
+          "label": "Bookings",
+          "text": "Latest GA4 check was 19 October, covering through 18 October. It showed zero paid-social booking completions; its one completion was consistent with the cancelled test. Earlier bookings cannot be attributed retrospectively."
+        }
+      ],
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep–18 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      },
+      "periodStart": "2026-10-12",
+      "periodEnd": "2026-10-18",
+      "seriesId": "moonshine-current",
+      "accountTimezone": "Europe/London",
+      "objective": "Traffic / landing-page views"
+    },
+    {
+      "id": "moonshine-week-2026-10-19",
+      "venue": "moonshine",
+      "title": "Tables & brunch · 19 Oct so far",
+      "period": "19 Oct 2026 · today partial",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120259207030060746",
+          "title": "Date night · broad",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 2.11,
+            "impressions": 517.0,
+            "clicks": 8.0,
+            "pageViews": 8.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": 463.0
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_broad",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Broad | 13 Oct"
+        },
+        {
+          "id": "120259302905770746",
+          "title": "Date night · jazz suggestion",
+          "group": "tables",
+          "media": "date-night",
+          "audience": "25+ · Leicester +17 km · Jazz Advantage+ suggestion; may expand",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£21.83 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 2.2,
+            "impressions": 578.0,
+            "clicks": 5.0,
+            "pageViews": 4.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": 511.0
+          },
+          "url": "https://moonshineleicester.co.uk/book-a-table?utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_tables_audience01&utm_content=m13_jazz",
+          "goal": "Bring people to the table booking page.",
+          "campaignId": "120259207030070746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M13 | Tables | Jazz seed | 13 Oct"
+        },
+        {
+          "id": "120259302967480746",
+          "title": "Halloween brunch",
+          "group": "brunch",
+          "media": "brunch",
+          "audience": "25+ · Leicester +17 km · local broad",
+          "platform": "Facebook & Instagram feeds",
+          "budgetNote": "£26.19 lifetime",
+          "status": "Active at 19 Oct check",
+          "metrics": {
+            "spend": 2.51,
+            "impressions": 622.0,
+            "clicks": 25.0,
+            "pageViews": 22.0,
+            "plays3s": null,
+            "thruplays": null,
+            "reach": 567.0
+          },
+          "url": "https://moonshineleicester.co.uk/bottomless-brunch-leicester?date=2026-10-31&utm_source=meta&utm_medium=paid_social&utm_campaign=moonshine_brunch01&utm_content=m02_halloween#reserve-brunch-widget",
+          "goal": "Bring people to the 31 October brunch booking page.",
+          "campaignId": "120259302967330746",
+          "tracking": "Website tags and booking-completion tracking implemented 16 Oct. Earlier 19 Oct GA4 check through 18 Oct shows no paid-social customer completion. This Meta snapshot measures traffic only.",
+          "schedule": "Ends 2026-10-20",
+          "attribution": "7-day click or 1-day view",
+          "sourceAdName": "M02 | Halloween brunch | Broad | 13 Oct"
+        }
+      ],
+      "groups": [
+        {
+          "id": "tables",
+          "title": "Audience comparison",
+          "note": "Same M13 graphic · broad versus jazz-seeded delivery · £43.66 combined",
+          "tone": "lilac"
+        },
+        {
+          "id": "brunch",
+          "title": "Halloween brunch",
+          "note": "Different offer and creative · compare traffic costs, not an audience-test winner",
+          "tone": "sand"
+        }
+      ],
+      "current": true,
+      "totals": {
+        "spend": 6.82,
+        "impressions": 1717.0,
+        "clicks": 38.0,
+        "pageViews": 34.0,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": null
+      },
+      "budget": 69.85,
+      "reserve": 17.46,
+      "source": "report-notes.json",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "headline": "Brunch brings the cheapest page visits; no customer booking attributed yet.",
+      "insights": [
+        {
+          "label": "Best for traffic",
+          "text": "Brunch: 25 link clicks and 22 page visits at 11.4p per visit. It promotes a different offer from tables."
+        },
+        {
+          "label": "Tables audience test",
+          "text": "Broad: 8 visits; jazz: 4. Compare costs within this period; uneven delivery and small samples limit conclusions."
+        },
+        {
+          "label": "Bookings",
+          "text": "Latest GA4 check was 19 October, covering through 18 October. It showed zero paid-social booking completions; its one completion was consistent with the cancelled test. Earlier bookings cannot be attributed retrospectively."
+        }
+      ],
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep–18 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      },
+      "periodStart": "2026-10-19",
+      "periodEnd": "2026-10-19",
+      "seriesId": "moonshine-current",
+      "accountTimezone": "Europe/London",
+      "objective": "Traffic / landing-page views"
+    },
+    {
+      "id": "merchants-saturday-2026-10-19",
+      "venue": "merchants",
+      "title": "Saturday Sessions · scheduled · 19 Oct",
+      "period": "19 Oct 2026 · prelaunch check",
+      "capturedAt": "2026-10-19T20:59:24+01:00",
+      "currency": "GBP",
+      "timezone": "Europe/London",
+      "ads": [
+        {
+          "id": "120248598511020534",
+          "title": "Saturday Sessions · launch recap",
+          "group": "broad",
+          "media": null,
+          "audience": "18–65+ · Leicester +17 km · broad, excluding recent Tipi viewers",
+          "platform": "Facebook & Instagram · feed, stories, reels",
+          "budgetNote": "£10 lifetime",
+          "status": "Scheduled at 19 Oct check",
+          "metrics": {
+            "spend": 0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": null,
+            "pageViews": null,
+            "plays3s": null,
+            "thruplays": null
+          },
+          "url": "https://www.fatsoma.com/e/t4ro39et/la/gf3n",
+          "adSetId": "120248598511010534",
+          "campaignId": "120248598510890534",
+          "goal": "Bring people to Saturday Sessions on 24 October. Optimised for link clicks.",
+          "tracking": "Unique Fatsoma link gf3n. Six recorded pre-delivery setup/QA visits. Free afternoon tickets exist, so paid ticket types must be checked.",
+          "schedule": "20 Oct midday to 22 Oct midday London",
+          "sourceAdName": "MY | Saturday Sessions | Broad | Launch recap DerppNkNxHy",
+          "attribution": "7-day click or 1-day view"
+        }
+      ],
+      "groups": [
+        {
+          "id": "broad",
+          "title": "New campaign",
+          "note": "£10 lifetime · 20–22 Oct · existing 12-second launch recap post",
+          "tone": "lilac"
+        }
+      ],
+      "current": true,
+      "totals": {
+        "spend": 0,
+        "impressions": 0,
+        "clicks": null,
+        "pageViews": null,
+        "plays3s": null,
+        "thruplays": null,
+        "reach": null
+      },
+      "budget": 10,
+      "reserve": null,
+      "source": "report-notes.json",
+      "coverage": "19 Oct Meta export verifies Scheduled and £0 spend. Schedule, IDs and destination come from the verified setup record at 17:48 London. Account reports UTC days. No matching local creative was copied.",
+      "headline": "Scheduled to start 20 October; no spend yet.",
+      "insights": [
+        {
+          "label": "Schedule",
+          "text": "£10 total, from midday 20 October to midday 22 October London."
+        },
+        {
+          "label": "Measurement",
+          "text": "Use the new gf3n route and exclude its six pre-delivery visits. Afternoon free tickets must be separated from paid evening tickets."
+        }
+      ],
+      "business": {
+        "value": "Not started",
+        "label": "Campaign results",
+        "note": "No ad spend as of the 19 Oct snapshot. Setup record had zero linked sales before delivery; no new claim about current event-wide sales."
+      },
+      "periodStart": "2026-10-19",
+      "periodEnd": "2026-10-19",
+      "seriesId": "merchants-saturday-24-oct",
+      "accountTimezone": "Etc/Universal",
+      "objective": "Traffic / link clicks"
+    }
+  ],
+  "media": {
+    "merchants-v3": {
+      "kind": "video",
+      "src": "media/merchants-v3.mp4",
+      "poster": "media/merchants-v3.jpg",
+      "note": "Published v3 audio revision; viewing copy of the saved preview."
+    },
+    "nico-jungle": {
+      "kind": "video",
+      "src": "media/nico-jungle.mp4",
+      "poster": "media/nico-jungle.jpg",
+      "note": "Recorded source creative; local viewing copy."
+    },
+    "jungle-pov": {
+      "kind": "video",
+      "src": "media/jungle-pov.mp4",
+      "poster": "media/jungle-pov.jpg",
+      "note": "Recorded source creative; local viewing copy."
+    },
+    "date-night": {
+      "kind": "image",
+      "src": "media/date-night.png",
+      "poster": null,
+      "note": "Recorded source creative; local viewing copy."
+    },
+    "brunch": {
+      "kind": "video",
+      "src": "media/brunch.mp4",
+      "poster": "media/brunch.jpg",
+      "note": "Recorded source creative; local viewing copy."
+    },
+    "mother-earth-sequence-2": {
+      "kind": "video",
+      "src": "media/mother-earth-sequence-2.mp4",
+      "poster": "media/mother-earth-sequence-2.jpg",
+      "note": "Recorded source creative; local viewing copy."
+    },
+    "doppler-speaker": {
+      "kind": "video",
+      "src": "media/doppler-speaker.mp4",
+      "poster": "media/doppler-speaker.jpg",
+      "note": "Known local speaker source; visually matched to Meta in the September review. Byte-level match unavailable."
+    }
+  },
+  "overview": {
+    "coverage": "Fresh exports for Merchants, Moonshine, Doppler and the separate reel boost. Venture export returned no data. Weekly and whole-period scopes remain separate.",
+    "note": "Bookings and sales attribution are recorded separately from clicks; current day is partial."
+  }
+}

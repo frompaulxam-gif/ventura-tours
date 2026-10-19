@@ -1,0 +1,113 @@
+{
+  "updatedAt": "2026-10-19T21:05:17+01:00",
+  "reports": [
+    {
+      "id": "merchants-current",
+      "title": "Oktoberfest \u00b7 final results \u00b7 12\u201318 Oct",
+      "period": "12\u201318 Oct 2026",
+      "capturedAt": "2026-10-19T20:59:24+01:00",
+      "coverage": "Final ticket-campaign export. Reporting days use the Meta account timezone UTC (Etc/Universal), not London midnight; capture time is London. The separate \u00a32.91 personal boost has its own report. Video-view metrics were not included in this export. Unique reach is not summed across days. Broad destination changed after sellout on 16 October, so its figures span both routes.",
+      "business": {
+        "value": "0 linked",
+        "label": "Paid ad-link ticket sales",
+        "note": "Checked 19 Oct: 70 paid event tickets / \u00a3485 overall; zero tickets credited to the paid-ad links. Broad changed to the Fatsoma brand page after sellout on 16 Oct, so later clicks cannot be reconciled to the original event link. Raw link visits include setup/QA."
+      }
+    },
+    {
+      "id": "moonshine-current",
+      "title": "Tables & brunch \u00b7 total to 19 Oct",
+      "period": "12\u201319 Oct 2026 \u00b7 today partial",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep\u201318 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      }
+    },
+    {
+      "id": "jungle-current",
+      "title": "JUNGLE 4EVA \u00b7 final results \u00b7 12\u201318 Oct",
+      "period": "12\u201318 Oct 2026",
+      "capturedAt": "2026-10-19T21:01:44+01:00",
+      "coverage": "London reporting days. Includes \u00a337.92 ticket-ad spend plus \u00a33.69 doorway-awareness spend. Ticket traffic: 462 link clicks and 402 page visits. Weekend ads show no spend. Daily reach is not additive and is left unknown. Video results are refreshed from the same daily export.",
+      "business": {
+        "value": "0 linked",
+        "label": "Paid ad-link ticket sales",
+        "note": "Checked 19 Oct: 25 paid tickets / \u00a3132 event-wide (18 \u00d7 \u00a35, 7 \u00d7 \u00a36). Six campaign links show 870 raw visits and zero sales. Link visits include prelaunch/QA and are not unique Meta clicks."
+      }
+    },
+    {
+      "id": "mother-earth",
+      "title": "Mother Earth \u00b7 audience test",
+      "period": "1\u20138 Oct 2026",
+      "capturedAt": "2026-10-08T23:25:00+01:00",
+      "coverage": "Two audience-test ads only, not the full campaign. Both used the same video. Figures cover 1\u20138 October and were captured at 23:25 on 8 October. All Mother Earth parent campaigns were verified OFF five minutes later after your pause request. Current delivery and final settled spend have not been rechecked. Event-wide ticket sales are separate.",
+      "business": {
+        "value": "0 linked",
+        "label": "Verified linked tickets",
+        "note": "At last saved ticket check. Event-wide sales remain separate."
+      }
+    },
+    {
+      "id": "back-in-rave",
+      "title": "Back in the Rave \u00b7 September",
+      "period": "1\u201326 Sep 2026",
+      "capturedAt": "2026-09-27T02:02:00+01:00",
+      "coverage": "Historical report. Includes the 17 exported ads with spend; zero-spend rows and drafts are omitted. Meta purchase actions are pixel events, not confirmed paid-ticket sales. The two Saturday ads shared a Fatsoma link, so its sales cannot be split by creative. Missing cells stay unreported.",
+      "business": {
+        "value": "7 paid",
+        "label": "Verified linked tickets",
+        "note": "At last saved ticket check. Event-wide sales remain separate."
+      }
+    },
+    {
+      "id": "merchants-personal-boost",
+      "title": "Original reel boost \u00b7 12\u201318 Oct",
+      "period": "12\u201318 Oct 2026",
+      "capturedAt": "2026-10-19T21:02:45+01:00",
+      "coverage": "London reporting dates 12\u201318 Oct. Meta export Results indicator is actions:link_click, establishing 95 link clicks. Landing-page and video metrics not included.",
+      "business": {
+        "value": "Unverified",
+        "label": "Paid tickets from boost",
+        "note": "No matched sales evidence for this separate personal-account boost."
+      }
+    },
+    {
+      "id": "moonshine-week-2026-10-12",
+      "title": "Tables & brunch \u00b7 12\u201318 Oct",
+      "period": "12\u201318 Oct 2026",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep\u201318 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      }
+    },
+    {
+      "id": "moonshine-week-2026-10-19",
+      "title": "Tables & brunch \u00b7 19 Oct so far",
+      "period": "19 Oct 2026 \u00b7 today partial",
+      "capturedAt": "2026-10-19T21:00:31+01:00",
+      "coverage": "Three current ads. London reporting days; 19 October is partial where included. Source exports retain each day. Reach is not summed across days. Video metrics were not in this export. Booking evidence has a separate earlier capture and reporting period.",
+      "business": {
+        "value": "0 attributed",
+        "label": "Customer bookings in latest GA4 check",
+        "note": "Earlier 19 Oct GA4 check, 21 Sep\u201318 Oct: no paid-social booking_complete. One Unassigned completion is consistent with the cancelled 16 Oct test. Tracking was completed 16 Oct; this does not prove zero actual ad influence. GA4 not refreshed during this evening Meta check."
+      }
+    },
+    {
+      "id": "merchants-saturday-2026-10-19",
+      "title": "Saturday Sessions \u00b7 scheduled \u00b7 19 Oct",
+      "period": "19 Oct 2026 \u00b7 prelaunch check",
+      "capturedAt": "2026-10-19T20:59:24+01:00",
+      "coverage": "19 Oct Meta export verifies Scheduled and \u00a30 spend. Schedule, IDs and destination come from the verified setup record at 17:48 London. Account reports UTC days. No matching local creative was copied.",
+      "business": {
+        "value": "Not started",
+        "label": "Campaign results",
+        "note": "No ad spend as of the 19 Oct snapshot. Setup record had zero linked sales before delivery; no new claim about current event-wide sales."
+      }
+    }
+  ]
+}
