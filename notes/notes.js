@@ -43,7 +43,7 @@ function insertBullets(){
  const start=input.selectionStart,end=input.selectionEnd;
  const lineStart=input.value.lastIndexOf('\n',start-1)+1;
  const selected=input.value.slice(lineStart,end);
- const replacement=selected.split('\n').map(line=>line.startsWith('• ')?line:'• '+line).join('\n');
+ const replacement=selected.split('\n').map(line=>line.startsWith('☐ ')?line:'☐ '+line.replace(/^• /,'')).join('\n');
  if(input.value.length+replacement.length-selected.length>input.maxLength)return;
  input.setRangeText(replacement,lineStart,end,'end');input.focus();saveTextDraft();
 }
@@ -51,9 +51,9 @@ $('bullets').addEventListener('click',insertBullets);
 $('note-text').addEventListener('keydown',event=>{
  const input=event.target;if(event.key!=='Enter'||event.shiftKey||event.isComposing||input.readOnly||input.selectionStart!==input.selectionEnd)return;
  const caret=input.selectionStart,lineStart=input.value.lastIndexOf('\n',caret-1)+1,line=input.value.slice(lineStart,caret);
- if(!line.startsWith('• '))return;
+ if(!line.startsWith('☐ ')&&!line.startsWith('• '))return;
  event.preventDefault();
- if(line.trim()==='•')input.setRangeText('',lineStart,caret,'end');
- else if(input.value.length+3<=input.maxLength)input.setRangeText('\n• ',caret,caret,'end');
+ if(line.trim()==='☐'||line.trim()==='•')input.setRangeText('',lineStart,caret,'end');
+ else if(input.value.length+3<=input.maxLength)input.setRangeText('\n☐ ',caret,caret,'end');
  saveTextDraft();
 });
