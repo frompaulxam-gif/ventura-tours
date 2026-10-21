@@ -1,4 +1,4 @@
-const CACHE='jarvis-notes-shell-v1';
+const CACHE='jarvis-notes-shell-v2';
 const SHELL=['./','index.html','notes.css','notes.js','manifest.webmanifest','icon-180.png','icon-192.png','icon-512.png','icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('jarvis-notes-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
