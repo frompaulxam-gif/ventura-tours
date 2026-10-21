@@ -1,13 +1,14 @@
 'use strict';
 const $=id=>document.getElementById(id);
 let unpersistedAudio=false;
+let deletedNote=null;
 let hasCaptureLock=false,requestingLock=false,releaseCaptureLock=null;
 let db,recording=null,stream=null,draftAudio=null,busy=false,recordingBusy=false,stopTimer=null,timer=null,started=0,previewURL=null,notesURLs=[];
 const DRAFT='jarvis-notes-text-v1', AUDIO_DRAFT='__audio_draft__',MAX_AUDIO=25*1024*1024;
 function feedback(message,error=false){$('feedback').textContent=message;$('feedback').classList.toggle('error',error)}
 function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open('jarvis-phone-notes',1);r.onupgradeneeded=()=>r.result.createObjectStore('notes',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.onblocked=()=>reject(new Error('Storage is busy in another window.'))})}
 function transaction(mode,fn){return new Promise((resolve,reject)=>{const tx=db.transaction('notes',mode);let result;try{result=fn(tx.objectStore('notes'))}catch(e){tx.abort();reject(e);return}tx.oncomplete=()=>resolve(result?.result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('Save interrupted'))})}
-function updateButtons(){const active=recordingBusy||recording?.state==='recording';$('save').disabled=!db||busy||active;$('record').disabled=!db||busy||(!active&&!!draftAudio);$('note-text').readOnly=!hasCaptureLock||!db||busy;$('bullets').disabled=!hasCaptureLock||!db||busy;$('record').setAttribute('aria-pressed',String(!!active));$('record').querySelector('span').textContent=active?'stop recording':draftAudio?'voice attached':'record voice'}
+function updateButtons(){const active=recordingBusy||recording?.state==='recording';$('save').disabled=!db||busy||active;const mutationDisabled=!hasCaptureLock||!db||busy||!!active;$('undo-delete').disabled=mutationDisabled;document.querySelectorAll('[data-note-mutation]').forEach(button=>{button.disabled=mutationDisabled});$('record').disabled=!db||busy||(!active&&!!draftAudio);$('note-text').readOnly=!hasCaptureLock||!db||busy;$('bullets').disabled=!hasCaptureLock||!db||busy;$('record').setAttribute('aria-pressed',String(!!active));$('record').querySelector('span').textContent=active?'stop recording':draftAudio?'voice attached':'record voice'}
 function showAudio(){if(previewURL)URL.revokeObjectURL(previewURL);previewURL=draftAudio?URL.createObjectURL(draftAudio):null;$('draft-audio').hidden=!draftAudio;if(previewURL)$('draft-player').src=previewURL;else $('draft-player').removeAttribute('src');updateButtons()}
 function saveTextDraft(){if(!hasCaptureLock)return;try{localStorage.setItem(DRAFT,$('note-text').value);return true}catch{feedback('Draft backup unavailable. Keep this page open until your note is saved.',true);return false}}
 function stopRecording(){if(recording?.state==='recording'){recording.stop();clearTimeout(stopTimer);clearInterval(timer);$('recording-line').textContent='finishing your recording…';$('record').disabled=true}}
@@ -23,10 +24,10 @@ async function startRecording(){if(recordingBusy)return;if(recording?.state==='r
 function audioExtension(blob){return blob.type.includes('mp4')?'m4a':blob.type.includes('ogg')?'ogg':'webm'}
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
 async function copyText(text){try{await navigator.clipboard.writeText(text);feedback('copied. paste into your AI chat when you’re ready.')}catch{$('copy-text').value=text;$('copy-dialog').showModal();$('copy-text').select()}}
-async function renderNotes(){const all=await transaction('readonly',s=>s.getAll());const notes=all.filter(n=>n.id!==AUDIO_DRAFT).sort((a,b)=>a.createdAt.localeCompare(b.createdAt));notesURLs.forEach(URL.revokeObjectURL);notesURLs=[];$('notes').replaceChildren();if(!notes.length)return;
+async function renderNotes(){const all=await transaction('readonly',s=>s.getAll());deletedNote=all.filter(n=>n.id!==AUDIO_DRAFT&&n.deletedAt).sort((a,b)=>b.deletedAt.localeCompare(a.deletedAt))[0]||null;$('delete-status').hidden=!deletedNote;const notes=all.filter(n=>n.id!==AUDIO_DRAFT&&!n.deletedAt).sort((a,b)=>a.createdAt.localeCompare(b.createdAt));notesURLs.forEach(URL.revokeObjectURL);notesURLs=[];$('notes').replaceChildren();if(!notes.length)return;
  for(const note of notes){const item=document.createElement('article');item.className='note';const body=document.createElement('p');body.className='note-body';body.textContent=displayNote(note.text);item.append(body);
  if(note.audio){const audio=document.createElement('audio');audio.controls=true;audio.preload='metadata';const url=URL.createObjectURL(note.audio);notesURLs.push(url);audio.src=url;item.append(audio)}
- const actions=document.createElement('details');actions.className='note-actions';const summary=document.createElement('summary');summary.textContent='•••';summary.setAttribute('aria-label','Note options');actions.append(summary);if(note.text){const copy=document.createElement('button');copy.type='button';copy.className='quiet';copy.textContent='copy for AI';copy.onclick=()=>copyText(`Help me clarify this note before turning it into a task. Ask only what is missing, with concrete numbered options and a free-text option. Do not execute any action yet.\n\nOriginal note:\n${note.text}`);actions.append(copy)}if(note.audio){const audio=document.createElement('button');audio.type='button';audio.className='quiet';audio.textContent='save audio file';audio.onclick=()=>download(note.audio,`jarvis-note-${note.createdAt.slice(0,10)}.${audioExtension(note.audio)}`);actions.append(audio)}item.append(actions);$('notes').append(item)}
+ const actions=document.createElement('details');actions.className='note-actions';const summary=document.createElement('summary');summary.textContent='•••';summary.setAttribute('aria-label','Note options');actions.append(summary);if(note.text){const copy=document.createElement('button');copy.type='button';copy.className='quiet';copy.textContent='copy for AI';copy.onclick=()=>copyText(`Help me clarify this note before turning it into a task. Ask only what is missing, with concrete numbered options and a free-text option. Do not execute any action yet.\n\nOriginal note:\n${note.text}`);actions.append(copy)}if(note.audio){const audio=document.createElement('button');audio.type='button';audio.className='quiet';audio.textContent='save audio file';audio.onclick=()=>download(note.audio,`jarvis-note-${note.createdAt.slice(0,10)}.${audioExtension(note.audio)}`);actions.append(audio)}const remove=document.createElement('button');remove.type='button';remove.className='quiet delete-note';remove.textContent='delete note';remove.setAttribute('data-note-mutation','');remove.disabled=!hasCaptureLock||!db||busy||recordingBusy||!!recording;remove.onclick=()=>changeDeleted(note,true);actions.append(remove);item.append(actions);$('notes').append(item)}
 }
 async function saveNote(event){event.preventDefault();if(busy||recordingBusy||recording||!db)return;const text=$('note-text').value;if(!hasNoteText(text)&&!draftAudio){feedback('add a thought or record a voice note first.',true);$('note-text').focus();return}if(text.length>10000){feedback('Keep each note under 10,000 characters.',true);return}busy=true;updateButtons();feedback('saving…');const note={id:crypto.randomUUID(),text:hasNoteText(text)?text:'',audio:draftAudio,createdAt:new Date().toISOString(),state:'inbox'};let committed=false;
  try{await transaction('readwrite',s=>{s.add(note);s.delete(AUDIO_DRAFT)});committed=true;$('note-text').value='☐ ';try{localStorage.removeItem(DRAFT)}catch{}draftAudio=null;unpersistedAudio=false;showAudio();feedback('saved.');await renderNotes();navigator.storage?.persist?.().catch(()=>{});}catch{feedback(committed?'Your note was saved, but the inbox could not refresh. Reload to see it.':'Could not save. Your text and recording are still here. Keep this page open and try again.',true)}finally{busy=false;updateButtons();if(committed&&!document.hidden){$('note-text').focus();revealDraft()}releaseIfHidden()}}
@@ -79,3 +80,18 @@ function focusDraft(){
  revealDraft();
 }
 window.addEventListener('pageshow',event=>{if(event.persisted)focusDraft()});
+
+async function changeDeleted(note,deleted){
+ if(!note||note.id===AUDIO_DRAFT||!hasCaptureLock||!db||busy||recordingBusy||recording)return;
+ busy=true;updateButtons();let committed=false;
+ const updated={...note,deletedAt:deleted?new Date().toISOString():null};
+ try{
+  await transaction('readwrite',store=>store.put(updated));committed=true;
+  if(deleted){deletedNote=updated;$('delete-status').hidden=false}
+  feedback(deleted?'':'note restored.');
+  await renderNotes();
+ }catch{
+  feedback(committed?'Change saved. Reload to refresh your notes.':deleted?'Could not delete. Your note is still saved.':'Could not restore. Tap undo to try again.',true);
+ }finally{busy=false;updateButtons();releaseIfHidden()}
+}
+$('undo-delete').addEventListener('click',()=>changeDeleted(deletedNote,false));
