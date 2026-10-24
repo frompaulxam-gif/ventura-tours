@@ -8,9 +8,9 @@
   const read = (k, fallback) => { try { return JSON.parse(localStorage.getItem(k)) || fallback; } catch { return fallback; } };
   const status = message => { const el = document.querySelector('#status'); if (el) el.textContent = message; };
   const write = (k, value) => { try { localStorage.setItem(k, JSON.stringify(value)); return true; } catch { status('browser storage is unavailable. download your feedback to keep it.'); return false; } };
-  const validVote = v => ['L', 'D'].includes(v) ? v : '';
+  const validVote = v => ['L', 'D', 'S'].includes(v) ? v : '';
   const text = v => typeof v === 'string' ? v : '';
-  const effective = item => item.vote === 'D' ? 'dislike' : item.note.trim() ? 'changes requested' : item.vote === 'L' ? 'like' : 'unrated';
+  const effective = item => item.vote === 'S' ? 'really like' : item.vote === 'D' ? 'dislike' : item.vote === 'L' ? 'like' : item.note.trim() ? 'changes requested' : 'unrated';
   const plain = data => ['navy stripey · video review', 'name: ' + (data.name || 'anonymous'), '', ...ids.flatMap((id, i) => [names[i] + ': ' + effective(data.items[id]), data.items[id].note || 'no comment', '']), 'overall comments:', data.overall || 'none'].join('\n');
   const snapshot = () => ({ name: state.name, overall: state.overall, items: state.items, savedAt: new Date().toISOString() });
   let state;
@@ -27,12 +27,15 @@
       if (saved) status('saved in this browser');
     }
     function paint(card) {
+      let summary=document.querySelector('#rating-summary');if(!summary){summary=document.createElement('p');summary.id='rating-summary';document.querySelector('#status').before(summary);}
+      const votes=Object.values(state.items);summary.textContent=`${votes.filter(v=>v.vote==='S').length} really like · ${votes.filter(v=>v.vote==='L').length} liked · ${votes.filter(v=>v.vote==='D').length} disliked`;
       const item = state.items[card.dataset.id];
       card.querySelectorAll('[data-vote]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.vote === item.vote)));
       card.querySelector('.verdict').textContent = effective(item) === 'changes requested' ? 'changes requested' : '';
     }
     cards.forEach(card => {
       const id = card.dataset.id;
+      card.querySelectorAll('[data-vote]').forEach(b=>b.setAttribute('aria-label',(b.dataset.vote==='S'?'really like':b.dataset.vote==='L'?'like':'dislike')+' video '+names[ids.indexOf(id)]));
       const note = card.querySelector('textarea');
       note.value = state.items[id].note;
       card.querySelectorAll('[data-vote]').forEach(button => button.addEventListener('click', () => {

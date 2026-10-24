@@ -3,3 +3,10 @@
 @media(min-width:900px){.wrap{width:720px}}
 @media(max-width:560px){.wrap{width:min(360px,calc(100% - 36px))}.masthead{padding-top:26px;flex-wrap:wrap;gap:10px}.masthead>a{padding:0;min-height:34px}.films{grid-template-columns:1fr;gap:36px}h1{font-size:29px}main>section{margin-bottom:42px}.downloads{gap:8px}.actions{gap:8px}.actions button{flex-grow:1}.submission table{font-size:12px}.submission th,.submission td{padding:8px 4px}footer{font-size:12px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Three exclusive ratings; selected text remains visible without colour. */
+.really-like{min-height:44px;white-space:normal;line-height:1.2}
+.really-like[aria-pressed=true]{background:#51401e!important;border-color:#edce86!important;color:#ffe4a5!important}
+.really-liked,.status-really-liked,.really-like-text{color:#ffe4a5}
+.clip-frame[data-verdict="really-like"],.frame[data-verdict="really-like"],.frame.is-really-liked,.shot.really-liked .thumb,.clip-tile.is-really-liked .frame-button,.clip-frame[data-really-liked=true]{border-color:#edce86;outline:2px solid #edce86;outline-offset:-2px}
+.clip-frame[data-verdict="really-like"] .approved-label{display:block;background:#51401e;color:#ffe4a5}
