@@ -4,24 +4,24 @@ const empty=()=>({answers:{},videoAnswers:{},videoNotes:{},notes:{},overall:'',n
 const el=reviewEl;
 const seconds=n=>Number(n).toFixed(6).replace(/0+$/,'').replace(/\.$/,'');
 const timestamp=n=>`${Math.floor(n/60)}:${(n%60).toFixed(2).padStart(5,'0')}`;
-function updateVote(button,selected,label){button.setAttribute('aria-pressed',String(selected));button.textContent=selected?(button.dataset.vote==='X'?'× disliked':'✓ liked'):label;}
+function updateVote(button,selected,label){button.setAttribute('aria-pressed',String(selected));button.textContent=selected?(button.dataset.vote==='S'?'really like':button.dataset.vote==='X'?'× disliked':'✓ liked'):label;}
 function videoVotes(video){
   const group=el('div','video-vote');group.setAttribute('role','group');group.setAttribute('aria-label',`whole video feedback for ${video.label}`);
-  function update(){for(const b of group.children)updateVote(b,state.videoAnswers[video.id]===b.dataset.vote,b.dataset.vote==='K'?'like video':'dislike video');}
-  for(const [value,label] of [['K','like'],['X','dislike']]){const b=el('button',`vote-button ${label}`);b.type='button';b.dataset.vote=value;b.setAttribute('aria-label',`${label} ${video.label} video`);b.addEventListener('click',()=>{state.videoAnswers[video.id]=state.videoAnswers[video.id]===value?'-':value;update();persist();});group.append(b);}
+  function update(){for(const b of group.children)updateVote(b,state.videoAnswers[video.id]===b.dataset.vote,b.dataset.vote==='S'?'really like':b.dataset.vote==='K'?'like video':'dislike video');}
+  for(const [value,label] of [['K','like'],['S','really like'],['X','dislike']]){const b=el('button',`vote-button ${value==='S'?'really-like':label}`);b.type='button';b.dataset.vote=value;b.setAttribute('aria-label',`${label} ${video.label} video`);b.addEventListener('click',()=>{state.videoAnswers[video.id]=state.videoAnswers[video.id]===value?'-':value;update();persist();});group.append(b);}
   update();return group;
 }
 function updateClip(shot,node){
   const vote=state.answers[shot.id],comment=Boolean(state.notes[shot.id]?.trim());
-  node.classList.toggle('disliked',vote==='X');node.classList.toggle('liked',vote==='K');node.classList.toggle('has-note',comment);
+  node.classList.toggle('disliked',vote==='X');node.classList.toggle('liked',vote==='K');node.classList.toggle('really-liked',vote==='S');node.classList.toggle('has-note',comment);
   const thumb=node.querySelector('.thumb');thumb.setAttribute('aria-pressed',String(vote==='X'));thumb.querySelector('.mark').textContent=vote==='X'?'×':'✓';
-  updateVote(node.querySelector('.clip-like'),vote==='K','like');
-  node.querySelector('.clip-status').textContent=vote==='X'?'disliked':vote==='K'?'liked':'';
+  updateVote(node.querySelector('.clip-like'),vote==='K','like');updateVote(node.querySelector('.clip-really-like'),vote==='S','really like');
+  node.querySelector('.clip-status').textContent=vote==='X'?'disliked':vote==='S'?'really like':vote==='K'?'liked':'';
   node.querySelector('.comment-toggle').textContent=comment?'comment ✓':'comment';
 }
 function summary(){
   const v=Object.values(state.videoAnswers),c=Object.values(state.answers),n=Object.values(state.notes).filter(s=>s.trim()).length+Object.values(state.videoNotes).filter(s=>s.trim()).length+(state.overall.trim()?1:0);
-  $('#summary').replaceChildren(el('span','',`videos: ${v.filter(a=>a==='K').length} liked · ${v.filter(a=>a==='X').length} disliked`),el('span','',`clips: ${c.filter(a=>a==='K').length} liked · ${c.filter(a=>a==='X').length} disliked`),el('span','',`${n} ${n===1?'comment':'comments'}`));
+  $('#summary').replaceChildren(el('span','',`videos: ${v.filter(a=>a==='S').length} really like · ${v.filter(a=>a==='K').length} liked · ${v.filter(a=>a==='X').length} disliked`),el('span','',`clips: ${c.filter(a=>a==='S').length} really like · ${c.filter(a=>a==='K').length} liked · ${c.filter(a=>a==='X').length} disliked`),el('span','',`${n} ${n===1?'comment':'comments'}`));
 }
 function persist(){
   state.updated=new Date().toISOString();const ok=reviewStorage.set(key,state);
@@ -43,6 +43,7 @@ function renderClip(video,shot,player){
   const caption=el('div','clip-label');caption.append(el('span','clip-number',`clip ${shot.number}`),el('span','clip-status'));node.append(caption);
   const watch=el('button','watch',`▶ ${timestamp(shot.start)}`);watch.type='button';watch.setAttribute('aria-label',`watch ${video.label}, clip ${shot.number}`);watch.addEventListener('click',()=>{previewBounds.set(player,{start:shot.start,end:shot.end});player.currentTime=shot.start;player.play().then(()=>previewTick(player)).catch(()=>{$('#status').textContent='press play on the video to watch this clip.'});});node.append(watch);
   const like=el('button','clip-like vote-button like');like.type='button';like.dataset.vote='K';like.setAttribute('aria-label',`like ${video.label}, clip ${shot.number}`);like.addEventListener('click',()=>{state.answers[shot.id]=state.answers[shot.id]==='K'?'-':'K';updateClip(shot,node);persist();});node.append(like);
+  const superlike=el('button','clip-really-like vote-button really-like','really like');superlike.type='button';superlike.dataset.vote='S';superlike.setAttribute('aria-label',`really like ${video.label}, clip ${shot.number}`);superlike.addEventListener('click',()=>{state.answers[shot.id]=state.answers[shot.id]==='S'?'-':'S';updateClip(shot,node);persist();});node.append(superlike);
   const note=el('textarea','clip-comment');note.id=`comment-${shot.id}`;note.rows=3;note.maxLength=12000;note.placeholder='add a comment';note.setAttribute('aria-label',`comment on ${video.label}, clip ${shot.number}`);note.value=state.notes[shot.id]||'';note.hidden=!note.value.trim();
   const comment=el('button','comment-toggle');comment.type='button';comment.setAttribute('aria-label',`add or edit comment for ${video.label}, clip ${shot.number}`);comment.setAttribute('aria-controls',note.id);comment.setAttribute('aria-expanded',String(!note.hidden));comment.addEventListener('click',()=>{note.hidden=!note.hidden;comment.setAttribute('aria-expanded',String(!note.hidden));if(!note.hidden)note.focus();});node.append(comment,note);
   note.addEventListener('input',()=>{state.notes[shot.id]=note.value;updateClip(shot,node);persist();});updateClip(shot,node);return node;
@@ -80,10 +81,10 @@ async function start(){
     try{const online=await reviewServerState(manifest,key);disk=online.draft;submissions=reviewMergeRows(online.submissions||[],submissions);reviewStorage.set(key+':submissions',{submissions});}catch{}
     state={...empty(),...(disk?.updated>(local.updated||'')?disk:local)};
     const shotIds=new Set(shots.map(s=>s.id)),videoIds=new Set(manifest.videos.map(v=>v.id));
-    state.answers=Object.fromEntries(Object.entries(state.answers||{}).filter(([id])=>shotIds.has(id)).map(([id,v])=>[id,['K','X','-'].includes(v)?v:'-']));
+    state.answers=Object.fromEntries(Object.entries(state.answers||{}).filter(([id])=>shotIds.has(id)).map(([id,v])=>[id,['S','K','X','-'].includes(v)?v:'-']));
     for(const [field,ids] of [['videoAnswers',videoIds],['notes',shotIds],['videoNotes',videoIds]])state[field]=Object.fromEntries(Object.entries(state[field]||{}).filter(([id])=>ids.has(id)));
     const url=new URL(location.href),seed=url.searchParams.get('votes'),videoSeed=url.searchParams.get('videoVotes');
-    if(!state.updated||(url.searchParams.get('at')||'')>=state.updated){if(seed?.length===shots.length)shots.forEach((s,i)=>{if(['K','X','-'].includes(seed[i]))state.answers[s.id]=seed[i];});if(videoSeed?.length===manifest.videos.length)manifest.videos.forEach((v,i)=>{if(['K','X','-'].includes(videoSeed[i]))state.videoAnswers[v.id]=videoSeed[i];});}
+    if(!state.updated||(url.searchParams.get('at')||'')>=state.updated){if(seed?.length===shots.length)shots.forEach((s,i)=>{if(['S','K','X','-'].includes(seed[i]))state.answers[s.id]=seed[i];});if(videoSeed?.length===manifest.videos.length)manifest.videos.forEach((v,i)=>{if(['S','K','X','-'].includes(videoSeed[i]))state.videoAnswers[v.id]=videoSeed[i];});}
     reviewRoundOptions(registry,round,$('#round'));$('#count').textContent=`${manifest.videos.length} videos · ${shots.length} clips`;$('#results-link').href=`results.html?round=${encodeURIComponent(round.id)}`;
     for(const video of manifest.videos)$('#videos').append(renderVideo(video));
     $('#overall').value=state.overall;$('#name').value=state.name;for(const field of ['overall','name'])$('#'+field).addEventListener('input',e=>{state[field]=e.target.value;persist();});

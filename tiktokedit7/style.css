@@ -4,3 +4,11 @@
 @media(prefers-reduced-motion:no-preference){button{transition:border-color .15s ease-out,background-color .15s ease-out}}
 
 .feedback-help{font-size:13px;margin:0 0 12px}
+
+/* Three exclusive ratings; selected text remains visible without colour. */
+.really-like{min-height:44px;white-space:normal;line-height:1.2}
+.really-like[aria-pressed=true]{background:#51401e!important;border-color:#edce86!important;color:#ffe4a5!important}
+.really-liked,.status-really-liked,.really-like-text{color:#ffe4a5}
+.clip-frame[data-verdict="really-like"],.frame[data-verdict="really-like"],.frame.is-really-liked,.shot.really-liked .thumb,.clip-tile.is-really-liked .frame-button,.clip-frame[data-really-liked=true]{border-color:#edce86;outline:2px solid #edce86;outline-offset:-2px}
+.clip-frame[data-verdict="really-like"] .approved-label{display:block;background:#51401e;color:#ffe4a5}
+.clip-really-like{width:100%;font-size:12px;padding:7px 4px;margin-bottom:5px}.shot.really-liked .clip-status{color:#ffe4a5}

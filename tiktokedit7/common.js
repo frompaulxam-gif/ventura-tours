@@ -1,6 +1,6 @@
 const reviewEl=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
 const reviewStorage={get(key,fallback){try{return JSON.parse(localStorage.getItem(key))||fallback}catch{return fallback}},set(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}}};
-const reviewVote=value=>({K:'liked',X:'disliked'})[value]||'unmarked';
+const reviewVote=value=>({S:'really like',K:'liked',X:'disliked'})[value]||'unmarked';
 async function reviewRound(){
   const response=await fetch('rounds.json');if(!response.ok)throw Error('rounds');const registry=await response.json();
   const wanted=new URL(location.href).searchParams.get('round')||registry.current;

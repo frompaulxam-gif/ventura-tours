@@ -14,7 +14,7 @@ async function load(){
    const person=el('section','person');person.append(el('h2','',row.name));
    const videoVotes=row.videoAnswers||{},liked=Object.values(videoVotes).filter(v=>v==='K').length,disliked=Object.values(videoVotes).filter(v=>v==='X').length;
    const k=row.answers.filter(v=>v==='K').length,x=row.answers.filter(v=>v==='X').length;
-   person.append(el('p','',`videos: ${liked} liked · ${disliked} disliked · clips: ${k} liked · ${x} disliked${row.ts?' · '+new Date(row.ts).toLocaleString('en-GB',{timeZone:'Europe/London'}):''}`));
+   person.append(el('p','',`videos: ${Object.values(videoVotes).filter(v=>v==='S').length} really like · ${liked} liked · ${disliked} disliked · clips: ${row.answers.filter(v=>v==='S').length} really like · ${k} liked · ${x} disliked${row.ts?' · '+new Date(row.ts).toLocaleString('en-GB',{timeZone:'Europe/London'}):''}`));
    person.append(el('h3','','whole videos'),resultTable(['video','answer','comment'],manifest.videos.map(v=>[v.name,reviewVote(videoVotes[v.id]),row.videoNotes?.[v.id]||''])));
    const all=manifest.videos.flatMap(v=>v.shots.map(s=>({...s,label:v.name})));
    person.append(el('h3','','clips'),resultTable(['video / clip','answer','comment','source / timing'],row.ids.map((id,i)=>{const s=all.find(s=>s.id===id);return[s?`${s.label} · clip ${s.number}`:id,reviewVote(row.answers[i]),row.notes?.[id]||'',s?`${s.source_filename} · ${s.source_start.toFixed(6)}s to ${s.source_end.toFixed(6)}s · video frames ${s.start_frame} to ${s.end_frame} (end exclusive)`:''];})));

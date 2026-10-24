@@ -8,7 +8,7 @@ function clean(value,m){
  const updated=new Date(value.updated);if(!Number.isFinite(+updated)||+updated>Date.now()+300000)throw Error('invalid timestamp');
  const videos=new Set(m.videos.map(v=>v.id)),clips=new Set(m.videos.flatMap(v=>v.shots.map(s=>s.id)));
  const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
- function fields(object,ids,kind){if(!object||typeof object!=='object'||Array.isArray(object))return {};return Object.fromEntries(Object.entries(object).filter(([id,v])=>ids.has(id)&&(kind==='vote'?['K','X','-'].includes(v):typeof v==='string')).map(([id,v])=>[id,kind==='vote'?v:text(v,12000)]));}
+ function fields(object,ids,kind){if(!object||typeof object!=='object'||Array.isArray(object))return {};return Object.fromEntries(Object.entries(object).filter(([id,v])=>ids.has(id)&&(kind==='vote'?['S','K','X','-'].includes(v):typeof v==='string')).map(([id,v])=>[id,kind==='vote'?v:text(v,12000)]));}
  return {answers:fields(value.answers,clips,'vote'),videoAnswers:fields(value.videoAnswers,videos,'vote'),notes:fields(value.notes,clips,'note'),videoNotes:fields(value.videoNotes,videos,'note'),overall:text(value.overall,30000),name:text(value.name,200),updated:updated.toISOString()};
 }
 export default {async fetch(request,env){
