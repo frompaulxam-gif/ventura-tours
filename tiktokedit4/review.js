@@ -14,7 +14,8 @@
     try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; }
   };
   const empty = () => ({boardId: BOARD, updatedAt: '', clips: {}, videos: {}, videoComments: {}, overallComment: '', name: ''});
-  const clipValue = id => ({liked: false, disliked: false, comment: '', ...draft.clips[id]});
+  const clipValue = id => {const v={liked:false,disliked:false,reallyLiked:false,comment:'',...draft.clips[id]};return {...v,reallyLiked:!!v.reallyLiked&&!v.disliked,liked:!!v.liked&&!v.disliked&&!v.reallyLiked};};
+  const voteLabel=v=>v==='really-like'?'really like':v==='like'?'liked':'disliked';
   const api = async (path, data) => {
     if (HOSTED) throw new Error('browser storage mode');
     const response = await fetch(path, data === undefined ? {cache: 'no-store', signal: AbortSignal.timeout(2500)} : {
@@ -24,28 +25,28 @@
     return response.json();
   };
   function summary() {
-    const values = Object.values(draft.clips);
+    const values = Object.keys(draft.clips).map(clipValue);
     const likedClips = values.filter(v => v.liked && !v.disliked).length;
     const rejected = values.filter(v => v.disliked).length;
     const noted = values.filter(v => v.comment.trim()).length;
     const likedVideos = Object.values(draft.videos).filter(v => v === 'like').length;
     const dislikedVideos = Object.values(draft.videos).filter(v => v === 'dislike').length;
     const videoNotes = Object.values(draft.videoComments).filter(v => v.trim()).length;
-    document.querySelector('#review-summary').textContent = `${likedVideos} video${likedVideos === 1 ? '' : 's'} liked · ${dislikedVideos} video${dislikedVideos === 1 ? '' : 's'} disliked · ${videoNotes} video comment${videoNotes === 1 ? '' : 's'} · ${likedClips} clip${likedClips === 1 ? '' : 's'} liked · ${rejected} clip${rejected === 1 ? '' : 's'} disliked · ${noted} clip comment${noted === 1 ? '' : 's'}`;
+    document.querySelector('#review-summary').textContent = `${Object.values(draft.videos).filter(v=>v==='really-like').length} videos really like · ${values.filter(v=>v.reallyLiked).length} clips really like · ${likedVideos} video${likedVideos === 1 ? '' : 's'} liked · ${dislikedVideos} video${dislikedVideos === 1 ? '' : 's'} disliked · ${videoNotes} video comment${videoNotes === 1 ? '' : 's'} · ${likedClips} clip${likedClips === 1 ? '' : 's'} liked · ${rejected} clip${rejected === 1 ? '' : 's'} disliked · ${noted} clip comment${noted === 1 ? '' : 's'}`;
     document.querySelectorAll('.clip-review').forEach(review => {
       const group = clips.filter(c => c.video === review.dataset.video);
       const count = group.filter(c => clipValue(c.id).disliked).length;
       const kept = group.filter(c => clipValue(c.id).liked && !clipValue(c.id).disliked).length;
-      review.querySelector('.clip-count').textContent = count || kept ? `${kept} liked · ${count} disliked` : `${group.length} clips`;
+      review.querySelector('.clip-count').textContent = count || kept || group.some(c=>clipValue(c.id).reallyLiked) ? `${group.filter(c=>clipValue(c.id).reallyLiked).length} really like · ${kept} liked · ${count} disliked` : `${group.length} clips`;
     });
   }
   function urlVerdicts() {
     const url = new URL(location.href);
-    const values = clips.map(c => clipValue(c.id).disliked ? 'X' : clipValue(c.id).liked ? 'K' : '-').join('');
-    if (/[KX]/.test(values)) url.searchParams.set('clips', values);
+    const values = clips.map(c => clipValue(c.id).disliked ? 'X' : clipValue(c.id).reallyLiked ? 'S' : clipValue(c.id).liked ? 'K' : '-').join('');
+    if (/[KSX]/.test(values)) url.searchParams.set('clips', values);
     else url.searchParams.delete('clips');
-    const videoValues = videos.map(v => draft.videos[v.id] === 'like' ? 'K' : draft.videos[v.id] === 'dislike' ? 'X' : '-').join('');
-    if (/[KX]/.test(videoValues)) url.searchParams.set('videos', videoValues);
+    const videoValues = videos.map(v => draft.videos[v.id] === 'really-like' ? 'S' : draft.videos[v.id] === 'like' ? 'K' : draft.videos[v.id] === 'dislike' ? 'X' : '-').join('');
+    if (/[KSX]/.test(videoValues)) url.searchParams.set('videos', videoValues);
     else url.searchParams.delete('videos');
     history.replaceState(null, '', url);
   }
@@ -56,6 +57,7 @@
     tile.querySelector('.clip-like').setAttribute('aria-pressed', String(liked));
     tile.querySelector('.clip-like').textContent = liked ? '✓ liked' : 'like';
     tile.classList.toggle('is-liked', liked);
+    tile.querySelector('.clip-really-like').setAttribute('aria-pressed',String(value.reallyLiked));tile.classList.toggle('is-really-liked',value.reallyLiked);
     tile.classList.toggle('has-note', Boolean(value.comment.trim()));
   }
   function paintVideo(review) {
@@ -63,7 +65,7 @@
     review.querySelectorAll('[data-vote]').forEach(button => {
       const selected = button.dataset.vote === value;
       button.setAttribute('aria-pressed', String(selected));
-      button.textContent = selected ? (value === 'like' ? 'liked' : 'disliked') : button.dataset.vote;
+      button.textContent = selected ? voteLabel(value) : button.dataset.vote.replace('really-like','really like');
     });
   }
   function persist() {
@@ -107,22 +109,22 @@
       const note = draft.videoComments[video.id] || '';
       if (!vote && !note.trim()) return;
       lines.push(`sound ${video.sound}, variant ${video.variant} · ${video.label}`, `file: ${video.file}`);
-      if (vote) lines.push(`whole video: ${vote === 'like' ? 'liked' : 'disliked'}`);
+      if (vote) lines.push(`whole video: ${voteLabel(vote)}`);
       if (note.trim()) lines.push(`video comment: ${note}`);
       lines.push('');
     });
     clips.forEach(shot => {
       const value = clipValue(shot.id);
-      if (!value.liked && !value.disliked && !value.comment.trim()) return;
+      if (!value.reallyLiked && !value.liked && !value.disliked && !value.comment.trim()) return;
       lines.push(`sound ${shot.sound}, variant ${shot.variant}, clip ${shot.number} (${shot.timelineIn.toFixed(6)}s to ${shot.timelineOut.toFixed(6)}s)`);
       lines.push(`${shot.label} · ${shot.folder} · ${shot.source}`);
       lines.push(`video: ${shot.videoName}`, `source time: ${shot.sourceStart.toFixed(6)}s to ${shot.sourceEnd.toFixed(6)}s`, `frames: ${shot.timelineInFrame} to ${shot.timelineOutFrame} at ${shot.fps}fps`);
-      lines.push(`clip choice: ${value.disliked ? 'disliked' : value.liked ? 'liked' : 'unrated'}`);
+      lines.push(`clip choice: ${value.disliked ? 'disliked' : value.reallyLiked ? 'really like' : value.liked ? 'liked' : 'unrated'}`);
       if (value.comment.trim()) lines.push(`comment: ${value.comment}`);
       lines.push('');
     });
     if (draft.overallComment.trim()) lines.push(`overall: ${draft.overallComment}`);
-    if (!Object.keys(draft.videos).length && !Object.values(draft.videoComments).some(v => v.trim()) && !Object.values(draft.clips).some(v => v.liked || v.disliked || v.comment.trim()) && !draft.overallComment.trim()) lines.push('no feedback yet');
+    if (!Object.keys(draft.videos).length && !Object.values(draft.videoComments).some(v => v.trim()) && !Object.values(draft.clips).some(v => v.reallyLiked || v.liked || v.disliked || v.comment.trim()) && !draft.overallComment.trim()) lines.push('no feedback yet');
     return lines.join('\n');
   }
   async function init() {
@@ -151,7 +153,7 @@
       } catch { /* Browser draft remains usable with any static local server. */ }
       draft.clips = Object.fromEntries(Object.entries(draft.clips || {}).filter(([id]) => byId.has(id)));
       const videoIds = new Set(videos.map(v => v.id));
-      draft.videos = Object.fromEntries(Object.entries(draft.videos || {}).filter(([id, vote]) => videoIds.has(id) && ['like', 'dislike'].includes(vote)));
+      draft.videos = Object.fromEntries(Object.entries(draft.videos || {}).filter(([id, vote]) => videoIds.has(id) && ['really-like', 'like', 'dislike'].includes(vote)));
       draft.videoComments = Object.fromEntries(Object.entries(draft.videoComments || {}).filter(([id, text]) => videoIds.has(id) && typeof text === 'string'));
       // Keep autosave and pagehide requests small; the server adds source records.
       draft = Object.fromEntries(Object.keys(empty()).map(key => [key, draft[key] ?? empty()[key]]));
@@ -159,12 +161,12 @@
       const videoSeed = new URL(location.href).searchParams.get('videos');
       if (!draft.updatedAt) {
         let seeded = false;
-        if (seed && seed.length === clips.length && /^[KX-]+$/.test(seed)) {
-          clips.forEach((c, i) => { if (seed[i] !== '-') draft.clips[c.id] = {liked: seed[i] === 'K', disliked: seed[i] === 'X', comment: ''}; });
+        if (seed && seed.length === clips.length && /^[KSX-]+$/.test(seed)) {
+          clips.forEach((c, i) => { if (seed[i] !== '-') draft.clips[c.id] = {reallyLiked:seed[i]==='S', liked: seed[i] === 'K', disliked: seed[i] === 'X', comment: ''}; });
           seeded = true;
         }
-        if (videoSeed && videoSeed.length === videos.length && /^[KX-]+$/.test(videoSeed)) {
-          videos.forEach((v, i) => { if (videoSeed[i] !== '-') draft.videos[v.id] = videoSeed[i] === 'K' ? 'like' : 'dislike'; });
+        if (videoSeed && videoSeed.length === videos.length && /^[KSX-]+$/.test(videoSeed)) {
+          videos.forEach((v, i) => { if (videoSeed[i] !== '-') draft.videos[v.id] = videoSeed[i] === 'S' ? 'really-like' : videoSeed[i] === 'K' ? 'like' : 'dislike'; });
           seeded = true;
         }
         if (seeded) changed();
@@ -174,14 +176,15 @@
         paint(tile);
         tile.querySelector('.frame-button').addEventListener('click', () => {
           const old = clipValue(tile.dataset.clip);
-          draft.clips[tile.dataset.clip] = {...old, liked: false, disliked: !old.disliked};
+          draft.clips[tile.dataset.clip] = {...old, reallyLiked:false, liked: false, disliked: !old.disliked};
           paint(tile); changed();
         });
         tile.querySelector('.clip-like').addEventListener('click', () => {
           const old = clipValue(tile.dataset.clip);
-          draft.clips[tile.dataset.clip] = {...old, liked: !old.liked, disliked: false};
+          draft.clips[tile.dataset.clip] = {...old, reallyLiked:false, liked: !old.liked, disliked: false};
           paint(tile); changed();
         });
+        tile.querySelector('.clip-really-like').addEventListener('click',()=>{const old=clipValue(tile.dataset.clip);draft.clips[tile.dataset.clip]={...old,reallyLiked:!old.reallyLiked,liked:false,disliked:false};paint(tile);changed();});
         tile.querySelector('.comment-button').addEventListener('click', () => openEditor(tile.closest('.clip-review'), byId.get(tile.dataset.clip)));
       });
       document.querySelectorAll('.clip-review').forEach(review => {

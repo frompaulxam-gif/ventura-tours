@@ -26,15 +26,15 @@
     rows.forEach(row => {
       const article = node('article', undefined, 'saved-review');
       article.append(node('h2', row.name), node('p', new Date(row.ts).toLocaleString('en-GB'), 'meta'));
-      const choices = clips.filter(c => row.clips[c.id]?.liked || row.clips[c.id]?.disliked || row.clips[c.id]?.comment?.trim());
+      const choices = clips.filter(c => row.clips[c.id]?.reallyLiked || row.clips[c.id]?.liked || row.clips[c.id]?.disliked || row.clips[c.id]?.comment?.trim());
       const likedClips = choices.filter(c => row.clips[c.id]?.liked && !row.clips[c.id]?.disliked).length;
       const rejected = choices.filter(c => row.clips[c.id]?.disliked).length;
       const noted = choices.filter(c => row.clips[c.id]?.comment?.trim()).length;
-      const videoChoices = videos.filter(v => ['like', 'dislike'].includes(row.videos?.[v.id]) || row.videoComments?.[v.id]?.trim());
+      const videoChoices = videos.filter(v => ['really-like', 'like', 'dislike'].includes(row.videos?.[v.id]) || row.videoComments?.[v.id]?.trim());
       const likedVideos = videoChoices.filter(v => row.videos[v.id] === 'like').length;
       const dislikedVideos = videoChoices.filter(v => row.videos[v.id] === 'dislike').length;
       const videoNotes = videoChoices.filter(v => row.videoComments?.[v.id]?.trim()).length;
-      article.append(node('p', `${likedVideos} video${likedVideos === 1 ? '' : 's'} liked · ${dislikedVideos} video${dislikedVideos === 1 ? '' : 's'} disliked · ${videoNotes} video comment${videoNotes === 1 ? '' : 's'} · ${likedClips} clip${likedClips === 1 ? '' : 's'} liked · ${rejected} clip${rejected === 1 ? '' : 's'} disliked · ${noted} clip comment${noted === 1 ? '' : 's'}`, 'result-summary'));
+      article.append(node('p', `${Object.values(row.videos||{}).filter(v=>v==='really-like').length} videos really like · ${choices.filter(c=>row.clips[c.id]?.reallyLiked).length} clips really like · ${likedVideos} video${likedVideos === 1 ? '' : 's'} liked · ${dislikedVideos} video${dislikedVideos === 1 ? '' : 's'} disliked · ${videoNotes} video comment${videoNotes === 1 ? '' : 's'} · ${likedClips} clip${likedClips === 1 ? '' : 's'} liked · ${rejected} clip${rejected === 1 ? '' : 's'} disliked · ${noted} clip comment${noted === 1 ? '' : 's'}`, 'result-summary'));
       if (videoChoices.length) {
         const section = node('div', undefined, 'video-ratings'), list = node('ul');
         section.append(node('h3', 'whole videos'));
@@ -44,7 +44,7 @@
           link.href = `index.html#video-${video.id}`;
           const vote = row.videos[video.id];
           const heading = node('div', undefined, 'video-result-heading');
-          heading.append(link, node('span', vote === 'like' ? 'liked' : vote === 'dislike' ? 'disliked' : 'comment only', vote === 'like' ? 'status-liked' : vote === 'dislike' ? 'status-disliked' : ''));
+          heading.append(link, node('span', vote === 'really-like' ? 'really like' : vote === 'like' ? 'liked' : vote === 'dislike' ? 'disliked' : 'comment only', vote === 'really-like' ? 'status-really-liked' : vote === 'like' ? 'status-liked' : vote === 'dislike' ? 'status-disliked' : ''));
           li.append(heading);
           if (row.videoComments?.[video.id]) li.append(node('p', row.videoComments[video.id], 'video-result-note'));
           list.append(li);
@@ -60,7 +60,7 @@
           const image = node('img'); image.src = clip.frame; image.alt = `clip ${clip.number}`; image.className = 'results-thumb'; image.width = 42;
           const link = node('a', `sound ${clip.sound} / v${clip.variant} / clip ${clip.number}`); link.href = `index.html#video-${clip.video}`;
           info.append(image, link, node('span', `${clip.folder} · ${clip.timelineIn.toFixed(3)}s to ${clip.timelineOut.toFixed(3)}s`, 'clip-source'), node('span', clip.source, 'clip-source'));
-          line.append(info, node('td', value.disliked ? 'disliked' : value.liked ? 'liked' : 'comment only', value.disliked ? 'status-disliked' : value.liked ? 'status-liked' : ''));
+          line.append(info, node('td', value.disliked ? 'disliked' : value.reallyLiked ? 'really like' : value.liked ? 'liked' : 'comment only', value.disliked ? 'status-disliked' : value.reallyLiked ? 'status-really-liked' : value.liked ? 'status-liked' : ''));
           const note = node('td'); if (value.comment) note.append(node('div', value.comment, 'note-cell')); line.append(note); body.append(line);
         });
         table.append(body); article.append(table);
