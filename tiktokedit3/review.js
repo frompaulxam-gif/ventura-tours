@@ -8,12 +8,13 @@
   const status = document.getElementById('save-status');
   try { const saved=JSON.parse(localStorage.getItem(storageKey)); if(saved?.boardId===manifest.boardId) state={...state,...saved}; } catch(e) { localOK=false; }
   const stamp = () => new Date().toISOString();
-  const itemValue = key => {
-    const value={liked:false,disliked:false,note:'',...state.items[key]};
-    if(value.disliked) value.liked=false;
-    return value;
+  const ratingLabel = verdict => ({'really-like':'really like',like:'liked',dislike:'disliked'}[verdict] || '');
+  const ratingValue = (value={}) => {
+    const verdict=Object.hasOwn(value,'verdict')?value.verdict:value.disliked?'dislike':value.reallyLiked?'really-like':value.liked?'like':null;
+    return {note:'',...value,verdict,reallyLiked:verdict==='really-like',liked:verdict==='like',disliked:verdict==='dislike'};
   };
-  const videoValue = key => ({verdict:null,note:'',...state.videos[key]});
+  const itemValue = key => ratingValue(state.items[key]);
+  const videoValue = key => ratingValue(state.videos[key]);
   function persistBrowser() {
     try {localStorage.setItem(storageKey, JSON.stringify(state));localOK=true;} catch(e) {localOK=false;}
   }
@@ -42,12 +43,15 @@
     } finally {saving=false;if(Object.keys(dirty).length && !retryTimer) sync();}
   }
   function renderCounts() {
-    const rejected=Object.values(state.items).filter(v=>v.disliked).length;
-    const likedClips=Object.values(state.items).filter(v=>v.liked && !v.disliked).length;
+    const clips=Object.keys(state.items).map(itemValue);
+    const rejected=clips.filter(v=>v.disliked).length;
+    const likedClips=clips.filter(v=>v.liked).length;
     const comments=Object.values(state.items).filter(v=>v.note?.trim()).length+Object.values(state.videos).filter(v=>v.note?.trim()).length+(state.overall.note?.trim()?1:0);
-    const likedVideos=Object.values(state.videos).filter(v=>v.verdict==='like').length;
+    const reallyLikedClips=clips.filter(v=>v.reallyLiked).length;
+    const reallyLikedVideos=Object.keys(state.videos).map(videoValue).filter(v=>v.reallyLiked).length;
+    const likedVideos=Object.keys(state.videos).map(videoValue).filter(v=>v.liked).length;
     const dislikedVideos=Object.values(state.videos).filter(v=>v.verdict==='dislike').length;
-    document.getElementById('feedback-count').textContent=`videos: ${likedVideos} liked · ${dislikedVideos} disliked / clips: ${likedClips} liked · ${rejected} disliked / ${comments} comment${comments===1?'':'s'}`;
+    document.getElementById('feedback-count').textContent=`videos: ${reallyLikedVideos} really like · ${likedVideos} liked · ${dislikedVideos} disliked / clips: ${reallyLikedClips} really like · ${likedClips} liked · ${rejected} disliked / ${comments} comment${comments===1?'':'s'}`;
   }
   function renderItem(key) {
     const value=itemValue(key);
@@ -61,6 +65,9 @@
       like.setAttribute('aria-pressed',String(Boolean(value.liked)));
       like.textContent=value.liked?'♥ liked':'♡ like';
     }
+    const reallyLike=document.querySelector(`.clip-really-like[data-key="${CSS.escape(key)}"]`);
+    if(reallyLike) reallyLike.setAttribute('aria-pressed',String(value.reallyLiked));
+    if(frame) {frame.dataset.verdict=value.verdict || '';const label=frame.querySelector('.approved-label');if(label) label.textContent=value.reallyLiked?'really like':'liked';}
     const note=document.querySelector(`.note-toggle[data-key="${CSS.escape(key)}"]`);
     if(note) note.classList.toggle('has-note',Boolean(value.note?.trim()));
   }
@@ -76,15 +83,15 @@
     document.querySelectorAll(`.video-vote[data-video="${CSS.escape(key)}"]`).forEach(button=>button.setAttribute('aria-pressed',String(value.verdict===button.dataset.verdict)));
   }
   function entries() {
-    return Object.entries(manifest.items).filter(([key])=>itemValue(key).liked || itemValue(key).disliked || itemValue(key).note?.trim()).map(([key,item])=>({...item,...itemValue(key),videoTitle:manifest.videos[item.video].title}));
+    return Object.entries(manifest.items).filter(([key])=>itemValue(key).verdict || itemValue(key).note?.trim()).map(([key,item])=>({...item,...itemValue(key),videoTitle:manifest.videos[item.video].title}));
   }
   function exportData() {
     return {boardId:manifest.boardId,exportedAt:stamp(),clips:entries(),videos:Object.entries(manifest.videos).filter(([key])=>videoValue(key).verdict || videoValue(key).note?.trim()).map(([key,video])=>({...video,...videoValue(key)})),overall:state.overall.note || ''};
   }
   function plainText() {
     const data=exportData(),lines=[manifest.title+' · feedback',''];
-    data.clips.forEach(item=>{lines.push(`${item.videoTitle} · clip ${item.clip} · ${item.timelineIn.toFixed(2)}s to ${item.timelineOut.toFixed(2)}s${item.disliked?' · disliked':item.liked?' · liked':''}`);if(item.note?.trim()) lines.push(item.note);lines.push('');});
-    data.videos.forEach(video=>{lines.push(video.title+' · whole video'+(video.verdict==='like'?' · liked':video.verdict==='dislike'?' · disliked':''));if(video.note?.trim())lines.push(video.note);lines.push('');});
+    data.clips.forEach(item=>{lines.push(`${item.videoTitle} · clip ${item.clip} · ${item.timelineIn.toFixed(2)}s to ${item.timelineOut.toFixed(2)}s${ratingLabel(item.verdict)?' · '+ratingLabel(item.verdict):''}`);if(item.note?.trim()) lines.push(item.note);lines.push('');});
+    data.videos.forEach(video=>{lines.push(video.title+' · whole video'+(ratingLabel(video.verdict)?' · '+ratingLabel(video.verdict):''));if(video.note?.trim())lines.push(video.note);lines.push('');});
     if(data.overall) lines.push('overall',data.overall,'');
     if(!data.clips.length && !data.videos.length && !data.overall) lines.push('no feedback yet');
     return lines.join('\n');
@@ -96,26 +103,25 @@
       const card=document.createElement('div');card.className='feedback-item';
       if(image) {const img=document.createElement('img');img.src=image;img.alt=title;card.append(img);}
       const text=document.createElement('div'),heading=document.createElement('h3');heading.textContent=title;text.append(heading);
-      if(verdict) {const result=document.createElement('div');result.className='status'+(verdict==='like'?' liked':'');result.textContent=verdict==='like'?'liked':'disliked';text.append(result);}
+      if(verdict) {const result=document.createElement('div');result.className='status'+(verdict==='really-like'?' really-liked':verdict==='like'?' liked':'');result.textContent=ratingLabel(verdict);text.append(result);}
       if(note) {const para=document.createElement('p');para.className='comment';para.textContent=note;text.append(para);}
       card.append(text);target.append(card);
     }
-    data.clips.forEach(item=>add(`${item.videoTitle} · clip ${item.clip} · ${item.timelineIn.toFixed(2)}s`,item.note,item.disliked?'dislike':item.liked?'like':null,item.thumbnail));
+    data.clips.forEach(item=>add(`${item.videoTitle} · clip ${item.clip} · ${item.timelineIn.toFixed(2)}s`,item.note,item.verdict,item.thumbnail));
     data.videos.forEach(video=>add(video.title+' · whole video',video.note,video.verdict,video.poster));
     if(data.overall) add('overall',data.overall,false);
     if(!target.childElementCount) {const p=document.createElement('p');p.className='empty';p.textContent='no feedback yet. rate a video, tap clip frames or add comments on the video page.';target.append(p);}
   }
-  document.querySelectorAll('.clip-frame').forEach(button=>button.addEventListener('click',()=>{
-    const key=button.dataset.key,value=itemValue(key);
-    changed('items',key,{...value,liked:false,disliked:!value.disliked});renderItem(key);
-  }));
-  document.querySelectorAll('.clip-like').forEach(button=>button.addEventListener('click',()=>{
-    const key=button.dataset.key,value=itemValue(key);
-    changed('items',key,{...value,liked:!value.liked,disliked:false});renderItem(key);
-  }));
+  function voteClip(key,choice) {
+    const value=itemValue(key),verdict=value.verdict===choice?null:choice;
+    changed('items',key,ratingValue({...value,verdict}));renderItem(key);
+  }
+  document.querySelectorAll('.clip-frame').forEach(button=>button.addEventListener('click',()=>voteClip(button.dataset.key,'dislike')));
+  document.querySelectorAll('.clip-like').forEach(button=>button.addEventListener('click',()=>voteClip(button.dataset.key,'like')));
+  document.querySelectorAll('.clip-really-like').forEach(button=>button.addEventListener('click',()=>voteClip(button.dataset.key,'really-like')));
   document.querySelectorAll('.video-vote').forEach(button=>button.addEventListener('click',()=>{
     const key=button.dataset.video,value=videoValue(key);
-    changed('videos',key,{...value,verdict:value.verdict===button.dataset.verdict?null:button.dataset.verdict});renderVideo(key);
+    changed('videos',key,ratingValue({...value,verdict:value.verdict===button.dataset.verdict?null:button.dataset.verdict}));renderVideo(key);
   }));
   document.querySelectorAll('.note-toggle').forEach(button=>button.addEventListener('click',()=>{
     const key=button.dataset.key,article=button.closest('article'),panel=article.querySelector('.clip-note'),input=panel.querySelector('textarea');
