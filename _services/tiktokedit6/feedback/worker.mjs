@@ -10,7 +10,7 @@ function clean(d,m){
  const videos=new Set(m.videos.map(v=>String(v.id))),clips=new Set(m.videos.flatMap(v=>v.shots.map(s=>s.id)));
  const vals=(o,ids,valid)=>Object.fromEntries(Object.entries(o||{}).filter(([k,v])=>ids.has(k)&&valid(v)));
  const notes=(o,ids)=>Object.fromEntries(Object.entries(vals(o,ids,v=>typeof v==='string')).map(([k,v])=>[k,str(v)]));
- return {notes:notes(d.notes,clips),disliked:vals(d.disliked,clips,v=>v===true),liked:vals(d.liked,clips,v=>v===true),videoRatings:vals(d.videoRatings,videos,v=>['like','dislike'].includes(v)),videoComments:notes(d.videoComments,videos),overall:str(d.overall),name:str(d.name,100),touchedAt:date.toISOString()};
+ return {notes:notes(d.notes,clips),disliked:vals(d.disliked,clips,v=>v===true),liked:vals(d.liked,clips,v=>v===true),reallyLiked:vals(d.reallyLiked,clips,v=>v===true),videoRatings:vals(d.videoRatings,videos,v=>['really-like','like','dislike'].includes(v)),videoComments:notes(d.videoComments,videos),overall:str(d.overall),name:str(d.name,100),touchedAt:date.toISOString()};
 }
 export default {async fetch(request,env){
  const u=new URL(request.url),origin=request.headers.get('Origin'),headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','Vary':'Origin'};
