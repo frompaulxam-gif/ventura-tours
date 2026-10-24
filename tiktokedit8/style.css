@@ -5,3 +5,11 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 .clip-actions [data-clip-like]{color:var(--green)}.clip-actions [data-clip-like][aria-pressed=true]{background:#183327;border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}.clip-frame[data-liked=true]{border-color:var(--green)}
+
+/* Three exclusive ratings; selected text remains visible without colour. */
+.really-like{min-height:44px;white-space:normal;line-height:1.2}
+.really-like[aria-pressed=true]{background:#51401e!important;border-color:#edce86!important;color:#ffe4a5!important}
+.really-liked,.status-really-liked,.really-like-text{color:#ffe4a5}
+.clip-frame[data-verdict="really-like"],.frame[data-verdict="really-like"],.frame.is-really-liked,.shot.really-liked .thumb,.clip-tile.is-really-liked .frame-button,.clip-frame[data-really-liked=true]{border-color:#edce86;outline:2px solid #edce86;outline-offset:-2px}
+.clip-frame[data-verdict="really-like"] .approved-label{display:block;background:#51401e;color:#ffe4a5}
+.vote-row,.votes{flex-wrap:wrap}
