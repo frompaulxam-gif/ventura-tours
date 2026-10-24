@@ -4,3 +4,11 @@
 article h3 { min-height: 2.6em; }
 
 .clip-like{display:block;width:100%;margin-top:5px;padding:5px 2px;min-height:32px;font-size:11px}.clip-like[aria-pressed=true]{background:#1b4433;border-color:#84c8a1;color:#b3ebcb}.clip-frame[data-verdict=like]{border-color:#84c8a1}.approved-label{display:none;position:absolute;bottom:0;left:0;right:0;background:#1b4433;color:#b3ebcb;font-size:10px;line-height:20px;text-align:center}.clip-frame[data-verdict=like] .approved-label{display:block}@media(max-width:850px){.clip-like{min-height:44px;font-size:12px}}
+
+/* Three exclusive ratings; selected text remains visible without colour. */
+.really-like{min-height:44px;white-space:normal;line-height:1.2}
+.really-like[aria-pressed=true]{background:#51401e!important;border-color:#edce86!important;color:#ffe4a5!important}
+.really-liked,.status-really-liked,.really-like-text{color:#ffe4a5}
+.clip-frame[data-verdict="really-like"],.frame[data-verdict="really-like"],.frame.is-really-liked,.shot.really-liked .thumb,.clip-tile.is-really-liked .frame-button,.clip-frame[data-really-liked=true]{border-color:#edce86;outline:2px solid #edce86;outline-offset:-2px}
+.clip-frame[data-verdict="really-like"] .approved-label{display:block;background:#51401e;color:#ffe4a5}
+.clip-really-like{display:block;width:100%;margin-top:5px;padding:5px 2px;font-size:11px}
