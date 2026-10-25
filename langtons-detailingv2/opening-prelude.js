@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");sessionStorage.setItem("langtons-detailing-intro","1");}catch{}
