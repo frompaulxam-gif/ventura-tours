@@ -1,0 +1,208 @@
+{
+  "checked": "2026-10-23",
+  "items": [
+    {
+      "id": "puff-parcel",
+      "name": "Puff Parcel",
+      "category": "Specials",
+      "price_pence": 800,
+      "visitor_summary": ""
+    },
+    {
+      "id": "crunchy-bowl",
+      "name": "Crunchy Bowl",
+      "category": "Specials",
+      "price_pence": 850,
+      "visitor_summary": ""
+    },
+    {
+      "id": "veg-maggi",
+      "name": "Veg Maggi",
+      "category": "Specials",
+      "price_pence": 750,
+      "visitor_summary": ""
+    },
+    {
+      "id": "schezwan-maggi",
+      "name": "Schezwan Maggi",
+      "category": "Specials",
+      "price_pence": 800,
+      "visitor_summary": ""
+    },
+    {
+      "id": "katchori-bhel",
+      "name": "Katchori Bhel",
+      "category": "Specials",
+      "price_pence": 750,
+      "visitor_summary": ""
+    },
+    {
+      "id": "collegian-shing",
+      "name": "Collegian Shing",
+      "category": "Indian Tapas Bars",
+      "price_pence": 390,
+      "visitor_summary": ""
+    },
+    {
+      "id": "tangy-bun",
+      "name": "Tangy Bun",
+      "category": "Indian Tapas Bars",
+      "price_pence": 750,
+      "visitor_summary": ""
+    },
+    {
+      "id": "chana-chor-garam",
+      "name": "Chana Chor Garam",
+      "category": "Indian Tapas Bars",
+      "price_pence": 390,
+      "visitor_summary": ""
+    },
+    {
+      "id": "chana-chaat",
+      "name": "Chana Chaat",
+      "category": "Indian Tapas Bars",
+      "price_pence": 390,
+      "visitor_summary": ""
+    },
+    {
+      "id": "pani-puri",
+      "name": "Pani Puri",
+      "category": "Indian Tapas Bars",
+      "price_pence": 390,
+      "visitor_summary": "Crisp puris, chickpea and potato filling, with spicy tangy water."
+    },
+    {
+      "id": "dahi-puri",
+      "name": "Dahi Puri",
+      "category": "Indian Tapas Bars",
+      "price_pence": 500,
+      "visitor_summary": "Puris with potato, yoghurt, chutneys and sev."
+    },
+    {
+      "id": "sev-puri",
+      "name": "Sev Puri",
+      "category": "Indian Tapas Bars",
+      "price_pence": 450,
+      "visitor_summary": "Puris with potato, onion, tomato, chutneys and sev."
+    },
+    {
+      "id": "delhi-chaat",
+      "name": "Delhi Chaat",
+      "category": "Indian Tapas Bars",
+      "price_pence": 500,
+      "visitor_summary": "Papdi, chickpeas and potato with yoghurt and chutneys."
+    },
+    {
+      "id": "samosa-chaat",
+      "name": "Samosa Chaat",
+      "category": "Indian Tapas Bars",
+      "price_pence": 650,
+      "visitor_summary": "Crushed samosa with chutneys, onion and sev."
+    },
+    {
+      "id": "kachori-chaat",
+      "name": "Kachori Chaat",
+      "category": "Indian Tapas Bars",
+      "price_pence": 650,
+      "visitor_summary": "Kachori with chutneys, yoghurt, spices and sev."
+    },
+    {
+      "id": "train-bhel",
+      "name": "Train Bhel",
+      "category": "Indian Tapas Bars",
+      "price_pence": 500,
+      "visitor_summary": "Puffed rice, savoury snacks, sev and vegetables."
+    },
+    {
+      "id": "mumbai-bhel",
+      "name": "Mumbai Bhel",
+      "category": "Indian Tapas Bars",
+      "price_pence": 500,
+      "visitor_summary": "Puffed rice and sev with onion, tomato and chutneys."
+    },
+    {
+      "id": "puri-platter",
+      "name": "Puri Platter",
+      "category": "Indian Tapas Bars",
+      "price_pence": 550,
+      "visitor_summary": ""
+    },
+    {
+      "id": "hot-chocolate",
+      "name": "Hot Chocolate",
+      "category": "Hot Drinks",
+      "price_pence": 450,
+      "visitor_summary": ""
+    },
+    {
+      "id": "chai",
+      "name": "Chai",
+      "category": "Hot Drinks",
+      "price_pence": 250,
+      "visitor_summary": ""
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "category": "Hot Drinks",
+      "price_pence": 400,
+      "visitor_summary": ""
+    },
+    {
+      "id": "golden-milk",
+      "name": "Golden Milk",
+      "category": "Hot Drinks",
+      "price_pence": 400,
+      "visitor_summary": ""
+    },
+    {
+      "id": "girnari-kahwa",
+      "name": "Girnari Kahwa",
+      "category": "Hot Drinks",
+      "price_pence": 350,
+      "visitor_summary": "Herbal tea with a blend of spices."
+    },
+    {
+      "id": "mango-lassi",
+      "name": "Mango Lassi",
+      "category": "Cold Drinks",
+      "price_pence": 450,
+      "visitor_summary": ""
+    },
+    {
+      "id": "water-bottle",
+      "name": "Water Bottle",
+      "category": "Cold Drinks",
+      "price_pence": 150,
+      "visitor_summary": ""
+    },
+    {
+      "id": "appy-fizz",
+      "name": "Appy Fizz",
+      "category": "Cold Drinks",
+      "price_pence": 195,
+      "visitor_summary": ""
+    },
+    {
+      "id": "coke",
+      "name": "Coke",
+      "category": "Cold Drinks",
+      "price_pence": 195,
+      "visitor_summary": ""
+    },
+    {
+      "id": "thumbs-up",
+      "name": "Thumbs Up",
+      "category": "Cold Drinks",
+      "price_pence": 195,
+      "visitor_summary": ""
+    },
+    {
+      "id": "mint-lemonade-fizzy",
+      "name": "Mint Lemonade (Fizzy)",
+      "category": "Cold Drinks",
+      "price_pence": 390,
+      "visitor_summary": ""
+    }
+  ]
+}
