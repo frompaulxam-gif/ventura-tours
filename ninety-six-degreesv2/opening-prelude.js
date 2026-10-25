@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("data-intro-active","1");sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-active","1");}catch{}

@@ -1,0 +1,109 @@
+{
+  "revision": "ge-source-r1",
+  "business_id": "osm-node-3925504063",
+  "checked": "2026-10-23",
+  "scope": "Source/design plan only; no generated assets/customer implementation",
+  "identity": {
+    "name": "The Good Earth",
+    "address": "19 Free Lane, Leicester LE1 1JX",
+    "phone": "0116 262 6260",
+    "fsa": 50190,
+    "inspection": "2024-03-21T00:00:00"
+  },
+  "claims": [
+    {
+      "url": "https://visitleicester.info/point-of-interest/the-good-earth/",
+      "type": "official tourism",
+      "claim": "Vegetarian/vegan cooking, homely old-fashioned atmosphere,cofounding1965; address/phone/linkedsocial",
+      "confidence": "high as dated supplied description",
+      "limits": "Not a current priced menu/hours/allergen guarantee."
+    },
+    {
+      "url": "https://www.facebook.com/veggiegoodearth/",
+      "type": "actual public linked operator profile observed inIAB",
+      "claim": "Name/address/phone/family-run vegetarianvegan description/currentavatar",
+      "confidence": "high for visible primary facts",
+      "limits": "Public feed later login-gated. No login used, no claim tradingtoday."
+    },
+    {
+      "url": "https://www.facebook.com/veggiegoodearth/posts/pfbid031dTYYYMYtxYj4LYrXKDW8AZihFYJcWZA3c2Yq91uwNkXnT8ziUN6tKqHx6N4DBtMl",
+      "type": "actual public operator post",
+      "claim": [
+        "Leek and Lancashire Hotpot",
+        "Stilton, Leek, Mushroom and New Potato Bake"
+      ],
+      "published_display": "10October11:50, year not surfaced",
+      "limits": "That-week availability not current/permanent. No price/portion/ingredients beyond titles. Individual food photo not assigned to a dish."
+    },
+    {
+      "url": "https://www.facebook.com/veggiegoodearth/posts/pfbid03gwGGhqKPtpmcQt2XKqMpT5q8npBq4dpDbrAQmUQwAv69FLmx7ZHE5idUwUmykDkl",
+      "type": "operator post visible in initial public profile",
+      "claim": "Pumpkin Spiced Soup",
+      "published_display": "3October11:34, year not surfaced",
+      "limits": "Recent example, no present availability/ingredients/dietary guarantee."
+    },
+    {
+      "url": "https://api.ratings.food.gov.uk/Establishments/50190",
+      "type": "official FSA API",
+      "claim": "Matched historical name/address",
+      "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/good-earth-20261023/fsa.json",
+      "sha256": "c43517e84f9eb940d9dacf26cb475f3f736615840fa213f5b7e34103681d36c3",
+      "limits": "Inspection date historical, not current trading proof."
+    }
+  ],
+  "assets": [
+    {
+      "path": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/good-earth/assets/logo-original.jpg",
+      "source": "https://www.facebook.com/photo/?fbid=504911324971099&set=a.504911294971102",
+      "sha256": "3dfa83ae2d80e781465212127b7d895d667b46ba715436a07830a0c8822d608e",
+      "published": "2022-09-01",
+      "limits": "Unchanged downloaded public logo source, not owner vector or proof of exact original upload resolution."
+    },
+    {
+      "path": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/good-earth/assets/comfort-food-original.jpg",
+      "source": "https://www.facebook.com/photo/?fbid=1794553236006895&set=pcb.1794556572673228",
+      "sha256": "9fa959a3ef220bf553ba0d4028063f5eff9fa2dd6898014856725f5fd643dad9",
+      "published": "10October at11:50; year not surfaced in inspected timestamp",
+      "limits": "Authentic restaurant food photo. Post mentions two dishes, but this individual image has no explicit dish assignment. Do not identify which dish or promise current availability, portion/sides, ingredients or price."
+    },
+    {
+      "path": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/good-earth/assets/tourism-original.jpeg",
+      "source": "https://visitleicester.info/wp-content/uploads/2025/05/thumb_58437_point_of_interest_big.jpeg",
+      "sha256": "3322647ac4fc294461cd39f4fb85a31ba928e6c6fe78d1f368ad9652f0693616",
+      "published": "capture date unknown",
+      "limits": "Dated supplied context; photo capture date/current offer not established"
+    }
+  ],
+  "website_check": {
+    "date": "2026-10-23",
+    "queries": [
+      "\"The Good Earth\" Leicester \"website\" \"Free Lane\"",
+      "\"The Good Earth\" Leicester menu vegetarian2026",
+      "\"0116 262 6260\" website"
+    ],
+    "finding": "Exact address/phone results still identify tourism, FSA, directories and facebook.com/veggiegoodearth, no verified good own customer site. Bounded search only, not absence proof. RestaurantGuru actual website handoff redirects to that Facebook account/login, not a distinct restaurant domain.",
+    "primary_additional_source": "https://visitleicester.info/wp-content/uploads/2025/08/Restaurant-Guide-2025.pdf",
+    "limits": "Search excerpts may conflate adjacent restaurant listings. No copied item/price/hour/allergen claim."
+  },
+  "unreliable_sources_omitted": [
+    "Unverified menu collections and relative owner-upload dates",
+    "UK-restaurants meat dishes",
+    "FreeFromFinder London-branch allergen evidence",
+    "Directory hours and access claims"
+  ],
+  "sector_reference": {
+    "urls": [
+      "https://www.theeggcafe.uk/",
+      "https://www.theeggcafe.uk/menu/"
+    ],
+    "method": "Actual IAB above/belowhero, photos and readableHTMLmenu",
+    "accessed": "2026-10-23",
+    "evidence": [
+      "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/good-earth-20261023/sector-egg-below-hero.png",
+      "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/good-earth-20261023/sector-egg-menu.png"
+    ],
+    "adapt": "Menu prominence, authentic atmosphere, short history, practical visit information",
+    "exclude": "Competitor copy/assets/palette/awards/reviews/menu/claims/slider/gallery"
+  },
+  "feedback": "Zero actual submissions in currentfeedback.json/lessons.txt read23October2026"
+}

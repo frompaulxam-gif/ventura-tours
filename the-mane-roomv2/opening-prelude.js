@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");sessionStorage.setItem("the-mane-room-intro","1");}catch{}

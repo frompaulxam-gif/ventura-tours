@@ -1,0 +1,84 @@
+{
+  "revision": "ifc-source-r1",
+  "checked": "2026-10-23",
+  "business_id": "fsa:689938",
+  "scope": "bounded source/design plan only; no customer UI or generated assets",
+  "identity": "FSA689938 matches47–49NarboroughRoadLE30LE. Public linked account identifies InternationalFoodCentre and47–49to43–45NarboroughRoad, same01162552149 asdirectory; supports linked identity and expanded footprint rather than assumed separate branch.",
+  "claims": [
+    {
+      "source": "https://www.facebook.com/people/International-Supermarket-Leicester/100063535345570/",
+      "type": "public linked business profile",
+      "claim": "International Food Centre; groceries, fresh fruit/vegetables, fresh bread;01162552149; Narborough Road footprint",
+      "confidence": "high for visible attributed description",
+      "limit": "No current stock/hours or exact entrance guarantees."
+    },
+    {
+      "source": "https://api.ratings.food.gov.uk/Establishments/689938",
+      "type": "official FSA API",
+      "claim": "Name and47–49NarboroughRoadLE30LE identity",
+      "confidence": "high",
+      "limit": "Historical inspection17June2024, not current trading proof.",
+      "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/international-food-centre-20261023/fsa-response.json",
+      "sha256": "b067e1de820737e43f9406c77514f5f5bc5f29c191eb80c5cc769e9a926c7de4"
+    }
+  ],
+  "source_observations": [
+    {
+      "url": "https://www.cybo.com/GB-biz/international-food-centre_24f",
+      "type": "directory search result",
+      "finding": "Supplies m.me/299252970239030. Direct web open returned429; searchcontent used as lead only."
+    },
+    {
+      "url": "https://www.facebook.com/299252970239030",
+      "final_url": "https://www.facebook.com/people/International-Supermarket-Leicester/100063535345570/",
+      "type": "actual public social profile observed in IAB",
+      "finding": "Login overlay dismissed. Cover shows green/white INTERNATIONAL FOOD CENTRE sign with globe/bottle motif, avatar uses red historical INTERNATIONAL SUPERMARKET frontage. No clean flat current logo found in accessible view. Public posts visible dated January2022; Photos route showed login wall. No login/message/reaction made.",
+      "evidence": "public-profile.png"
+    },
+    {
+      "url": "https://api.ratings.food.gov.uk/Establishments/689938",
+      "type": "official API",
+      "finding": "Identity/address match; inspection2024-06-17 is historical, not proof tradingtoday.",
+      "capture": "fsa-response.json"
+    },
+    {
+      "url": "https://www.facebook.com/photo/?fbid=534916225302884&set=a.534916218636218",
+      "type": "attributed public profile cover original",
+      "published": "2022-09-24",
+      "accessed": "2026-10-23",
+      "finding": "Unchanged1536x2048 photograph supports authentic premises and limited brand reference; perspective and lighting retained.",
+      "file": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/international-food-centre/assets/frontage-original.jpg",
+      "sha256": "5823457f6e48ba4cce5f4d991a462c093ec84a2ea9ad71ce4e43cb374ccb5a7b"
+    }
+  ],
+  "qualification_report": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/website-qc/01a1588c-00cc-74a1-aecd-a93fc6448adf/review-qualification-hallaci-ifc-20261023.md",
+  "omissions": [
+    "Current hours/live opening",
+    "Exact entrance/unit",
+    "SKUs/brands/prices/stock/origin",
+    "Butcher/halal certification/allergens",
+    "Order/payment/WhatsApp/subscription integrations"
+  ],
+  "sector_study": {
+    "urls": [
+      "https://wingyip.com/",
+      "https://wingyip.com/contact/"
+    ],
+    "accessed": "2026-10-23",
+    "method": "actual IAB below-hero AX and screenshots",
+    "evidence": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/international-food-centre-20261023/sector-wingyip-visit.png",
+    "adapt": "Early practical visit information, clear discovery; single shop no branch finder",
+    "rejected": "PakFoods.net unrelated gambling content below hero"
+  },
+  "feedback": "Zero submitted notes23October; read actual feedback.json and lessons.txt",
+  "website_gap_check": {
+    "date": "2026-10-23",
+    "queries": [
+      "\"International Food Centre\" \"Narborough\" website",
+      "\"0116 255 2149\" website"
+    ],
+    "result": "Results expose FSA/directory/social listings, not a verified own customer website. Council food-regulation links are not business sites. No good own site identified to replace; absence not proved.",
+    "primary_corroboration": "University of Leicester lists International Food Centre on Narborough Road as a grocery destination: https://le.ac.uk/study/welcome/your-next-steps/what-to-pack",
+    "gap": "Scoped public discovery depends on fragmented profile/directory information; proposed limited category/visit journey, no invented commercial facts."
+  }
+}

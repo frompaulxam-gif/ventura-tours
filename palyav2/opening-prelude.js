@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("intro-origin","1");sessionStorage.setItem("palya-intro-seen","1");}catch{}

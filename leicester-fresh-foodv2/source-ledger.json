@@ -1,0 +1,95 @@
+{
+  "revision": "lff-source-r1",
+  "business_id": "fsa:1825030",
+  "checked": "2026-10-23",
+  "scope": "Source and design plan only; two original public photos acquired, no customer implementation or generated alternatives.",
+  "identity": {
+    "record_name": "Leicester Fresh Food",
+    "sign_name": "LEICESTER fresh foods",
+    "primary_address": "31–33 Narborough Road, Leicester LE3 0LE",
+    "fsa_address": "33 Narborough Road, Leicester LE3 0LE",
+    "phone": "07999 979796",
+    "phone_source": "Operator public28February2025event Call now link, observed on linked profile; current number needs owner confirmation",
+    "email_observed": "Yusfuk1515@gmail.com",
+    "email_use": "Omitted from proposed customer page; no contact performed",
+    "fsa": 1825030,
+    "inspection": "2025-04-17T00:00:00",
+    "limits": "Broad31–33operator footprint includes exact33FSA; no precise accessible entrance claim. Historical inspection not current trading proof. Plural sign vs singular registered record preserved, no entity merge inferred."
+  },
+  "claims": [
+    {
+      "url": "https://api.ratings.food.gov.uk/Establishments/1825030",
+      "type": "official API",
+      "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/leicester-fresh-food-20261023/fsa.json",
+      "sha256": "91311466f8089deea7b24ee1994b8ba3fe61b27d8841b0271510647658362959",
+      "claim": "Matched historical name,33NarboroughRoadLE30LE,retailersother,17April2025inspection",
+      "limits": "No current trading or owner proof; rating not adopted as endorsement"
+    },
+    {
+      "url": "https://www.facebook.com/people/Leicester-Fresh-Food/61571826218519/",
+      "type": "Actual linked public operator profile after dismissible optional login overlay",
+      "claim": "Leicester Fresh Food,supermarket/conveniencestore,31–33NarboroughRoadLE30LE,public email; dated event callnowtel:+447999979796",
+      "limits": "No login or message; current hours not adopted"
+    },
+    {
+      "url": "https://www.facebook.com/permalink.php?story_fbid=pfbid02v8g5aBvWpovjmhn3mpVd7n5jdEnj9JNB868QymZeyMXNkwtK3MMiDLNQSQ7hRzeql&id=61571826218519",
+      "type": "Actual complete operator public post",
+      "published": "2025-03-03",
+      "claim": [
+        "fresh fruit",
+        "fresh meat",
+        "fresh chicken",
+        "fresh bread"
+      ],
+      "evidence": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/leicester-fresh-food-20261023/operator-post.png",
+      "limits": "Dated published range only, not live stock/prices/fullcatalogue/delivery/butchery/allergens/certification. Ambiguous8:0012:00hours and promotional price claims omitted."
+    }
+  ],
+  "assets": [
+    {
+      "path": "/website-version-assets/64be3ad5d944784e066a62d72c4264817e7bdb8cf81f1008cdc6e2d7a16fb293.jpg",
+      "source_url": "https://www.facebook.com/photo/?fbid=122110310264727540&set=a.122100971306727540",
+      "published": "2025-02-12",
+      "sha256": "64be3ad5d944784e066a62d72c4264817e7bdb8cf81f1008cdc6e2d7a16fb293",
+      "role": "Unchanged source photograph for brand reference; proposeCSSview of complete fresh foods wordmark only. Full left edge of LEICESTER is clipped in original and must not be invented."
+    },
+    {
+      "path": "/website-version-assets/20ee01e5b378bd21189ed9c59a1a0b871816f6f4235ab34f95c843837ce919fc.jpg",
+      "source_url": "https://www.facebook.com/photo/?fbid=122113767650727540&set=pcb.122113770002727540",
+      "published": "2025-03-03",
+      "sha256": "20ee01e5b378bd21189ed9c59a1a0b871816f6f4235ab34f95c843837ce919fc",
+      "role": "Actual genuine storefront/produce context for hero/visit. Visible old products/prices/signclaims not adopted as current facts."
+    }
+  ],
+  "website_check": {
+    "date": "2026-10-23",
+    "queries": [
+      "\"Leicester Fresh Food\" \"33\" Narborough",
+      "\"Leicester Fresh Food\" website Facebook",
+      "\"Leicester Fresh Food\" \"07999\"",
+      "\"Leicester Fresh Food\" facebook Narborough Road grocery",
+      "\"Leicester fresh food 31-33\"",
+      "\"07999979796\"",
+      "\"Leicester fresh foods\" Narborough website",
+      "\"Yusfuk1515\" grocery"
+    ],
+    "finding": "Bounded name/address/phone/email searches found FSA, directories, company records and linked Facebook, no verified good own customer website. Wanderlog exact-address website handoff resolves to attributable publicprofile61571826218519. No domain-absence proof.",
+    "directory_discovery": "https://wanderlog.com/place/details/10050910/leicester-fresh-food",
+    "exclude": "WanderlogAbout describes EuroMarket14MarketPlace, conflicting with its33Narboroughaddress; About/reviews/stock/hours not used. Findglocalindexedbusinesslead changed onlivepage. Corporate status/registeredaddress nottradingproof."
+  },
+  "access_limits": "Publicprofile/post and first two originalphotos legitimately visible afteroptionaloverlaydismissal. Later next-photo view had nondismissible login; stopped, savedscreen, no login/workaround. No claim complete public/cloudhistory.",
+  "sector_reference": {
+    "urls": [
+      "https://www.pkfoods.co.uk/",
+      "https://www.pkfoods.co.uk/contact"
+    ],
+    "method": "ActualIABabove/belowhero andcontact page inspected23October2026; cookie notice dismissed; source screenshots saved beforelayout.",
+    "evidence": [
+      "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/leicester-fresh-food-20261023/sector-pk-below-hero.png",
+      "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/leicester-fresh-food-20261023/sector-pk-contact.png"
+    ],
+    "adapt": "Short familiar department labels, explicit stock-check contact handoff and practical visit/contact information; omit onlinecart without authorised catalogue.",
+    "exclude": "Competitor assets/copy,greenserifpalette,2005history,dailyfreshness,HMCcertification,frozenstock,addresses/hours,templateoverflow.",
+    "rejected_reference": "https://pakfoods.net/our-range/actualpage contained unrelatedHungariancasino text contrary to searchedsnippet; rejected as qualityreference, no external linkfollowed."
+  }
+}
