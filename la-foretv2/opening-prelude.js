@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("lf-intro","1");}catch{}

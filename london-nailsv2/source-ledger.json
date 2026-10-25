@@ -1,0 +1,128 @@
+{
+  "id": "osm-node-13618153391",
+  "date": "2026-10-23",
+  "qualification": "Main clear primary identity, original assets and bounded social-only website gap before implementation. Exact directory\u2192IG\u2192FB and IG\u2192GoogleMap reciprocal identity chain.",
+  "original_record_unchanged": true,
+  "identity": {
+    "name": "London Nails",
+    "address": "27 Church Gate, Leicester LE1 3AL",
+    "phone": "07762 262345",
+    "primary_profile": "https://www.facebook.com/people/London-nails/61573728642846/",
+    "primary_instagram": "https://www.instagram.com/london_nails_leicester/",
+    "operator_map_link": "https://maps.app.goo.gl/YkoSCLvR1rJMRjJc8?g_st=com.google.maps.preview.copy",
+    "map_destination": "https://www.google.com/maps?q=London+Nails,+27+Church+Gate,+Leicester+LE1+3AL&ftid=0x487761c37c491c79:0xa6ea42f894fd0313",
+    "caveat": "FB automated city label Leicester Square is incorrect in isolation; exact27ChurchGate/phone and primary map link identify Leicester. Do not adopt Leicester Square. Do not merge Wigston 50LeicesterRoad branch."
+  },
+  "asset_receipts": [
+    {
+      "file": "logo-original.jpg",
+      "bytes": 71255,
+      "sha256": "6a933c493d372492522254764ca76ab914f0ae1cf471ce8398e5ac89178e0a96",
+      "source": {
+        "url": "https://www.facebook.com/photo/?fbid=122105913908790954&set=a.122105550698790954",
+        "dateDisplayed": "9 March 2025",
+        "src": "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/482250396_122105913914790954_2158963100344947541_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx936x936&ctp=s936x936&_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_5wpoKrP8ikQ7kNvwHi5lxB&_nc_oc=AdqL3UpgEJy8VeUAGOJxGdwqPbi0gC_y7AXawW9uewnKHiaGq3xJVoonEqVLnBzOWvk&_nc_zt=23&_nc_ht=scontent-man2-1.xx&_nc_gid=wPdo7JO1oZbs89ESP-P5-w&_nc_ss=7b289&oh=00_AQN6EZPUto20_yopY_XcwDQlyGjEJrTCO_1k-F8V3dfK3w&oe=6AE14982"
+      },
+      "limits": "Exact publicly rendered image URL downloaded normally; no parameters altered, retouch, upscale or missing canvas reconstruction."
+    },
+    {
+      "file": "frontage-original.jpg",
+      "bytes": 326979,
+      "sha256": "bc63427e0bcee77e2b9611c531ff3a681b0211b43a9def8e128a33df5d017170",
+      "source": {
+        "url": "https://www.facebook.com/photo/?fbid=122122157960790954&set=a.122105911220790954",
+        "dateDisplayed": "12 April 2025",
+        "src": "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/490446811_122122157966790954_2970834451202176201_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1038&ctp=s2048x1038&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=uQk7da17R5YQ7kNvwHb6ov-&_nc_oc=AdrXv4ZTEMZxbuHXn6B3Dk23v1NDUVOUFLu9T_Qgkg4XidYsPyG3RSS_viLgEUZ1bkc&_nc_zt=23&_nc_ht=scontent-man2-1.xx&_nc_gid=F2Uvy66cVW-zGApMPi9zYw&_nc_ss=7b289&oh=00_AQO3Gqvraj2eZYXoswFTnYxmzh6eCP6nQF3nEpgfPgsmMQ&oe=6AE13ECE"
+      },
+      "limits": "Exact publicly rendered image URL downloaded normally; no parameters altered, retouch, upscale or missing canvas reconstruction."
+    },
+    {
+      "file": "work-1.jpg",
+      "bytes": 32897,
+      "sha256": "ffe0636544cf13009861514723dd6bd51570710963fd162829ff561f74ed28cb",
+      "source": {
+        "post": "https://www.instagram.com/london_nails_leicester/p/DdeEFVnDYz_/",
+        "dateDisplayed": "19 September 2026",
+        "src": "https://scontent-man2-1.cdninstagram.com/v/t51.82787-15/816996414_18013156727951923_3228650252559898990_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=lhtGJA_jDdUQ7kNvwEqvYCT&_nc_oc=AdpiJ3ut1w2Bl3VlnMhFOB7jTXu1ZEvVIfmDTWWYK5DkEJ4OYTzjsxXhAgxsRlD5bsI&_nc_zt=23&_nc_ht=scontent-man2-1.cdninstagram.com&_nc_gid=NWJeoQfCyrRB5wmSGeNLkA&_nc_ss=7b689&oh=00_AQM2p8CO5tSiWkNZzTT-DfSim0BI2d7Bmm6Q8OqPXauqhw&oe=6AE14A90",
+        "alt": "Photo by London nails on September 19, 2026."
+      },
+      "limits": "Exact publicly rendered image URL downloaded normally; no parameters altered, retouch, upscale or missing canvas reconstruction."
+    },
+    {
+      "file": "work-2.jpg",
+      "bytes": 40954,
+      "sha256": "bfe6e0661bc35b081502be3ae35e3f205ab0f824907df48b92c7eb2847ab8127",
+      "source": {
+        "post": "https://www.instagram.com/london_nails_leicester/p/DdeDqATDVya/",
+        "dateDisplayed": "19 September 2026",
+        "src": "https://scontent-man2-1.cdninstagram.com/v/t51.82787-15/797024101_18013156349951923_8562103211935079650_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=nqDWUdHTDLMQ7kNvwGWb6Vc&_nc_oc=AdokPwmoeNEZ4mW4H9maijUtFFrHTZGgX3HBDFIB0KIenf-ouYxRAHtPwe1hreLWP10&_nc_zt=23&_nc_ht=scontent-man2-1.cdninstagram.com&_nc_gid=NWJeoQfCyrRB5wmSGeNLkA&_nc_ss=7b689&oh=00_AQNVvNzWaZD5bzsZGzW6F1jpDf1nf7pSC_srGvW48a4YKg&oe=6AE13ACD",
+        "alt": "Photo by London nails on September 19, 2026."
+      },
+      "limits": "Exact publicly rendered image URL downloaded normally; no parameters altered, retouch, upscale or missing canvas reconstruction."
+    },
+    {
+      "file": "work-3.jpg",
+      "bytes": 45801,
+      "sha256": "1b9cfd014628d89278dc9b41e89a895b7bf278d6c32de6b88331835d1ef9cb17",
+      "source": {
+        "post": "https://www.instagram.com/london_nails_leicester/p/DdRIhJ6t6Ou/",
+        "dateDisplayed": "14 September 2026",
+        "src": "https://scontent-man2-1.cdninstagram.com/v/t51.82787-15/809876543_18012480473951923_4739427904707271644_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=1LbahRiiklsQ7kNvwFJNkvR&_nc_oc=AdrNAkwuJyiQiPp6b057yY4jYHzYQiWLKMKlGKioYwJJT6I7_SGBZDTZgR5gQHPNzPg&_nc_zt=23&_nc_ht=scontent-man2-1.cdninstagram.com&_nc_gid=NWJeoQfCyrRB5wmSGeNLkA&_nc_ss=7b689&oh=00_AQPspAXrpSN6CCoQP4E7q9kgP_asXYtmbUFGTSOWYVxgIA&oe=6AE144B4",
+        "alt": "Photo by London nails on September 14, 2026. May be an image of text that says \"LONDON LONDON NAILS NAILS\"."
+      },
+      "limits": "Exact publicly rendered image URL downloaded normally; no parameters altered, retouch, upscale or missing canvas reconstruction."
+    }
+  ],
+  "public_browser_observations": [
+    {
+      "source": "https://www.instagram.com/london_nails_leicester/",
+      "evidence": "work/research/london-nails-20261023/instagram-profile.ax.txt",
+      "observation": "Public profile after optional Close. Bio links actual FB share and GoogleMap. Grid photo dates read. Clicking one full post prompted signup; dismissed and stayed on public grid. No full captions adopted. Downloaded actual rendered grid image src without altering parameters."
+    },
+    {
+      "source": "https://www.facebook.com/people/London-nails/61573728642846/",
+      "evidence": "work/research/london-nails-20261023/facebook-profile.ax.txt",
+      "observation": "Public identity after optional Close:27churchgate,07762262345, reciprocal IG. Cover sign independently spells27CHURCHGATE and BOOKING07762262345. No current services/prices/hours inferred from profile price marker or old door text."
+    }
+  ],
+  "source_evidence_files": {
+    "work/research/london-nails-20261023/logo-viewer.png": "d8177d9da6a78beaf302159ef4289ff2c264777dc8c60b7d2e643fc5e3562f20",
+    "work/research/london-nails-20261023/qualification-in-progress.json": "c49e62fb972514667f5774396c1884c4ecac4d4d9b0321feb0835f1a9262d0b2",
+    "work/research/london-nails-20261023/frontage-source.json": "03c7a292d257305da10ca4223a0fbecbd3a5bf21824c2f147120602d0c1507d2",
+    "work/research/london-nails-20261023/work-sources.json": "0bec30fae66fbfc498c2523d2d439a4062653157bd3b2849fe3057a3593e0285",
+    "work/research/london-nails-20261023/best-salons.html": "51bab4798d0a4726e4b07826153694bc183909c9cec8dbdd09a44e444793b4a4",
+    "work/research/london-nails-20261023/frontage-viewer.png": "1db1847a91ff142a22a40545d3d425842b1347b20cc5b8058d1c551718498a42",
+    "work/research/london-nails-20261023/sector-below-hero.png": "9917baea141a14b5355838f49588a27304a1b557d1da7450032d44cceef9ef43",
+    "work/research/london-nails-20261023/logo-source.json": "57868653adefd3bd59dfc03b28e80d8d471ef06b10ff0c9ce53083d43541a8d6",
+    "work/research/london-nails-20261023/facebook-profile.png": "6637959c5c40f2dab2f395041f7dbbcb5d43532b970a8c44fccab14ed411a44f",
+    "work/research/london-nails-20261023/instagram-profile.ax.txt": "eb321a00581573fc1802de1e2bd8af7b934cf077b38aaf80f49a1672f3a5a1c8",
+    "work/research/london-nails-20261023/facebook-profile.ax.txt": "121ddebf68b32ba73449822598358dab7fe9796de82622835474e4b53439906b",
+    "work/research/london-nails-20261023/asset-receipts.json": "3abef99dd7f82b54fea7bcf326a5fc4b35ac35e13e63a24bcada654fc619ef8f",
+    "work/research/london-nails-20261023/instagram-grid.png": "337a2801d4cc06ec827b658c5d318653b5ef9686b4f04c85d86d06f49a2d3e05",
+    "work/research/london-nails-20261023/instagram.html": "e35e827241a0cb1a6294dd168222100503dc87a1565ac97b6ed8022a848bf3f6",
+    "work/research/london-nails-20261023/directory-bridge.json": "72d972519546239505e80ac9a9d6812801d57a20813a951b71565df77ea44ff4"
+  },
+  "offer_limits": "Only visual design inspiration from three dated published work images, and call to ask/book from original frontage phone. No treatment type, materials, duration, price, available appointment, review score, certification, guarantee, discount or current hours adopted. Adjacent red medical poster is not a salon claim and will be outside the customer frontage CSS window. No health claims imported.",
+  "website_gap": {
+    "finding": "Exact name/address and contact searches plus actual operator links expose Instagram, Facebook and exact GoogleMap. No verified useful own customer site or direct exact-location online booking found. A lookbook, personal call note and clear verified contact/visit path can improve access beyond the social grid. This is bounded, not absence proof.",
+    "searches": [
+      "\"London Nails\" \"27 Church Gate\" website booking",
+      "\"london_nails_leicester\" nails",
+      "\"london_nails_leicester\" instagram nails \"Church\"",
+      "\"London Nails\" \"07762\" Facebook",
+      "\"London nails\" \"Church Gate\" Facebook"
+    ],
+    "excluded": "Wigston LondonNails 50LeicesterRoad/Setmore. Lashandnails and specialist directories are third party; no review score or service/booking guarantees imported."
+  },
+  "sector_reference": {
+    "url": "https://townhouse.co.uk/",
+    "checked": "Actual browser homepage and belowhero service photography/clear navigation inspected before layout. Cookie banner partly overlaps lower cards in saved screenshot; service heading and photo layout visible. No competitor copy, customer facts, images, services or promotions adopted.",
+    "evidence": "work/research/london-nails-20261023/sector-below-hero.png"
+  },
+  "launch_inputs": [
+    "Owner current menu, prices, hours and booking process",
+    "Image rights and owner approval",
+    "Real appointment/signup integration if requested"
+  ],
+  "finished_at": "2026-10-23T13:50:18.378676+00:00"
+}

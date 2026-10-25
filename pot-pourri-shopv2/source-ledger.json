@@ -1,0 +1,71 @@
+{
+  "revision": "pp-source-r1",
+  "business_id": "osm-node-3925504064",
+  "checked": "2026-10-23",
+  "identity": {
+    "name": "The Pot Pourri Shop",
+    "address": "17 Free Lane, Leicester LE1 1JX",
+    "phone": "0116 262 6666",
+    "primary": "https://www.facebook.com/potpourrishop/",
+    "method": "Actual public profile after optional overlay dismissal: matching name,17FreeLane,phone,familyrun giftshop/handmadegifts description and originalsign/coverlinks."
+  },
+  "claims": [
+    {
+      "url": "https://www.facebook.com/potpourrishop/",
+      "claim": "Small family run gift shop in Leicester City Centre selling a large range of handmade gifts. Address/phone and exact original artwork attributable.",
+      "limits": "Full feed SeeMore subsequently login gated; full post not adopted; visible anniversary title not treated as complete story or current hours."
+    },
+    {
+      "url": "https://reslife.le.ac.uk/story/36097821/leicesters-coolest-independent-shops",
+      "published": "2025-07-04",
+      "claim": "Family run gift shop onFreeLane, historysince1985, handmadegifts.",
+      "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/pot-pourri-20261023/university.html",
+      "sha256": "e705e93fd520e444cfab3c2a177e00f404f2d5994c47795b70ede1b8b649e83f",
+      "limits": "Attributed dated history, notcurrent stock/price/handmadeallitems guarantee."
+    },
+    {
+      "url": "https://dev.independentleicester.co.uk/2023/11/21/unique-gift-ideas-from-leicesters-independents/",
+      "published": "2023-11-21",
+      "claim": "Local BID feature names natural aromatherapy, handcrafted trinkets and potpourri; links the exact primary Facebook account.",
+      "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/pot-pourri-20261023/local-bid.html",
+      "sha256": "ece947aeff44b7fc2386d9ef8773f33aa20e8b5056d12be6471dead76889a5f8",
+      "limits": "Dated featured interests only; no current stock/prices, organic/ethical/health/allergen claims, wine/alcohol sales or ecommerce inferred."
+    }
+  ],
+  "assets": [
+    {
+      "path": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/pot-pourri-shop/assets/logo-original.jpg",
+      "source": "https://www.facebook.com/photo/?fbid=787140322635498&set=a.787140295968834",
+      "viewer_date": "2022-09-24",
+      "sha256": "06cecb86060cb44eb03d2d2eb86758f876e65809ac36638421ccbe01ea08e28f",
+      "limits": "Photographedwoodplaque inclThePotPourriShop/with/EmilyHarperCosmetics, notflatlogo/ownervector/exactfont master"
+    },
+    {
+      "path": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/outputs/batches-3-4/pot-pourri-shop/assets/frontage-original.jpg",
+      "source": "https://www.facebook.com/photo/?fbid=787140319302165&set=a.787140292635501",
+      "viewer_date": "2022-09-24",
+      "sha256": "f25ecf8851b680982db48faa38d41915120f6a7e4b8cd22dc3d6c759cdcd6e60",
+      "limits": "Genuine sourceimage displayeddatesnotcapturedate/currentappearance/accessproof"
+    }
+  ],
+  "website_check": {
+    "queries": [
+      "\"Pot Pourri\" Leicester \"17\" website",
+      "\"The Pot Pourri Shop\" Leicester shop website Instagram",
+      "\"potpourrishop.co.uk\" Leicester",
+      "\"The Pot Pourri Shop Leicester\" Facebook",
+      "\"17 Free Lane\" \"pot pourri\" Instagram"
+    ],
+    "finding": "No verified good owncustomerwebsite found in boundedname/addresssearches. Directorydomainpotpourrishop.co.uk actual200page isDaisyGifts/RuthRidley related tootherbusiness(daisyshopuk), notverifiedLeicesterprimary. Historic thepotpourrishop.com DNSfailed, notabsence/closureproof. Exclude mixeddirectoryphones includingGoodEarthnumber; primaryprofile independentlyresolves01162626666.",
+    "proof": "source-probes.json actualrawheaders/hashes/sociallinks"
+  },
+  "public_access": "FullSeeMorepost triggerednondismissiblelogin, fullpostnotreadoradopted. No loginperformed; savedfeed-login-limit screenshot. Alreadyobservedpublicphotolinks eachshowedoptionalCloseoverlay; normalpublicviewreadanddownloaded, no account/security/cookie workaround.",
+  "sector_reference": {
+    "url": "https://thehambledon.com/",
+    "method": "Actual officialsite home and belowhero department cards/visit handoff inspected before layout.",
+    "capture": "/Users/paulventura/Documents/Codex/2026-10-20/leicester-batches-3-4/work/research/pot-pourri-20261023/sector-hambledon-below-hero.png",
+    "adapt": "Clear familiar interest groups, real shop identity and prominent visit handoff.",
+    "exclude": "Competitor assets/copy,awards/reviews,prices,delivery/promotions,products,brandlist and fullcommerce; no cart/account/form submission made."
+  },
+  "workflow": "Paul accelerated BUILD-WORKFLOW r80: clear identity/gap qualification completed by main before implementation; consolidate source/assets/working in one substantive packet and retain independent final acceptance."
+}

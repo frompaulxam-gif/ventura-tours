@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("cafe-dido-intro","1");}catch{}
