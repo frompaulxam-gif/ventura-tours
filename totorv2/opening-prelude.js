@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");sessionStorage.setItem("totor-intro","1");}catch{}

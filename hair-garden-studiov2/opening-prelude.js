@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("hair-garden-studio-intro","1");sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");}catch{}
