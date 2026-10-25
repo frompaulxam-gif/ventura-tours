@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("cabello-mens-hairsalon-intro","1");sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");}catch{}
