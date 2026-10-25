@@ -1,0 +1,1 @@
+try{sessionStorage.setItem("hair-by-lara-fifth-salon-intro","1");sessionStorage.setItem("intro","1");sessionStorage.setItem("intro-fly","1");}catch{}
