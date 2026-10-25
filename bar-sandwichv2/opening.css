@@ -1,0 +1,58 @@
+/* Native three-chapter opening, adapted from websites_local / Leicester Nine. */
+.opening-journey{height:360svh;position:relative;--opening-accent:#e9e8c9;--opening-ink:#f9f7ef}
+.opening-scene{height:100svh;min-height:640px;position:sticky;top:0;overflow:hidden;isolation:isolate;background:#15251d url('opening-assets/backdrop.webp') center/cover no-repeat;color:var(--opening-ink)}
+.opening-scene:before{content:'';position:absolute;inset:0;background:#06190d45;pointer-events:none;z-index:-1}
+.opening-journey[data-theme=kotula] .opening-scene:before{background:#06112766}
+.opening-journey[data-theme=duffys] .opening-scene:before{background:#03050385}
+.opening-scene header{position:absolute;top:0;left:0;width:100%;z-index:5;background:transparent;color:var(--opening-ink);height:114px;min-height:0;padding:18px 5vw;display:flex;flex-direction:row;justify-content:space-between;gap:20px;border:0}
+.opening-scene header nav{background:none}.opening-scene header a{color:inherit}
+.opening-title-block{position:absolute;top:17%;left:5%;right:5%;text-align:center;pointer-events:none;z-index:2}
+.opening-label{font-size:11px;line-height:1.5;letter-spacing:.13em;text-transform:uppercase;margin:0 auto 14px;max-width:none;color:#e1e4cc}
+.opening-title-block h1{font-size:clamp(46px,6vw,88px);line-height:1.06;letter-spacing:-.045em;margin:0 auto;max-width:20ch;font-weight:400;color:var(--opening-ink)}
+[data-theme=sandwich] .opening-title-block h1{font-weight:700;max-width:24ch;font-size:clamp(46px,5.8vw,84px)}
+[data-theme=duffys] .opening-title-block h1{font-size:clamp(54px,6.8vw,102px);font-weight:700;max-width:26ch;line-height:.96}
+.opening-stage{position:absolute;top:31%;left:50%;transform:translateX(-50%);width:min(58vw,49svh);height:min(58vw,49svh);perspective:1100px;z-index:1;pointer-events:none}
+.opening-piece{position:absolute;inset:0;transform-origin:center;will-change:transform,opacity}
+.opening-piece:not(:first-child){visibility:hidden;opacity:0}
+.opening-float{width:100%;height:100%;animation:opening-breathe 7s ease-in-out infinite}
+.opening-piece img{width:100%;height:100%;max-width:none;object-fit:contain;display:block;filter:drop-shadow(12px 22px 16px #0006);user-select:none;-webkit-user-drag:none}
+.opening-shadow{position:absolute;bottom:22%;left:40%;right:40%;height:14px;background:#0006;filter:blur(14px);border-radius:50%;pointer-events:none}
+.opening-orbit{position:absolute;top:36%;left:19%;width:62%;height:34%;border:1px solid #ece9d323;border-radius:50%;transform:rotate(-22deg);pointer-events:none}
+.opening-copy{position:absolute;bottom:17%;left:12%;right:12%;text-align:center;z-index:2;pointer-events:none}
+.opening-copy h2{font-size:31px;line-height:1.2;letter-spacing:-.02em;margin:0;font-weight:400;color:var(--opening-ink)}
+.opening-copy p{font-size:13px;line-height:1.6;max-width:45ch;margin:8px auto 0;color:#ebece2}
+.opening-bottom{position:absolute;bottom:5%;left:5%;right:5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:25px;z-index:3}
+.opening-cue{font-size:11px;color:#d3d7c8}
+.opening-cta{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:15px 26px;font-size:13px;font-weight:700;line-height:1.4;text-decoration:none;background:#efeeda;color:#142c20;border:1px solid #efeeda;white-space:nowrap}
+[data-theme=kotula] .opening-cta{background:#e3d170;border-color:#e3d170;color:#182c66}
+.opening-chapters{display:flex;gap:20px;justify-self:end;margin:0;padding:0;max-width:none;align-items:center}
+.opening-chapters button{background:transparent;border:0;color:#cbd3c4;font-size:11px;min-height:44px;padding:6px 0;white-space:nowrap;border-bottom:1px solid transparent}
+.opening-chapters button[aria-current]{color:#fff;border-bottom-color:#e8e4bd}
+.opening-note{position:absolute;bottom:13px;left:5%;right:5%;text-align:center;font-size:10px;line-height:1.4;color:#bdc7b6;max-width:none;margin:0}
+.opening-motion{position:absolute;top:46%;right:5%;border:1px solid #cfd8c644;background:#10231844;color:#e2e5d6;font-size:11px;min-height:44px;padding:10px 14px;z-index:4}
+.opening-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:#ffffff13}.opening-progress span{display:block;height:100%;background:#cbd6b2;transform:scaleX(0);transform-origin:left}
+.opening-paused .opening-float{animation-play-state:paused}
+@keyframes opening-breathe{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+@media(max-width:900px){.opening-motion{right:3%;font-size:10px}.opening-chapters{gap:12px}.opening-bottom{gap:18px}.opening-cue{font-size:10px}.opening-scene header nav{gap:22px}.opening-title-block h1{font-size:60px}}
+@media(max-width:650px){
+.opening-journey{height:340svh}.opening-scene{min-height:650px}
+.opening-scene header{height:108px;padding:16px 6vw;align-items:center;gap:10px}
+.opening-scene header nav{max-width:145px;flex-wrap:wrap;justify-content:flex-end;gap:4px 14px;margin:0}
+.opening-scene header nav a{font-size:10px;min-height:34px}.opening-scene .header-social{display:none}
+.opening-scene .brand-name{font-size:25px}.opening-scene .brand-mark{width:52px;height:52px}.opening-scene .brand-mark img{width:48px;height:48px}.opening-scene .brand{gap:7px}
+.opening-label{font-size:9px;letter-spacing:.1em;margin-bottom:11px}.opening-title-block{top:17%;left:6%;right:6%}
+.opening-title-block h1,[data-theme=sandwich] .opening-title-block h1{font-size:clamp(35px,10vw,50px);max-width:17ch;line-height:1.08}
+[data-theme=duffys] .opening-title-block h1{font-size:clamp(42px,12vw,60px);max-width:16ch;line-height:1.01}
+.opening-stage{top:32%;width:min(93vw,38svh);height:min(93vw,38svh)}
+.opening-orbit{left:-8%;width:116%;top:36%;height:27%}.opening-shadow{bottom:31%;left:31%;right:31%}
+.opening-copy{bottom:23%;left:6%;right:6%}.opening-copy h2{font-size:25px}.opening-copy p{font-size:12px;max-width:31ch;line-height:1.6;margin-top:7px}
+.opening-bottom{bottom:5%;left:6%;right:6%;grid-template-columns:1fr;gap:10px;justify-items:center}
+.opening-cta{min-height:48px;font-size:13px;padding:13px 23px;grid-row:1}
+.opening-chapters{justify-self:center;gap:25px}.opening-chapters button{font-size:10px;min-height:38px}.opening-cue{display:none}
+.opening-note{bottom:10px;font-size:8px;left:4%;right:4%;line-height:1.4}
+.opening-motion{top:29%;right:6%;min-height:34px;padding:5px 8px;font-size:9px;border:0;background:transparent}
+}
+@media(max-height:700px) and (min-width:651px){.opening-scene{min-height:590px}.opening-title-block{top:19%}.opening-title-block h1,[data-theme=duffys] .opening-title-block h1{font-size:52px}.opening-stage{top:33%;width:40svh;height:40svh}.opening-copy{bottom:18%}.opening-copy h2{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.opening-float{animation:none}.opening-piece{will-change:auto}.opening-motion{display:none}}
+
+#business-context .previous-hero-heading{font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-.04em;margin:20px 0 25px} #business-context{min-height:0} #business-context .hero-copy{padding-block:35px} @media(max-width:650px){#business-context .previous-hero-heading{font-size:42px}}

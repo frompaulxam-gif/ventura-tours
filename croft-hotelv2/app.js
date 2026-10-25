@@ -1,0 +1,21 @@
+(() => {"use strict";const tools=document.getElementById("room-tools"),input=document.getElementById("room-search"),status=document.getElementById("room-status"),empty=document.getElementById("no-results"),rows=[...document.querySelectorAll("[data-room]")],buttons=[...document.querySelectorAll("[data-filter]")];if(!tools||!input||!status||!empty||!rows.length)return;let type="All";const norm=s=>s.normalize("NFKC").toLocaleLowerCase().trim();function update(){const q=norm(input.value);let count=0;for(const row of rows){row.hidden=!((type==="All"||row.dataset.type===type)&&(!q||norm(row.querySelector("h3").textContent+" "+row.querySelector("h3+p").textContent).includes(q)));if(!row.hidden)count++;}buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.filter===type)));empty.hidden=count!==0;status.textContent=count+" "+(count===1?"room type":"room types")+" shown";}input.addEventListener("input",update);buttons.forEach(b=>b.addEventListener("click",()=>{type=b.dataset.filter;update()}));tools.addEventListener("submit",e=>e.preventDefault());tools.addEventListener("reset",e=>{e.preventDefault();input.value="";type="All";update();input.focus()});update();tools.hidden=false;})();
+(() => {"use strict";
+const memory={},prefix="croft:r1:",query=new URLSearchParams(location.search),motion=matchMedia("(prefers-reduced-motion: reduce)");
+const read=k=>{try{return sessionStorage.getItem(prefix+k)==="1"}catch{return !!memory[k]}};
+const write=k=>{memory[k]=true;try{sessionStorage.setItem(prefix+k,"1")}catch{}};
+document.querySelectorAll("img").forEach(img=>{const failed=()=>img.classList.add("image-failed");img.addEventListener("error",failed);if(img.complete&&!img.naturalWidth)failed()});
+let introBusy=false;
+const dialog=document.getElementById("updates-dialog"),close=document.getElementById("close-updates");let returnFocus=null,dismissed=read("updates"),waited=false;
+function suppress(){dismissed=true;write("updates")}
+function dismiss(){suppress();dialog?.querySelectorAll("input").forEach(x=>{x.value="";x.removeAttribute("aria-invalid")});if(dialog?.open)dialog.close();if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});}
+close?.addEventListener("click",dismiss);dialog?.addEventListener("cancel",e=>{e.preventDefault();dismiss()});dialog?.addEventListener("close",suppress);
+document.querySelectorAll(".demo-email").forEach(form=>{
+ const input=form.querySelector("input"),error=form.querySelector(".email-error"),result=form.querySelector(".demo-result");
+ form.addEventListener("submit",event=>{event.preventDefault();suppress();result.textContent="";if(!input.value.trim()||!input.validity.valid){error.textContent=input.value.trim()?"Enter a valid email, such as guest@example.com.":"Enter a made-up email to try the demonstration.";input.setAttribute("aria-invalid","true");input.focus();return;}input.value="";input.removeAttribute("aria-invalid");error.textContent="";result.textContent="Demo only — nothing was sent.";});
+ input.addEventListener("input",()=>{input.removeAttribute("aria-invalid");error.textContent="";result.textContent="";});form.hidden=false;
+});
+function offer(force=false){if(!dialog||typeof dialog.showModal!=="function"||dialog.open||introBusy||document.hidden)return;if(!force){const distance=document.documentElement.scrollHeight-innerHeight,progress=distance>0?scrollY/distance:0;if(scrollY<document.querySelector(".opening").offsetHeight||!waited||progress<.30||dismissed||location.hash||document.activeElement?.closest("form,dialog"))return;}returnFocus=document.activeElement;try{dialog.showModal();close.focus()}catch{}}
+setTimeout(()=>{waited=true;offer()},20000);window.addEventListener("scroll",()=>offer(),{passive:true});document.addEventListener("visibilitychange",()=>offer());
+dialog?.addEventListener("keydown",e=>{if(e.key!=="Tab")return;const stops=[...dialog.querySelectorAll("button,input,a[href]")].filter(x=>!x.disabled&&!x.hidden);if(!stops.length)return;const first=stops[0],last=stops[stops.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+if(query.get("reviewDemo")==="1")offer(true);
+})();
