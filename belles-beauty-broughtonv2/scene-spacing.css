@@ -15,3 +15,7 @@
  :is(.ao-journey .ao-cta,.opening-journey .opening-cta)::after{width:24px;height:24px;flex-basis:24px}
  :is(.ao-journey .ao-shadow,.opening-journey .opening-shadow){position:relative;grid-row:3;grid-column:1;inset:auto;width:30%;height:8px;align-self:end;justify-self:center;margin:0}
 }
+
+/* Publisher live QA: centre the compact mask independently of anonymous button text rows. */
+:is(.ao-journey .ao-pause,.opening-journey .opening-motion)::before{position:absolute;left:50%;top:50%;width:20px!important;height:20px!important;transform:translate(-50%,-50%)!important}
+:is(.ao-journey .ao-pause,.opening-journey .opening-motion)[aria-pressed="true"]::before{transform:translate(-50%,-50%) translateX(.35px)!important}
