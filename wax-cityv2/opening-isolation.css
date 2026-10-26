@@ -1,0 +1,5 @@
+@font-face{font-family:OpeningDisplay;src:url('/website-version-assets/7bf8604bdeb63fe00278935c1a7e8595de56dfc053ab43581ca848ffd5ad11ba.ttf') format('truetype');font-weight:400;font-display:swap}
+/* Existing site styles remain untouched. Conceal only source fixed overlays
+   while the added opening is on screen; the site resumes below it. */
+animated-opening{display:block;position:relative;z-index:100;background:#242322;isolation:isolate}
+html.animated-opening-visible .logo-reveal,html.animated-opening-visible .intro-overlay,html.animated-opening-visible .intro-brand{display:none!important}
