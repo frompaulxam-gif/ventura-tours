@@ -31,3 +31,12 @@
 
 @media(min-width:701px){.ao-stage[data-long="true"] .ao-title{font-size:clamp(48px,5.2vw,78px);max-width:25ch}}
 @media(max-width:700px){.ao-stage[data-long="true"] .ao-title{font-size:clamp(35px,10.6vw,60px)}}
+
+/* Photographic beauty set: sage plaster, limestone and natural window light. */
+.ao-journey[data-surface="studio"] .ao-surface{background:#434b37 url("beauty-studio.jpg") center center/cover no-repeat}
+.ao-journey[data-surface="studio"] .ao-surface:after{display:none}
+.ao-journey[data-surface="studio"] .ao-stage:before{background:linear-gradient(180deg,rgba(15,25,19,.30),rgba(15,25,19,.22) 38%,rgba(15,25,19,.04) 60%,rgba(15,25,19,.67) 100%)}
+.ao-journey[data-surface="studio"] .ao-orbit{display:none}
+.ao-journey[data-surface="studio"] .ao-heading{text-shadow:0 2px 20px #18251955}
+.ao-journey[data-surface="studio"] .ao-eyebrow{color:#f4ecd9}
+.ao-journey[data-surface="studio"] .ao-shadow{opacity:.48}
