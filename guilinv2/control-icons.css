@@ -1,7 +1,11 @@
 /* Control icons only. Native aria state and scene runtime retained. */
-.opening-stage .opening-pause{display:grid!important;place-items:center!important;box-sizing:border-box!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;font-size:0!important;line-height:0!important}
-.opening-stage .opening-pause::before{content:"";display:block;width:24px;height:24px;background:currentColor;-webkit-mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;transform:none;pointer-events:none}
-.opening-stage .opening-pause[aria-pressed="true"]::before{-webkit-mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg");mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg")}
+.opening-stage .opening-pause{position:relative!important;display:grid!important;place-items:center!important;box-sizing:border-box!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;font-size:0!important;line-height:0!important}
+.opening-stage .opening-pause::before{content:"";display:block;position:absolute;left:50%;top:50%;width:20px;height:20px;margin:0;background:currentColor;-webkit-mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;transform:translate(-50%,-50%);pointer-events:none}
+.opening-stage .opening-pause[aria-pressed="true"]::before{-webkit-mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg");mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg");transform:translate(-50%,-50%) translateX(.35px)}
 .opening-stage .opening-pause::after{content:none!important}
 .opening-stage .opening-pause:disabled{opacity:.45;cursor:default}
 .opening-stage .opening-pause:focus-visible,.opening-stage .opening-cta:focus-visible,.opening-stage .opening-chapters button:focus-visible{outline:2px solid currentColor!important;outline-offset:4px!important}
+
+@media(max-width:600px){.opening-stage .opening-chapters button{min-height:44px}}
+
+.opening-stage .opening-chapters button{min-width:44px}

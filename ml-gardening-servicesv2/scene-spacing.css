@@ -1,0 +1,11 @@
+/* Keep the existing desktop composition and reserve mobile rows for copy, object and actions. */
+.opening-action-block{display:contents}
+@media(max-width:600px){
+ .opening-stage{box-sizing:border-box!important;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:16px;padding:20px 22px 4svh!important;align-items:stretch}
+ .opening-stage header{grid-row:1;position:static!important;inset:auto!important;padding:0!important;min-height:44px!important;width:100%;margin:0}
+ .opening-stage .opening-intro{grid-row:2;position:static!important;inset:auto!important;width:100%;margin:0;align-self:start}
+ .opening-stage .opening-objects{grid-row:3;position:relative!important;inset:auto!important;transform:none!important;width:min(88vw,36svh);height:100%;max-height:36svh;align-self:center;justify-self:center}
+ .opening-stage .opening-action-block{grid-row:4;position:static;inset:auto;width:100%;display:flex;flex-direction:column;align-items:center;gap:24px;z-index:9}
+ .opening-stage .opening-action-block .opening-copy{position:static!important;inset:auto!important;width:100%;margin:0;text-shadow:0 1px 2px rgba(255,249,233,.8)}
+ .opening-stage .opening-action-block .opening-bottom{position:static!important;inset:auto!important;width:100%;margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+}
