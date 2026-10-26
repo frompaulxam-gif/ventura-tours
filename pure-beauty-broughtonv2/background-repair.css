@@ -8,7 +8,7 @@ body .opening-stage>header [data-logo-repaired]>.repair-logo{max-height:none}
 body header[data-logo-header] .brand{display:flex;align-items:center;gap:18px;width:auto;max-width:48%;flex-shrink:0}
 body header[data-logo-header] .brand>.repair-logo{width:120.0px;height:86px}
 @media(max-width:700px){body [data-logo-repaired]>.repair-logo{width:66.6px;height:53px}body header[data-logo-header] .brand{max-width:52%}body header[data-logo-header] .brand>.repair-logo{width:90.0px;height:64px}}
-body .ao-brand[data-logo-repaired]>.repair-logo{position:absolute;left:0;top:calc(100svh - 220px);width:100px;height:90px}body .ao-brand[data-logo-repaired] .ao-name{position:static;width:auto;height:auto;clip-path:none} @media(max-width:700px){body .ao-brand[data-logo-repaired]>.repair-logo{top:calc(100svh - 170px);width:68px;height:64px}body .ao-caption{left:29%;right:6%}body .ao-stage .ao-caption h3{font-size:22px}}
+
 
 /* Shared bold generated arrow cleanup */
 body .ao-journey.ao-journey .ao-cta::after{content:"";display:block;flex:0 0 26px;width:26px;height:26px;background-color:currentColor;-webkit-mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;font-size:0;line-height:0;transform:none}
@@ -23,3 +23,12 @@ body .opening-journey.opening-journey .opening-controls button[data-step]{font-s
 body .opening-journey.opening-journey .opening-controls button[data-step]::before{content:"";display:block;width:20px;height:20px;background-color:currentColor;-webkit-mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;transform:rotate(45deg)}
 body .opening-journey.opening-journey .opening-controls button[data-step="-1"]::before{transform:rotate(225deg)}
 @media(max-width:700px){body .opening-journey.opening-journey .opening-cta::after{flex-basis:24px;width:24px;height:24px}body .opening-journey.opening-journey .opening-controls button[data-step]::before{width:18px;height:18px}}
+
+/* Preserve header identity and the centred opening composition. */
+body .ao-top .ao-brand[data-logo-repaired]{display:flex;position:static;align-items:center;justify-content:flex-start;max-width:60%;gap:14px}
+body .ao-top .ao-brand[data-logo-repaired]>.repair-logo{position:static;inset:auto;transform:none;flex:none;width:100px;height:80px;object-fit:contain;object-position:center;margin:0}
+body .ao-caption{left:10%;right:10%;text-align:center}
+@media(max-width:700px){body .ao-top .ao-brand[data-logo-repaired]>.repair-logo{width:76px;height:60px}body .ao-caption{left:6%;right:6%;text-align:center}body .ao-stage .ao-caption h3{font-size:25px}}
+
+@media(max-width:700px){body .ao-footer{grid-template-columns:1fr;justify-items:center;gap:10px;bottom:6%}body .ao-footer .ao-cta,body .ao-footer .ao-controls{justify-self:center}}
+@media(max-width:700px) and (max-height:740px){body .ao-object-stage{width:36svh;height:36svh}body .ao-caption{top:71%}body .ao-footer{bottom:5%}}
