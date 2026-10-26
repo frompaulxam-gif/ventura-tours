@@ -21,3 +21,11 @@ body .opening-journey.opening-journey .opening-footer{position:relative;inset:au
 body .opening-journey.opening-journey .opening-heading h1{font-size:clamp(31px,9.5vw,40px);line-height:1.04;max-width:17ch}
 body .opening-journey.opening-journey .opening-caption h2{font-size:22px;line-height:1.12}
 }
+
+/* Narrow embedded previews reserve a separate row for CTA and controls. */
+@media(max-width:300px){
+body .opening-journey.opening-journey .opening-stage{grid-template-columns:minmax(0,1fr)}
+body .opening-journey.opening-journey .opening-footer{display:flex;flex-direction:column;align-items:center;gap:10px;padding-bottom:18px;box-sizing:border-box}
+body .opening-journey.opening-journey .opening-cta{align-self:center;justify-self:center;max-width:100%;box-sizing:border-box}
+body .opening-journey.opening-journey .opening-controls{align-self:center;justify-self:center}
+}
