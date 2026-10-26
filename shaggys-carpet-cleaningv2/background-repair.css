@@ -1,0 +1,41 @@
+.opening-stage .opening-cta{background:#293126!important;color:#fff8ec!important;border-color:#293126!important}
+/* Scoped photographic setting and faithful logo cleanup. Animation code retained. */
+.opening-backdrop{background-image:url("/website-version-assets/fd16e8bdb1ed652243a746b5bd262cfed84c55124cab0c7ba0a7f2ce6af54856.png")!important}
+.opening-shade{background:none!important}
+body>header{background-image:url("/website-version-assets/b72e7e86c66c22084c6808b5108c7399e04ad9e12ade6d62e0329c47223f466e.png")!important}
+
+.opening-orbit{display:none!important}
+.opening-backdrop::after,.opening-backdrop::before{display:none!important}
+.opening-backdrop{filter:none!important;opacity:1!important;background-size:cover!important;background-position:50% 50%!important}
+.opening-stage{color:#292b26!important}
+.opening-stage header,.opening-stage header a,.opening-stage header small,.opening-intro h1,.opening-copy h2{color:#292b26!important}
+.opening-stage .opening-copy p,.opening-stage .opening-side,.opening-stage .opening-disclosure,.opening-stage .opening-cue{color:#3d4438!important}
+.opening-stage .opening-kicker{color:#3d4438!important}
+.opening-stage .opening-pause{color:#292b26!important;border-color:#292b26!important}
+.opening-stage .opening-chapters button{color:#292b26!important}
+.opening-stage .opening-chapters button[aria-current]{border-color:#292b26!important}
+.opening-stage header .brand-name,.opening-stage header .brand span{color:#292b26!important}
+[data-logo-clean]{display:block!important;background:transparent!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;mix-blend-mode:normal!important;opacity:1!important;filter:none!important;object-fit:contain!important;object-position:center!important}
+header img[data-logo-clean]{height:64px!important;width:auto!important;max-width:190px!important;flex-shrink:0}
+body>header{color:#292b26!important;background-size:cover!important;background-position:50% 18%!important}
+body>header a,body>header .brand small,body>header .brand span,body>header .brand-name{color:#292b26!important}
+@media(max-width:600px){header img[data-logo-clean]{height:44px!important;max-width:125px!important}.opening-backdrop{background-position:50% 50%!important}}
+
+/* Remove old fallback logo tiles and fit faithful marks to the header. */
+header .source-mark:has(img[data-logo-clean]){display:inline-flex!important;align-items:center;justify-content:center;width:auto!important;height:auto!important;background:transparent!important;overflow:visible!important}
+header .source-mark:has(img[data-logo-clean])::before{display:none!important}
+header .brand:has(.source-mark img[data-logo-clean]){width:auto!important;height:auto!important;min-width:0!important;max-width:100%!important}
+header .source-mark img[data-logo-clean]{position:static!important;inset:auto!important;width:160px!important;height:86px!important;max-width:160px!important}
+body>header.header:has(.source-mark img[data-logo-clean]){display:grid!important;grid-template-columns:minmax(100px,170px) minmax(0,1fr);align-items:center!important;gap:28px!important;min-height:140px!important;padding:24px 5%!important}
+body>header.header:has(.source-mark img[data-logo-clean]) .header-copy{padding:0!important;min-width:0}
+body>header.header:has(.source-mark img[data-logo-clean]) .name{font-size:24px!important;margin:0!important}
+body>header.header:has(.source-mark img[data-logo-clean]) .brand-label{font-size:13px!important;margin:6px 0 14px!important;color:inherit!important}
+body>header.header:has(.source-mark img[data-logo-clean]) nav{gap:16px!important;flex-wrap:wrap!important}
+body>header .button{color:#18221b!important;background:#efe8da!important;border-color:#efe8da!important}
+@media(max-width:700px){header .source-mark img[data-logo-clean]{width:106px!important;height:66px!important;max-width:106px!important}body>header.header:has(.source-mark img[data-logo-clean]){grid-template-columns:106px minmax(0,1fr);gap:18px!important;padding:20px 6%!important}body>header.header:has(.source-mark img[data-logo-clean]) .name{font-size:20px!important}body>header.header:has(.source-mark img[data-logo-clean]) nav{gap:10px 14px!important;font-size:12px!important}body>header.header:has(.source-mark img[data-logo-clean]) nav .button{padding:10px 13px!important;font-size:11px!important}}
+
+/* Shared bold arrow */
+.opening-stage .opening-cta{gap:16px;max-width:100%}
+.opening-stage .opening-cta::after,.opening-stage .opening-bold-nav-arrow{content:"";display:inline-block;width:24px;height:24px;flex:0 0 24px;background:currentColor;-webkit-mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;vertical-align:middle}
+.opening-stage .opening-bold-nav-arrow{width:20px;height:20px;margin-left:6px}
+@media(max-width:600px){.opening-stage .opening-cta{padding:10px 22px}}

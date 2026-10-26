@@ -1,0 +1,17 @@
+/* Photographic setting and transparent logo repair. Existing motion JS is unchanged. */
+.ao-journey{--ao-ink:#182b2c}
+.ao-journey .ao-scene{background:#484b42 url('/website-version-assets/54c26dc82c876bb927394b38f11ff8b2df03b553f5bd3aaa84f23c5d8b0c1704.png') center center/cover no-repeat;color:#182b2c}
+.ao-journey.ao-journey .ao-scene:before{background:linear-gradient(180deg,rgba(255,252,242,.16),rgba(255,252,242,0) 40%,rgba(255,252,242,.5));opacity:1}
+.ao-journey .ao-orbit{display:none}
+.ao-journey :is(.ao-label,.ao-cue,.ao-note,.ao-copy p){color:#182b2c}
+.ao-journey .ao-chapters button,.ao-journey .ao-chapters button[aria-current]{color:#182b2c}
+.ao-journey :is(.ao-brand,.ao-links a,.opening-scene header a){color:#182b2c}
+.ao-journey :is(.ao-pause,.opening-motion){color:#182b2c;background:transparent;border-color:currentColor}
+.ao-original header :is(.source-mark,.brand-mark){background:none;border:0;box-shadow:none}
+@media(max-width:650px){.ao-journey .ao-scene{background-position:53% center}}
+/* Shared bold CTA arrow */
+:is(.ao-journey .ao-cta,.opening-journey .opening-cta){gap:14px}
+:is(.ao-journey .ao-cta,.opening-journey .opening-cta)::after{content:'';display:inline-block;flex:0 0 25px;width:25px;height:25px;background:currentColor;-webkit-mask:url('/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png') center/contain no-repeat;mask:url('/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png') center/contain no-repeat}
+@media(max-width:650px){:is(.ao-journey .ao-cta,.opening-journey .opening-cta){gap:12px}}
+
+@media(max-width:650px){.ao-journey .ao-brand{min-width:0}.ao-journey .ao-brand:has(img){font-size:20px;max-width:62%;gap:8px}.ao-journey .ao-brand img{max-width:60px;flex:0 0 auto}.ao-journey .ao-brand span{min-width:0;flex:1}}
