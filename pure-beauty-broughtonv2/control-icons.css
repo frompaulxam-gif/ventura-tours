@@ -1,0 +1,15 @@
+/* Controls only: keep the existing business logo, photographic set and hero geometry. */
+body .ao-journey.ao-journey .ao-controls{display:flex;align-items:center;gap:6px;color:inherit}
+body .ao-journey.ao-journey .ao-controls button{display:inline-grid;place-items:center;box-sizing:border-box;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border:1px solid color-mix(in srgb,currentColor 38%,transparent);border-radius:50%;background:transparent;color:inherit;font-size:0;line-height:1;touch-action:manipulation;opacity:1}
+body .ao-journey.ao-journey .ao-controls button::after{content:none}
+body .ao-journey.ao-journey .ao-controls button::before{content:"";display:block;background-color:currentColor;transform-origin:center;pointer-events:none}
+body .ao-journey.ao-journey .ao-controls button[data-ao-step]::before{width:22px;height:22px;-webkit-mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;transform:rotate(45deg)}
+body .ao-journey.ao-journey .ao-controls button[data-ao-step="-1"]::before{transform:rotate(225deg)}
+body .ao-journey.ao-journey .ao-controls button[data-ao-pause]::before{width:28px;height:28px;-webkit-mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;mask:url("/website-version-assets/4d8caa1366ab588ff7bee5e294786f26645659a1f1e596c112330d03e302d9da.svg") center/contain no-repeat;transform:none}
+body .ao-journey.ao-journey .ao-controls button[data-ao-pause][aria-pressed="true"]::before{width:27px;height:27px;-webkit-mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg");mask-image:url("/website-version-assets/4392c49d5d01810f11f2556d8781e2a8cc9346103377164b1a986be8a0486db0.svg");transform:translateX(.5px)}
+body .ao-journey.ao-journey .ao-controls button:disabled{opacity:.48;cursor:default}
+body .ao-journey.ao-journey .ao-controls button:not(:disabled):hover{background:color-mix(in srgb,currentColor 9%,transparent)}
+body .ao-journey.ao-journey .ao-controls button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+body .ao-journey.ao-journey .ao-controls .ao-count{font:600 11px/1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.025em;min-width:36px;text-align:center;white-space:nowrap;color:inherit}
+@media(max-width:700px){body .ao-journey.ao-journey .ao-controls{gap:5px}body .ao-journey.ao-journey .ao-controls .ao-count{font-size:10.5px;min-width:33px}}
+@media(max-width:700px){body .ao-journey.ao-journey .ao-controls{height:32px;min-height:32px;overflow:visible}}
