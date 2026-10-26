@@ -21,7 +21,7 @@ body header[data-logo-header] .brand{display:flex;align-items:center;gap:18px;wi
 body header[data-logo-header] .brand>.repair-logo{width:122.6px;height:86px}
 @media(max-width:700px){body [data-logo-repaired]>.repair-logo{width:85.5px;height:53px}body header[data-logo-header] .brand{max-width:52%}body header[data-logo-header] .brand>.repair-logo{width:90.0px;height:64px}}
 body header[data-logo-header]{background:linear-gradient(#1116,#1116),url("/website-version-assets/afa76a350216c1e56d410e3e954bc9bc0458802427f3533656a292be4ec3aaf3.png") center 25%/cover #ded8cc;color:#fff8ee}body header[data-logo-header] nav a,body header[data-logo-header] .name,body header[data-logo-header] .brand-label,body header[data-logo-header] .brand-fallback{color:inherit}body header[data-logo-header] nav .button,body header[data-logo-header] .nav-book,body header[data-logo-header] .action,body header[data-logo-header] .nav-call{background:#e8dbc8;color:#211d18;border-color:#cbbda7}
-body .ao-brand[data-logo-repaired]>.repair-logo{position:absolute;left:0;top:calc(100svh - 230px);width:140px;height:76px}body header[data-logo-header]{background-position:center bottom;background-size:auto 500%;color:#fff8ee} @media(max-width:700px){body .ao-brand[data-logo-repaired]>.repair-logo{top:calc(100svh - 170px);width:85px;height:58px}body .ao-caption{left:29%;right:6%}}
+body header[data-logo-header]{background-position:center bottom;background-size:auto 500%;color:#fff8ee}
 body header[data-logo-header]{background-image:url("/website-version-assets/afa76a350216c1e56d410e3e954bc9bc0458802427f3533656a292be4ec3aaf3.png");color:#25231f}
 @media(max-width:700px){body header[data-logo-header] .header-copy{color:#fff8ee}}
 
@@ -38,3 +38,5 @@ body .opening-journey.opening-journey .opening-controls button[data-step]{font-s
 body .opening-journey.opening-journey .opening-controls button[data-step]::before{content:"";display:block;width:20px;height:20px;background-color:currentColor;-webkit-mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;mask:url("/website-version-assets/ad531c9f07eb937e444f2cdccbab50fd9b40dd2393ce3ec52ce2fb3883ec0abe.png") center/contain no-repeat;transform:rotate(45deg)}
 body .opening-journey.opening-journey .opening-controls button[data-step="-1"]::before{transform:rotate(225deg)}
 @media(max-width:700px){body .opening-journey.opening-journey .opening-cta::after{flex-basis:24px;width:24px;height:24px}body .opening-journey.opening-journey .opening-controls button[data-step]::before{width:18px;height:18px}}
+/* Keep the transparent mark in the original header; use the same photograph with its lighter window edge at the left. */
+body .ao-journey.ao-journey .ao-surface{background-position:4% center}
