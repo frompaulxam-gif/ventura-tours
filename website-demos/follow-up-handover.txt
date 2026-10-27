@@ -1,0 +1,4695 @@
+VENTURA SOLUTIONS: FOLLOW-UP WRITING HANDOVER
+Updated 27 October 2026. Scope: the original 100 business previews.
+
+TASK FOR THE AI
+Write a personalised WhatsApp follow-up for each business Tanaka has ALREADY contacted. Do not restart the introduction or imply they replied. Do not send to every business in this file: Tanaka must identify the actual previous recipients and exclude anyone who declined or opted out. Prepare messages first; only send when Tanaka explicitly authorises the exact recipients. Do not send duplicates after an uncertain result.
+
+The earlier message introduced Tanaka from Ventura Solutions, said a first-draft concept was made, linked to the general portfolio/offer, and offered to send a personalised preview. This follow-up delivers those previews. Do not apologise for a mistake or blame the earlier sender.
+
+VOICE AND STRUCTURE
+Normal capitalisation, plain British English, warm and direct. Start "Hi [Business Name] team, just following up on my earlier message. Here are the two website previews we put together for you." Use a verified first name only if Tanaka knows it is the right recipient; no inferred owner names.
+Mention: "Paul, our web designer, built the sites for Moonshine (https://moonshineleicester.co.uk/) and Merchants Yard (https://merchantsyardleicester.co.uk/)." Moonshine FIRST. Do not say Tanaka personally built those websites.
+Include BOTH exact V1 and V2 URLs for that business, labelled Version 1 and Version 2. Explain V2's specific animated opening using that business's scene descriptions below. Include the relevant individual features as short bullets, grouping related items. Describe what customers can do and why it helps. Keep it around 150–220 words where possible; avoid generic sales filler.
+End with ONE easy reply question: "Which version feels more like your business?" They can discuss changes after replying. Do not add a second call-booking ask.
+
+OFFER
+Use https://venturasolutions.co.uk/website/offer/#offer
+The renewed free build offer closes 29 October 2026 at 20:42 UK time. Before sending, open the live offer and confirm it is still active. While active: website design/build plus first 30 days of hosting and maintenance are free in return for a review and referral at the end of the 30 days; then £20/month or £150/year. Domain inclusion depends on plan. Include a short, clear sentence with free-build conditions and ongoing cost, followed by the offer link. Do not call it free forever, invent savings, promise ranking/bookings, or claim a reset per visitor. If expired, use the current terms rather than this archived wording.
+
+FACTUAL LIMITS
+These are sales previews, not commissioned official websites. Use the exact business record below. Feature notes originate from the reviewed first version; the current V1/V2 source excerpts and scene data are included to cross-check. Inspect the live version if any detail conflicts. Do not copy features between businesses.
+External booking links open the existing provider profile. They are NOT embedded appointment availability, direct booking APIs, payment processing or automatic service/date transfer. Never say "fully connected booking system". Say "buttons open your existing Fresha/Booksy booking page" when that destination is recorded. Signup/enquiry forms may be local demos: never present them as delivering emails, saving leads or taking payment. Listed prices/durations are saved references, not confirmed current prices. Distinguish what is built from what could be connected after agreement.
+Do not add unverified personal contacts or names. This public handover intentionally excludes the private contact research sheet. Do not expose internal local paths in customer messages.
+
+BUSINESS RECORDS
+{
+  "business": "Andrew Leonards Hairdressing",
+  "v1": "https://venturasolutions.co.uk/andrew-leonardsv1/",
+  "v2": "https://venturasolutions.co.uk/andrew-leonardsv2/",
+  "v1_features": [
+    "Service guide for cuts, colour and occasions",
+    "Appointment discussion notes with a preferred date",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help visitors explain the look and appointment they have in mind before calling.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 01162621675",
+      "url": "tel:01162621675",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Your hair. Your kind of salon.",
+    "A cut. A colour. A fresh start.",
+    "Cuts & styling",
+    "Make it your visit.",
+    "Your conversation starter",
+    "Belgrave Gate. Leicester.",
+    "Salon news.",
+    "Your next look starts here."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Bar Sandwich",
+  "v1": "https://venturasolutions.co.uk/bar-sandwichv1/",
+  "v2": "https://venturasolutions.co.uk/bar-sandwichv2/",
+  "v1_features": [
+    "Lunch categories for sandwiches, soup and buffets",
+    "Group lunch planner with headcount, date and dietary questions",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Make a catering conversation easier to start with the key details already together.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 01162519770",
+      "url": "tel:01162519770",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Lunch, round the corner.",
+    "Something for lunch.",
+    "Sandwiches & baguettes",
+    "Soup",
+    "Lunch for a few more?",
+    "Bring the whole table.",
+    "Your group lunch enquiry",
+    "Meet us on the corner.",
+    "A little lunch news.",
+    "Sandwiches & baguettes.",
+    "Make lunch the good bit."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "5 Coats",
+  "v1": "https://venturasolutions.co.uk/5-coatsv1/",
+  "v2": "https://venturasolutions.co.uk/5-coatsv2/",
+  "v1_features": [
+    "Lunch, cake and drink category filters",
+    "Café shortlist with item details and a copyable visit note",
+    "Direct link to Deliveroo ordering menu"
+  ],
+  "customer_benefit": "Let people pick out a lunch or cake idea before visiting High Street.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/5-coats-cafe-19-high-street",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time   for you.",
+    "Take your pick.",
+    "A savoury pause",
+    "Leave room for cake",
+    "A cup to stay for",
+    "What takes your fancy?",
+    "Your café list",
+    "Find your little corner.",
+    "Room for one more slice?",
+    "",
+    "Your next  sweet pause."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Chloe's Nails",
+  "v1": "https://venturasolutions.co.uk/chloe-nailsv1/",
+  "v2": "https://venturasolutions.co.uk/chloe-nailsv2/",
+  "v1_features": [
+    "Acrylic, BIAB, gel and pedicure treatment guide",
+    "Existing product guidance, nail inspiration gallery and Booksy links",
+    "Booking buttons open Chloe's Nails’s existing Booksy booking profile"
+  ],
+  "customer_benefit": "Help clients think through their treatment and removal questions before opening Booksy.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/178374_chloe-nails-leicester_nail-salon_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next set. Your kind of  detail.",
+    "Start with your plans.",
+    "Acrylic",
+    "Find a detail you love.",
+    "Make it Market Street.",
+    "For your  next set.",
+    "",
+    "What’s  your next look?"
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Tomasz Kotula Butcher",
+  "v1": "https://venturasolutions.co.uk/kotula-polish-deliv1/",
+  "v2": "https://venturasolutions.co.uk/kotula-polish-deliv2/",
+  "v1_features": [
+    "Product enquiry list with quantities across Polish deli categories",
+    "English or Polish enquiry summaries with collection and delivery questions",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help customers explain the products and quantities they want to ask the counter about.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 07739709241",
+      "url": "tel:07739709241",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Polish favourites. From the market.",
+    "For a taste of something  familiar.",
+    "What’s on your list?",
+    "Sausages",
+    "Smoked & cured meats",
+    "Cheese",
+    "Fresh pork",
+    "Jars, sauces & spices",
+    "Make the enquiry a little easier.",
+    "Find the Polish deli.",
+    "A question for the counter?",
+    "News from the counter.",
+    "Keep up with the counter."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "The Very Bazaar",
+  "v1": "https://venturasolutions.co.uk/very-bazaarv1/",
+  "v2": "https://venturasolutions.co.uk/very-bazaarv2/",
+  "v1_features": [
+    "Discovery guide across jewellery, crystals, clothing, gifts and incense",
+    "Personal shopping or gift choice with a copyable visit list",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Give visitors a starting point for browsing the shop or finding a gift.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 01162621568",
+      "url": "tel:01162621568",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "A little out of the  ordinary.",
+    "Come for a browse. Leave with a  discovery.",
+    "What draws you in?",
+    "Jewellery",
+    "For your next browse.",
+    "The best way to find out?  Come inside.",
+    "More little  discoveries.",
+    "",
+    "Curious about  what’s next?"
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Croft Hotel",
+  "v1": "https://venturasolutions.co.uk/croft-hotelv1/",
+  "v2": "https://venturasolutions.co.uk/croft-hotelv2/",
+  "v1_features": [
+    "Room search and filters for single, twin, double and family options",
+    "Bed arrangements beside links to the existing Booking.com profile",
+    "Direct link to Booking.com hotel page",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help guests compare room types before checking current dates and rates.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Booking.com hotel page",
+      "url": "https://www.booking.com/hotel/gb/croft.en-gb.html",
+      "type": "hotel page",
+      "provider": "Booking.com"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Croft%20Hotel%203%20Stanley%20Road%20Leicester%20LE2%201RF",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your Leicester stay starts here.",
+    "A room to suit your stay.",
+    "Single Room En Suite",
+    "Twin Room en suite",
+    "Double Room En suite",
+    "Family Room en Suite",
+    "Double Room with Balcony",
+    "Family Room for 4",
+    "Through the front door.",
+    "Stanley Road. Leicester.",
+    "Keep in touch.",
+    "A note from Croft."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Duffy's",
+  "v1": "https://venturasolutions.co.uk/duffysv1/",
+  "v2": "https://venturasolutions.co.uk/duffysv2/",
+  "v1_features": [
+    "Gig list searchable by artist and filterable by month",
+    "Gig details and a visit note for group, access or ticket questions",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors find a relevant gig and organise the questions they need to ask.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Duffys+Bar+18+Pocklingtons+Walk+Leicester+LE1+6BU",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "YOUR NEXT GOOD NIGHT.",
+    "THE GIG LIST",
+    "GRUNK",
+    "Yur Mum",
+    "The Three ’n’ Eights",
+    "Scott Lavene",
+    "Nirvanher",
+    "Rites of Hadda",
+    "The Band From County Hell",
+    "MAKE YOUR WAY TO DUFFY’S.",
+    "LESS GUESSING. MORE MUSIC.",
+    "YOUR VISIT NOTE",
+    "THE NEXT GOOD NIGHT.",
+    "",
+    "DON’T MISS THE NEXT ONE."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Sam’s Beauty Den in Butchers Salon",
+  "v1": "https://venturasolutions.co.uk/sams-beauty-denv1/",
+  "v2": "https://venturasolutions.co.uk/sams-beauty-denv2/",
+  "v1_features": [
+    "Service selector including Eyebrow, upper lip & chin wax and Relaxing Full Body Massage",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Sam’s Beauty Den in Butchers Salon’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/sams-beauty-den-in-butchers-salon-leicester-uk-10-allandale-road-o3llsgib",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10%20Allandale%20Road%2C%20Leicester%20LE2%202DA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time. Your next treatment.",
+    "Make your next appointment.",
+    "Eyebrow, upper lip & chin wax",
+    "Find Sam’s at Butchers Salon.",
+    "For your next visit.",
+    "Sam’s Beauty Den source photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A little time. Your next treatment.",
+      "visual": "Illustrative tweezers",
+      "caption": "Explore the published treatment selection.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little care in the details.",
+      "visual": "Illustrative polish",
+      "caption": "Discuss your treatment, suitability and appointment.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next treatment.",
+      "visual": "Illustrative serum",
+      "caption": "Find Sam’s Beauty Den in Butchers Salon.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Mitsuki",
+  "v1": "https://venturasolutions.co.uk/mitsukiv1/",
+  "v2": "https://venturasolutions.co.uk/mitsukiv2/",
+  "v1_features": [
+    "Sushi, bento and ramen category filters",
+    "Dish detail views and a copyable favourites list",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help diners put a few Japanese dishes together before their visit.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 01162554805",
+      "url": "tel:01162554805",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Good company. A table of  Japanese favourites.",
+    "A roll to share. A bowl to settle into.",
+    "What catches  your eye?",
+    "Your favourites, together.",
+    "The Mitsuki Roll.",
+    "Make a little  time for Mitsuki.",
+    "Find us",
+    "Published opening hours",
+    "Something good to look forward to.",
+    "",
+    "A little more Mitsuki."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Kurda Restaurant",
+  "v1": "https://venturasolutions.co.uk/kurdav1/",
+  "v2": "https://venturasolutions.co.uk/kurdav2/",
+  "v1_features": [
+    "Sharing platter guide organised by group size",
+    "Meal discussion note with food choice, guest count and preferred date",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help groups decide what to ask about before speaking to the restaurant.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/kurda-restaurant-10-12-humberstone-road",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Tap to call +447459948776",
+      "url": "tel:+447459948776",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Kurda+Restaurant+10-12+Humberstone+Road+Leicester+LE5+0AR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A meal worth  sharing.",
+    "From the pot. From the grill.",
+    "Slow-cooked & comforting",
+    "Across the grill",
+    "Start with the middle",
+    "How many are sharing?",
+    "",
+    "Bring a plan. Leave room for advice.",
+    "Ready to discuss with the team",
+    "Over to Deliveroo.",
+    "Humberstone Road, Leicester.",
+    "Before you make a special trip",
+    "Room for news?",
+    "A seat for kitchen news."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Tatra Eastern Corner",
+  "v1": "https://venturasolutions.co.uk/tatrav1/",
+  "v2": "https://venturasolutions.co.uk/tatrav2/",
+  "v1_features": [
+    "Menu sections with dish photographs",
+    "Event enquiry outline covering occasion, guests, food and collection preferences",
+    "Direct link to Tatra table request page",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Make it easier to start a conversation about a celebration or catering enquiry.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Tatra table request page",
+      "url": "https://tatraleicester.co.uk/reservations/",
+      "type": "table request page",
+      "provider": "Tatra"
+    },
+    {
+      "label": "Tap to call +447883518180",
+      "url": "tel:+447883518180",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Tatra+Eastern+Corner+1+Newport+Place+Leicester+LE1+1DL",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little corner of home.",
+    "From the heart of Central Europe.",
+    "Restaurant menu",
+    "Starters",
+    "Traditional Cuisine",
+    "Schnitzels",
+    "Vegetarian Dishes",
+    "Potato Pancakes",
+    "Sides",
+    "Our Specials",
+    "Good food. Good company.",
+    "Your enquiry summary",
+    "Find your Eastern Corner.",
+    "Opening hours",
+    "A place at the table.",
+    "",
+    "Keep a place for something good."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "PALYA'S Catering",
+  "v1": "https://venturasolutions.co.uk/palyav1/",
+  "v2": "https://venturasolutions.co.uk/palyav2/",
+  "v1_features": [
+    "Daily versus weekly and monthly meal sections",
+    "Catering brief with occasion, date, guest count, location and dietary requests",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Bring the important event details together before a catering conversation.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447955266135",
+      "url": "tel:+447955266135",
+      "type": "phone"
+    },
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/evington-valley/palyas-catering-74-conduit-street",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    }
+  ],
+  "v1_section_headings": [
+    "Home-style meals. Food for your  occasion.",
+    "Make room for your everyday meal.",
+    "Daily",
+    "Weekly & monthly",
+    "Find your favourites.",
+    "Curries & biryani",
+    "Kebabs & grill",
+    "More favourites",
+    "Rice & sides",
+    "What’s the occasion?",
+    "Your event brief",
+    "A conversation starts here.",
+    "Meal menu updates",
+    "The next menu, in your inbox."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Piero Snack Bar",
+  "v1": "https://venturasolutions.co.uk/pierov1/",
+  "v2": "https://venturasolutions.co.uk/pierov2/",
+  "v1_features": [
+    "Breakfast, lunch and drinks filters",
+    "Café call outline with visit type, group size and questions",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers narrow down a café visit and explain what they need when calling.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162515322",
+      "url": "tel:+441162515322",
+      "type": "phone"
+    },
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/pieros-snack-bar-8-loseby-lane",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Piero+Snack+Bar+8+Loseby+Lane+Leicester+LE1+5DR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your kind of café  stop.",
+    "What are you in the mood for?",
+    "Full Breakfast",
+    "Vegetarian Breakfast",
+    "Marakesh Breakfast",
+    "Casablanca Breakfast",
+    "Club Sandwich",
+    "Brie & Cranberry Panini",
+    "Falafel, Olive, Hummus & Salad Wrap",
+    "Cheese & Beans Jacket Potato",
+    "Piero’s Special Coffee",
+    "Flat White",
+    "Fresh Mint Tea",
+    "Casablanca Tea",
+    "Bring the questions.  Make a plan.",
+    "",
+    "See you on the lane.",
+    "Heading over?",
+    "Ordering for delivery?",
+    "A quick question?",
+    "Breakfast & lunch news.",
+    "A little café news?",
+    "That’s the demo."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Country Fayre Foods",
+  "v1": "https://venturasolutions.co.uk/country-fayrev1/",
+  "v2": "https://venturasolutions.co.uk/country-fayrev2/",
+  "v1_features": [
+    "Product range explorer for cheese, meats, pastry and dairy",
+    "Different enquiry paths for home shopping, trade supply and celebration cheese cakes",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Separate everyday purchases from trade and celebration enquiries.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call 01162531432",
+      "url": "tel:01162531432",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Country+Fayre+33+Market+Place+Leicester+LE1+5GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Good food. Proper choice.",
+    "Around the counter",
+    "Cheese",
+    "Let them eat cheese.",
+    "Tell us what you have in mind.",
+    "Your discussion notes",
+    "Come to the Food Hall.",
+    "Country Fayre",
+    "News from the counter",
+    "Cheese",
+    "A little food for thought."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Good food. Proper choice.",
+      "visual": "Illustrative cheese",
+      "caption": "Start at the counter in Leicester Market.",
+      "button": "Explore the counter"
+    },
+    {
+      "heading": "Around the counter.",
+      "visual": "Illustrative sausage",
+      "caption": "Explore the published deli range.",
+      "button": "Browse the range"
+    },
+    {
+      "heading": "Bring everyone together.",
+      "visual": "Illustrative croissant",
+      "caption": "Talk to the team about your gathering.",
+      "button": "Plan an occasion"
+    }
+  ]
+}
+
+{
+  "business": "Taste of China",
+  "v1": "https://venturasolutions.co.uk/taste-of-chinav1/",
+  "v2": "https://venturasolutions.co.uk/taste-of-chinav2/",
+  "v1_features": [
+    "Searchable rice and noodle menu selection",
+    "Meal note with group size, visit type and questions",
+    "Direct link to Uber Eats ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers narrow down dishes and prepare a clear meal enquiry.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/taste-of-china-restaurant-leicester/rtCoA9kTX52dNSgg4eBzpw",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Tap to call +441162517878",
+      "url": "tel:+441162517878",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Taste+of+China+25+High+Street+Leicester+LE1+4FP",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Rice. Noodles.  Your favourites.",
+    "What are you in the mood for?",
+    "More on the menu",
+    "Yeung Chow fried rice",
+    "Barbecued pork & two eggs on rice",
+    "Beef ho fun with soya sauce",
+    "Singapore-style fried vermicelli",
+    "Seafood noodles in tom yum soup",
+    "Japanese-style gyoza dumplings",
+    "Beef with ginger & spring onion",
+    "Chilli munch box",
+    "Put your meal together.",
+    "Your meal, ready to discuss",
+    "Continue with Uber Eats.",
+    "Find us on High Street.",
+    "Before a special trip",
+    "New menu favourites?",
+    "Your next menu favourite."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Noodle House",
+  "v1": "https://venturasolutions.co.uk/noodle-housev1/",
+  "v2": "https://venturasolutions.co.uk/noodle-housev2/",
+  "v1_features": [
+    "Box mix, noodle, rice and soup filters",
+    "Group shortlist with quantities for each selected dish",
+    "Direct link to Uber Eats ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help people coordinate a group meal before checking the real ordering menu.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/noodle-house-narborough-road/WXgPuVsIUB2oSg39P31_NA",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Noodle+House+78+Narborough+Road+Leicester+LE3+0BS",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Noodles. Rice.  Box choices.",
+    "Start with what you fancy.",
+    "Box mixes",
+    "Noodles & rice",
+    "Something soupy",
+    "Choose the dish. Save the debate.",
+    "House Box Mix",
+    "Dry Box Mix",
+    "Beef Box Mix",
+    "Veg Noodles Chow Mein",
+    "Chicken Noodles Chow Mein",
+    "Egg Stir Fried Rice",
+    "Mixed Veg Rice",
+    "Chicken Noodle Soup",
+    "Vegetable Noodle Soup",
+    "Eating together?",
+    "Ready to check the real menu?",
+    "Keep the right branch in the picture.",
+    "78 Narborough Road. Leicester.",
+    "Planning a visit?",
+    "Find the primary social profile",
+    "More choices in mind?",
+    "Keep up with box news.",
+    "A little box news?",
+    "That’s the local demo."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Paper Wings Café",
+  "v1": "https://venturasolutions.co.uk/paper-wingsv1/",
+  "v2": "https://venturasolutions.co.uk/paper-wingsv2/",
+  "v1_features": [
+    "Separate daytime upstairs and evening whole-space hire options",
+    "Hire enquiry outline with event type, date, guests, duration and setup needs",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Make a workshop, meetup or celebration enquiry easier to explain.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://maps.app.goo.gl/jPqpp4EJdPvjpgpm8",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Take a moment.  Stay a little.",
+    "A cup, a catch-up, a slower afternoon.",
+    "Come and find us",
+    "What are you in the mood for?",
+    "Coffee, your way.",
+    "A different kind of cup.",
+    "Make time for cake.",
+    "A space for  your next idea.",
+    "Daytime, upstairs",
+    "Evening, after hours",
+    "Plan your gathering.",
+    "Your enquiry outline",
+    "A little Paper Wings at home.",
+    "Café news, at your pace.",
+    "A little café news."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Take a moment. Stay a little.",
+      "visual": "Illustrative coffee",
+      "caption": "Speciality coffee at the edge of St Martin’s Square.",
+      "button": "Find the café"
+    },
+    {
+      "heading": "A little room for cake.",
+      "visual": "Illustrative honey cake",
+      "caption": "Ask what’s on the counter today.",
+      "button": "Plan a visit"
+    },
+    {
+      "heading": "Make a little time together.",
+      "visual": "Illustrative croissant",
+      "caption": "Explore gathering and private hire enquiries.",
+      "button": "Explore private hire"
+    }
+  ]
+}
+
+{
+  "business": "Oh So Pretty",
+  "v1": "https://venturasolutions.co.uk/oh-so-prettyv1/",
+  "v2": "https://venturasolutions.co.uk/oh-so-prettyv2/",
+  "v1_features": [
+    "Service selector including Gel mani, BIAB & simple design and Gel mani, BIAB & complex design",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Oh So Pretty’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/oh-so-pretty-wigston-4-liskeard-house-telbdqpd",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=4%20Liskeard%20House%2C%20Wigston%20LE18%202GL",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your design. Your next detail.",
+    "Make your next appointment.",
+    "Gel mani, BIAB & simple design",
+    "Find Oh So Pretty at Liskeard House.",
+    "For your next visit.",
+    "Oh So Pretty nail stations",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Fone Plus",
+  "v1": "https://venturasolutions.co.uk/fone-plusv1/",
+  "v2": "https://venturasolutions.co.uk/fone-plusv2/",
+  "v1_features": [
+    "Repair enquiry guide for phones, tablets, computers and consoles",
+    "Device model and fault selection with a reviewable enquiry summary",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers describe their device problem before contacting the Leicester shop.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447881906500",
+      "url": "tel:+447881906500",
+      "type": "phone"
+    },
+    {
+      "label": "Tap to call +447447425001",
+      "url": "tel:+447447425001",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/place/Fone+Plus/@52.6368432,-1.1356291,17z/data=!3m1!4b1!4m6!3m5!1s0x4877610019cdd6f9:0xf850f2933751f558!8m2!3d52.6368432!4d-1.1330542!16s%2Fg%2F11ss35ryzr",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A clearer way to get it fixed. Prepare your Fone Plus Leicester repair enquiry.",
+    "Your device. Your repair enquiry.",
+    "Your Leicester enquiry.",
+    "Fone Plus Leicester",
+    "A conversation comes first.",
+    "Explain the fault.",
+    "Check the options.",
+    "Agree the next step.",
+    "18 Haymarket.  Local help.",
+    "A few useful answers.",
+    "Repair tips. Shop updates.",
+    "A little device know-how."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Roma",
+  "v1": "https://venturasolutions.co.uk/romav1/",
+  "v2": "https://venturasolutions.co.uk/romav2/",
+  "v1_features": [
+    "Brunch, lunch and evening menu sections",
+    "Dining enquiry notes with occasion and guests, plus the existing Dojo booking link",
+    "Direct link to Dojo table booking page",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors choose the right service and prepare their dining questions.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Dojo table booking page",
+      "url": "https://web.dojo.app/create_booking/vendor/Y65t9Q_MVtKVDzieR2yaN2Kkc9YfRctKlh_60fyZPSY_restaurant",
+      "type": "table booking page",
+      "provider": "Dojo"
+    },
+    {
+      "label": "Tap to call 01162515959",
+      "url": "tel:01162515959",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Roma+11+Halford+Street+Leicester+LE1+1JA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little Italy. Right here.",
+    "At the table.",
+    "Brunch",
+    "Lunch",
+    "Evening",
+    "Good food. Good company.",
+    "Who’s joining you?",
+    "Your dining notes",
+    "Come over.",
+    "Published regular service",
+    "Stay for the next course.",
+    "A little more Italian."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Cabello Mens Hairsalon",
+  "v1": "https://venturasolutions.co.uk/cabello-mens-hairsalonv1/",
+  "v2": "https://venturasolutions.co.uk/cabello-mens-hairsalonv2/",
+  "v1_features": [
+    "Service selector including Skin Fade/ Taper Fade with Freddie and Skin Fade & Beard Trim with Freddie",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Cabello Mens Hairsalon’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/102764_cabello-mens-hairsalon_barber_64623_blaby",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=19a%20Leicester%20Road%20Blaby%20Leicester%20LE8%204GR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your cut. Your barber.",
+    "Your cut. Your next appointment.",
+    "Skin Fade/ Taper Fade with Freddie",
+    "Leicester Road.",
+    "For your next visit.",
+    "Cabello gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Frank Lee And Son",
+  "v1": "https://venturasolutions.co.uk/frank-leev1/",
+  "v2": "https://venturasolutions.co.uk/frank-leev2/",
+  "v1_features": [
+    "Range guide including beef, pork, lamb and alternative cuts",
+    "Copyable butcher ask list based on cooking method, people and recipe questions",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers ask for a suitable cut without needing to know every product name.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Frank%20Lee%20and%20Son%20Leicester%20Market%20Food%20Hall%20LE1%205GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "More to the counter.",
+    "Start with what you’re cooking.",
+    "Beef",
+    "Pork",
+    "Lamb",
+    "Offal & alternative cuts",
+    "A market story starting in 1903.",
+    "A good meal starts with a good question.",
+    "Your ask list",
+    "Find the name. Find the counter.",
+    "Before you set off",
+    "A place for market updates.",
+    "Keep the market in mind."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "More to the counter.",
+      "visual": "Illustrative beef",
+      "caption": "Bring your next meal into the conversation.",
+      "button": "Explore the range"
+    },
+    {
+      "heading": "A cut for your cooking.",
+      "visual": "Illustrative butcher",
+      "caption": "Ask the counter about today’s range.",
+      "button": "Make an ask list"
+    },
+    {
+      "heading": "Find your way to the Food Hall.",
+      "visual": "Illustrative steak",
+      "caption": "Traditional favourites in Leicester Market.",
+      "button": "Find the counter"
+    }
+  ]
+}
+
+{
+  "business": "Guilin Street Food",
+  "v1": "https://venturasolutions.co.uk/guilinv1/",
+  "v2": "https://venturasolutions.co.uk/guilinv2/",
+  "v1_features": [
+    "Regional noodle guide with English and Chinese dish names",
+    "Counter checklist for a chosen dish, group size, spice and ingredient questions",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Make unfamiliar dishes easier to explore before asking at the counter.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/guilin-street-food",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Tap to call +447550391293",
+      "url": "tel:+447550391293",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Rice noodles. Regional roots.",
+    "A bowl with a place behind it.",
+    "Chef Special Guilin Rice Noodle",
+    "Guilin Sanxian Noodle Soup",
+    "Guilin Spicy Sour Noodle Soup",
+    "Liuzhou Rice Noodle Soup",
+    "Naning Rice Noodle Soup",
+    "Pickled Vegetable with Intestine Rice Noodle",
+    "Pickled Vegetable with Beef Brisket Rice Noodle",
+    "Pickled Vegetable with Shin Beef Rice Noodle",
+    "Alongside your noodles",
+    "At the counter, ask away.",
+    "Make a meal note.",
+    "Your counter checklist",
+    "Leicester Market.",
+    "Prefer delivery?",
+    "Keep noodles on your radar.",
+    "Your next noodle stop."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Leicester Wholesale Fish Direct",
+  "v1": "https://venturasolutions.co.uk/fish-directv1/",
+  "v2": "https://venturasolutions.co.uk/fish-directv2/",
+  "v1_features": [
+    "Fish, shellfish and crustacean range guide",
+    "Question list covering cooking plan, preparation, weight and handling",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers arrive with useful questions about choosing and preparing their fish.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162165666",
+      "url": "tel:+441162165666",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Leicester+Wholesale+Fish+Direct+Leicester+Market+Food+Hall+33+Market+Place+LE1+5GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Fish for your next meal.",
+    "What are you thinking of cooking?",
+    "Whole fish",
+    "Shellfish",
+    "Crustaceans",
+    "A good meal starts with a good question.",
+    "Bring the recipe, if you have one.",
+    "Ready for the counter",
+    "The counter in the city.",
+    "Check before a special trip.",
+    "A little fish for thought.",
+    "Fish for thought."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Violet’s Hair Studio",
+  "v1": "https://venturasolutions.co.uk/violetsv1/",
+  "v2": "https://venturasolutions.co.uk/violetsv2/",
+  "v1_features": [
+    "Service selector including Cut & Blow Dry and Blow Dry",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Violet’s Hair Studio’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/violets-leicester-mowmacre-sports-ground-j96u6szs",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Mowmacre%20sports%20ground%2C%20Leicester%20LE4%202RG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your hair. A little time for you.",
+    "Choose your next appointment.",
+    "Cut & Blow Dry",
+    "Mowmacre sports ground.",
+    "For your next visit.",
+    "Violet’s Hair Studio gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Beauty by Mel",
+  "v1": "https://venturasolutions.co.uk/beauty-by-melv1/",
+  "v2": "https://venturasolutions.co.uk/beauty-by-melv2/",
+  "v1_features": [
+    "Service selector including Back, Neck & Shoulders and Gel Toes",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Beauty by Mel’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/beauty-by-mel-glenfield-13-stamford-street-zk5d4485",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=13%20Stamford%20Street%2C%20Glenfield%20LE3%208DL",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time. Just for you.",
+    "Your time. Your treatment.",
+    "Back, Neck & Shoulders",
+    "Find us in Glenfield.",
+    "For your next visit.",
+    "Beauty by Mel treatment room",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Blossom Boba",
+  "v1": "https://venturasolutions.co.uk/blossom-bobav1/",
+  "v2": "https://venturasolutions.co.uk/blossom-bobav2/",
+  "v1_features": [
+    "Fruit tea finder for a chosen flavour",
+    "Single flavour versus flavour pair matching",
+    "Direct link to Just Eat ordering menu"
+  ],
+  "customer_benefit": "Help someone who likes a particular fruit find relevant drinks quickly.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Just Eat ordering menu",
+      "url": "https://www.just-eat.co.uk/restaurants-blossom-boba-leicester/menu",
+      "type": "ordering menu",
+      "provider": "Just Eat"
+    }
+  ],
+  "v1_section_headings": [
+    "Take a little  boba break.",
+    "One flavour. Or a little  double act.",
+    "",
+    "Pick your fruit-tea mood.",
+    "Green Apple Fruit Tea",
+    "Green Apple Pineapple Fruit Tea",
+    "Green Apple Mango Fruit Tea",
+    "Lychee Fruit Tea",
+    "Mango Fruit Tea",
+    "Mango Lychee Fruit Tea",
+    "Passion Fruit Fruit Tea",
+    "Passion Lychee Fruit Tea",
+    "Passion Mango Fruit Tea",
+    "Peach Fruit Tea",
+    "Peach Lychee Fruit Tea",
+    "Peach Mango Fruit Tea",
+    "Pineapple Fruit Tea",
+    "Strawberry Fruit Tea",
+    "Strawberry Lychee Fruit Tea",
+    "Summer Berry Fruit Tea",
+    "Watermelon Fruit Tea",
+    "Another kind of boba break?",
+    "Milk tea",
+    "Foam & specials",
+    "A smaller sip",
+    "Your Haymarket pause point.",
+    "Look for the real counter",
+    "Times published by Haymarket",
+    "Ordering or asking about a drink?",
+    "More Blossom in your inbox?",
+    "A sip of Blossom news?",
+    "That’s the demo."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A fruity little break.",
+      "visual": "Illustrative boba fruit",
+      "caption": "Find a published fruit-tea flavour to explore.",
+      "button": "Find a flavour"
+    },
+    {
+      "heading": "A milk tea moment.",
+      "visual": "Illustrative boba milk",
+      "caption": "Ask the counter about today’s range.",
+      "button": "Explore the menu"
+    },
+    {
+      "heading": "Your next Blossom stop.",
+      "visual": "Illustrative boba oreo",
+      "caption": "Find the counter between the shops.",
+      "button": "Find the counter"
+    }
+  ]
+}
+
+{
+  "business": "Latin Kitchen",
+  "v1": "https://venturasolutions.co.uk/latin-kitchenv1/",
+  "v2": "https://venturasolutions.co.uk/latin-kitchenv2/",
+  "v1_features": [
+    "Plated food versus handheld food filters",
+    "Dish planner with side choice, quantities and group questions",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers put their meal preferences into one clear discussion note.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/latin-kitchen-uk",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Tap to call +447948758037",
+      "url": "tel:+447948758037",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x48776118b54332f9:0x4f87fe72148b6d79?entry=s",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "LUNCH, LATIN  STYLE.",
+    "ON A PLATE. IN YOUR HAND.",
+    "Pollo a la plancha",
+    "Fresh fish",
+    "Alitas · chicken wings",
+    "Chili con carne",
+    "Grilled chicken fajita",
+    "Seasoned tofu fajita",
+    "Beef burrito",
+    "Peruvian breakfast cob",
+    "A LITTLE MORE TO EXPLORE.",
+    "YOUR DISH. YOUR QUESTIONS.",
+    "Ready to discuss with the team",
+    "OVER TO DELIVEROO.",
+    "IN THE ARCADE.",
+    "Before a special trip",
+    "ROOM FOR MENU NEWS?",
+    "A LITTLE LATIN NEWS."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Sakura",
+  "v1": "https://venturasolutions.co.uk/sakurav1/",
+  "v2": "https://venturasolutions.co.uk/sakurav2/",
+  "v1_features": [
+    "Searchable sushi, bento, noodle and starter selection",
+    "Copyable meal shortlist with a personal reminder",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help diners keep their favourite dishes together while choosing a meal.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/sakura-leicester",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Tap to call 01163481917",
+      "url": "tel:01163481917",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Sakura%2080-84%20High%20Street%20Leicester%20LE1%205YP",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A Japanese meal.  Your way.",
+    "What are you  in the mood for?",
+    "Sakura Roll",
+    "Gold Roll",
+    "Vegetable Roll",
+    "Chicken Katsu Bento",
+    "Teriyaki Chicken Bento",
+    "Vegetable Tempura Bento",
+    "Chicken Katsu Curry",
+    "Tonkotsu Ramen Pork",
+    "Japanese Style Beef Ramen",
+    "Edamame",
+    "Chicken Gyoza",
+    "Ebi Tempura",
+    "A roll to start.  A bowl to settle into.",
+    "Your next meal,  in a little note.",
+    "My Sakura shortlist",
+    "A small entrance.  A meal to discover.",
+    "Choosing delivery?",
+    "A little news for your next meal.",
+    "Something for  your next visit."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Silver Street Cafe",
+  "v1": "https://venturasolutions.co.uk/silver-street-cafev1/",
+  "v2": "https://venturasolutions.co.uk/silver-street-cafev2/",
+  "v1_features": [
+    "Search and filters for breakfast plates and hot cobs",
+    "Copyable café shortlist with group size and beans or tomatoes preference",
+    "Direct link to Just Eat ordering menu"
+  ],
+  "customer_benefit": "Help visitors organise a breakfast choice before checking it with the café.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Just Eat ordering menu",
+      "url": "https://www.just-eat.co.uk/restaurants-silver-street-cafe-leicester-le1/menu",
+      "type": "ordering menu",
+      "provider": "Just Eat"
+    }
+  ],
+  "v1_section_headings": [
+    "A proper breakfast  kind of day.",
+    "Breakfast first.  Decisions second.",
+    "Breakfast cob",
+    "Small Breakfast",
+    "Medium Breakfast",
+    "Large Breakfast",
+    "King Richard",
+    "Small Veggie",
+    "Vegetarian",
+    "Bacon",
+    "Bacon & Sausage",
+    "Bacon & Egg",
+    "Veggie Sausage & Egg",
+    "Keep the good  ideas together.",
+    "My cafe shortlist",
+    "On Silver Street.  In Leicester.",
+    "Silver Street Cafe",
+    "Breakfast inspiration.  A local demo.",
+    "Next time,  breakfast?"
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A proper breakfast kind of day.",
+      "visual": "Illustrative breakfast",
+      "caption": "Explore the published breakfast selection.",
+      "button": "Find your breakfast"
+    },
+    {
+      "heading": "Something for your lunch break.",
+      "visual": "Illustrative baguette",
+      "caption": "Browse the café’s published hot-cob picks.",
+      "button": "Explore the menu"
+    },
+    {
+      "heading": "Make a little city-centre stop.",
+      "visual": "Illustrative coffee",
+      "caption": "Find Silver Street Cafe in Leicester.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "The Beauty Lab",
+  "v1": "https://venturasolutions.co.uk/the-beauty-lab-thurmastonv1/",
+  "v2": "https://venturasolutions.co.uk/the-beauty-lab-thurmastonv2/",
+  "v1_features": [
+    "Service selector including Brow wax and Brow wax & tint",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open The Beauty Lab’s existing SumUp Bookings booking page",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "SumUp Bookings booking page",
+      "url": "https://www.sumupbookings.com/the-beauty-lab-6",
+      "type": "booking page",
+      "provider": "SumUp Bookings"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=7%20Silverdale%20Drive%2C%20Thurmaston%20LE4%208NJ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your brows. Your lashes.",
+    "Choose your next appointment.",
+    "Brow wax",
+    "Find us in Thurmaston.",
+    "For your next visit.",
+    "The Beauty Lab tools photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your brows. Your lashes.",
+      "visual": "Illustrative spoolie",
+      "caption": "Explore the listed lash and brow appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little detail. A moment for you.",
+      "visual": "Illustrative tweezers",
+      "caption": "Confirm suitability and any patch test requirements directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Plan your next appointment.",
+      "visual": "Illustrative serum",
+      "caption": "Find the location and current booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Steak & Lounge",
+  "v1": "https://venturasolutions.co.uk/steak-and-loungev1/",
+  "v2": "https://venturasolutions.co.uk/steak-and-loungev2/",
+  "v1_features": [
+    "Food category explorer across steaks, starters, sizzlers and more",
+    "Food photograph viewer and links to the existing booking route",
+    "Direct link to OpenTable table booking page",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help diners explore the type of evening they want before checking availability.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "OpenTable table booking page",
+      "url": "https://www.opentable.co.uk/r/steak-and-lounge-leicester",
+      "type": "table booking page",
+      "provider": "OpenTable"
+    },
+    {
+      "label": "Tap to call +441162622666",
+      "url": "tel:+441162622666",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Make an evening of it.",
+    "What are you in the mood for?",
+    "Angus steaks",
+    "Starters",
+    "Sizzlers",
+    "Asian fusion",
+    "Burgers",
+    "Mocktails & desserts",
+    "A table above Abbey Street.",
+    "Come hungry.",
+    "Plan your visit",
+    "At the table with Steak & Lounge.",
+    "Steak & Lounge",
+    "Make room for something new."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Make an evening of it.",
+      "visual": "Illustrative steak",
+      "caption": "Explore steaks and the published dish guide.",
+      "button": "Find your favourite"
+    },
+    {
+      "heading": "A table with good company.",
+      "visual": "Illustrative chicken",
+      "caption": "Explore starters, sizzlers and Asian fusion.",
+      "button": "Explore the menu"
+    },
+    {
+      "heading": "Leave a little room.",
+      "visual": "Illustrative honey cake",
+      "caption": "Explore the dessert and mocktail selection.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Raykdi",
+  "v1": "https://venturasolutions.co.uk/raykdiv1/",
+  "v2": "https://venturasolutions.co.uk/raykdiv2/",
+  "v1_features": [
+    "Menu category filters and item detail views",
+    "Copyable dish shortlist",
+    "Direct link to Uber Eats ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers explore the chaat menu and keep the dishes they want to try together.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/raykdi/vvkyVEY1U9m7DtpMCssIpQ",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Tap to call +447707181303",
+      "url": "tel:+447707181303",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Raykdi%209%20Bath%20House%20Lane%20Leicester%20LE1%204SA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little crunch. A little  chaat.",
+    "Three ways to get acquainted.",
+    "Crisp shells. Flavoured water.",
+    "A yoghurt-topped take.",
+    "Puffed rice. Plenty of texture.",
+    "The menu.",
+    "Puff Parcel",
+    "Crunchy Bowl",
+    "Veg Maggi",
+    "Schezwan Maggi",
+    "Katchori Bhel",
+    "Collegian Shing",
+    "Tangy Bun",
+    "Chana Chor Garam",
+    "Chana Chaat",
+    "Pani Puri",
+    "Dahi Puri",
+    "Sev Puri",
+    "Delhi Chaat",
+    "Samosa Chaat",
+    "Kachori Chaat",
+    "Train Bhel",
+    "Mumbai Bhel",
+    "Puri Platter",
+    "Hot Chocolate",
+    "Chai",
+    "Coffee",
+    "Golden Milk",
+    "Girnari Kahwa",
+    "Mango Lassi",
+    "Water Bottle",
+    "Appy Fizz",
+    "Coke",
+    "Thumbs Up",
+    "Mint Lemonade (Fizzy)",
+    "Ready to order?",
+    "A little stop at Highcross.",
+    "Menu updates, without the noise.",
+    "",
+    "The shortlist.",
+    "A little more Raykdi?"
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A little crunch. A little chaat.",
+      "visual": "Illustrative pani puri",
+      "caption": "Get to know the published menu.",
+      "button": "Explore the menu"
+    },
+    {
+      "heading": "Plenty of texture.",
+      "visual": "Illustrative bhel",
+      "caption": "Explore puffed rice, sev and more.",
+      "button": "Find your favourite"
+    },
+    {
+      "heading": "Find your next Highcross stop.",
+      "visual": "Illustrative coffee",
+      "caption": "Save a few ideas, then find the cart.",
+      "button": "Find the cart"
+    }
+  ]
+}
+
+{
+  "business": "Keith Ashmore",
+  "v1": "https://venturasolutions.co.uk/keith-ashmorev1/",
+  "v2": "https://venturasolutions.co.uk/keith-ashmorev2/",
+  "v1_features": [
+    "Range guide covering beef, lamb, pork, poultry and offal",
+    "Butcher question list shaped by meal type, people and preparation needs",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers explain what they are cooking and get advice at the counter.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447710434752",
+      "url": "tel:+447710434752",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Keith+Ashmore+Leicester+Market+Food+Hall+33+Market+Place+LE1+5GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your meal. Your market butcher.",
+    "Five places to start.",
+    "Beef",
+    "Lamb",
+    "Pork",
+    "Poultry",
+    "Offal",
+    "A few names from the directory",
+    "What’s on your mind?",
+    "Ready for a conversation",
+    "At the Food Hall.",
+    "Ask before a special trip",
+    "Planning the next meal?",
+    "News for your next meal."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "La Foret Cafe",
+  "v1": "https://venturasolutions.co.uk/la-foretv1/",
+  "v2": "https://venturasolutions.co.uk/la-foretv2/",
+  "v1_features": [
+    "Brunch, lunch and drinks filters",
+    "Café list for shortlisted dishes and drinks",
+    "Direct link to Deliveroo ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors choose a few brunch and drink ideas before arriving.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/la-foret-cafe",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=11+King+Street%2C+Leicester",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Brunch, with a world of  flavour.",
+    "Find your kind of café moment.",
+    "La Forêt Avocado Toast",
+    "The Deluxe Avocado Toast",
+    "Chocolate & berry pancakes",
+    "Eggs Benedict",
+    "Black Quinoa Super Green Salad",
+    "Middle Eastern Salads",
+    "Tandoori Ciabatta Panini",
+    "Moroccan Tea Pot",
+    "Kashmiri Pink Chai",
+    "Spanish Latte",
+    "Flat White",
+    "Something to look forward to.",
+    "Leave room for a little  patisserie.",
+    "Come for the food. Stay for a catch-up.",
+    "La Forêt Café",
+    "Before you pop in.",
+    "Café news, when you fancy it.",
+    "A little café inspiration."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "LYNN",
+  "v1": "https://venturasolutions.co.uk/lynnv1/",
+  "v2": "https://venturasolutions.co.uk/lynnv2/",
+  "v1_features": [
+    "Separate brunch and bistro views with dish search",
+    "Meal note that includes occasion, day and group size",
+    "Direct link to SevenRooms table booking page",
+    "Direct link to Just Eat ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors distinguish a brunch plan from an evening meal.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "SevenRooms table booking page",
+      "url": "https://www.sevenrooms.com/explore/lynnleicester/reservations/create/search/",
+      "type": "table booking page",
+      "provider": "SevenRooms"
+    },
+    {
+      "label": "Just Eat ordering menu",
+      "url": "https://www.just-eat.co.uk/restaurants-lynn-leicester/menu",
+      "type": "ordering menu",
+      "provider": "Just Eat"
+    },
+    {
+      "label": "Tap to call +447342375899",
+      "url": "tel:+447342375899",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=LYNN%2014%20St%20Martins%20Square%20Leicester%20LE1%205DF",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "BRUNCH DAYS. BISTRO NIGHTS.",
+    "Your day. Your evening.",
+    "BRUNCH",
+    "BISTRO",
+    "A few things to come for.",
+    "Smoked Salmon Eggs Benedict",
+    "Smoked Salmon Cream Cheese",
+    "Smashed Avocado",
+    "Poached Eggs",
+    "Torched Halloumi",
+    "Scrambled Tofu",
+    "Hummus and Vegetables",
+    "Mixed Creamy Mushrooms",
+    "Braised pork belly",
+    "BBQ carrots",
+    "Sautéed prawns",
+    "Start with this.",
+    "Keep your favourites together.",
+    "A meal in mind.",
+    "See you in the square.",
+    "Brunch days. Bistro nights.",
+    "Next time, make it LYNN.",
+    "A little more LYNN."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Brunch days. Bistro nights.",
+      "visual": "Illustrative breakfast",
+      "caption": "Meet in the square. Make a meal of it.",
+      "button": "Explore the food"
+    },
+    {
+      "heading": "A little time in the square.",
+      "visual": "Illustrative coffee",
+      "caption": "Explore the brunch selection.",
+      "button": "Find a dish"
+    },
+    {
+      "heading": "Make a meal of it.",
+      "visual": "Illustrative honey cake",
+      "caption": "Plan your visit to St Martins Square.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Milan Di Damao",
+  "v1": "https://venturasolutions.co.uk/milan-di-damaov1/",
+  "v2": "https://venturasolutions.co.uk/milan-di-damaov2/",
+  "v1_features": [
+    "Searchable nasta, chai and Indo-Chinese dish references",
+    "Copyable ask list with visit day, time of day and availability questions",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors ask about the dishes they have seen without assuming they are available today.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Milan%20Di%20Damao%2032%20Belgrave%20Road%20Leicester%20LE4%205AS",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Nasta. Indo-Chinese.  Milan.",
+    "What’s caught  your eye?",
+    "Methi Bhajiya",
+    "Vadapav",
+    "Pakoda",
+    "Usal Pav",
+    "Chai",
+    "Manchurian",
+    "Chilli Paneer",
+    "Hakka Noodles",
+    "Chilli Mushroom",
+    "Veg Chingpong",
+    "Chilli Chips",
+    "Plain Chips",
+    "Samosa & Pav Vada",
+    "A plate from  the early posts.",
+    "Make a little  ask list.",
+    "My Milan questions",
+    "Find the corner.  Ask what’s on.",
+    "Published opening times",
+    "A little news.  Something to look forward to.",
+    "Keep a little  room for news."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Beautylicious",
+  "v1": "https://venturasolutions.co.uk/beautyliciousv1/",
+  "v2": "https://venturasolutions.co.uk/beautyliciousv2/",
+  "v1_features": [
+    "Service selector including Eyebrows · threading and Eyebrows · waxing",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Beautylicious’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/beautylicious-braunstone-town-edward-avenue-wkuhuibt",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Edward%20Avenue%2C%20Braunstone%20Town%20LE3",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your brows. Your next visit.",
+    "Threading or waxing?",
+    "Eyebrows · threading",
+    "Find us in Braunstone Town.",
+    "For your next visit.",
+    "Beautylicious profile image",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Queen Lashes",
+  "v1": "https://venturasolutions.co.uk/queen-lashesv1/",
+  "v2": "https://venturasolutions.co.uk/queen-lashesv2/",
+  "v1_features": [
+    "Service selector including Russian Infills and Classic Full Set",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Queen Lashes’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/queen-lashes-leicester-70-burnham-drive-ed7gqg00",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=70%20Burnham%20Drive%2C%20Leicester%20LE4%200HP",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your lashes. Your next look.",
+    "Make your next appointment.",
+    "Russian Infills",
+    "Visit on Burnham Drive.",
+    "For your next visit.",
+    "Queen Lashes treatment room",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "RKD",
+  "v1": "https://venturasolutions.co.uk/rkdv1/",
+  "v2": "https://venturasolutions.co.uk/rkdv2/",
+  "v1_features": [
+    "Menswear and womenswear browsing choices",
+    "Casual or formal preferences with a copyable visit shortlist"
+  ],
+  "customer_benefit": "Help shoppers describe the kind of outfit they are looking for.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [],
+  "v1_section_headings": [
+    "Every day. Every occasion.",
+    "Start with what suits you.",
+    "Menswear",
+    "Your visit shortlist",
+    "See you at Haymarket.",
+    "Plan your visit",
+    "A little wardrobe inspiration.",
+    "Find your next favourite."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Every day. Every occasion.",
+      "visual": "Illustrative jumper",
+      "caption": "Menswear and womenswear at Haymarket.",
+      "button": "Explore your style"
+    },
+    {
+      "heading": "Dress for your own day.",
+      "visual": "Illustrative shirt",
+      "caption": "Explore casual and formal clothing in store.",
+      "button": "Find your starting point"
+    },
+    {
+      "heading": "Find what feels like you.",
+      "visual": "Illustrative sewing",
+      "caption": "Plan a browse at RKD.",
+      "button": "Find the store"
+    }
+  ]
+}
+
+{
+  "business": "Super Game Shack Level 2",
+  "v1": "https://venturasolutions.co.uk/super-game-shack-level-2v1/",
+  "v2": "https://venturasolutions.co.uk/super-game-shack-level-2v2/",
+  "v1_features": [
+    "Arcade, café and shop visit guide",
+    "Copyable list of activities to explore",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors plan a trip that combines gaming, a café stop and browsing.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Silver+Arcade+Leicester+LE1+5FA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "ARCADE. CAFÉ.  LEVEL 2.",
+    "WHAT BRINGS YOU TO THE SHACK?",
+    "The arcade",
+    "My visit list",
+    "TAKE A CAFÉ BREAK.",
+    "KEEP EXPLORING.",
+    "FIND THE SHACK.",
+    "MORE FROM THE SHACK.",
+    "MORE FROM THE SHACK."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Bradgate Lace",
+  "v1": "https://venturasolutions.co.uk/bradgate-lacev1/",
+  "v2": "https://venturasolutions.co.uk/bradgate-lacev2/",
+  "v1_features": [
+    "Window measurement notes with room labels and centimetre or inch units",
+    "Multiple window entries with edit, copy and print controls",
+    "Direct link to WhatsApp chat",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers bring organised measurements and questions into the shop.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447455981419",
+      "url": "tel:+447455981419",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Bradgate%20Lace%207%20Odeon%20Arcade%20Cank%20Street%20Leicester%20LE1%205HJ",
+      "type": "directions"
+    },
+    {
+      "label": "WhatsApp chat",
+      "url": "https://wa.me/447455981419",
+      "type": "chat",
+      "provider": "WhatsApp"
+    }
+  ],
+  "v1_section_headings": [
+    "One window. Or a whole home.",
+    "Nets. Lace. Voile.",
+    "A note for every window.",
+    "Your windows",
+    "Talk it through. Then choose.",
+    "In the heart of Odeon Arcade.",
+    "A little shop news.",
+    "Bradgate Lace · window notes",
+    "A little more Bradgate Lace?"
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "One window. Or a whole home.",
+      "visual": "Illustrative lace",
+      "caption": "Get your ideas together for a conversation.",
+      "button": "Prepare your notes"
+    },
+    {
+      "heading": "Bring the details together.",
+      "visual": "Illustrative tailor",
+      "caption": "Record what you know about each window.",
+      "button": "Make window notes"
+    },
+    {
+      "heading": "A little detail makes a difference.",
+      "visual": "Illustrative sewing",
+      "caption": "Explore nets, lace and voile in Odeon Arcade.",
+      "button": "Find the shop"
+    }
+  ]
+}
+
+{
+  "business": "Humberstone Mobile",
+  "v1": "https://venturasolutions.co.uk/humberstone-mobilev1/",
+  "v2": "https://venturasolutions.co.uk/humberstone-mobilev2/",
+  "v1_features": [
+    "Phone make, model and fault enquiry guide",
+    "Copyable repair discussion notes",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers describe a screen, charging or camera problem before contacting the shop.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447849027337",
+      "url": "tel:+447849027337",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Humberstone%20Mobile%2028%20Humberstone%20Road%20Leicester%20LE5%200AR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A phone problem?  Let's talk.",
+    "Your phone. Your question.",
+    "A clear starting point.",
+    "Local shop. Direct conversation.",
+    "A few useful questions.",
+    "Phone tips. Without the noise.",
+    "A little phone know how."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Kicheri",
+  "v1": "https://venturasolutions.co.uk/kicheriv1/",
+  "v2": "https://venturasolutions.co.uk/kicheriv2/",
+  "v1_features": [
+    "Searchable menu grouped into breakfasts, omelettes, create-your-own options and drinks",
+    "Food photograph views and an existing Uber Eats link",
+    "Direct link to Uber Eats ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers find a relevant lunch choice before visiting or opening the ordering provider.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/kicheri/1-bAM0_uSrq0eeCYGP3RQg",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Kicheri%2029%20Loseby%20Lane%20Leicester%20LE1%205DR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next  lunch break.",
+    "A breakfast stop.  A lunch idea.",
+    "What takes  your fancy?",
+    "Breakfasts",
+    "Omelettes (Made Using 4 Eggs)",
+    "Chips",
+    "Create Your Own Speciality",
+    "Create Your Own Classic",
+    "Drinks",
+    "Find us on  Loseby Lane.",
+    "A little Kicheri  in your inbox.",
+    "From Kicheri’s posts",
+    "Your next  lunch idea."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "By.meadowmae",
+  "v1": "https://venturasolutions.co.uk/by-meadowmaev1/",
+  "v2": "https://venturasolutions.co.uk/by-meadowmaev2/",
+  "v1_features": [
+    "Service selector including BIAB Manicure and Gel Manicure",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open By.meadowmae’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/183660_by-meadowmae_nail-salon_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=7%20Parkstone%20Road%20Leicester%20LE5%201NP",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time. A finer detail.",
+    "Find your finish.",
+    "BIAB Manicure",
+    "Have a design in mind?",
+    "Plain. Considered.",
+    "Parkstone Road.",
+    "For your next visit.",
+    "BIAB service gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Cargo Male Grooming",
+  "v1": "https://venturasolutions.co.uk/cargo-male-groomingv1/",
+  "v2": "https://venturasolutions.co.uk/cargo-male-groomingv2/",
+  "v1_features": [
+    "Service selector including Haircut & Style with Alfie and Haircut & Beard with Alfie",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Cargo Male Grooming’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/115069_cargo-male-grooming_barber_73715_groby",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=24%20Ratby%20Road%20Groby%20Leicester%20LE6%200GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Cuts. Beards. The details.",
+    "Your cut. Your next appointment.",
+    "Haircut & Style with Alfie",
+    "Ratby Road.",
+    "For your next visit.",
+    "Cargo gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Cuts. Beards. The details.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Cade Dido",
+  "v1": "https://venturasolutions.co.uk/cafe-didov1/",
+  "v2": "https://venturasolutions.co.uk/cafe-didov2/",
+  "v1_features": [
+    "Visit planner for breakfast, lunch or a drink break",
+    "Question list for dates, group size, outdoor seating and access",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors organise their café questions before calling.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447553914619",
+      "url": "tel:+447553914619",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Cafe+Dido+12+Loseby+Lane+Leicester+LE1+5DR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little pause in the Lanes.",
+    "What brings you to Dido?",
+    "Start in the Lanes",
+    "Make time for lunch",
+    "A pause between shops",
+    "Find the Loseby Lane front door.",
+    "Before a special trip",
+    "What would you like to ask?",
+    "Ready to discuss with the café",
+    "Keep Dido in mind.",
+    "News for your next little pause."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Grace Hairstylist",
+  "v1": "https://venturasolutions.co.uk/grace-hairstylistv1/",
+  "v2": "https://venturasolutions.co.uk/grace-hairstylistv2/",
+  "v1_features": [
+    "Service selector including Ladies Cut & Finish and Blow dry",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Grace Hairstylist’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/grace-hairstylist-leicester-browns-107-clarendon-park-road-w3ytcuxn",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Browns%2C%20107%20Clarendon%20Park%20Road%2C%20Leicester%20LE2%203AH",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time. A fresh finish.",
+    "Cut. Finish. Consult.",
+    "Ladies Cut & Finish",
+    "Find Grace in Clarendon Park.",
+    "For your next visit.",
+    "Salon photograph from Grace’s profile",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Josh’s Hair Hideaway",
+  "v1": "https://venturasolutions.co.uk/joshs-hair-hideawayv1/",
+  "v2": "https://venturasolutions.co.uk/joshs-hair-hideawayv2/",
+  "v1_features": [
+    "Service selector including Cut & Finish and Gents Cut & Finish",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Josh’s Hair Hideaway’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/joshs-hair-hideaway-leicester-uk-39-courtenay-road-r4zvys8z",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=39%20Courtenay%20Road%2C%20Leicester%20LE3%209TA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your hair. Your hideaway.",
+    "Make time for your next visit.",
+    "Cut & Finish",
+    "Find your hideaway.",
+    "For your next visit.",
+    "Josh’s Hair Hideaway salon photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Pretty Suite by Abbie",
+  "v1": "https://venturasolutions.co.uk/pretty-suite-by-abbiev1/",
+  "v2": "https://venturasolutions.co.uk/pretty-suite-by-abbiev2/",
+  "v1_features": [
+    "Service selector including 30 min Mini fill and Brow wax and tint",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Pretty Suite by Abbie’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/pretty-suite-by-abbie-leicester-hill-rise-tw0ac4s3",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Hill%20Rise%2C%20Leicester%20LE4",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Lashes and brows. Your next visit.",
+    "Choose your next appointment.",
+    "30 min Mini fill",
+    "Find us on Hill Rise.",
+    "For your next visit.",
+    "Pretty Suite by Abbie portfolio photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Haymarket Kiosk",
+  "v1": "https://venturasolutions.co.uk/haymarket-kioskv1/",
+  "v2": "https://venturasolutions.co.uk/haymarket-kioskv2/",
+  "v1_features": [
+    "Guide to snacks, newspapers, mobile top-ups and bill services",
+    "Visit checklist with questions for the selected services",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help shoppers check what they need from the kiosk before making a trip.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162536033",
+      "url": "tel:+441162536033",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "A LITTLE STOP FOR EVERYDAY.",
+    "SMALL SHOP. USEFUL STOPS.",
+    "Snacks & confectionery",
+    "Newspapers",
+    "Mobile top-ups",
+    "Bill services",
+    "YOUR STOP. YOUR SHORT CHECKLIST.",
+    "A few things to check.",
+    "A QUICK CALL. A CLEARER VISIT.",
+    "For a particular item",
+    "For a top-up or bill service",
+    "For your route through the centre",
+    "FIND THE KIOSK STOP.",
+    "The kiosk’s published phone",
+    "Times published by Haymarket",
+    "A LITTLE SHOP NEWS?",
+    "A LITTLE SHOP NEWS?",
+    "That’s the local demo."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A little stop for everyday.",
+      "visual": "Illustrative newspaper",
+      "caption": "Check your chosen title at the counter.",
+      "button": "See what’s here"
+    },
+    {
+      "heading": "A small shopping break.",
+      "visual": "Illustrative chocolate",
+      "caption": "Ask about today’s snacks and confectionery.",
+      "button": "Plan your stop"
+    },
+    {
+      "heading": "Make it part of your visit.",
+      "visual": "Illustrative crisps",
+      "caption": "Find the kiosk at Haymarket.",
+      "button": "Find the kiosk"
+    }
+  ]
+}
+
+{
+  "business": "Aimee Charlotte Beauty",
+  "v1": "https://venturasolutions.co.uk/aimee-charlotte-beautyv1/",
+  "v2": "https://venturasolutions.co.uk/aimee-charlotte-beautyv2/",
+  "v1_features": [
+    "Service selector including Builder In A Bottle & Gel Polish and Builder In A Bottle French",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Aimee Charlotte Beauty’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/aimee-charlotte-beauty-anstey-megslashes-37-the-nook-c4dfe1bt",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=MegsLashes%2C%2037%20The%20Nook%2C%20Anstey%20LE7%207AZ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your nails. The little details.",
+    "Find your next nail appointment.",
+    "Builder In A Bottle & Gel Polish",
+    "Visit in Anstey.",
+    "For your next visit.",
+    "Aimee Charlotte Beauty portfolio photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Anelita Beauty",
+  "v1": "https://venturasolutions.co.uk/anelita-beautyv1/",
+  "v2": "https://venturasolutions.co.uk/anelita-beautyv2/",
+  "v1_features": [
+    "Service selector including LVL Lash Lift and Individual eyelash extensions - Full set",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Anelita Beauty’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/anelita-beauty-leicester-30a-blaby-road-y1gkfn59",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=30A%20Blaby%20Road%2C%20Leicester%20LE18%204PA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little lift. Your own look.",
+    "Make your next appointment.",
+    "LVL Lash Lift",
+    "Find us in South Wigston.",
+    "For your next visit.",
+    "Anelita Beauty treatment room",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Hair by Tia",
+  "v1": "https://venturasolutions.co.uk/hair-by-tiav1/",
+  "v2": "https://venturasolutions.co.uk/hair-by-tiav2/",
+  "v1_features": [
+    "Service selector including Hair up and Tapes Half head Maintenance",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Hair by Tia’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/hair-by-tia-leicester-uk-100-lorne-road-glbzje22",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=100%20Lorne%20Road%2C%20Leicester%20LE2%201YG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your occasion. Your kind of hair.",
+    "Make your next appointment.",
+    "Hair up",
+    "Visit on Lorne Road.",
+    "For your next visit.",
+    "Hair by Tia salon",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your occasion. Your kind of hair.",
+      "visual": "Illustrative scissors",
+      "caption": "Explore the listed hair appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little time for your hair.",
+      "visual": "Illustrative dryer",
+      "caption": "Talk through your hair, finish and appointment.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Your next appointment starts here.",
+      "visual": "Illustrative comb",
+      "caption": "Find the salon and current booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "International Food Centre",
+  "v1": "https://venturasolutions.co.uk/international-food-centrev1/",
+  "v2": "https://venturasolutions.co.uk/international-food-centrev2/",
+  "v1_features": [
+    "Produce, grocery and fresh bread category guide",
+    "Copyable shopping interests list",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers organise the parts of their shop they want to ask about.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162552149",
+      "url": "tel:+441162552149",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=International+Food+Centre+Narborough+Road+Leicester+LE3+0LE",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "For your  everyday shop.",
+    "Start with what you need.",
+    "Fruit & vegetables",
+    "Your shopping interests",
+    "Find us on Narborough Road.",
+    "Before you set off",
+    "Keep in touch with the shop.",
+    "A little news from the shop."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "For your everyday shop.",
+      "visual": "Illustrative produce",
+      "caption": "Fresh fruit and vegetables for your shopping list.",
+      "button": "Explore the categories"
+    },
+    {
+      "heading": "Something for the table.",
+      "visual": "Illustrative croissant",
+      "caption": "Ask the shop about today’s fresh bread.",
+      "button": "Explore the shop"
+    },
+    {
+      "heading": "Make it your next stop.",
+      "visual": "Illustrative chocolate",
+      "caption": "Plan a visit to Narborough Road.",
+      "button": "Find the shop"
+    }
+  ]
+}
+
+{
+  "business": "The Good Earth",
+  "v1": "https://venturasolutions.co.uk/good-earthv1/",
+  "v2": "https://venturasolutions.co.uk/good-earthv2/",
+  "v1_features": [
+    "Vegetarian dish examples grouped by comfort food and soup",
+    "Café photograph viewer and Free Lane visit information",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Give visitors a feel for the cooking and help them recognise the café.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162626260",
+      "url": "tel:+441162626260",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=The+Good+Earth+19+Free+Lane+Leicester+LE1+1JX",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Vegetarian cooking. A little  Good Earth.",
+    "A taste of the kitchen.",
+    "Leek and Lancashire Hotpot",
+    "Stilton, Leek, Mushroom  and New Potato Bake",
+    "Pumpkin Spiced Soup",
+    "Tucked away on Free Lane.",
+    "Come and find us.",
+    "Before you set off",
+    "A little news from the kitchen.",
+    "A photograph from the café",
+    "Seasonal dishes. Little café updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Leicester Fresh Food",
+  "v1": "https://venturasolutions.co.uk/leicester-fresh-foodv1/",
+  "v2": "https://venturasolutions.co.uk/leicester-fresh-foodv2/",
+  "v1_features": [
+    "Fruit, meat and chicken, and bread category choices",
+    "Copyable shopping note",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers bring together the items they want to discuss in the shop.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Leicester+Fresh+Food+33+Narborough+Road+Leicester+LE3+0LE",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +447999979796",
+      "url": "tel:+447999979796",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Fresh finds.  Narborough Road.",
+    "A little plan. A useful shop.",
+    "Fruit",
+    "Meat & chicken",
+    "Bread",
+    "My shopping note",
+    "Make us your next stop.",
+    "Before you set off",
+    "A little news from the shop.",
+    "News from your local shop."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Soi 52",
+  "v1": "https://venturasolutions.co.uk/soi-52v1/",
+  "v2": "https://venturasolutions.co.uk/soi-52v2/",
+  "v1_features": [
+    "Treatment information and Church Gate location details",
+    "Links to the existing business website and directions",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Give people a clear starting point for asking about treatments and planning a visit.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Soi52%2052%20Church%20Gate%20Leicester%20LE1%204AJ",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +447886366933",
+      "url": "tel:+447886366933",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Thai massage on Church Gate.",
+    "Treatments to ask about.",
+    "Find the address.",
+    "Stay in the loop.",
+    "Proposed treatment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Soie Hair",
+  "v1": "https://venturasolutions.co.uk/soie-hairv1/",
+  "v2": "https://venturasolutions.co.uk/soie-hairv2/",
+  "v1_features": [
+    "Service selector including Wash Cut & Blowdry and Signature Blowout",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Soie Hair’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/188904_soie-hair_hair-salon_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=2%20South%20Knighton%20Road%20Leicester%20LE2%203LN",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A cut. A finish. A little time for you.",
+    "Choose your time with Rebecca.",
+    "Wash Cut & Blowdry",
+    "At Whitters. South Knighton.",
+    "For your next visit.",
+    "Rebecca portfolio gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Star Barbers Oadby",
+  "v1": "https://venturasolutions.co.uk/star-barbers-oadbyv1/",
+  "v2": "https://venturasolutions.co.uk/star-barbers-oadbyv2/",
+  "v1_features": [
+    "Service selector including Hair cut and Skin fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Star Barbers Oadby’s existing Booksy booking profile",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/98224_star-barbers-oadby_barber_79319_oadby",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=58%20Chestnut%20Avenue%20Oadby%20Leicester%20LE2%205JG",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +441164026122",
+      "url": "tel:+441164026122",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Your cut. Your kind of finish.",
+    "Find your next appointment.",
+    "Hair cut",
+    "Chestnut Avenue. Oadby.",
+    "For your next visit.",
+    "Star Barbers gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your cut. Your kind of finish.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "M K BARBER",
+  "v1": "https://venturasolutions.co.uk/m-k-barberv1/",
+  "v2": "https://venturasolutions.co.uk/m-k-barberv2/",
+  "v1_features": [
+    "Service selector including Skin fade and Taper fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open M K BARBER’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/153839_m-k-barber_barber_79753_wigston",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=45%20Bell%20Street%20Wigston%20LE18%201AD",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Fresh cut. Bell Street.",
+    "Your service. Your next visit.",
+    "Skin fade",
+    "Bell Street.",
+    "For your next visit.",
+    "M K BARBER interior gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Alcove",
+  "v1": "https://venturasolutions.co.uk/alcovev1/",
+  "v2": "https://venturasolutions.co.uk/alcovev2/",
+  "v1_features": [
+    "Coffee, specials and açaí menu filters",
+    "Four-topping açaí bowl outline builder",
+    "Direct link to Uber Eats ordering menu",
+    "Direct link to Square gift card page",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Let visitors explore a bowl combination before checking the existing ordering options.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/alcove/8TM387sUXl-NeVJvhYXdIA",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Alcove+27+St+Nicholas+Place+Leicester+LE1+4LD",
+      "type": "directions"
+    },
+    {
+      "label": "Square gift card page",
+      "url": "https://app.squareup.com/gift/MLDHD6J3GQ4YJ/order",
+      "type": "gift card page",
+      "provider": "Square"
+    }
+  ],
+  "v1_section_headings": [
+    "COFFEE. MATCHA. AÇAÍ.",
+    "FIND YOUR ALCOVE MOMENT.",
+    "Double espresso",
+    "Americano",
+    "Flat white",
+    "Cappuccino",
+    "Latte",
+    "Spanish latte",
+    "Mocha",
+    "Tea",
+    "Hot chocolate",
+    "Vanilla",
+    "Wild cherry",
+    "White chocolate",
+    "Cookie butter",
+    "Cinnamon crunch",
+    "Pumpkin pie",
+    "Pumpkin spice latte",
+    "Sticky toffee apple latte",
+    "Classic bowl",
+    "Peanut power bowl",
+    "Morgs bowl",
+    "Oreo bowl",
+    "Bueno bowl",
+    "Build your own",
+    "FOUR TOPPINGS. ONE LOCAL BOWL OUTLINE.",
+    "Ordering on a platform?",
+    "Fruit",
+    "Spreads",
+    "Crunch",
+    "Açaí + granola + your four picks",
+    "AT THE CAFÉ. OR ON YOUR DOORSTEP.",
+    "Visit Alcove",
+    "Use the existing order route",
+    "Ask the operator",
+    "YOUR NEXT COFFEE STOP.",
+    "A LITTLE ALCOVE NEWS?",
+    "COFFEE. MATCHA. IN YOUR INBOX?",
+    "That’s the local demo."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "The Mane Room Leicester",
+  "v1": "https://venturasolutions.co.uk/the-mane-roomv1/",
+  "v2": "https://venturasolutions.co.uk/the-mane-roomv2/",
+  "v1_features": [
+    "Service selector including Gents Haircut and Skin Fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open The Mane Room Leicester’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/130067_the-mane-room-leicester_barber_79753_wigston",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=94%20Leicester%20Road%20Wigston%20LE18%201DR",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A fresh cut. A little time for you.",
+    "Your cut. Your next appointment.",
+    "Gents Haircut",
+    "Leicester Road.",
+    "For your next visit.",
+    "The Mane Room gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Mancave Barber Lounge",
+  "v1": "https://venturasolutions.co.uk/mancave-barber-loungev1/",
+  "v2": "https://venturasolutions.co.uk/mancave-barber-loungev2/",
+  "v1_features": [
+    "Service selector including Gents Haircut and Skin or Zero Fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Mancave Barber Lounge’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/20487_mancave-barber-lounge_barber_79753_wigston",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=5%20Bell%20Street%20Wigston%20LE18%201AD",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next cut. Bell Street.",
+    "Your cut. Your next appointment.",
+    "Gents Haircut",
+    "Bell Street.",
+    "For your next visit.",
+    "Mancave gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your next cut. Bell Street.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "11:11 Studios",
+  "v1": "https://venturasolutions.co.uk/1111-studiosv1/",
+  "v2": "https://venturasolutions.co.uk/1111-studiosv2/",
+  "v1_features": [
+    "Service selector including BIAB overlay and BIAB infill",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open 11:11 Studios’s existing Fresha booking profile",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/11-11-studios-leicester-10-turville-road-d3i3gen7",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10%20Turville%20Road%20Leicester%20LE3%201NY",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +447835773090",
+      "url": "tel:+447835773090",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "A little detail. All your own.",
+    "Find your next set.",
+    "BIAB overlay",
+    "Have a design in mind?",
+    "Turville Road.",
+    "For your next visit.",
+    "11:11 Studios gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "MPHair",
+  "v1": "https://venturasolutions.co.uk/mphairv1/",
+  "v2": "https://venturasolutions.co.uk/mphairv2/",
+  "v1_features": [
+    "Service selector including Ladies Cut and Blow dry and Gents cut no wash",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open MPHair’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/mphair-glenfield-102-dominion-road-dixl6g64",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=102%20Dominion%20Road%20Unit%203%2C%20Glenfield%20LE3%208FB",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A fresh shape. A little you time.",
+    "Find your next appointment.",
+    "Ladies Cut and Blow dry",
+    "Find us in Glenfield.",
+    "For your next visit.",
+    "MPHair portfolio photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A fresh shape. A little you time.",
+      "visual": "Illustrative scissors",
+      "caption": "Explore the listed hair appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little time for your hair.",
+      "visual": "Illustrative dryer",
+      "caption": "Talk through your hair, finish and appointment.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Your next appointment starts here.",
+      "visual": "Illustrative comb",
+      "caption": "Find the salon and current booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Be beautiful by Alex",
+  "v1": "https://venturasolutions.co.uk/be-beautiful-by-alexv1/",
+  "v2": "https://venturasolutions.co.uk/be-beautiful-by-alexv2/",
+  "v1_features": [
+    "Service selector including BIAB Infill and Eyebrow shape & Tint",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Be beautiful by Alex’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/be-beautiful-by-alex-glenfield-stamford-street-li3z5jdq",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=13%20Stamford%20Street%2C%20Glenfield%20LE3%208DL",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Nails. Brows. Time for you.",
+    "Your next appointment.",
+    "BIAB Infill",
+    "Find us in Glenfield.",
+    "For your next visit.",
+    "Be beautiful by Alex treatment room",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Nails. Brows. Time for you.",
+      "visual": "Illustrative polish",
+      "caption": "Explore the listed nail appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your colour. Your kind of detail.",
+      "visual": "Illustrative nail file",
+      "caption": "Confirm your shape, finish and appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "A little time for yourself.",
+      "visual": "Illustrative serum",
+      "caption": "Find the location and booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Graced by Helen",
+  "v1": "https://venturasolutions.co.uk/graced-by-helenv1/",
+  "v2": "https://venturasolutions.co.uk/graced-by-helenv2/",
+  "v1_features": [
+    "Service selector including Knotless/Box Braids and Make-up (For Occasions)",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Graced by Helen’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/graced-by-helen-leicester-aadams-apartments-uk-20-frog-island-b5u60lzv",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Aadams%20Apartments%2C%2020%20Frog%20Island%2C%20Leicester%20LE3%205AG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Braids. Makeup. A little grace.",
+    "Your plans. Your appointment.",
+    "Knotless/Box Braids",
+    "Find Helen on Frog Island.",
+    "For your next visit.",
+    "Graced by Helen portfolio photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Braids. Makeup. A little grace.",
+      "visual": "Illustrative comb",
+      "caption": "Explore the listed braiding appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Make it your kind of occasion.",
+      "visual": "Illustrative spoolie",
+      "caption": "Talk through your occasion and requirements.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Bring your next look together.",
+      "visual": "Illustrative tweezers",
+      "caption": "Confirm preparation and booking details directly.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Pot Pourri Shop",
+  "v1": "https://venturasolutions.co.uk/pot-pourri-shopv1/",
+  "v2": "https://venturasolutions.co.uk/pot-pourri-shopv2/",
+  "v1_features": [
+    "Gift brief built around occasion and shopping interest",
+    "Optional budget selection and a copyable summary",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help shoppers explain a birthday, thank-you or just-because gift idea.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162626666",
+      "url": "tel:+441162626666",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=The+Pot+Pourri+Shop+17+Free+Lane+Leicester+LE1+1JX",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Little treasures.  On Free Lane.",
+    "For the thought behind the gift.",
+    "Handmade gifts",
+    "Aromatherapy",
+    "Potpourri",
+    "Something with a thought.",
+    "Tucked away. Worth a look.",
+    "Come and find a little joy.",
+    "Before you set off",
+    "Little shop. Little updates.",
+    "A little news from Free Lane."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "London Nails",
+  "v1": "https://venturasolutions.co.uk/london-nailsv1/",
+  "v2": "https://venturasolutions.co.uk/london-nailsv2/",
+  "v1_features": [
+    "Nail inspiration choices from the salon gallery",
+    "Call note combining the chosen look with preferred nail length",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients describe the finish they have in mind before speaking to the salon.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +447762262345",
+      "url": "tel:+447762262345",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://maps.app.goo.gl/YkoSCLvR1rJMRjJc8?g_st=com.google.maps.preview.copy",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little detail.  A whole  new look.",
+    "Find your  next detail.",
+    "Silver & flowers",
+    "Dark & detailed",
+    "A touch of blue",
+    "A look in mind.  A note to hand.",
+    "London Nails.  In Leicester.",
+    "On Church Gate.",
+    "Before your appointment",
+    "A little inspiration  in your inbox.",
+    "A little nail  inspiration."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Tiegan Seaton (Seats Hair Studio)",
+  "v1": "https://venturasolutions.co.uk/tiegan-seatonv1/",
+  "v2": "https://venturasolutions.co.uk/tiegan-seatonv2/",
+  "v1_features": [
+    "Service selector including Restyle and Patch test & consultation",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Tiegan Seaton (Seats Hair Studio)’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/tiegan-seaton-seats-hair-studio-anstey-4b-cropston-road-mozb3qoa",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=4B%20Cropston%20Road%2C%20Anstey%20LE7%207BJ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your hair. A seat for you.",
+    "Make your next appointment.",
+    "Restyle",
+    "Visit in Anstey.",
+    "For your next visit.",
+    "Seat’s Hair Studio photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Royalty Trimz",
+  "v1": "https://venturasolutions.co.uk/royalty-trimzv1/",
+  "v2": "https://venturasolutions.co.uk/royalty-trimzv2/",
+  "v1_features": [
+    "Service selector including Shape up and Haircut",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Royalty Trimz’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/royalty-trimz-leicester-40-church-gate-xkxfpy1l",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=40%20Church%20Gate%2C%20Leicester%20LE1%204AF",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your cut. A sharper outlook.",
+    "Make your next appointment.",
+    "Shape up",
+    "Find us on Church Gate.",
+    "For your next visit.",
+    "Royalty Trimz barbershop",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your cut. A sharper outlook.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Hair Muse",
+  "v1": "https://venturasolutions.co.uk/hair-musev1/",
+  "v2": "https://venturasolutions.co.uk/hair-musev2/",
+  "v1_features": [
+    "Service selector including Ladies Cut & Blowdry and Long Hair Blowdry",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Hair Muse’s existing Fresha booking profile",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/hair-muse-leicester-247-clarendon-park-road-lqtsyymq",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=247%20Clarendon%20Park%20Road%20Leicester%20LE2%203AN",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +441165075590",
+      "url": "tel:+441165075590",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Make time for your hair.",
+    "Your hair. Your appointment.",
+    "Ladies Cut & Blowdry",
+    "Clarendon Park.",
+    "For your next visit.",
+    "Hair Muse public gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Make time for your hair.",
+      "visual": "Illustrative scissors",
+      "caption": "Explore the listed hair appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little time for your hair.",
+      "visual": "Illustrative dryer",
+      "caption": "Talk through your hair, finish and appointment.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Your next appointment starts here.",
+      "visual": "Illustrative comb",
+      "caption": "Find the salon and current booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Autofaders",
+  "v1": "https://venturasolutions.co.uk/autofadersv1/",
+  "v2": "https://venturasolutions.co.uk/autofadersv2/",
+  "v1_features": [
+    "Service selector including Haircut · Senior barber and Haircut & Beard · Senior barber",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Autofaders’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/autofaders-ltd-where-style-meets-precision-leicester-8c-devana-road-nxj56jn6",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=8c%20Devana%20Road%2C%20Leicester%20LE2%201PJ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your cut. Your kind of finish.",
+    "Choose your cut. Know your appointment.",
+    "Haircut · Senior barber",
+    "Visit Devana Road.",
+    "For your next visit.",
+    "Autofaders haircut portfolio",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "GlamUpWithEster",
+  "v1": "https://venturasolutions.co.uk/glamupwithesterv1/",
+  "v2": "https://venturasolutions.co.uk/glamupwithesterv2/",
+  "v1_features": [
+    "Service selector including Makeup and Prom makeup",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open GlamUpWithEster’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/glamupwithester-leicester-airborne-rn00zt24",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Airborne%2C%20Leicester%20LE7",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Makeup. Lashes. With Ester.",
+    "Choose your next appointment.",
+    "Makeup",
+    "Visit in Anstey.",
+    "For your next visit.",
+    "GlamUpWithEster profile photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Mercy Nails",
+  "v1": "https://venturasolutions.co.uk/mercy-nailsv1/",
+  "v2": "https://venturasolutions.co.uk/mercy-nailsv2/",
+  "v1_features": [
+    "Service selector including Builder Gel Infills and Acrylic Nails",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Mercy Nails’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/155807_mercy-nails_nail-salon_65190_glenfield",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=102%20Dominion%20Road%20Leicester%20LE3%208FB",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next set. Your kind of detail.",
+    "Choose your appointment.",
+    "Builder Gel Infills",
+    "Dominion Road.",
+    "For your next visit.",
+    "Mercy client gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Sapphire Treatments",
+  "v1": "https://venturasolutions.co.uk/sapphire-treatmentsv1/",
+  "v2": "https://venturasolutions.co.uk/sapphire-treatmentsv2/",
+  "v1_features": [
+    "Service selector including Relax & Revive; Leg & Foot and Tension Relief: Back, Neck & Scalp Retreat",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Sapphire Treatments’s existing Fresha booking profile"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/sapphire-treatments-leicester-vsa5bzok",
+      "type": "booking profile",
+      "provider": "Fresha"
+    }
+  ],
+  "v1_section_headings": [
+    "A little time. In your own space.",
+    "Make your next appointment.",
+    "Relax & Revive; Leg & Foot",
+    "A mobile visit. Made clear.",
+    "For your next visit.",
+    "Sapphire Treatments photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "SamBrayHair",
+  "v1": "https://venturasolutions.co.uk/sambrayhairv1/",
+  "v2": "https://venturasolutions.co.uk/sambrayhairv2/",
+  "v1_features": [
+    "Service selector including Wash Cut & Blowdry and Mens Haircut",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open SamBrayHair’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/sambrayhair-thurmaston-uk-church-hill-road-w5hi6pp2",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Church%20Hill%20Road%20Thurmaston%20Leicester%20LE4%208DE",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Time for your hair. Space to unwind.",
+    "Choose your next appointment.",
+    "Wash Cut & Blowdry",
+    "Church Hill Road.",
+    "For your next visit.",
+    "SamBrayHair gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Jennifer Audrey Nails & Beauty",
+  "v1": "https://venturasolutions.co.uk/jennifer-audrey-nails-beautyv1/",
+  "v2": "https://venturasolutions.co.uk/jennifer-audrey-nails-beautyv2/",
+  "v1_features": [
+    "Service selector including BIAB and BIAB Toes",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Jennifer Audrey Nails & Beauty’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/jennifer-audrey-nails-beauty-leicester-thurmaston-fa8uc05k",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Thurmaston%2C%20Leicester%20LE4%208NQ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Nails. With a little attitude.",
+    "Choose your next appointment.",
+    "BIAB",
+    "Thurmaston.",
+    "For your next visit.",
+    "Jennifer Audrey Nails & Beauty gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Nails. With a little attitude.",
+      "visual": "Illustrative polish",
+      "caption": "Explore the listed nail appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your colour. Your kind of detail.",
+      "visual": "Illustrative nail file",
+      "caption": "Confirm your shape, finish and appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "A little time for yourself.",
+      "visual": "Illustrative serum",
+      "caption": "Find the location and booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Oppa Korean Restaurant",
+  "v1": "https://venturasolutions.co.uk/oppav1/",
+  "v2": "https://venturasolutions.co.uk/oppav2/",
+  "v1_features": [
+    "Korean dish filters covering bibimbap, bulgogi, soups and more",
+    "Meal shortlist with table BBQ, spice and allergy questions",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help a group organise dishes and the questions they want to discuss.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/oppa-korean-bbq-restaurant",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Tap to call +441164295128",
+      "url": "tel:+441164295128",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Bulgogi. Bibimbap. Your next meal.",
+    "What are you in the mood for?",
+    "Beef Bibimbap",
+    "Chicken Bibimbap",
+    "Tofu Bibimbap no egg",
+    "Kimchi Fried Rice",
+    "Beef Bulgogi",
+    "Chicken Bulgogi",
+    "Pork Belly Bulgogi",
+    "Beef Rib Soup",
+    "Budae Stew Army Hot Pot",
+    "Kimchi Soup",
+    "Chicken Cutlet Ramen",
+    "Beef Udon",
+    "Tofu Fried Noodles",
+    "Topokki",
+    "Cheese Ramen Topokki",
+    "Kimchi Pancake",
+    "Fried Pork Dumplings",
+    "Korean Style Fried Chicken, Original (4pieces)",
+    "Choose the dish. Check the details.",
+    "Rice or noodles?",
+    "Something to start?",
+    "Thinking about table BBQ?",
+    "Your meal. Your shortlist.",
+    "Dishes to ask about",
+    "Your conversation checklist",
+    "High Street. Leicester.",
+    "Delivery has its own route.",
+    "A little menu inspiration.",
+    "What’s your next OPPA dish?"
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Sherwin's Cheese Company",
+  "v1": "https://venturasolutions.co.uk/sherwinsv1/",
+  "v2": "https://venturasolutions.co.uk/sherwinsv2/",
+  "v1_features": [
+    "Cheese and deli guide with accompaniment ideas",
+    "Gathering question list covering guest count, flavour preferences and serving questions",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers ask for a cheese selection suited to their gathering.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162629236",
+      "url": "tel:+441162629236",
+      "type": "phone"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Sherwins+Cheese+Company+Leicester+Market+Food+Hall+33+Market+Place+LE1+5GG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Make room for cheese.",
+    "A little choice goes a long way.",
+    "At the cheese counter",
+    "Alongside the cheese",
+    "From the deli",
+    "Something familiar. Something to ask about.",
+    "Who’s coming to the table?",
+    "Ready to discuss with Sherwin’s",
+    "Cheese & deli, at the Food Hall.",
+    "Ask before a special trip.",
+    "Keep a little room for news.",
+    "A little cheese news."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Make room for cheese.",
+      "visual": "Illustrative cheese",
+      "caption": "Explore the published cheese and deli range.",
+      "button": "Explore the counter"
+    },
+    {
+      "heading": "Then the rest of the spread.",
+      "visual": "Illustrative sausage",
+      "caption": "Ask the counter about today’s choice.",
+      "button": "Plan a gathering"
+    },
+    {
+      "heading": "Good things around one table.",
+      "visual": "Illustrative croissant",
+      "caption": "Find Sherwin’s at Leicester Market.",
+      "button": "Find the counter"
+    }
+  ]
+}
+
+{
+  "business": "Amic Studios",
+  "v1": "https://venturasolutions.co.uk/amic-studiosv1/",
+  "v2": "https://venturasolutions.co.uk/amic-studiosv2/",
+  "v1_features": [
+    "Service search and filters for Dan, Tate, Dom and Alfie",
+    "Named barber service listings with the existing Fresha route",
+    "Booking buttons open Amic Studios’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients find the barber and service they want before opening the booking page.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/en-GB/a/amic-studios-birstall-2b-stonehill-avenue-ekar337w",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Amic%20Studios%202B%20Stonehill%20Avenue%20Birstall%20Leicester",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A seat at the studio.",
+    "Your barber. Your service.",
+    "Haircut & Style (Dan)",
+    "Haircut & Beard Trim (Dan)",
+    "Haircut & Style (Tate)",
+    "Haircut & Beard Trim (Tate)",
+    "Haircut & Style (Dom)",
+    "Haircut & Beard Trim (Dom)",
+    "Beard Trim (Dom)",
+    "Haircut & Style (Alfie)",
+    "Haircut & Beard Trim (Alfie)",
+    "Beard Trim (Alfie)",
+    "amic studios. Stonehill Avenue.",
+    "See you in Birstall.",
+    "Keep in touch.",
+    "A little studio news."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A seat at the studio.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "IRL Nails and Beauty",
+  "v1": "https://venturasolutions.co.uk/irl-nails-and-beautyv1/",
+  "v2": "https://venturasolutions.co.uk/irl-nails-and-beautyv2/",
+  "v1_features": [
+    "Service selector including Gel polish - one colour and Removals with new set",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open IRL Nails and Beauty’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/irl-nails-and-beauty-leicester-naver-road-mumgjpxd",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Naver%20Road%2C%20Leicester%20LE19%204DG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "One colour. Or your own detail.",
+    "Make your next appointment.",
+    "Gel polish - one colour",
+    "Plan your visit in New Lubbesthorpe.",
+    "For your next visit.",
+    "IRL Nails and Beauty nail desk",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Hair By Wikki",
+  "v1": "https://venturasolutions.co.uk/hair-by-wikkiv1/",
+  "v2": "https://venturasolutions.co.uk/hair-by-wikkiv2/",
+  "v1_features": [
+    "Service selector including Ladies Cut & Blow Dry and Gents Cut",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Hair By Wikki’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/hair-by-wikki-leicester-50a-hinckley-road-mtq61cm7",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=50A%20Hinckley%20Road%2C%20Leicester%20LE3%200RB",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A cut. A colour. A different detail.",
+    "Make your next appointment.",
+    "Ladies Cut & Blow Dry",
+    "Find Hair By Wikki on Hinckley Road.",
+    "For your next visit.",
+    "Hair By Wikki hair photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "A cut. A colour. A different detail.",
+      "visual": "Illustrative scissors",
+      "caption": "Explore the listed hair appointments.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "A little time for your hair.",
+      "visual": "Illustrative dryer",
+      "caption": "Talk through your hair, finish and appointment.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Your next appointment starts here.",
+      "visual": "Illustrative comb",
+      "caption": "Find the salon and current booking details.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "LALA’S Restaurant",
+  "v1": "https://venturasolutions.co.uk/lalasv1/",
+  "v2": "https://venturasolutions.co.uk/lalasv2/",
+  "v1_features": [
+    "Searchable menu selection with burger, wrap, pizza and grill filters",
+    "Existing Deliveroo link alongside location information",
+    "Direct link to Deliveroo ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers find a meal category quickly before checking the ordering menu.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/leicester/leicester-city-centre/lalas-restaurant-17-halford-street",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Lalas%20Restaurant%2017%20Halford%20Street%20Leicester%20LE1%201JA",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Chicken. Burgers. Pizza.",
+    "What are you having?",
+    "Burgers",
+    "Wraps",
+    "Pizza 12\"",
+    "Peri Grill",
+    "Halford Street. Leicester.",
+    "A little LALA’S.",
+    "News from LALA’S."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "VOSS. Barbering and Men’s Hair Specialist",
+  "v1": "https://venturasolutions.co.uk/vossv1/",
+  "v2": "https://venturasolutions.co.uk/vossv2/",
+  "v1_features": [
+    "Service selector including Cut and Finish and Cut and Finish w/ Beard Trim",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open VOSS. Barbering and Men’s Hair Specialist’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/93977_voss-barbering-and-mens-hair-specialist_barber_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=A%20Barber%20Room%20181%20Clarendon%20Park%20Road%20Leicester%20LE2%203AJ",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next cut. Your kind of finish.",
+    "Choose your appointment.",
+    "Cut and Finish",
+    "From the VOSS gallery.",
+    "Find VOSS in Clarendon Park.",
+    "Keep in touch.",
+    "VOSS gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Falafelland",
+  "v1": "https://venturasolutions.co.uk/falafellandv1/",
+  "v2": "https://venturasolutions.co.uk/falafellandv2/",
+  "v1_features": [
+    "Searchable hot and cold mezze selection",
+    "Existing Uber Eats link and Gallowtree Gate visit information",
+    "Direct link to Uber Eats ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors explore mezze choices before ordering or visiting.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/falafel-land/yf2cbpeTV4ivf_iQszd5ww",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Falafel%20Land%2045%2047%20Gallowtree%20Gate%20Leicester%20LE1%205AD",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Mezze & falafels.",
+    "Start with mezze.",
+    "Cold mezze",
+    "Hot mezze",
+    "Gallowtree Gate.",
+    "Keep mezze in mind.",
+    "A little mezze inspiration."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Amo’s Cutthroat",
+  "v1": "https://venturasolutions.co.uk/amos-cutthroatv1/",
+  "v2": "https://venturasolutions.co.uk/amos-cutthroatv2/",
+  "v1_features": [
+    "Service selector including Beard Trim and Condition and Taper fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Amo’s Cutthroat’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/155778_amos-cutthroat_barber_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=154%20East%20Park%20Road%20Leicester%20LE5%204QB",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Haircuts. Beards. Shapeups.",
+    "The cut. The details.",
+    "Haircut & Shapeup",
+    "A closer look.",
+    "East Park Road.",
+    "For your next visit.",
+    "Amo’s public gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Haircuts. Beards. Shapeups.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Til Next Time Barbershop",
+  "v1": "https://venturasolutions.co.uk/til-next-timev1/",
+  "v2": "https://venturasolutions.co.uk/til-next-timev2/",
+  "v1_features": [
+    "Service selector including Haircut with Martin and Haircut with Alex",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Til Next Time Barbershop’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/34218_til-next-time-barbershop_barber_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=6B%20Hotel%20Street%20Leicester%20LE1%205AW",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your cut. Your barber.",
+    "A chair. A fresh start.",
+    "Haircut with Martin",
+    "Til next time.",
+    "Hotel Street.",
+    "See you next time.",
+    "Til Next Time public gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Karamay Hot Pot",
+  "v1": "https://venturasolutions.co.uk/karamayv1/",
+  "v2": "https://venturasolutions.co.uk/karamayv2/",
+  "v1_features": [
+    "Searchable Uyghur menu across noodles, dumplings, skewers and vegetables",
+    "Links to the existing business and ordering pages",
+    "Direct link to Uber Eats ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help diners explore unfamiliar dishes and find the next step for a visit or order.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/karamay-uyghur-cuisine-%E5%85%8B%E6%8B%89%E7%8E%9B%E4%BE%9D%E6%96%B0%E7%96%86%E9%A4%90%E5%8E%85/ABmj9kB5QTisZFhkrFZD3Q",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Karamay%2063%20London%20Road%20Leicester%20LE2%200PE",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +441162918060",
+      "url": "tel:+441162918060",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Uyghur cuisine. London Road.",
+    "Find your dish.",
+    "Noodles",
+    "Dumplings and soup",
+    "Skewers and plates",
+    "Vegetables",
+    "Find us on London Road.",
+    "Keep Karamay in mind.",
+    "Menu inspiration from London Road."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Uyghur cuisine. London Road.",
+      "visual": "Illustrative dumplings",
+      "caption": "Explore the Leicester provider menu selection.",
+      "button": "Explore the menu"
+    },
+    {
+      "heading": "A table with plenty to share.",
+      "visual": "Illustrative beef",
+      "caption": "Explore dumplings, soup and more.",
+      "button": "Browse the dishes"
+    },
+    {
+      "heading": "Make time for Karamay.",
+      "visual": "Illustrative chicken",
+      "caption": "Find the restaurant on London Road.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "By Nancy",
+  "v1": "https://venturasolutions.co.uk/by-nancyv1/",
+  "v2": "https://venturasolutions.co.uk/by-nancyv2/",
+  "v1_features": [
+    "Service selector including BIAB Manicure and BIAB Manicure & Simple Nail Art",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open By Nancy’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/by-nancy-south-wigston-2-orange-street-vpssmvw9",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=2%20Orange%20Street%20Belle%20Ame%20Salon%2C%20South%20Wigston%20LE18%204QB",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your nails. Your own detail.",
+    "Make your next appointment.",
+    "BIAB Manicure",
+    "Find Nancy at Belle Âme Salon.",
+    "For your next visit.",
+    "By Nancy nail desk",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "elmaybeauty.x",
+  "v1": "https://venturasolutions.co.uk/elmaybeauty-xv1/",
+  "v2": "https://venturasolutions.co.uk/elmaybeauty-xv2/",
+  "v1_features": [
+    "Service selector including Double classic infill and Korean lash lift",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open elmaybeauty.x’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/elmaybeauty-x-wigston-hazelwood-road-suc2o819",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Hazelwood%20Road%2C%20Wigston%20LE18%204LS",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A little detail. A look for you.",
+    "Make your next appointment.",
+    "Double classic infill",
+    "Plan your visit in Wigston.",
+    "For your next visit.",
+    "elmaybeauty.x treatment room",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Café Bruxelles",
+  "v1": "https://venturasolutions.co.uk/bruxellesv1/",
+  "v2": "https://venturasolutions.co.uk/bruxellesv2/",
+  "v1_features": [
+    "Visit checklist for a chosen date and group size",
+    "Questions covering Belgian beers, weekend plans, access and arrival",
+    "Tap-to-call link to the business phone number"
+  ],
+  "customer_benefit": "Help groups organise what to check with the venue before a visit.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming.",
+  "external_destinations": [
+    {
+      "label": "Tap to call +441162531325",
+      "url": "tel:+441162531325",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Café Bruxelles.",
+    "Belgian character. Leicester setting.",
+    "Belgian beer",
+    "Weekend context",
+    "Recognise the frontage",
+    "A date in mind? Start with the questions.",
+    "Your visit questions",
+    "Meet us on High Street.",
+    "Keep a little Bruxelles in mind.",
+    "A High Street state of mind."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Deliish",
+  "v1": "https://venturasolutions.co.uk/deliishv1/",
+  "v2": "https://venturasolutions.co.uk/deliishv2/",
+  "v1_features": [
+    "Filter for vegetarian menu listings",
+    "Item detail views across breakfast, paninis, wraps and salads",
+    "Direct link to Deliveroo ordering menu",
+    "Tap-to-call link to the business phone number",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help customers narrow down lunch options before checking ingredients and ordering.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Deliveroo ordering menu",
+      "url": "https://deliveroo.co.uk/menu/Leicester/leicester-city-centre/deliish",
+      "type": "ordering menu",
+      "provider": "Deliveroo"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Deliish%206-8%20Rutland%20Street%20Leicester%20LE1%201RA",
+      "type": "directions"
+    },
+    {
+      "label": "Tap to call +441162628674",
+      "url": "tel:+441162628674",
+      "type": "phone"
+    }
+  ],
+  "v1_section_headings": [
+    "Good food to go.",
+    "Find your lunch.",
+    "Breakfast",
+    "Toasties & paninis",
+    "Vegetarian paninis",
+    "Hot wraps",
+    "Vegetarian wraps",
+    "Salads",
+    "On Rutland  Street.",
+    "A little lunch inspiration.",
+    "",
+    "Lunch ideas, in your inbox."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Ink&Beauty Factory",
+  "v1": "https://venturasolutions.co.uk/ink-beauty-factoryv1/",
+  "v2": "https://venturasolutions.co.uk/ink-beauty-factoryv2/",
+  "v1_features": [
+    "Service selector including Brow architecture · mapping and shaping and Lash Removal",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Ink&Beauty Factory’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/177384_ink-beauty-factory_brows-lashes_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=91%20Hopefield%20Road%20Leicester%20LE3%202BL",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Brows. Lashes. Your next visit.",
+    "Before your first visit.",
+    "Find your appointment.",
+    "Brow architecture · mapping and shaping",
+    "In the details.",
+    "Hopefield Road.",
+    "For your next visit.",
+    "Ink & Beauty Factory gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Shortys - Leicester",
+  "v1": "https://venturasolutions.co.uk/shortys-leicesterv1/",
+  "v2": "https://venturasolutions.co.uk/shortys-leicesterv2/",
+  "v1_features": [
+    "Service selector including Haircut (Leicester) and Haircut and beard trim",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Shortys - Leicester’s existing Fresha booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Fresha booking profile",
+      "url": "https://www.fresha.com/a/shortys-leicester-leicester-hair-1rd-42-44-rutland-street-jq5wg2jp",
+      "type": "booking profile",
+      "provider": "Fresha"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Hair%401rd%2C%2042-44%20Rutland%20Street%2C%20Leicester%20LE1%201RD",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next cut. Or a fresh fade.",
+    "Make your next appointment.",
+    "Haircut (Leicester)",
+    "Plan your visit on Rutland Street.",
+    "For your next visit.",
+    "Shortys Leicester salon photograph",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Taurus barbers",
+  "v1": "https://venturasolutions.co.uk/taurusv1/",
+  "v2": "https://venturasolutions.co.uk/taurusv2/",
+  "v1_features": [
+    "Service selector including SkinFade and Classic Haircut",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Taurus barbers’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/181375_taurus-barbers_barber_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=27%20Francis%20Street%20Stoneygate%20Leicester%20LE2%202BE",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Your next cut, in Stoneygate.",
+    "The cut. The appointment.",
+    "Classic Haircut",
+    "Francis Street.",
+    "For your next visit.",
+    "Taurus public gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": [
+    {
+      "heading": "Your next cut, in Stoneygate.",
+      "visual": "Illustrative clipper",
+      "caption": "Explore the listed cuts and styling options.",
+      "button": "Explore services"
+    },
+    {
+      "heading": "Your style. Your kind of finish.",
+      "visual": "Illustrative scissors",
+      "caption": "Compare services and confirm the appointment directly.",
+      "button": "View the details"
+    },
+    {
+      "heading": "Make time for your next cut.",
+      "visual": "Illustrative comb",
+      "caption": "Find the details for your next visit.",
+      "button": "Plan your visit"
+    }
+  ]
+}
+
+{
+  "business": "Hair Roots & Co",
+  "v1": "https://venturasolutions.co.uk/hair-roots-cov1/",
+  "v2": "https://venturasolutions.co.uk/hair-roots-cov2/",
+  "v1_features": [
+    "Service selector including Haircut and Skin-Fade/Taper fade",
+    "Listed prices and appointment lengths update with the selected service",
+    "Booking buttons open Hair Roots & Co’s existing Booksy booking profile",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help clients compare the service, listed price and appointment length before opening the existing booking provider.",
+  "limitations": "The button opens the business booking page, not a preselected service. Service choices, dates and customer details are not transferred. Listed prices and durations are saved references; the provider confirms current details. Email signup is a demonstration.",
+  "external_destinations": [
+    {
+      "label": "Booksy booking profile",
+      "url": "https://booksy.com/en-gb/187348_hair-roots-co_barber_31021_leicester",
+      "type": "booking profile",
+      "provider": "Booksy"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=749%20Aylestone%20Road%20Leicester",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "A cut for your everyday.",
+    "Find your cut.",
+    "Haircut",
+    "Aylestone Road.",
+    "For your next visit.",
+    "Hair Roots public gallery",
+    "Appointment updates."
+  ],
+  "v2_opening_scenes": []
+}
+
+{
+  "business": "Ninety Six Degrees",
+  "v1": "https://venturasolutions.co.uk/ninety-six-degreesv1/",
+  "v2": "https://venturasolutions.co.uk/ninety-six-degreesv2/",
+  "v1_features": [
+    "Searchable brunch selection grouped into bowls, toast, brunch and bread",
+    "Existing ordering route and Braunstone Gate visit information",
+    "Direct link to Uber Eats ordering menu",
+    "Directions button opens the business location in Google Maps"
+  ],
+  "customer_benefit": "Help visitors find the kind of brunch they fancy before visiting or ordering.",
+  "limitations": "Forms and email signups are demonstrations. No enquiry, order or booking is submitted by this demo. External provider links open separately; prices and availability need confirming. These links open the existing business/provider pages. Shortlists, quantities and enquiry notes are not automatically transferred.",
+  "external_destinations": [
+    {
+      "label": "Uber Eats ordering menu",
+      "url": "https://www.ubereats.com/gb/store/ninety-six-degrees/HJ1Ch8tHWh-rSsmDa1Wn1w",
+      "type": "ordering menu",
+      "provider": "Uber Eats"
+    },
+    {
+      "label": "Open directions in Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Ninety%20Six%20Degrees%2042%20Braunstone%20Gate%20Leicester%20LE3%205LG",
+      "type": "directions"
+    }
+  ],
+  "v1_section_headings": [
+    "Coffee.  Brunch.  West End.",
+    "Something for the table.",
+    "Things in Bowls",
+    "Things on Toast",
+    "Things for Brunch",
+    "Things In Bread",
+    "Braunstone Gate.",
+    "A little café note.",
+    "Coffee. Brunch. A little note."
+  ],
+  "v2_opening_scenes": []
+}

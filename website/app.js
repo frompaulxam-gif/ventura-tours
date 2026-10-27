@@ -71,27 +71,16 @@ replay.addEventListener('click', () => playIntro(true));
 reduceMotion.addEventListener('change', event => { if (event.matches) finishIntro(true); replay.hidden = event.matches; });
 replay.hidden = reduceMotion.matches;
 if (isOfferArrival) {
-  // Start at the portrait even when this URL is reloaded from the offer section.
+  // Shared offer links open the package immediately, without the portfolio intro.
   history.scrollRestoration = 'manual';
-  window.scrollTo({ top: 0, behavior: 'instant' });
-  window.addEventListener('pageshow', () => {
-    if (reduceMotion.matches && offerPending) scheduleOfferScroll(true);
-    else if (offerPending) window.scrollTo({ top: 0, behavior: 'instant' });
-  }, { once: true });
-  // Respect visitors who choose to explore before the automatic scroll begins.
-  const cancelOnManualScroll = () => { if (!main.inert) cancelOfferScroll(); };
-  window.addEventListener('wheel', cancelOnManualScroll, { passive: true });
-  window.addEventListener('touchmove', cancelOnManualScroll, { passive: true });
-  document.addEventListener('keydown', event => {
-    if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) cancelOnManualScroll();
-  });
-  document.addEventListener('click', event => {
-    if (event.target.closest('a')) cancelOfferScroll();
-  });
-}
-if (reduceMotion.matches && isOfferArrival) {
-  if (document.readyState === 'complete') finishIntro(true);
-  // Otherwise pageshow above opens the offer without motion or a waiting period.
+  finishIntro(true);
+  const revealOffer = () => {
+    document.querySelector('#offer').scrollIntoView({behavior: 'instant', block: 'start'});
+    document.querySelector('#offer').focus({preventScroll: true});
+    history.scrollRestoration = previousScrollRestoration;
+  };
+  if (document.readyState === 'complete') revealOffer();
+  else window.addEventListener('load', revealOffer, {once: true});
 } else playIntro();
 
 const previewDialog = document.querySelector('.preview-dialog');
