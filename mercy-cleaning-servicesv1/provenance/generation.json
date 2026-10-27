@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-78358d27-6483-45da-bc0b-a7a1b1d34d1d",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case logo-brand. Faithful comparison recreation of provided published Mercy Cleaning Services square badge, not a redesign. Reference image role: published original. Reproduce whole circular metallic gold and magenta rim on white square, dark house roof/goldwindow/magenta spray bottle/leaves and glints. Exact words MERCY, CLEANING SERVICES, A CLEANER SPACE, A BRIGHTER TOMORROW. Four small lower icon labels RESIDENTIAL, COMMERCIAL, DEEP CLEANING, ECO-FRIENDLY, unchanged only as existing logo lettering, not new claims. Preserve whole canvas and all original content, no cropped edges, no people, no mockup, no additional words. Original remains selected, this candidate comparison only.\n",
+  "original_path": "/website-version-assets/427115c4cdc98a8a1b9c70433d33b66cb06785a5dbea53aba9b72cad1d35a8df.png",
+  "sha256": "427115c4cdc98a8a1b9c70433d33b66cb06785a5dbea53aba9b72cad1d35a8df",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "Unused recreation changes highlights, lettering, spacing and fine edges. Whole published original retained."
+}

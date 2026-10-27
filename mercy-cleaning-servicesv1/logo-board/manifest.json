@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "MC",
+      "brand": "Mercy Cleaning Services",
+      "variants": [
+        {
+          "id": "original",
+          "reference": true,
+          "label": "Original · Used on site",
+          "image": "/website-version-assets/6fcc88aad972fb5debcdc61278817ac2007b5ce6ba1f1b050faf81d4563ef2d7.jpeg",
+          "width": 1254,
+          "height": 1254,
+          "source": "https://www.facebook.com/photo/?fbid=1153824163996519&set=a.157021000343512",
+          "verdict": "The complete, unchanged original is used on the site. Main final reconciliation and the separate asynchronous working QC passed in the recorded scope. See the final report for any fixes and limits. The GPT and genuine SVG alternatives remain unused. No production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · Needs changes",
+          "image": "/website-version-assets/427115c4cdc98a8a1b9c70433d33b66cb06785a5dbea53aba9b72cad1d35a8df.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused recreation changes highlights, lettering, spacing and fine edges. Whole published original retained."
+        },
+        {
+          "id": "svg",
+          "label": "SVG · Needs changes",
+          "image": "/website-version-assets/ce257f1664f05478fbb680ab266397b5faed7379c19fbd3b78115aef27262c2e.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused genuine monochrome trace loses magenta, gold gradients and fine detail. Whole original retained."
+        }
+      ]
+    }
+  ]
+}

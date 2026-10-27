@@ -1,0 +1,39 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.facebook.com/Moji200",
+  "services": [
+    {
+      "id": "0",
+      "label": "General cleaning enquiry",
+      "condition": "Discuss ordinary cleaning for your home. Describe the rooms, surfaces, condition, access and priorities, then confirm current coverage, suitable tasks, exclusions, products, equipment, full quote and timing directly. No particular package or slot is created here.",
+      "destination": "https://www.facebook.com/Moji200",
+      "source_url": "https://www.facebook.com/Moji200/videos/-need-a-cleaner-home-in-leicester-surrounding-areas-looking-for-reliable-and-pro/1404249411843556/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Deep cleaning enquiry",
+      "condition": "Ask about a more detailed clean. Explain the rooms, surfaces, condition and priorities, then agree suitable tasks, exclusions, products, equipment, full quote and arrangements directly. Appliance interiors and specialist work are not assumed to be included.",
+      "destination": "https://www.facebook.com/Moji200",
+      "source_url": "https://www.facebook.com/Moji200/videos/-need-a-cleaner-home-in-leicester-surrounding-areas-looking-for-reliable-and-pro/1404249411843556/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "End of tenancy cleaning enquiry",
+      "condition": "Discuss cleaning at the end of a tenancy. Share the property type, rooms, condition, access and priorities, then confirm current coverage, suitable scope, exclusions, products, equipment, full quote and timing directly. No deposit return or inspection result is promised.",
+      "destination": "https://www.facebook.com/Moji200",
+      "source_url": "https://www.facebook.com/Moji200/videos/-need-a-cleaner-home-in-leicester-surrounding-areas-looking-for-reliable-and-pro/1404249411843556/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}
