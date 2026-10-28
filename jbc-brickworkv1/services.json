@@ -1,0 +1,50 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Garden wall enquiry",
+      "condition": "Discuss a new garden wall or work to an existing one. Describe the location, approximate dimensions, condition, access and preferred finish, then confirm suitable scope, materials, any required permissions or professional input, full quote and timing directly with Jack.",
+      "destination": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "source_url": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Re-pointing enquiry",
+      "condition": "Ask about mortar joints needing attention. Describe the brickwork, extent, condition, access and any known issues, then agree an appropriate assessment, materials, suitable scope, exclusions, full quote and arrangements directly. No repair specification or result is determined here.",
+      "destination": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "source_url": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "Extension enquiry",
+      "condition": "Discuss brickwork for an extension. Explain the property and proposed work, drawings or approvals already available, and access. Confirm what JBC can undertake, any required professional input or permissions, materials, exclusions, full quote and timing directly.",
+      "destination": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "source_url": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "3",
+      "label": "Brickwork repair enquiry",
+      "condition": "Explain the damaged or worn brickwork and the property’s condition. Confirm suitable assessment, scope, materials, access, any required professional input, full quote and timing directly. No structural diagnosis, safety certification or emergency response is provided here.",
+      "destination": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "source_url": "https://www.facebook.com/p/JBC-Brickwork-61565542462315/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}

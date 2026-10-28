@@ -1,0 +1,7 @@
+{
+  "source_sha256": "17f32b3133008018af922a3ac8e3efdaded225afb32c044aa5950443b17f308e",
+  "method": "Genuine monochrome Potrace/threshold135/turdsize10/opttolerance0.15/83paths.",
+  "paths": 83,
+  "sha256": "87b81c496348ce519ba7f71097063aa35aef4f5c129db1f9fc357d8edb1e55d6",
+  "verdict": "Unused genuine monochrome trace loses burgundy, gold and orange colours and photograph detail. Whole original retained."
+}

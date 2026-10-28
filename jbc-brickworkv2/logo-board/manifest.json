@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "JBC",
+      "brand": "JBC Brickwork",
+      "variants": [
+        {
+          "id": "original",
+          "reference": true,
+          "label": "Original · Used on site",
+          "image": "/website-version-assets/17f32b3133008018af922a3ac8e3efdaded225afb32c044aa5950443b17f308e.jpeg",
+          "width": 2048,
+          "height": 1349,
+          "source": "https://www.facebook.com/photo/?fbid=122093915408518082&set=a.122093913446518082",
+          "verdict": "The complete, unchanged original is used on the site. Main final reconciliation and the separate asynchronous working QC passed in the recorded scope. See the final report for any fixes and limits. The GPT and genuine SVG alternatives remain unused. No production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · Needs changes",
+          "image": "/website-version-assets/3daac714cc8029e87691df21058a377475b910a4f3e703982f19e6a529561314.png",
+          "width": 1545,
+          "height": 1018,
+          "verdict": "Unused recreation changes lettering, spacing, texture and fine edges. Whole published card photograph retained."
+        },
+        {
+          "id": "svg",
+          "label": "SVG · Needs changes",
+          "image": "/website-version-assets/87b81c496348ce519ba7f71097063aa35aef4f5c129db1f9fc357d8edb1e55d6.svg",
+          "width": 2048,
+          "height": 1349,
+          "verdict": "Unused genuine monochrome trace loses burgundy, gold and orange colours and photograph detail. Whole original retained."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-02266bda-6a26-4cc8-8c3e-624c77d46fd5",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case logo-brand. Faithful comparison recreation of wholepublishedJBCBrickworkcard photograph. Preserve landscape burgundytexture/roundedcard/palemargins/crossinggoldlines/orangebrickstack/twosilvertrowels. Exact JBC BRICKWORK and BUILT ON REPUTATION, samecolours/content/composition, nocrop/additions. Originalretained.\n",
+  "original_path": "/website-version-assets/3daac714cc8029e87691df21058a377475b910a4f3e703982f19e6a529561314.png",
+  "sha256": "3daac714cc8029e87691df21058a377475b910a4f3e703982f19e6a529561314",
+  "dimensions": [
+    1545,
+    1018
+  ],
+  "verdict": "Unused recreation changes lettering, spacing, texture and fine edges. Whole published card photograph retained."
+}
