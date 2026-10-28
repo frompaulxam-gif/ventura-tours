@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "QN",
+      "brand": "Queen Nails Leicester",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Verified business name · no usable original logo verified",
+          "image": "/website-version-assets/0a5a6da3d4a2800049daef128522416b8cd45765d984453394a84bb970fca6ff.svg",
+          "width": 1254,
+          "height": 1254,
+          "source": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+          "verdict": "Plain business-name reference only. No usable original logo was verified. The new GPT logo concept is used on the private preview under Paul’s direct instruction; it is not recovered or owner-approved branding. Main final reconciliation and the named builder’s self-QC passed within the recorded scope. See the final report for authorship and limits. No independent final or production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · New logo concept used on site",
+          "image": "/website-version-assets/0157f9c4f779f754e5e77af7c2bec15e0ba8a8ac7c8b070143fcbc23d75ddfe6.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "New concept selected. Exact verified name, charcoal Q and gold crown remain readable on whole square. Proposed branding, not recovered or owner-approved."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG · Comparison only",
+          "image": "/website-version-assets/f9c4184c9413d7e3849e24ebdd56e6571817856c7039ece51f6cbd3eb815513b.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused monochrome trace simplifies small edges and loses the gold crown colour. Generated raster concept selected; no original recovered."
+        }
+      ]
+    }
+  ]
+}

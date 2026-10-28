@@ -1,0 +1,7 @@
+{
+  "source_sha256": "0157f9c4f779f754e5e77af7c2bec15e0ba8a8ac7c8b070143fcbc23d75ddfe6",
+  "method": "Genuine monochrome Potrace threshold230/turdsize4/opttolerance0.08/22 traced paths, full native1254square pale vector canvas.",
+  "paths": 22,
+  "sha256": "f9c4184c9413d7e3849e24ebdd56e6571817856c7039ece51f6cbd3eb815513b",
+  "verdict": "Unused monochrome trace simplifies small edges and loses the gold crown colour. Generated raster concept selected; no original recovered."
+}

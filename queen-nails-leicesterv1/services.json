@@ -1,0 +1,116 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Acrylic nails enquiry",
+      "condition": "Ask about acrylic nail options, your preferred length and shape. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Glitter nails enquiry",
+      "condition": "Discuss glitter options and the finish you have in mind. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "Nail art enquiry",
+      "condition": "Bring your ideas or a reference image and discuss suitable nail art. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "3",
+      "label": "Gel nails enquiry",
+      "condition": "Discuss gel nail options and your preferred finish. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "4",
+      "label": "Manicure enquiry",
+      "condition": "Ask about a manicure and the finish you would like. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "5",
+      "label": "Pedicure enquiry",
+      "condition": "Ask about a pedicure and your preferred finish. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "6",
+      "label": "Shellac nails enquiry",
+      "condition": "Discuss Shellac nail options and your preferred colour. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "7",
+      "label": "Ombré nails enquiry",
+      "condition": "Ask about an ombré finish and the colours you have in mind. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "8",
+      "label": "BIAB / builder gel enquiry",
+      "condition": "Discuss BIAB or builder gel options for your nails. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "9",
+      "label": "Eyebrow waxing & tinting enquiry",
+      "condition": "Ask about eyebrow waxing or tinting and any consultation or patch test requirements. Confirm suitable treatment, any removal or preparation needed, full price, appointment length and timing directly with the salon. No enquiry or booking is created here.",
+      "destination": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "source_url": "https://www.facebook.com/p/Queen-Nails-Leicester-100083143846483/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}
