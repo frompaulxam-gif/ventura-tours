@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-5e3a13f7-b617-4a94-9f5a-00b5dc5d58a3",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case logo-brand. Faithful comparison recreation whole published SparkleSparkle square. Preserve black square/goldSSmonogram/threesparkles/illustratedheadscarfwomanvacuum/sweepingloop andexact Sparkle Sparkle/CLEANING SERVICES. No crop/additions; originalselected; artworknotstaff.\n",
+  "original_path": "/website-version-assets/278bdb275d6439e300bddc4eb0187ee0e3132d355121cd0cd56914e57451f91b.png",
+  "sha256": "278bdb275d6439e300bddc4eb0187ee0e3132d355121cd0cd56914e57451f91b",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "Unused recreation changes the monogram, illustrated figure, script and spacing. Whole published original retained."
+}

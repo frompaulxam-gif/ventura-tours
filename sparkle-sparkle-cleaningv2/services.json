@@ -1,0 +1,28 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.facebook.com/people/Sparkle-Sparkle-Cleaning-Services/61586527197913/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Standard cleaning enquiry",
+      "condition": "Discuss cleaning for your home, business or community space. Describe the rooms, surfaces, condition and priorities, then confirm current coverage, suitable tasks, products and equipment, exclusions, full quote and timing directly.",
+      "destination": "https://www.facebook.com/people/Sparkle-Sparkle-Cleaning-Services/61586527197913/",
+      "source_url": "https://www.facebook.com/people/Sparkle-Sparkle-Cleaning-Services/61586527197913/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Deep cleaning enquiry",
+      "condition": "Ask about more detailed cleaning for your space. Share the rooms, surfaces, condition and priorities, then agree suitable tasks, products and equipment, exclusions, full quote and arrangements directly. Appliance interiors and specialist work are not automatically included.",
+      "destination": "https://www.facebook.com/people/Sparkle-Sparkle-Cleaning-Services/61586527197913/",
+      "source_url": "https://www.facebook.com/people/Sparkle-Sparkle-Cleaning-Services/61586527197913/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "SS",
+      "brand": "Sparkle Sparkle Cleaning Services",
+      "variants": [
+        {
+          "id": "original",
+          "reference": true,
+          "label": "Original · Used on site",
+          "image": "/website-version-assets/6610035dcec6e310136fe88bb3366d5659c855664fc6c886372dd251b17c66a2.jpeg",
+          "width": 1024,
+          "height": 1024,
+          "source": "https://www.facebook.com/photo/?fbid=122096043009217573&set=a.122096034309217573",
+          "verdict": "The complete, unchanged original is used on the site. Main final reconciliation and the separate asynchronous working QC passed in the recorded scope. See the final report for any fixes and limits. The GPT and genuine SVG alternatives remain unused. No production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · Needs changes",
+          "image": "/website-version-assets/278bdb275d6439e300bddc4eb0187ee0e3132d355121cd0cd56914e57451f91b.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused recreation changes the monogram, illustrated figure, script and spacing. Whole published original retained."
+        },
+        {
+          "id": "svg",
+          "label": "SVG · Needs changes",
+          "image": "/website-version-assets/0067ff91910cf9645f53abf838fe02e0c86a44f57d8645d3c25d7947509bb757.svg",
+          "width": 1024,
+          "height": 1024,
+          "verdict": "Unused genuine monochrome trace loses gold gradients and fine detail. Whole original retained."
+        }
+      ]
+    }
+  ]
+}
