@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-6aeaf27e-5231-4873-912d-95e89afbeff3",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case: logo-brand. Create a new private concept logo for a small Leicester cleaning business, not official or recovered branding. Exact business name Shanny's Sparkle & Shine. Square pale blush background, graceful deep raspberry readable wordmark on three balanced lines: Shanny's / Sparkle & Shine / CLEANING SERVICES. Restrained two or three four-point sparkles and a simple sweeping curved stroke, warm approachable hand-lettered name balanced with small crisp sans serif descriptor. Keep lettering highly readable when small, generous margins, flat graphic, no people or portrait, no photorealism, no mockup, no phone/address, no quality/insurance/DBS claims, no added slogan or words. Primary colours raspberry, rose and warm pale blush. This is a clearly labelled new concept for the private preview.\n",
+  "original_path": "/website-version-assets/10318f90b8cf3f8a5115a05ae89bd0c3cf64353902d9b16d413cc97e1f40c51a.png",
+  "sha256": "10318f90b8cf3f8a5115a05ae89bd0c3cf64353902d9b16d413cc97e1f40c51a",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "New generated logo concept used under Paul’s instruction. It is not recovered, official or owner-approved branding."
+}

@@ -1,0 +1,7 @@
+{
+  "source_sha256": "10318f90b8cf3f8a5115a05ae89bd0c3cf64353902d9b16d413cc97e1f40c51a",
+  "method": "Genuine monochrome trace ofnewconcept/Potrace/threshold150/turdsize3/opttolerance0.08/26paths.",
+  "paths": 26,
+  "sha256": "afe71fdececaa9f93c62d7ba484d3d7664d999b91f06a4a7b8129a92ad3ff615",
+  "verdict": "Unused genuine monochrome trace of the new concept loses rose and raspberry tones and fine edges."
+}

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "SSS",
+      "brand": "Shanny's Sparkle & Shine",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Verified business name · no usable original logo verified",
+          "image": "/website-version-assets/04c735ff0a60dfec780179ef22bc3765f169c1ba00183a44be88e30ece1265fa.svg",
+          "width": 1254,
+          "height": 1254,
+          "source": "https://www.instagram.com/shannysparkle_/",
+          "verdict": "Plain verified business-name reference only. The published 150px profile image is an illustration without the business name; it is retained in research. This new logo concept is used under Paul’s instruction, not recovered or owner-approved branding. Main reconciliation and working QC passed within the recorded scope. Genuine traced SVG comparison remains unused. No production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · New logo concept used on site",
+          "image": "/website-version-assets/10318f90b8cf3f8a5115a05ae89bd0c3cf64353902d9b16d413cc97e1f40c51a.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "New generated logo concept used under Paul’s instruction. It is not recovered, official or owner-approved branding."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG · Comparison only",
+          "image": "/website-version-assets/afe71fdececaa9f93c62d7ba484d3d7664d999b91f06a4a7b8129a92ad3ff615.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused genuine monochrome trace of the new concept loses rose and raspberry tones and fine edges."
+        }
+      ]
+    }
+  ]
+}
