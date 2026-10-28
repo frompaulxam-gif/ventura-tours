@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-6ed1a7bf-dfd0-4d26-83a3-426819fc8c7d",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case logo-brand. Faithful wholepublishedEdinasSparkle comparison. Preserveblack square/twodelicaterosegoldcircles/roofchimneywindow/sparkle/white serif Edina’s/spacedrosegold SPARKLE/flankingrules/lowerfourpointsparkle. Exactlettering/colours/spacing/margins; no crop/additions; originalselected.\n",
+  "original_path": "/website-version-assets/1e0194a57d9951982ae70719a889d14c41ee073b115c86f08751196045c8c1c8.png",
+  "sha256": "1e0194a57d9951982ae70719a889d14c41ee073b115c86f08751196045c8c1c8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "Unused recreation changes roof and window details, line weights, lettering and spacing. Whole published original retained."
+}

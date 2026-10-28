@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "ES",
+      "brand": "Edina's Sparkle",
+      "variants": [
+        {
+          "id": "original",
+          "reference": true,
+          "label": "Original · Used on site",
+          "image": "/website-version-assets/047e0ed6d6b7c65bd5c2527d6cd55bcd02a554017aa5d8a688067b8908e21a5e.jpeg",
+          "width": 1254,
+          "height": 1254,
+          "source": "https://www.instagram.com/edinassparkles/p/DbK0W_rCBb6/",
+          "verdict": "The complete, unchanged original is used on the site. Main final reconciliation and the separate asynchronous working QC passed in the recorded scope. See the final report for any fixes and limits. The GPT and genuine SVG alternatives remain unused. No production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · Needs changes",
+          "image": "/website-version-assets/1e0194a57d9951982ae70719a889d14c41ee073b115c86f08751196045c8c1c8.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused recreation changes roof and window details, line weights, lettering and spacing. Whole published original retained."
+        },
+        {
+          "id": "svg",
+          "label": "SVG · Needs changes",
+          "image": "/website-version-assets/5c545a6a4e1b478760a054cb97f1f190fcdfaa88516b9c5293af9bab0c61f38d.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused genuine monochrome trace loses rose gold tones, gradients and fine edges. Whole original retained."
+        }
+      ]
+    }
+  ]
+}

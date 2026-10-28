@@ -1,0 +1,7 @@
+{
+  "source_sha256": "047e0ed6d6b7c65bd5c2527d6cd55bcd02a554017aa5d8a688067b8908e21a5e",
+  "method": "Genuine monochrome Potrace/threshold145/turdsize3/opttolerance0.08/18paths.",
+  "paths": 18,
+  "sha256": "5c545a6a4e1b478760a054cb97f1f190fcdfaa88516b9c5293af9bab0c61f38d",
+  "verdict": "Unused genuine monochrome trace loses rose gold tones, gradients and fine edges. Whole original retained."
+}

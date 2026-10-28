@@ -1,0 +1,50 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.instagram.com/edinassparkles/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Regular cleaning enquiry",
+      "condition": "Discuss ongoing cleaning help for your home. Share the rooms, priorities and preferred frequency, then confirm current coverage, suitable tasks, products and equipment, full quote and arrangements directly with Edina.",
+      "destination": "https://www.instagram.com/edinassparkles/",
+      "source_url": "https://www.instagram.com/edinassparkles/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Deep cleaning enquiry",
+      "condition": "Ask about more detailed cleaning. Describe the rooms, surfaces, condition and priorities, then agree suitable tasks, products and equipment, exclusions, full quote and timing directly. Appliance interiors and specialist work are not automatically included.",
+      "destination": "https://www.instagram.com/edinassparkles/",
+      "source_url": "https://www.instagram.com/edinassparkles/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "One-off cleaning enquiry",
+      "condition": "Discuss a clean for a particular occasion or a home that needs extra attention. Share the rooms, condition and priorities, then confirm suitable tasks, exclusions, full quote and timing directly. No ongoing commitment or slot is created here.",
+      "destination": "https://www.instagram.com/edinassparkles/",
+      "source_url": "https://www.instagram.com/edinassparkles/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "3",
+      "label": "End of tenancy cleaning enquiry",
+      "condition": "Discuss cleaning for a property you are leaving. Share the property type, rooms, condition, access and priorities, then confirm suitable tasks, exclusions, full quote and timing directly. No deposit return or inspection result is promised.",
+      "destination": "https://www.instagram.com/edinassparkles/",
+      "source_url": "https://www.instagram.com/edinassparkles/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}
