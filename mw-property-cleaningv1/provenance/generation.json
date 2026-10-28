@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-02310a9f-1bf0-44a9-9edf-d623e05bb812",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case logo-brand. Faithful comparison recreation whole published M.W square logo. Preserve grey canvas black angularroof/chimney/nestedrooflines/greyM/golddot/blackW/PROPERTY CLEANING/goldrules/threegoldstars/exactscript Built with Mick, carried on with pride. No crop/additions; originalselected.\n",
+  "original_path": "/website-version-assets/1c65749a8a749a9c7ee1b1771e8c0b14fa00ac9c4cc2d3865e39481d2cb8dcfb.png",
+  "sha256": "1c65749a8a749a9c7ee1b1771e8c0b14fa00ac9c4cc2d3865e39481d2cb8dcfb",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "Unused recreation changes roof lines, lettering, spacing, script and background. Whole published original retained."
+}

@@ -1,0 +1,39 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Deep clean enquiry",
+      "condition": "Discuss a more detailed clean for your home. Share the rooms, surfaces, condition and priorities, then agree suitable tasks, products and equipment, exclusions, full quote and timing directly. Appliance interiors and specialist work are not automatically included.",
+      "destination": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "source_url": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "Regular clean enquiry",
+      "condition": "Ask about ongoing help with household cleaning. Describe your rooms, priorities and preferred frequency, then confirm current coverage, suitable tasks, products and equipment, full quote and arrangements directly.",
+      "destination": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "source_url": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "Move-out clean enquiry",
+      "condition": "Discuss cleaning for a property you are leaving. Share the property type, condition, rooms, access and priorities. Confirm suitable tasks, exclusions, full quote and timing directly. No deposit return or inspection outcome is promised.",
+      "destination": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "source_url": "https://www.facebook.com/p/MW-Property-Cleaning-61586850437844/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}
