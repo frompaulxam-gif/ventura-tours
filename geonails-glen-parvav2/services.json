@@ -1,0 +1,94 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.treatwell.co.uk/place/geonails/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Shellac / Gel Polish Manicure",
+      "price_gbp": 25,
+      "price_from": false,
+      "duration_minutes": 80,
+      "condition": "Gel polish manicure as listed. Confirm existing product, any removal, colour and the complete appointment with Georgiana.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-0",
+      "source_duration": "PT80M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "1",
+      "label": "Nail Extensions",
+      "price_gbp": 40,
+      "price_from": false,
+      "duration_minutes": 120,
+      "condition": "Nail extensions as listed. Confirm material, shape, length, design, any removal and the full appointment directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-1",
+      "source_duration": "PT120M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "2",
+      "label": "Gel/Biab Infill ( only after my work)",
+      "price_gbp": 33,
+      "price_from": false,
+      "duration_minutes": 100,
+      "condition": "Infill is listed only after Georgiana’s own work. It is not a new full set. Confirm existing product, length, colour and any removal directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-2",
+      "source_duration": "PT100M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "3",
+      "label": "Gel/Biab overlay",
+      "price_gbp": 30,
+      "price_from": false,
+      "duration_minutes": 100,
+      "condition": "Gel/BIAB overlay as listed. Confirm colour, existing product, any removal and the full appointment directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-3",
+      "source_duration": "PT100M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "4",
+      "label": "Gel/Biab overlay + colour",
+      "price_gbp": 35,
+      "price_from": false,
+      "duration_minutes": 120,
+      "condition": "Gel/BIAB overlay with colour as listed. Confirm the colour, existing product, any removal and full appointment directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-4",
+      "source_duration": "PT120M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "5",
+      "label": "Express Pedicure",
+      "price_gbp": 25,
+      "price_from": false,
+      "duration_minutes": 60,
+      "condition": "Express pedicure as listed. Confirm the treatment inclusions, existing product and any removal directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-5",
+      "source_duration": "PT60M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "6",
+      "label": "Gel/Biab infill size XL",
+      "price_gbp": 35,
+      "price_from": false,
+      "duration_minutes": 100,
+      "condition": "XL gel/BIAB infill. Confirm the existing set is Georgiana’s own work before booking, together with length, colour, any removal and full appointment.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-6",
+      "source_duration": "PT100M",
+      "source_description": "Manually transcribed visible provider listing."
+    },
+    {
+      "id": "7",
+      "label": "Deluxe Pedicure",
+      "price_gbp": 45,
+      "price_from": false,
+      "duration_minutes": 100,
+      "condition": "Deluxe pedicure as listed. Confirm inclusions, existing product, any removal and the full appointment directly.",
+      "source_offer_id": "https://www.treatwell.co.uk/place/geonails/#manual-selected-7",
+      "source_duration": "PT100M",
+      "source_description": "Manually transcribed visible provider listing."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-c19c9304-61c8-493c-989c-9c04be66d73b",
+  "underlying_model": "Not exposed",
+  "prompt": "Use case: logo-brand. Asset type: new logo concept for a private local nail salon preview, not existing official branding. Business exact name: GeoNails. Create an elegant, highly legible bespoke dark-plum wordmark GeoNails on genuinely transparent background. Use refined rounded sans lettering, with a restrained thin curved nail-shaped accent integrated above the G, no other words, no slogans, no location, no photographs, no mockup, no texture, no glow, no shadow. Letter case must read exactly GeoNails. Wide landscape composition with comfortable transparent margins, entire wordmark visible. Colour #4A253B, a small muted rose accent #B98194. Salon audience, calm precise personal nail care. This will be explicitly labelled new logo concept, so do not imitate a famous brand or imply official authenticity.",
+  "original_path": "/website-version-assets/1921ffe62c3ce44c80e646860e3ce73da3fdb2e572b9f2fa7690fceee514a7b7.png",
+  "sha256": "1921ffe62c3ce44c80e646860e3ce73da3fdb2e572b9f2fa7690fceee514a7b7",
+  "dimensions": [
+    2094,
+    751
+  ],
+  "verdict": "New GeoNails logo concept used on private preview. Correct name, transparent whole canvas and plum/rose palette; not an original logo or owner-approved branding."
+}

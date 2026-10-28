@@ -1,0 +1,7 @@
+{
+  "source_sha256": "1921ffe62c3ce44c80e646860e3ce73da3fdb2e572b9f2fa7690fceee514a7b7",
+  "method": "Genuine monochrome Potrace trace from generated concept, white-composited luma threshold220/turdsize5/opttolerance0.1/10paths. No embedded raster.",
+  "paths": 10,
+  "sha256": "46f2c2eca0acceaf82b6824b32a76808dc9e552d2b498f5b10dfa2ef69cd7e5e",
+  "verdict": "Comparison only. Genuine monochrome trace loses the rose accent and subtle edge antialiasing; not an official vector master."
+}

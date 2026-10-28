@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "GN",
+      "brand": "GeoNails",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Verified business name · no usable original logo verified",
+          "image": "/website-version-assets/d53ab5ec3e463b9c945ac1e886c921ba822f1d06b56182a477948e2d8f192931.svg",
+          "width": 2094,
+          "height": 751,
+          "source": "https://www.instagram.com/geonails.123/",
+          "verdict": "Plain business-name reference only, not a recovered logo. The Instagram avatar is a portrait and workspace wall lettering is not a usable flat original. New generated concept used under Paul’s rule. Main final reconciliation and the named builder’s self-QC passed within the recorded scope. See the final report for authorship and limits. No independent final or production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · New logo concept used on site",
+          "image": "/website-version-assets/1921ffe62c3ce44c80e646860e3ce73da3fdb2e572b9f2fa7690fceee514a7b7.png",
+          "width": 2094,
+          "height": 751,
+          "verdict": "New GeoNails logo concept used on private preview. Correct name, transparent whole canvas and plum/rose palette; not an original logo or owner-approved branding."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG · Comparison only",
+          "image": "/website-version-assets/46f2c2eca0acceaf82b6824b32a76808dc9e552d2b498f5b10dfa2ef69cd7e5e.svg",
+          "width": 2094,
+          "height": 751,
+          "verdict": "Comparison only. Genuine monochrome trace loses the rose accent and subtle edge antialiasing; not an official vector master."
+        }
+      ]
+    }
+  ]
+}
