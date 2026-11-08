@@ -40,7 +40,7 @@
   if(!Number.isSafeInteger(subtotal)||subtotal!==t.subtotal||quantity!==t.quantity||t.net!==t.subtotal-t.discount||t.beforeCash!==t.net+t.service||t.total!==t.beforeCash-t.cashDiscount)throw Error('The bill amounts do not match. Check the bill before printing.');
   const d=b.discount||{type:'none'},cash=d.type==='cash',exempt=b.lines.some(line=>line.serviceExempt);
   let sums=amountRow('Subtotal',t.subtotal);
-  if(t.discount){sums+=amountRow('Discount'+(d.type==='percent'?' '+d.value/100+'%':''),t.discount,true)+amountRow('After discount',t.net);}
+  if(t.discount||d.type==='food'){sums+=amountRow(d.type==='food'?'Food discount 10%':'Discount'+(d.type==='percent'?' '+d.value/100+'%':''),t.discount,true)+amountRow('After discount',t.net);}
   const serviceLabel=t.serviceRate===0?'Service charge - removed':exempt&&t.service===0?'Service charge - lunch exempt':'Service charge '+t.serviceRate+'%';
   sums+=amountRow(serviceLabel,t.service);
   if(cash)sums+=amountRow('Before cash discount',t.beforeCash)+amountRow('Cash discount 10%',t.cashDiscount,true);

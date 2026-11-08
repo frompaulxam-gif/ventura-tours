@@ -1,6 +1,15 @@
 (function(root){
   'use strict';
   const MAX_PENCE=100000000;
+  let menuProducts=[];
+  function setMenuProducts(products){menuProducts=products;}
+  function productIsFood(product){return Boolean(product&&product.group==='Food'&&product.id!=='F-TAKEAWAY-BOX');}
+  function isFood(line){
+    if(typeof line.foodDiscountEligible==='boolean')return line.foodDiscountEligible;
+    const sku=line.extraMeat?.base?.sku||line.sku;
+    const product=menuProducts.find(p=>p.variants.some(v=>v.sku===sku)||p.setMenu&&typeof sku==='string'&&sku.startsWith(p.id+'-'));
+    return productIsFood(product);
+  }
   function integer(n,name,max=MAX_PENCE){if(!Number.isSafeInteger(n)||n<0||n>max)throw new Error(`Invalid ${name}`);return n;}
   function parseMoney(text){
     const s=String(text).trim();
@@ -14,18 +23,19 @@
     const bp=parseMoney(s);if(bp>10000)throw new Error('The discount cannot be more than 100%.');return bp;
   }
   function calculate(bill,basis){
-    let subtotal=0,quantity=0,exemptSubtotal=0;
-    for(const l of bill.lines){integer(l.unitPrice,'price');integer(l.quantity,'quantity',999);const lineTotal=l.unitPrice*l.quantity;subtotal+=lineTotal;quantity+=l.quantity;if(l.serviceExempt)exemptSubtotal+=lineTotal;}
+    let subtotal=0,quantity=0,exemptSubtotal=0,foodSubtotal=0,exemptFoodSubtotal=0;
+    for(const l of bill.lines){integer(l.unitPrice,'price');integer(l.quantity,'quantity',999);const lineTotal=l.unitPrice*l.quantity;subtotal+=lineTotal;quantity+=l.quantity;if(l.serviceExempt)exemptSubtotal+=lineTotal;if(isFood(l)){foodSubtotal+=lineTotal;if(l.serviceExempt)exemptFoodSubtotal+=lineTotal;}}
     integer(subtotal,'subtotal');
     const d=bill.discount||{type:'none',value:0};
     let discount=0;
     if(d.type==='percent'){integer(d.value,'percentage',10000);discount=Math.round(subtotal*d.value/10000);}
+    else if(d.type==='food'){if(d.value!==1000)throw Error('Food discount must be 10%');discount=Math.round(foodSubtotal/10);}
     else if(d.type==='amount'){integer(d.value,'discount');discount=Math.min(d.value,subtotal);}
     else if(d.type==='cash'){if(d.value!==1000)throw new Error('Cash discount must be 10%');}
     else if(d.type!=='none')throw new Error('Unknown discount type');
     const net=subtotal-discount;
     if(!['afterDiscount','beforeDiscount'].includes(basis))return {subtotal,quantity,discount,net,service:null,total:null};
-    const exemptNet=subtotal?Math.round(exemptSubtotal*net/subtotal):0;
+    const exemptNet=d.type==='food'?exemptSubtotal-(foodSubtotal?Math.round(discount*exemptFoodSubtotal/foodSubtotal):0):(subtotal?Math.round(exemptSubtotal*net/subtotal):0);
     const serviceBase=basis==='afterDiscount'?Math.max(0,net-exemptNet):Math.max(0,subtotal-exemptSubtotal);
     const serviceRate=bill.serviceRate??10;
     if(![0,10].includes(serviceRate))throw new Error('Invalid service-charge rate');
@@ -47,6 +57,6 @@
     if(!['afterDiscount','beforeDiscount',null].includes(state.serviceBasis))throw new Error('Invalid service-charge setting.');
     return state;
   }
-  const api={calculate,parseMoney,parsePercent,validateState};
+  const api={calculate,parseMoney,parsePercent,validateState,setMenuProducts,isFood,productIsFood};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.BillingEngine=api;
 })(typeof window!=='undefined'?window:globalThis);
