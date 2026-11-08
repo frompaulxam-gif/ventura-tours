@@ -1,0 +1,39 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://www.instagram.com/nailslab_leicester/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Acrylic nails enquiry",
+      "condition": "Ask about acrylic nail options and your preferred short, simple finish. The salon lists 16+ in its current bio. Confirm suitable treatment, any preparation or removal, full quote, appointment length, deposit and booking policy directly. No enquiry or booking is sent here.",
+      "destination": "https://www.instagram.com/nailslab_leicester/",
+      "source_url": "https://www.instagram.com/reel/DHEq1_XMmxK/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "1",
+      "label": "BIAB enquiry",
+      "condition": "Discuss BIAB options and the finish you have in mind. The salon lists 16+ in its current bio. Confirm suitable treatment, any preparation or removal, full quote, appointment length, deposit and booking policy directly. No enquiry or booking is sent here.",
+      "destination": "https://www.instagram.com/nailslab_leicester/",
+      "source_url": "https://www.instagram.com/reel/DHEq1_XMmxK/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    },
+    {
+      "id": "2",
+      "label": "Gel polish enquiry",
+      "condition": "Ask about a gel polish colour and finish. The salon lists 16+ in its current bio. Confirm suitable treatment, any preparation or removal, full quote, appointment length, deposit and booking policy directly. No enquiry or booking is sent here.",
+      "destination": "https://www.instagram.com/nailslab_leicester/",
+      "source_url": "https://www.instagram.com/reel/DHEq1_XMmxK/",
+      "kind": "public_enquiry_route",
+      "price_gbp": null,
+      "price_from": false,
+      "duration_minutes": null
+    }
+  ]
+}

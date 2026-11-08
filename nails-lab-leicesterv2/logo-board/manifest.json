@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "NL",
+      "brand": "Nails Lab Leicester",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Original published identity reference \u00b7 not a clean logo",
+          "image": "/website-version-assets/148de8690b15293f8e7875610e25008505e6b3e7f28f870e0198e12a2c794d9a.jpeg",
+          "width": 403,
+          "height": 403,
+          "source": "https://www.instagram.com/nailslab_leicester/",
+          "verdict": "Whole authentic403square shop fascia photograph, preserved unchanged as nonvotable identity reference. No clean original logo verified. New conceptusedonsite."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image \u00b7 New logo concept used on site",
+          "image": "/website-version-assets/463b59022cb8ef36c930be1acb998be05927b156eb4bef09e775231a0a148fea.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Newconceptselected. Exact NAILS LAB/LEICESTER boldblacklettering onivory, whole1254square. Proposedbranding only, not recovered orownerapproved."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG \u00b7 Comparison only",
+          "image": "/website-version-assets/1ebc519e7da8f9e6a0863a841bf0e1acead5bab119161b8cc783fbcb9c500912.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused monochrome trace ofgeneratedconcept. Fineedges andpaper tonealtered; rasterconcept selected."
+        }
+      ]
+    }
+  ]
+}
