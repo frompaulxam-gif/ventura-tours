@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f3f0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Soundboard">
+<title>Jarvis Soundboard</title>
+<link rel="apple-touch-icon" href="./icon-180.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<style>
+* { box-sizing: border-box }
+html { background: #f4f3f0; color: #242122; font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif }
+body { margin: 0; padding: max(32px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)) }
+main { width: min(100%, 520px); margin: 4vh auto 0 }
+header { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 700 }
+header img { width: 28px; height: 28px; border-radius: 7px }
+h1 { margin: 12px 0 28px; font-size: clamp(40px, 9vw, 60px); letter-spacing: -.065em; line-height: 1.05 }
+section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
+button { appearance: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; text-align: left; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; min-height: clamp(94px, 15svh, 145px); padding: 14px 16px; background: #fff; color: inherit; border: 1px solid #d5d2cd; border-bottom-width: 3px; border-radius: 14px; font: inherit; font-size: 29px; letter-spacing: -.045em; font-weight: 650; cursor: pointer }
+button:last-child { grid-column: 1 / -1 }
+button::before { content: attr(aria-keyshortcuts); font: 600 13px ui-monospace, monospace; color: #625e67; letter-spacing: 0 }
+button[data-playing], button:active { background: #5a43d6; border-color: #4936b0; color: white; transform: translateY(1px) }
+button[data-playing]::before, button:active::before { color: white }
+button:focus-visible { outline: 3px solid #5a43d6; outline-offset: 3px }
+p { font-size: 14px; color: #57535b; margin: 16px 0 0 }
+p:empty { display: none }
+@media (max-height: 540px) { main { margin-top: 0 } button { min-height: 76px } h1 { margin-bottom: 14px } }
+</style>
+<script src="./clips.js" defer></script>
+<script src="./app.js" defer></script>
+</head>
+<body><main>
+<header><img alt="" src="./icon-180.png">Jarvis</header>
+<h1>Soundboard</h1>
+<section aria-label="Sound pads">
+<button type="button" aria-keyshortcuts="1">fah</button>
+<button type="button" aria-keyshortcuts="2">dumn</button>
+<button type="button" aria-keyshortcuts="3">rizz</button>
+<button type="button" aria-keyshortcuts="4">bruh</button>
+<button type="button" aria-keyshortcuts="5">wtf</button>
+</section>
+<p role="status" id="play-status"></p><p role="status" id="offline"></p>
+<audio preload="none" playsinline></audio>
+</main></body></html>
