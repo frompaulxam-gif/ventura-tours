@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "NA",
+      "brand": "Nail Art Leicester",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Original published identity reference \u00b7 not a clean logo",
+          "image": "/website-version-assets/4819c37adcb2d6b581f7b823770fa200cd9224b7a3cda5f8990b71c533e1037d.jpeg",
+          "width": 960,
+          "height": 960,
+          "source": "https://www.facebook.com/p/Nails-Art-Leicester-61583937951687/",
+          "verdict": "Whole authentic960square frontage photograph unchanged. Notcleanmasterlogo. Newconceptusedonsite; referenceisnonvotable."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image \u00b7 New logo concept used on site",
+          "image": "/website-version-assets/42d2c95bd1ab3f9aac133cfff8173824e75190437e7e9eb050dd21aa85ddbbb3.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "New conceptselected: verified NAIL ART/LEICESTER lettering, warmgoldondeepcharcoal, whole1254square. Proposedbrandingonly."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG \u00b7 Comparison only",
+          "image": "/website-version-assets/9c838dc24911d505137d983b12509340c137de91551f829694ba05201767e7b1.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Unused true vector trace, fineletteredges/tones differ; generatedconceptselected."
+        }
+      ]
+    }
+  ]
+}

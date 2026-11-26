@@ -1,0 +1,7 @@
+{
+  "source_sha256": "42d2c95bd1ab3f9aac133cfff8173824e75190437e7e9eb050dd21aa85ddbbb3",
+  "method": "Genuine invertedluminance110 Potrace/turdsize4/opttolerance0.08/18paths, goldvectoronfullnativecharcoalcanvas.",
+  "paths": 18,
+  "sha256": "9c838dc24911d505137d983b12509340c137de91551f829694ba05201767e7b1",
+  "verdict": "Unused true vector trace, fineletteredges/tones differ; generatedconceptselected."
+}
