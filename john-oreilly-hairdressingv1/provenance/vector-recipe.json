@@ -1,0 +1,7 @@
+{
+  "source_sha256": "bd4337684ee72bae4c79a0d4f796ba8744c810a271b6b1a6479ff040b94002c8",
+  "method": "Genuine monochrome Potrace trace of original banner, threshold greater than100 inverted, turdsize2, opttolerance0.1; 49 paths. Added black canvas and grey path fill.",
+  "paths": 49,
+  "sha256": "44d7bb3b7dcb4422e06d5587b0695c895bd63533592e13b1d045aafc514fe437",
+  "verdict": "Unused genuine trace. Sharp vector paths simplify native antialiased grey edges and alter tiny lettering. Original retained."
+}

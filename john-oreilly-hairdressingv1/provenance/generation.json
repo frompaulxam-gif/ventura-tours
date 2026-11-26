@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-ce56763f-3db3-4ea6-8b00-568f601ccf5b",
+  "underlying_model": "Not exposed",
+  "prompt": "Faithful comparison reconstruction of whole supplied original black and grey landscape banner. Exact JOHN O’REILLY / HAIRDRESSING / 807 MELTON ROAD / THURMASTON / LEICESTER, no crop/additions. Private unused comparison.",
+  "original_path": "/website-version-assets/84f8c438cf7ca3bfb9a2faf4b537dc3e2b0bf96cd47ef31e0607352b62105891.png",
+  "sha256": "84f8c438cf7ca3bfb9a2faf4b537dc3e2b0bf96cd47ef31e0607352b62105891",
+  "dimensions": [
+    2164,
+    727
+  ],
+  "verdict": "Unused faithful comparison. Letter forms, spacing and edge treatment differ from the unchanged native original."
+}

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "JOR",
+      "brand": "John O’Reilly hairdressing",
+      "variants": [
+        {
+          "id": "original",
+          "reference": true,
+          "label": "Original · Used on site",
+          "image": "/website-version-assets/bd4337684ee72bae4c79a0d4f796ba8744c810a271b6b1a6479ff040b94002c8.webp",
+          "width": 2058,
+          "height": 691,
+          "source": "https://johnoreilly.setmore.com/",
+          "verdict": "Complete unchanged provider-published original banner used. Intro300/240 and headermax360/300 preserve native aspect, constrained on narrow screens. Main final reconciliation and the named builder’s self-QC passed within the recorded scope. See the final report for authorship and limits. No independent final or production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · Needs changes",
+          "image": "/website-version-assets/84f8c438cf7ca3bfb9a2faf4b537dc3e2b0bf96cd47ef31e0607352b62105891.png",
+          "width": 2164,
+          "height": 727,
+          "verdict": "Unused faithful comparison. Letter forms, spacing and edge treatment differ from the unchanged native original."
+        },
+        {
+          "id": "svg",
+          "label": "SVG · Needs changes",
+          "image": "/website-version-assets/44d7bb3b7dcb4422e06d5587b0695c895bd63533592e13b1d045aafc514fe437.svg",
+          "width": 2058,
+          "height": 691,
+          "verdict": "Unused genuine trace. Sharp vector paths simplify native antialiased grey edges and alter tiny lettering. Original retained."
+        }
+      ]
+    }
+  ]
+}

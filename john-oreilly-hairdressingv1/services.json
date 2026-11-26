@@ -1,0 +1,61 @@
+{
+  "checked": "2026-10-27",
+  "source": "https://johnoreilly.setmore.com/",
+  "services": [
+    {
+      "id": "0",
+      "label": "Skin Fade",
+      "price_gbp": 18,
+      "price_from": false,
+      "duration_minutes": 15,
+      "condition": "With John Oreilly. Skin Fade, as listed on Setmore.",
+      "source_offer_id": "https://johnoreilly.setmore.com/#service-1b3b5aad-bc57-4a7e-b8c5-e993ee7c1a1d",
+      "source_duration": "PT15M",
+      "source_description": "With John Oreilly. Skin Fade, as listed on Setmore."
+    },
+    {
+      "id": "1",
+      "label": "15 minute appointment (5-16 year old)",
+      "price_gbp": 15,
+      "price_from": false,
+      "duration_minutes": 15,
+      "condition": "With John Oreilly. Ages 5 to 16. Ages 0 to 4 are unavailable. Skin fades and patterns incur additional costs; confirm the total directly.",
+      "source_offer_id": "https://johnoreilly.setmore.com/#service-08bc6cce-b673-4bc8-87d7-33696831461c",
+      "source_duration": "PT15M",
+      "source_description": "With John Oreilly. Ages 5 to 16. Ages 0 to 4 are unavailable. Skin fades and patterns incur additional costs; confirm the total directly."
+    },
+    {
+      "id": "2",
+      "label": "15 minute senior citizen appointment",
+      "price_gbp": 10,
+      "price_from": false,
+      "duration_minutes": 15,
+      "condition": "With John Oreilly. Senior citizen appointment. Confirm eligibility directly.",
+      "source_offer_id": "https://johnoreilly.setmore.com/#service-be9414e8-1d18-413b-af44-905513a50e97",
+      "source_duration": "PT15M",
+      "source_description": "With John Oreilly. Senior citizen appointment. Confirm eligibility directly."
+    },
+    {
+      "id": "3",
+      "label": "15 Minute adult appointment",
+      "price_gbp": 17,
+      "price_from": false,
+      "duration_minutes": 15,
+      "condition": "With John Oreilly. Standard gents haircut.",
+      "source_offer_id": "https://johnoreilly.setmore.com/#service-eb8e6428-572f-4f94-a4b5-531bc02c7e65",
+      "source_duration": "PT15M",
+      "source_description": "With John Oreilly. Standard gents haircut."
+    },
+    {
+      "id": "4",
+      "label": "30 Minute adult appointment",
+      "price_gbp": 22,
+      "price_from": false,
+      "duration_minutes": 30,
+      "condition": "With John Oreilly. Haircut and beard trim, or haircut and patterns.",
+      "source_offer_id": "https://johnoreilly.setmore.com/#service-f5a7c592-71b2-47c5-8857-38b9e2853488",
+      "source_duration": "PT30M",
+      "source_description": "With John Oreilly. Haircut and beard trim, or haircut and patterns."
+    }
+  ]
+}
