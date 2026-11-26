@@ -1,0 +1,7 @@
+{
+  "source_sha256": "c6924914a2bca690a34fcbe216edfb70dc74d27ba35c10e614c046b994e6222b",
+  "method": "Genuine monochrome Potrace threshold128/turdsize4/opttolerance0.08/18 traced paths on a full native white1254square vector canvas.",
+  "paths": 18,
+  "sha256": "77bc04dda77fdacc4f828078ab958aeface5a47093c2e9f8ec014065b777d1e8",
+  "verdict": "Comparison only. Genuine trace retains lettering/frame but slightly simplifies small edges. Generated raster concept selected; no original recovered."
+}

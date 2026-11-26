@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": "BB",
+      "brand": "Barber Box by Illz",
+      "variants": [
+        {
+          "id": "verified-name",
+          "reference": true,
+          "label": "Verified business name · no usable original logo verified",
+          "image": "/website-version-assets/ad11c6d0f9e848f0daed0c37ee069a84e31733c9f4415dffb8d31bb6676ba105.svg",
+          "width": 1254,
+          "height": 1254,
+          "source": "https://www.instagram.com/barberboxbyillz/",
+          "verdict": "Plain business-name reference only. No usable original logo was verified. The new GPT logo concept is used on the private preview under Paul’s direct instruction; it is not recovered or owner-approved branding. Main final reconciliation and the named builder’s self-QC passed within the recorded scope. See the final report for authorship and limits. No independent final or production approval."
+        },
+        {
+          "id": "gpt",
+          "label": "GPT Image · New logo concept used on site",
+          "image": "/website-version-assets/c6924914a2bca690a34fcbe216edfb70dc74d27ba35c10e614c046b994e6222b.png",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "New logo concept selected under Paul’s explicit instruction. Exact verified business name is readable; whole square artwork retained. Proposed branding, not recovered original or owner-approved."
+        },
+        {
+          "id": "svg",
+          "label": "Genuine SVG · Comparison only",
+          "image": "/website-version-assets/77bc04dda77fdacc4f828078ab958aeface5a47093c2e9f8ec014065b777d1e8.svg",
+          "width": 1254,
+          "height": 1254,
+          "verdict": "Comparison only. Genuine trace retains lettering/frame but slightly simplifies small edges. Generated raster concept selected; no original recovered."
+        }
+      ]
+    }
+  ]
+}

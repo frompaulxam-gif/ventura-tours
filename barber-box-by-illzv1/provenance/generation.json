@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in image_gen",
+  "execution": "exec-3e8d8f48-560c-4448-b96b-8210252c6dba",
+  "underlying_model": "Not exposed",
+  "prompt": "New proposed Barber Box by Illz logo concept. Square white canvas, bold black condensed sans BARBER BOX stacked and BY ILLZ below, rectangular frame, generous full margins; no extra text/date/icons/photograph/gradient. Built-in image_gen, no source/logo reference.\n",
+  "original_path": "/website-version-assets/c6924914a2bca690a34fcbe216edfb70dc74d27ba35c10e614c046b994e6222b.png",
+  "sha256": "c6924914a2bca690a34fcbe216edfb70dc74d27ba35c10e614c046b994e6222b",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "verdict": "New logo concept selected under Paul’s explicit instruction. Exact verified business name is readable; whole square artwork retained. Proposed branding, not recovered original or owner-approved."
+}
