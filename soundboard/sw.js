@@ -1,5 +1,5 @@
-const cacheName = 'jarvis-soundboard-v1';
-const files = ['index.html', 'app.js', 'clips.js', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+const cacheName = 'jarvis-soundboard-v2';
+const files = ['index.html', 'app.js?v=2', 'clips.js?v=2', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(cacheName);

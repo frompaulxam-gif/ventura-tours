@@ -18,7 +18,7 @@ header { display: flex; align-items: center; gap: 9px; font-size: 17px; font-wei
 header img { width: 28px; height: 28px; border-radius: 7px }
 h1 { margin: 12px 0 28px; font-size: clamp(40px, 9vw, 60px); letter-spacing: -.065em; line-height: 1.05 }
 section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
-button { appearance: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; text-align: left; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; min-height: clamp(94px, 15svh, 145px); padding: 14px 16px; background: #fff; color: inherit; border: 1px solid #d5d2cd; border-bottom-width: 3px; border-radius: 14px; font: inherit; font-size: 29px; letter-spacing: -.045em; font-weight: 650; cursor: pointer }
+button { appearance: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; text-align: left; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; min-height: clamp(94px, 15svh, 145px); padding: 14px 16px; background: #fff; color: inherit; border: 1px solid #d5d2cd; border-bottom-width: 3px; border-radius: 14px; font: inherit; font-size: clamp(19px, 6vw, 29px); overflow-wrap: anywhere; letter-spacing: -.045em; font-weight: 650; cursor: pointer }
 button:last-child { grid-column: 1 / -1 }
 button::before { content: attr(aria-keyshortcuts); font: 600 13px ui-monospace, monospace; color: #625e67; letter-spacing: 0 }
 button[data-playing], button:active { background: #5a43d6; border-color: #4936b0; color: white; transform: translateY(1px) }
@@ -28,8 +28,8 @@ p { font-size: 14px; color: #57535b; margin: 16px 0 0 }
 p:empty { display: none }
 @media (max-height: 540px) { main { margin-top: 0 } button { min-height: 76px } h1 { margin-bottom: 14px } }
 </style>
-<script src="./clips.js" defer></script>
-<script src="./app.js" defer></script>
+<script src="./clips.js?v=2" defer></script>
+<script src="./app.js?v=2" defer></script>
 </head>
 <body><main>
 <header><img alt="" src="./icon-180.png">Jarvis</header>
@@ -40,6 +40,12 @@ p:empty { display: none }
 <button type="button" aria-keyshortcuts="3">rizz</button>
 <button type="button" aria-keyshortcuts="4">bruh</button>
 <button type="button" aria-keyshortcuts="5">wtf</button>
+<button type="button" aria-keyshortcuts="6">you ain't no leader bruh</button>
+<button type="button" aria-keyshortcuts="7">huh?</button>
+<button type="button" aria-keyshortcuts="8">undertaker bell</button>
+<button type="button" aria-keyshortcuts="9">spongebob fail</button>
+<button type="button" aria-keyshortcuts="0">yayyy!</button>
+<button type="button" aria-keyshortcuts="-">was you begging it?</button>
 </section>
 <p role="status" id="play-status"></p><p role="status" id="offline"></p>
 <audio preload="none" playsinline></audio>
